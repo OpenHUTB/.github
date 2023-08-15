@@ -1,6 +1,4 @@
-## 👋
-
-<img src="./repositories.svg" width="6000px" height="400px">
+<img src="./repositories.svg" width="600px" height="400px">
 
 
 
