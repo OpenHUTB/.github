@@ -15,7 +15,7 @@
 ### 仿真
 
 #### [工业仿真](https://github.com/OpenHUTB/matlab) 
-工业仿真软件的解码和二次开发。
+工业仿真软件的注释和二次开发。
 
 #### [静态仿真](https://github.com/OpenHUTB/roadrunner) 
 RoadRunner 的中文翻译文档。
