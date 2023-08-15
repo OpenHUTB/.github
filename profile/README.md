@@ -1,7 +1,13 @@
 
+<div align=center>
+
 <a href="https://github.com/OpenHUTB/.github">
-<img src="./repositories.png">
+
+<img src="./repositories.png" width="60%" height="60%">
+
 </a>
+
+</div>
 
 
 <!--
