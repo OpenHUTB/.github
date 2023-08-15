@@ -1,6 +1,6 @@
 ## 👋
 
-<img src="./repositories.svg" width="2000px" height="1000px">
+<img src="./repositories.svg" width="6000px" height="400px">
 
 
 
