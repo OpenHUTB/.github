@@ -8,7 +8,7 @@
 ### [智慧交通](https://github.com/OpenHUTB/intelligent_traffic) 
 智慧交通微观、中观、宏观仿真和平台后端。
 
-### [数字孪生](https://github.com/OpenHUTB/driving)
+### [交通数字孪生](https://github.com/OpenHUTB/driving)
 包括交通场景数字孪生、区域信控、车流诱导、停车管理等模块。
 
 
@@ -16,6 +16,12 @@
 
 #### [工业仿真](https://github.com/OpenHUTB/matlab) 
 工业仿真软件的注释和二次开发。
+
+#### [仿真引擎](https://github.com/OpenHUTB/engine)
+包含 CARLA 补丁的虚幻引擎。
+
+#### [驾驶仿真](https://github.com/OpenHUTB/carla)
+用于研究自动驾驶的开源仿真器，可自由使用的开放数字资产（城市布局、建筑、车辆）。
 
 #### [静态仿真](https://github.com/OpenHUTB/roadrunner) 
 RoadRunner 的中文翻译文档。
