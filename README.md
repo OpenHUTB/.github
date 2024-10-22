@@ -2,7 +2,7 @@
 <!--所有项目关系的思维导图。-->
 <!-- 使用markmap进行编辑并生成svg：https://markmap.js.org/repl -->
 
-<img src="https://github.com/OpenHUTB/.github/blob/master/fig/repositories.svg?sanitize=true" width="400px">
+<img src="https://github.com/OpenHUTB/.github/blob/master/fig/repositories.svg?sanitize=true" width="400px" height="800px">
 
 ## 贡献指南
 
