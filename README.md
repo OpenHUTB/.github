@@ -2,6 +2,8 @@
 <!--所有项目关系的思维导图。-->
 <!-- 使用markmap进行编辑并生成svg：https://markmap.js.org/repl -->
 
+## 操作
+加入组织需要把用户名发送到邮箱 [2929@hutb.edu.cn](2929@hutb.edu.cn) 。
 
 ## 代理
 
