@@ -2,7 +2,9 @@
 <!--所有项目关系的思维导图。-->
 <!-- 使用markmap进行编辑并生成svg：https://markmap.js.org/repl -->
 
-<img src="https://github.com/OpenHUTB/.github/blob/master/fig/repositories.svg?sanitize=true" width="400px" height="550px">
+<a href ="https://github.com/OpenHUTB/.github/blob/master/fig/repositories.md">
+<img src="https://github.com/OpenHUTB/.github/blob/master/fig/repositories.svg?sanitize=true" width="400px" height="500px">
+</a>
 
 ## 贡献指南
 
@@ -27,7 +29,7 @@ git push
 6.在自己仓库的首页发现有提交领先于湖工商仓库的`main`分支，则点击`Contribute`创建`Pull Request`，来湖工商仓库做出贡献，创建成功后等待管理员审核通过（如果发现个人仓库落后于湖工商仓库则点击`Sync frok`以同步其他人的最新修改）。
 
 ## 问题
-- 加入组织需要把用户名发送到邮箱 [2929@hutb.edu.cn](2929@hutb.edu.cn) 。
+- 加入组织需要把github用户名发送到邮箱 [2929@hutb.edu.cn](2929@hutb.edu.cn) 。
 
 - 网络不稳定可以参考 [链接](https://openhutb.github.io/carla_doc/build_carla/) 的`科学上网部分`。
 
