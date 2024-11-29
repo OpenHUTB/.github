@@ -8,7 +8,7 @@
 
 ## 贡献指南
 
-1.在[湖工商仓库](https://github.com/OpenHUTB/carla_cpp) 页面点击`Fork`，然后点击`Create a new fork`，创建分叉到个人仓库。
+1.打开 [github](https://github.com/) 注册并登录，在[湖工商仓库](https://github.com/OpenHUTB/carla_cpp) 页面点击`Fork`，然后点击`Create a new fork`，创建分叉到个人仓库。
 
 2.下载并安装[git](https://git-scm.com/downloads) ；
 
