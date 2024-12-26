@@ -1,13 +1,14 @@
-﻿# 开源湖工商
+﻿# 科技和文化
+<!--所有项目关系的思维导图。-->
+<!-- 使用markmap进行编辑并生成svg：https://markmap.js.org/repl -->
+
 ## 代理
 
-### 通用
+[几何](https://github.com/OpenHUTB/structure)
+几何和功能的关系。
 
-#### [原理](https://github.com/OpenHUTB/neuro)
-《神经科学原理（第六版）》翻译。
-
-#### [工具](https://github.com/OpenHUTB/spm)
-神经影像处理软件。
+[功能](https://github.com/OpenHUTB/onion)
+结构和功能的关系。
 
 ### 感知
 
@@ -16,6 +17,12 @@
 
 #### [行为检测](https://github.com/OpenHUTB/customs) 
 人脸识别、戴口罩的人脸识别、高抗伪识别等。
+
+#### [原理](https://github.com/OpenHUTB/neuro)
+《神经科学原理（第六版）》翻译。
+
+#### [工具](https://github.com/OpenHUTB/spm)
+神经影像处理软件。
 
 
 #### [目标跟踪](https://github.com/OpenHUTB/mot)
@@ -34,16 +41,8 @@
 #### [行人](https://github.com/OpenHUTB/carla-pedestrians)
 行人的孪生。
 
-### 结构
 
-#### [几何](https://github.com/OpenHUTB/structure)
-几何和功能的关系。
-
-#### [功能](https://github.com/OpenHUTB/onion)
-结构和功能的关系。
-
-
-## 仿真引擎
+## 模拟器
 
 ### [文档](https://github.com/OpenHUTB/carla_doc) 
 
@@ -65,7 +64,7 @@ RoadRunner 的中文翻译文档。
 RoadRunner Scenario 的中文翻译文档。
 
 
-## 真实数据
+## 现实场景
 
 ### [智慧交通](https://github.com/OpenHUTB/intelligent_traffic) 
 智慧交通微观、中观、宏观仿真和平台后端。
@@ -76,16 +75,19 @@ RoadRunner Scenario 的中文翻译文档。
 ### [交通大模型](https://github.com/OpenHUTB/gpt)
 实现人类语音进行交通场景的编辑和控制。
 
-## 合作
 
-### [本科毕设](https://github.com/OpenHUTB/hutb_latex) 
+
+[本科毕设](https://github.com/OpenHUTB/hutb_latex) 
 本科毕业设计的`latex`模板。
 
-### [研究生毕设](https://github.com/OpenHUTB/master)
+[研究生毕设](https://github.com/OpenHUTB/master)
 研究生毕业设计的`latex`模板。
 
-### [通用模板](https://github.com/OpenHUTB/latex)
+[通用模板](https://github.com/OpenHUTB/latex)
 书籍、笔记、论文的`latex`模板。
 
-### [工具库](https://github.com/OpenHUTB/utils)
+[工具库](https://github.com/OpenHUTB/utils)
 整理的通用工具代码。
+
+
+

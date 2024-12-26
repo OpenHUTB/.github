@@ -1,6 +1,10 @@
 # 开源湖工商
+
+该组织为了提供一个学术研究（代理）、技术开发（模拟器）、艺术增强（现实场景）的统一平台，实现科（智能）技（仿真）和文化（前额叶皮层）的融合。
+
 <!--所有项目关系的思维导图。-->
 <!-- 使用markmap进行编辑并生成svg：https://markmap.js.org/repl -->
+<!-- 在profile/markmap.md中保存图的数据 -->
 
 <a href ="https://github.com/OpenHUTB/.github/blob/master/fig/repositories.md">
 <img src="https://github.com/OpenHUTB/.github/blob/master/fig/repositories.svg?sanitize=true" width="400px" height="500px">
