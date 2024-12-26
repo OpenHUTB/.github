@@ -7,7 +7,7 @@
 <!-- 在profile/markmap.md中保存图的数据 -->
 
 <a href ="https://github.com/OpenHUTB/.github/blob/master/fig/repositories.md">
-<img src="https://github.com/OpenHUTB/.github/blob/master/fig/repositories.svg?sanitize=true" width="400px" height="500px">
+<img src="https://github.com/OpenHUTB/.github/blob/master/fig/repositories.svg?sanitize=true" width="550px" height="400px">
 </a>
 
 ## 贡献指南
