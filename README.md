@@ -1,6 +1,8 @@
 # 开源湖工商
 
-该组织提供一个学术研究（代理）、技术开发（模拟器）、艺术增强（现实场景）的统一平台，实现科（智能）技（仿真）和文化（前额叶皮层）的融合。
+该组织提供一个包含代理（学术研究）、模拟器（技术开发）、现实场景（艺术增强）的 [模拟器](https://openhutb.github.io/carla_doc/) ，代理包括[感知](https://openhutb.github.io/carla_doc/algorithms/perception/) （连接）、[规划](https://openhutb.github.io/carla_doc/algorithms/planning/) （符号）、[控制](https://openhutb.github.io/carla_doc/algorithms/control/) （行为）；模拟器包括Python与C++的接口、LibCarla、虚幻引擎插件；现实场景包括 [静态场景孪生](https://openhutb.github.io/carla_doc/adv_digital_twin/) 、[动态场景孪生](https://github.com/OpenHUTB/traffic_twin/) 。
+<!--代理： -->
+<!--实现科（智能）技（仿真）和文化（前额叶皮层）的融合。-->
 
 <!--所有项目关系的思维导图。-->
 <!-- 使用markmap进行编辑并生成svg：https://markmap.js.org/repl -->
