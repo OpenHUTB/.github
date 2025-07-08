@@ -3,7 +3,7 @@
 
 <a href="https://github.com/OpenHUTB/.github">
 
-<img src="./repositories.png" width="40%" height="40%">
+<img src="./repositories.png" width="30%">
 
 </a>
 
