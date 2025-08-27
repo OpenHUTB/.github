@@ -8,17 +8,19 @@
 
 - [命令管理](https://blog.csdn.net/weixin_45682261/article/details/124003706) ；
 
-- 可视化工具管理：利用可视化工具[TortoiseGit](https://blog.csdn.net/xwnxwn/article/details/108694863) 进行项目管理。
+- 可视化工具管理：利用可视化工具 [TortoiseGit](https://blog.csdn.net/xwnxwn/article/details/108694863) 进行项目管理。
+
 
 ## 步骤
 
-1.打开 [github](https://github.com/) 注册并登录，在[湖工商仓库](https://github.com/OpenHUTB/carla_cpp) 页面点击`Fork`，然后点击`Create a new fork`，创建分叉到个人仓库。
+1.打开 [github](https://github.com/) 注册并登录，在[湖工商仓库](https://github.com/OpenHUTB/hutb) 页面点击`Fork`，然后点击`Create a new fork`，创建分叉到个人仓库。
 
 2.下载并安装[git](https://git-scm.com/downloads) ；
 
 3.克隆个人仓库（若出现SSL certificate problems请关闭加速器再克隆）：
 ```shell
-git clone https://github.com/{username}/carla_cpp.git
+# 该 命令中的 OpenHUTB 替换为自己的用户名，否则没有权限直接修改组织仓库
+git clone https://github.com/OpenHUTB/hutb.git
 ```
 
 4.修改仓库的文件。
@@ -40,6 +42,7 @@ git push
 
 
 ## 其他
+
 1.同步子模块
 ```
 git submodule update --remote
@@ -52,10 +55,13 @@ git submodule update --remote
 
 
 ## 问题
-### 国内访问github可能较慢
-这里提供一个科学上网的[链接](https://openhutb.github.io/carla_doc/build_carla/#internet) 。
 
-### 向github上push的时候报403错误
+### 国内访问 github 可能较慢
+
+这里提供 github 加速方案和科学上网的 [链接](https://openhutb.github.io/doc/build_carla/#internet) 。
+
+### 向 github 上 push 的时候报 403 错误
+
 打开`.git/config`，比如：
 ```
 url = https://github.com/OpenHUTB/bazaar.git
