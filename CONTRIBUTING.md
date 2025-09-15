@@ -19,7 +19,7 @@
 
 3.克隆个人仓库（若出现SSL certificate problems请关闭加速器再克隆）：
 ```shell
-# 该 命令中的 OpenHUTB 替换为自己的用户名，否则没有权限直接修改组织仓库
+# 该 命令中的 OpenHUTB 替换为自己的用户名，hutb 替换为想要修改的仓库名（比如`nn`），否则没有权限直接修改组织仓库
 git clone https://github.com/OpenHUTB/hutb.git
 ```
 
