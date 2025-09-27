@@ -4,18 +4,16 @@
 
 ## 软件安装
 
-1. 下载相关[开发工具](https://pan.baidu.com/s/1Is2-VR1z-tMYvmdinsVY_g?pwd=hutb) ，先安装`Git-2.40.0-64-bit.exe`，再安装`TortoiseGit-2.14.0.0-64bit.msi`。
+1. 下载相关[开发工具](https://pan.baidu.com/s/1Is2-VR1z-tMYvmdinsVY_g?pwd=hutb) ，先安装`Git-2.40.0-64-bit.exe`，再安装可视化工具管理 [`TortoiseGit-2.14.0.0-64bit.msi`](https://blog.csdn.net/xwnxwn/article/details/108694863)（可选）。
 
 - [命令管理](https://blog.csdn.net/weixin_45682261/article/details/124003706) ；
-
-- 可视化工具管理（可选）：利用可视化工具 [TortoiseGit](https://blog.csdn.net/xwnxwn/article/details/108694863) 进行项目管理。
 
 
 ## 步骤
 
 ```mermaid
 flowchart LR
-    A[1. fork 组织项目到个人账户] --> B[2. clone 个人账户下的远程仓库到本地]
+    A[1. fork 组织项目到个人账户] --> B[2. clone 个人远程仓库到本地]
     B --> C[3. 进行修改]
     C --> D[4. add 修改到暂存区]
     D --> E[5. commit 更改到本地仓库]
@@ -27,11 +25,11 @@ flowchart LR
     J --> D
 ```
 
-1.打开 [github](https://github.com/) 注册并登录，在[湖工商仓库](https://github.com/OpenHUTB/hutb) 页面点击`Fork`，然后点击`Create a new fork`，创建分叉到个人仓库。
+1.打开 [github](https://github.com/) 注册并登录，在 [想要修改的湖工商仓库](https://github.com/OpenHUTB/hutb) 页面点击`Fork`，然后点击`Create a new fork`，创建分叉到个人仓库。
 
 2.克隆个人仓库（若出现SSL certificate problems请关闭加速器再克隆）：
 ```shell
-# 该 命令中的 OpenHUTB 替换为自己的用户名，hutb 替换为想要修改的仓库名（比如 nn ），否则没有权限直接修改组织仓库
+# 注意：该命令中的 OpenHUTB 替换为自己的用户名，hutb 替换为想要修改的仓库名（比如 nn ），否则没有权限直接修改组织仓库
 git clone https://github.com/OpenHUTB/hutb.git
 ```
 
