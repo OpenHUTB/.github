@@ -6,7 +6,7 @@
 
 1. 下载相关[开发工具](https://pan.baidu.com/s/1Is2-VR1z-tMYvmdinsVY_g?pwd=hutb) ，先安装`Git-2.40.0-64-bit.exe`，再安装可视化工具管理 [`TortoiseGit-2.14.0.0-64bit.msi`](https://blog.csdn.net/xwnxwn/article/details/108694863)（可选）。
 
-- [命令管理](https://blog.csdn.net/weixin_45682261/article/details/124003706) ；
+- [git 命令说明](https://blog.csdn.net/weixin_45682261/article/details/124003706) ；
 
 
 ## 步骤
@@ -25,17 +25,17 @@ flowchart LR
     J --> D
 ```
 
-1.打开 [github](https://github.com/) 注册并登录，在 [想要修改的湖工商仓库](https://github.com/OpenHUTB/hutb) 页面点击`Fork`，然后点击`Create a new fork`，创建分叉到个人仓库。
+1.打开 [github](https://github.com/signup) 注册并登录，在 [想要修改的湖工商仓库](https://github.com/OpenHUTB/hutb) 页面点击`Fork`，然后点击`Create a new fork`，创建分叉到个人仓库。
 
 2.克隆个人仓库（若出现SSL certificate problems请关闭加速器再克隆）：
 ```shell
-# 注意：该命令中的 OpenHUTB 替换为自己的用户名，hutb 替换为想要修改的仓库名（比如 nn ），否则没有权限直接修改组织仓库
-git clone https://github.com/OpenHUTB/hutb.git
+# 注意：该命令中的 {用户名} 替换为自己的用户名，hutb 替换为想要修改的仓库名，否则没有权限直接修改组织仓库
+git clone https://github.com/{用户名}/hutb.git
 ```
 
 3.修改仓库的文件。
 
-4-6.修改并本地测试没问题后，提交代码到个人仓库（参考可视化工具管理）：
+4-6.修改并本地测试没问题后，提交代码到个人仓库（参考 git 命令说明）：
 ```shell script
 git add README.md
 git commit -m "update"
@@ -48,7 +48,7 @@ git push
 - Pull Request 标题需要概括所修改的内容；
 - 尽量少包含二进制文件；
 - 不提交程序能够输出的中间文件、结果文件；
-- 可以提供少量能够保证程序能够正常运行的示例数据，大的输入数据在README文件中提供百度网盘或者谷歌网盘的下载链接；
+- 可以提供少量能够保证程序能够正常运行的示例数据，大的输入数据在 README.md 文件中提供百度网盘或者谷歌网盘的下载链接；
 
 
 ## 其他
