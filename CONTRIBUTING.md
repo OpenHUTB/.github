@@ -13,6 +13,20 @@
 
 ## 步骤
 
+```mermaid
+flowchart LR
+    A[Fork 组织项目到个人账户] --> B[克隆(clone)个人账户下的远程仓库到本地]
+    B --> D[进行修改]
+    D --> E[添加(add)修改到暂存区]
+    E --> F[提交(commit)更改到本地仓库]
+    F --> G[推送(push)分支到远程仓库]
+    G --> H[创建 Pull Request]
+    H --> I{评审通过?}
+    I -->|是| J[合并到主分支]
+    I -->|否| K[根据反馈修改]
+    K --> E
+```
+
 1.打开 [github](https://github.com/) 注册并登录，在[湖工商仓库](https://github.com/OpenHUTB/hutb) 页面点击`Fork`，然后点击`Create a new fork`，创建分叉到个人仓库。
 
 2.下载并安装[git](https://git-scm.com/downloads) ；
