@@ -1,7 +1,15 @@
-﻿# 代理模拟器
+﻿# 人车模拟
 <!--所有项目关系的思维导图。-->
 <!-- 使用markmap进行编辑并生成svg：https://markmap.js.org/repl -->
 
+
+## 代理
+
+[几何](https://github.com/OpenHUTB/structure)
+几何和功能的关系。
+
+[功能](https://github.com/OpenHUTB/onion)
+结构和功能的关系。
 
 ### 感知
 
@@ -34,13 +42,10 @@
 #### [行人](https://github.com/OpenHUTB/carla-pedestrians)
 行人的孪生。
 
-### 代理
+#### [运动的生物力学](https://github.com/OpenHUTB/move) 
+肌肉驱动的移动
 
-[几何](https://github.com/OpenHUTB/structure)
-几何和功能的关系。
 
-[功能](https://github.com/OpenHUTB/onion)
-结构和功能的关系。
 
 
 ## 模拟器

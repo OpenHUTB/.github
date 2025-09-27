@@ -18,7 +18,11 @@
 
 ## 参考
 
-* [论文写作技巧](doc/paper_tips.md)
+🧙 记住，你可以利用 [Markdown](https://docs.github.com/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) 的力量做很多事情 
+
+🍿 [论文写作技巧](doc/paper_tips.md)
+
+
 
 
 ## 问题
