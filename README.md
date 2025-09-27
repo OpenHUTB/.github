@@ -16,7 +16,7 @@
 项目之间关系：
 
 <a href ="https://github.com/OpenHUTB/.github/blob/master/fig/repositories.md">
-<img src="https://rawcdn.githack.com/OpenHUTB/.github/e2d4afd26716731a558b68f5b3875ba3d82937fc/fig/repositories.svg">
+<img src="https://github.com/OpenHUTB/.github/blob/master/fig/repositories.png">
 </a>
 
 ## 参考
