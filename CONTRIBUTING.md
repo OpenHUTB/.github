@@ -8,45 +8,43 @@
 
 - [命令管理](https://blog.csdn.net/weixin_45682261/article/details/124003706) ；
 
-- 可视化工具管理：利用可视化工具 [TortoiseGit](https://blog.csdn.net/xwnxwn/article/details/108694863) 进行项目管理。
+- 可视化工具管理（可选）：利用可视化工具 [TortoiseGit](https://blog.csdn.net/xwnxwn/article/details/108694863) 进行项目管理。
 
 
 ## 步骤
 
 ```mermaid
 flowchart LR
-    A[Fork 组织项目到个人账户] --> B[克隆(clone)个人账户下的远程仓库到本地]
-    B --> D[进行修改]
-    D --> E[添加(add)修改到暂存区]
-    E --> F[提交(commit)更改到本地仓库]
-    F --> G[推送(push)分支到远程仓库]
-    G --> H[创建 Pull Request]
-    H --> I{评审通过?}
-    I -->|是| J[合并到主分支]
-    I -->|否| K[根据反馈修改]
-    K --> E
+    A[1. fork 组织项目到个人账户] --> B[2. clone 个人账户下的远程仓库到本地]
+    B --> C[3. 进行修改]
+    C --> D[4. add 修改到暂存区]
+    D --> E[5. commit 更改到本地仓库]
+    E --> F[6. push 分支到远程仓库]
+    F --> G[7. 创建 Pull Request]
+    G --> H{评审通过?}
+    H -->|是| I[合并到主分支]
+    H -->|否| J[根据反馈修改]
+    J --> D
 ```
 
 1.打开 [github](https://github.com/) 注册并登录，在[湖工商仓库](https://github.com/OpenHUTB/hutb) 页面点击`Fork`，然后点击`Create a new fork`，创建分叉到个人仓库。
 
-2.下载并安装[git](https://git-scm.com/downloads) ；
-
-3.克隆个人仓库（若出现SSL certificate problems请关闭加速器再克隆）：
+2.克隆个人仓库（若出现SSL certificate problems请关闭加速器再克隆）：
 ```shell
 # 该 命令中的 OpenHUTB 替换为自己的用户名，hutb 替换为想要修改的仓库名（比如 nn ），否则没有权限直接修改组织仓库
 git clone https://github.com/OpenHUTB/hutb.git
 ```
 
-4.修改仓库的文件。
+3.修改仓库的文件。
 
-5.修改并本地测试没问题后，提交代码到个人仓库（参考可视化工具管理）：
+4-6.修改并本地测试没问题后，提交代码到个人仓库（参考可视化工具管理）：
 ```shell script
 git add README.md
 git commit -m "update"
 git push
 ```
 
-6.在自己仓库的首页发现有提交领先于湖工商仓库的`main`分支，则点击`Contribute`创建 [Pull Request](https://zhuanlan.zhihu.com/p/153381521) ，来湖工商仓库做出贡献，创建成功后等待管理员审核通过（如果发现个人仓库落后于湖工商仓库则点击`Sync frok`以同步其他人的最新修改）。
+7.在自己仓库的首页发现有提交领先于湖工商仓库的`main`分支，则点击`Contribute`创建 [Pull Request](https://zhuanlan.zhihu.com/p/153381521) ，来湖工商仓库做出贡献，创建成功后等待管理员审核通过（如果发现个人仓库落后于湖工商仓库则点击`Sync frok`以同步其他人的最新修改）。
 
 注意事项：
 - Pull Request 标题需要概括所修改的内容；
