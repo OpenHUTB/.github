@@ -5,17 +5,18 @@
 组织技术架构：
 
 <a href ="https://github.com/OpenHUTB/.github/blob/master/fig/repositories.md">
-<img src="https://github.com/OpenHUTB/.github/blob/master/profile/repositories.png?raw=true" width="40%">
+<img src="https://github.com/OpenHUTB/.github/blob/master/profile/repositories.png?raw=true" width="40%" >
 </a>
 
 <!--所有项目关系的思维导图。-->
 <!-- 使用markmap进行编辑并生成svg：https://markmap.js.org/repl -->
 <!-- 在profile/markmap.md中保存图的数据 -->
+<!-- svg图片预览：https://raw.githack.com/ -->
 
 项目之间关系：
 
 <a href ="https://github.com/OpenHUTB/.github/blob/master/fig/repositories.md">
-<img src="https://github.com/OpenHUTB/.github/blob/master/fig/repositories.svg?sanitize=true" height="400px">
+<img src="https://rawcdn.githack.com/OpenHUTB/.github/e2d4afd26716731a558b68f5b3875ba3d82937fc/fig/repositories.svg">
 </a>
 
 ## 参考
