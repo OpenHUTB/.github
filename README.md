@@ -3,6 +3,7 @@
 该组织提供一个包含人车代理（学术研究）、模拟器（技术开发包括数据驱动、机理仿真、界面渲染）、现实场景（艺术增强）的 [模拟器](https://openhutb.github.io) ，代理包括[感知](https://openhutb.github.io/doc/algorithms/perception/) （连接）、[规划](https://openhutb.github.io/doc/algorithms/planning/) （符号）、[控制](https://openhutb.github.io/doc/algorithms/control/) （行为）；模拟器包括Python与C++的接口（正向创建、反向构建）、LibCarla、虚幻引擎插件；现实场景包括 [静态场景孪生](https://openhutb.github.io/doc/adv_digital_twin/) 、[动态场景孪生](https://github.com/OpenHUTB/traffic_twin/) 。
 
 组织技术架构：
+
 <a href ="https://github.com/OpenHUTB/.github/blob/master/fig/repositories.md">
 <img src="https://github.com/OpenHUTB/.github/blob/master/profile/repositories.png?raw=true" width="40%">
 </a>
@@ -12,8 +13,9 @@
 <!-- 在profile/markmap.md中保存图的数据 -->
 
 项目之间关系：
+
 <a href ="https://github.com/OpenHUTB/.github/blob/master/fig/repositories.md">
-<img src="https://github.com/OpenHUTB/.github/blob/master/fig/repositories.svg?sanitize=true" width="550px" height="400px">
+<img src="https://github.com/OpenHUTB/.github/blob/master/fig/repositories.svg?sanitize=true" height="400px">
 </a>
 
 ## 参考
