@@ -1,6 +1,6 @@
 
 <p width="100%" display="flex" align="center">
-<a href="https://openhutb.github.io/doc/tuto_G_pedestrian_navigation/#conclusion"><img src="docs/img/pedestrian/cycle.gif?raw=true" width="27%" margin-right="10%"/></a>  <a href="https://openhutb.github.io/doc/tuto_G_chrono/"><img src="docs/img/chrono/vechile_turnover.gif?raw=true" width="30%"/></a> <a href="https://openhutb.github.io/air_doc/"><img src="https://github.com/OpenHUTB/air_doc/blob/master/docs/images/dev/HUTB_simulation.gif?raw=true" width="30%"/></a>
+<a href="https://openhutb.github.io/doc/tuto_G_pedestrian_navigation/#conclusion"><img src="https://github.com/OpenHUTB/doc/blob/master/docs/img/pedestrian/cycle.gif?raw=true" width="27%" margin-right="10%"/></a>  <a href="https://openhutb.github.io/doc/tuto_G_chrono/"><img src="https://github.com/OpenHUTB/doc/blob/master/docs/img/chrono/vechile_turnover.gif?raw=true" width="30%"/></a> <a href="https://openhutb.github.io/air_doc/"><img src="https://github.com/OpenHUTB/air_doc/blob/master/docs/images/dev/HUTB_simulation.gif?raw=true" width="30%"/></a>
 </p>
 
 
