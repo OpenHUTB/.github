@@ -22,6 +22,22 @@ flowchart LR
     I -->|是| J[合并到主分支]
     I -->|否| K[根据反馈修改]
     K --> E
+
+    style A fill:#e1f5fe
+    style B fill:#e1f5fe
+
+    style C fill:#ccffcc
+
+    style D fill:#fff3e0
+    
+    style E fill:#dff3e0
+    style F fill:#dff3e0
+    style G fill:#dff3e0
+
+    style I fill:#f3e5f5
+    style J fill:#f3e5f5
+
+    style K fill:#fff3e0
 ```
 
 1.打开 [github](https://github.com/signup) 注册并登录，在 [想要修改的湖工商仓库](https://github.com/OpenHUTB/hutb) 页面点击`Fork`，然后点击`Create a new fork`，创建分叉到个人仓库。
