@@ -1,4 +1,4 @@
-# PyCharm 教程:用 PyCharm 编写 Python 代码(IDE)
+# PyCharm 教程:用 PyCharm 编写 Python 代码
 
 ## **PyCharm 教程:PyCharm 简介:**
 
@@ -32,11 +32,14 @@
 
 所以你可能会疑惑为什么要考虑学习 [**Python**](https://www.edureka.co/blog/python-tutorial/) 对吗？
 
-![Python Application - PyCharm Tutorial - Edureka](img/d64ee5c0287d975af023eb2f4c6b8c75.png)
+![Python Application - PyCharm Tutorial - Edureka](img/python_application.png)
 
 伙计们，它的应用范围如此之广，我无法在一张图片中全部体现出来！
 
 使用 Django 和 bottle 进行 web 开发。使用 Numpy 进行数学计算，使用 Tkinter 设计自己的 GUI，使用 Pygame 制作自己的游戏等等。
+
+推荐 [Python教程(只需要学习到13章)](https://liaoxuefeng.com/books/python/introduction/index.html) 、[强化学习教程](https://mofanpy.com/tutorials/machine-learning/reinforcement-learning/) 。
+
 
 接下来，在这篇 PyCharm 教程博客中，让我们看看所有可以用来编写 Python 代码的开发环境。
 
@@ -46,7 +49,7 @@
 
 安装 PyCharm 非常简单明了。头像官网使用此链接:[](http://www.jetbrains.com/pycharm/download/#section=windows)
 
-![Installing PyCharm - PyCharm Tutorial - Edureka](img/2c2f850699a071460447ced313d4025d.png)
+![Installing PyCharm - PyCharm Tutorial - Edureka](img/install_pycharm.png)
 
 在这里，社区版是免费的，但是对于专业版，需要购买授权。我将开发 PyCharm 社区版本，对于初学者和中级程序员来说，这已经足够了。但是如果你是一个专业的程序员，并且想完全利用 IDE，那么就用专业版吧。
 
@@ -151,23 +154,23 @@ PyCharm 允许开发人员连接各种机器并远程构建软件应用程序。
 
 让我们从创建一个新项目开始。一打开它，PyCharm 就用下面的图片向您打招呼:
 
-![Pycharm welcome screen - Pycharm tutorial - Edureka](img/9259a32a7851063d45843d8e67e3251c.png)
+![Pycharm welcome screen - Pycharm tutorial - Edureka](img/welcome_pycharm.png)
 
 在这里，在左边，你可以查看我最近参与的所有项目。但是如果这是你第一次使用 PyCharm，那么左边的列不会包含任何内容。
 
 创建一个新项目就像点击**创建新项目**标签一样简单。
 
-![Pycharm project creation - Pycharm tutorial - Edureka](img/0d69d09f613450586cb9eba854dbea3a.png)
+![Pycharm project creation - Pycharm tutorial - Edureka](img/new_proj.png)
 
 这张图片基本上帮助我们设置了 Python 解释器。但是，如果您的系统上没有安装 Python，这可能是空白的。
 
 要安装 Python，请使用官方文档进行安装，或者按照如下所示的说明进行操作:
 
-![Install Python - PyCharm Tutorial - Edureka](img/6e315dff13b2635e44d97c3e3161cbed.png)
+![Install Python - PyCharm Tutorial - Edureka](img/settings.png)
 
 点击右边的小齿轮图标将显示以下页面:
 
-![Install Python - PyCharm Tutorial - Edureka](img/6ed9c75ce5a876fdd1c837807d68161e.png)
+![Install Python - PyCharm Tutorial - Edureka](img/add_python_interpret.png)
 
 在这里，如果没有单独安装 Python，可以使用系统解释器。一定要检查 Python 安装的版本，使其符合您的要求。
 
@@ -179,7 +182,7 @@ PyCharm 允许开发人员连接各种机器并远程构建软件应用程序。
 
 查看以下截图供您参考:
 
-![First Program - PyCharm Tutorial - Edureka](img/908eeaa5dc9963824acba00d88a7d643.png)
+![First Program - PyCharm Tutorial - Edureka](img/hello_world.png)
 
 在这里，我打出了所有代码的黄金标准 hello world 程序！
 
@@ -197,7 +200,7 @@ PyCharm 允许开发人员连接各种机器并远程构建软件应用程序。
 
 最后一步是点击**应用**并关闭窗口，配置被添加和设置。很简单，对吧？
 
-![Adding configuration - Pycharm tutorial - Edureka](img/39844b7333811101091608337b984d3f.png)
+![Adding configuration - Pycharm tutorial - Edureka](img/run_configurations.png)
 
 因此，在设置好配置之后，您就可以执行代码了。
 
@@ -218,7 +221,7 @@ print("Hello edureka!")
 
 **输出:**
 
-![Hello World - Pycharm tutorial - Edureka](img/374d409fdfb6e385984688b3eadecee8.png)
+![Hello World - Pycharm tutorial - Edureka](img/output_hello.png)
 
 从上面的截图可以看出，我们在 **Python 控制台中获得了正确的输出。**
 
@@ -228,7 +231,7 @@ print("Hello edureka!")
 
 如下图所示。您可以根据需要设置任意数量的断点，并分解和执行代码。
 
-![Pycharm debugging - Pycharm tutorial - Edureka](img/c2f02d4ed4e6b3b60aed494c52dcba3a.png)
+![Pycharm debugging - Pycharm tutorial - Edureka](img/debugging.png)
 
 您还可以使用 **Watch** 选项来检查哪些值被输入到哪些变量中。这绝对是一个很大的优势，当与内联调试器一起使用时，它为任何程序员增加了巨大的优势。
 
@@ -246,11 +249,11 @@ print("Hello edureka!")
 
 在 Ctrl + D 之前:
 
-**![Code duplication - Pycharm tutorial - Edureka](img/6ba04f0823861ce2aa5bebbed256dc5c.png)**
+**![Code duplication - Pycharm tutorial - Edureka](img/before_copy.png)**
 
 在 Ctrl + D 之后:
 
-**![Code duplication - Pycharm tutorial - Edureka](img/12c3df737d1c31db97eab9b7e0004adc.png)**
+**![Code duplication - Pycharm tutorial - Edureka](img/after_copy.png)**
 
 ### **跟踪文件变化:**
 
@@ -258,17 +261,17 @@ print("Hello edureka!")
 
 看看下面的图片:
 
-**![Tracking changes to file](img/1466bc0c103f596371cf50bce4aae66f.png)**
+**![Tracking changes to file](img/tracking_changes.png)**
 
 ### **重构:**
 
 假设你有一个名为“x”的变量，你在程序中使用了大约 100 次，突然你决定“x”必须变成“y”。常规的方法是找到每个 x，然后用 y 来改变它，对吗？其实不是！
 
-![Refactoring - Pycharm tutorial - Edureka](img/8c5cfddcc70b7c25957713edc53b361b.png)
+![Refactoring - Pycharm tutorial - Edureka](img/refactoring.png)
 
 PyCharm 支持一种智能重构技术，在这种技术中，您只需要知道是否选择该变量并选择重构设置。如果您一次更改它，那么只需单击一下，该变量的所有出现都会更改。最大的优点是，这对于一定范围内的变量也非常适用。
 
-**![Refactoring - Pycharm tutorial - Edureka](img/74b5100424cae49549b517b7054adf1c.png)**
+**![Refactoring - Pycharm tutorial - Edureka](img/intellent_refactoring.png)**
 
 这是在重构之后，只需点击一下鼠标就可以改变变量和范围内的一切。很大的优势，对吧？
 
@@ -278,7 +281,7 @@ PyCharm 支持一种智能重构技术，在这种技术中，您只需要知道
 
 看看下面的图片:
 
-![Intelligent Typing - PyCharm Tutorial - Edureka](img/6f7912948a3046227004728e4e9df520.png)
+![Intelligent Typing - PyCharm Tutorial - Edureka](img/intelligent_typing.png)
 
 ### **列选择:**
 
@@ -286,7 +289,7 @@ PyCharm 支持一种智能重构技术，在这种技术中，您只需要知道
 
 为了更清楚地了解选择，请查看下图:
 
-![Column Selection - Pycharm Tutorial - Edureka](img/73c5572c663f91cc982587bcfbc39333.png)
+![Column Selection - Pycharm Tutorial - Edureka](img/column_selection.png)
 
 ## **结论**
 
@@ -300,7 +303,3 @@ PyCharm 支持一种智能重构技术，在这种技术中，您只需要知道
 2.  **[用于数据科学的 Python](https://www.edureka.co/blog/learn-python-for-data-science/)**
 3.  [**你应该学习 Python 的 10 大理由**](https://www.edureka.co/blog/10-reasons-why-you-should-learn-python)
 4.  [**Python 请求教程**](https://www.edureka.co/blog/python-requests-tutorial/)
-
-*要深入了解 Python 及其各种应用，您可以 [**在此**](https://www.edureka.co/python/) 注册参加在线直播培训，全天候支持，终身访问。*
-
-我希望你喜欢 PyCharm 教程上的这篇文章。如果你对本教程有任何疑问，请在评论中告诉我。

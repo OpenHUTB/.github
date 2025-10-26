@@ -40,7 +40,7 @@ flowchart LR
     style K fill:#fff3e0
 ```
 
-1.打开 [github](https://github.com/signup) 注册并登录，在 [想要修改的湖工商仓库](https://github.com/OpenHUTB/hutb) 页面点击`Fork`，然后点击`Create a new fork`，创建分叉到个人仓库。
+**1.** 打开 [github](https://github.com/signup) 注册并登录，在 [想要修改的湖工商仓库](https://github.com/OpenHUTB/hutb) 页面点击`Fork`，然后点击`Create a new fork`，**创建分叉**到个人仓库。
 
 <img src="https://firstcontributions.github.io/assets/Readme/fork.png" width="310">
 
@@ -93,10 +93,10 @@ git push origin <新分支的名称>
 
 **8.** 在自己仓库的首页发现有提交领先于湖工商仓库的`main`分支，则点击`Contribute` 创建 [Pull Request](https://zhuanlan.zhihu.com/p/153381521) ，来湖工商仓库**做出贡献**，创建成功后等待管理员审核通过（如果发现个人仓库落后于湖工商仓库则点击`Sync frok`以同步其他人的最新修改）。
 
+<img src="https://firstcontributions.github.io/assets/Readme/compare-and-pull.png" width="410">
 
-<img style="float: right;" src="https://firstcontributions.github.io/assets/Readme/compare-and-pull.png" alt="创建 pull request" />
+<img src="https://firstcontributions.github.io/assets/Readme/submit-pull-request.png" width="410">
 
-<img style="float: right;" src="https://firstcontributions.github.io/assets/Readme/submit-pull-request.png" alt="提交 pull request" />
 
 不久之后，团队成员便会把你所有的变化合并到这个项目的主分支。更改合并后，你会收到一封电子邮件通知。
 
@@ -136,11 +136,11 @@ git submodule update --remote
 
 ## 问题
 
-### 国内访问 github 可能较慢
+###### 国内访问 github 可能较慢
 
 这里提供 github 加速方案和科学上网的 [链接](https://openhutb.github.io/doc/build_carla/#internet) 。
 
-### 向 github 上 push 的时候报 403 错误
+###### 向 github 上 push 的时候报 403 错误
 
 打开`.git/config`，比如：
 ```
@@ -152,7 +152,11 @@ url = https://OpenHUTB@github.com/OpenHUTB/bazaar.git
 ```
 然后就可以进行授权并继续push。
 
-### git push 报错unexpected disconnect while reading sideband packet
+
+###### 克隆个人仓库出错
+若出现SSL certificate problems请关闭加速器再克隆。
+
+###### git push 报错unexpected disconnect while reading sideband packet
 
 ```shell
 # 增加缓存至4G
