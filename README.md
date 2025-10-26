@@ -21,9 +21,12 @@
 
 ## 参考
 
-🧙 记住，你可以利用 [Markdown](https://docs.github.com/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) 的力量做很多事情 
+🌈 第一次参与开源项目请参考 [贡献指南](./CONTRIBUTING.md)
 
-🍿 [论文写作技巧](doc/paper_tips.md)
+🧙 记住，你可以利用 [Markdown](https://docs.github.com/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) 撰写文档，减少沟通的认知障碍
+
+
+👩‍💻 撰写论文请参考 [论文写作技巧](doc/paper_tips.md)
 
 
 
