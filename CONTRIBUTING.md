@@ -109,12 +109,14 @@ git push origin <新分支的名称>
 
 ## 其他
 
-1.同步子模块
+1.如果提交 Pull Request 时出现冲突，则参考 [在 GitHub 上解决合并冲突](https://docs.github.com/zh/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github) 。
+
+2.同步子模块
 ```
 git submodule update --remote
 ```
 
-2.本地检查`Pull requests`请求
+3.本地检查`Pull requests`请求
 有人发送`Pull requests`时，可以在 GitHub 上合并之前[测试并验证更改](https://docs.github.com/zh/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/checking-out-pull-requests-locally) 。
 
 
