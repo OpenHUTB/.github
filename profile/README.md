@@ -21,7 +21,7 @@ graph LR
     I --> K[控制原理 <a href='https://github.com/OpenHUTB/move'>move</a>]
     K --> A
     L[模拟引擎 <a href='https://github.com/OpenHUTB/engine'>engine</a>] --> C
-    L --> M[引擎文档 <a href='https://github.com/OpenHUTB/cpp'>engine_doc</a>]
+    L --> M[引擎文档 <a href='https://github.com/OpenHUTB/engine_doc'>engine_doc</a>]
     M --> S[C++ 文档 <a href='https://github.com/OpenHUTB/cpp'>cpp</a>]
     D --> M
     L --> N[无人机模拟器 <a href='https://github.com/OpenHUTB/air'>air</a>]
