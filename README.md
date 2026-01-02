@@ -21,11 +21,11 @@ graph LR
     B --> C[<b>人车模拟器 <a href='https://github.com/OpenHUTB/hutb'>hutb</a> </b>]
     A --> F[<a href='https://github.com/MyoHub/myoconverter'>格式转换</a> <a href='https://github.com/OpenHUTB/mujoco_plugin'>mujoco_plugin</a> ]
     F --> C
-    C --> D[文档 <a href='https://github.com/doc'>doc</a>]
-    D --> H[无人机文档 <a href='https://github.com/air_doc'>air_doc</a>]
-    D --> I[神经原理 <a href='https://github.com/neuro'>neuro</a>]
-    I --> J[规划 <a href='https://github.com/PFC'>PFC</a>]
-    I --> K[控制原理 <a href='https://github.com/move'>move</a>]
+    C --> D[文档 <a href='https://github.com/OpenHUTB/doc'>doc</a>]
+    D --> H[无人机文档 <a href='https://github.com/OpenHUTB/air_doc'>air_doc</a>]
+    D --> I[神经原理 <a href='https://github.com/OpenHUTB/neuro'>neuro</a>]
+    I --> J[规划 <a href='https://github.com/OpenHUTB/PFC'>PFC</a>]
+    I --> K[控制原理 <a href='https://github.com/OpenHUTB/move'>move</a>]
     K --> A
     L[模拟引擎 <a href='https://github.com/OpenHUTB/engine'>engine</a>] --> C
     L --> M[引擎文档 <a href='https://github.com/OpenHUTB/cpp'>engine_doc</a>]
@@ -34,8 +34,8 @@ graph LR
     L --> N[无人机模拟器 <a href='https://github.com/OpenHUTB/air'>air</a>]
     N --> C
     N --> H
-    D --> R[应用列表]
-    D --> Q[工具列表]
+    D --> R[<a href='https://github.com/OpenHUTB/.github/blob/master/README.md#%E5%BA%94%E7%94%A8%E5%88%97%E8%A1%A8'>应用列表</a>]
+    D --> Q[<a href='https://github.com/OpenHUTB/.github/blob/master/README.md#%E5%B7%A5%E5%85%B7%E5%88%97%E8%A1%A8'>工具列表</a>]
 
 
     style I fill:#e1f5fe
@@ -51,13 +51,6 @@ graph LR
 
 ```mermaid
 graph LR
-    A[应用列表] --> B[智慧交通 <a href='https://github.com/OpenHUTB/intelligent_traffic/'>intelligent_traffic</a>]
-    B --> C[交通孪生 <a href='https://github.com/OpenHUTB/traffic_twin/'>traffic_twin</a>]
-    C --> N[轨迹跟踪 <a href='https://github.com/OpenHUTB/Self_Driving_Car_Trajectory_Tracking'>Trajectory_Tracking</a>]
-    B --> D[模拟端 <a href='https://github.com/OpenHUTB/driving/'>driving</a> ]
-    O --> E[交通大模型 <a href='https://github.com/OpenHUTB/traffic_llm'>traffic_llm</a>]
-    O --> P[VSCode插件 <a href='https://github.com/OpenHUTB/vsc'>vsc</a>]
-    B --> O[<a href='https://github.com/OpenHUTB/mcp'>mcp</a>]
 
     A --> F[人的移动 <a href='https://github.com/OpenHUTB/locomotion'>locomotion</a>]
     F --> L[人的模拟 <a href='https://github.com/OpenHUTB/carla-pedestrians'>carla-pedestrians</a>]
@@ -68,6 +61,14 @@ graph LR
     H --> I[模仿学习 <a href='https://github.com/OpenHUTB/carla-roach'>carla-roach</a>]
     H --> J[多视角 <a href='https://github.com/OpenHUTB/CILv2_multiview'>CILv2_multiview</a>]
     G --> M[安全场景生成 <a href='https://github.com/OpenHUTB/ChatScene'>ChatScene</a>]
+
+    A[应用列表] --> B[智慧交通 <a href='https://github.com/OpenHUTB/intelligent_traffic/'>intelligent_traffic</a>]
+    B --> C[交通孪生 <a href='https://github.com/OpenHUTB/traffic_twin/'>traffic_twin</a>]
+    C --> N[轨迹跟踪 <a href='https://github.com/OpenHUTB/Self_Driving_Car_Trajectory_Tracking'>Trajectory_Tracking</a>]
+    B --> D[模拟端 <a href='https://github.com/OpenHUTB/driving/'>driving</a> ]
+    O --> E[交通大模型 <a href='https://github.com/OpenHUTB/traffic_llm'>traffic_llm</a>]
+    O --> P[VSCode插件 <a href='https://github.com/OpenHUTB/vsc'>vsc</a>]
+    B --> O[<a href='https://github.com/OpenHUTB/mcp'>mcp</a>]
 
     style A fill:#F5DEB3
 ```
