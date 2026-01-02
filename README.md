@@ -23,26 +23,23 @@
 graph LR
     A[人的肌肉骨骼 <a href='https://github.com/OpenHUTB/opensim-core'>OpenSim</a>] --> B[多体物体 <a href='https://github.com/OpenHUTB/chrono'>chrono</a>]
     B --> C[人车模拟器 <a href='https://github.com/OpenHUTB'>hutb</a>]
-    A --> D[myoconverter]
-    D --> E[mujoco]
+    A --> E[myoconverter <a href='https://github.com/OpenHUTB/mujoco_plugin'>mujoco</a>]
     E --> F[<a href='https://github.com/OpenHUTB/mujoco_plugin'>mujoco_plugin</a>]
     F --> C
-    C --> G[文档 <a href='https://github.com/OpenHUTB'>doc</a>]
-    G --> H[无人机文档 <a href='https://github.com/OpenHUTB'>air_doc</a>]
-    G --> I[神经原理 neuro]
+    C --> D[文档 <a href='https://github.com/OpenHUTB'>doc</a>]
+    D --> H[无人机文档 <a href='https://github.com/OpenHUTB'>air_doc</a>]
+    D --> I[神经原理 neuro]
     I --> J[规划 PFC]
     I --> K[控制原理 move]
     K --> A
     L[模拟引擎 <a href='https://github.com/OpenHUTB/engine'>engine</a>] --> C
     L --> M[引擎文档 engine_doc]
-    G --> M
+    D --> M
     L --> N[无人机模拟器 <a href='https://github.com/OpenHUTB/air'>air</a>]
     N --> C
     N --> H
-    G --> O[社区支持.github,latex]
-    G --> Q[工具 matlab, pfile, powerpoint2pdf]
-    P[C++ 文档 cpp] --> M
-    C --> R[应用 traffic_twin, locomotion]
+    D --> Q[工具列表]
+    D --> R[应用列表]
 
     style B fill:#e1f5fe
     style C fill:#ccffcc
@@ -50,6 +47,63 @@ graph LR
     style E fill:#f3e5f5
     style F fill:#F5DEB3
 ```
+
+
+
+### 应用列表
+
+```mermaid
+graph LR
+    A[应用列表] --> B[智慧交通 <a href='https://github.com/OpenHUTB/intelligent_traffic/'>intelligent_traffic</a>]
+    B --> C[交通孪生 <a href='https://github.com/OpenHUTB/traffic_twin/'>traffic_twin</a>]
+    B --> D[模拟端 <a href='https://github.com/OpenHUTB/driving/'>driving</a> ]
+    B --> E[交通大模型 <a href='https://github.com/OpenHUTB/traffic_llm'>traffic_llm</a>]
+
+    A --> F[人的移动 <a href='https://github.com/OpenHUTB/locomotion'>locomotion</a>]
+    F --> L[人的模拟 <a href='https://github.com/OpenHUTB/carla-pedestrians'>carla-pedestrians</a>]
+
+    A --> G[自动驾驶测试 <a href='https://github.com/OpenHUTB/platform'>platform</a>]
+    G --> N[轨迹跟踪 <a href='https://github.com/OpenHUTB/Self_Driving_Car_Trajectory_Tracking'>Trajectory_Tracking</a>]
+    G --> H[强化学习 <a href='https://github.com/OpenHUTB/carla_rl'>carla_rl</a>]
+    H --> K[<a href='https://github.com/OpenHUTB/Carla_Autonomous_Driving'>Carla_Autonomous_Driving</a>]
+    H --> I[模仿学习 <a href='https://github.com/OpenHUTB/carla-roach'>carla-roach</a>]
+    H --> J[多视角 <a href='https://github.com/OpenHUTB/CILv2_multiview'>CILv2_multiview</a>]
+    G --> M[安全场景生成 <a href='https://github.com/OpenHUTB/ChatScene'>ChatScene</a>]
+
+    style B fill:#e1f5fe
+    style C fill:#ccffcc
+    style D fill:#fff3e0
+    style E fill:#f3e5f5
+    style F fill:#F5DEB3
+```
+
+
+### 工具列表
+
+```mermaid
+graph LR
+    A[工具列表 <a href='https://github.com/OpenHUTB/chrono'>.github</a>] --> B[<a href='https://github.com/OpenHUTB/latex'>latex</a> 模板]
+    B --> C[课程设计 <a href='https://github.com/OpenHUTB/course'>course</a>]
+    B --> D[研究生论文 <a href='https://github.com/OpenHUTB/master'>master</a>]
+    B --> E[本科毕设 <a href='https://github.com/OpenHUTB/undergraduate'>undergraduate</a>]
+    E --> M[<a href='https://github.com/OpenHUTB/powerpoint2pdf'>sim</a>]
+    D --> N[<a href='https://github.com/OpenHUTB/emotion'>emotion</a>]
+    G --> F[<a href='https://github.com/OpenHUTB/powerpoint2pdf'>powerpoint2pdf</a>]
+    A --> G[工具脚本 <a href='https://github.com/OpenHUTB/utils'>utils</a>]
+    A --> H[<a href='https://github.com/OpenHUTB/matlab'>matlab</a>]
+    H --> I[<a href='https://github.com/OpenHUTB/matlab_exe_unpack'>matlab_exe_unpack</a>]
+    H --> J[<a href='https://github.com/OpenHUTB/matlab_pfile_unpack'>matlab_pfile_unpack</a>]
+    A --> K[<a href='https://github.com/OpenHUTB/ros'>ros</a>]
+    K --> L[<a href='https://github.com/OpenHUTB/ros-bridge'>ros-bridge</a>]
+
+    style B fill:#e1f5fe
+    style C fill:#ccffcc
+    style D fill:#fff3e0
+    style E fill:#f3e5f5
+    style F fill:#F5DEB3
+```
+
+
 
 ## 参考
 
