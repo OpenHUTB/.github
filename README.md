@@ -21,15 +21,29 @@
 
 ```mermaid
 graph LR
-    A[OpenSim] --> B[chrono]
-    B --> C[<a href='http://google.com'>hutb</a>]
+    A[人的肌肉骨骼 <a href='https://github.com/OpenHUTB/opensim-core'>OpenSim</a>] --> B[多体物体 <a href='https://github.com/OpenHUTB/chrono'>chrono</a>]
+    B --> C[人车模拟器 <a href='https://github.com/OpenHUTB'>hutb</a>]
     A --> D[myoconverter]
     D --> E[mujoco]
-    E --> F[mujoco_plugin]
+    E --> F[<a href='https://github.com/OpenHUTB/mujoco_plugin'>mujoco_plugin</a>]
     F --> C
-    C --> G[doc]
-    H[air_doc] --> G
-    
+    C --> G[文档 <a href='https://github.com/OpenHUTB'>doc</a>]
+    G --> H[无人机文档 <a href='https://github.com/OpenHUTB'>air_doc</a>]
+    G --> I[神经原理 neuro]
+    I --> J[规划 PFC]
+    I --> K[控制原理 move]
+    K --> A
+    L[模拟引擎 <a href='https://github.com/OpenHUTB/engine'>engine</a>] --> C
+    L --> M[引擎文档 engine_doc]
+    G --> M
+    L --> N[无人机模拟器 <a href='https://github.com/OpenHUTB/air'>air</a>]
+    N --> C
+    N --> H
+    G --> O[社区支持.github,latex]
+    G --> Q[工具 matlab, pfile, powerpoint2pdf]
+    P[C++ 文档 cpp] --> M
+    C --> R[应用 traffic_twin, locomotion]
+
     style B fill:#e1f5fe
     style C fill:#ccffcc
     style D fill:#fff3e0
