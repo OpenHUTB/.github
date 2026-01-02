@@ -19,6 +19,24 @@
 <img src="https://github.com/OpenHUTB/.github/blob/master/fig/repositories.png" width="50%">
 </a>
 
+```mermaid
+graph LR
+    A[OpenSim] --> B[chrono]
+    B --> C[<a href='http://google.com'>hutb</a>]
+    A --> D[myoconverter]
+    D --> E[mujoco]
+    E --> F[mujoco_plugin]
+    F --> C
+    C --> G[doc]
+    H[air_doc] --> G
+    
+    style B fill:#e1f5fe
+    style C fill:#ccffcc
+    style D fill:#fff3e0
+    style E fill:#f3e5f5
+    style F fill:#F5DEB3
+```
+
 ## 参考
 
 🌈 第一次参与开源项目请参考 [贡献指南](./CONTRIBUTING.md)
