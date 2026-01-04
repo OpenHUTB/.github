@@ -130,7 +130,7 @@ git submodule update --remote
 
 - 使用其他工具的教程
 
-| <a href="https://github.com/firstcontributions/first-contributions/blob/main/docs/cli-tool-tutorials/translations/Chinese/git-bash-windows-tutorial.zh-cn.md"><img alt="Git" src="https://cdn.icon-icons.com/icons2/2699/PNG/512/git_scm_logo_icon_170096.png" width="100"></a> | <a href="https://visualstudio.microsoft.com/zh-hans/vs/getting-started/"><img alt="Visual Studio 2017" src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Visual_Studio_2017_Logo.svg" width="100"></a> |  <a href="https://visualstudio.microsoft.com/zh-hans/vs/"><img alt="VS Code" src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Visual_Studio_Code_1.35_icon.png" width=100></a> |  <a href="../gui-tool-tutorials/github-windows-intellij-tutorial.md"><img alt="IntelliJ IDEA" src="https://upload.wikimedia.org/wikipedia/commons/1/1d/PyCharm_Icon.svg" width=100></a> |
+| <a href="https://git-scm.com/download/win"><img alt="Git" src="https://cdn.icon-icons.com/icons2/2699/PNG/512/git_scm_logo_icon_170096.png" width="100"></a> | <a href="https://visualstudio.microsoft.com/zh-hans/vs/getting-started/"><img alt="Visual Studio 2017" src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Visual_Studio_2017_Logo.svg" width="100"></a> |  <a href="https://visualstudio.microsoft.com/zh-hans/vs/"><img alt="VS Code" src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Visual_Studio_Code_1.35_icon.png" width=100></a> |  <a href="https://github.com/OpenHUTB/.github/blob/master/doc/pycharm-tutorial.md"><img alt="IntelliJ IDEA" src="https://upload.wikimedia.org/wikipedia/commons/1/1d/PyCharm_Icon.svg" width=100></a> |
 | :---: | :---: | :---: | :---: |
 | [Git Bash](https://github.com/firstcontributions/first-contributions/blob/main/docs/cli-tool-tutorials/translations/Chinese/git-bash-windows-tutorial.zh-cn.md) | [Visual Studio 2022](https://visualstudio.microsoft.com/zh-hans/vs/getting-started/) |  [Visual Studio Code](https://visualstudio.microsoft.com/zh-hans/vs/) | [Pycharm](https://github.com/OpenHUTB/.github/blob/master/doc/pycharm-tutorial.md) |
 
@@ -164,7 +164,6 @@ url = https://OpenHUTB@github.com/OpenHUTB/bazaar.git
 git config --global http.postBuffer 4048576000
 ```
 
-## 参考
+<!-- 参考 [第一次参与开源项目](https://github.com/firstcontributions/first-contributions/blob/main/docs/translations/README.zh-cn.md) -->
 
-* [第一次参与开源项目](https://github.com/firstcontributions/first-contributions/blob/main/docs/translations/README.zh-cn.md)
 
