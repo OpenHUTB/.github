@@ -109,7 +109,7 @@ git push origin <新分支的名称>
 
 ## 其他
 
-1.如果提交 Pull Request 时出现冲突，则参考 [在 GitHub 上解决合并冲突](https://docs.github.com/zh/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github) 。
+1.如果提交 Pull Request 时出现冲突，则参考 [使用 TortoiseGit 解决冲突](./doc/resolve_conflict.md) 或 [在 GitHub 上解决合并冲突](https://docs.github.com/zh/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github) 。
 
 2.同步子模块
 ```
