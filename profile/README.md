@@ -38,7 +38,7 @@ graph LR
     style R fill:#F5DEB3
 ```
 
-🌈 贡献指南 - 欢迎在各个项目的 [Issues 页面](https://github.com/OpenHUTB/hutb/issues) 进行交流，参与社区请参考 [贡献指南](https://github.com/OpenHUTB/.github/blob/master/CONTRIBUTING.md) 
+🌈 贡献指南 - 欢迎在各个项目的 [Issues 页面](https://github.com/OpenHUTB/hutb/issues) 进行交流（[解决访问速度慢](https://openhutb.github.io/doc/build_carla/#internet)），参与社区请参考 [贡献指南](https://github.com/OpenHUTB/.github/blob/master/CONTRIBUTING.md) 
 
 
 
