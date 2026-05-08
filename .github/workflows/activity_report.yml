@@ -21,7 +21,7 @@ jobs:
           result-encoding: string
       - uses: sorekz/user-activity-report@v1
         with:
-          token: ${{ secrets.TOKEN }}
-          organization: 'your-org'
+          token: ${{ secrets.GITHUB_TOKEN }}
+          organization: 'OpenHUTB'
           since: ${{ steps.since-date.outputs.result }}
           until: ${{ steps.until-date.outputs.result }}
