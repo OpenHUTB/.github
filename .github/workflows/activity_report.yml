@@ -20,9 +20,6 @@ on:
         description: 'Optional interval end date (format: yyyy-mm-dd)'
         required: false # Skipped if workflow dispatch input is not provided
 
-# Permission can be added at job level or workflow level
-permissions:
-  contents: write   # This is required to create/push the new git tag
 
 jobs:
   org-repo-metrics-report:
@@ -35,7 +32,7 @@ jobs:
       - name: Get organization repository metrics
         uses: nicklegan/github-org-repo-metrics-action@v2.1.0
         with:
-          token: ${{ secrets.ACTIVITY_REPORT }}
+          token: ${{ secrets.METRICS_REPORT }}
           fromdate: ${{ github.event.inputs.fromdate }} # Used for workflow dispatch input
           todate: ${{ github.event.inputs.todate }} # Used for workflow dispatch input
           # org: ''
