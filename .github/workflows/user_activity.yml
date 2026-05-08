@@ -10,3 +10,12 @@ jobs:
         with:
           token: ${{ secrets.METRICS_REPORT }}
           organization: 'OpenHUTB'
+          create-json: data.json
+          create-csv: data.csv
+          
+      - uses: actions/upload-artifact@v3
+        with:
+          name: reports
+          path: |
+            data.json
+            data.csv
