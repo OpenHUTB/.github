@@ -1,8 +1,8 @@
 name: Org Repo Metrics Report
 
 on:
-  push:
-  # schedule:
+  # push:
+  schedule:
     # Runs on the first day of the month at 00:00 UTC
     #
     #        ┌────────────── minute
@@ -10,7 +10,7 @@ on:
     #        │ │ ┌────────── day (month)
     #        │ │ │ ┌──────── month
     #        │ │ │ │ ┌────── day (week)
-    # - cron: '0 0 1 * *'
+    - cron: '0 0 1 * *'
   workflow_dispatch:
     inputs:
       fromdate:
