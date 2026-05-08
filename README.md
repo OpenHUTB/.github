@@ -105,6 +105,7 @@ graph LR
 
 🧙 记住，你可以利用 [Markdown](https://docs.github.com/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) 撰写文档，减少沟通的认知障碍
 
+[开源工具列表](./doc/tools.md)。
 
 👩‍💻 撰写论文请参考 [论文写作技巧](doc/paper_tips.md)
 
