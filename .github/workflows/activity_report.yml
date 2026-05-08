@@ -1,0 +1,27 @@
+name: 'User Activity Report'
+# 获取上个月的报告
+# 通过传递 ` sinceand`until参数并结合actions/github-script操作，可以生成上个月的报告。
+# 如果此工作流在 2023-08-05 运行，它将返回等于since: 2023-07`and` 的结果 until: 2023-08。
+on:
+  workflow_dispatch:
+  
+jobs:
+  'create-report':
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v6
+        id: since-date
+        with:
+          script: return new Date(new Date().getFullYear(), new Date().getMonth() - 1, 1) 
+          result-encoding: string
+      - uses: actions/github-script@v6
+        id: until-date
+        with:
+          script: return new Date(new Date().getFullYear(), new Date().getMonth(), 1) 
+          result-encoding: string
+      - uses: sorekz/user-activity-report@v1
+        with:
+          token: ${{ secrets.TOKEN }}
+          organization: 'your-org'
+          since: ${{ steps.since-date.outputs.result }}
+          until: ${{ steps.until-date.outputs.result }}
