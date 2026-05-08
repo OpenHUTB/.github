@@ -1,0 +1,12 @@
+name: 'User Activity Report'
+on:
+  workflow_dispatch:
+  
+jobs:
+  'create-report':
+    runs-on: ubuntu-latest
+    steps:
+      - uses: sorekz/user-activity-report@v1
+        with:
+          token: ${{ secrets.METRICS_REPORT }}
+          organization: 'OpenHUTB'
