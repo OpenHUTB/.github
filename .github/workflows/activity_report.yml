@@ -5,6 +5,10 @@ name: 'User Activity Report'
 on:
   workflow_dispatch:
   
+permissions:
+  actions: read
+  security-events: write
+
 jobs:
   'create-report':
     runs-on: ubuntu-latest
