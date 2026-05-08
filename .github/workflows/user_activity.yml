@@ -12,8 +12,8 @@ jobs:
           organization: 'OpenHUTB'
           create-json: data.json
           create-csv: data.csv
-          
-      - uses: actions/upload-artifact@v3
+
+      - uses: actions/upload-artifact@v4
         with:
           name: reports
           path: |
