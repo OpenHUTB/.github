@@ -103,7 +103,7 @@ graph LR
 
 🌈 第一次参与开源项目请参考 [贡献指南](./CONTRIBUTING.md)
 
-🧙 记住，你可以利用 [Markdown](https://docs.github.com/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) 撰写文档，减少沟通的认知障碍
+🧙 记住，你可以利用 [Markdown](https://docs.github.com/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) 撰写文档，减少沟通的认知障碍。
 
 [开源工具列表](./doc/tools.md)。
 
@@ -116,7 +116,7 @@ graph LR
 
 - 修改代码请参考 [贡献指南](CONTRIBUTING.md) 。
 
-- 如果参与过程中遇到任何问题，请参考 [注意事项](note.md) 或在对应项目的 [Issues页面](https://github.com/OpenHUTB/hutb/issues) 提出问题。
+- 如果参与过程中遇到任何问题，请参考 [提问的技巧](./doc/ask_question.md) 和 [注意事项](note.md) 或在对应项目的 [Issues页面](https://github.com/OpenHUTB/hutb/issues) 提出问题。
 
 - 如有加入组织、添加项目、获得更高权限等需要请把github用户名发送到邮箱 [2929@hutb.edu.cn](2929@hutb.edu.cn) 。
 
