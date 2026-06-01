@@ -3,7 +3,7 @@
 🙋‍♀️ 该社区提供一款加速[具身人](https://openhutb.github.io/doc/pedestrian/)、[无人车](https://openhutb.github.io/doc/vehicle/)、[无人机](https://openhutb.github.io/air_doc/)开发和测试的开源[影视级物理模拟器](https://github.com/OpenHUTB/hutb)（[下载链接](https://mp.weixin.qq.com/s/3Tzo0AZEMB2PFYAu_s8gOA)）。
 
 <p width="100%" display="flex" align="center">
-<a href="https://openhutb.github.io/doc/tuto_G_pedestrian_navigation/#conclusion"><img src="https://github.com/OpenHUTB/doc/blob/master/docs/img/pedestrian/cycle.gif?raw=true" width="30%" margin-right="10%"/></a>  <a href="https://openhutb.github.io/doc/tuto_G_chrono/"><img src="https://github.com/OpenHUTB/doc/blob/master/docs/img/chrono/vechile_turnover.gif?raw=true" width="33%"/></a> <a href="https://openhutb.github.io/air_doc/"><img src="https://github.com/OpenHUTB/air_doc/blob/master/docs/images/dev/HUTB_simulation.gif?raw=true" width="33%"/></a>
+<a href="https://openhutb.github.io/doc/tuto_G_pedestrian_navigation/#conclusion"><img src="https://github.com/OpenHUTB/doc/blob/master/docs/img/pedestrian/cycle.gif?raw=true" width="30%" margin-right="10%"/></a>  <a href="https://openhutb.github.io/doc/tuto_G_chrono/"><img src="https://github.com/OpenHUTB/chrono_doc/blob/master/docs/img/chrono/vechile_turnover.gif?raw=true" width="33%"/></a> <a href="https://openhutb.github.io/air_doc/"><img src="https://github.com/OpenHUTB/air_doc/blob/master/docs/images/dev/HUTB_simulation.gif?raw=true" width="33%"/></a>
 </p>
 
 🍿 实用资源 - 从[社区文档](https://openhutb.github.io/doc/)中可以找到您所需要的所有详细信息，项目之间的关系如下图所示
