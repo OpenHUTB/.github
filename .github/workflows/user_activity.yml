@@ -1,15 +1,40 @@
 name: 'User Activity Report'
 on:
   workflow_dispatch:
+  schedule:
+    # 在每个月第一天的 00:00 UTC 运行
+    #
+    #        ┌────────────── minute
+    #        │ ┌──────────── hour
+    #        │ │ ┌────────── day (month)
+    #        │ │ │ ┌──────── month
+    #        │ │ │ │ ┌────── day (week)
+    - cron: '0 0 1 * *'
   
 jobs:
   'create-report':
     runs-on: ubuntu-latest
     steps:
+      # 获得统计的开始时间（上个月的第一天）
+      - uses: actions/github-script@v6
+        id: since-date
+        with:
+          script: return new Date(new Date().getFullYear(), new Date().getMonth() - 1, 1) 
+          result-encoding: string
+      
+      # 获得统计的结束时间（本月的第一天）
+      - uses: actions/github-script@v6
+        id: until-date
+        with:
+          script: return new Date(new Date().getFullYear(), new Date().getMonth(), 1) 
+          result-encoding: string
+
       - uses: sorekz/user-activity-report@v1
         with:
           token: ${{ secrets.METRICS_REPORT }}
           organization: 'OpenHUTB'
+          since: ${{ steps.since-date.outputs.result }}
+          until: ${{ steps.until-date.outputs.result }}
           create-json: data.json
           create-csv: data.csv
 
