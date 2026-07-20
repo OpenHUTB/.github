@@ -5,3 +5,4 @@ mkdocs-bibtex
 # fix OSError: No pandoc was found: 
 pypandoc-binary
 mkdocs-video
+mkdocs-mermaid2-plugin

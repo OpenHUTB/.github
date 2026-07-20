@@ -1,6 +1,6 @@
 title: 主页
 
-# [OpenHUTB 社区](https://github.com/OpenHUTB/template)
+# [OpenHUTB 社区介绍](https://github.com/OpenHUTB/template)
 
 欢迎使用 OpenHUTB 的社区简介文档。
 
@@ -16,14 +16,15 @@ title: 主页
 
 ## 1. 简介 <span id="list"></span>
 
+- [git 教程](https://openhutb.github.io/git/?locale=zh_CN)
 
-🌈 第一次参与开源项目请参考 [贡献指南](https://github.com/OpenHUTB/.github/blob/master/CONTRIBUTING.md)
+- 第一次参与开源项目请参考 [贡献指南](./CONTRIBUTING.md)
 
-🧙 记住，你可以利用 [Markdown](https://docs.github.com/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) 撰写文档，减少沟通的认知障碍。
+- 记住，你可以利用 [Markdown](https://docs.github.com/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) 撰写文档，减少沟通的认知障碍。
 
 - [开源工具列表](./tools.md)。
 
-👩‍💻 撰写论文请参考 [论文写作技巧](./paper_tips.md)
+- 撰写论文请参考 [论文写作技巧](./paper_tips.md)
 
 ## 2. 问题 <span id="questions"></span>
 

@@ -72,7 +72,7 @@ git switch -c <新分支的名称>
 
 
 **5-7**.修改并本地测试没问题后，**提交代码到个人仓库**（参考 git 命令说明）：
-```shell script
+```shell
 git add README.md
 git commit -m "update"
 git push origin <新分支的名称>
