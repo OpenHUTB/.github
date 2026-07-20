@@ -17,18 +17,18 @@ title: 主页
 ## 1. 简介 <span id="list"></span>
 
 
-🌈 第一次参与开源项目请参考 [贡献指南](./CONTRIBUTING.md)
+🌈 第一次参与开源项目请参考 [贡献指南](https://github.com/OpenHUTB/.github/blob/master/CONTRIBUTING.md)
 
 🧙 记住，你可以利用 [Markdown](https://docs.github.com/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) 撰写文档，减少沟通的认知障碍。
 
-- [开源工具列表](./docs/tools.md)。
+- [开源工具列表](./tools.md)。
 
-👩‍💻 撰写论文请参考 [论文写作技巧](docs/paper_tips.md)
+👩‍💻 撰写论文请参考 [论文写作技巧](./paper_tips.md)
 
 ## 2. 问题 <span id="questions"></span>
 
 
-- 如果参与过程中遇到任何问题，请参考 [提问的技巧](./docs/ask_question.md) 和 [注意事项](note.md) 或在对应项目的 [Issues页面](https://github.com/OpenHUTB/hutb/issues) 提出问题。
+- 如果参与过程中遇到任何问题，请参考 [提问的技巧](./ask_question.md) 和 [注意事项](note.md) 或在对应项目的 [Issues页面](https://github.com/OpenHUTB/hutb/issues) 提出问题。
 
 - 如有加入组织、添加项目、获得更高权限等需要请把github用户名发送到邮箱 [2929@hutb.edu.cn](2929@hutb.edu.cn) 。
 
