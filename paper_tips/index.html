@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>撰写科学论文的技巧和窍门 - OpenHUTB 文档模板</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u64b0\u5199\u79d1\u5b66\u8bba\u6587\u7684\u6280\u5de7\u548c\u7a8d\u95e8";
+        var mkdocs_page_input_path = "paper_tips.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> OpenHUTB 文档模板
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="搜索文档" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">首页</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../introduction/">涉水效果</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">OpenHUTB 文档模板</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">撰写科学论文的技巧和窍门</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/OpenHUTB/template/edit/master/docs/paper_tips.md" class="icon icon-github"> 在 GitHub 上编辑</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <div><h1 id="_1">撰写科学论文的技巧和窍门</h1>
+<h2 id="_2">目录</h2>
+<ul>
+<li><a href="#tips-and-tricks-for-writing-scientific-papers">撰写科学论文的技巧和窍门</a><ul>
+<li><a href="#table-of-contents">目录</a></li>
+<li><a href="#what-is-this">这是什么？</a></li>
+</ul>
+</li>
+<li><a href="#typesetting-your-paper">排版你的论文</a><ul>
+<li><a href="#one-sentence-per-line">每行一个句子</a></li>
+<li><a href="#capitalization">大写</a></li>
+<li><a href="#keep-references-whole">保持参考文献完整</a></li>
+<li><a href="#tables">表格</a></li>
+<li><a href="#number-formatting">数字格式</a></li>
+</ul>
+</li>
+<li><a href="#mathematical-notation">数学符号</a><ul>
+<li><a href="#notation">符号</a></li>
+<li><a href="#define-custom-commands">定义自定义命令</a></li>
+<li><a href="#use-the-correct-notation-for-columns-et-elements">对列等元素使用正确的符号</a></li>
+<li><a href="#environments">环境</a></li>
+</ul>
+</li>
+<li><a href="#bibliography">参考书目</a><ul>
+<li><a href="#back-references">反向引用</a></li>
+</ul>
+</li>
+<li><a href="#creating-figures">创建图形</a><ul>
+<li><a href="#one-script-per-data-driven-figure">每个数据驱动图形一个脚本</a></li>
+<li><a href="#python-helper-script">Python 帮助脚本</a></li>
+<li><a href="#figures-format">图形格式</a></li>
+<li><a href="#rasterize-parts-of-the-figure">将图形的部分栅格化</a></li>
+</ul>
+</li>
+<li><a href="#useful-resources">有用的资源</a></li>
+</ul>
+<h1 id="_3">排版你的论文</h1>
+<p>排版是通过排列字体（例如字母和符号）来编写文本的过程。这主要关乎美观，但精美的字体设计能让文档更易于阅读，更赏心悦目，帮助读者更好地理解信息。</p>
+<p>我们列出了一些排版技巧和工具，以帮助您撰写文档。其中一些技巧仅适用于 LaTeX，但其他技巧则适用于任何语言。</p>
+<h2 id="_4">每行一个句子</h2>
+<p>编写 LaTeX 文档时，请在源文件中每行放一个句子。例如：
+</p><div class="highlight"><pre><span></span><code>This is my first sentence.
+This is the second one.
+</code></pre></div>
+而不是：
+<div class="highlight"><pre><span></span><code>This is my first sentence. This is the second one.
+</code></pre></div>
+<p>这样做的主要原因是为了源代码控制和协作：查看提交的更改时，如果每个句子都单独放在一行，就能更容易地识别哪些句子被更改了。这样，你的同志就能更容易地看到更改。</p>
+<p>另一个好处是，当我们的 LaTeX 编译器仅给出行号时，您将能够更好地识别错误。</p>
+<h2 id="_5">大写</h2>
+<p>下面我们将提到两种大写类型：</p>
+<ul>
+<li>句子格式：好书的标题</li>
+<li>标题格式：好书的标题</li>
+</ul>
+<p>所有章节、小节等标题都应使用标题格式。为了帮助您正确使用大写字母，有一个方便的网站： <a href="https://capitalizemytitle.com">capitalizemytitle.com</a>。</p>
+<h2 id="_6">保持参考文献完整</h2>
+<p>有时，对象（例如图形、表格、图表或算法）的名称及其参考编号会分成两行。例如，对象名称可能在一行，而参考编号则出现在下一行。</p>
+<p>为了确保 LaTeX 将对象名称及其引用保持在同一行，您可以在对象和引用之间使用<code>~</code>字符。通过<code>~</code>这种方式使用波浪号，您可以避免不雅的换行，并在 LaTeX 文档中保持对象名称和引用编号的格式一致。</p>
+<div class="highlight"><pre><span></span><code>Figure~<span class="k">\ref</span><span class="nb">{</span>fig:example<span class="nb">}</span> displays that the project ...
+</code></pre></div>
+<p>为了确保不会忘记使用波浪号，您可以通过创建自定义命令来简化自动化流程。以下是示例：</p>
+<div class="highlight"><pre><span></span><code><span class="k">\newcommand</span><span class="nb">{</span><span class="k">\refalg</span><span class="nb">}</span>[1]<span class="nb">{</span>Algorithm~<span class="k">\ref</span><span class="nb">{</span>#1<span class="nb">}}</span>
+<span class="k">\newcommand</span><span class="nb">{</span><span class="k">\refapp</span><span class="nb">}</span>[1]<span class="nb">{</span>Appendix~<span class="k">\ref</span><span class="nb">{</span>#1<span class="nb">}}</span>
+<span class="k">\newcommand</span><span class="nb">{</span><span class="k">\refchap</span><span class="nb">}</span>[1]<span class="nb">{</span>Chapter~<span class="k">\ref</span><span class="nb">{</span>#1<span class="nb">}}</span>
+<span class="k">\newcommand</span><span class="nb">{</span><span class="k">\refeq</span><span class="nb">}</span>[1]<span class="nb">{</span>Equation~<span class="k">\ref</span><span class="nb">{</span>#1<span class="nb">}}</span>
+<span class="k">\newcommand</span><span class="nb">{</span><span class="k">\reffig</span><span class="nb">}</span>[1]<span class="nb">{</span>Figure~<span class="k">\ref</span><span class="nb">{</span>#1<span class="nb">}}</span>
+<span class="k">\newcommand</span><span class="nb">{</span><span class="k">\refsec</span><span class="nb">}</span>[1]<span class="nb">{</span>Section~<span class="k">\ref</span><span class="nb">{</span>#1<span class="nb">}}</span>
+<span class="k">\newcommand</span><span class="nb">{</span><span class="k">\reftab</span><span class="nb">}</span>[1]<span class="nb">{</span>Table~<span class="k">\ref</span><span class="nb">{</span>#1<span class="nb">}}</span>
+</code></pre></div>
+<p>一旦定义了这些命令，就无需再写：</p>
+<div class="highlight"><pre><span></span><code>Figure~<span class="k">\ref</span><span class="nb">{</span>fig:example<span class="nb">}</span>
+</code></pre></div>
+<p>只需输入：</p>
+<div class="highlight"><pre><span></span><code><span class="k">\reffig</span><span class="nb">{</span>fig:example<span class="nb">}</span>
+</code></pre></div>
+<h2 id="_7">表格</h2>
+<p><a href="https://github.com/Wookai/paper-tips-and-tricks/tree/master/examples/booktabs">(完整示例)</a></p>
+<p><a href="https://www.ctan.org/pkg/booktabs">booktabs</a> 可以帮助您制作干净、美观的表格。</p>
+<div class="highlight"><pre><span></span><code><span class="k">\usepackage</span><span class="nb">{</span>booktabs<span class="nb">}</span>
+<span class="c">% --</span>
+<span class="k">\begin</span><span class="nb">{</span>table<span class="nb">}</span>
+    <span class="k">\centering</span>
+    <span class="k">\begin</span><span class="nb">{</span>tabular<span class="nb">}{</span>lcc<span class="nb">}</span>
+        <span class="k">\toprule</span>
+        <span class="nb">&amp;</span> <span class="k">\multicolumn</span><span class="nb">{</span>2<span class="nb">}{</span>c<span class="nb">}{</span>Data<span class="nb">}</span> <span class="k">\\</span> <span class="k">\cmidrule</span>(lr)<span class="nb">{</span>2-3<span class="nb">}</span>
+        Name <span class="nb">&amp;</span> Column 1 <span class="nb">&amp;</span> Another column <span class="k">\\</span>
+        <span class="k">\midrule</span>
+        Some data <span class="nb">&amp;</span> 10 <span class="nb">&amp;</span> 95 <span class="k">\\</span>
+        Other data <span class="nb">&amp;</span> 30 <span class="nb">&amp;</span> 49 <span class="k">\\</span>
+        <span class="k">\addlinespace</span>
+        Different stuff <span class="nb">&amp;</span> 99 <span class="nb">&amp;</span> 12 <span class="k">\\</span>
+        <span class="k">\bottomrule</span>
+    <span class="k">\end</span><span class="nb">{</span>tabular<span class="nb">}</span>
+    <span class="k">\caption</span><span class="nb">{</span>My caption.<span class="nb">}</span>
+    <span class="k">\label</span><span class="nb">{</span>tab-label<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>table<span class="nb">}</span>
+</code></pre></div>
+<p><img alt="Booktabs example" src="https://github.com/Wookai/paper-tips-and-tricks/raw/master/examples/booktabs/booktabs.png"></p>
+<p>一般来说，避免在表格中使用垂直线。如果要对列进行分组，请在标题中使用<code>\cmidrule</code> 进行分组。您也可以使用 <code>\addlinespace</code> 用空格代替水平线。</p>
+<p>列标题应使用句子格式大写（请参阅 http://www.chicagomanualofstyle.org/15/ch13/ch13_sec019.html ）。</p>
+<p>您可以在这里找到更多关于表格格式的建议： http://www.inf.ethz.ch/personal/markusp/teaching/guides/guide-tables.pdf 。
+这里有一个很棒的 GIF，演示了其中一些规则：</p>
+<p><img alt="Better table formatting" src="http://darkhorseanalytics.com/blog/wp-content/uploads/2014/03/ClearOffTheTableMd.gif"></p>
+<h2 id="_8">数字格式</h2>
+<p><a href="https://github.com/Wookai/paper-tips-and-tricks/tree/master/examples/siunitx">(完整示例)</a></p>
+<p>使用 <a href="https://ctan.org/pkg/siunitx">siunitx</a> 包格式化所有数字、货币、单位等：
+</p><div class="highlight"><pre><span></span><code><span class="k">\usepackage</span><span class="nb">{</span>siunitx<span class="nb">}</span>
+<span class="c">% ---</span>
+This thing costs <span class="k">\SI</span><span class="nb">{</span>123456<span class="nb">}{</span><span class="k">\$</span><span class="nb">}</span>.
+There are <span class="k">\num</span><span class="nb">{</span>987654<span class="nb">}</span> people in this room, <span class="k">\SI</span><span class="nb">{</span>38<span class="nb">}{</span><span class="k">\percent</span><span class="nb">}</span> of which are male.
+</code></pre></div>
+<p><img alt="Siunitx formatting" src="https://github.com/Wookai/paper-tips-and-tricks/raw/master/examples/siunitx/siunitx-formatting.png"></p>
+<p>您还可以使用它来对数字进行舍入：
+</p><div class="highlight"><pre><span></span><code><span class="k">\usepackage</span><span class="nb">{</span>siunitx<span class="nb">}</span>
+<span class="c">% ---</span>
+<span class="k">\sisetup</span><span class="nb">{</span>
+    round-mode = places,
+    round-precision = 3
+<span class="nb">}</span><span class="c">%</span>
+You can also round numbers, for example <span class="k">\num</span><span class="nb">{</span>1.23456<span class="nb">}</span>.
+</code></pre></div>
+<img alt="Siunitx formatting" src="https://github.com/Wookai/paper-tips-and-tricks/raw/master/examples/siunitx/siunitx-rounding.png">
+<p>最后，它可以帮助您更好地对齐表格中的数字：
+</p><div class="highlight"><pre><span></span><code><span class="k">\usepackage</span><span class="nb">{</span>booktabs<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>siunitx<span class="nb">}</span>
+<span class="c">%---</span>
+<span class="k">\begin</span><span class="nb">{</span>table<span class="nb">}</span>
+    <span class="k">\centering</span>
+    <span class="k">\begin</span><span class="nb">{</span>tabular<span class="nb">}{</span>lS<span class="nb">}</span>
+        <span class="k">\toprule</span>
+        Name <span class="nb">&amp;</span> <span class="nb">{</span>Value<span class="nb">}</span> <span class="k">\\</span> <span class="c">% headers of S columns have to be in {}</span>
+        <span class="k">\midrule</span>
+        Test <span class="nb">&amp;</span> 2.3456 <span class="k">\\</span>
+        Blah <span class="nb">&amp;</span> 34.2345 <span class="k">\\</span>
+        Foo <span class="nb">&amp;</span> -6.7835 <span class="k">\\</span>
+        Bar <span class="nb">&amp;</span> 5642.5 <span class="k">\\</span>
+        <span class="k">\bottomrule</span>
+    <span class="k">\end</span><span class="nb">{</span>tabular<span class="nb">}</span>
+    <span class="k">\caption</span><span class="nb">{</span>Numbers alignment with <span class="k">\texttt</span><span class="nb">{</span>siunitx<span class="nb">}</span>.<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>table<span class="nb">}</span>
+</code></pre></div>
+<img alt="Siunitx formatting" src="https://github.com/Wookai/paper-tips-and-tricks/raw/master/examples/siunitx/siunitx-table.png">
+<h1 id="_9">数学符号</h1>
+<p><a href="https://github.com/Wookai/paper-tips-and-tricks/tree/master/examples/notation">(完整示例)</a></p>
+<p>在写方程式时，以连贯一致的方式书写变量、向量、矩阵等会很有帮助。它可以帮助读者识别你在说什么，并记住每个符号的语义。</p>
+<h2 id="_10">符号</h2>
+<p>我们提出以下数学书写规则：</p>
+<ul>
+<li>变量用小写斜体表示： <em>x</em> (<code>$x$</code>)</li>
+<li>向量的小写斜体粗体： <strong><em>x</em></strong> (<code>$\mathbold{x}$</code>)</li>
+<li>矩阵的大写斜体粗体： <strong><em>X</em></strong> (<code>$\mathbold{X}$</code>)</li>
+<li>大写斜体表示随机变量： <em>X</em> (<code>$X$</code>)</li>
+</ul>
+<p>该<code>\mathbold</code>命令来自<a href="https://www.ctan.org/pkg/fixmath"><code>fixmath</code></a>包，类似于<code>\boldmath</code>或<code>\bm</code>，不同之处在于所有符号都是斜体，甚至希腊字母也是如此（其他包不会将希腊字母斜体化）。</p>
+<p>向变量添加索引或指数时，请确保将它们添加到变量的样式之外，即写为<code>$\mathbold{x}_i$</code>而不是<code>$\mathbold{x_i}$</code>。</p>
+<h3 id="_11">定义自定义命令</h3>
+<p>因为我们经常引用变量，所以建议定义以下两个命令：</p>
+<div class="highlight"><pre><span></span><code><span class="k">\renewcommand</span><span class="nb">{</span><span class="k">\vec</span><span class="nb">}</span>[1]<span class="nb">{</span><span class="k">\mathbold</span><span class="nb">{</span>#1<span class="nb">}}</span>
+<span class="k">\newcommand</span><span class="nb">{</span><span class="k">\mat</span><span class="nb">}</span>[1]<span class="nb">{</span><span class="k">\mathbold</span><span class="nb">{</span>#1<span class="nb">}}</span>
+</code></pre></div>
+<p>然后，您就可以在文档中使用<code>$\vec{x}$</code>和 <code>$\mat{X}$</code> 了。如果您决定更改矩阵的格式，只需更改<code>\mat</code>命令即可，它将更新整个文档。</p>
+<p>我们还建议为最常用的变量定义命令。例如，如果您经常使用<code>\vec{x}</code>和<code>\mat{X}</code>，可以考虑定义以下命令：</p>
+<div class="highlight"><pre><span></span><code><span class="k">\newcommand</span><span class="nb">{</span><span class="k">\vx</span><span class="nb">}{</span><span class="k">\vec</span><span class="nb">{</span>x<span class="nb">}}</span>
+<span class="k">\newcommand</span><span class="nb">{</span><span class="k">\vX</span><span class="nb">}{</span><span class="k">\mat</span><span class="nb">{</span>X<span class="nb">}}</span>
+</code></pre></div>
+<p>然后您可以写出更紧凑的方程： <code>$\vx^T \vy = \vZ$</code>。</p>
+<h3 id="_12">对列和元素使用正确的符号</h3>
+<p>请注意，应始终根据变量的类型来设置其样式。例如，向量的第 $i$ 个元素<code>\vx</code>是<code>x_i</code>，而非<code>\vx_i</code>（它是一个数字）。类似地，如果有一个矩阵<code>\vX</code>，则可以将其第 <em>i</em> 列称为<code>\vx_i</code>（它是一个向量，因此以粗体显示），如果其元素<code>x_{ij}</code>，而非 <code>\vX_i</code>且<code>\vX_{ij}</code>，则可以将其第 <em>i</em> 列称为<code>\vx_i</code>。</p>
+<h2 id="_13">环境</h2>
+<p>用于<code>\(...\)</code>编写内联方程式。您也可以使用<code>$...$</code>，但它是一个 TeX 命令，并且会给出更隐晦的错误信息。</p>
+<p>要使公式居中并排，请勿使用（这是LaTeX 的致命错误<code>$$...$$</code>之一）。虽然可以使用，但间距不正确。请使用<code>\begin{equation*}</code>或<code>\begin{align*}</code>。</p>
+<h1 id="_14">参考书目</h1>
+<h2 id="_15">反向引用</h2>
+<p><a href="https://github.com/Wookai/paper-tips-and-tricks/tree/master/examples/backref">(完整示例)</a></p>
+<p>对于较长的文档，例如学士、硕士或博士论文，在参考书目中添加参考文献以显示参考文献的引用位置会很有用。为此，只需在<code>hyperref</code>包中添加<code>backref=page</code>选项：</p>
+<div class="highlight"><pre><span></span><code><span class="k">\usepackage</span><span class="na">[backref=page]</span><span class="nb">{</span>hyperref<span class="nb">}</span>
+</code></pre></div>
+<p>您可以使用以下命令自定义反向引用的显示方式：</p>
+<div class="highlight"><pre><span></span><code><span class="k">\renewcommand*</span><span class="nb">{</span><span class="k">\backref</span><span class="nb">}</span>[1]<span class="nb">{}</span>
+<span class="k">\renewcommand*</span><span class="nb">{</span><span class="k">\backrefalt</span><span class="nb">}</span>[4]<span class="nb">{{</span><span class="k">\footnotesize</span> [<span class="c">%</span>
+    <span class="k">\ifcase</span> #1 Not cited.<span class="c">%</span>
+    <span class="k">\or</span> Cited on page~#2<span class="c">%</span>
+    <span class="k">\else</span> Cited on pages #2<span class="c">%</span>
+    <span class="k">\fi</span><span class="c">%</span>
+]<span class="nb">}}</span>
+</code></pre></div>
+<p><img alt="Backref custom appearance" src="https://github.com/Wookai/paper-tips-and-tricks/raw/master/examples/backref/backref.png"></p>
+<h1 id="_16">创建图形</h1>
+<p>图表是任何论文的重要组成部分，因为它们可以向读者传达你的研究结果。你应该思考每幅图上的信息究竟能传达给读者什么，并确保信息量刚好足以支撑你的信息，不要过多。例如，如果你想展示二维点的模式（有两个分离良好的簇），就没有必要在坐标轴上标注刻度和数值（比例尺其实并不重要）？图表不应该过于复杂。用几幅图来传达一两条信息（方法A优于方法B，但收敛速度较慢）比用一张又大又乱的图表要好。</p>
+<h2 id="_17">每个数据驱动的图形对应一个脚本</h2>
+<p>有些图形是手工制作的，例如用于解释系统或提供全局视图；而另一些图形则是数据驱动的，即用于说明一些数据。这些数据驱动的图形应尽可能脚本化：理想情况下，如果数据发生变化，只需运行一次脚本即可更新图形，而无需任何其他干预（设置视图、缩放、保存/裁剪图形等）。同样，如果生成图形所需的数据需要几秒钟以上的时间，则应该使用第一个脚本来计算和保存数据，并使用第二个脚本来绘制数据。这样，您将在绘图时节省大量时间：您不必在对图形进行每次微小更改后等待才能看到其效果。</p>
+<p>我们还建议将用于生成图形的命令保存在 LaTeX 文件中，例如作为图形上方的注释，特别是当脚本需要参数时。</p>
+<div class="highlight"><pre><span></span><code><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+
+<span class="k">\usepackage</span><span class="nb">{</span>graphicx<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+
+<span class="c">% python figure_example.py --save ../../examples/figure/figure.eps</span>
+<span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>
+    <span class="k">\centering</span>
+    <span class="k">\includegraphics</span><span class="nb">{</span>figure.eps<span class="nb">}</span>
+    <span class="k">\caption</span><span class="nb">{</span>Example of a sigmoid function<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</code></pre></div>
+<h2 id="python">Python 帮助脚本</h2>
+<p>如果可能，所有图形的标签、坐标轴等都应使用相同的字体。尤其要注意，不要让一个图形的标签/刻度较大，而另一个图形的标签/刻度较小。一个解决方案是在生成图形的脚本中定义图形的大小，而不是在文档中重新缩放（例如，不要在 LaTeX 文档中更改图形的宽度设置<code>\textwidth</code>）。</p>
+<p>为了获得一致的图形，我们建议使用类似于我们的辅助脚本<a href="https://github.com/Wookai/paper-tips-and-tricks/blob/master/src/python/plot_utils.py"><code>plot_utils.py</code></a>。使用此脚本，您只需调用<code>figure_setup()</code>函数定义所有尺寸，然后创建所需尺寸的图形并保存即可。</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">plot_utils</span> <span class="k">as</span> <span class="nn">pu</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">))</span>
+
+    <span class="n">pu</span><span class="o">.</span><span class="n">figure_setup</span><span class="p">()</span>
+
+    <span class="n">fig_size</span> <span class="o">=</span> <span class="n">pu</span><span class="o">.</span><span class="n">get_fig_size</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">fig_size</span><span class="p">)</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">'b'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="n">pu</span><span class="o">.</span><span class="n">plot_lw</span><span class="p">())</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'$x$'</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'$</span><span class="se">\\</span><span class="s1">sigma(x)$'</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_axisbelow</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">save</span><span class="p">:</span>
+        <span class="n">pu</span><span class="o">.</span><span class="n">save_fig</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">save</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
+
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">'-s'</span><span class="p">,</span> <span class="s1">'--save'</span><span class="p">)</span>
+
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+    <span class="n">main</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="_18">图形格式</h2>
+<p>我们建议将所有图表保存为<code>EPS</code>格式。这样，您可以同时使用<code>latex</code>和<code>pdflatex</code>来生成文档，并欣赏精美的矢量图形和文本。</p>
+<p>自 2015 年 9 月起，在 Mac OS X 上以及使用最新版本的 Python、Matplotlib 和 TeX Live 时，打印直接用 Matplotlib 保存为 <code>PDF</code> 格式的图表时会有一些质量损失。打印在纸上时，这个问题会更加明显；您可以亲自尝试一下。这也是为什么最好将 Matplotlib 生成的图片保存为 <code>EPS</code> 格式的原因之一。如果您确实只想保留图表的 PDF 版本，请使用 <code>epspdf</code> 命令行工具——生成的 PDF 会比直接用 Matplotlib 生成的 PDF 更好。</p>
+<p>为了完整起见，请注意 Matplotlib 的另一个后端 <a href="http://matplotlib.org/users/pgf.html">PGF</a> ，其结果略胜一筹。然而，截至 2015 年 9 月，生成的 PDF 文件大小是使用默认后端和 <code>epspdf</code> 生成的 PDF 文件的两倍。</p>
+<p>Matplotlib 即使使用 <a href="http://matplotlib.org/users/tight_layout_guide.html">紧凑的布局功能</a> ，有时也会在页边距中添加过多的空白。一个漂亮的命令行工具 <code>pdfcrop</code>，可以将 PDF 裁剪到最紧密的边界框。</p>
+<h2 id="_19">将图形的部分栅格化</h2>
+<p>如果绘图中包含大量数据点，生成的 EPS 文件可能会非常大。您可以将图形保存为 PNG 文件，但这会导致文本模糊。解决方案是将图形的部分内容栅格化，即告诉 <code>matplotlib</code> 数据点必须在 EPS 文件中渲染为位图，其余部分则渲染为矢量格式。</p>
+<p>您可以将 <code>rasterized=True</code> 关键字传递给 <code>matplotlib</code> 中的大多数绘图函数。您还可以使用 <code>zorder</code> 来设置不同的图层，并使用轴的 <code>set_rasterization_zorder()</code> 方法告诉 <code>matplotlib</code> 对给定 <code>zorder</code> 以下的所有图层进行栅格化。有关栅格化的示例，请参阅 <a href="https://github.com/Wookai/paper-tips-and-tricks/blob/master/src/python/figure_rasterized_example.py">figure_rasterized_example.py</a> 和 http://matplotlib.org/examples/misc/rasterization_demo.html。</p>
+<h1 id="_20">其他检查</h1>
+<h2 id="_21">内容</h2>
+<ul>
+<li>相关工作不是对现有论文的罗列，而是做评述，最后还需要引出自己的工作</li>
+</ul>
+<h2 id="_22">形式</h2>
+<ul>
+<li>所有图片尽量用矢量图，生成PDF后保证能够用鼠标选中里面的文字，放大后不会失真</li>
+<li>图中的字体要注意，需要按照模板要求</li>
+<li>如果文章只出现一次，又不是非常通用的缩写，可以不用缩写。并且只在第一次出现的时候声明缩写</li>
+<li>所有文中的符号都是公式符号，而不是英文</li>
+<li>latex 编译生成中间文件（ <em>.aux, </em>.log等）和输出pdf文件不用放到仓库</li>
+<li>一次性不要提交太多文件，不好审核，提交前检查下，比如大的二进制文件可以提供一个下载链接</li>
+<li>缓存、输出文件必须要放到仓库，比如：__pycache__不需要的缓存文件、训练的模型、中间记录文件、.pyc文件、checkpoint文件、<em>.pth文件最多放一个、</em>.npy文件等</li>
+</ul>
+<h1 id="_23">有用的资源</h1>
+<ul>
+<li>自动将标题大写: https://capitalizemytitle.com</li>
+<li>芝加哥格式手册: http://www.chicagomanualofstyle.org</li>
+<li>命令行检查模棱两可的词语、被动语态等: https://github.com/devd/Academic-Writing-Check</li>
+<li>LaTeX 2e 使用基本指南: http://ctan.math.utah.edu/ctan/tex-archive/info/l2tabu/english/l2tabuen.pdf</li>
+<li><a href="https://github.com/Wookai/paper-tips-and-tricks/tree/master">撰写科学论文的技巧和窍门</a></li>
+</ul></div>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>OpenHUTB 版权所有 &copy; 2026</p>
+  </div>
+
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/OpenHUTB/template" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="https://cdn.rawgit.com/knsv/mermaid/6.0.0/dist/mermaid.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script>
+      <script src="../js/umlconvert.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
