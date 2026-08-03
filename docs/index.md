@@ -38,6 +38,10 @@ title: 主页
 - 网络不稳定可以参考 [github 加速方案和科学上网链接](https://openhutb.github.io/doc/build_carla/#internet) 
 
 
+## 3. 社区宣传  <span id="propaganda"></span>
+
+- [Markdown 一键发到各个社交平台](./markdown2anything.md)
+
 
 ___
 
