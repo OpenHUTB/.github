@@ -73,9 +73,9 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#1">1. 把多台机器放进同一个虚拟局域网</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#2-windows">2. Windows远程登录</a>
+    <li class="toctree-l2"><a class="reference internal" href="#2-rustdesk">2. RustDesk配置与连接</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#rustdesk">附：RustDesk配置与连接</a>
+    <li class="toctree-l2"><a class="reference internal" href="#windows">附：Windows远程登录</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#_1">高级操作</a>
         <ul>
@@ -151,20 +151,7 @@
 <p>提示登录成功后，点击<code>visit the console</code>访问控制台，就可以看到已加入虚拟局域网的设备列表
 <img alt="" src="../img/rustdesk/login_successful.png"></p>
 </blockquote>
-<h2 id="2-windows">2. Windows远程登录</h2>
-<p>在被控机上启用 Windows 远程桌面连接</p>
-<blockquote>
-<p><img alt="" src="../img/rustdesk/enable_remote.png"></p>
-</blockquote>
-<p>如果远程的机器为 Windows，只需要打开本地电脑的<code>远程桌面连接</code>，使用 tailscale 的 IP 地址（将图中的型号<code>*</code>换成自己的IP地址），输入Windows系统的用户名/密码即可登录。</p>
-<blockquote>
-<p><img alt="" src="../img/rustdesk/win_remote.png"></p>
-</blockquote>
-<div class="admonition 注意">
-<p class="admonition-title">注意</p>
-<p>如果使用 windows 这一步登录成功，后面的“RustDesk配置与连接”就不再需要。如果是 Ubuntu、Mac、Android、iOS等其他平台，请查看后面的“RustDesk配置与连接”。</p>
-</div>
-<h2 id="rustdesk">附：RustDesk配置与连接</h2>
+<h2 id="2-rustdesk">2. RustDesk配置与连接</h2>
 <ul>
 <li>
 <p><a href="https://github.com/rustdesk/rustdesk/releases">下载</a>并安装RustDesk客户端。</p>
@@ -180,11 +167,26 @@
 <p class="admonition-title">问题</p>
 <p>如果连接时报错：<code>连接错误 Failed to connect to 100.*.*.*:21118:请稍后再试</code>，确认被控端下面是否有“服务未运行”的提示，如果有请点击“启动服务”，然后再次连接即可。</p>
 </div>
+<h2 id="windows">附：Windows远程登录</h2>
+<p>在被控机上启用 Windows 远程桌面连接</p>
+<blockquote>
+<p><img alt="" src="../img/rustdesk/enable_remote.png"></p>
+</blockquote>
+<p>如果远程的机器为 Windows，只需要打开本地电脑的<code>远程桌面连接</code>，使用 tailscale 的 IP 地址（将图中的型号<code>*</code>换成自己的IP地址），输入Windows系统的用户名/密码即可登录。</p>
+<blockquote>
+<p><img alt="" src="../img/rustdesk/win_remote.png"></p>
+</blockquote>
+<div class="admonition 注意">
+<p class="admonition-title">注意</p>
+<p>如果使用 windows 这一步登录成功，前面第二步的“RustDesk配置与连接”就不再需要。如果是 Ubuntu、Mac、Android、iOS等其他平台，请查第二步的“RustDesk配置与连接”。</p>
+</div>
 <h2 id="_1">高级操作</h2>
 <h3 id="_2">邀请其他成员进入虚拟局域网</h3>
 <p><img alt="" src="../img/rustdesk/invite_external_user.png"></p>
 <h2 id="_3">参考</h2>
 <ul>
+<li><a href="https://github.com/tailscale/tailscale">tailscale 源代码仓库</a> - <a href="https://tailscale.com/opensource">tailscale 开源介绍</a></li>
+<li><a href="https://github.com/rustdesk/rustdesk">rustdesk 源代码仓库</a></li>
 <li><a href="https://www.cnblogs.com/lefour/p/18866579">使用 Tailscale 实现内网穿透+RDP远程控制</a></li>
 </ul></div>
               
