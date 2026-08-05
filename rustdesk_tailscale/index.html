@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>免费远程办公解决方案：tailscale+rustdesk - OpenHUTB 社区介绍</title>
+    <title>远程办公解决方案：tailscale（免费）+rustdesk（开源） - OpenHUTB 社区介绍</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,7 +13,7 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "\u514d\u8d39\u8fdc\u7a0b\u529e\u516c\u89e3\u51b3\u65b9\u6848\uff1atailscale+rustdesk";
+        var mkdocs_page_name = "\u8fdc\u7a0b\u529e\u516c\u89e3\u51b3\u65b9\u6848\uff1atailscale\uff08\u514d\u8d39\uff09+rustdesk\uff08\u5f00\u6e90\uff09";
         var mkdocs_page_input_path = "rustdesk_tailscale.md";
         var mkdocs_page_url = null;
       </script>
@@ -58,7 +58,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">免费远程办公解决方案：tailscale+rustdesk</li>
+      <li class="breadcrumb-item active">远程办公解决方案：tailscale（免费）+rustdesk（开源）</li>
     <li class="wy-breadcrumbs-aside">
           <a href="https://github.com/OpenHUTB/.github/edit/master/docs/rustdesk_tailscale.md"> 编辑页面</a>
     </li>
@@ -68,36 +68,38 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <div><h1 id="tailscalerustdesk">免费远程办公解决方案：tailscale+rustdesk</h1>
-<h2 id="1-tailscale">1. tailscale安装与配置</h2>
-<p>1.<a href="https://login.tailscale.com/start">注册tailscale</a> 并在需要远程登录的机器上下载<a href="https://tailscale.com/download/windows">tailscale</a> 安装。</p>
+                <div><h1 id="tailscalerustdesk">远程办公解决方案：tailscale（免费）+rustdesk（开源）</h1>
+<h2 id="1">1. 把多台机器放进同一个虚拟局域网</h2>
+<ul>
+<li><a href="https://login.tailscale.com/start">注册tailscale</a> 并在需要远程登录的机器上下载<a href="https://tailscale.com/download/windows">tailscale</a> 安装。</li>
+</ul>
 <p><img alt="" src="../img/rustdesk/sign_up.png"></p>
-<p>并将设备添加到同一网络中</p>
+<ul>
+<li>将设备添加到同一网络中（添加后就可以在<a href="https://console.tailscale.com/admin/machines">tailscale后台</a>进行管理。
+可以将key设置成永久，防止过段时间需要重新登录）</li>
+</ul>
 <p><img alt="" src="../img/rustdesk/add_device.png"></p>
-<p>3.添加后就可以在<a href="https://console.tailscale.com/admin/machines">tailscale后台</a>进行管理。
-可以将key设置成永久，防止过段时间需要重新登录。
-<img alt="" src="../img/rustdesk/disable_key_expiry.png"></p>
+<p><img alt="" src="../img/rustdesk/disable_key_expiry.png"></p>
 <h2 id="2-windows">2. Windows远程登录</h2>
 <p><img alt="" src="../img/rustdesk/win_remote.png"></p>
 <p>如果远程的机器为 Windows，只需要打开本地电脑的远程登录，使用 tailscale 的 IP 地址，输入Windows系统的用户名/密码即可登录，后面的“RustDesk配置与连接”就不再需要。</p>
 <p>如果是 Ubuntu、Mac、Android、iOS等其他平台，请查看后面的“RustDesk配置与连接”。</p>
 <h2 id="rustdesk">附：RustDesk配置与连接</h2>
-<p>1.<a href="https://github.com/rustdesk/rustdesk/releases">下载</a>并安装RustDesk客户端。</p>
-<p>2.控制端/被控端：打开RustDesk，设置-&gt;解锁安全设置-&gt;勾选“允许IP直接访问”</p>
+<ul>
+<li>
+<p><a href="https://github.com/rustdesk/rustdesk/releases">下载</a>并安装RustDesk客户端。</p>
+</li>
+<li>
+<p>控制端/被控端：打开RustDesk，设置-&gt;解锁安全设置-&gt;勾选“允许IP直接访问”</p>
+</li>
+</ul>
 <p><img alt="" src="../img/rustdesk/enable_IP.png"></p>
 <p>输入被控端的 IP 地址即可远程登录（注意这里是 Tailscale IP，不是台式机的IP ）。</p>
 <p><img alt="" src="../img/rustdesk/rustdesk_control.png"></p>
-<!-- 
-设置->网络->ID/中继服务器
-
-IP服务器，IP为 Tailscale 穿透提供的 IP，KEY为上面自托管完成后生成的文件：C:\rustdesk-server-windows-x64\id_ed?????.pub，打开文件复制粘贴
-
-注意： 控制端和被控端两边都必须填写相同的 ID 服务器地址和 Key
-
-本地：100.126.226.12
-远程：100.87.198.103
--->
-
+<div class="admonition 问题">
+<p class="admonition-title">问题</p>
+<p>如果连接时报错：<code>连接错误 Failed to connect to 100.*.*.*:21118:请稍后再试</code>，确认被控端下面是否有“服务未运行”的提示，如果有请点击“启动服务”，然后再次连接即可。</p>
+</div>
 <h2 id="_1">参考</h2>
 <ul>
 <li><a href="https://www.cnblogs.com/lefour/p/18866579">使用 Tailscale 实现内网穿透+RDP远程控制</a></li>
