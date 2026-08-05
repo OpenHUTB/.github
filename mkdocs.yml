@@ -1,4 +1,4 @@
-site_name: OpenHUTB 社区介绍
+site_name: 社区介绍
 # 参考链接：https://blog.csdn.net/m0_63203517/article/details/129765689
 
 #repo_url: https://github.com/carla-simulator/carla
@@ -58,6 +58,23 @@ copyright: OpenHUTB 版权所有 &copy; {year}
 
 nav:
 - 首页: 'index.md'
+- 贡献指南: 'CONTRIBUTING.md'
+- git 教程: 'https://openhutb.github.io/git/?locale=zh_CN'
+- 贡献指南: 'CONTRIBUTING.md'
+- Markdown教程: 'https://docs.github.com/zh/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax'
+- 论文写作技巧: 'paper_tips.md'
+
+- 搭建自定义开发环境: 'env_conf.md'
+
+- 远程办公: 'rustdesk_tailscale.md'
+
+- 提问技巧: 'ask_question.md'
+
+- 科学上网: 'https://openhutb.github.io/doc/build_carla/#internet'
+
+
+
+
 
 # - mdx_math 用于行内公式显示
 markdown_extensions:
