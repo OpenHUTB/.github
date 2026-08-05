@@ -27,26 +27,7 @@
 > ![](./img/rustdesk/login_successful.png)
 
 
-## 2. Windows远程登录
-
-
-在被控机上启用 Windows 远程桌面连接
-
-> ![](./img/rustdesk/enable_remote.png)
-
-
-如果远程的机器为 Windows，只需要打开本地电脑的`远程桌面连接`，使用 tailscale 的 IP 地址（将图中的型号`*`换成自己的IP地址），输入Windows系统的用户名/密码即可登录。
-> ![](./img/rustdesk/win_remote.png)
-
-
-
-
-
-!!! 注意
-    如果使用 windows 这一步登录成功，后面的“RustDesk配置与连接”就不再需要。如果是 Ubuntu、Mac、Android、iOS等其他平台，请查看后面的“RustDesk配置与连接”。
-
-
-## 附：RustDesk配置与连接
+## 2. RustDesk配置与连接
 
 * [下载](https://github.com/rustdesk/rustdesk/releases)并安装RustDesk客户端。
 
@@ -62,6 +43,21 @@
     如果连接时报错：`连接错误 Failed to connect to 100.*.*.*:21118:请稍后再试`，确认被控端下面是否有“服务未运行”的提示，如果有请点击“启动服务”，然后再次连接即可。
 
 
+## 附：Windows远程登录
+
+在被控机上启用 Windows 远程桌面连接
+
+> ![](./img/rustdesk/enable_remote.png)
+
+
+如果远程的机器为 Windows，只需要打开本地电脑的`远程桌面连接`，使用 tailscale 的 IP 地址（将图中的型号`*`换成自己的IP地址），输入Windows系统的用户名/密码即可登录。
+> ![](./img/rustdesk/win_remote.png)
+
+
+!!! 注意
+    如果使用 windows 这一步登录成功，前面第二步的“RustDesk配置与连接”就不再需要。如果是 Ubuntu、Mac、Android、iOS等其他平台，请查第二步的“RustDesk配置与连接”。
+
+
 ## 高级操作
 
 ### 邀请其他成员进入虚拟局域网
@@ -70,7 +66,8 @@
 
 
 ## 参考
-
+* [tailscale 源代码仓库](https://github.com/tailscale/tailscale) - [tailscale 开源介绍](https://tailscale.com/opensource)
+* [rustdesk 源代码仓库](https://github.com/rustdesk/rustdesk)
 * [使用 Tailscale 实现内网穿透+RDP远程控制](https://www.cnblogs.com/lefour/p/18866579)
 
 
