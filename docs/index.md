@@ -26,14 +26,19 @@ title: 主页
 
 - 撰写论文请参考 [论文写作技巧](./paper_tips.md)
 
-## 2. 问题 <span id="questions"></span>
 
+## 2. 环境配置
+
+- [搭建自定义开发环境](env_conf.md)
+
+- [免费开源远程办公解决方案：rustdesk+tailscale](rustdesk_tailscale.md)
+
+
+## 2. 问题 <span id="questions"></span>
 
 - 如果参与过程中遇到任何问题，请参考 [提问的技巧](./ask_question.md) 和 [注意事项](note.md) 或在对应项目的 [Issues页面](https://github.com/OpenHUTB/hutb/issues) 提出问题。
 
 - 如有加入组织、添加项目、获得更高权限等需要请把github用户名发送到邮箱 [2929@hutb.edu.cn](2929@hutb.edu.cn) 。
-
-- [搭建自定义开发环境](env_conf.md)
 
 - 网络不稳定可以参考 [github 加速方案和科学上网链接](https://openhutb.github.io/doc/build_carla/#internet) 
 
