@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>免费远程办公解决方案：tailscale+rustdesk - OpenHUTB 社区介绍</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u514d\u8d39\u8fdc\u7a0b\u529e\u516c\u89e3\u51b3\u65b9\u6848\uff1atailscale+rustdesk";
+        var mkdocs_page_input_path = "rustdesk_tailscale.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> OpenHUTB 社区介绍
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="搜索文档" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">首页</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">OpenHUTB 社区介绍</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">免费远程办公解决方案：tailscale+rustdesk</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/OpenHUTB/.github/edit/master/docs/rustdesk_tailscale.md"> 编辑页面</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <div><h1 id="tailscalerustdesk">免费远程办公解决方案：tailscale+rustdesk</h1>
+<h2 id="1-tailscale">1. tailscale安装与配置</h2>
+<p>1.<a href="https://login.tailscale.com/start">注册tailscale</a> 并在需要远程登录的机器上下载<a href="https://tailscale.com/download/windows">tailscale</a> 安装。</p>
+<p><img alt="" src="../img/rustdesk/sign_up.png"></p>
+<p>并将设备添加到同一网络中</p>
+<p><img alt="" src="../img/rustdesk/add_device.png"></p>
+<p>3.添加后就可以在<a href="https://console.tailscale.com/admin/machines">tailscale后台</a>进行管理。
+可以将key设置成永久，防止过段时间需要重新登录。
+<img alt="" src="../img/rustdesk/disable_key_expiry.png"></p>
+<h2 id="2-windows">2. Windows远程登录</h2>
+<p><img alt="" src="../img/rustdesk/win_remote.png"></p>
+<p>如果远程的机器为 Windows，只需要打开本地电脑的远程登录，使用 tailscale 的 IP 地址，输入Windows系统的用户名/密码即可登录，后面的“RustDesk配置与连接”就不再需要。</p>
+<p>如果是 Ubuntu、Mac、Android、iOS等其他平台，请查看后面的“RustDesk配置与连接”。</p>
+<h2 id="rustdesk">附：RustDesk配置与连接</h2>
+<p>1.<a href="https://github.com/rustdesk/rustdesk/releases">下载</a>并安装RustDesk客户端。</p>
+<p>2.控制端/被控端：打开RustDesk，设置-&gt;解锁安全设置-&gt;勾选“允许IP直接访问”</p>
+<p><img alt="" src="../img/rustdesk/enable_IP.png"></p>
+<p>输入被控端的 IP 地址即可远程登录（注意这里是 Tailscale IP，不是台式机的IP ）。</p>
+<p><img alt="" src="../img/rustdesk/rustdesk_control.png"></p>
+<!-- 
+设置->网络->ID/中继服务器
+
+IP服务器，IP为 Tailscale 穿透提供的 IP，KEY为上面自托管完成后生成的文件：C:\rustdesk-server-windows-x64\id_ed?????.pub，打开文件复制粘贴
+
+注意： 控制端和被控端两边都必须填写相同的 ID 服务器地址和 Key
+
+本地：100.126.226.12
+远程：100.87.198.103
+-->
+
+<h2 id="_1">参考</h2>
+<ul>
+<li><a href="https://www.cnblogs.com/lefour/p/18866579">使用 Tailscale 实现内网穿透+RDP远程控制</a></li>
+</ul></div>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>OpenHUTB 版权所有 &copy; 2026</p>
+  </div>
+
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/OpenHUTB/.github" style="color: #fcfcfc">OpenHUTB</a>
+        </span>
+    
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="https://cdn.rawgit.com/knsv/mermaid/6.0.0/dist/mermaid.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script>
+      <script src="../js/umlconvert.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
