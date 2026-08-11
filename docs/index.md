@@ -40,6 +40,10 @@ title: 主页
 
 ## 3. 社区  <span id="propaganda"></span>
 
+- [用户的社区参与度月度统计情况](https://github.com/OpenHUTB/.github/actions) - 该 action 页面的 User Activity Report 里，每月1号自动进行统计，注意，该量化统计情况仅作参考，不代表代码质量的优劣
+
+- [社区每个仓库的月度变化统计情况](https://github.com/OpenHUTB/.github/tree/master/reports)
+
 - [Markdown 一键发到各个社交平台](./markdown2anything.md)
 
 
