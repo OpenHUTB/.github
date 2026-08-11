@@ -4,23 +4,18 @@ title: 主页
 
 欢迎使用 OpenHUTB 的社区简介文档。
 
-
-
 - [简介](#list)
 - [问题](#questions)
-    
-    
 
 ---
-
 
 ## 1. 简介 <span id="list"></span>
 
 - 第一次参与开源项目请参考 [贡献指南](./CONTRIBUTING.md)
 
-- [git 教程](https://openhutb.github.io/git/?locale=zh_CN)
+- [git 教程](https://openhutb.github.io/git/?locale=zh_CN)、[Python教程（到第13章）](https://liaoxuefeng.com/books/python/introduction/index.html)、[C++教程](https://www.runoob.com/cplusplus/cpp-tutorial.html)
 
-- 记住，你可以利用 [Markdown](https://docs.github.com/zh/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) 撰写文档，减少沟通的认知障碍。
+- 记住，自始至终，你可以利用 [Markdown](https://docs.github.com/zh/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) 撰写文档，减少沟通的认知障碍。
 
 - [开源工具列表](./tools.md)。
 
@@ -43,7 +38,7 @@ title: 主页
 - 网络不稳定可以参考 [github 加速方案和科学上网链接](https://openhutb.github.io/doc/build_carla/#internet) 
 
 
-## 3. 社区宣传  <span id="propaganda"></span>
+## 3. 社区  <span id="propaganda"></span>
 
 - [Markdown 一键发到各个社交平台](./markdown2anything.md)
 
