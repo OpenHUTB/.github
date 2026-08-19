@@ -24,9 +24,11 @@ title: 主页
 - 撰写论文请参考 [论文写作技巧](./paper_tips.md)
 
 
-## 2. 环境配置
+## 2. 开发配置
 
 - [搭建自定义开发环境](env_conf.md)
+
+- [合并提交](dev/merge_commit.md)
 
 - [免费开源远程办公解决方案：rustdesk+tailscale](rustdesk_tailscale.md)
 
