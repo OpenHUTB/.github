@@ -51,8 +51,17 @@ title: 主页
 - [Markdown 一键发到各个社交平台](./markdown2anything.md)
 
 
+OpenHUTB 的社交平台：
+
+|  |  |  |  |
+|:---:|:---:|:---:|:---:|
+| ![](./img/social/webchat.png) | ![](./img/social/TwinBuild.jpg) | ![](./img/social/zhihu.jpg) |![](./img/social/bilibili.jpg) |
+| [微信公众号](https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzI2ODk5MzE5Ng==) | 微信 | [知乎](https://www.zhihu.com/people/OpenHUTB)  | [B 站](https://space.bilibili.com/479231494) |
+| ![](./img/social/xiaohongshu.jpg) | ![](./img/social/Twitter.png) | ![](./img/social/Youtube.png) | |
+| [小红书](https://www.xiaohongshu.com/user/profile/62977010000000002102bc47) | [Twitter(X)](https://x.com/OpenHUTB) | [Youtube](https://www.youtube.com/@OpenHUTB)  |  |
+
+
 ___
 
 如果对文档中的任何问题可以在 [本文档的源码仓库](https://github.com/OpenHUTB/templte) 中的 [问题](https://github.com/OpenHUTB/templte/issues) 页面讨论或者提交 [拉取请求](https://github.com/OpenHUTB/.github/blob/master/CONTRIBUTING.md) 直接修改文档。
 
-## 参考文献
