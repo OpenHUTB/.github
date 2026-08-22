@@ -47,6 +47,24 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="#">贡献指南</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_2">步骤</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_3">其他</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_4">软件安装</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_5">问题</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#github">国内访问 github 可能较慢</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#github-push-403">向 github 上 push 的时候报 403 错误</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_6">克隆个人仓库出错</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#git-push-unexpected-disconnect-while-reading-sideband-packet">git push 报错unexpected disconnect while reading sideband packet</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -57,6 +75,24 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="#">贡献指南</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_2">步骤</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_3">其他</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_4">软件安装</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_5">问题</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#github">国内访问 github 可能较慢</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#github-push-403">向 github 上 push 的时候报 403 错误</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_6">克隆个人仓库出错</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#git-push-unexpected-disconnect-while-reading-sideband-packet">git push 报错unexpected disconnect while reading sideband packet</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -108,10 +144,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <div><p>gith指南</p>
+                <div><h1 id="_1">贡献指南</h1>
 <p>开源的核心就是与他人沟通，也就是解决冲突的过程。该指南的初衷就是为初学者提供一个简单的方法去学习以及参与开源项目。</p>
 <p><em>如果你的电脑上未安装 git 或对命令行不熟悉，请参考以下的 <a href="#%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85">软件安装</a>。</em></p>
-<h2 id="_1">步骤</h2>
+<h2 id="_2">步骤</h2>
 <pre class="mermaid"><code>flowchart LR
     A[1. fork 组织项目到个人账户] --&gt; B[2. clone 个人远程仓库到本地]
     B --&gt; C[3. 新建特性分支]
@@ -183,14 +219,14 @@ git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </
 - 尽量少包含二进制文件；
 - 不提交程序能够输出的中间文件、结果文件；
 - 可以提供少量能够保证程序能够正常运行的示例数据，大的输入数据在 README.md 文件中提供百度网盘或者谷歌网盘的下载链接；</p>
-<h2 id="_2">其他</h2>
+<h2 id="_3">其他</h2>
 <p>1.如果提交 Pull Request 时出现冲突，则参考 <a href="./doc/resolve_conflict.md">使用 TortoiseGit 解决冲突</a> 或 <a href="https://docs.github.com/zh/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github">在 GitHub 上解决合并冲突</a> 。</p>
 <p>2.同步子模块
 </p><div class="highlight"><pre><span></span><code>git submodule update --remote
 </code></pre></div>
 <p>3.本地检查<code>Pull requests</code>请求
 有人发送<code>Pull requests</code>时，可以在 GitHub 上合并之前<a href="https://docs.github.com/zh/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/checking-out-pull-requests-locally">测试并验证更改</a> 。</p>
-<h2 id="_3">软件安装</h2>
+<h2 id="_4">软件安装</h2>
 <ul>
 <li>
 <p>下载相关<a href="https://pan.baidu.com/s/1Is2-VR1z-tMYvmdinsVY_g?pwd=hutb">开发工具</a> ，先安装<code>Git-2.40.0-64-bit.exe</code>，再安装可视化工具管理 <a href="https://blog.csdn.net/xwnxwn/article/details/108694863"><code>TortoiseGit-2.14.0.0-64bit.msi</code></a>（可选）。</p>
@@ -220,7 +256,7 @@ git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </
 </tr>
 </tbody>
 </table>
-<h2 id="_4">问题</h2>
+<h2 id="_5">问题</h2>
 <h6 id="github">国内访问 github 可能较慢</h6>
 <p>这里提供 github 加速方案和科学上网的 <a href="https://openhutb.github.io/doc/build_carla/#internet">链接</a> 。</p>
 <h6 id="github-push-403">向 github 上 push 的时候报 403 错误</h6>
@@ -231,7 +267,7 @@ git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </
 <div class="highlight"><pre><span></span><code>url = https://OpenHUTB@github.com/OpenHUTB/bazaar.git
 </code></pre></div>
 然后就可以进行授权并继续push。
-<h6 id="_5">克隆个人仓库出错</h6>
+<h6 id="_6">克隆个人仓库出错</h6>
 <p>若出现SSL certificate problems请关闭加速器再克隆。</p>
 <h6 id="git-push-unexpected-disconnect-while-reading-sideband-packet">git push 报错unexpected disconnect while reading sideband packet</h6>
 <div class="highlight"><pre><span></span><code><span class="c1"># 增加缓存至4G</span>
