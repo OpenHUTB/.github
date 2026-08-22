@@ -1,4 +1,4 @@
-# 贡献指南
+gith指南
 
 开源的核心就是与他人沟通，也就是解决冲突的过程。该指南的初衷就是为初学者提供一个简单的方法去学习以及参与开源项目。
 
@@ -39,7 +39,7 @@ flowchart LR
     style K fill:#fff3e0
 ```
 
-**1.** 打开 [github](https://github.com/signup) 注册并登录，在 [想要修改的湖工商仓库](https://github.com/OpenHUTB/hutb) 页面点击`Fork`，然后点击`Create a new fork`，**创建分叉**到个人仓库。
+**1.** [注册](https://openhutb.github.io/.github/dev/sign_up/‎)并登陆 Github账号，在 [想要修改的湖工商仓库](https://github.com/OpenHUTB/hutb) 页面点击`Fork`，然后点击`Create a new fork`，**创建分叉**到个人仓库。
 
 <img src="https://firstcontributions.github.io/assets/Readme/fork.png" width="310">
 
