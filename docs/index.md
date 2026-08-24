@@ -37,7 +37,7 @@ title: 主页
 
 - 如果参与过程中遇到任何问题，请参考 [提问技巧](./ask_question.md) 和 [注意事项](note.md) 或在对应项目的 [Issues页面](https://github.com/OpenHUTB/hutb/issues) 提出问题。
 
-- 如有加入组织、添加项目、获得更高权限等需要请把github用户名发送到邮箱 [2929@hutb.edu.cn](2929@hutb.edu.cn) 。
+- 如有加入组织、添加项目、获得更高权限等需要请把github用户名发送到邮箱 [open@hutb.edu.cn](open@hutb.edu.cn) 。
 
 - 网络不稳定可以参考 [github 加速方案和科学上网链接](https://openhutb.github.io/doc/build_carla/#internet) 
 
@@ -57,8 +57,8 @@ OpenHUTB 的社交平台：
 |:---:|:---:|:---:|:---:|
 | ![](./img/social/webchat.png) | ![](./img/social/TwinBuild.jpg) | ![](./img/social/zhihu.jpg) |![](./img/social/bilibili.jpg) |
 | [微信公众号](https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzI2ODk5MzE5Ng==) | 微信 | [知乎](https://www.zhihu.com/people/OpenHUTB)  | [B 站](https://space.bilibili.com/479231494) |
-| ![](./img/social/xiaohongshu.jpg) | ![](./img/social/Twitter.png) | ![](./img/social/Youtube.png) | |
-| [小红书](https://www.xiaohongshu.com/user/profile/62977010000000002102bc47) | [Twitter(X)](https://x.com/OpenHUTB) | [Youtube](https://www.youtube.com/@OpenHUTB)  |  |
+| ![](./img/social/xiaohongshu.jpg) | ![](./img/social/Twitter.png) | ![](./img/social/Youtube.png) | ![](./img/social/sponsor.png) |
+| [小红书](https://www.xiaohongshu.com/user/profile/62977010000000002102bc47) | [Twitter(X)](https://x.com/OpenHUTB) | [Youtube](https://www.youtube.com/@OpenHUTB)  | [赞助](https://ko-fi.com/openhutb) |
 
 
 ___
