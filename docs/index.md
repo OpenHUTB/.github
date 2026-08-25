@@ -1,6 +1,6 @@
 title: 主页
 
-# [OpenHUTB 社区介绍](https://github.com/OpenHUTB/template)
+# [OpenHUTB 社区](https://github.com/OpenHUTB/template)
 
 欢迎使用 OpenHUTB 的社区简介文档。
 
@@ -13,7 +13,7 @@ title: 主页
 
 - [OpenHUTB 模拟器简介](./simulator.md)
 
-- 第一次参与开源项目请参考 [贡献指南](./CONTRIBUTING.md)
+- 第一次参与开源项目请参考[贡献指南](./CONTRIBUTING.md)
 
 - [git 教程](https://openhutb.github.io/git/?locale=zh_CN)、[Python教程（到第13章）](https://liaoxuefeng.com/books/python/introduction/index.html)、[C++教程](https://www.runoob.com/cplusplus/cpp-tutorial.html)
 
@@ -21,7 +21,7 @@ title: 主页
 
 - [开源工具列表](./tools.md)。
 
-- 撰写论文请参考 [论文写作技巧](./paper_tips.md)
+- 撰写论文请参考[论文写作技巧](./paper_tips.md)
 
 
 ## 2. 开发配置
@@ -60,6 +60,7 @@ OpenHUTB 的社交平台：
 | ![](./img/social/xiaohongshu.jpg) | ![](./img/social/Twitter.png) | ![](./img/social/Youtube.png) | ![](./img/social/sponsor.png) |
 | [小红书](https://www.xiaohongshu.com/user/profile/62977010000000002102bc47) | [Twitter(X)](https://x.com/OpenHUTB) | [Youtube](https://www.youtube.com/@OpenHUTB)  | [赞助](https://ko-fi.com/openhutb) |
 
+备注：开源孪创社区不搭建自己独立的平台的原因有很多，比如独立平台生成的“信息孤岛”造成分裂、维护成本高、“去中心化”理念与降低用户门槛、风险规避与可持续性，同时不会因为其中一些依附平台的限制而影响社区的发展，使社区专注于核心使命。
 
 ___
 
