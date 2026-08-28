@@ -359,6 +359,10 @@ Matplotlib 即使使用 [紧凑的布局功能](http://matplotlib.org/users/tigh
 * 一次性不要提交太多文件，不好审核，提交前检查下，比如大的二进制文件可以提供一个下载链接
 * 缓存、输出文件必须要放到仓库，比如：__pycache__不需要的缓存文件、训练的模型、中间记录文件、.pyc文件、checkpoint文件、*.pth文件最多放一个、*.npy文件等
 
+## 其他
+
+* [基于神经解剖学对齐的视听融合情感生成模型](./paper/avf.md)
+
 # 有用的资源
 
 * 自动将标题大写: https://capitalizemytitle.com
