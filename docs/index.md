@@ -19,7 +19,7 @@ title: 主页
 
 - 记住，自始至终，你可以利用 [Markdown](https://docs.github.com/zh/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) 撰写文档，减少沟通的认知障碍。
 
-- [开源工具列表](./tools.md)。
+- [使用工具列表](./tools.md)。
 
 - 撰写论文请参考[论文写作技巧](./paper_tips.md)
 
@@ -49,6 +49,8 @@ title: 主页
 - [社区每个仓库的月度变化统计情况](https://github.com/OpenHUTB/.github/tree/master/reports)
 
 - [Markdown 一键发到各个社交平台](./markdown2anything.md)
+
+- [宣传](./propagate.md)
 
 
 OpenHUTB 的社交平台：
