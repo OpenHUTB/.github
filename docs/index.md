@@ -2,7 +2,7 @@ title: 主页
 
 # [OpenHUTB 社区](https://github.com/OpenHUTB/template)
 
-欢迎使用 OpenHUTB 的社区简介文档。
+欢迎使用开源孪创（Open source Humanoid-vehicle Twin Build, OpenHUTB）的社区简介，该社区提供一款加速人和载具的影视级模拟器，其中人包括人形机器人（Humanoid）和仿生人（Android），载具包括地面载具、空域载具、水域载具，社区本身采用[分布式扁平架构](./org/architecture.md)。
 
 - [简介](#list)
 - [问题](#questions)
