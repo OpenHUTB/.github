@@ -30,4 +30,9 @@ rem 回退两级目录，获取 miniconda 根目录路径
 for %%i in ("%CONDA_PATH%\..\..") do set "CONDA_DIR=%%~fi"
 echo conda directory is: %CONDA_DIR%
 
-%WINDIR%\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy ByPass -NoExit -Command "& '%CONDA_DIR%\shell\condabin\conda-hook.ps1' ; conda activate '%CONDA_DIR%' "; conda activate mkdocs; mkdocs serve --livereload;
+
+set host_ip=127.0.0.1
+set "PORT=8000"
+set "CHECK_URL=http://%host_ip%:%PORT%"
+
+%WINDIR%\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy ByPass -NoExit -Command "& '%CONDA_DIR%\shell\condabin\conda-hook.ps1' ; conda activate '%CONDA_DIR%' "; conda activate mkdocs; mkdocs build; start "" "%CHECK_URL%"; mkdocs serve --livereload; 
