@@ -1,5 +1,7 @@
 @echo off
 
+set PYTHONUTF8=1
+
 where conda >nul 2>nul
 
 if %errorlevel% neq 0 (
@@ -23,10 +25,9 @@ if %errorlevel% neq 0 (
 pip install -r requirements.txt
 pip install git+https://github.com/OpenHUTB/mkdocs.git
 
-rem 获取 miniconda3\Scripts\conda.exe 的安装路径
+
 for /f "tokens=*" %%i in ('where conda') do set CONDA_PATH=%%i
 echo conda is installed at: %CONDA_PATH%
-rem 回退两级目录，获取 miniconda 根目录路径
 for %%i in ("%CONDA_PATH%\..\..") do set "CONDA_DIR=%%~fi"
 echo conda directory is: %CONDA_DIR%
 
