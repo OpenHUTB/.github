@@ -2,10 +2,12 @@ title: 主页
 
 # [OpenHUTB 社区](https://github.com/OpenHUTB/template)
 
-欢迎使用开源孪创（Open source Humanoid-vehicle Twin Build, OpenHUTB）的社区简介，该社区提供一款加速人和载具代理开发的影视级模拟器，其中人包括人形机器人（Humanoid）和仿生人（Android），载具包括地面载具、空域载具、水域载具，社区本身采用[分布式扁平架构](./org/architecture.md)。
+欢迎使用开源孪创（Open source Humanoid-vehicle Twin Build, OpenHUTB）的社区简介，该社区提供一款加速**人**和**载具**代理开发的影视级模拟器，其中人包括人形机器人（Humanoid）和仿生人（Android），载具包括地面载具、空域载具、水域载具，社区本身采用[分布式扁平架构](./org/architecture.md)。
 
-- [简介](#list)
-- [问题](#questions)
+- [1.简介](#list)
+- [2.开发配置](#dev)
+- [3.问题](#questions)
+- [4.社区](#propaganda)
 
 ---
 
@@ -24,7 +26,7 @@ title: 主页
 - 撰写论文请参考[论文写作技巧](./paper_tips.md)
 
 
-## 2. 开发配置
+## 2. 开发配置 <span id='dev'></span>
 
 - [搭建自定义开发环境](env_conf.md)
 
@@ -33,7 +35,7 @@ title: 主页
 - [免费开源远程办公解决方案：rustdesk+tailscale](rustdesk_tailscale.md)
 
 
-## 2. 问题 <span id="questions"></span>
+## 3. 问题 <span id="questions"></span>
 
 - 如果参与过程中遇到任何问题，请参考 [提问技巧](./ask_question.md) 和 [注意事项](note.md) 或在对应项目的 [Issues页面](https://github.com/OpenHUTB/hutb/issues) 提出问题。
 
@@ -42,7 +44,7 @@ title: 主页
 - 网络不稳定可以参考 [github 加速方案和科学上网链接](https://openhutb.github.io/doc/build_carla/#internet) 
 
 
-## 3. 社区  <span id="propaganda"></span>
+## 4. 社区  <span id="propaganda"></span>
 
 - [用户的社区参与度月度统计情况](https://github.com/OpenHUTB/.github/actions) - 该 action 页面的 User Activity Report 里，每月1号自动进行统计，注意，该量化统计情况仅作参考，不代表代码质量的优劣
 
