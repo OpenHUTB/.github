@@ -120,6 +120,14 @@ git submodule update --remote
 
 3.本地检查`Pull requests`请求
 有人发送`Pull requests`时，可以在 GitHub 上合并之前[测试并验证更改](https://docs.github.com/zh/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/checking-out-pull-requests-locally) 。
+```shell
+# 拉取Pull Request 的 ID 为 7，并在本地新建分支名为 7 的命令：git fetch origin pull/7/head:7
+git fetch origin pull/ID/head:BRANCH_NAME
+# 切换到新建的分支
+git switch BRANCH_NAME
+# 前面拉取后，后面又有新的修改
+git pull origin pull/ID/head
+```
 
 
 
