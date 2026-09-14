@@ -15,7 +15,7 @@ title: 主页
 
 - [OpenHUTB 模拟器简介](./simulator.md)
 
-- 第一次参与开源项目请参考[贡献指南](./CONTRIBUTING.md)
+- 第一次参与开源项目请参考[贡献指南](./CONTRIBUTING.md)、非代码开发人员请参考[基于浏览器的贡献指南](./codespace.md)
 
 - [git 教程](https://openhutb.github.io/git/?locale=zh_CN)、[Python教程（到第13章）](https://liaoxuefeng.com/books/python/introduction/index.html)、[C++教程](https://www.runoob.com/cplusplus/cpp-tutorial.html)
 
