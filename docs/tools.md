@@ -6,6 +6,8 @@
 
 ## 工具
 
+git 
+
 * [ScreenToGif](https://github.com/NickeManarin/ScreenToGif) - 截图为gif动图
 
 * [shotcut](https://github.com/mltframework/shotcut) - 视频编辑
