@@ -28,7 +28,7 @@
 点击“Code -> Create codespace on master”创建在线编辑器
 ![](./img/codespace/create_codespace.png)
 
-等待一会儿，就可以显示 VSCode 编辑器打开的项目，点击“信任文件并继续”
+等待一会儿，就可以在浏览器中显示 VSCode 编辑器打开的项目，点击“信任文件并继续”
 
 ![](./img/codespace/vscode.png)
 
@@ -43,14 +43,14 @@
 
 ![](./img/codespace/commit.png)
 
-然后点击“同步更改”，将提交推送到 origin/master。这时左侧图标中多了一项提交内容。
+然后点击“同步更改”，将提交推送到个人仓库的主分支 origin/master。这时左侧“图表”中多了一项刚才提交的内容。
 
 ![](./img/codespace/commited.png)
 
 
 **5. 检查**修改内容的正确性
 
-回到仓库页面，发现有内容领先于（commits ahead of OpenHUTB/.github:master）
+回到仓库页面，发现有内容领先于开源孪创社区分支（commits ahead of OpenHUTB/.github:master）
 
 ![](./img/codespace/commits_ahead.png)
 
