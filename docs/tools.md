@@ -100,7 +100,7 @@
 
 * [selenium](https://github.com/SeleniumHQ/selenium) - 浏览器自动化框架
 
-
+* [Clash Verge](https://github.com/clash-verge-rev/clash-verge-rev/releases/tag/v2.5.2) - VPN代理工具
 ### 研究
 
 * [LaTeX-OCR](https://github.com/lukas-blecher/LaTeX-OCR) - 将方程图像转换为 LaTeX 代码
