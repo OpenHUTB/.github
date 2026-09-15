@@ -2,7 +2,7 @@ title: 主页
 
 # [OpenHUTB 社区](https://github.com/OpenHUTB/template)
 
-欢迎使用开源孪创（Open source Humanoid-vehicle Twin Build, OpenHUTB）社区的简介，该社区提供一款加速**人**和**载具**代理开发的影视级模拟器，其中人包括人形机器人（Humanoid）和仿生人（Android），载具包括地面载具、空域载具、水域载具，社区本身采用[分布式扁平架构](./org/architecture.md)。
+欢迎使用开源孪创（Open source Humanoid-vehicle Twin Build, OpenHUTB）社区的简介，该社区提供一款加速**人**和**载具**代理开发的影视级模拟器，其中人包括人形机器人（Humanoid）和仿生人（Android），载具包括地面载具、空域载具、水域载具，社区本身采用[分布式架构](./org/architecture.md)。
 
 - [1.简介](#list)
 - [2.开发配置](#dev)
@@ -55,7 +55,7 @@ title: 主页
 - [宣传](./propagate.md)
 
 
-OpenHUTB 的社交平台：
+OpenHUTB 的其他非主要平台包括 [gitee](https://gitee.com/OpenHUTB)、[gitcode](https://gitcode.com/OpenHUTB)、[gitlink](https://gitlink.org.cn/OpenHUTB)、[红山开源](https://osredm.com/OpenHUTB)、[阿里云](https://codeup.aliyun.com/6a64b5ff637ebe3073ca8044/OpenHUTB)、[atomgit](https://atomgit.com/OpenHUTB)、[腾讯工蜂](https://git.code.tencent.com/OpenHUTB)，社交平台包括：
 
 |  |  |  |  |
 |:---:|:---:|:---:|:---:|
