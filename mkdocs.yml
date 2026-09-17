@@ -61,7 +61,6 @@ nav:
 - 首页: 'index.md'
 - 贡献指南: 'CONTRIBUTING.md'
 - git 教程: 'https://openhutb.github.io/git/?locale=zh_CN'
-- 贡献指南: 'CONTRIBUTING.md'
 - Markdown教程: 'https://docs.github.com/zh/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax'
 - 论文写作技巧: 'paper_tips.md'
 
