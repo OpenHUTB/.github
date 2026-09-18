@@ -2,7 +2,7 @@
 
 这里展示和 OpenHUTB 相关的开源项目。
 
-入选标准（非硬性）：最近一年在有提交修改、星星数大于100。
+入选标准（非硬性）：最近一年有在提交修改、星星数大于100。
 
 ## 工具
 * [git] (https://openhutb.github.io/.github/) - git教程
@@ -22,6 +22,8 @@
 * [One-click-cleaning-of-C-drive](https://github.com/JIEKE66633/One-click-cleaning-of-C-drive) - 清理C盘残留和垃圾
 
 * [WindowsCleaner](https://github.com/darkmatter2048/WindowsCleaner) - C盘清理
+
+* [HandBrake](https://github.com/HandBrake/HandBrake) - 视频转码器，适用于 Linux、Mac 和 Windows
 
 
 ## 办公
@@ -93,14 +95,17 @@
 
 * [SpaceSniffer](https://github.com/redtrillix/SpaceSniffer) - Windows 的免费磁盘空间分析工具，它采用分层地图（Treemap）的概念来显示当前的磁盘使用情况。
 
-
 * [FreeCAD](https://github.com/FreeCAD/FreeCAD) - 3D参数化建模器
 
 * [SeleniumBase](https://github.com/seleniumbase/SeleniumBase) - 用于网页自动化、测试及绕过机器人检测的API
 
 * [selenium](https://github.com/SeleniumHQ/selenium) - 浏览器自动化框架
 
+* [Ditto](https://github.com/sabrogden/Ditto) - 剪贴板管理器
+
 * [Clash Verge](https://github.com/clash-verge-rev/clash-verge-rev/releases/tag/v2.5.2) - VPN代理工具
+
+
 ### 研究
 
 * [LaTeX-OCR](https://github.com/lukas-blecher/LaTeX-OCR) - 将方程图像转换为 LaTeX 代码
