@@ -22,6 +22,8 @@
 
 * [WindowsCleaner](https://github.com/darkmatter2048/WindowsCleaner) - C盘清理
 
+* [HandBrake](https://github.com/HandBrake/HandBrake) - 视频转码器，适用于 Linux、Mac 和 Windows
+
 
 ## 办公
 
@@ -98,6 +100,8 @@
 * [SeleniumBase](https://github.com/seleniumbase/SeleniumBase) - 用于网页自动化、测试及绕过机器人检测的API
 
 * [selenium](https://github.com/SeleniumHQ/selenium) - 浏览器自动化框架
+
+* [Ditto](https://github.com/sabrogden/Ditto) - 剪贴板管理器
 
 
 ### 研究
