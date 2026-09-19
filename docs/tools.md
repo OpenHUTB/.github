@@ -5,7 +5,7 @@
 入选标准（非硬性）：最近一年在有提交修改、星星数大于100。
 
 ## 工具
-* [git] (https://openhutb.github.io/.github/) - git教程
+* [git](https://openhutb.github.io/.github/) - git教程
 
 * [ScreenToGif](https://github.com/NickeManarin/ScreenToGif) - 截图为gif动图
 
