@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../img/favicon.ico" rel="shortcut icon"/>
+<title>Bib reference guide - 社区介绍</title>
+<link href="../css/theme.css" rel="stylesheet"/>
+<link href="../css/theme_extra.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
+<link href="../extra.css" rel="stylesheet"/>
+<script>
+        // Current page data
+        var mkdocs_page_name = "Bib reference guide";
+        var mkdocs_page_input_path = "bib_reference_guide.md";
+        var mkdocs_page_url = null;
+      </script>
+<!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</head>
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<a class="icon icon-home" href=".."> 社区介绍
+        </a><div role="search">
+<form action="../search.html" class="wy-form" id="rtd-search-form" method="get">
+<input aria-label="Search docs" name="q" placeholder="搜索文档" title="Type search term here" type="text"/>
+</form>
+</div>
+</div>
+<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="..">首页</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING/">贡献指南</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="" href="https://openhutb.github.io/git/?locale=zh_CN">git 教程</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="" href="https://docs.github.com/zh/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax">Markdown教程</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../paper_tips/">论文写作技巧</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../env_conf/">搭建自定义开发环境</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../rustdesk_tailscale/">远程办公</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ask_question/">提问技巧</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="" href="https://openhutb.github.io/doc/build_carla/#internet">科学上网</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="..">社区介绍</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a aria-label="Docs" class="icon icon-home" href=".."></a></li>
+<li class="breadcrumb-item active">Bib reference guide</li>
+<li class="wy-breadcrumbs-aside">
+<a href="https://github.com/OpenHUTB/.github/edit/master/docs/bib_reference_guide.md"> 编辑页面</a>
+</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div class="section" itemprop="articleBody">
+<div><h2 id="latex">配套社区LaTeX资源</h2>
+<p>本文参考文献编译操作，可以搭配OpenHUTB社区的LaTeX模板仓库使用：
+* <a href="https://github.com/OpenHUTB/course">课程论文latex模板</a>
+* <a href="https://github.com/OpenHUTB/undergraduate">本科毕设latex模板</a>
+* <a href="https://github.com/OpenHUTB/master">硕士论文LaTeX模板</a></p>
+<p>读者可以前往对应仓库获取完整LaTeX论文模板，本文仅讲解参考文献编译相关操作。</p>
+<h2 id="latex_1">一、LaTeX 参考文献引用核心原理</h2>
+<p>LaTeX 的参考文献体系由 tex 主文件 + bib 文献库文件 协同工作，无法仅通过单次 PDF 编译生成正常参考文献。</p>
+<p>核心文件作用：</p>
+<ol>
+<li><code>.bib</code>：存放所有参考文献的作者、年份、标题、期刊等原始信息，是文献数据源。</li>
+<li><code>.aux</code>：第一次编译自动生成，记录全文所有 <code>\cite{}</code> 引用标记与位置。</li>
+<li><code>.bbl</code>：BibTeX 编译后自动生成，是最终排版好的参考文献正文，论文文末展示的文献全部来自该文件。</li>
+</ol>
+<p>核心编译逻辑：
+PDFLaTeX 扫描引用记录 → BibTeX 生成规范文献列表 → 两次 PDF 编译刷新标号与格式。</p>
+<h2 id="_1">二、标准完整编译顺序</h2>
+<p>所有课程论文、毕业论文、期刊通用四步标准流程，缺任意一步都会出现<code>[?]</code>、文献缺失、标号错乱。</p>
+<ol>
+<li>
+<p><strong>第一次 PDFLaTeX</strong>
+扫描全文引用命令，生成<code>.aux</code>辅助文件，记录所有被引用的文献 key，此时文末无参考文献。</p>
+</li>
+<li>
+<p><strong>执行 BibTeX 编译（最关键步骤）</strong>
+读取<code>.aux</code>文件，匹配<code>.bib</code>文献库，自动生成标准化参考文献<code>.bbl</code>文件。</p>
+</li>
+<li>
+<p><strong>第二次 PDFLaTeX</strong>
+将<code>.bbl</code>文献内容嵌入论文，页面出现参考文献列表，但引用标号可能未对齐、未刷新。</p>
+</li>
+<li>
+<p><strong>第三次 PDFLaTeX</strong>
+全局刷新文中引用序号、超链接、排版格式，彻底消除问号、标号错位问题。</p>
+</li>
+</ol>
+<h2 id="_2">三、最简可直接运行模板</h2>
+<h3 id="1-tex">1. 主文件（.tex）核心代码</h3>
+<div class="highlight"><pre><span></span><code><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>cite<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>hyperref<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+
+正文引用测试<span class="k">\cite</span><span class="nb">{</span>example1<span class="nb">}</span>。
+
+style<span class="nb">{</span>plain<span class="nb">}</span>
+<span class="nb">{</span>ref<span class="nb">}</span>
+
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</code></pre></div>
+<h3 id="2-refbib">2. 文献库文件（ref.bib）示例</h3>
+<div class="highlight"><pre><span></span><code><span class="nc">@article</span><span class="p">{</span><span class="nl">example1</span><span class="p">,</span>
+<span class="w">  </span><span class="na">title</span><span class="p">=</span><span class="s">{LaTeX文献引用技术研究}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">author</span><span class="p">=</span><span class="s">{张三, 李四}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">journal</span><span class="p">=</span><span class="s">{计算机工程与应用}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">year</span><span class="p">=</span><span class="s">{2024}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="_3">四、常用参考文献格式样式</h2>
+<ol>
+<li><code>plain</code>：数字顺序编码，通用学术格式，本科论文常用。</li>
+<li><code>ieeetr</code>：适配 IEEE 会议、英文期刊标准格式。</li>
+<li><code>gb7714-2015</code>：中文毕业论文国标格式（首选）。</li>
+<li><code>apalike</code>：作者-年份引用格式，适用于社科类论文。</li>
+</ol>
+<p>中文论文国标配置专属代码：</p>
+<div class="highlight"><pre><span></span><code><span class="k">\usepackage</span><span class="nb">{</span>gb7714-2015<span class="nb">}</span>
+style<span class="nb">{</span>gb7714-2015<span class="nb">}</span>
+</code></pre></div>
+<h2 id="_4">五、常见报错原因与解决方案</h2>
+<h3 id="1">1. 引用始终显示 <code>[?]</code></h3>
+<ul>
+<li>未执行 BibTeX 编译</li>
+<li>编译顺序缺失后续两次 PDF 刷新</li>
+<li>文中<code>\cite</code>标签与 bib 文件标签大小写、字符不一致（严格区分）</li>
+</ul>
+<h3 id="2">2. 提示未定义引用、文献找不到</h3>
+<ul>
+<li><code>{}</code> 调用的 bib 文件名和实际文件不匹配</li>
+<li>bib 文件存放路径错误（必须和 tex 主文件同目录）</li>
+<li>bib 文件存在中文全角符号、空格、非法字符</li>
+</ul>
+<h3 id="3">3. 文献只显示部分内容</h3>
+<ul>
+<li>未引用的文献默认不展示，需批量展示添加：<code>\nocite{*}</code></li>
+<li>文献条目存在语法错误，BibTeX 自动跳过异常条目</li>
+</ul>
+<h3 id="4">4. 编译乱码、格式错乱</h3>
+<ul>
+<li>bib 文件编码非 UTF-8</li>
+<li>手动修改自动生成的<code>.bbl</code>文件（会被编译覆盖失效）</li>
+</ul>
+<h2 id="_5">六、核心注意事项</h2>
+<ol>
+<li>
+<p><strong>禁止单次 PDF 编译</strong>
+仅运行 PDFLaTeX 无法解析文献库，绝对无法生成完整参考文献。</p>
+</li>
+<li>
+<p><strong>严禁手动修改<code>.bbl</code> 文件</strong>
+<code>.bbl</code>是系统自动生成文件，所有修改会被下一次编译覆盖，文献修改、增删只能在<code>.bib</code>文件中操作。</p>
+</li>
+<li>
+<p><strong>引用标签唯一不重复</strong>
+整篇论文中，每一个文献 key 只能出现一次，重复会直接导致标号错乱、文献串位。</p>
+</li>
+<li>
+<p><strong>严格区分中英文符号</strong>
+bib 文件内所有标点、括号、逗号必须是英文半角，中文符号是绝大多数编译报错的根源。</p>
+</li>
+<li>
+<p><strong>修改文献必须重跑完整四步</strong>
+增删文献、修改文献信息、调整引用位置后，必须完整执行四轮编译，否则格式不更新。</p>
+</li>
+<li>
+<p><strong>异常报错万能修复法</strong>
+出现标号错乱、文献丢失、莫名报错：
+手动删除所有 <code>.aux .bbl .blg .log</code> 辅助文件，再完整执行四步编译，可解决 90% 问题。</p>
+</li>
+<li>
+<p><strong>区分中英文编译环境</strong>
+英文论文用原生 <code>plain</code>/<code>ieeetr</code> 样式；中文毕业论文必须使用 <code>gb7714-2015</code> 宏包，符合国家标准排版。</p>
+</li>
+</ol>
+<h2 id="_6">七、极简总结</h2>
+<ol>
+<li>一次 PDF 扫引用 →  BibTeX 生成文献 → 两次 PDF 刷新格式</li>
+<li>所有文献数据只改 bib 文件，不动自动生成文件</li>
+<li>符号统一英文、标签统一匹配、编译顺序不缺失</li>
+<li>异常优先清理辅助文件重编译</li>
+</ol></div>
+</div>
+</div><footer>
+<hr/>
+<div role="contentinfo">
+<!-- Copyright etc -->
+<p>OpenHUTB 版权所有 © 2026</p>
+</div>
+</footer>
+</div>
+</div>
+</section>
+</div>
+<div aria-label="Versions" class="rst-versions" role="note">
+<span class="rst-current-version" data-toggle="rst-current-version">
+<span>
+<a href="https://github.com/OpenHUTB/.github" style="color: #fcfcfc">OpenHUTB</a>
+</span>
+</span>
+</div>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>var base_url = "..";</script>
+<script src="../js/theme_extra.js"></script>
+<script src="../js/theme.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script>
+<script src="../js/umlconvert.js"></script>
+<script src="../search/main.js"></script>
+<script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+</body>
+</html>
