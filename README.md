@@ -24,7 +24,7 @@ OpenHUTB 简单来说是面向人机共生与智能载具研究、教学和开�
 - 🧭 **[PFC 规划](https://github.com/OpenHUTB/PFC)** — 规划相关研究内容。
 - 🎮 **[move 控制原理](https://github.com/OpenHUTB/move)** — 运动控制与生物力学相关研究内容。
 
-人车模拟器的技术架构入下图所示：
+人车模拟器的技术架构如下图所示：
 
 <a href ="https://github.com/OpenHUTB/.github/blob/master/fig/repositories.md">
 <img src="https://github.com/OpenHUTB/.github/blob/master/profile/repositories.png?raw=true" width="40%" >
