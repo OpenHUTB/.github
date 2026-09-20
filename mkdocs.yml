@@ -63,7 +63,7 @@ nav:
 - git 教程: 'https://openhutb.github.io/git/?locale=zh_CN'
 - Markdown教程: 'https://docs.github.com/zh/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax'
 - 论文写作技巧: 'paper_tips.md'
-
+- Latex文献引用编译办法: 'bib_reference_guide.md'
 - 搭建自定义开发环境: 'env_conf.md'
 
 - 远程办公: 'rustdesk_tailscale.md'
