@@ -14,6 +14,7 @@ title: 主页
 ## 1. 简介 <span id="list"></span>
 
 - [OpenHUTB 模拟器简介](./simulator.md)
+- [三维建模软件 Blender 介绍](./blender.md)
 
 - 第一次参与开源项目请参考 **[贡献指南](./CONTRIBUTING.md)** 、非代码开发人员请参考[基于浏览器的贡献指南](./codespace.md)
 
