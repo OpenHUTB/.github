@@ -43,6 +43,18 @@
   * [鸣谢](#鸣谢)
 
 
+## 声明
+
+许多项目在他们的协助／说明网页中链接了本指南，这么做很好，我们也鼓励大家都这么做。但如果你是负责管理这个项目网页的人，请在超链接附近的显著位置上注明：
+
+**本指南不提供此项目的实际支援服务！**
+
+我们已经深刻领教到少了上述声明所带来的痛苦。因为少了这点声明，我们不停地被一些没有弄清状况的人纠缠 —— 他们认为既然我们发布了这本指南，那么我们就有责任解决世上所有的技术问题。
+
+如果你是因为需要某些协助而正在阅读这本指南，并且最后离开是因为发现从本指南作者们身上得不到直接的协助，那么你就是我们所说的那类人之一。别问我们问题，我们只会忽略你。我们在这本指南中是教你如何从那些真正懂得你所遇到软件或硬件问题的人那里取得协助，而 99% 的情况下那不会是我们。除非你确定本指南的作者之一刚好是你所遇到的问题领域的专家，否则请不要打扰我们，这样大家都会开心一点。
+
+> **给 OpenHUTB 读者的说明**：本页是[提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way)的中文改编版，原文作者是 Eric S. Raymond 与 Rick Moen，上文中的「我们」指原文作者，而不是 OpenHUTB 项目的维护者。如果你要请教的是与 OpenHUTB 相关的问题，请按[参与贡献的流程](https://github.com/OpenHUTB/.github/blob/master/CONTRIBUTING.md)在仓库的 Issues 中提问。
+
 ## 简介 <span id='introduction'></span>
 
 在开源的世界里，你所提技术问题的解答的好坏, 很大程度上取决于你提问的方式与此问题的难度。本指南将描述如何正确地提问以获得你满意的答案。
@@ -128,6 +140,16 @@ Stack Exchange 已经成长到[超过一百个网站](https://stackexchange.com/
 
 * Stack Overflow 是问写程序有关的问题。
 * Server Fault 是问服务器和网管相关的问题。
+### 网站和 IRC 论坛
+
+本地的用户组（user group），或者你所用的 Linux 发行版，也许正在宣传他们的网页论坛或 IRC 频道，并提供新手帮助（在一些非英语国家，新手论坛很可能还是邮件列表）。这些地方是开始提问的好首选，特别是当你觉得遇到的也许只是相对简单或者很普通的问题时。有广告赞助的 IRC 频道是公开欢迎提问的地方，通常可以即时得到回应。
+
+事实上，如果程序出的问题只发生在特定 Linux 发行版提供的版本（这很常见），最好先去该发行版的论坛或邮件列表中提问，再到程序本身的论坛或邮件列表提问。否则，该项目的黑客可能仅仅回复「用**我们的**版本」。
+
+在任何论坛发文以前，先确认一下有没有搜索功能。如果有，就试着搜索一下问题的几个关键词，也许这会有帮助。如果在此之前你已做过通用的网页搜索（你也该这样做），还是再搜索一下论坛：搜索引擎有可能没来得及索引此论坛的全部内容。
+
+通过论坛或 IRC 频道来提供使用者支持服务有增长的趋势，电子邮件则大多为项目开发者之间的交流而保留。所以最好先在论坛或 IRC 中寻求与该项目的协助。
+
 
 
 ### 第二步，使用项目邮件列表
@@ -614,6 +636,32 @@ Jeff Bigler 的观察总结和这个相关也值得一读 (**[tact filters](http
 
 如果你在研究一番后才作出了回答，**展现你的技巧而不是直接端出结果**。毕竟`授人以鱼不如授人以渔`。
 
+
+## 相关资源
+
+本页是下面这份指南的中文改编版，遇到取舍时以原文为准：
+
+* [提问的智慧（本页内容来源）](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way)
+* [How To Ask Questions The Smart Way（Eric S. Raymond 与 Rick Moen 原文）](http://www.catb.org/~esr/faqs/smart-questions.html)
+
+与「提问」和「报错」直接相关的延伸阅读：
+
+* [如何有效地报告 Bug](https://www.chiark.greenend.org.uk/~sgtatham/bugs-cn.html) —— 把问题描述清楚，一半的功夫在这里
+* [Stack Overflow：How do I ask a good question?](https://stackoverflow.com/help/how-to-ask)
+
+如果你需要个人电脑、Unix 系统和网络如何运作的基础知识：
+
+* [Unix 系统和网络基本原理](https://tldp.org/HOWTO/Unix-and-Internet-Fundamentals-HOWTO/)
+
+当你发布软件或补丁时，可以参照：
+
+* [软件发布实践](https://tldp.org/HOWTO/Software-Release-Practice-HOWTO/index.html)
+
+本仓库自己的入门文档：
+
+* [环境配置](env_conf.md)
+* [常用工具](tools.md)
+* [参与贡献的流程](https://github.com/OpenHUTB/.github/blob/master/CONTRIBUTING.md)
 
 ## 鸣谢
 
