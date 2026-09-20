@@ -106,6 +106,13 @@ markdown_extensions:
   - footnotes
   - admonition
   - mdx_math
+  # MkDocs 默认的 slugify 会先把标题做 NFKD 归一化、再丢弃所有非 ASCII 字符，
+  # 中文标题因此被清洗成空字符串，锚点退化成 _1、_2 这类无意义的占位符，
+  # 导致全站中文标题的页内跳转（各页面顶部的「目录」）全部失效。
+  # 改用 pymdown-extensions 自带的 Unicode 友好实现，保留中文锚点。
+  # 依赖 pymdown-extensions 已在 requirements.txt 中，无需新增。
+  - toc:
+      slugify: !!python/object/apply:pymdownx.slugs.slugify {kwds: {case: lower}}
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
