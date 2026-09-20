@@ -33,7 +33,7 @@
 
 ## 每行一个句子
 
-编写 LaTeX 文档时，请在源文件中每行放一个句子。例如：
+编写 LaTeX 文档时，请在源文件中每行都放一个句子。例如：
 ```
 This is my first sentence.
 This is the second one.
@@ -43,7 +43,7 @@ This is the second one.
 This is my first sentence. This is the second one.
 ```
 
-这样做的主要原因是为了源代码控制和协作：查看提交的更改时，如果每个句子都单独放在一行，就能更容易地识别哪些句子被更改了。这样，你的同志就能更容易地看到更改。
+这样做的主要原因是为了更好的对源代码控制和协作：查看提交的更改时，如果每个句子都单独放在一行，就能更容易地识别哪些句子被更改了。这样，你的同志就能更容易地看到更改。
 
 另一个好处是，当我们的 LaTeX 编译器仅给出行号时，您将能够更好地识别错误。
 
@@ -66,7 +66,7 @@ This is my first sentence. This is the second one.
 Figure~\ref{fig:example} displays that the project ...
 ```
 
-为了确保不会忘记使用波浪号，您可以通过创建自定义命令来简化自动化流程。以下是示例：
+为了保证不会忘记使用波浪号，您可以通过创建自定义命令来简化自动化流程。以下是示例：
 
 
 ```latex
