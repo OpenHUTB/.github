@@ -22,6 +22,7 @@ if %errorlevel% neq 0 (
     conda create -n mkdocs python=3.11 -y
     echo mkdocs virtual environment has been created.
 )
+call conda activate mkdocs
 pip install -r requirements.txt
 pip install git+https://github.com/OpenHUTB/mkdocs.git
 
