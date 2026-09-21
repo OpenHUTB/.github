@@ -18,7 +18,10 @@ theme:
   navigation_depth: 3
   features:
     - search.suggest # 在目录栏中的搜索框中输入一些字母时推荐补全整个单词
-extra_css: [extra.css]
+# extra_css: [extra.css]
+# 说明：docs/extra.css 从未存在，构建产物里也不会有该文件，
+# 保留这行会让每个页面都产生一次 404（线上站点已实测确认）。
+# 如果确实需要自定义样式，请补上 docs/extra.css 后再取消注释。
 
 
 
@@ -31,7 +34,11 @@ extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js
   - https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js
   - https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js
-  - js/umlconvert.js
+  # js/umlconvert.js 从未存在，构建产物里也不会有该文件，
+  # 保留这行会让每个页面都产生一次 404（线上站点已实测确认）。
+  # 该脚本用于渲染 ```flow / ```sequence 围栏代码块，目前仓库里
+  # 没有任何页面使用这两种代码块，所以直接移除引用。
+# - js/umlconvert.js
 
 plugins:
 #  - mkdocs-video
