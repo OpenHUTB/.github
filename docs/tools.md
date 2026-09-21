@@ -125,7 +125,7 @@
 
 * [texstudio](https://github.com/texstudio-org/texstudio) - LaTeX 编辑器
 
-
+* [Anki](https://github.com/ankitects/anki) - 开源间隔重复记忆卡片软件，用来刷题、背诵知识点
 ## 参考
 
 * [tools](https://github.com/stars/donghaiwang/lists/tools)
