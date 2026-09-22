@@ -34,6 +34,7 @@
 ## 每行一个句子
 
 编写 LaTeX 文档时，请在源文件中每行都放一个句子。例如：
+编写 LaTeX 文档时，请在源文件中每行只放一个句子。例如：
 ```
 This is my first sentence.
 This is the second one.

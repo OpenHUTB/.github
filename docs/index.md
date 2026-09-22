@@ -1,6 +1,6 @@
 title: 主页
 
-# [OpenHUTB 社区](https://github.com/OpenHUTB/template)
+# [OpenHUTB 社区](https://github.com/OpenHUTB)
 
 欢迎使用开源孪创（Open source Humanoid-vehicle Twin Build, OpenHUTB）的社区简介，该社区提供一款加速**人**和**载具**代理开发的影视级模拟器，其中人包括人形机器人（Humanoid）和仿生人（Android），载具包括地面载具、空域载具、水域载具，社区本身采用[分布式架构](./org/architecture.md)。
 
@@ -8,16 +8,16 @@ title: 主页
 - [2.开发配置](#dev)
 - [3.问题](#questions)
 - [4.社区](#propaganda)
-
----
+ OpenHUTBs社区鼓励同学们参与开源实践，社区提供学习资源，大家可以提交文档修改，修复小bug。通过参与项目，把课堂知识运用起来，提升动手能力，认识更多志同道合的伙伴。--
 
 ## 1. 简介 <span id="list"></span>
 
 - [OpenHUTB 模拟器简介](./simulator.md)
 
 - 第一次参与开源项目请参考如下指南[贡献指南](./CONTRIBUTING.md)、非代码开发人员请参考[基于浏览器的贡献指南](./codespace.md)
+- 第一次参与开源项目请参考 **[贡献指南](./CONTRIBUTING.md)** 、非代码开发人员请参考[基于浏览器的贡献指南](./codespace.md)
 
-- [git 教程](https://openhutb.github.io/git/?locale=zh_CN)、[Python教程（到第13章）](https://liaoxuefeng.com/books/python/introduction/index.html)、[C++教程](https://www.runoob.com/cplusplus/cpp-tutorial.html)
+- [git 教程](https://openhutb.github.io/git/?locale=zh_CN)、[Markdown 教程](https://docs.github.com/zh/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)、[Python教程（到第13章）](https://liaoxuefeng.com/books/python/introduction/index.html)、[C++教程](https://www.runoob.com/cplusplus/cpp-tutorial.html)
 
 - 记住，自始至终，你可以利用 [Markdown](https://docs.github.com/zh/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) 撰写文档，减少沟通的认知障碍。
 
