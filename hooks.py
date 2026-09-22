@@ -17,7 +17,8 @@ def on_pre_build(**kwargs):
     src_file = os.path.join(os.path.dirname(__file__), 'CONTRIBUTING.md')
     # 目标文件：文档目录（相对于 docs_dir）
     dest_file = os.path.join(os.path.dirname(__file__), 'docs', 'CONTRIBUTING.md')
-    
+    #确保目标目录（docs）存在，不存在则自创建
+    os.makedirs(dest_file,exist_ok=True)
     # 执行拷贝
     if os.path.exists(src_file):
         shutil.copy2(src_file, dest_file)
