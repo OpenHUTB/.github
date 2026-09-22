@@ -46,7 +46,7 @@
 
 * [TortoiseGit](https://github.com/TortoiseGit/TortoiseGit) - Windows 资源管理器扩展用于操作 Git
 
-* [auto-py-to-exe](https://github.com/brentvollebregt/auto-py-to-exe) - pthon 转可执行 exe 的图形界面
+* [auto-py-to-exe](https://github.com/brentvollebregt/auto-py-to-exe) - python 转化为可执行 exe 的图形界面
 
 
 
