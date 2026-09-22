@@ -47,7 +47,7 @@
 
 ## **安装 PyCharm**
 
-安装 PyCharm 非常简单明了。头像官网使用此链接:[](http://www.jetbrains.com/pycharm/download/#section=windows)
+安装 PyCharm 非常简单明了。前往官网使用此链接:[](http://www.jetbrains.com/pycharm/download/#section=windows)
 
 ![Installing PyCharm - PyCharm Tutorial - Edureka](img/install_pycharm.png)
 
@@ -128,7 +128,7 @@ IDE 提供的可视化调试器帮助程序员调试 Python、JavaScript 和 Dja
 
 PyCharm 还为每个测试脚本或调试器执行创建了一个可重用和可定制的配置。用户甚至可以选择通过集成可视调试器和远程解释器来简化远程调试。
 
-### **内置端子**
+### **内置终端**
 
 PyCharm 附带用于 Windows、Linux 和 macOS 的本地终端。内置的终端使程序员能够在不离开 IDE 的情况下继续编码和测试。此外，程序员可以使用 IDE 运行 Python 文件，并根据精确的项目需求配置定制的 Python 环境。
 
@@ -136,7 +136,7 @@ PyCharm 附带用于 Windows、Linux 和 macOS 的本地终端。内置的终端
 
 ### **软件测试**
 
-像其他 ide 一样，PyCharm 也附带了一些特性和工具来简化 Python 应用程序测试。它允许开发人员通过流行的 Python 测试框架(如 Nose、Attest 和 Doctests)来执行单元测试。测试人员甚至可以选择运行单个或者多个测试文件和测试类。他们可以进一步将 IDE 与 Coverage.py 集成，以便在测试应用程序时测量代码覆盖率。
+像其他 ide 一样，PyCharm 也附带了一些特性和工具来简化 Python 应用程序测试。它允许开发人员通过流行的 Python 测试框架( unittest / pytest / nose / doctest)来执行单元测试。测试人员甚至可以选择运行单个或者多个测试文件和测试类。他们可以进一步将 IDE 与 Coverage.py 集成，以便在测试应用程序时测量代码覆盖率。
 
 在测试多线程应用程序时，测试人员可以使用 IDE 提供的线程并发可视化选项来全面高效地控制应用程序。同时，PyCharm 通过实现行为驱动开发(BDD)使用户能够交付高质量的软件。
 
@@ -225,7 +225,7 @@ print("Hello edureka!")
 
 从上面的截图可以看出，我们在 **Python 控制台中获得了正确的输出。**
 
-### **pychar 调试器**
+### **pycharm 调试器**
 
 用 PyCharm 调试是一件容易的事情。要设置断点，您只需单击代码的左侧，就会出现一个点。
 
