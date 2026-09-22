@@ -42,19 +42,21 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal current" href="#">贡献指南</a>
 <ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="#_2">步骤</a>
+<li class="toctree-l2"><a class="reference internal" href="#cmdbash">在cmd/bash提交本地修改的步骤</a>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#_3">其他</a>
+<li class="toctree-l2"><a class="reference internal" href="#vscode">在VScode提交本地修改的步骤</a>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#_4">软件安装</a>
+<li class="toctree-l2"><a class="reference internal" href="#_2">其他</a>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#_5">问题</a>
+<li class="toctree-l2"><a class="reference internal" href="#_3">软件安装</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#_4">问题</a>
 <ul>
 <li class="toctree-l3"><a class="reference internal" href="#github">国内访问 github 可能较慢</a>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#github-push-403">向 github 上 push 的时候报 403 错误</a>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#_6">克隆个人仓库出错</a>
+<li class="toctree-l3"><a class="reference internal" href="#_5">克隆个人仓库出错</a>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#git-push-unexpected-disconnect-while-reading-sideband-packet">git push 报错unexpected disconnect while reading sideband packet</a>
 </li>
@@ -120,7 +122,7 @@
 <p>开源的核心就是与他人沟通，也就是解决冲突的过程。该指南的初衷就是为初学者提供一个简单的方法去学习以及参与开源项目。</p>
 <p><em>如果你的电脑上未安装 git 或对命令行不熟悉，请参考以下的 <a href="#%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85">软件安装</a>。</em>
 <a href="https://www.bilibili.com/video/BV1udEuzrEa7/?spm_id_from=333.1391.0.0&amp;vd_source=0a56e113c3144b313a6ea829d3996ce9">视频教程链接</a></p>
-<h2 id="_2">步骤</h2>
+<h2 id="cmdbash">在cmd/bash提交本地修改的步骤</h2>
 <div class="mermaid">flowchart LR
     A[1. fork 组织项目到个人账户] --&gt; B[2. clone 个人远程仓库到本地]
     B --&gt; C[3. 新建特性分支]
@@ -187,6 +189,60 @@ git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </
 <p><img src="https://firstcontributions.github.io/assets/Readme/compare-and-pull.png" width="410"/></p>
 <p><img src="https://firstcontributions.github.io/assets/Readme/submit-pull-request.png" width="410"/></p>
 <p>不久之后，团队成员便会把你所有的变化合并到这个项目的主分支。更改合并后，你会收到一封电子邮件通知。</p>
+<h2 id="vscode">在VScode提交本地修改的步骤</h2>
+<p><strong>1.工具准备</strong></p>
+<ul>
+<li>首先按上述步骤创建GitHub账号，这里不多赘述；</li>
+<li>点击VScode左下角小猫图标登录GitHub账号；</li>
+<li>在VScode扩展商店安装“GitHub Pull Requests”扩展，它把<strong>git add、git commit、git push</strong>和<strong>git branch</strong>这些命令都变成了点击操作，对新手很友好，强烈建议把Chinese Language Pack for Visual Studio Code这个汉化扩展也装上，安装成功之后重启。</li>
+</ul>
+<p><strong>2.克隆个人仓库</strong></p>
+<ul>
+<li>该步骤与第一个方法里的一致，不过多赘述。</li>
+</ul>
+<p><strong>3.新建并更改分支</strong></p>
+<ul>
+<li>这一步相当于新建一个副本，在这个副本上面你可以做任何事，且不会损坏、污染主分支。</li>
+<li>在VScode左下角，也就是图一所示位置，会看到<strong>master</strong>或者<strong>main</strong>的字样，这意味着你现在在主分支，点击他，上方对话框会出现<strong>创建新分支...</strong>，点击他就可以创建新分支，成功后如图二所示，创建了一个名为<strong>new</strong>的分支，并且自动跳转到了这个分支，这时候就可以按需修改了。</li>
+</ul>
+<p><img alt="图一" src="/img/branch_setting.png"/>
+<img alt="图二" src="/img/branch_new.png"/></p>
+<p><strong>4.暂存修改并提交</strong></p>
+<ul>
+<li>存，也就是<strong>git add</strong>操作，可以理解成小存档，<strong>git commit</strong>就相当于大存档，你的每一小块修改都需要暂存，最后一起提交。</li>
+<li>如图三所示，点击左边第三个<strong>源代码管理</strong>图标，在存储库这一栏可以看到新建的分支和主分支，如果下方的更改一栏是空的，说明你现在所处的分支不对，点击对应分支即可切换。随后点击加号即可暂存成功。
+确保保存并暂存所有修改后，在<strong>提交</strong>按钮上方的对话框输入本次的说明，就可以提交了。</li>
+</ul>
+<p><img alt="图三" src="/img/repository.png"/></p>
+<p><strong>5.本地预览</strong></p>
+<ul>
+<li>如下图所示，点击第二行第二个放大镜图标就可以直接预览渲染后的网页效果。</li>
+</ul>
+<p><img alt="图四" src="/img/Preview.png"/></p>
+<p><strong>6.发布Branch</strong></p>
+<ul>
+<li>
+<p>在提交之后，这些修改已经在本地存档完毕了，只需上传，这时点击<strong>发布Branch</strong>按钮，最上方对话框会出现2个选择，<strong>origin</strong>对应你自己的云端仓库，<strong>upstream</strong>对应你fork的原仓库。</p>
+</li>
+<li>
+<p><strong>注：请确保发布分支前已经测试过准确无误</strong></p>
+</li>
+</ul>
+<p><strong>7.Pull Requests</strong></p>
+<ul>
+<li>
+<p>发布成功后，回到自己的仓库，会出现一个如图所示提醒，点击绿色按钮。
+<img alt="图五" src="/img/push_sign.png"/></p>
+</li>
+<li>
+<p>这时会跳转到新页面，在合并仓库前找到下图所示位置，这表示把你的修改合并到原仓库，但为了确保万无一失，强烈建议更改目标仓库为自己的仓库，在自己仓库测试没有问题再向原仓库提出<strong>PR</strong>请求。</p>
+</li>
+</ul>
+<p><img alt="图六" src="/img/change_repository.png"/></p>
+<ul>
+<li>成功之后，这次向自己仓库发起的<strong>PR</strong>会显示为<strong>open</strong>状态，点击<strong>Merge pull request</strong>，直到其状态变为紫色，这时候再去自己仓库，就会发现修改已经同步上去了。</li>
+<li>测试完毕没有问题就可以向原仓库发送<strong>PR</strong>请求了。</li>
+</ul>
 <p><strong>注意事项：</strong></p>
 <ul>
 <li>Pull Request 标题需要概括所修改的内容；</li>
@@ -194,7 +250,7 @@ git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </
 <li>不提交程序能够输出的中间文件、结果文件；</li>
 <li>可以提供少量能够保证程序能够正常运行的示例数据，大的输入数据在 README.md 文件中提供百度网盘或者谷歌网盘的下载链接；</li>
 </ul>
-<h2 id="_3">其他</h2>
+<h2 id="_2">其他</h2>
 <p>1.如果提交 Pull Request 时出现冲突，则参考 <a href="./doc/resolve_conflict.md">使用 TortoiseGit 解决冲突</a> 或 <a href="https://docs.github.com/zh/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github">在 GitHub 上解决合并冲突</a> 。</p>
 <p>2.同步子模块
 </p><div class="highlight"><pre><span></span><code>git submodule update --remote
@@ -208,7 +264,7 @@ git<span class="w"> </span>switch<span class="w"> </span>BRANCH_NAME
 <span class="c1"># 前面拉取后，后面又有新的修改</span>
 git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>pull/ID/head
 </code></pre></div>
-<h2 id="_4">软件安装</h2>
+<h2 id="_3">软件安装</h2>
 <ul>
 <li>
 <p>下载相关<a href="https://pan.baidu.com/s/1Is2-VR1z-tMYvmdinsVY_g?pwd=hutb">开发工具</a> ，先安装<code>Git-2.40.0-64-bit.exe</code>，再安装可视化工具管理 <a href="https://blog.csdn.net/xwnxwn/article/details/108694863"><code>TortoiseGit-2.14.0.0-64bit.msi</code></a>（可选）。</p>
@@ -238,7 +294,7 @@ git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </
 </tr>
 </tbody>
 </table>
-<h2 id="_5">问题</h2>
+<h2 id="_4">问题</h2>
 <h6 id="github">国内访问 github 可能较慢</h6>
 <p>这里提供 github 加速方案和科学上网的 <a href="https://openhutb.github.io/doc/build_carla/#internet">链接</a> 。</p>
 <h6 id="github-push-403">向 github 上 push 的时候报 403 错误</h6>
@@ -249,7 +305,7 @@ git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </
 <div class="highlight"><pre><span></span><code>url = https://OpenHUTB@github.com/OpenHUTB/bazaar.git
 </code></pre></div>
 然后就可以进行授权并继续push。
-<h6 id="_6">克隆个人仓库出错</h6>
+<h6 id="_5">克隆个人仓库出错</h6>
 <p>若出现SSL certificate problems请关闭加速器再克隆。</p>
 <h6 id="git-push-unexpected-disconnect-while-reading-sideband-packet">git push 报错unexpected disconnect while reading sideband packet</h6>
 <div class="highlight"><pre><span></span><code><span class="c1"># 增加缓存至4G</span>
