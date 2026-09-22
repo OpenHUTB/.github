@@ -111,7 +111,7 @@ git push origin <新分支的名称>
 
 ## 其他
 
-1.如果提交 Pull Request 时出现冲突，则参考 [使用 TortoiseGit 解决冲突](./doc/resolve_conflict.md) 或 [在 GitHub 上解决合并冲突](https://docs.github.com/zh/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github) 。
+1.如果提交 Pull Request 时出现冲突，则参考 [使用 TortoiseGit 解决冲突](./docs/resolve_conflict.md) 或 [在 GitHub 上解决合并冲突](https://docs.github.com/zh/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github) 。
 
 2.同步子模块
 ```
@@ -140,9 +140,9 @@ git pull origin pull/ID/head
 
 - 使用其他工具的教程
 
-| <a href="https://git-scm.com/download/win"><img alt="Git" src="https://cdn.icon-icons.com/icons2/2699/PNG/512/git_scm_logo_icon_170096.png" width="100"></a> | <a href="https://visualstudio.microsoft.com/zh-hans/vs/getting-started/"><img alt="Visual Studio 2017" src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Visual_Studio_2017_Logo.svg" width="100"></a> |  <a href="https://visualstudio.microsoft.com/zh-hans/vs/"><img alt="VS Code" src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Visual_Studio_Code_1.35_icon.png" width=100></a> |  <a href="https://github.com/OpenHUTB/.github/blob/master/doc/pycharm-tutorial.md"><img alt="IntelliJ IDEA" src="https://upload.wikimedia.org/wikipedia/commons/1/1d/PyCharm_Icon.svg" width=100></a> |
+| <a href="https://git-scm.com/download/win"><img alt="Git" src="https://cdn.icon-icons.com/icons2/2699/PNG/512/git_scm_logo_icon_170096.png" width="100"></a> | <a href="https://visualstudio.microsoft.com/zh-hans/vs/getting-started/"><img alt="Visual Studio 2017" src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Visual_Studio_2017_Logo.svg" width="100"></a> |  <a href="https://visualstudio.microsoft.com/zh-hans/vs/"><img alt="VS Code" src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Visual_Studio_Code_1.35_icon.png" width=100></a> |  <a href="https://github.com/OpenHUTB/.github/blob/master/docs/pycharm-tutorial.md"><img alt="IntelliJ IDEA" src="https://upload.wikimedia.org/wikipedia/commons/1/1d/PyCharm_Icon.svg" width=100></a> |
 | :---: | :---: | :---: | :---: |
-| [Git Bash](https://github.com/firstcontributions/first-contributions/blob/main/docs/cli-tool-tutorials/translations/Chinese/git-bash-windows-tutorial.zh-cn.md) | [Visual Studio 2022](https://visualstudio.microsoft.com/zh-hans/vs/getting-started/) |  [Visual Studio Code](https://visualstudio.microsoft.com/zh-hans/vs/) | [Pycharm](https://github.com/OpenHUTB/.github/blob/master/doc/pycharm-tutorial.md) |
+| [Git Bash](https://github.com/firstcontributions/first-contributions/blob/main/docs/cli-tool-tutorials/translations/Chinese/git-bash-windows-tutorial.zh-cn.md) | [Visual Studio 2022](https://visualstudio.microsoft.com/zh-hans/vs/getting-started/) |  [Visual Studio Code](https://visualstudio.microsoft.com/zh-hans/vs/) | [Pycharm](https://github.com/OpenHUTB/.github/blob/master/docs/pycharm-tutorial.md) |
 
 
 ## 问题
