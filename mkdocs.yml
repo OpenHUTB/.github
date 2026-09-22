@@ -18,7 +18,10 @@ theme:
   navigation_depth: 3
   features:
     - search.suggest # 在目录栏中的搜索框中输入一些字母时推荐补全整个单词
-extra_css: [extra.css]
+# extra_css: [extra.css]
+# 说明：docs/extra.css 从未存在，构建产物里也不会有该文件，
+# 保留这行会让每个页面都产生一次 404（线上站点已实测确认）。
+# 如果确实需要自定义样式，请补上 docs/extra.css 后再取消注释。
 
 
 
@@ -26,12 +29,16 @@ extra_css: [extra.css]
 extra_javascript:
   # - extra.js
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML
-  - https://cdn.rawgit.com/knsv/mermaid/6.0.0/dist/mermaid.min.js
+  - https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js
   - https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js
   - https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js
   - https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js
   - https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js
-  - js/umlconvert.js
+  # js/umlconvert.js 从未存在，构建产物里也不会有该文件，
+  # 保留这行会让每个页面都产生一次 404（线上站点已实测确认）。
+  # 该脚本用于渲染 ```flow / ```sequence 围栏代码块，目前仓库里
+  # 没有任何页面使用这两种代码块，所以直接移除引用。
+# - js/umlconvert.js
 
 plugins:
 #  - mkdocs-video
@@ -46,6 +53,7 @@ plugins:
       is_video: True
       video_autoplay: True
       video_loop: True
+  - mermaid2
 
 extra:
   generator: false
@@ -60,10 +68,9 @@ nav:
 - 首页: 'index.md'
 - 贡献指南: 'CONTRIBUTING.md'
 - git 教程: 'https://openhutb.github.io/git/?locale=zh_CN'
-- 贡献指南: 'CONTRIBUTING.md'
 - Markdown教程: 'https://docs.github.com/zh/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax'
 - 论文写作技巧: 'paper_tips.md'
-
+- Latex文献引用编译办法: 'bib_reference_guide.md'
 - 搭建自定义开发环境: 'env_conf.md'
 
 - 远程办公: 'rustdesk_tailscale.md'
@@ -82,9 +89,8 @@ markdown_extensions:
   - admonition
   - mdx_math
   - pymdownx.superfences:
-      custom_fences: [
-         { name: flow, class: uml-flowchart }
-        ,{ name: sequence, class: uml-sequence-diagram }
-        ,{ name: mermaid, class: mermaid }
-      ]
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid
 
