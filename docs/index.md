@@ -22,7 +22,7 @@ title: 主页
 
 - [使用工具列表](./tools.md)。
 
-- 撰写论文请参考[论文写作技巧](./paper_tips.md)
+- 撰写论文请参考[互联网上的论文写作技巧](./paper_tips.md)
 
 
 ## 2. 开发配置 <span id='dev'></span>
