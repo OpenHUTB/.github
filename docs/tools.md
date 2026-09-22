@@ -5,7 +5,7 @@
 入选标准（非硬性）：最近一年在有提交修改、星星数大于100。
 
 ## 工具
-
+* [Obsidian](https://github.com/obsidianmd/obsidian-releases) —— 本地双链笔记软件，适合整理学习笔记
 * [ScreenToGif](https://github.com/NickeManarin/ScreenToGif) - 截图为gif动图
 
 * [shotcut](https://github.com/mltframework/shotcut) - 视频编辑
