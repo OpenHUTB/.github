@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 380" width="880" height="380" font-family="Segoe UI, Microsoft YaHei, sans-serif">
+  <rect width="880" height="380" fill="#FFFFFF"/>
+
+  <rect x="20" y="20" width="440" height="340" rx="8" fill="#F8FAFC" stroke="#C7D1DB" stroke-width="1"/>
+  <text x="40" y="54" font-size="15" font-weight="600" fill="#1F2A37">按住鼠标中键拖动，就能换角度看模型</text>
+  <text x="40" y="76" font-size="12.5" fill="#5B6875">这是最常用的一个操作，先把它练熟，后面的操作会顺很多</text>
+
+  <g>
+    <animateTransform attributeName="transform" type="rotate" values="-7 240 210;7 240 210;-7 240 210" dur="3.6s" repeatCount="indefinite"/>
+    <polygon points="240,158 285,184 240,210 195,184" fill="#DCE8F6" stroke="#5E7C9E" stroke-width="1"/>
+    <polygon points="285,184 285,236 240,262 240,210" fill="#C3D6EC" stroke="#5E7C9E" stroke-width="1"/>
+    <polygon points="195,184 240,210 240,262 195,236" fill="#AEC7E4" stroke="#5E7C9E" stroke-width="1"/>
+    <polyline points="195,184 240,210 285,184" fill="none" stroke="#5E7C9E" stroke-width="1"/>
+    <line x1="240" y1="210" x2="240" y2="262" stroke="#5E7C9E" stroke-width="1"/>
+  </g>
+
+  <g>
+    <animateTransform attributeName="transform" type="rotate" from="0 240 210" to="360 240 210" dur="10s" repeatCount="indefinite"/>
+    <circle cx="240" cy="210" r="92" fill="none" stroke="#9BB4CE" stroke-width="1.5" stroke-dasharray="7 7"/>
+    <polygon points="332,210 320,203 320,217" fill="#2F6DB0"/>
+  </g>
+
+  <text x="240" y="336" text-anchor="middle" font-size="12.5" fill="#5B6875">虚线箭头表示视角在绕模型转动</text>
+
+  <rect x="484" y="20" width="376" height="96" rx="8" fill="#F8FAFC" stroke="#C7D1DB" stroke-width="1"/>
+  <circle cx="512" cy="68" r="15" fill="#E9EFF5" stroke="#C7D1DB" stroke-width="1"/>
+  <path d="M505 72A8 8 0 1 1 512 76" fill="none" stroke="#2F6DB0" stroke-width="1.8"/>
+  <polygon points="512,79 506,74 513,72" fill="#2F6DB0"/>
+  <text x="540" y="62" font-size="14" font-weight="600" fill="#1F2A37">旋转视角</text>
+  <text x="540" y="84" font-size="12.5" fill="#5B6875">按住鼠标中键拖动</text>
+
+  <rect x="484" y="142" width="376" height="96" rx="8" fill="#F8FAFC" stroke="#C7D1DB" stroke-width="1"/>
+  <circle cx="512" cy="190" r="15" fill="#E9EFF5" stroke="#C7D1DB" stroke-width="1"/>
+  <path d="M512 181V199M503 190H521" fill="none" stroke="#2F6DB0" stroke-width="1.8"/>
+  <polygon points="512,179 508,184 516,184" fill="#2F6DB0"/>
+  <polygon points="512,201 508,196 516,196" fill="#2F6DB0"/>
+  <polygon points="501,190 506,186 506,194" fill="#2F6DB0"/>
+  <polygon points="523,190 518,186 518,194" fill="#2F6DB0"/>
+  <text x="540" y="184" font-size="14" font-weight="600" fill="#1F2A37">平移视角</text>
+  <text x="540" y="206" font-size="12.5" fill="#5B6875">Shift + 鼠标中键拖动</text>
+
+  <rect x="484" y="264" width="376" height="96" rx="8" fill="#F8FAFC" stroke="#C7D1DB" stroke-width="1"/>
+  <circle cx="512" cy="312" r="15" fill="#E9EFF5" stroke="#C7D1DB" stroke-width="1"/>
+  <circle cx="509" cy="309" r="6" fill="none" stroke="#2F6DB0" stroke-width="1.8"/>
+  <line x1="514" y1="314" x2="519" y2="319" stroke="#2F6DB0" stroke-width="1.8"/>
+  <text x="540" y="306" font-size="14" font-weight="600" fill="#1F2A37">缩放视角</text>
+  <text x="540" y="328" font-size="12.5" fill="#5B6875">滚动鼠标滚轮</text>
+</svg>

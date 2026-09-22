@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 580" width="880" height="580" font-family="Segoe UI, Microsoft YaHei, sans-serif">
+  <rect width="880" height="580" fill="#FFFFFF"/>
+
+  <rect x="20" y="16" width="840" height="520" rx="10" fill="#FFFFFF" stroke="#C7D1DB" stroke-width="1"/>
+
+  <rect x="22" y="18" width="836" height="44" rx="8" fill="#E9EFF5" stroke="#C7D1DB" stroke-width="1"/>
+  <rect x="22" y="18" width="139" height="44" rx="8" fill="#FFFFFF" stroke="#C7D1DB" stroke-width="1"/>
+  <line x1="24" y1="61" x2="158" y2="61" stroke="#2F6DB0" stroke-width="2.5"/>
+  <line x1="161" y1="22" x2="161" y2="58" stroke="#D5DEE7" stroke-width="1"/>
+  <line x1="301" y1="22" x2="301" y2="58" stroke="#D5DEE7" stroke-width="1"/>
+  <line x1="440" y1="22" x2="440" y2="58" stroke="#D5DEE7" stroke-width="1"/>
+  <line x1="579" y1="22" x2="579" y2="58" stroke="#D5DEE7" stroke-width="1"/>
+  <line x1="719" y1="22" x2="719" y2="58" stroke="#D5DEE7" stroke-width="1"/>
+  <text x="91" y="46" text-anchor="middle" font-size="12.5" fill="#1F2A37" font-weight="600">Layout</text>
+  <text x="231" y="46" text-anchor="middle" font-size="12.5" fill="#5B6875">Modeling</text>
+  <text x="370" y="46" text-anchor="middle" font-size="12.5" fill="#5B6875">Sculpting</text>
+  <text x="510" y="46" text-anchor="middle" font-size="12.5" fill="#5B6875">Shading</text>
+  <text x="649" y="46" text-anchor="middle" font-size="12.5" fill="#5B6875">Animation</text>
+  <text x="788" y="46" text-anchor="middle" font-size="12.5" fill="#5B6875">Rendering</text>
+
+  <rect x="22" y="72" width="540" height="300" rx="6" fill="#F8FAFC" stroke="#C7D1DB" stroke-width="1"/>
+  <text x="38" y="98" font-size="15" font-weight="600" fill="#1F2A37">3D 视图（3D Viewport）</text>
+  <text x="38" y="119" font-size="12.5" fill="#5B6875">查看、选择、移动和编辑物体。绝大多数操作都在这里完成。</text>
+
+  <polygon points="300,180 352,210 300,240 248,210" fill="#DCE8F6" stroke="#5E7C9E" stroke-width="1"/>
+  <polygon points="352,210 352,270 300,300 300,240" fill="#C3D6EC" stroke="#5E7C9E" stroke-width="1"/>
+  <polygon points="248,210 300,240 300,300 248,270" fill="#AEC7E4" stroke="#5E7C9E" stroke-width="1"/>
+  <polyline points="248,210 300,240 352,210" fill="none" stroke="#5E7C9E" stroke-width="1"/>
+  <line x1="300" y1="240" x2="300" y2="300" stroke="#5E7C9E" stroke-width="1"/>
+  <text x="300" y="330" text-anchor="middle" font-size="12.5" fill="#5B6875">默认场景中的立方体</text>
+
+  <line x1="72" y1="344" x2="122" y2="344" stroke="#D64545" stroke-width="2"/>
+  <polygon points="122,344 114,340 114,348" fill="#D64545"/>
+  <line x1="72" y1="344" x2="100" y2="324" stroke="#3E9B4F" stroke-width="2"/>
+  <polygon points="100,324 94,325 99,331" fill="#3E9B4F"/>
+  <line x1="72" y1="344" x2="72" y2="300" stroke="#2F6DB0" stroke-width="2"/>
+  <polygon points="72,300 68,308 76,308" fill="#2F6DB0"/>
+  <circle cx="72" cy="344" r="2.5" fill="#5B6875"/>
+  <text x="128" y="349" font-size="12" fill="#D64545">X</text>
+  <text x="104" y="318" font-size="12" fill="#3E9B4F">Y</text>
+  <text x="66" y="294" font-size="12" fill="#2F6DB0">Z</text>
+
+  <rect x="572" y="72" width="286" height="142" rx="6" fill="#F8FAFC" stroke="#C7D1DB" stroke-width="1"/>
+  <text x="588" y="98" font-size="15" font-weight="600" fill="#1F2A37">大纲视图（Outliner）</text>
+  <text x="588" y="119" font-size="12.5" fill="#5B6875">场景中所有物体的列表</text>
+  <rect x="588" y="132" width="14" height="14" rx="2" fill="#D9E2EC" stroke="#B8C5D3" stroke-width="1"/>
+  <text x="612" y="144" font-size="12.5" fill="#1F2A37">Cube</text>
+  <rect x="588" y="156" width="14" height="14" rx="2" fill="#D9E2EC" stroke="#B8C5D3" stroke-width="1"/>
+  <text x="612" y="168" font-size="12.5" fill="#1F2A37">Camera</text>
+  <rect x="588" y="180" width="14" height="14" rx="2" fill="#D9E2EC" stroke="#B8C5D3" stroke-width="1"/>
+  <text x="612" y="192" font-size="12.5" fill="#1F2A37">Light</text>
+
+  <rect x="572" y="224" width="286" height="148" rx="6" fill="#F8FAFC" stroke="#C7D1DB" stroke-width="1"/>
+  <text x="588" y="250" font-size="15" font-weight="600" fill="#1F2A37">属性编辑器（Properties）</text>
+  <text x="588" y="271" font-size="12.5" fill="#5B6875">材质、修改器与渲染参数</text>
+  <line x1="588" y1="288" x2="842" y2="288" stroke="#E1E8EF" stroke-width="1"/>
+  <text x="588" y="308" font-size="12.5" fill="#1F2A37">材质 Material</text>
+  <rect x="588" y="318" width="180" height="10" rx="3" fill="#E4EBF2"/>
+  <text x="588" y="350" font-size="12.5" fill="#1F2A37">修改器 Modifier</text>
+  <rect x="588" y="358" width="120" height="10" rx="3" fill="#E4EBF2"/>
+
+  <rect x="22" y="382" width="836" height="146" rx="6" fill="#F8FAFC" stroke="#C7D1DB" stroke-width="1"/>
+  <text x="38" y="408" font-size="15" font-weight="600" fill="#1F2A37">时间轴（Timeline）</text>
+  <text x="38" y="429" font-size="12.5" fill="#5B6875">播放动画、设置关键帧。只做静态模型时可以暂时忽略。</text>
+  <rect x="38" y="446" width="804" height="26" rx="4" fill="#E9EFF5" stroke="#C7D1DB" stroke-width="1"/>
+  <line x1="86" y1="446" x2="86" y2="472" stroke="#B8C5D3" stroke-width="1"/>
+  <line x1="134" y1="446" x2="134" y2="472" stroke="#B8C5D3" stroke-width="1"/>
+  <line x1="182" y1="446" x2="182" y2="472" stroke="#B8C5D3" stroke-width="1"/>
+  <line x1="230" y1="446" x2="230" y2="472" stroke="#B8C5D3" stroke-width="1"/>
+  <line x1="278" y1="446" x2="278" y2="472" stroke="#B8C5D3" stroke-width="1"/>
+  <line x1="326" y1="446" x2="326" y2="472" stroke="#B8C5D3" stroke-width="1"/>
+  <line x1="374" y1="446" x2="374" y2="472" stroke="#B8C5D3" stroke-width="1"/>
+  <line x1="422" y1="446" x2="422" y2="472" stroke="#B8C5D3" stroke-width="1"/>
+  <line x1="470" y1="446" x2="470" y2="472" stroke="#B8C5D3" stroke-width="1"/>
+  <line x1="518" y1="446" x2="518" y2="472" stroke="#B8C5D3" stroke-width="1"/>
+  <line x1="566" y1="446" x2="566" y2="472" stroke="#B8C5D3" stroke-width="1"/>
+  <line x1="614" y1="446" x2="614" y2="472" stroke="#B8C5D3" stroke-width="1"/>
+  <line x1="662" y1="446" x2="662" y2="472" stroke="#B8C5D3" stroke-width="1"/>
+  <line x1="710" y1="446" x2="710" y2="472" stroke="#B8C5D3" stroke-width="1"/>
+  <line x1="758" y1="446" x2="758" y2="472" stroke="#B8C5D3" stroke-width="1"/>
+  <line x1="806" y1="446" x2="806" y2="472" stroke="#B8C5D3" stroke-width="1"/>
+  <line x1="300" y1="440" x2="300" y2="478" stroke="#D64545" stroke-width="2"/>
+  <polygon points="300,440 295,432 305,432" fill="#D64545"/>
+
+  <text x="20" y="554" font-size="12.5" fill="#5B6875">顶部标签依次为：Layout 布局、Modeling 建模、Sculpting 雕刻、Shading 着色、Animation 动画、Rendering 渲染。</text>
+  <text x="20" y="573" font-size="12.5" fill="#5B6875">入门阶段主要使用 Layout 和 Modeling；每个区域都可以拖动边框改变大小。</text>
+</svg>

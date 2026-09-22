@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 366" width="880" height="366" font-family="Segoe UI, Microsoft YaHei, sans-serif">
+  <rect width="880" height="366" fill="#FFFFFF"/>
+  <text x="20" y="34" font-size="15" font-weight="600" fill="#1F2A37">从 Blender 到模拟器：四个步骤</text>
+
+  <rect x="20" y="60" width="180" height="104" rx="8" fill="#F8FAFC" stroke="#C7D1DB" stroke-width="1"/>
+  <circle cx="42" cy="86" r="13" fill="#DCE8F6" stroke="#2F6DB0" stroke-width="1"/>
+  <text x="42" y="91" text-anchor="middle" font-size="13" font-weight="600" fill="#1B4F8A">1</text>
+  <text x="64" y="91" font-size="13.5" font-weight="600" fill="#1F2A37">建好模型</text>
+  <text x="40" y="122" font-size="12.5" fill="#5B6875">在 Blender 场景里</text>
+  <text x="40" y="142" font-size="12.5" fill="#5B6875">完成建模与摆放</text>
+
+  <line x1="200" y1="112" x2="234" y2="112" stroke="#8B96A3" stroke-width="1.5"/>
+  <polygon points="240,112 230,107 230,117" fill="#8B96A3"/>
+
+  <rect x="240" y="60" width="180" height="104" rx="8" fill="#F8FAFC" stroke="#C7D1DB" stroke-width="1"/>
+  <circle cx="262" cy="86" r="13" fill="#DCE8F6" stroke="#2F6DB0" stroke-width="1"/>
+  <text x="262" y="91" text-anchor="middle" font-size="13" font-weight="600" fill="#1B4F8A">2</text>
+  <text x="284" y="91" font-size="13.5" font-weight="600" fill="#1F2A37">应用缩放旋转</text>
+  <text x="260" y="122" font-size="12.5" fill="#5B6875">选中物体后按</text>
+  <text x="260" y="142" font-size="12.5" fill="#5B6875">Ctrl + A</text>
+
+  <line x1="420" y1="112" x2="454" y2="112" stroke="#8B96A3" stroke-width="1.5"/>
+  <polygon points="460,112 450,107 450,117" fill="#8B96A3"/>
+
+  <rect x="460" y="60" width="180" height="104" rx="8" fill="#F8FAFC" stroke="#C7D1DB" stroke-width="1"/>
+  <circle cx="482" cy="86" r="13" fill="#DCE8F6" stroke="#2F6DB0" stroke-width="1"/>
+  <text x="482" y="91" text-anchor="middle" font-size="13" font-weight="600" fill="#1B4F8A">3</text>
+  <text x="504" y="91" font-size="13.5" font-weight="600" fill="#1F2A37">导出为 FBX</text>
+  <text x="480" y="122" font-size="12.5" fill="#5B6875">菜单 File → Export</text>
+  <text x="480" y="142" font-size="12.5" fill="#5B6875">选择 FBX (.fbx)</text>
+
+  <line x1="640" y1="112" x2="674" y2="112" stroke="#8B96A3" stroke-width="1.5"/>
+  <polygon points="680,112 670,107 670,117" fill="#8B96A3"/>
+
+  <rect x="680" y="60" width="180" height="104" rx="8" fill="#F8FAFC" stroke="#C7D1DB" stroke-width="1"/>
+  <circle cx="702" cy="86" r="13" fill="#DCE8F6" stroke="#2F6DB0" stroke-width="1"/>
+  <text x="702" y="91" text-anchor="middle" font-size="13" font-weight="600" fill="#1B4F8A">4</text>
+  <text x="724" y="91" font-size="13.5" font-weight="600" fill="#1F2A37">导入并验证</text>
+  <text x="700" y="122" font-size="12.5" fill="#5B6875">在模拟器里实际</text>
+  <text x="700" y="142" font-size="12.5" fill="#5B6875">看一次效果</text>
+
+  <rect x="20" y="192" width="840" height="146" rx="8" fill="#FDF6EC" stroke="#EBC98A" stroke-width="1"/>
+  <text x="42" y="222" font-size="14" font-weight="600" fill="#8A5B12">导出前必查三项</text>
+  <text x="42" y="250" font-size="12.5" fill="#5B4818">1. 应用缩放与旋转（Ctrl + A）—— 这是导出后模型变形最常见的原因</text>
+  <text x="42" y="276" font-size="12.5" fill="#5B4818">2. 场景单位与目标引擎保持一致 —— 否则模型会整体过大或过小</text>
+  <text x="42" y="302" font-size="12.5" fill="#5B4818">3. 模型朝向 —— Blender 默认 Z 轴向上，部分引擎为 Y 轴向上，导出时注意轴向设置</text>
+  <text x="42" y="326" font-size="12" fill="#8B96A3">导出完成后，建议在引擎里导入一次确认，而不要只看 Blender 里的预览。</text>
+</svg>
