@@ -134,13 +134,40 @@
 </li>
 </ul>
 </div>
+<p>需要检查的内容包括：</p>
+<ul>
+<li>图片前后没有多余的空行</li>
+<li>图注是否正常显示或重复显示</li>
+<li>公式如果格式混乱，改用截图</li>
+<li>超过 5M 的动图一般会上传失败，使用 ScreenToGif “编辑-&gt; 减少帧数”、“图像 -&gt; 调整大小” 来压缩</li>
+<li>Python 代码的 class、def、return 等关键字后面缺少空格、代码是否对齐正确</li>
+</ul>
+<p>选中除了第一行标题外的所有内容，复制到微信公众号的草稿的正文部分。</p>
 <h2 id="_2"><a href="https://www.zhihu.com/people/OpenHUTB">知乎</a></h2>
 <p>风格选“知乎精选”。</p>
 <h2 id="_3"><a href="https://creator.xiaohongshu.com/new/home">小红书</a></h2>
 <p>“写长文”-&gt;“导入链接”</p>
 <p>风格选“小红书”风格。</p>
 <h2 id="twitter"><a href="https://x.com/OpenHUTB">Twitter</a></h2>
-<h2 id="_4">参考</h2>
+<h2 id="_4">自定义样式</h2>
+<p>在预览页面点击“更多 -&gt; 设置 -&gt; 打开自定义样式面板”，拖到最下面的“CSS 编辑器”，输入以下内容（这里以调整标题的字体大小为例）：</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">article-wrapper</span><span class="w"> </span><span class="nt">h2</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">article-wrapper</span><span class="w"> </span><span class="nt">h3</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">article-wrapper</span><span class="w"> </span><span class="nt">h4</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>注意：正文默认字体大小 16。
+</p><div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">article-wrapper</span><span class="w"> </span><span class="nt">p</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>点击“应用”，即可在预览窗口看到改变后的字体大小。</p>
+<h2 id="_5">参考</h2>
 <ul>
 <li><a href="https://marketplace.visualstudio.com/items?itemName=marsggbo.markdown2anything">Markdown2Anything</a></li>
 </ul></div>
