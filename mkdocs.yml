@@ -86,7 +86,7 @@ nav:
     - Markdown 一键发布到社交平台: 'markdown2anything.md'
 - 学习与论文:
     - LaTeX 参考文献编译: 'bib_reference_guide.md'
-    - 本科毕业设计: '本科生.md'
+    - 本科毕业设计: 'undergraduate.md'
     - 论文成果：AVF-BEL 视听融合: 'paper/avf.md'
 - 社区组织形式: 'org/architecture.md'
 
