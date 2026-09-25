@@ -13,9 +13,8 @@ repo_url: https://github.com/OpenHUTB/.github
 edit_uri: edit/master/docs/
 
 theme:
-  name: readthedocs
-  sticky_navigation: True
-  navigation_depth: 3
+  name: material
+  language: zh
   features:
     - search.suggest # 在目录栏中的搜索框中输入一些字母时推荐补全整个单词
 extra_css: [extra.css]
@@ -37,7 +36,7 @@ plugins:
 #  - mkdocs-video
   - search:
       lang: zh
-      separator: '[\s\-\.]+'
+      separator: '[\s\u200b\-\.]+'
       min_search_length: 3
   - bibtex:
       bib_file: refs.bib

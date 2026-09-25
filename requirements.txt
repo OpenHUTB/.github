@@ -1,3 +1,5 @@
+mkdocs-material
+jieba
 python-markdown-math
 pymdown-extensions
 imageio
