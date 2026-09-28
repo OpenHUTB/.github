@@ -242,20 +242,20 @@ git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </
 <li>这一步相当于新建一个副本，在这个副本上面你可以做任何事，且不会损坏、污染主分支。</li>
 <li>在VScode左下角，也就是图一所示位置，会看到<strong>master</strong>或者<strong>main</strong>的字样，这意味着你现在在主分支，点击他，上方对话框会出现<strong>创建新分支...</strong>，点击他就可以创建新分支，成功后如图二所示，创建了一个名为<strong>new</strong>的分支，并且自动跳转到了这个分支，这时候就可以按需修改了。</li>
 </ul>
-<p><img alt="图一" src="/img/branch_setting.png"/>
-<img alt="图二" src="/img/branch_new.png"/></p>
+<p><img alt="图一" src="../img/branch_setting.png"/>
+<img alt="图二" src="../img/branch_new.png"/></p>
 <p><strong>4.暂存修改并提交</strong></p>
 <ul>
 <li>存，也就是<strong>git add</strong>操作，可以理解成小存档，<strong>git commit</strong>就相当于大存档，你的每一小块修改都需要暂存，最后一起提交。</li>
 <li>如图三所示，点击左边第三个<strong>源代码管理</strong>图标，在存储库这一栏可以看到新建的分支和主分支，如果下方的更改一栏是空的，说明你现在所处的分支不对，点击对应分支即可切换。随后点击加号即可暂存成功。
 确保保存并暂存所有修改后，在<strong>提交</strong>按钮上方的对话框输入本次的说明，就可以提交了。</li>
 </ul>
-<p><img alt="图三" src="/img/repository.png"/></p>
+<p><img alt="图三" src="../img/repository.png"/></p>
 <p><strong>5.本地预览</strong></p>
 <ul>
 <li>如下图所示，点击第二行第二个放大镜图标就可以直接预览渲染后的网页效果。</li>
 </ul>
-<p><img alt="图四" src="/img/Preview.png"/></p>
+<p><img alt="图四" src="../img/Preview.png"/></p>
 <p><strong>6.发布Branch</strong></p>
 <ul>
 <li>
@@ -269,13 +269,13 @@ git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </
 <ul>
 <li>
 <p>发布成功后，回到自己的仓库，会出现一个如图所示提醒，点击绿色按钮。
-<img alt="图五" src="/img/push_sign.png"/></p>
+<img alt="图五" src="../img/push_sign.png"/></p>
 </li>
 <li>
 <p>这时会跳转到新页面，在合并仓库前找到下图所示位置，这表示把你的修改合并到原仓库，但为了确保万无一失，强烈建议更改目标仓库为自己的仓库，在自己仓库测试没有问题再向原仓库提出<strong>PR</strong>请求。</p>
 </li>
 </ul>
-<p><img alt="图六" src="/img/change_repository.png"/></p>
+<p><img alt="图六" src="../img/change_repository.png"/></p>
 <ul>
 <li>成功之后，这次向自己仓库发起的<strong>PR</strong>会显示为<strong>open</strong>状态，点击<strong>Merge pull request</strong>，直到其状态变为紫色，这时候再去自己仓库，就会发现修改已经同步上去了。</li>
 <li>测试完毕没有问题就可以向原仓库发送<strong>PR</strong>请求了。</li>
