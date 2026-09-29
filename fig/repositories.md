@@ -60,6 +60,9 @@
 ### [仿真引擎](https://github.com/OpenHUTB/engine)
 包含 CARLA 补丁的虚幻引擎。
 
+### [Pimax Dream Air 头显](https://openhutb.github.io/doc/interbehavior/Tutorials/PimaxDriving/)
+VR 驾驶头显模块，已在 Windows + Pimax Play + SteamVR 环境完成实机验证：支持头显 6 自由度跟踪与 Crystal 手柄驾驶（识别为 SteamVR `oculus_touch`）、连续座椅调整，并通过 Pimax PVR 1.26 运行时接入 combined gaze 眼动追踪与注视线显示。详见 [Pimax Dream Air 驾驶与眼动追踪](https://github.com/OpenHUTB/doc/blob/master/docs/interbehavior/Tutorials/PimaxDriving.md)。
+
 ### [工业仿真](https://github.com/OpenHUTB/matlab) 
 工业仿真软件的注释和二次开发。
 
