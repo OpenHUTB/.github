@@ -118,6 +118,7 @@
 ## 常见
 
 * [Chromium](https://github.com/chromium/chromium) - Chromium 浏览器
+* [python](https://docs.python.org/zh-cn/3/tutorial/) -python 教程
 
 * [vscode](https://github.com/microsoft/vscode) - 代码编辑
 
