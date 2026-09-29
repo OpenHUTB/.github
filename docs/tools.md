@@ -39,7 +39,12 @@
 * [md2wechat-skill](https://github.com/geekjourneyx/md2wechat-skill) - 一键排版发布到微信公众号
 
 * [pywechat](https://github.com/Hello-Mr-Crab/pywechat) - windows桌面微信自动化
-
+* [obsidian](https://github.com/obsidianmd/obsidian-releases) - 本地知识库、Markdown笔记软件
+* [drawio](https://github.com/jgraph/drawio) - 开源流程图、架构图绘制工具（替代Visio）
+* [paperless-ngx](https://github.com/paperless-ngx/paperless-ngx) - 文档数字化归档、OCR文档管理，可自托管
+* [calibre](https://github.com/kovidgoyal/calibre) - 电子书管理、格式转换工具
+* [n8n](https://github.com/n8n-io/n8n) - 开源可视化自动化工作流，替代部分RPA
+* [hedgedoc](https://github.com/hedgedoc/hedgedoc) - 多人实时协同Markdown文档，可自托
 
 
 ## 开发
