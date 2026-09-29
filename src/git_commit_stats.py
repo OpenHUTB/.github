@@ -8,6 +8,8 @@ from collections import Counter
 
 def load_ignore_users(file_path):
     """从 JSON 文件加载屏蔽列表"""
+    if not os.path.isabs(file_path):
+        file_path = os.path.join(os.path.dirname(__file__), file_path)
     if not os.path.exists(file_path):
         return []
     try:
@@ -16,6 +18,8 @@ def load_ignore_users(file_path):
     except Exception as e:
         print(f"读取屏蔽列表失败: {e}")
         return []
+import subprocess
+from collections import Counter
 
 def get_commits(since=None, until=None, ignore_list=[]):
     # 使用 %ae(邮箱)作为唯一键，%an(用户名)作为显示名
