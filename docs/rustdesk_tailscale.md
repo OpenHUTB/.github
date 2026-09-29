@@ -4,11 +4,11 @@
 
 * [注册tailscale](https://login.tailscale.com/start)并在需要远程登录的机器上下载对应操作系统版本的[tailscale](https://tailscale.com/download/windows)进行安装。
 
-> ![](./img/rustdesk/sign_up.png)
+ ![注册页面](./img/rustdesk/sign_up.png)
 
 * 将本机加入到虚拟局域网中
 
-> ![](./img/rustdesk/sign_in_network.png)
+ ![加入虚拟局域网](./img/rustdesk/sign_in_network.png)
 
 > ![](./img/rustdesk/connect_device.png)
 
