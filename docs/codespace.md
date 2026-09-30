@@ -78,7 +78,7 @@
 
 ![](./img/codespace/open_PR.png)
 
-填写标题和详细描述信息，点击“Crete pull request”
+填写标题和详细描述信息，点击“Create pull request”
 
 ![](./img/codespace/PR.png)
 
