@@ -56,7 +56,7 @@
 
 ![](./img/codespace/commits_ahead.png)
 
-在 Actions 页面也会自动出现编译成功的绿色提示
+提交并同步后，进入个人仓库的 Actions 页面，查看对应本次提交的运行记录。黄色表示任务尚未完成，绿色勾表示成功，红色叉表示失败。如果运行失败，点击该记录，进入失败的任务并展开报错步骤，根据日志中的具体错误排查。
 
 ![](./img/codespace/workflow_runs.png)
 
