@@ -23,6 +23,16 @@
     * 图片前不要用空行
 
 
+需要检查的内容包括：
+
+* 图片前后没有多余的空行
+* 图注是否正常显示或重复显示
+* 公式如果格式混乱，改用截图
+* 超过 5M 的动图一般会上传失败，使用 ScreenToGif “编辑-> 减少帧数”、“图像 -> 调整大小” 来压缩
+* Python 代码的 class、def、return 等关键字后面缺少空格、代码是否对齐正确
+
+选中除了第一行标题外的所有内容，复制到微信公众号的草稿的正文部分。
+
 ## [知乎](https://www.zhihu.com/people/OpenHUTB)
 
 风格选“知乎精选”。
@@ -36,6 +46,32 @@
 
 
 ## [Twitter](https://x.com/OpenHUTB)
+
+
+## 自定义样式
+
+在预览页面点击“更多 -> 设置 -> 打开自定义样式面板”，拖到最下面的“CSS 编辑器”，输入以下内容（这里以调整标题的字体大小为例）：
+
+```css
+.article-wrapper h2 {
+    font-size: 19px;
+}
+.article-wrapper h3 {
+    font-size: 18px;
+}
+.article-wrapper h4 {
+    font-size: 17px;
+}
+```
+
+注意：正文默认字体大小 16。
+```css
+.article-wrapper p {
+    font-size: 18px;
+}
+```
+
+点击“应用”，即可在预览窗口看到改变后的字体大小。
 
 
 
