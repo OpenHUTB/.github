@@ -32,8 +32,8 @@ def get_commits(since=None, until=None, ignore_list=None):
     result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, encoding='utf-8')
     
     if result.returncode != 0:
-        print("git log 执行失败")
-        return [], {}
+        print("git log 执行失败{result.stderr.strip()}")
+        sys.exit(1)
 
     raw_data = result.stdout.strip().split("\n")
     email_to_name = {}
