@@ -21,7 +21,8 @@ def load_ignore_users(file_path):
 import subprocess
 from collections import Counter
 
-def get_commits(since=None, until=None, ignore_list=[]):
+def get_commits(since=None, until=None, ignore_list=None):
+    ignore_list = ignore_list or []
     # 使用 %ae(邮箱)作为唯一键，%an(用户名)作为显示名
     cmd = ["git", "log", "--pretty=%ae|%an"]
     
