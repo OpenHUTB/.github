@@ -107,11 +107,11 @@
 </li>
 <li class="toctree-l1 current"><a class="reference internal current" href="#">论文成果：AVF-BEL 视听融合</a>
 <ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="#_2">核心思想：向大脑学习“通感”</a>
+<li class="toctree-l2"><a class="reference internal" href="#核心思想向大脑学习通感">核心思想：向大脑学习“通感”</a>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#_3">亮点与优势：轻量、可解释</a>
+<li class="toctree-l2"><a class="reference internal" href="#亮点与优势轻量可解释">亮点与优势：轻量、可解释</a>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#ai">应用展望：为情感 AI 的“飞入寻常百姓家”铺路</a>
+<li class="toctree-l2"><a class="reference internal" href="#应用展望为情感-ai-的飞入寻常百姓家铺路">应用展望：为情感 AI 的“飞入寻常百姓家”铺路</a>
 </li>
 </ul>
 </li>
@@ -142,12 +142,12 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<div><h1 id="_1">如何让机器像人一样融合视听信息来“感受”情绪？</h1>
+<div><h1 id="如何让机器像人一样融合视听信息来感受情绪">如何让机器像人一样融合视听信息来“感受”情绪？</h1>
 <p>当 AI 能精准识别图片、能流畅对话，我们似乎已经习惯了它“无所不能”。但一个根本性的挑战依然存在：<strong>AI 能理解人类的情绪吗？</strong></p>
 <p>目前主流的方案，无论是基于深度学习还是大模型（如chatgpt，豆包，deepseek等大模型），往往依赖于海量标注数据和巨大的算力。它们更像一个“黑箱”，虽然有效，却<strong>很难解释“为什么”</strong>。这让我们在追求可解释、低成本的 AI 情感应用时，总感到有些力不从心。</p>
 <p><img alt="" src="../../img/paper/accept.png"/></p>
 <p>来自 OpenHUTB 的研究团队，在人工智能领域顶级国际期刊《Information Fusion》上发表的最新研究成果，或许提供了一条全新的思路。他们提出的<strong>类脑情感学习的视听融合</strong>（Audio-Visual Fusion for Brain-like Emotion Learning, AVF-BEL）模型，不再单纯依赖数据“暴力计算”，而是选择了一条更优雅的路——<strong>模仿大脑处理情感的神经通路</strong>。</p>
-<h2 id="_2">核心思想：向大脑学习“通感”</h2>
+<h2 id="核心思想向大脑学习通感">核心思想：向大脑学习“通感”</h2>
 <p>人类的情感体验，往往是多感官融合的结果。一段悲伤的音乐配合灰暗的画面，远比单独的音乐或画面更能触动我们。这种<strong>视听整合</strong>发生在大脑的颞上沟等区域。</p>
 <p><img alt="" src="../../img/paper/neuro_architecture.png"/>
 </p><center>情绪生成神经网络架构图（动态情绪响应的视觉和听觉处理）</center>
@@ -172,7 +172,7 @@
 </ol>
 <p><img alt="" src="../../img/paper/AVF-BEL.png"/>
 </p><center>AVF-BEL 模型架构</center>
-<h2 id="_3">亮点与优势：轻量、可解释</h2>
+<h2 id="亮点与优势轻量可解释">亮点与优势：轻量、可解释</h2>
 <p>与动辄百亿参数、需要 GPU 集群的多模态大模型（如 ViLBERT、CLIP）相比，AVF-BEL 模型展现出了独特的魅力：</p>
 <ul>
 <li><strong>极致轻量</strong>：整个模型总参数量仅约 208 万，其中核心的情感学习模块更是只有 8 个可训练的权重。它可以在普通 CPU（如 Intel i7-6500U）和 8GB 内存的电脑上运行，整个代码和数据包不足 50MB。</li>
@@ -215,7 +215,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="ai">应用展望：为情感 AI 的“飞入寻常百姓家”铺路</h2>
+<h2 id="应用展望为情感-ai-的飞入寻常百姓家铺路">应用展望：为情感 AI 的“飞入寻常百姓家”铺路</h2>
 <p>AVF-BEL 模型的成功，其意义不仅在于提出一个新模型，更在于指明了<strong>机器人情感生成领域一个可能的重要发展方向</strong>。它证明了，通过向生物智能“取经”，我们完全有可能打造出<strong>更高效、更易于理解</strong>的情感AI系统。这为情感计算技术在资源受限的移动端、嵌入式机器人、以及隐私敏感的边缘设备上的大规模部署，扫清了关键障碍。</p>
 <p>未来，研究团队计划进一步整合海马体、前额叶皮层等更多类脑模块，搭建一座<strong>连接“人工神经网络”与“生物神经网络”的桥梁</strong>。通过这座桥梁，可以从计算的视角，去验证、质疑并最终加深对我们自己大脑的理解。或许在不远的将来，我们身边的智能设备不再是一堆冰冷的代码，而是真正能“读懂”我们情绪的伙伴。</p></div>
 </div>

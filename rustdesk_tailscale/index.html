@@ -66,19 +66,19 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal current" href="#">远程办公</a>
 <ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="#1">1. 把多台机器放进同一个虚拟局域网</a>
+<li class="toctree-l2"><a class="reference internal" href="#1-把多台机器放进同一个虚拟局域网">1. 把多台机器放进同一个虚拟局域网</a>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#2-rustdesk">2. RustDesk配置与连接</a>
+<li class="toctree-l2"><a class="reference internal" href="#2-rustdesk配置与连接">2. RustDesk配置与连接</a>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#windows">附：Windows远程登录</a>
+<li class="toctree-l2"><a class="reference internal" href="#附windows远程登录">附：Windows远程登录</a>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#_1">高级操作</a>
+<li class="toctree-l2"><a class="reference internal" href="#高级操作">高级操作</a>
 <ul>
-<li class="toctree-l3"><a class="reference internal" href="#_2">邀请其他成员进入虚拟局域网</a>
+<li class="toctree-l3"><a class="reference internal" href="#邀请其他成员进入虚拟局域网">邀请其他成员进入虚拟局域网</a>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#_3">参考</a>
+<li class="toctree-l2"><a class="reference internal" href="#参考">参考</a>
 </li>
 </ul>
 </li>
@@ -149,8 +149,8 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<div><h1 id="tailscalerustdesk">远程办公解决方案：tailscale（免费）+rustdesk（开源）</h1>
-<h2 id="1">1. 把多台机器放进同一个虚拟局域网</h2>
+<div><h1 id="远程办公解决方案tailscale免费rustdesk开源">远程办公解决方案：tailscale（免费）+rustdesk（开源）</h1>
+<h2 id="1-把多台机器放进同一个虚拟局域网">1. 把多台机器放进同一个虚拟局域网</h2>
 <ul>
 <li><a href="https://login.tailscale.com/start">注册tailscale</a>并在需要远程登录的机器上下载对应操作系统版本的<a href="https://tailscale.com/download/windows">tailscale</a>进行安装。</li>
 </ul>
@@ -180,7 +180,7 @@
 <p>提示登录成功后，点击<code>visit the console</code>访问控制台，就可以看到已加入虚拟局域网的设备列表
 <img alt="" src="../img/rustdesk/login_successful.png"/></p>
 </blockquote>
-<h2 id="2-rustdesk">2. RustDesk配置与连接</h2>
+<h2 id="2-rustdesk配置与连接">2. RustDesk配置与连接</h2>
 <ul>
 <li>
 <p><a href="https://github.com/rustdesk/rustdesk/releases">下载</a>并安装RustDesk客户端。</p>
@@ -196,7 +196,7 @@
 <p class="admonition-title">问题</p>
 <p>如果连接时报错：<code>连接错误 Failed to connect to 100.*.*.*:21118:请稍后再试</code>，确认被控端下面是否有“服务未运行”的提示，如果有请点击“启动服务”，然后再次连接即可。</p>
 </div>
-<h2 id="windows">附：Windows远程登录</h2>
+<h2 id="附windows远程登录">附：Windows远程登录</h2>
 <p>在被控机上启用 Windows 远程桌面连接</p>
 <blockquote>
 <p><img alt="" src="../img/rustdesk/enable_remote.png"/></p>
@@ -209,10 +209,10 @@
 <p class="admonition-title">注意</p>
 <p>如果使用 windows 这一步登录成功，前面第二步的“RustDesk配置与连接”就不再需要。如果是 Ubuntu、Mac、Android、iOS等其他平台，请查第二步的“RustDesk配置与连接”。</p>
 </div>
-<h2 id="_1">高级操作</h2>
-<h3 id="_2">邀请其他成员进入虚拟局域网</h3>
+<h2 id="高级操作">高级操作</h2>
+<h3 id="邀请其他成员进入虚拟局域网">邀请其他成员进入虚拟局域网</h3>
 <p><img alt="" src="../img/rustdesk/invite_external_user.png"/></p>
-<h2 id="_3">参考</h2>
+<h2 id="参考">参考</h2>
 <ul>
 <li><a href="https://github.com/tailscale/tailscale">tailscale 源代码仓库</a> - <a href="https://tailscale.com/opensource">tailscale 开源介绍</a></li>
 <li><a href="https://github.com/rustdesk/rustdesk">rustdesk 源代码仓库</a></li>
