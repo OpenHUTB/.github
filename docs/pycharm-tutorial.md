@@ -8,11 +8,11 @@
 
 在这篇 PyCharm 教程博客中，我将带您浏览以下主题:
 
-*   [Python 简介](#z3)
-*   [安装 PyCharm](#z4)
-*   [重要工具 & Pycharm 的特性](#z6)
+*   [Python 简介](#python-简介)
+*   [安装 PyCharm](#安装-pycharm)
+*   [重要工具 & Pycharm 的特性](#pycharm-的重要特性和工具)
 *   [如何运行 Pycharm？]()
-*   [PyCharm 给初学者的提示和技巧](#z8)
+*   [PyCharm 给初学者的提示和技巧](#pycharm-给初学者的提示和窍门)
 
 ## **PyCharm 初学者教程|使用 PyCharm 调试 Python 代码**
 
