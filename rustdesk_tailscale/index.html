@@ -154,28 +154,22 @@
 <ul>
 <li><a href="https://login.tailscale.com/start">注册tailscale</a>并在需要远程登录的机器上下载对应操作系统版本的<a href="https://tailscale.com/download/windows">tailscale</a>进行安装。</li>
 </ul>
-<blockquote>
-<p><img alt="" src="../img/rustdesk/sign_up.png"/></p>
-</blockquote>
+<p><img alt="注册页面" src="../img/rustdesk/sign_up.png"/></p>
 <ul>
 <li>将本机加入到虚拟局域网中</li>
 </ul>
-<blockquote>
-<p><img alt="" src="../img/rustdesk/sign_in_network.png"/></p>
+<p><img alt="加入虚拟局域网" src="../img/rustdesk/sign_in_network.png"/></p>
 <p><img alt="" src="../img/rustdesk/connect_device.png"/></p>
-</blockquote>
 <ul>
 <li>将设备添加到同一网络中（添加后就可以在<a href="https://console.tailscale.com/admin/machines">tailscale后台</a>进行管理。
-可以将key设置成永久，防止过段时间需要重新登录）<blockquote>
-<p><img alt="" src="../img/rustdesk/disable_key_expiry.png"/></p>
-</blockquote>
-</li>
+可以将key设置成永久，防止过段时间需要重新登录）
+ <img alt="" src="../img/rustdesk/disable_key_expiry.png"/></li>
 </ul>
 <blockquote>
 <p>启动软件后会点击<code>sign in to your network</code>
 <img alt="" src="../img/rustdesk/sign_in_network.png"/></p>
 <p>以 github 授权使用为例
-<img alt="" src="../img/rustdesk/sign_in_github.png"/>
+ <img alt="" src="../img/rustdesk/sign_in_github.png"/>
 <img alt="" src="../img/rustdesk/authorize_tailscale.png"/></p>
 <p>提示登录成功后，点击<code>visit the console</code>访问控制台，就可以看到已加入虚拟局域网的设备列表
 <img alt="" src="../img/rustdesk/login_successful.png"/></p>
@@ -198,13 +192,9 @@
 </div>
 <h2 id="附windows远程登录">附：Windows远程登录</h2>
 <p>在被控机上启用 Windows 远程桌面连接</p>
-<blockquote>
 <p><img alt="" src="../img/rustdesk/enable_remote.png"/></p>
-</blockquote>
-<p>如果远程的机器为 Windows，只需要打开本地电脑的<code>远程桌面连接</code>，使用 tailscale 的 IP 地址（将图中的型号<code>*</code>换成自己的IP地址），输入Windows系统的用户名/密码即可登录。</p>
-<blockquote>
-<p><img alt="" src="../img/rustdesk/win_remote.png"/></p>
-</blockquote>
+<p>如果远程的机器为 Windows，只需要打开本地电脑的<code>远程桌面连接</code>，使用 tailscale 的 IP 地址（将图中的型号<code>*</code>换成自己的IP地址），输入Windows系统的用户名/密码即可登录。
+ <img alt="" src="../img/rustdesk/win_remote.png"/></p>
 <div class="admonition 注意">
 <p class="admonition-title">注意</p>
 <p>如果使用 windows 这一步登录成功，前面第二步的“RustDesk配置与连接”就不再需要。如果是 Ubuntu、Mac、Android、iOS等其他平台，请查第二步的“RustDesk配置与连接”。</p>
