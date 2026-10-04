@@ -25,7 +25,6 @@ def main(args):
     plt.tight_layout()
 
     if args.save:
-        pu.save_fig(fig, args.save)
         save_path = args.save if '.' in args.save else args.save + '.pdf'
         pu.save_fig(fig, save_path)
     else:
