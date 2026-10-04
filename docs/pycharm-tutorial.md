@@ -297,7 +297,7 @@ PyCharm 支持一种智能重构技术，在这种技术中，您只需要知道
 
 当您试图使用 PyCharm IDE 创建一个 Python 程序时，这将非常方便，py charm IDE 为您提供了许多优势。这种优势将确保您可以在整体上更加专注于代码。这很可能是你掌握 Python 的第一步。
 
-看完这篇关于 PyCharm 教程的博客后，我很确定你想了解更多关于 Python 的知识。想要了解更多关于 Python 的知识，你可以参考下面的博客:
+看完这篇关于 PyCharm 教程的博客后，我很确定你想了解更多关于 Python 的知识。如果想要了解更多关于 Python 的知识，你可以参考下面的博客:
 
 1.  **[Python 教程——Python 编程初学者](https://www.edureka.co/blog/python-tutorial/)**
 2.  **[用于数据科学的 Python](https://www.edureka.co/blog/learn-python-for-data-science/)**
