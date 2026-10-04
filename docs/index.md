@@ -2,7 +2,7 @@ title: 主页
 
 # [OpenHUTB 社区](https://github.com/OpenHUTB)
 
-欢迎使用开源孪创（Open source Humanoid-vehicle Twin Build, OpenHUTB）的社区简介，该社区提供一款加速**人**和**载具**代理开发的影视级模拟器，其中人包括人形机器人（Humanoid）和仿生人（Android），载具包括地面载具、空域载具、水域载具，社区本身采用[分布式架构](./org/architecture.md)。
+欢迎使用开源孪创（Open source Humanoid-vehicle Twin Build, OpenHUTB），该社区提供一款加速**人**和**载具**代理开发的影视级模拟器，其中人包括人形机器人（Humanoid）和仿生人（Android），载具包括地面载具、空域载具、水域载具，社区本身采用[分布式架构](./org/architecture.md)。
 
 - [1.简介](#list)
 - [2.开发配置](#dev)
@@ -37,9 +37,9 @@ title: 主页
 
 - 如果参与过程中遇到任何问题，请参考 [提问技巧](./ask_question.md) 和 [注意事项](note.md) 或在对应项目的 [Issues页面](https://github.com/OpenHUTB/hutb/issues) 提出问题。
 
-- 如有加入组织、添加项目、获得更高权限等需要请把github用户名发送到邮箱 [open@hutb.edu.cn](open@hutb.edu.cn) 。
+- 如要加入组织、添加项目、获得更高权限等需要请把github用户名发送到邮箱 [open@hutb.edu.cn](open@hutb.edu.cn) 。
 
-- 网络不稳定可以参考 [github 加速方案和科学上网链接](https://openhutb.github.io/doc/build_carla/#internet) 
+- 网络不稳定的时候可以参考 [github 加速方案和科学上网链接](https://openhutb.github.io/doc/build_carla/#internet) 
 
 
 ## 4. 社区  <span id="propaganda"></span>
@@ -62,7 +62,7 @@ OpenHUTB 的其他非主要平台包括 [gitee](https://gitee.com/OpenHUTB)、[g
 | ![](./img/social/xiaohongshu.jpg) | ![](./img/social/Twitter.png) | ![](./img/social/Youtube.png) | ![](./img/social/sponsor.png) |
 | [小红书](https://www.xiaohongshu.com/user/profile/62977010000000002102bc47) | [Twitter(X)](https://x.com/OpenHUTB) | [Youtube](https://www.youtube.com/@OpenHUTB)  | [赞助](https://ko-fi.com/openhutb) |
 
-备注：开源孪创社区不搭建自己独立的平台的原因有很多，比如独立平台生成的“信息孤岛”造成分裂、维护成本高、“去中心化”理念与降低用户门槛、风险规避与可持续性，同时不会因为其中一些依附平台的限制而影响社区的发展，使社区专注于核心使命。
+备注：开源孪创社区不搭建自己独立的平台的原因有很多，比如独立平台可能生成的“信息孤岛”造成分裂、维护成本高、“去中心化”理念与降低用户门槛、风险规避与可持续性，同时不会因为其中一些依附平台的限制而影响社区的发展，使社区专注于核心使命。
 
 ___
 

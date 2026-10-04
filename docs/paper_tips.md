@@ -2,34 +2,33 @@
 
 ## 目录
 
-  * [撰写科学论文的技巧和窍门](#tips-and-tricks-for-writing-scientific-papers)
-    * [目录](#table-of-contents)
-    * [这是什么？](#what-is-this)
-  * [排版你的论文](#typesetting-your-paper)
-    * [每行一个句子](#one-sentence-per-line)
-    * [大写](#capitalization)
-    * [保持参考文献完整](#keep-references-whole)
-    * [表格](#tables)
-    * [数字格式](#number-formatting)
-  * [数学符号](#mathematical-notation)
-    * [符号](#notation)
-      * [定义自定义命令](#define-custom-commands)
-      * [对列等元素使用正确的符号](#use-the-correct-notation-for-columns-et-elements)
-    * [环境](#environments)
-  * [参考书目](#bibliography)
-    * [反向引用](#back-references)
-  * [创建图形](#creating-figures)
-    * [每个数据驱动图形一个脚本](#one-script-per-data-driven-figure)
-    * [Python 帮助脚本](#python-helper-script)
-    * [图形格式](#figures-format)
-    * [将图形的部分栅格化](#rasterize-parts-of-the-figure)
-  * [有用的资源](#useful-resources)
+  * [撰写科学论文的技巧和窍门](#撰写科学论文的技巧和窍门)
+    * [目录](#目录)
+  * [排版你的论文](#排版你的论文)
+    * [每行一个句子](#每行一个句子)
+    * [大写](#大写)
+    * [保持参考文献完整](#保持参考文献完整)
+    * [表格](#表格)
+    * [数字格式](#数字格式)
+  * [数学符号](#数学符号)
+    * [符号](#符号)
+      * [定义自定义命令](#定义自定义命令)
+      * [对列等元素使用正确的符号](#对列和元素使用正确的符号)
+    * [环境](#环境)
+  * [参考书目](#参考书目)
+    * [反向引用](#反向引用)
+  * [创建图形](#创建图形)
+    * [每个数据驱动图形一个脚本](#每个数据驱动的图形对应一个脚本)
+    * [Python 帮助脚本](#python-帮助脚本)
+    * [图形格式](#图形格式)
+    * [将图形的部分栅格化](#将图形的部分栅格化)
+  * [有用的资源](#有用的资源)
 
 # 排版你的论文
 
 排版是通过排列字体（例如字母和符号）来编写文本的过程。这主要关乎你的论文是否美观，但精美的字体设计能让文档更易于阅读，更赏心悦目，帮助读者更好地理解信息。
 
-我们列出了一些排版技巧和工具，以帮助您撰写文档。其中一些技巧仅适用于 LaTeX，但其他技巧则适用于任何语言。
+我们列出了一些排版技巧和工具，可以更好帮助您撰写文档。其中一些技巧仅适用于 LaTeX，但其他技巧则适用于任何语言。
 
 ## 每行一个句子
 
@@ -66,7 +65,7 @@ This is my first sentence. This is the second one.
 Figure~\ref{fig:example} displays that the project ...
 ```
 
-为了确保不会忘记使用波浪号，您可以通过创建自定义命令来简化自动化流程。以下是示例：
+为了保证不会忘记使用波浪号，您可以通过创建自定义命令来简化自动化流程。以下是示例：
 
 
 ```latex
@@ -188,8 +187,8 @@ You can also round numbers, for example \num{1.23456}.
 我们提出以下数学书写规则：
 
  * 变量用小写斜体表示： *x* (`$x$`)
- * 向量的小写斜体粗体： **_x_** (`$\mathbold{x}$`)
- * 矩阵的大写斜体粗体： **_X_** (`$\mathbold{X}$`)
+ * 向量用小写斜体粗体表示： **_x_** (`$\mathbold{x}$`)
+ * 矩阵用大写斜体粗体表示： **_X_** (`$\mathbold{X}$`)
  * 大写斜体表示随机变量： *X* (`$X$`)
 
 该`\mathbold`命令来自[`fixmath`](https://www.ctan.org/pkg/fixmath)包，类似于`\boldmath`或`\bm`，不同之处在于所有符号都是斜体，甚至希腊字母也是如此（其他包不会将希腊字母斜体化）。
