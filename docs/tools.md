@@ -50,6 +50,11 @@
 
 
 
+## 三维建模
+
+* [Blender](./blender.md) - 免费开源的三维创作软件，社区「艺术创作」分工线使用的工具，内含[下载安装与入门操作说明](./blender.md)
+
+* [FreeCAD](https://github.com/FreeCAD/FreeCAD) - 3D参数化建模器
 
 
 
@@ -95,8 +100,6 @@
 
 * [SpaceSniffer](https://github.com/redtrillix/SpaceSniffer) - Windows 的免费磁盘空间分析工具，它采用分层地图（Treemap）的概念来显示当前的磁盘使用情况。
 
-* [FreeCAD](https://github.com/FreeCAD/FreeCAD) - 3D参数化建模器
-
 * [SeleniumBase](https://github.com/seleniumbase/SeleniumBase) - 用于网页自动化、测试及绕过机器人检测的API
 
 * [selenium](https://github.com/SeleniumHQ/selenium) - 浏览器自动化框架
@@ -129,4 +132,3 @@
 ## 参考
 
 * [tools](https://github.com/stars/donghaiwang/lists/tools)
-
