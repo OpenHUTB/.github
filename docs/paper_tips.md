@@ -187,8 +187,8 @@ You can also round numbers, for example \num{1.23456}.
 我们提出以下数学书写规则：
 
  * 变量用小写斜体表示： *x* (`$x$`)
- * 向量的小写斜体粗体： **_x_** (`$\mathbold{x}$`)
- * 矩阵的大写斜体粗体： **_X_** (`$\mathbold{X}$`)
+ * 向量用小写斜体粗体表示： **_x_** (`$\mathbold{x}$`)
+ * 矩阵用大写斜体粗体表示： **_X_** (`$\mathbold{X}$`)
  * 大写斜体表示随机变量： *X* (`$X$`)
 
 该`\mathbold`命令来自[`fixmath`](https://www.ctan.org/pkg/fixmath)包，类似于`\boldmath`或`\bm`，不同之处在于所有符号都是斜体，甚至希腊字母也是如此（其他包不会将希腊字母斜体化）。
