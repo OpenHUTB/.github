@@ -64,6 +64,25 @@
 
 ![](./img/rustdesk/invite_external_user.png)
 
+## Tailscale 节点共享（服务器在老师的个人 tailnet 中）
+
+
+服务器所在的是老师的**个人 tailnet**，不能直接"加成员"，正规做法是**节点共享**。
+
+## 使用tailscale共享具体步骤
+
+### 请老师操作（共享方）
+
+1. 打开 <https://login.tailscale.com/admin/machines>
+2. 找到所需要的机器 **`机器名`（服务器ip地址）**，点右侧 **⋯（三个点）→ Share machine（共享设备）**
+3. 选择 **"Share with another user"**，输入你的 GitHub 账号：**`你的账号`**（用 GitHub 账号共享）
+4. 确认发送
+
+### 学生/接收方操作
+
+1. 使用github账号登录并打开 <https://login.tailscale.com/admin/invitations>（或注册邮箱里的邀请邮件），**接受**这台共享设备
+2. 接受后在 admin/machines 里即可看到该设备，用 `服务器ip地址` 访问
+<img width="2024" height="500" alt="761d422541dc3982ed6fd8e8538a12fe" src="https://github.com/user-attachments/assets/4d915f9b-32f4-4f91-bd19-fc2bc2388b22" />
 
 ## 参考
 * [tailscale 源代码仓库](https://github.com/tailscale/tailscale) - [tailscale 开源介绍](https://tailscale.com/opensource)
