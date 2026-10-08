@@ -65,19 +65,19 @@
 ![](./img/rustdesk/invite_external_user.png)
 
 
-### 服务器所在的是**个人 tailnet**，不能直接"加成员"，正规做法是**节点共享**。
+服务器所在的是**个人 tailnet**，不能直接"加成员"，正规做法是**节点共享**。
 
-使用tailscale共享具体步骤
+**使用tailscale共享具体步骤**
 
- * 共享方操作
+**共享方操作**
 
 1. 打开 [链接](https://login.tailscale.com/admin/machines)并在需要远程登录的机器上下载对应操作系统版本的[tailscale](https://tailscale.com/download/windows)进行安装。
 2. 找到所需要的机器 **机器名（服务器ip地址）**，点右侧 **⋯（三个点）→ Share machine（共享设备）**
-3.在tailscale的设置页面选择Reusable link并点击Copy share link
+3. 在tailscale的设置页面选择Reusable link并点击Copy share link
   
    ![](./img/rustdesk/copylink.png)
 
-* 接收方操作
+**接收方操作**
 
 1. 使用github账号登录并打开[链接](https://login.tailscale.com/admin/invitations)（或注册邮箱里的邀请邮件），**接受**这台共享设备
 2. 接受后在 admin/machines 里即可看到该设备，用  服务器ip地址  访问
