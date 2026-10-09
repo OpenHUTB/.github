@@ -82,10 +82,10 @@ git push origin <新分支的名称>
 
 如果在 push（推送）过程中出 error（错误），如下所示
 
-  ### Authentication Error
-  -remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
-  -remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.
-  -fatal: Authentication failed for 'https://github.com/<your-username>/first-contributions.git/'
+ - ### Authentication Error
+       <pre>remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
+    remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.
+    fatal: Authentication failed for 'https://github.com/<your-username>/first-contributions.git/'</pre>
 
   去 [GitHub 的教程](https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) 学习如何生成新的 SSH 密钥以及配置。
 
