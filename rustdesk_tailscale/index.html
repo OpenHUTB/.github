@@ -202,6 +202,21 @@
 <h2 id="高级操作">高级操作</h2>
 <h3 id="邀请其他成员进入虚拟局域网">邀请其他成员进入虚拟局域网</h3>
 <p><img alt="" src="../img/rustdesk/invite_external_user.png"/></p>
+<p>服务器所在的是<strong>个人 tailnet</strong>，不能直接"加成员"，正规做法是<strong>节点共享</strong>。</p>
+<p><strong>使用tailscale共享具体步骤</strong></p>
+<p><strong>共享方操作</strong></p>
+<ol>
+<li>打开 <a href="https://login.tailscale.com/admin/machines">链接</a>并在需要远程登录的机器上下载对应操作系统版本的<a href="https://tailscale.com/download/windows">tailscale</a>进行安装。</li>
+<li>找到所需要的机器 <strong>机器名（服务器ip地址）</strong>，点右侧 <strong>⋯（三个点）→ Share machine（共享设备）</strong></li>
+<li>在tailscale的设置页面选择Reusable link并点击Copy share link</li>
+</ol>
+<p><img alt="" src="../img/rustdesk/copylink.png"/></p>
+<p><strong>接收方操作</strong></p>
+<ol>
+<li>使用github账号登录并打开<a href="https://login.tailscale.com/admin/invitations">链接</a>（或注册邮箱里的邀请邮件），<strong>接受</strong>这台共享设备</li>
+<li>接受后在 admin/machines 里即可看到该设备，用  服务器ip地址  访问</li>
+</ol>
+<p><img alt="" src="../img/rustdesk/Share%20successful.png"/></p>
 <h2 id="参考">参考</h2>
 <ul>
 <li><a href="https://github.com/tailscale/tailscale">tailscale 源代码仓库</a> - <a href="https://tailscale.com/opensource">tailscale 开源介绍</a></li>
