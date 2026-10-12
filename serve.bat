@@ -10,13 +10,14 @@ if %errorlevel% neq 0 (
     start /wait "" .\miniconda.exe /S
     del .\miniconda.exe
     echo conda has been installed. Please restart the command prompt and run this script again.
+    exit /b 1
 )
 
 echo conda is installed in:
 where conda
 
 
-conda info --envs | findstr /R/C:"\<mkdocs\>" >nul2>nul
+conda info --envs | findstr /R/C:"\<mkdocs\>" >nul 2>nul
 if %errorlevel% neq 0 (
     echo mkdocs virtual environment does not exist. Creating
     call conda create -n mkdocs python=3.11 -y
