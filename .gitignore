@@ -5,6 +5,15 @@ __pycache__/
 # mkdocs 构建产物（本地 serve/build 生成）
 site/
 
+# hooks.py 在构建时生成的 CONTRIBUTING.md 副本
+docs/CONTRIBUTING.md
+
+# 脚本与工作流的产物
+commit_stats.csv
+data.json
+data.csv
+miniconda.exe
+
 # IDE 配置
 .idea/
 .vscode/

@@ -1,10 +1,10 @@
-name: Deploy
+name: PR Build
 on:
   pull_request:
 
 jobs:
   build:
-    name: Deploy docs to GitHub Pages
+    name: Build docs
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 
