@@ -4,6 +4,7 @@ import argparse
 import csv
 import json
 import os
+import sys
 from collections import Counter
 
 def load_ignore_users(file_path):
@@ -11,6 +12,7 @@ def load_ignore_users(file_path):
     if not os.path.isabs(file_path):
         file_path = os.path.join(os.path.dirname(__file__), file_path)
     if not os.path.exists(file_path):
+        print(f"屏蔽列表文件不存在: {file_path}，本次统计不屏蔽任何用户")
         return []
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
@@ -18,10 +20,9 @@ def load_ignore_users(file_path):
     except Exception as e:
         print(f"读取屏蔽列表失败: {e}")
         return []
-import subprocess
-from collections import Counter
 
-def get_commits(since=None, until=None, ignore_list=[]):
+def get_commits(since=None, until=None, ignore_list=None):
+    ignore_list = ignore_list or []
     # 使用 %ae(邮箱)作为唯一键，%an(用户名)作为显示名
     cmd = ["git", "log", "--pretty=%ae|%an"]
     
@@ -33,7 +34,7 @@ def get_commits(since=None, until=None, ignore_list=[]):
     if result.returncode != 0:
         print("git log 执行失败")
         print(result.stderr)
-        return [], {}
+        return None, None
 
     raw_data = result.stdout.splitlines()
     email_to_name = {}
@@ -67,6 +68,9 @@ def main():
 
     ignore_list = load_ignore_users(args.ignore)
     counts, name_map = get_commits(args.since, args.until, ignore_list)
+    if counts is None:
+        print("未能获取提交记录，请确认当前目录是 Git 仓库，并检查 --since/--until 的取值")
+        sys.exit(1)
 
     # 转换结果：[(用户名, 次数), ...]
     results = sorted(
