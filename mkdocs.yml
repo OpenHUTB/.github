@@ -16,6 +16,10 @@ theme:
   name: readthedocs
   sticky_navigation: True
   navigation_depth: 3
+  # 说明：features 是 MkDocs-Material 的主题选项，内置的 readthedocs 主题不支持，
+  # 内置主题的搜索实现里没有 suggest 逻辑，所以这里的 search.suggest 目前不会生效
+  # （已核对 mkdocs 1.6.1 与 OpenHUTB/mkdocs 的 readthedocs/base.html、search/main.js）。
+  # 需要搜索联想功能时需要先迁移到 material 主题。
   features:
     - search.suggest # 在目录栏中的搜索框中输入一些字母时推荐补全整个单词
 # extra_css: [extra.css]
@@ -42,6 +46,9 @@ extra_javascript:
 
 plugins:
   - search:
+      # 说明：中文没有词间空格，这里用 ja 的 CJK 分词器来切词。
+      # 注意不要直接改成 zh：mkdocs 自带的 lunr.zh.js 依赖 nodejieba，
+      # 在浏览器端不可用，改成 zh 之前请先用站点实测搜索是否正常。
       lang: ja
       separator: '[\s\-\.]+'
       min_search_length: 3
@@ -88,6 +95,7 @@ nav:
 - 工具与资源:
     - 模拟器演示：涉水效果: 'introduction.md'
     - 开源工具列表: 'tools.md'
+    - 三维建模工具 Blender: 'blender.md'
     - Markdown 一键发布到社交平台: 'markdown2anything.md'
 - 学习与论文:
     - LaTeX 参考文献编译: 'bib_reference_guide.md'
