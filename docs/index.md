@@ -39,7 +39,7 @@ OpenHUTB 社区鼓励同学们参与开源实践，社区提供学习资源，�
 
 - 如果参与过程中遇到任何问题，请参考 [提问技巧](./ask_question.md) 和 [注意事项](note.md) 或在对应项目的 [Issues页面](https://github.com/OpenHUTB/hutb/issues) 提出问题。
 
-- 如要加入组织、添加项目、获得更高权限等需要请把github用户名发送到邮箱 [open@hutb.edu.cn](open@hutb.edu.cn) 。
+- 如要加入组织、添加项目、获得更高权限等需要请把github用户名发送到邮箱 [open@hutb.edu.cn](mailto:open@hutb.edu.cn) 。
 
 - 网络不稳定的时候可以参考 [github 加速方案和科学上网链接](https://openhutb.github.io/doc/build_carla/#internet) 
 
@@ -68,5 +68,5 @@ OpenHUTB 的其他非主要平台包括 [gitee](https://gitee.com/OpenHUTB)、[g
 
 ___
 
-如果对文档中的任何问题可以在 [本文档的源码仓库](https://github.com/OpenHUTB/templte) 中的 [问题](https://github.com/OpenHUTB/templte/issues) 页面讨论或者提交 [拉取请求](https://github.com/OpenHUTB/.github/blob/master/CONTRIBUTING.md) 直接修改文档。
+如果对文档中的任何问题可以在 [本文档的源码仓库](https://github.com/OpenHUTB/.github) 中的 [问题](https://github.com/OpenHUTB/.github/issues) 页面讨论或者提交 [拉取请求](https://github.com/OpenHUTB/.github/blob/master/CONTRIBUTING.md) 直接修改文档。
 
