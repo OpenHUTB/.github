@@ -11,7 +11,7 @@
 *   [Python 简介](#python-简介)
 *   [安装 PyCharm](#安装-pycharm)
 *   [重要工具 & Pycharm 的特性](#pycharm-的重要特性和工具)
-*   [如何运行 Pycharm？]()
+*   [如何运行 Pycharm？](#如何运行-pycharm)
 *   [PyCharm 给初学者的提示和技巧](#pycharm-给初学者的提示和窍门)
 
 ## **PyCharm 初学者教程|使用 PyCharm 调试 Python 代码**
@@ -47,7 +47,7 @@
 
 ## **安装 PyCharm**
 
-安装 PyCharm 非常简单明了。前往官网使用此链接:[](http://www.jetbrains.com/pycharm/download/#section=windows)
+安装 PyCharm 非常简单明了。前往官网的 [PyCharm 下载页面](https://www.jetbrains.com/pycharm/download/) 下载对应操作系统的安装包。
 
 ![Installing PyCharm - PyCharm Tutorial - Edureka](img/install_pycharm.png)
 
