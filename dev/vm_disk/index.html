@@ -133,10 +133,10 @@
 <p>为了解决在使用 Ubuntu 虚拟机时，预先设置的硬盘容量不够用的问题，本文将详细描述解决方案的操作步骤。</p>
 <h2 id="1-虚拟机设置">1. 虚拟机设置</h2>
 <p>如果 Ubuntu 虚拟机处于运行状态，需关机。然后打开“Edit virtual machine settings”，选择“Hard Disk (SCSI)”一栏，然后选择“Expand”选项。接着设置最大磁盘大小（Maximum disk size），这里设置的是扩展到 150GB，如下图所示：</p>
-<p><img alt="" src="../img/dev/expand_disk.png"/></p>
+<p><img alt="" src="../../img/dev/expand_disk.png"/></p>
 <p>到这一步，扩展虚拟机硬盘容量还没有完成，虚拟机中的系统不会自动扩展新分配的硬盘空闲区。</p>
 <h2 id="2-虚拟机扩容">2. 虚拟机扩容</h2>
-<p>启动虚拟机中 ubuntu 系统，使用命令<code>df -h</code>查看目前文件系统挂在情况：</p>
+<p>启动虚拟机中 ubuntu 系统，使用命令<code>df -h</code>查看目前文件系统挂载情况：</p>
 <p><img alt="" src="../../img/dev/disk_free.png"/></p>
 <p>命令输出结果可知，根目录总共有 69G，目前已经使用了 59G，还剩下 6.4G。</p>
 <p>输入命令<code>gparted</code>并在弹出的窗口输入用户密码。GParted 将找到目前未分配的内存容量为 80GB。</p>
