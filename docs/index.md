@@ -34,6 +34,8 @@ OpenHUTB 社区鼓励同学们参与开源实践，社区提供学习资源，�
 
 - [免费开源远程办公解决方案：rustdesk+tailscale](rustdesk_tailscale.md)
 
+- [给 Ubuntu 虚拟机硬盘扩容]()
+
 
 ## 3. 问题 <span id="questions"></span>
 
