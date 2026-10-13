@@ -22,7 +22,6 @@
 * [One-click-cleaning-of-C-drive](https://github.com/JIEKE66633/One-click-cleaning-of-C-drive) - 清理C盘残留和垃圾
 
 * [WindowsCleaner](https://github.com/darkmatter2048/WindowsCleaner) - C盘清理
-
 * [HandBrake](https://github.com/HandBrake/HandBrake) - 视频转码器，适用于 Linux、Mac 和 Windows
 
 
@@ -122,6 +121,7 @@
 ## 常见
 
 * [Chromium](https://github.com/chromium/chromium) - Chromium 浏览器
+* [python](https://docs.python.org/zh-cn/3/tutorial/) -python 教程
 
 * [vscode](https://github.com/microsoft/vscode) - 代码编辑
 
