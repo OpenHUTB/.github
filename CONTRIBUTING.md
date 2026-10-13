@@ -90,7 +90,6 @@ git push origin <新分支的名称>
   去 [GitHub 的教程](https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) 学习如何生成新的 SSH 密钥以及配置。
 
 
-
 **8.** 在自己仓库的首页发现有提交领先于湖工商仓库的`main`分支，则点击`Contribute` 创建 [Pull Request](https://zhuanlan.zhihu.com/p/153381521) ，来湖工商仓库**做出贡献**，创建成功后等待管理员审核通过（如果发现个人仓库落后于湖工商仓库则点击`Sync fork`以同步其他人的最新修改）。
 
 <img src="https://firstcontributions.github.io/assets/Readme/compare-and-pull.png" width="410">
@@ -164,7 +163,7 @@ git push origin <新分支的名称>
 
 ## 其他
 
-1.如果提交 Pull Request 时出现冲突，则参考 [使用 TortoiseGit 解决冲突](./doc/resolve_conflict.md) 或 [在 GitHub 上解决合并冲突](https://docs.github.com/zh/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github) 。
+1.如果提交 Pull Request 时出现冲突，则参考 [使用 TortoiseGit 解决冲突](resolve_conflict.md) 或 [在 GitHub 上解决合并冲突](https://docs.github.com/zh/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github) 。
 
 2.同步子模块
 ```

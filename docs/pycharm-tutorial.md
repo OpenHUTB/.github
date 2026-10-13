@@ -2,17 +2,17 @@
 
 ## **PyCharm 教程:PyCharm 简介:**
 
-在当今快节奏的世界中，拥有超越其他程序员的优势可能是一件好事。利用 IDE 可以让程序员的生活变得非常轻松，并确保专注于推出更好的代码，而不用担心依赖性或许多其他因素。在这个 PyCharm 教程中，我将解释如何安装 PyCharm 和它非常酷的特性。
+在当今快节奏的世界中，拥有超越其他程序员的优势可是一件好事。利用 IDE 可以让程序员的生活变得非常轻松，并确保专注于推出更好的代码，而不用担心过度依赖性或许多其他因素。在这个 PyCharm 教程中，我将解释如何安装 PyCharm 和它非常酷的特性。
 
 **[Python](https://www.edureka.co/blog/python-tutorial/)** 是一种极其流行且使用广泛的语言。这使得 [***Python 认证***](https://www.edureka.co/python) 成为最受欢迎的编程认证之一。
 
-在这篇 PyCharm 教程博客中，我将带您浏览以下主题:
+在这篇 PyCharm 教程博客中，我将带您浏览以下一些主题:
 
-*   [Python 简介](#z3)
-*   [安装 PyCharm](#z4)
-*   [重要工具 & Pycharm 的特性](#z6)
+*   [Python 简介](#python-简介)
+*   [安装 PyCharm](#安装-pycharm)
+*   [重要工具 & Pycharm 的特性](#pycharm-的重要特性和工具)
 *   [如何运行 Pycharm？]()
-*   [PyCharm 给初学者的提示和技巧](#z8)
+*   [PyCharm 给初学者的提示和技巧](#pycharm-给初学者的提示和窍门)
 
 ## **PyCharm 初学者教程|使用 PyCharm 调试 Python 代码**
 
@@ -297,7 +297,7 @@ PyCharm 支持一种智能重构技术，在这种技术中，您只需要知道
 
 当您试图使用 PyCharm IDE 创建一个 Python 程序时，这将非常方便，py charm IDE 为您提供了许多优势。这种优势将确保您可以在整体上更加专注于代码。这很可能是你掌握 Python 的第一步。
 
-看完这篇关于 PyCharm 教程的博客后，我很确定你想了解更多关于 Python 的知识。想要了解更多关于 Python 的知识，你可以参考下面的博客:
+看完这篇关于 PyCharm 教程的博客后，我很确定你想了解更多关于 Python 的知识。如果想要了解更多关于 Python 的知识，你可以参考下面的博客:
 
 1.  **[Python 教程——Python 编程初学者](https://www.edureka.co/blog/python-tutorial/)**
 2.  **[用于数据科学的 Python](https://www.edureka.co/blog/learn-python-for-data-science/)**
