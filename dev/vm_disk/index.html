@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../../img/favicon.ico" rel="shortcut icon"/>
+<title>给 Ubuntu 虚拟机硬盘扩容 - 社区介绍</title>
+<link href="../../css/theme.css" rel="stylesheet"/>
+<link href="../../css/theme_extra.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
+<script>
+        // Current page data
+        var mkdocs_page_name = "\u7ed9 Ubuntu \u865a\u62df\u673a\u786c\u76d8\u6269\u5bb9";
+        var mkdocs_page_input_path = "dev/vm_disk.md";
+        var mkdocs_page_url = null;
+      </script>
+<!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</head>
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<a class="icon icon-home" href="../.."> 社区介绍
+        </a><div role="search">
+<form action="../../search.html" class="wy-form" id="rtd-search-form" method="get">
+<input aria-label="Search docs" name="q" placeholder="搜索文档" title="Type search term here" type="text"/>
+</form>
+</div>
+</div>
+<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../..">首页</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING/">贡献指南</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="" href="https://openhutb.github.io/git/?locale=zh_CN">git 教程</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="" href="https://docs.github.com/zh/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax">Markdown教程</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../paper_tips/">论文写作技巧</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../env_conf/">搭建自定义开发环境</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../rustdesk_tailscale/">远程办公</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../ask_question/">提问技巧</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="" href="https://openhutb.github.io/doc/build_carla/#internet">科学上网</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">贡献相关</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../codespace/">基于浏览器的贡献指南</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../sign_up/">注册 Github 账号</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pycharm-tutorial/">PyCharm 教程</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../resolve_conflict/">使用 TortoiseGit 解决冲突</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../merge_commit/">合并提交</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../note/">注意事项</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">工具与资源</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/">模拟器演示：涉水效果</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tools/">开源工具列表</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../markdown2anything/">Markdown 一键发布到社交平台</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">学习与论文</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../bib_reference_guide/">LaTeX 参考文献编译</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../undergraduate/">本科毕业设计</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../paper/avf/">论文成果：AVF-BEL 视听融合</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../org/architecture/">社区组织形式</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../..">社区介绍</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a aria-label="Docs" class="icon icon-home" href="../.."></a></li>
+<li class="breadcrumb-item active">给 Ubuntu 虚拟机硬盘扩容</li>
+<li class="wy-breadcrumbs-aside">
+<a href="https://github.com/OpenHUTB/.github/edit/master/docs/dev/vm_disk.md"> 编辑页面</a>
+</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div class="section" itemprop="articleBody">
+<div><h1 id="给-ubuntu-虚拟机硬盘扩容">给 Ubuntu 虚拟机硬盘扩容</h1>
+<p>为了解决在使用 Ubuntu 虚拟机时，预先设置的硬盘容量不够用的问题，本文将详细描述解决方案的操作步骤。</p>
+<h2 id="1-虚拟机设置">1. 虚拟机设置</h2>
+<p>如果 Ubuntu 虚拟机处于运行状态，需关机。然后打开“Edit virtual machine settings”，选择“Hard Disk (SCSI)”一栏，然后选择“Expand”选项。接着设置最大磁盘大小（Maximum disk size），这里设置的是扩展到 150GB，如下图所示：</p>
+<p><img alt="" src="../img/dev/expand_disk.png"/></p>
+<p>到这一步，扩展虚拟机硬盘容量还没有完成，虚拟机中的系统不会自动扩展新分配的硬盘空闲区。</p>
+<h2 id="2-虚拟机扩容">2. 虚拟机扩容</h2>
+<p>启动虚拟机中 ubuntu 系统，使用命令<code>df -h</code>查看目前文件系统挂在情况：</p>
+<p><img alt="" src="../../img/dev/disk_free.png"/></p>
+<p>命令输出结果可知，根目录总共有 69G，目前已经使用了 59G，还剩下 6.4G。</p>
+<p>输入命令<code>gparted</code>并在弹出的窗口输入用户密码。GParted 将找到目前未分配的内存容量为 80GB。</p>
+<p>然后用鼠标点击已经存在的分区（注：想要扩展的分区，这里是/dev/sda2，不是 /dev/sd5）后，右键选择“Resize/Move”，如下图所示：</p>
+<p><img alt="" src="../../img/dev/gparted.png"/></p>
+<p>接着用鼠标拖动移动箭头来增加硬盘容量大小，在移动完成后，点击“调整大小（Resize/Move）”，如下图所示：</p>
+<p><img alt="" src="../../img/dev/resize.png"/></p>
+<p>然后点击下图所示的绿色勾，接着会弹出一个警告框，我们点击“应用（Apply）”即可：</p>
+<p><img alt="" src="../../img/dev/apply.png"/></p>
+<p>最后选择<code>/dev/sda5</code>做同样的操作（最后注意点击绿色勾应用修改），如图所示：</p>
+<p><img alt="" src="../../img/dev/sda.png"/></p>
+<p><img alt="" src="../../img/dev/sda_2.png"/></p>
+<p>接着 GParted 会自动进行分区大小的调整。扩容完成后，使用<code>df -h</code>查看：</p>
+<p><img alt="" src="../../img/dev/expanded.png"/></p>
+<p>从上图可知 /dev/sda5 的总大小变为 147G。至此，扩容 Ubuntu 虚拟机硬盘容量就已全部完成。</p>
+<h2 id="参考">参考</h2>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/552291400">【ubuntu】在虚拟机中如何给ubuntu硬盘扩容</a></li>
+<li><a href="https://blog.csdn.net/qq_34160841/article/details/113058756">vmware：ubuntu虚拟机如何扩容？</a></li>
+</ul></div>
+</div>
+</div><footer>
+<hr/>
+<div role="contentinfo">
+<!-- Copyright etc -->
+<p>OpenHUTB 版权所有 © 2026</p>
+</div>
+</footer>
+</div>
+</div>
+</section>
+</div>
+<div aria-label="Versions" class="rst-versions" role="note">
+<span class="rst-current-version" data-toggle="rst-current-version">
+<span>
+<a href="https://github.com/OpenHUTB/.github" style="color: #fcfcfc">OpenHUTB</a>
+</span>
+</span>
+</div>
+<script src="../../js/jquery-3.6.0.min.js"></script>
+<script>var base_url = "../..";</script>
+<script src="../../js/theme_extra.js"></script>
+<script src="../../js/theme.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script>
+<script src="../../search/main.js"></script>
+<script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+</body>
+</html>
