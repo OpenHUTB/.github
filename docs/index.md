@@ -13,8 +13,6 @@ OpenHUTB 社区鼓励同学们参与开源实践，社区提供学习资源，�
 
 ## 1. 简介 <span id="list"></span>
 
-- [OpenHUTB 模拟器简介](./simulator.md)
-
 - 第一次参与开源项目请参考 **[贡献指南](./CONTRIBUTING.md)** 、非代码开发人员请参考[基于浏览器的贡献指南](./codespace.md)
 
 - [git 教程](https://openhutb.github.io/git/?locale=zh_CN)、[Markdown 教程](https://docs.github.com/zh/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)、[Python教程（到第13章）](https://liaoxuefeng.com/books/python/introduction/index.html)、[C++教程](https://www.runoob.com/cplusplus/cpp-tutorial.html)
@@ -41,7 +39,7 @@ OpenHUTB 社区鼓励同学们参与开源实践，社区提供学习资源，�
 
 - 如果参与过程中遇到任何问题，请参考 [提问技巧](./ask_question.md) 和 [注意事项](note.md) 或在对应项目的 [Issues页面](https://github.com/OpenHUTB/hutb/issues) 提出问题。
 
-- 如要加入组织、添加项目、获得更高权限等需要请把github用户名发送到邮箱 [open@hutb.edu.cn](open@hutb.edu.cn) 。
+- 如要加入组织、添加项目、获得更高权限等需要请把github用户名发送到邮箱 [open@hutb.edu.cn](mailto:open@hutb.edu.cn) 。
 
 - 网络不稳定的时候可以参考 [github 加速方案和科学上网链接](https://openhutb.github.io/doc/build_carla/#internet) 
 
@@ -53,8 +51,6 @@ OpenHUTB 社区鼓励同学们参与开源实践，社区提供学习资源，�
 - [社区每个仓库的月度变化统计情况](https://github.com/OpenHUTB/.github/tree/master/reports)
 
 - [Markdown 一键发到各个社交平台](./markdown2anything.md)
-
-- [宣传](./propagate.md)
 
 
 OpenHUTB 的其他非主要平台包括 [gitee](https://gitee.com/OpenHUTB)、[gitcode](https://gitcode.com/OpenHUTB)、[gitlink](https://gitlink.org.cn/OpenHUTB)、[红山开源](https://osredm.com/OpenHUTB)、[阿里云](https://codeup.aliyun.com/6a64b5ff637ebe3073ca8044/OpenHUTB)、[atomgit](https://atomgit.com/OpenHUTB)、[腾讯工蜂](https://git.code.tencent.com/OpenHUTB)，社交平台包括：
@@ -70,5 +66,5 @@ OpenHUTB 的其他非主要平台包括 [gitee](https://gitee.com/OpenHUTB)、[g
 
 ___
 
-如果对文档中的任何问题可以在 [本文档的源码仓库](https://github.com/OpenHUTB/templte) 中的 [问题](https://github.com/OpenHUTB/templte/issues) 页面讨论或者提交 [拉取请求](https://github.com/OpenHUTB/.github/blob/master/CONTRIBUTING.md) 直接修改文档。
+如果对文档中的任何问题可以在 [本文档的源码仓库](https://github.com/OpenHUTB/.github) 中的 [问题](https://github.com/OpenHUTB/.github/issues) 页面讨论或者提交 [拉取请求](https://github.com/OpenHUTB/.github/blob/master/CONTRIBUTING.md) 直接修改文档。
 
