@@ -1,9 +1,13 @@
 name: Deploy
 on:
-  pull_request:
   push:
     branches: [ master ]
   workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
 
 jobs:
   build:
@@ -11,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Build
         uses: OpenHUTB/actions-mkdocs@main

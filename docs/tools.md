@@ -45,10 +45,15 @@
 
 * [TortoiseGit](https://github.com/TortoiseGit/TortoiseGit) - Windows 资源管理器扩展用于操作 Git
 
-* [auto-py-to-exe](https://github.com/brentvollebregt/auto-py-to-exe) - pthon 转可执行 exe 的图形界面
+* [auto-py-to-exe](https://github.com/brentvollebregt/auto-py-to-exe) - python 转可执行 exe 的图形界面
 
 
 
+## 三维建模
+
+* [Blender](./blender.md) - 免费开源的三维创作软件，社区「艺术创作」分工线使用的工具，内含[下载安装与入门操作说明](./blender.md)
+
+* [FreeCAD](https://github.com/FreeCAD/FreeCAD) - 3D参数化建模器
 
 
 
@@ -94,8 +99,6 @@
 
 * [SpaceSniffer](https://github.com/redtrillix/SpaceSniffer) - Windows 的免费磁盘空间分析工具，它采用分层地图（Treemap）的概念来显示当前的磁盘使用情况。
 
-* [FreeCAD](https://github.com/FreeCAD/FreeCAD) - 3D参数化建模器
-
 * [SeleniumBase](https://github.com/seleniumbase/SeleniumBase) - 用于网页自动化、测试及绕过机器人检测的API
 
 * [selenium](https://github.com/SeleniumHQ/selenium) - 浏览器自动化框架
@@ -125,8 +128,7 @@
 
 * [texstudio](https://github.com/texstudio-org/texstudio) - LaTeX 编辑器
 
-
+* [Anki](https://github.com/ankitects/anki) - 开源间隔重复记忆卡片软件，用来刷题、背诵知识点
 ## 参考
 
 * [tools](https://github.com/stars/donghaiwang/lists/tools)
-
