@@ -2,17 +2,17 @@
 
 ## **PyCharm 教程:PyCharm 简介:**
 
-在当今快节奏的世界中，拥有超越其他程序员的优势可能是一件好事。利用 IDE 可以让程序员的生活变得非常轻松，并确保专注于推出更好的代码，而不用担心依赖性或许多其他因素。在这个 PyCharm 教程中，我将解释如何安装 PyCharm 和它非常酷的特性。
+在当今快节奏的世界中，拥有超越其他程序员的优势可是一件好事。利用 IDE 可以让程序员的生活变得非常轻松，并确保专注于推出更好的代码，而不用担心过度依赖性或许多其他因素。在这个 PyCharm 教程中，我将解释如何安装 PyCharm 和它非常酷的特性。
 
 **[Python](https://www.edureka.co/blog/python-tutorial/)** 是一种极其流行且使用广泛的语言。这使得 [***Python 认证***](https://www.edureka.co/python) 成为最受欢迎的编程认证之一。
 
-在这篇 PyCharm 教程博客中，我将带您浏览以下主题:
+在这篇 PyCharm 教程博客中，我将带您浏览以下一些主题:
 
-*   [Python 简介](#z3)
-*   [安装 PyCharm](#z4)
-*   [重要工具 & Pycharm 的特性](#z6)
+*   [Python 简介](#python-简介)
+*   [安装 PyCharm](#安装-pycharm)
+*   [重要工具 & Pycharm 的特性](#pycharm-的重要特性和工具)
 *   [如何运行 Pycharm？]()
-*   [PyCharm 给初学者的提示和技巧](#z8)
+*   [PyCharm 给初学者的提示和技巧](#pycharm-给初学者的提示和窍门)
 
 ## **PyCharm 初学者教程|使用 PyCharm 调试 Python 代码**
 
@@ -24,7 +24,7 @@
 
 [**Python**](https://www.edureka.co/blog/python-tutorial/) 是一种非常通用的语言。它有成千上万的库和模块可以使用。
 
-就我个人而言，我认为与所有其他语言相比， [**Python**](https://www.edureka.co/blog/python-tutorial/) 真的很有趣。这是非常友好的初学者，这是非常重要的，语法很容易理解。作为初学者，我认为这在开始学习一门语言时非常重要。
+就我个人而言，我认为与所有其他语言相比， [**Python**](https://www.edureka.co/blog/python-tutorial/) 真的很有趣。它对初学者非常友好，语法也很容易理解——作为初学者，我认为在入门一门语言时，这一点非常重要。
 
 最好的是，没有分号，对吧？
 
@@ -47,7 +47,7 @@
 
 ## **安装 PyCharm**
 
-安装 PyCharm 非常简单明了。头像官网使用此链接:[](http://www.jetbrains.com/pycharm/download/#section=windows)
+安装 PyCharm 非常简单明了。前往官网使用此链接:[](http://www.jetbrains.com/pycharm/download/#section=windows)
 
 ![Installing PyCharm - PyCharm Tutorial - Edureka](img/install_pycharm.png)
 
@@ -128,7 +128,7 @@ IDE 提供的可视化调试器帮助程序员调试 Python、JavaScript 和 Dja
 
 PyCharm 还为每个测试脚本或调试器执行创建了一个可重用和可定制的配置。用户甚至可以选择通过集成可视调试器和远程解释器来简化远程调试。
 
-### **内置端子**
+### **内置终端**
 
 PyCharm 附带用于 Windows、Linux 和 macOS 的本地终端。内置的终端使程序员能够在不离开 IDE 的情况下继续编码和测试。此外，程序员可以使用 IDE 运行 Python 文件，并根据精确的项目需求配置定制的 Python 环境。
 
@@ -136,7 +136,7 @@ PyCharm 附带用于 Windows、Linux 和 macOS 的本地终端。内置的终端
 
 ### **软件测试**
 
-像其他 ide 一样，PyCharm 也附带了一些特性和工具来简化 Python 应用程序测试。它允许开发人员通过流行的 Python 测试框架(如 Nose、Attest 和 Doctests)来执行单元测试。测试人员甚至可以选择运行单个或者多个测试文件和测试类。他们可以进一步将 IDE 与 Coverage.py 集成，以便在测试应用程序时测量代码覆盖率。
+像其他 ide 一样，PyCharm 也附带了一些特性和工具来简化 Python 应用程序测试。它允许开发人员通过流行的 Python 测试框架( unittest / pytest / nose / doctest)来执行单元测试。测试人员甚至可以选择运行单个或者多个测试文件和测试类。他们可以进一步将 IDE 与 Coverage.py 集成，以便在测试应用程序时测量代码覆盖率。
 
 在测试多线程应用程序时，测试人员可以使用 IDE 提供的线程并发可视化选项来全面高效地控制应用程序。同时，PyCharm 通过实现行为驱动开发(BDD)使用户能够交付高质量的软件。
 
@@ -225,7 +225,7 @@ print("Hello edureka!")
 
 从上面的截图可以看出，我们在 **Python 控制台中获得了正确的输出。**
 
-### **pychar 调试器**
+### **pycharm 调试器**
 
 用 PyCharm 调试是一件容易的事情。要设置断点，您只需单击代码的左侧，就会出现一个点。
 
@@ -297,7 +297,7 @@ PyCharm 支持一种智能重构技术，在这种技术中，您只需要知道
 
 当您试图使用 PyCharm IDE 创建一个 Python 程序时，这将非常方便，py charm IDE 为您提供了许多优势。这种优势将确保您可以在整体上更加专注于代码。这很可能是你掌握 Python 的第一步。
 
-看完这篇关于 PyCharm 教程的博客后，我很确定你想了解更多关于 Python 的知识。想要了解更多关于 Python 的知识，你可以参考下面的博客:
+看完这篇关于 PyCharm 教程的博客后，我很确定你想了解更多关于 Python 的知识。如果想要了解更多关于 Python 的知识，你可以参考下面的博客:
 
 1.  **[Python 教程——Python 编程初学者](https://www.edureka.co/blog/python-tutorial/)**
 2.  **[用于数据科学的 Python](https://www.edureka.co/blog/learn-python-for-data-science/)**
