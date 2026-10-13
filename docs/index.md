@@ -8,7 +8,9 @@ title: 主页
 - [2.开发配置](#dev)
 - [3.问题](#questions)
 - [4.社区](#propaganda)
- OpenHUTBs社区鼓励同学们参与开源实践，社区提供学习资源，大家可以提交文档修改，修复小bug。通过参与项目，把课堂知识运用起来，提升动手能力，认识更多志同道合的伙伴。在社区里，初学者可以大胆尝试提交修改，在开源协作的过程中锻炼自己，提升能力。
+
+OpenHUTB 社区鼓励同学们参与开源实践，社区提供学习资源，大家可以提交文档修改，修复小bug。通过参与项目，把课堂知识运用起来，提升动手能力，认识更多志同道合的伙伴。在社区里，初学者可以大胆尝试提交修改，在开源协作的过程中锻炼自己，提升能力。
+
 ## 1. 简介 <span id="list"></span>
 
 - [OpenHUTB 模拟器简介](./simulator.md)
@@ -31,6 +33,8 @@ title: 主页
 - [合并提交](dev/merge_commit.md)
 
 - [免费开源远程办公解决方案：rustdesk+tailscale](rustdesk_tailscale.md)
+
+- [给 Ubuntu 虚拟机硬盘扩容](./dev/vm_disk.md)
 
 
 ## 3. 问题 <span id="questions"></span>
