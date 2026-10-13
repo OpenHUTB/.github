@@ -20,7 +20,7 @@ OpenHUTB 简单来说是面向人机共生与智能载具研究、教学和开�
 ### 研究与实验项目
 
 - 🧪 **[traffic_twin 人车孪生](https://github.com/OpenHUTB/traffic_twin)** — 交通数字孪生相关研究和示例，使用前请查看仓库说明。
-- 🧠 **[neuro 神经原理](https://github.com/OpenHUTB/neuro)** — 感知和神经网络相关研究内容。
+- 🧠 **[neuro 神经原理](https://github.com/OpenHUTB/neuro)** — 用于感知与神经网络算法的相关研究与实验。
 - 🧭 **[PFC 规划](https://github.com/OpenHUTB/PFC)** — 规划相关研究内容。
 - 🎮 **[move 控制原理](https://github.com/OpenHUTB/move)** — 运动控制与生物力学相关研究内容。
 
