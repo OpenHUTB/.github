@@ -32,9 +32,10 @@ def get_commits(since=None, until=None, ignore_list=[]):
     
     if result.returncode != 0:
         print("git log 执行失败")
+        print(result.stderr)
         return [], {}
 
-    raw_data = result.stdout.strip().split("\n")
+    raw_data = result.stdout.splitlines()
     email_to_name = {}
     email_counts = Counter()
 

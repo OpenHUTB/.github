@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# mkdocs 构建产物（本地 serve/build 生成）
+site/
+
+# IDE 配置
+.idea/
+.vscode/
+
+# 操作系统
+.DS_Store
+Thumbs.db
