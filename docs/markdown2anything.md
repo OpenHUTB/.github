@@ -1,9 +1,10 @@
 # Markdown 一键发到微信/知乎/小红书/Twitter
 
-将个人信息和微信号 <a href="mailto:recipient@://example.com">发送到邮箱 open@hutb.edu.cn </a> ，邮件主题：`申请运营者权限`。邮件模板：
+将以下邮件模板填好 <a href="mailto:recipient@://example.com">发送到邮箱 open@hutb.edu.cn </a> ，邮件主题：`申请运营者权限`
 ```
 github 用户名：XXX
 邮箱：xxx@xx.com
+微信号：xxx（需要提前关注“开源孪创”公众号才可以绑定运营者）
 申请原因：在 OpenHUTB 微信公众号发表“xxxx”
 
 （选填）
