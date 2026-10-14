@@ -14,7 +14,7 @@ OpenHUTB 简单来说是面向人机共生与智能载具研究、教学和开�
 
 核心入口
 
-- 🟡 **[hutb 人车模拟器](https://github.com/OpenHUTB/hutb)** — 一个可二次开发的交通仿真平台，提供工具包、Python 接口与场景样例，用于人车协同算法的开发与验证。
+- 🟡 **[hutb 人车模拟器](https://github.com/OpenHUTB/hutb)** — 面向人和载具的机器人仿真平台，提供工具包、Python 接口与场景样例，用于人车协同算法的开发与验证。
 - 📚 **[doc 人车文档](https://github.com/OpenHUTB/doc)** — 提供安装、Python API、场景制作和开发文档。
 
 ### 研究与实验项目
