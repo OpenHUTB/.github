@@ -87,10 +87,12 @@ nav:
     - PyCharm 教程: 'pycharm-tutorial.md'
     - 使用 TortoiseGit 解决冲突: 'resolve_conflict.md'
     - 合并提交: 'dev/merge_commit.md'
+    - 给 Ubuntu 虚拟机硬盘扩容: 'dev/vm_disk.md'
     - 注意事项: 'note.md'
 - 工具与资源:
     - 模拟器演示：涉水效果: 'introduction.md'
     - 开源工具列表: 'tools.md'
+    - 三维建模软件 Blender 介绍: 'blender.md'
     - Markdown 一键发布到社交平台: 'markdown2anything.md'
 - 学习与论文:
     - LaTeX 参考文献编译: 'bib_reference_guide.md'
