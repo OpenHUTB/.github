@@ -48,6 +48,12 @@ plugins:
   - bibtex:
       bib_file: refs.bib
       csl_file: nature.csl
+      # 关闭「行内引用」（形如裸 @key 的引用）解析。
+      # 不关的话插件会把 URL 里的 @ 误判成引用键，产生两条构建告警：
+      #   - docs/index.md 的社交链接 https://www.youtube.com/@OpenHUTB → 误判为引用键 OpenHUTB
+      #   - docs/bib_reference_guide.md 中作为语法示例出现的 @article{...} → 误判为引用键 article
+      # 本仓库目前没有任何页面使用行内引用；[@key] 形式的引用块不受此项影响。
+      enable_inline_citations: false
   - mkdocs-video:
       is_video: True
       video_autoplay: True
