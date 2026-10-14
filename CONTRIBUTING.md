@@ -212,6 +212,27 @@ git pull origin pull/ID/head
 git submodule update --remote
 ```
 
+### 在 GitHub 网页端提交文档修改与预览
+
+对于少量文本或 Markdown 修改，可以直接在浏览器中完成，不必安装 Git：
+
+1. 在 OpenHUTB 目标仓库点击 **Fork**，将个人副本创建到自己的 GitHub 账号；不要直接编辑组织仓库。
+2. 在个人副本中打开目标文件并点击编辑按钮。用 **Preview** 检查标题、链接、图片和代码块；较大的多文件修改也可通过 **Code → Codespaces** 在浏览器中编辑。
+3. 点击 **Commit changes**，填写能概括本次修改的提交信息，并提交到新建的特性分支。
+4. 回到个人仓库的该分支，选择 **Contribute → Open pull request**。确认 base 是 OpenHUTB 的目标仓库及其实际默认分支，compare 是个人副本中的特性分支；检查差异后再填写 PR 标题和说明。
+5. 创建 PR 后查看 **Checks** 中的 Actions 结果。若失败，按检查信息修复并再次提交到同一分支。
+6. 需要预览网站时，先确认仓库已配置 Pages 构建工作流。个人 fork 的 Pages 可在 **Settings → Pages** 选择 `gh-pages` 分支；部署完成后，从 Actions 的部署详情打开生成的站点。若工作流因权限失败，先检查它实际需要的最小权限，再调整个人 fork 的设置。
+
+
+
+### 在网页上查找并审核社区 PR
+
+如果你没有收到指定的审核邀请，也可以从 [OpenHUTB/.github 的 Pull requests 列表](https://github.com/OpenHUTB/.github/pulls) 浏览社区提交的修改。建议先查看状态为 Open 且不是 Draft 的 PR。
+
+打开 PR 后进入 **Files changed** 阅读改动。发现问题时可在对应代码行添加评论；检查完成后点 **Submit review**，选择 **Comment**（一般反馈）、**Approve**（认为改动可以合并）或 **Request changes**（建议作者先修改），再提交审核。没有写权限时仍可提交审核意见，但 GitHub 不会把批准计入合并所需的 review；请写清具体问题和依据，方便作者与维护者处理。
+
+
+
 
 
 
