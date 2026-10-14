@@ -4,7 +4,7 @@
 ```
 github 用户名：XXX
 邮箱：xxx@xx.com
-申请原因：在 OpenHUTB 微信公众号/知乎/小红书发表“xxxx”
+申请原因：在 OpenHUTB 微信公众号发表“xxxx”
 
 （选填）
 姓名：
