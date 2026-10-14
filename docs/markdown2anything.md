@@ -4,7 +4,7 @@
 ```
 github 用户名：XXX
 邮箱：xxx@xx.com
-申请原因：在微信公众号发表“xxxx”
+申请原因：在 OpenHUTB 微信公众号/知乎/小红书发表“xxxx”
 
 （选填）
 姓名：
@@ -62,7 +62,7 @@ github 用户名：XXX
 发表过程：
 
 * 定时发表：设置为离编辑完成最近的有群发通知的某一天发表，时间段选择 7:50-8:50、11:50-12:50、18:00-19:00、21:00-22:00 中的随机时刻。
-* 将预览链接等效果 <a href="mailto:recipient@://example.com">发送到邮箱 open@hutb.edu.cn </a> 进行**审核发表**，不直接发表。
+* 将预览链接等效果 <a href="mailto:recipient@://example.com">发送到邮箱 open@hutb.edu.cn </a> 进行**审核发表**，不直接发表，否则解除运营者权限。
 
 
 ### 自定义样式
