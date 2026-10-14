@@ -34,6 +34,12 @@
 
 ![](./img/codespace/vscode.png)
 
+在开始编辑前，建议先从 `master` 创建独立的特性分支，避免将本次修改直接提交到主分支。点击 VS Code 左下角的当前分支名，选择 **Create new branch...**，输入简短且能说明改动的分支名（例如 `docs/update-guide`），并确认状态栏已切换到新分支后再编辑文件。
+
+
+
+
+
 点击左边“资源管理器”中的文件，并在中间进行编辑。点击编辑区右上角的“Open Preview to the side”来打开修改的预览
 
 ![](./img/codespace/edit.png)
@@ -47,7 +53,9 @@
 
 ![](./img/codespace/commit.png)
 
-然后点击“同步更改”，将提交推送到个人仓库的主分支 origin/master。这时左侧“图表”中多了一项刚才提交的内容。
+然后点击“同步更改”，将提交推送到个人仓库的当前特性分支（例如 `origin/docs/update-guide`）。这时左侧“图表”中多了一项刚才提交的内容。
+
+
 
 ![](./img/codespace/commited.png)
 
@@ -79,6 +87,12 @@
 ## 6. 创建 Pull Request
 
 在项目主页点击“Contribute -> Open pull request”
+
+填写 PR 时，确认 base repository 是社区的目标仓库、base branch 是目标分支（例如 `OpenHUTB/hutb:master`），head repository 是个人 fork、head branch 是刚创建的特性分支。这样 PR 会指向社区仓库，而不是个人 fork 的主分支。
+
+
+
+
 
 ![](./img/codespace/open_PR.png)
 
