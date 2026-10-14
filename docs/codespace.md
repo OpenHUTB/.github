@@ -1,6 +1,8 @@
 # 基于浏览器的贡献指南
 
-**1.** **[注册](https://openhutb.github.io/.github/dev/sign_up/) 并登录 Github 账号**，在 [想要修改的开源孪创仓库](https://github.com/OpenHUTB/hutb) 页面右上角点击`Fork`
+## 1. Fork 仓库
+
+**[注册](https://openhutb.github.io/.github/dev/sign_up/) 并登录 Github 账号**，在 [想要修改的开源孪创仓库](https://github.com/OpenHUTB/hutb) 页面右上角点击`Fork`
 
 ![](./img/codespace/fork.png)
 
@@ -10,7 +12,7 @@
 
 出现的页面即为社区仓库的拷贝。
 
-**2. 启用自动化流水。**
+## 2. 启用自动化流水
 
 点击个人项目的“Actions -> I understand my workflows, go ahead and enable them”启用自动化流水。
 
@@ -23,7 +25,7 @@
 
 ![](./img/codespace/write_permission.png)
 
-**3. 修改项目** <span id='edit'></span>
+## 3. 修改项目
 
 点击“Code -> Create codespace on master”创建在线编辑器
 ![](./img/codespace/create_codespace.png)
@@ -38,7 +40,7 @@
 
 编辑完成后，按 `Ctrl+S` 保存文件，并通过预览检查内容和排版。保存只会更新当前 Codespace 中的文件，还需要按照下一步完成“提交”和“同步更改”，才能将修改上传到个人 GitHub 仓库。
 
-**4. 提交修改**
+## 4. 提交修改
 
 点击左侧分叉图标的“源代码管理”，弹出提交页面。
 点击更改的内容，确认中间的工作树对比中（左侧为修改之前的内容，右侧为修改之后的内容）的修改为想要修改的内容。再填写提交信息，点击“提交”。
@@ -50,7 +52,7 @@
 ![](./img/codespace/commited.png)
 
 
-**5. 检查**修改内容的正确性
+## 5. 检查修改内容的正确性
 
 回到仓库页面，发现有内容领先于开源孪创社区分支（commits ahead of OpenHUTB/.github:master）
 
@@ -74,7 +76,7 @@
 ![](./img/codespace/pages.png)
 
 
-**6. 创建 Pull Request**
+## 6. 创建 Pull Request
 
 在项目主页点击“Contribute -> Open pull request”
 
@@ -84,7 +86,7 @@
 
 ![](./img/codespace/PR.png)
 
-将会跳转到社区仓库的 Pull Request 页面，等待其他人评论。如果其他人提出问题，则继续第 [3](#edit) 步的 vscode 编辑。如果没问题，则会通过并合并到主分支，随后就可以在社区的代码库和页面中看到修改的内容。
+将会跳转到社区仓库的 Pull Request 页面，等待其他人评论。如果其他人提出问题，则返回[第 3 步“修改项目”](#3-修改项目)继续在 VSCode 中编辑。如果没问题，则会通过并合并到主分支，随后就可以在社区的代码库和页面中看到修改的内容。
 
 ![](./img/codespace/pages_display.png)
 
