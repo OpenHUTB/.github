@@ -365,8 +365,8 @@ Matplotlib 即使使用 [紧凑的布局功能](http://matplotlib.org/users/tigh
 
 # 有用的资源
 
-* 自动将标题大写: https://capitalizemytitle.com
-* 芝加哥格式手册: http://www.chicagomanualofstyle.org
-* 命令行检查模棱两可的词语、被动语态等: https://github.com/devd/Academic-Writing-Check
-* LaTeX 2e 使用基本指南: http://ctan.math.utah.edu/ctan/tex-archive/info/l2tabu/english/l2tabuen.pdf
+* [自动将标题大写](https://capitalizemytitle.com)
+* [芝加哥格式手册](http://www.chicagomanualofstyle.org)
+* [命令行检查模棱两可的词语、被动语态等](https://github.com/devd/Academic-Writing-Check)
+* [LaTeX 2e 使用基本指南](http://ctan.math.utah.edu/ctan/tex-archive/info/l2tabu/english/l2tabuen.pdf)
 * [撰写科学论文的技巧和窍门](https://github.com/Wookai/paper-tips-and-tricks/tree/master)
