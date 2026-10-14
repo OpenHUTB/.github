@@ -22,3 +22,15 @@ def on_pre_build(**kwargs):
     if os.path.exists(src_file):
         shutil.copy2(src_file, dest_file)
         print("Successfully copied CONTRIBUTING.md to docs/CONTRIBUTING.md")
+ # 构建完成后，输出文档构建统计信息
+def on_post_build(config, **kwargs):
+    import os
+    docs_path = config["docs_dir"]
+    md_count = 0
+    # 遍历统计所有md文档数量
+    for root, dirs, files in os.walk(docs_path):
+        for f in files:
+            if f.endswith(".md"):
+                md_count += 1
+    print(f"✅ 文档网站构建完成！")
+    print(f"📄 检测到Markdown文档总数：{md_count}")       
