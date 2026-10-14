@@ -20,11 +20,11 @@ OpenHUTB 简单来说是面向人机共生与智能载具研究、教学和开�
 ### 研究与实验项目
 
 - 🧪 **[traffic_twin 人车孪生](https://github.com/OpenHUTB/traffic_twin)** — 交通数字孪生相关研究和示例，使用前请查看仓库说明。
-- 🧠 **[neuro 神经原理](https://github.com/OpenHUTB/neuro)** — 感知和神经网络相关研究内容。
+- 🧠 **[neuro 神经原理](https://github.com/OpenHUTB/neuro)** — 用于感知与神经网络算法的相关研究与实验。
 - 🧭 **[PFC 规划](https://github.com/OpenHUTB/PFC)** — 规划相关研究内容。
 - 🎮 **[move 控制原理](https://github.com/OpenHUTB/move)** — 运动控制与生物力学相关研究内容。
 
-人车模拟器的技术架构入下图所示：
+人车模拟器的技术架构如下图所示：
 
 <a href ="https://github.com/OpenHUTB/.github/blob/master/fig/repositories.md">
 <img src="https://github.com/OpenHUTB/.github/blob/master/profile/repositories.png?raw=true" width="40%" >
@@ -35,7 +35,7 @@ OpenHUTB 简单来说是面向人机共生与智能载具研究、教学和开�
 
 <!--所有项目关系的思维导图。-->
 <!-- 使用markmap进行编辑并生成svg：https://markmap.js.org/repl -->
-<!-- 在profile/markmap.md中保存图的数据 -->
+<!-- 在profile/markmap.md中去保存图的数据 -->
 <!-- svg图片预览：https://raw.githack.com/ -->
 
 ## 社区项目之间的关系
@@ -103,7 +103,7 @@ graph LR
 
 ```mermaid
 graph LR
-    A[工具列表 <a href='https://github.com/OpenHUTB/chrono'>.github</a>] --> B[<a href='https://github.com/OpenHUTB/latex'>latex</a> 模板]
+    A[工具列表] --> B[<a href='https://github.com/OpenHUTB/latex'>latex</a> 模板]
     B --> C[课程设计 <a href='https://github.com/OpenHUTB/course'>course</a>]
     B --> D[研究生论文 <a href='https://github.com/OpenHUTB/master'>master</a>]
     B --> E[本科毕设 <a href='https://github.com/OpenHUTB/undergraduate'>undergraduate</a>]
@@ -120,18 +120,3 @@ graph LR
 
     style A fill:#f3e5f5
 ```
-欢迎更多同学参与社区文档完善。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
