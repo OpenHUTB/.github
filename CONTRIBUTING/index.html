@@ -201,21 +201,27 @@ git<span class="w"> </span>clone<span class="w"> </span>https://github.com/<span
 </code></pre></div>
 <p><img src="https://firstcontributions.github.io/assets/Readme/clone.png" width="250"/><img src="https://firstcontributions.github.io/assets/Readme/copy-to-clipboard.png" width="230"/></p>
 <p><strong>3.新建特性分支</strong></p>
-<p>在命令行窗口中把目录切换到仓库目录（比如.github）</p>
-<p></p><div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>.github
+<p>进入刚才克隆的仓库目录。第 2 步以 <code>hutb</code> 为例，这里也进入 <code>hutb</code>：</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>hutb
 </code></pre></div>
-接下来使用 <code>git switch</code> 命令新建一个代码分支
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>switch<span class="w"> </span>-c<span class="w"> </span>&lt;新分支的名称&gt;
+<p>如果第 2 步克隆的是 <code>.github</code>，则使用 <code>cd .github</code>。目录名要与实际克隆的仓库一致。</p>
+<p>接下来使用 <code>git switch</code> 命令新建一个分支。下面以修正文档为例：
+</p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>switch<span class="w"> </span>-c<span class="w"> </span>docs-fix-contribution-steps
 </code></pre></div>
-<p>(新分支的名称一般命名为想要增加的新特性。)</p>
+<p>分支名可以按本次修改的内容调整；后面的推送命令使用同一个分支名。</p>
 <p><strong>4.修改仓库的文件</strong></p>
 <p>打开任意文件，更新文件内容，保存修改。然后使用 <code>git status</code> 列出被改动的文件（后面步骤都可以使用该命令进行状态查看）。</p>
-<p><strong>5-7</strong>.修改并本地测试没问题后，<strong>提交代码到个人仓库</strong>（参考 git 命令说明）：
-</p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>README.md
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"update"</span>
-git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>&lt;新分支的名称&gt;
+<p><strong>5-7</strong>.修改并本地测试没问题后，<strong>提交修改到个人仓库</strong>（参考 git 命令说明）。先查看差异，确认文件和内容都是本次准备提交的修改：</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>status
+git<span class="w"> </span>diff
 </code></pre></div>
-将 <code>&lt;新分支的名称&gt;</code> 替换为之前新建的分支名称。
+<p>下面以修改 <code>README.md</code> 为例。<code>git add</code> 后填写能说明具体改动的提交信息，再推送当前分支：</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>README.md
+git<span class="w"> </span>diff<span class="w"> </span>--cached
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"docs: 说明 README 中的项目入口 / clarify project links in README"</span>
+git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>docs-fix-contribution-steps
+</code></pre></div>
+<p>将 <code>README.md</code> 换成实际修改的文件，例如修改贡献指南时使用 <code>git add CONTRIBUTING.md</code>；提交信息也要与实际改动对应。如果第 3 步用了其他分支名，推送时同步替换。</p>
 <details>
 <summary> <strong>如果在 push（推送）过程中出 error（错误），点击这里</strong> </summary>
 
@@ -226,7 +232,8 @@ git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </
   去 [GitHub 的教程](https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) 学习如何生成新的 SSH 密匙以及配置。
 
 </details>
-<p><strong>8.</strong> 在自己仓库的首页发现有提交领先于湖工商仓库的<code>main</code>分支，则点击<code>Contribute</code> 创建 <a href="https://zhuanlan.zhihu.com/p/153381521">Pull Request</a> ，来湖工商仓库<strong>做出贡献</strong>，创建成功后等待管理员审核通过（如果发现个人仓库落后于湖工商仓库则点击<code>Sync fork</code>以同步其他人的最新修改）。</p>
+<p><strong>8.</strong> 推送后，在个人仓库页面切换到刚才的分支，点击 <code>Contribute</code> 创建 <a href="https://zhuanlan.zhihu.com/p/153381521">Pull Request</a>。确认目标仓库是原来的 OpenHUTB 仓库，目标分支是该仓库的默认分支，来源是个人仓库中本次修改的分支。比如 <code>OpenHUTB/.github</code> 的默认分支是 <code>master</code>，不要直接填成 <code>main</code>。</p>
+<p>填写能概括修改内容的标题和说明后提交，等待审核。如果个人仓库落后于原仓库，先通过 <code>Sync fork</code> 同步，并把最新内容合并到本次修改的分支；有冲突时先解决，再提交。</p>
 <p><img src="https://firstcontributions.github.io/assets/Readme/compare-and-pull.png" width="410"/></p>
 <p><img src="https://firstcontributions.github.io/assets/Readme/submit-pull-request.png" width="410"/></p>
 <p>不久之后，团队成员便会把你所有的变化合并到这个项目的主分支。更改合并后，你会收到一封电子邮件通知。</p>
@@ -250,7 +257,7 @@ git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </
 <img alt="图二" src="../img/branch_new.png"/></p>
 <p><strong>4.暂存修改并提交</strong></p>
 <ul>
-<li>存，也就是<strong>git add</strong>操作，可以理解成小存档，<strong>git commit</strong>就相当于大存档，你的每一小块修改都需要暂存，最后一起提交。</li>
+<li>暂存，也就是 <strong>git add</strong> 操作，用来选择这次要提交的修改；<strong>git commit</strong> 会把已经暂存的修改保存为一次提交。只保存文件还不等于完成提交。</li>
 <li>如图三所示，点击左边第三个<strong>源代码管理</strong>图标，在存储库这一栏可以看到新建的分支和主分支，如果下方的更改一栏是空的，说明你现在所处的分支不对，点击对应分支即可切换。随后点击加号即可暂存成功。
 确保保存并暂存所有修改后，在<strong>提交</strong>按钮上方的对话框输入本次的说明，就可以提交了。</li>
 </ul>
