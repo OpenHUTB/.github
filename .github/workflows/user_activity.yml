@@ -31,7 +31,7 @@ jobs:
 
       - uses: sorekz/user-activity-report@v1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.METRICS_REPORT }}
           organization: 'OpenHUTB'
           since: ${{ steps.since-date.outputs.result }}
           until: ${{ steps.until-date.outputs.result }}
