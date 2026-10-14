@@ -35,7 +35,7 @@ jobs:
           token: ${{ secrets.METRICS_REPORT }}
           fromdate: ${{ github.event.inputs.fromdate }} # Used for workflow dispatch input
           todate: ${{ github.event.inputs.todate }} # Used for workflow dispatch input
-          # org: 'OpenHUTB'
+          org: 'OpenHUTB'
           # team: ''
           # days: '30'
           # stale: '14'
