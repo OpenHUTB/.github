@@ -1,1 +1,40 @@
-ISSUE_TEMPLATE/bug_report.yml
+name: Bug 报告
+description: 报告一个 Bug 或错误
+title: "[Bug]: "
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug 描述
+      description: 请简单描述一下你遇到了什么问题。
+      placeholder: 告诉我发生了什么...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      description: 你是怎么操作才触发这个 Bug 的？
+      placeholder: |
+        1. 打开...
+        2. 点击...
+        3. 出错...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望行为
+      description: 你本来期望发生什么？
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际行为
+      description: 实际发生了什么？（如果有报错截图，可以直接粘贴在这里）
+    validations:
+      required: true
