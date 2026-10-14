@@ -23,7 +23,7 @@
 
 ![](./img/codespace/write_permission.png)
 
-**3. 修改项目** <span id='edit'></span>
+**3. 修改项目** 
 
 点击“Code -> Create codespace on master”创建在线编辑器
 ![](./img/codespace/create_codespace.png)
