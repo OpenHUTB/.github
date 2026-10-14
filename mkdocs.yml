@@ -84,6 +84,7 @@ nav:
 - 贡献相关:
     - 基于浏览器的贡献指南: 'codespace.md'
     - 注册 Github 账号: 'dev/sign_up.md'
+    - 使用 VScode 推送代码: 'dev/vscode_push.md'
     - PyCharm 教程: 'pycharm-tutorial.md'
     - 使用 TortoiseGit 解决冲突: 'resolve_conflict.md'
     - 合并提交: 'dev/merge_commit.md'
