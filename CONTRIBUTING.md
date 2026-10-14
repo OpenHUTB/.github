@@ -4,7 +4,7 @@
 
 ## 如何贡献
 我们欢迎各种形式的贡献！请根据你的目标选择对应的方式：
-- 🐛 提交 Bug 报告：如果你发现了 Bug，请点击下方链接，直接填写 Bug 报告表单：[点击这里提交 Bug 报告](https://github.com/auraro77/开源项目作业/issues/new?template=bug_report.yml)
+- 🐛 提交 Bug 报告：如果你发现了 Bug，请点击下方链接，直接填写 Bug 报告表单：[点击这里提交 Bug 报告](https://github.com/auraro77/.github/issues/new/choose)
 - 💡 **功能建议**：请在 Issues 中描述你的想法和使用场景，与我们讨论后再着手开发。
 - 📖 **改进文档**：可以直接提交 Pull Request 修改文档中的错别字或表述不清之处。
 - 💻 **贡献代码**：请参考下方的“代码贡献流程”，从 Fork 仓库开始。
