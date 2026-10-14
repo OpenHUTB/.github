@@ -169,6 +169,32 @@ git push -u origin docs-fix-contribution-steps
 - 测试完毕没有问题就可以向原仓库发送**PR**请求了。
 
 
+
+**8. 本地检查`Pull requests`请求** <span id='check'></span>
+
+有人发送`Pull requests`时，可以在 GitHub 上合并之前[测试并验证更改](https://docs.github.com/zh/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/checking-out-pull-requests-locally) 。
+```shell
+# 拉取Pull Request 的 ID 为 7，并在本地新建分支名为 7 的命令：git fetch origin pull/7/head:7
+git fetch origin pull/ID/head:BRANCH_NAME
+# 切换到新建的分支
+git switch BRANCH_NAME
+# 前面拉取后，后面又有新的修改
+git pull origin pull/ID/head
+```
+
+
+
+在 Pull Request 页面的 File changed 中，对有相关问题或修改建议的代码行进行审核并填写评论内容，并点击 Start a review，所有都评论完成后，点击 Submit review 提交评论，对方就会收到审核意见的邮件。
+
+![](img/dev/review.png)
+
+
+
+所有问题解决并且本地验证通过后，点击 Pull Request 页面中最下面的“Squash and merge”（注意不是默认的“Create a merge commit”）。至此，一次的提交最终完成。
+
+![](img/dev/squash_merge.png)
+
+
 **注意事项：**
 
 - Pull Request 标题需要概括所修改的内容；
@@ -186,16 +212,7 @@ git push -u origin docs-fix-contribution-steps
 git submodule update --remote
 ```
 
-3.本地检查`Pull requests`请求
-有人发送`Pull requests`时，可以在 GitHub 上合并之前[测试并验证更改](https://docs.github.com/zh/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/checking-out-pull-requests-locally) 。
-```shell
-# 拉取Pull Request 的 ID 为 7，并在本地新建分支名为 7 的命令：git fetch origin pull/7/head:7
-git fetch origin pull/ID/head:BRANCH_NAME
-# 切换到新建的分支
-git switch BRANCH_NAME
-# 前面拉取后，后面又有新的修改
-git pull origin pull/ID/head
-```
+
 
 
 
