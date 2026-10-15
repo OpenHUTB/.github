@@ -69,9 +69,11 @@ git clone http://172.21.108.56:1080/root/actors
 
 2. 看清电脑上有几个 Python
 一台机器上经常不止一个 Python：系统装的、某些编辑器自带的、Anaconda 的……混用会导致「明明装了包却导入不了」。Windows 自带的 Python 启动器可以把它们列出来：
-py -0
+```shell
+py --list
 输出中带 * 的是默认版本。需要指定版本运行时用 py -3.13 脚本名.py 这样的写法。
   装包时统一用 python -m pip install 包名，而不是直接 pip install 包名。前者保证包被装进当前 python 对应的环境，后者可能装到另一个 Python 上。
+更多说明可参考 Python 官方文档：[Python Launcher for Windows](https://docs.python.org/3.13/using/windows.html#python-launcher-for-windows)
 
 3. 为 pip 配置国内镜像源
 直接从官方源下载常常很慢甚至超时。配置清华镜像源（写进用户配置，一次生效、长期有效）：
@@ -85,13 +87,28 @@ python -m pip config list
 进入项目目录，创建名为 .venv 的环境：
 cd 你的项目目录
 python -m venv .venv
-激活它：
+markdown
+
+激活它。不同终端用的命令不一样，请按自己当前打开的终端选择：
+
+```powershell
 # PowerShell
 .venv\Scripts\Activate.ps1
-# cmd 或 Git Bash
+
+```cmd
+# cmd
 .venv\Scripts\activate.bat
+
+```shell
+# Git Bash
+source .venv/Scripts/activate
+
+不同 Shell 激活虚拟环境的方式可参考 Python 官方文档：
+[How virtual environments work](https://docs.python.org/3.13/library/venv.html#how-venvs-work)
 激活成功后，命令行开头会出现 (.venv)。此后 python、pip 都指向这个环境。退出用：
+```shell
 deactivate
+```
 如果 PowerShell 提示「无法加载文件……因为在此系统上禁止运行脚本」，先执行下面这条命令（只对当前用户生效，不需要管理员权限）：
 Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 按提示输入 Y 确认，再重新激活。
