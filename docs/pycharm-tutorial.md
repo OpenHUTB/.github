@@ -47,7 +47,7 @@
 
 ## **安装 PyCharm**
 
-安装 PyCharm 非常简单明了。前往官网使用此链接:[](http://www.jetbrains.com/pycharm/download/#section=windows)
+安装 PyCharm 非常简单明了。前往官网使用此链接:[PyCharm 官方下载页](http://www.jetbrains.com/pycharm/download/#section=windows)
 
 ![Installing PyCharm - PyCharm Tutorial - Edureka](img/install_pycharm.png)
 
