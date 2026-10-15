@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../../img/favicon.ico" rel="shortcut icon"/>
+<title>使用 VScode 推送代码 - 社区介绍</title>
+<link href="../../css/theme.css" rel="stylesheet"/>
+<link href="../../css/theme_extra.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
+<script>
+        // Current page data
+        var mkdocs_page_name = "\u4f7f\u7528 VScode \u63a8\u9001\u4ee3\u7801";
+        var mkdocs_page_input_path = "dev/vscode_push.md";
+        var mkdocs_page_url = null;
+      </script>
+<!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</head>
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<a class="icon icon-home" href="../.."> 社区介绍
+        </a><div role="search">
+<form action="../../search.html" class="wy-form" id="rtd-search-form" method="get">
+<input aria-label="Search docs" name="q" placeholder="搜索文档" title="Type search term here" type="text"/>
+</form>
+</div>
+</div>
+<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../..">首页</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING/">贡献指南</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="" href="https://openhutb.github.io/git/?locale=zh_CN">git 教程</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="" href="https://docs.github.com/zh/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax">Markdown教程</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../paper_tips/">论文写作技巧</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../bib_reference_guide/">Latex文献引用编译办法</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../env_conf/">搭建自定义开发环境</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../rustdesk_tailscale/">远程办公</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../ask_question/">提问技巧</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="" href="https://openhutb.github.io/doc/build_carla/#internet">科学上网</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">贡献相关</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../codespace/">基于浏览器的贡献指南</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../sign_up/">注册 Github 账号</a>
+</li>
+<li class="toctree-l1 current"><a class="reference internal current" href="#">使用 VScode 推送代码</a>
+<ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="#一环境准备安装-gitwindows">一、环境准备：安装 Git（Windows）</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#1-下载-git">1. 下载 Git</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#2-安装要点">2. 安装要点</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#3-配置-git-用户名与邮箱必须设置否则提交报错">3. 配置 Git 用户名与邮箱（必须设置，否则提交报错）</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#4-验证-git-是否装好">4. 验证 Git 是否装好</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#二vs-code-安装windows">二、VS Code 安装（Windows）</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#1-下载安装包">1. 下载安装包</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#2-安装步骤">2. 安装步骤</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#3-安装必要插件">3. 安装必要插件</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#三前置说明">三、前置说明</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#四准备仓库">四、准备仓库</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#五在-vs-code-内修改文件">五、在 VS Code 内修改文件</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#六提交改动两种方式任选其一">六、提交改动（两种方式任选其一）</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#方式-avscode-图形界面推荐新手">方式 A：VSCode 图形界面（推荐新手）</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#方式-b终端命令">方式 B：终端命令</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pycharm-tutorial/">PyCharm 教程</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../resolve_conflict/">使用 TortoiseGit 解决冲突</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../merge_commit/">合并提交</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../vm_disk/">给 Ubuntu 虚拟机硬盘扩容</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../note/">注意事项</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">工具与资源</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/">模拟器演示：涉水效果</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tools/">开源工具列表</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../blender/">三维建模软件 Blender 介绍</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../markdown2anything/">Markdown 一键发布到社交平台</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">学习与论文</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../bib_reference_guide/">Latex文献引用编译办法</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../undergraduate/">本科毕业设计</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../paper/avf/">论文成果：AVF-BEL 视听融合</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../org/architecture/">社区组织形式</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../..">社区介绍</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a aria-label="Docs" class="icon icon-home" href="../.."></a></li>
+<li class="breadcrumb-item">贡献相关</li>
+<li class="breadcrumb-item active">使用 VScode 推送代码</li>
+<li class="wy-breadcrumbs-aside">
+<a href="https://github.com/OpenHUTB/.github/edit/master/docs/dev/vscode_push.md"> 编辑页面</a>
+</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div class="section" itemprop="articleBody">
+<div><h1 id="vs-code-安装--使用-vscode-推送代码git-提交--push-完整教程">VS Code 安装 + 使用 VSCode 推送代码（Git 提交 + Push 完整教程）</h1>
+<div class="toc">
+<ul>
+<li><a href="#vs-code-%E5%AE%89%E8%A3%85--%E4%BD%BF%E7%94%A8-vscode-%E6%8E%A8%E9%80%81%E4%BB%A3%E7%A0%81git-%E6%8F%90%E4%BA%A4--push-%E5%AE%8C%E6%95%B4%E6%95%99%E7%A8%8B">VS Code 安装 + 使用 VSCode 推送代码（Git 提交 + Push 完整教程）</a><ul>
+<li><a href="#%E4%B8%80%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87%E5%AE%89%E8%A3%85-gitwindows">一、环境准备：安装 Git（Windows）</a><ul>
+<li><a href="#1-%E4%B8%8B%E8%BD%BD-git">1. 下载 Git</a></li>
+<li><a href="#2-%E5%AE%89%E8%A3%85%E8%A6%81%E7%82%B9">2. 安装要点</a></li>
+<li><a href="#3-%E9%85%8D%E7%BD%AE-git-%E7%94%A8%E6%88%B7%E5%90%8D%E4%B8%8E%E9%82%AE%E7%AE%B1%E5%BF%85%E9%A1%BB%E8%AE%BE%E7%BD%AE%E5%90%A6%E5%88%99%E6%8F%90%E4%BA%A4%E6%8A%A5%E9%94%99">3. 配置 Git 用户名与邮箱（必须设置，否则提交报错）</a></li>
+<li><a href="#4-%E9%AA%8C%E8%AF%81-git-%E6%98%AF%E5%90%A6%E8%A3%85%E5%A5%BD">4. 验证 Git 是否装好</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BA%8Cvs-code-%E5%AE%89%E8%A3%85windows">二、VS Code 安装（Windows）</a><ul>
+<li><a href="#1-%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E5%8C%85">1. 下载安装包</a></li>
+<li><a href="#2-%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4">2. 安装步骤</a></li>
+<li><a href="#3-%E5%AE%89%E8%A3%85%E5%BF%85%E8%A6%81%E6%8F%92%E4%BB%B6">3. 安装必要插件</a></li>
+</ul>
+</li>
+<li><a href="#%E4%B8%89%E5%89%8D%E7%BD%AE%E8%AF%B4%E6%98%8E">三、前置说明</a></li>
+<li><a href="#%E5%9B%9B%E5%87%86%E5%A4%87%E4%BB%93%E5%BA%93">四、准备仓库</a></li>
+<li><a href="#%E4%BA%94%E5%9C%A8-vs-code-%E5%86%85%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6">五、在 VS Code 内修改文件</a></li>
+<li><a href="#%E5%85%AD%E6%8F%90%E4%BA%A4%E6%94%B9%E5%8A%A8%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%E4%BB%BB%E9%80%89%E5%85%B6%E4%B8%80">六、提交改动（两种方式任选其一）</a><ul>
+<li><a href="#%E6%96%B9%E5%BC%8F-avscode-%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2%E6%8E%A8%E8%8D%90%E6%96%B0%E6%89%8B">方式 A：VSCode 图形界面（推荐新手）</a></li>
+<li><a href="#%E6%96%B9%E5%BC%8F-b%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4">方式 B：终端命令</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E6%B7%BB%E5%8A%A0%E6%94%B9%E5%8A%A8%E6%96%87%E4%BB%B6">添加改动文件</a></li>
+<li><a href="#%E6%8F%90%E4%BA%A4%E5%BC%95%E5%8F%B7%E5%86%85%E5%86%99%E6%9C%AC%E6%AC%A1%E6%94%B9%E5%8A%A8%E6%8F%8F%E8%BF%B0">提交，引号内写本次改动描述</a><ul>
+<li><a href="#%E4%B8%83%E6%8E%A8%E9%80%81%E5%88%B0%E8%BF%9C%E7%A8%8B-github-%E4%BB%93%E5%BA%93">七、推送到远程 GitHub 仓库</a><ul>
+<li><a href="#%E6%96%B9%E5%BC%8F-a-vscode-%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2">方式 A VSCode 图形界面</a></li>
+<li><a href="#%E6%96%B9%E5%BC%8F-b-%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4">方式 B 终端命令</a></li>
+</ul>
+</li>
+<li><a href="#%E5%85%AB%E6%8F%90%E4%BA%A4-prpull-request">八、提交 PR（Pull Request）</a></li>
+<li><a href="#%E4%B9%9D%E5%B8%B8%E8%A7%81%E8%B8%A9%E5%9D%91">九、常见踩坑</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="一环境准备安装-gitwindows">一、环境准备：安装 Git（Windows）</h2>
+<blockquote>
+<p>VS Code 本身不带 Git，必须先装 Git，才能提交推送代码。</p>
+</blockquote>
+<h3 id="1-下载-git">1. 下载 Git</h3>
+<p>官网地址：<a href="https://git-scm.com/download/win">https://git-scm.com/download/win</a>
+下载 Windows 版本安装包。</p>
+<h3 id="2-安装要点">2. 安装要点</h3>
+<ol>
+<li>双击打开安装包，一路下一步，<strong>到调整 PATH 这一步，选择 Git from the command line and also from 3rd-party software</strong>（最重要！把 Git 加入系统环境变量）</li>
+<li>其余选项保持默认，直接下一步完成安装。</li>
+</ol>
+<h3 id="3-配置-git-用户名与邮箱必须设置否则提交报错">3. 配置 Git 用户名与邮箱（必须设置，否则提交报错）</h3>
+<p>打开 PowerShell，执行下面两行，替换成你自己 GitHub 的用户名和注册邮箱
+git config --global user.name "你的 GitHub 用户名"
+git config --global user.email "你的 GitHub 注册邮箱"</p>
+<h3 id="4-验证-git-是否装好">4. 验证 Git 是否装好</h3>
+<p>打开 PowerShell，输入：
+</p><div class="highlight"><pre><span></span><code>git --version
+</code></pre></div>
+输出版本号即代表安装成功。
+<h2 id="二vs-code-安装windows">二、VS Code 安装（Windows）</h2>
+<h3 id="1-下载安装包">1. 下载安装包</h3>
+<p>访问官网：<a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a>
+点击页面蓝色的 <strong>Download for Windows</strong>，下载 Windows 安装程序。</p>
+<blockquote>
+<p>提示：优先官网下载，不要从第三方软件站下载，避免捆绑软件。</p>
+</blockquote>
+<h3 id="2-安装步骤">2. 安装步骤</h3>
+<ol>
+<li>双击下载好的 <code>.exe</code> 安装包，同意许可协议，点击下一步</li>
+<li>选择安装位置（建议不要放在 C 盘很深的中文路径）</li>
+<li>
+<p><strong>勾选这几个选项（非常重要）</strong></p>
+</li>
+<li>
+<p>✅ 添加到 PATH（环境变量）</p>
+</li>
+<li>✅ 在资源管理器右键菜单中，通过 Code 打开</li>
+<li>
+<p>✅ 将 Code 注册为受支持文件的编辑器</p>
+</li>
+<li>
+<p>一路下一步，点击安装。</p>
+</li>
+</ol>
+<h3 id="3-安装必要插件">3. 安装必要插件</h3>
+<p>打开 VS Code，左侧扩展栏（方块图标），搜索并安装：</p>
+<ol>
+<li>Chinese (Simplified) Language Pack —— 中文语言包（可选，适合不习惯英文界面）</li>
+</ol>
+<h2 id="三前置说明">三、前置说明</h2>
+<p>本教程演示：在 VS Code 内完成 Git 提交、推送到 GitHub 的完整流程，适用于 OpenHUTB 文档仓库贡献。</p>
+<blockquote>
+<p>⚠️ 重要规范：<strong>不要直接在 master 主分支修改，所有改动新建独立分支操作</strong></p>
+</blockquote>
+<h2 id="四准备仓库">四、准备仓库</h2>
+<ol>
+<li>把仓库克隆到本地
+<div class="highlight"><pre><span></span><code>git clone 仓库地址
+</code></pre></div></li>
+<li>VS Code 打开仓库文件夹</li>
+<li>新建工作分支（终端执行）
+<div class="highlight"><pre><span></span><code>git checkout -b 你的分支名
+</code></pre></div></li>
+</ol>
+<h2 id="五在-vs-code-内修改文件">五、在 VS Code 内修改文件</h2>
+<p>编辑你的 Markdown / 代码文件，修改完成记得 <code>Ctrl+S</code> 保存。</p>
+<h2 id="六提交改动两种方式任选其一">六、提交改动（两种方式任选其一）</h2>
+<h3 id="方式-avscode-图形界面推荐新手">方式 A：VSCode 图形界面（推荐新手）</h3>
+<ol>
+<li>左侧点击【源代码管理】图标（分支圆圈图标）</li>
+<li>在「更改」列表，找到修改的文件，点文件旁边 <code>+</code>，暂存更改</li>
+<li>在上方输入提交信息，简单写清楚本次修改内容</li>
+<li>点击【提交】</li>
+</ol>
+<h3 id="方式-b终端命令">方式 B：终端命令</h3>
+<h1 id="添加改动文件">添加改动文件</h1>
+<div class="highlight"><pre><span></span><code>git add 文件名
+</code></pre></div>
+<h1 id="提交引号内写本次改动描述">提交，引号内写本次改动描述</h1>
+<div class="highlight"><pre><span></span><code>git commit -m "新增 VSCode 推送教程"
+</code></pre></div>
+<h2 id="七推送到远程-github-仓库">七、推送到远程 GitHub 仓库</h2>
+<h3 id="方式-a-vscode-图形界面">方式 A VSCode 图形界面</h3>
+<p>提交完成后，源代码管理顶部会出现 <strong>推送</strong> 按钮，点击推送。</p>
+<h3 id="方式-b-终端命令">方式 B 终端命令</h3>
+<div class="highlight"><pre><span></span><code>git push origin 你的分支名
+</code></pre></div>
+<h2 id="八提交-prpull-request">八、提交 PR（Pull Request）</h2>
+<p>推送成功后，打开仓库 GitHub 网页</p>
+<ol>
+<li>页面弹出 <code>Compare &amp; pull request</code>，点击</li>
+<li>填写 PR 标题和描述，说明本次改动内容</li>
+<li>点击 <code>Create pull request</code> 创建 PR</li>
+<li>等待维护人员审核，审核通过合并，内容就正式上线网站</li>
+</ol>
+<h2 id="九常见踩坑">九、常见踩坑</h2>
+<ol>
+<li>VS Code 找不到 Git：Git 未安装，或者安装时没有勾选添加到 PATH 环境变量</li>
+<li>提交报错缺少身份：没有配置 user.name 和 user.email</li>
+<li>推送失败：网络问题，或者仓库权限不足；确认分支名称正确</li>
+<li>mkdocs 网页找不到页面：检查 mkdocs.yml 的路径和 md 文件位置完全匹配</li>
+<li>代码冲突：多人同时修改同一文件会出现冲突，解决冲突后再提交</li>
+</ol></div>
+</div>
+</div><footer>
+<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
+<a class="btn btn-neutral float-left" href="../sign_up/" title="注册 Github 账号"><span class="icon icon-circle-arrow-left"></span> 前一页</a>
+<a class="btn btn-neutral float-right" href="../../pycharm-tutorial/" title="PyCharm 教程">后一页 <span class="icon icon-circle-arrow-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<!-- Copyright etc -->
+<p>OpenHUTB 版权所有 © 2026</p>
+</div>
+</footer>
+</div>
+</div>
+</section>
+</div>
+<div aria-label="Versions" class="rst-versions" role="note">
+<span class="rst-current-version" data-toggle="rst-current-version">
+<span>
+<a href="https://github.com/OpenHUTB/.github" style="color: #fcfcfc">OpenHUTB</a>
+</span>
+<span><a href="../sign_up/" style="color: #fcfcfc">« 前一页</a></span>
+<span><a href="../../pycharm-tutorial/" style="color: #fcfcfc">后一页 »</a></span>
+</span>
+</div>
+<script src="../../js/jquery-3.6.0.min.js"></script>
+<script>var base_url = "../..";</script>
+<script src="../../js/theme_extra.js"></script>
+<script src="../../js/theme.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script>
+<script src="../../search/main.js"></script>
+<script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+</body>
+</html>
