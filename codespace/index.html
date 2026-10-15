@@ -172,6 +172,7 @@
 <img alt="" src="../img/codespace/create_codespace.png"/></p>
 <p>等待一会儿，就可以在浏览器中显示 VSCode 编辑器打开的项目，点击“信任文件并继续”</p>
 <p><img alt="" src="../img/codespace/vscode.png"/></p>
+<p>在开始编辑前，建议先从 <code>master</code> 创建独立的特性分支，避免将本次修改直接提交到主分支。点击 VS Code 左下角的当前分支名，选择 <strong>Create new branch...</strong>，输入简短且能说明改动的分支名（例如 <code>docs/update-guide</code>），并确认状态栏已切换到新分支后再编辑文件。</p>
 <p>点击左边“资源管理器”中的文件，并在中间进行编辑。点击编辑区右上角的“Open Preview to the side”来打开修改的预览</p>
 <p><img alt="" src="../img/codespace/edit.png"/></p>
 <p>编辑完成后，按 <code>Ctrl+S</code> 保存文件，并通过预览检查内容和排版。保存只会更新当前 Codespace 中的文件，还需要按照下一步完成“提交”和“同步更改”，才能将修改上传到个人 GitHub 仓库。</p>
@@ -179,7 +180,7 @@
 <p>点击左侧分叉图标的“源代码管理”，弹出提交页面。
 点击更改的内容，确认中间的工作树对比中（左侧为修改之前的内容，右侧为修改之后的内容）的修改为想要修改的内容。再填写提交信息，点击“提交”。</p>
 <p><img alt="" src="../img/codespace/commit.png"/></p>
-<p>然后点击“同步更改”，将提交推送到个人仓库的主分支 origin/master。这时左侧“图表”中多了一项刚才提交的内容。</p>
+<p>然后点击“同步更改”，将提交推送到个人仓库的当前特性分支（例如 <code>origin/docs/update-guide</code>）。这时左侧“图表”中多了一项刚才提交的内容。</p>
 <p><img alt="" src="../img/codespace/commited.png"/></p>
 <h2 id="5-检查修改内容的正确性">5. 检查修改内容的正确性</h2>
 <p>回到仓库页面，发现有内容领先于开源孪创社区分支（commits ahead of OpenHUTB/.github:master）</p>
@@ -195,6 +196,7 @@
 <p><img alt="" src="../img/codespace/pages.png"/></p>
 <h2 id="6-创建-pull-request">6. 创建 Pull Request</h2>
 <p>在项目主页点击“Contribute -&gt; Open pull request”</p>
+<p>填写 PR 时，确认 base repository 是社区的目标仓库、base branch 是目标分支（例如 <code>OpenHUTB/hutb:master</code>），head repository 是个人 fork、head branch 是刚创建的特性分支。这样 PR 会指向社区仓库，而不是个人 fork 的主分支。</p>
 <p><img alt="" src="../img/codespace/open_PR.png"/></p>
 <p>填写标题和详细描述信息，点击“Create pull request”</p>
 <p><img alt="" src="../img/codespace/PR.png"/></p>
