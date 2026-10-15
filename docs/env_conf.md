@@ -74,13 +74,18 @@ py --list
 输出中带 * 的是默认版本。需要指定版本运行时用 py -3.13 脚本名.py 这样的写法。
   装包时统一用 python -m pip install 包名，而不是直接 pip install 包名。前者保证包被装进当前 python 对应的环境，后者可能装到另一个 Python 上。
 更多说明可参考 Python 官方文档：[Python Launcher for Windows](https://docs.python.org/3.13/using/windows.html#python-launcher-for-windows)
+```
 
 3. 为 pip 配置国内镜像源
 直接从官方源下载常常很慢甚至超时。配置清华镜像源（写进用户配置，一次生效、长期有效）：
+```shell
 python -m pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+```
 确认是否生效：
+```shell
 python -m pip config list
 输出中出现 global.index-url='https://pypi.tuna.tsinghua.edu.cn/simple' 即为成功。
+```
 
 4. 建立虚拟环境
 虚拟环境是项目专属的一份独立 Python，各项目的依赖互不干扰。每个项目建一个，这是必须的习惯，不是可选优化——直接在系统 Python 上装包，早晚会遇到两个项目要求同一个库的不同版本。
@@ -94,14 +99,17 @@ markdown
 ```powershell
 # PowerShell
 .venv\Scripts\Activate.ps1
+```
 
 ```cmd
 # cmd
 .venv\Scripts\activate.bat
+```
 
 ```shell
 # Git Bash
 source .venv/Scripts/activate
+```
 
 不同 Shell 激活虚拟环境的方式可参考 Python 官方文档：
 [How virtual environments work](https://docs.python.org/3.13/library/venv.html#how-venvs-work)
