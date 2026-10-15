@@ -80,15 +80,16 @@ git push origin <新分支的名称>
 ```
 将 `<新分支的名称>` 替换为之前新建的分支名称。
 
-如果在 push（推送）过程中出 error（错误），如下所示
+<details>
+<summary> <strong>如果在 push（推送）过程中出 error（折叠内展示），点击下方链接</strong> </summary>
 
- - ### Authentication Error
-       <pre>remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
-    remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.
-    fatal: Authentication failed for 'https://github.com/<your-username>/first-contributions.git/'</pre>
+- ### Authentication Error
+     <pre>remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
+  remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.
+  fatal: Authentication failed for 'https://github.com/<your-username>/first-contributions.git/'</pre>
 
-  去 [GitHub 的教程](https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) 学习如何生成新的 SSH 密钥以及配置。
-
+</details>
+  去 <a href="https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">GitHub 的教程</a> 学习如何生成新的 SSH 密钥以及配置。
 
 **8.** 在自己仓库的首页发现有提交领先于湖工商仓库的`main`分支，则点击`Contribute` 创建 [Pull Request](https://zhuanlan.zhihu.com/p/153381521) ，来湖工商仓库**做出贡献**，创建成功后等待管理员审核通过（如果发现个人仓库落后于湖工商仓库则点击`Sync fork`以同步其他人的最新修改）。
 
