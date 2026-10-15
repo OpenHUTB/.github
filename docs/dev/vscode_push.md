@@ -125,31 +125,34 @@ git push origin 你的分支名
 4. mkdocs 网页找不到页面：检查 mkdocs.yml 的路径和 md 文件位置完全匹配
 5. 代码冲突：多人同时修改同一文件会出现冲突，解决冲突后再提交
 
-## 十、当主仓库有更新导致有冲突时的解决办法
+## 十、主仓库更新后同步当前工作分支
 
-1. 关联主仓库(如果已经关联则不用重复关联)
+在已经克隆的个人 Fork 中，先确认当前工作分支；以下以 `你的分支名` 为例。提交或暂存正在编辑的文件后，再进行同步。
+
 ```bash
-git remote add upstream
-你需要关联的仓库地址eg：htpps://github.com/OpenHUTB/.github.git
+git switch 你的分支名
+git status
 ```
-查看是否成功关联的方法
+
+首次同步时，添加主仓库地址。已经有 `upstream` 的话，直接查看地址即可，无需重复添加。
+
 ```bash
+git remote add upstream https://github.com/OpenHUTB/.github.git
 git remote -v
-```
-此时能看到origin和upstream即为成功
-
-2. 拉取主仓库最新代码再手动解决冲突
-```bash
 git fetch upstream master
+git merge upstream/master
 ```
-如果出现冲突，手动解决冲突
-```bash
-git add .
-git commit -m "merge upstream and resolve conflicts"
-```
-当这个 commit 成功后，本地的合并过程就彻底完成了。此时你本地的 master 分支已经包含了主仓库的最新代码以及你解决冲突后的最终结果
 
-3. 把同步好的master推送到自己的fork仓库(origin)
+`fetch` 只下载更新，`merge` 才会把主仓库的 `master` 合入当前工作分支。若出现冲突，在 VS Code 中检查冲突标记，保留需要的内容并保存文件；然后只暂存已解决的文件，并完成合并提交：
+
 ```bash
-git push origin master
+git add 路径/已解决的文件.md
+git commit -m "合并主仓库更新并解决冲突 / merge upstream updates and resolve conflicts"
+```
+
+没有冲突时，Git 会直接完成合并，无需再运行上述 `git add` 和 `git commit`。最后确认工作区状态，并推送当前工作分支，随后在原有 PR 中查看更新：
+
+```bash
+git status
+git push origin 你的分支名
 ```
