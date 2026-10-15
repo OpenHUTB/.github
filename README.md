@@ -113,8 +113,6 @@ graph LR
     A --> G[工具脚本 <a href='https://github.com/OpenHUTB/utils'>utils</a>]
     G --> O[文档生成 <a href='https://github.com/OpenHUTB/mkdocs'>mkdocs</a>]
     G --> H[<a href='https://github.com/OpenHUTB/matlab'>matlab</a>]
-    H --> I[<a href='https://github.com/OpenHUTB/matlab_exe_unpack'>matlab_exe_unpack</a>]
-    H --> J[<a href='https://github.com/OpenHUTB/matlab_pfile_unpack'>matlab_pfile_unpack</a>]
     A --> K[<a href='https://github.com/OpenHUTB/ros'>ros</a>]
     K --> L[<a href='https://github.com/OpenHUTB/ros-bridge'>ros-bridge</a>]
 
