@@ -124,3 +124,32 @@ git push origin 你的分支名
 3. 推送失败：网络问题，或者仓库权限不足；确认分支名称正确
 4. mkdocs 网页找不到页面：检查 mkdocs.yml 的路径和 md 文件位置完全匹配
 5. 代码冲突：多人同时修改同一文件会出现冲突，解决冲突后再提交
+
+## 十、当主仓库有更新导致有冲突时的解决办法
+
+1. 关联主仓库(如果已经关联则不用重复关联)
+```bash
+git remote add upstream
+你需要关联的仓库地址eg：htpps://github.com/OpenHUTB/.github.git
+```
+查看是否成功关联的方法
+```bash
+git remote -v
+```
+此时能看到origin和upstream即为成功
+
+2. 拉取主仓库最新代码再手动解决冲突
+```bash
+git fetch upstream master
+```
+如果出现冲突，手动解决冲突
+```bash
+git add .
+git commit -m "merge upstream and resolve conflicts"
+```
+当这个 commit 成功后，本地的合并过程就彻底完成了。此时你本地的 master 分支已经包含了主仓库的最新代码以及你解决冲突后的最终结果
+
+3. 把同步好的master推送到自己的fork仓库(origin)
+```bash
+git push origin master
+```
