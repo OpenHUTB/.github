@@ -217,7 +217,9 @@ git pull origin pull/ID/head
 
 ###### 国内访问 github 可能较慢
 
-这里提供 github 加速方案和科学上网的 [链接](https://openhutb.github.io/doc/build_carla/#internet) 。
+这里提供 github 加速方案和科学上网的 [链接](https://openhutb.github.io/doc/build_carla/#internet)。
+
+你也可以下载 Watt Toolkit 加速器来改善 GitHub 的访问体验，[点击下载](https://steampp.net/)。
 
 ###### 向 github 上 push 的时候报 403 错误
 
