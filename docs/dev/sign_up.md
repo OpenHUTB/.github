@@ -1,8 +1,8 @@
 # 注册 Github 账号
 
-1. 首先进入 [github 官网的注册页面](https://github.com/signup)（Sign up），Sign in 是登录；
+1. 首先进入 [github 官网的注册页面](https://github.com/signup)（Sign up是注册），Sign in 是登录；
 
-2. 填写自己常用邮箱（比如 [QQ](https://mail.qq.com/)、[163](https://mail.163.com/)、[Gmail](https://mail.google.com/mail?hl=zh-CN) 等邮箱，并且保证手机能够提醒新邮件）、密码、用户名等信息，然后用邮箱验证即可完成。
+2. 填写自己常用邮箱（比如 [QQ](https://mail.qq.com/)、[163](https://mail.163.com/)、[Gmail](https://mail.google.com/mail?hl=zh-CN) 等邮箱，并且保证手机能够收到新邮件的提醒）、密码、用户名等信息，然后用邮箱验证即可完成。
 
 ![](../img/dev/sign_up.jpg)
 

@@ -1,0 +1,19 @@
+name: Deploy
+on:
+  pull_request:
+
+jobs:
+  build:
+    name: Deploy docs to GitHub Pages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 
+        uses: actions/checkout@v4
+
+      - name: Build
+        uses: OpenHUTB/actions-mkdocs@main
+        with:
+          mkdocs_version: 'latest'
+          requirements: 'requirements.txt'
+          configfile: 'mkdocs.yml'
+
