@@ -2,11 +2,10 @@
 
 这里展示和 OpenHUTB 相关的开源项目。
 
-入选标准（非硬性）：最近一年在有提交修改、星星数大于100。
+入选标准（非硬性）：最近一年有在提交修改、星星数大于100。
 
 ## 工具
-
-git
+* [git](https://openhutb.github.io/.github/) - git教程
 
 * [ScreenToGif](https://github.com/NickeManarin/ScreenToGif) - 截图为gif动图
 
@@ -23,6 +22,7 @@ git
 * [One-click-cleaning-of-C-drive](https://github.com/JIEKE66633/One-click-cleaning-of-C-drive) - 清理C盘残留和垃圾
 
 * [WindowsCleaner](https://github.com/darkmatter2048/WindowsCleaner) - C盘清理
+* [HandBrake](https://github.com/HandBrake/HandBrake) - 视频转码器，适用于 Linux、Mac 和 Windows
 
 
 ## 办公
@@ -38,6 +38,7 @@ git
 * [md2wechat-skill](https://github.com/geekjourneyx/md2wechat-skill) - 一键排版发布到微信公众号
 
 * [pywechat](https://github.com/Hello-Mr-Crab/pywechat) - windows桌面微信自动化
+* [drawio](https://github.com/jgraph/drawio) - 免费开源的流程图、架构图绘制工具
 
 
 
@@ -45,10 +46,15 @@ git
 
 * [TortoiseGit](https://github.com/TortoiseGit/TortoiseGit) - Windows 资源管理器扩展用于操作 Git
 
-* [auto-py-to-exe](https://github.com/brentvollebregt/auto-py-to-exe) - pthon 转可执行 exe 的图形界面
+* [auto-py-to-exe](https://github.com/brentvollebregt/auto-py-to-exe) - python 转可执行 exe 的图形界面
 
 
 
+## 三维建模
+
+* [Blender](./blender.md) - 免费开源的三维创作软件，社区「艺术创作」分工线使用的工具，内含[下载安装与入门操作说明](./blender.md)
+
+* [FreeCAD](https://github.com/FreeCAD/FreeCAD) - 3D参数化建模器
 
 
 
@@ -94,12 +100,13 @@ git
 
 * [SpaceSniffer](https://github.com/redtrillix/SpaceSniffer) - Windows 的免费磁盘空间分析工具，它采用分层地图（Treemap）的概念来显示当前的磁盘使用情况。
 
-
-* [FreeCAD](https://github.com/FreeCAD/FreeCAD) - 3D参数化建模器
-
 * [SeleniumBase](https://github.com/seleniumbase/SeleniumBase) - 用于网页自动化、测试及绕过机器人检测的API
 
 * [selenium](https://github.com/SeleniumHQ/selenium) - 浏览器自动化框架
+
+* [Ditto](https://github.com/sabrogden/Ditto) - 剪贴板管理器
+
+* [Clash Verge](https://github.com/clash-verge-rev/clash-verge-rev/releases/tag/v2.5.2) - VPN代理工具
 
 
 ### 研究
@@ -114,6 +121,7 @@ git
 ## 常见
 
 * [Chromium](https://github.com/chromium/chromium) - Chromium 浏览器
+* [python](https://docs.python.org/zh-cn/3/tutorial/) -python 教程
 
 * [vscode](https://github.com/microsoft/vscode) - 代码编辑
 
@@ -121,8 +129,7 @@ git
 
 * [texstudio](https://github.com/texstudio-org/texstudio) - LaTeX 编辑器
 
-
+* [Anki](https://github.com/ankitects/anki) - 开源间隔重复记忆卡片软件，用来刷题、背诵知识点
 ## 参考
 
 * [tools](https://github.com/stars/donghaiwang/lists/tools)
-
