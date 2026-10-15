@@ -2,9 +2,17 @@
 
 开源的核心就是与他人沟通，也就是解决冲突的过程。该指南的初衷就是为初学者提供一个简单的方法去学习以及参与开源项目。
 
+## 如何贡献
 
-_如果你的电脑上未安装 git 或对命令行不熟悉，请参考以下的 [软件安装](#软件安装)。_ 
-[视频教程链接](https://www.bilibili.com/video/BV1udEuzrEa7/?spm_id_from=333.1391.0.0&vd_source=0a56e113c3144b313a6ea829d3996ce9)
+我们欢迎各种形式的贡献！请根据你的目标选择对应的方式：
+
+- 🐛 提交 Bug 报告：如果你发现了 Bug，请点击下方链接，直接填写 Bug 报告表单：[点击这里提交 Bug 报告](https://github.com/OpenHUTB/.github/issues/new/choose)
+- 💡 **功能建议**：请在 Issues 中描述你的想法和使用场景，与我们讨论后再着手开发。
+- 📖 **改进文档**：可以直接提交 Pull Request 修改文档中的错别字或表述不清之处。
+- 💻 **贡献代码**：请参考下方的“代码贡献流程”，从 Fork 仓库开始。
+
+
+如果你的电脑上未安装 git 或对命令行不熟悉，请参考以下的 [软件安装](#软件安装)。git跟github的使用可以参考以下的视频教程 [git github详细使用视频教程链接](https://www.bilibili.com/video/BV1udEuzrEa7/?spm_id_from=333.1391.0.0&vd_source=0a56e113c3144b313a6ea829d3996ce9)
 
 
 ## 在cmd/bash提交本地修改的步骤
@@ -55,30 +63,43 @@ git clone https://github.com/{用户名}/hutb.git
 
 **3.新建特性分支**
 
-在命令行窗口中把目录切换到仓库目录（比如.github）
+进入刚才克隆的仓库目录。第 2 步以 `hutb` 为例，这里也进入 `hutb`：
 
 ```bash
-cd .github
-```
-接下来使用 `git switch` 命令新建一个代码分支
-```bash
-git switch -c <新分支的名称>
+cd hutb
 ```
 
-(新分支的名称一般命名为想要增加的新特性。)
+如果第 2 步克隆的是 `.github`，则使用 `cd .github`。目录名要与实际克隆的仓库一致。
+
+接下来使用 `git switch` 命令新建一个分支。下面以修正文档为例：
+```bash
+git switch -c docs-fix-contribution-steps
+```
+
+分支名可以按本次修改的内容调整；后面的推送命令使用同一个分支名。
 
 **4.修改仓库的文件**
 
 打开任意文件，更新文件内容，保存修改。然后使用 `git status` 列出被改动的文件（后面步骤都可以使用该命令进行状态查看）。
 
 
-**5-7**.修改并本地测试没问题后，**提交代码到个人仓库**（参考 git 命令说明）：
+**5-7**.修改并本地测试没问题后，**提交修改到个人仓库**（参考 git 命令说明）。先查看差异，确认文件和内容都是本次准备提交的修改：
+
+```shell
+git status
+git diff
+```
+
+下面以修改 `README.md` 为例。`git add` 后填写能说明具体改动的提交信息，再推送当前分支：
+
 ```shell
 git add README.md
-git commit -m "update"
-git push origin <新分支的名称>
+git diff --cached
+git commit -m "docs: 说明 README 中的项目入口 / clarify project links in README"
+git push -u origin docs-fix-contribution-steps
 ```
-将 `<新分支的名称>` 替换为之前新建的分支名称。
+
+将 `README.md` 换成实际修改的文件，例如修改贡献指南时使用 `git add CONTRIBUTING.md`；提交信息也要与实际改动对应。如果第 3 步用了其他分支名，推送时同步替换。
 
 <details>
 <summary> <strong>如果在 push（推送）过程中出 error（折叠内展示），点击下方链接</strong> </summary>
@@ -91,7 +112,9 @@ git push origin <新分支的名称>
 </details>
   去 <a href="https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">GitHub 的教程</a> 学习如何生成新的 SSH 密钥以及配置。
 
-**8.** 在自己仓库的首页发现有提交领先于湖工商仓库的`main`分支，则点击`Contribute` 创建 [Pull Request](https://zhuanlan.zhihu.com/p/153381521) ，来湖工商仓库**做出贡献**，创建成功后等待管理员审核通过（如果发现个人仓库落后于湖工商仓库则点击`Sync fork`以同步其他人的最新修改）。
+**8.** 推送后，在个人仓库页面切换到刚才的分支，点击 `Contribute` 创建 [Pull Request](https://zhuanlan.zhihu.com/p/153381521)。确认目标仓库是原来的 OpenHUTB 仓库，目标分支是该仓库的默认分支，来源是个人仓库中本次修改的分支。比如 `OpenHUTB/.github` 的默认分支是 `master`，不要直接填成 `main`。
+
+填写能概括修改内容的标题和说明后提交，等待审核。如果个人仓库落后于原仓库，先通过 `Sync fork` 同步，并把最新内容合并到本次修改的分支；有冲突时先解决，再提交。
 
 <img src="https://firstcontributions.github.io/assets/Readme/compare-and-pull.png" width="410">
 
@@ -123,7 +146,7 @@ git push origin <新分支的名称>
 
 **4.暂存修改并提交**
 
-- 存，也就是**git add**操作，可以理解成小存档，**git commit**就相当于大存档，你的每一小块修改都需要暂存，最后一起提交。
+- 暂存，也就是 **git add** 操作，用来选择这次要提交的修改；**git commit** 会把已经暂存的修改保存为一次提交。只保存文件还不等于完成提交。
 - 如图三所示，点击左边第三个**源代码管理**图标，在存储库这一栏可以看到新建的分支和主分支，如果下方的更改一栏是空的，说明你现在所处的分支不对，点击对应分支即可切换。随后点击加号即可暂存成功。
 确保保存并暂存所有修改后，在**提交**按钮上方的对话框输入本次的说明，就可以提交了。
 
@@ -154,6 +177,32 @@ git push origin <新分支的名称>
 - 测试完毕没有问题就可以向原仓库发送**PR**请求了。
 
 
+
+**8. 本地检查`Pull requests`请求** <span id='check'></span>
+
+有人发送`Pull requests`时，可以在 GitHub 上合并之前[测试并验证更改](https://docs.github.com/zh/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/checking-out-pull-requests-locally) 。
+```shell
+# 拉取Pull Request 的 ID 为 7，并在本地新建分支名为 7 的命令：git fetch origin pull/7/head:7
+git fetch origin pull/ID/head:BRANCH_NAME
+# 切换到新建的分支
+git switch BRANCH_NAME
+# 前面拉取后，后面又有新的修改
+git pull origin pull/ID/head
+```
+
+
+
+在 Pull Request 页面的 File changed 中，对有相关问题或修改建议的代码行进行审核并填写评论内容，并点击 Start a review，所有都评论完成后，点击 Submit review 提交评论，对方就会收到审核意见的邮件。
+
+![](img/dev/review.png)
+
+
+
+所有问题解决并且本地验证通过后，点击 Pull Request 页面中最下面的“Squash and merge”（注意不是默认的“Create a merge commit”）。至此，一次的提交最终完成。
+
+![](img/dev/squash_merge.png)
+
+
 **注意事项：**
 
 - Pull Request 标题需要概括所修改的内容；
@@ -171,16 +220,7 @@ git push origin <新分支的名称>
 git submodule update --remote
 ```
 
-3.本地检查`Pull requests`请求
-有人发送`Pull requests`时，可以在 GitHub 上合并之前[测试并验证更改](https://docs.github.com/zh/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/checking-out-pull-requests-locally) 。
-```shell
-# 拉取Pull Request 的 ID 为 7，并在本地新建分支名为 7 的命令：git fetch origin pull/7/head:7
-git fetch origin pull/ID/head:BRANCH_NAME
-# 切换到新建的分支
-git switch BRANCH_NAME
-# 前面拉取后，后面又有新的修改
-git pull origin pull/ID/head
-```
+
 
 
 
@@ -193,9 +233,9 @@ git pull origin pull/ID/head
 
 - 使用其他工具的教程
 
-| <a href="https://git-scm.com/download/win"><img alt="Git" src="https://cdn.icon-icons.com/icons2/2699/PNG/512/git_scm_logo_icon_170096.png" width="100"></a> | <a href="https://visualstudio.microsoft.com/zh-hans/vs/getting-started/"><img alt="Visual Studio 2017" src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Visual_Studio_2017_Logo.svg" width="100"></a> |  <a href="https://visualstudio.microsoft.com/zh-hans/vs/"><img alt="VS Code" src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Visual_Studio_Code_1.35_icon.png" width=100></a> |  <a href="https://github.com/OpenHUTB/.github/blob/master/doc/pycharm-tutorial.md"><img alt="IntelliJ IDEA" src="https://upload.wikimedia.org/wikipedia/commons/1/1d/PyCharm_Icon.svg" width=100></a> |
+| <a href="https://git-scm.com/download/win"><img alt="Git" src="https://cdn.icon-icons.com/icons2/2699/PNG/512/git_scm_logo_icon_170096.png" width="100"></a> | <a href="https://visualstudio.microsoft.com/zh-hans/vs/getting-started/"><img alt="Visual Studio 2017" src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Visual_Studio_2017_Logo.svg" width="100"></a> |  <a href="https://visualstudio.microsoft.com/zh-hans/vs/"><img alt="VS Code" src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Visual_Studio_Code_1.35_icon.png" width=100></a> |  <a href="https://github.com/OpenHUTB/.github/blob/master/docs/pycharm-tutorial.md"><img alt="IntelliJ IDEA" src="https://upload.wikimedia.org/wikipedia/commons/1/1d/PyCharm_Icon.svg" width=100></a> |
 | :---: | :---: | :---: | :---: |
-| [Git Bash](https://github.com/firstcontributions/first-contributions/blob/main/docs/cli-tool-tutorials/translations/Chinese/git-bash-windows-tutorial.zh-cn.md) | [Visual Studio 2022](https://visualstudio.microsoft.com/zh-hans/vs/getting-started/) |  [Visual Studio Code](https://visualstudio.microsoft.com/zh-hans/vs/) | [Pycharm](https://github.com/OpenHUTB/.github/blob/master/doc/pycharm-tutorial.md) |
+| [First Contributions流程](https://github.com/firstcontributions/first-contributions/blob/main/docs/cli-tool-tutorials/translations/Chinese/git-bash-windows-tutorial.zh-cn.md) | [Visual Studio 2022简单入门教程](https://visualstudio.microsoft.com/zh-hans/vs/getting-started/) |  [Visual Studio Code下载网址](https://visualstudio.microsoft.com/zh-hans/vs/) | [Pycharm学习教程](https://github.com/OpenHUTB/.github/blob/master/docs/pycharm-tutorial.md) |
 
 
 ## 问题

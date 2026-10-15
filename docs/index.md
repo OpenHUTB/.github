@@ -2,14 +2,15 @@ title: 主页
 
 # [OpenHUTB 社区](https://github.com/OpenHUTB)
 
-欢迎使用开源孪创（Open source Humanoid-vehicle Twin Build, OpenHUTB），该社区提供一款加速**人**和**载具**代理开发的影视级模拟器，其中人包括人形机器人（Humanoid）和仿生人（Android），载具包括地面载具、空域载具、水域载具，社区本身采用[分布式架构](./org/architecture.md)。
+欢迎使用开源孪创（Open source Humanoid-vehicle Twin Build, OpenHUTB），该社区提供一款加速**人**和**载具**代理开发的影视级模拟器，其中人包括人形机器人（Humanoid）和仿生人（Android），载具包括[地面载具](https://openhutb.github.io/doc/vehicle/)、[空域载具](https://openhutb.github.io/air_doc/)、[水域载具](https://openhutb.github.io/mujoco_plugin/underwater/)，社区本身采用[分布式架构](./org/architecture.md)。
 
 - [1.简介](#list)
 - [2.开发配置](#dev)
 - [3.问题](#questions)
 - [4.社区](#propaganda)
 
-OpenHUTB 社区鼓励同学们参与开源实践，社区提供学习资源，大家可以提交文档修改，修复小bug。通过参与项目，把课堂知识运用起来，提升动手能力，认识更多志同道合的伙伴。在社区里，初学者可以大胆尝试提交修改，在开源协作的过程中锻炼自己，提升能力。
+OpenHUTB倡导开源协作精神，提供完备的学习资源。参与者可参与文档优化与程序修缮，在实践中锻炼实操技能，提升动手能力，认识更多志同道合的伙伴，在开源协作的过程中锻炼自己，提升能力。
+
 
 ## 1. 简介 <span id="list"></span>
 
@@ -70,5 +71,5 @@ OpenHUTB 的其他非主要平台包括 [gitee](https://gitee.com/OpenHUTB)、[g
 
 ___
 
-如果对文档中的任何问题可以在 [本文档的源码仓库](https://github.com/OpenHUTB/templte) 中的 [问题](https://github.com/OpenHUTB/templte/issues) 页面讨论或者提交 [拉取请求](https://github.com/OpenHUTB/.github/blob/master/CONTRIBUTING.md) 直接修改文档。
+如果对文档中的代码或描述有任何问题，可以在 [本文档的源码仓库](https://github.com/OpenHUTB/templte) 中的 [问题](https://github.com/OpenHUTB/templte/issues) 页面讨论，或者提交 [拉取请求](https://github.com/OpenHUTB/.github/blob/master/CONTRIBUTING.md) 直接修改文档。
 

@@ -1,8 +1,11 @@
 ## 配套社区LaTeX资源
-本文参考文献编译操作，可以搭配OpenHUTB社区的LaTeX模板仓库使用：
-* [课程论文latex模板](https://github.com/OpenHUTB/course)
-* [本科毕设latex模板](https://github.com/OpenHUTB/undergraduate)
-* [硕士论文LaTeX模板](https://github.com/OpenHUTB/master)
+
+本文参考文献编译操作，可以搭配OpenHUTB社区的LaTeX模板仓库使用：  
+
+* [课程论文latex模板](https://github.com/OpenHUTB/course)  
+* [本科毕设latex模板](https://github.com/OpenHUTB/undergraduate)  
+* [硕士论文LaTeX模板](https://github.com/OpenHUTB/master)   
+
 
 读者可以前往对应仓库获取完整LaTeX论文模板，本文仅讲解参考文献编译相关操作。
 ## 一、LaTeX 参考文献引用核心原理

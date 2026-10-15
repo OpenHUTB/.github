@@ -43,9 +43,9 @@ This is the second one.
 This is my first sentence. This is the second one.
 ```
 
-这样做的主要原因是为了更好的对源代码控制和协作：查看提交的更改时，如果每个句子都单独放在一行，就能更容易地识别哪些句子被更改了。这样，你的同志就能更容易地看到更改。
+这样做的主要原因是为了更好的对源代码控制和协作：查看提交的更改时，每个句子都单独放在一行，就能更容易地识别哪些句子被更改了。这样，你的同志就能更容易地看到更改。
 
-另一个好处是，当我们的 LaTeX 编译器仅给出行号时，您将能够更好地识别错误。
+另一个好处是，当我们的 LaTeX 编译器仅给出行号时，您将能够更快速地识别错误。
 
 ## 大写
 
@@ -365,8 +365,8 @@ Matplotlib 即使使用 [紧凑的布局功能](http://matplotlib.org/users/tigh
 
 # 有用的资源
 
-* 自动将标题大写: https://capitalizemytitle.com
-* 芝加哥格式手册: http://www.chicagomanualofstyle.org
-* 命令行检查模棱两可的词语、被动语态等: https://github.com/devd/Academic-Writing-Check
-* LaTeX 2e 使用基本指南: http://ctan.math.utah.edu/ctan/tex-archive/info/l2tabu/english/l2tabuen.pdf
+* [自动将标题大写](https://capitalizemytitle.com)
+* [芝加哥格式手册](http://www.chicagomanualofstyle.org)
+* [命令行检查模棱两可的词语、被动语态等](https://github.com/devd/Academic-Writing-Check)
+* [LaTeX 2e 使用基本指南](http://ctan.math.utah.edu/ctan/tex-archive/info/l2tabu/english/l2tabuen.pdf)
 * [撰写科学论文的技巧和窍门](https://github.com/Wookai/paper-tips-and-tricks/tree/master)

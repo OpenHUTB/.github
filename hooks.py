@@ -1,4 +1,5 @@
 from datetime import datetime
+import logging
 import shutil
 import os
 
@@ -22,6 +23,10 @@ def on_pre_build(**kwargs):
     if os.path.exists(src_file):
         shutil.copy2(src_file, dest_file)
         print("Successfully copied CONTRIBUTING.md to docs/CONTRIBUTING.md")
+    else:
+        logging.getLogger(__name__).warning(
+            "Source file not found: %s; contribution guide was not copied", src_file
+        )
  # 构建完成后，输出文档构建统计信息
 def on_post_build(config, **kwargs):
     import os
@@ -33,4 +38,4 @@ def on_post_build(config, **kwargs):
             if f.endswith(".md"):
                 md_count += 1
     print(f"✅ 文档网站构建完成！")
-    print(f"📄 检测到Markdown文档总数：{md_count}")       
+    print(f"📄 检测到Markdown文档总数：{md_count}")
