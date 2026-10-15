@@ -184,7 +184,14 @@
 修改配置后，执行重启命令：
 <div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>restart
 </code></pre></div>
-<p>如果 <a href="127.0.0.1:1080">127.0.0.1:1080</a> 能够访问，但是 <a href="http://172.21.108.56:1080">http://172.21.108.56:1080</a> 不能访问，则需要关闭所有防火墙。</p>
+<p>如果本机可以访问 <a href="http://127.0.0.1:1080">http://127.0.0.1:1080</a>，但局域网内其他设备无法访问 <a href="http://172.21.108.56:1080">http://172.21.108.56:1080</a>，可以依次检查：</p>
+<ol>
+<li>在 <code>docker-compose.yml</code> 所在目录运行 <code>docker-compose ps</code>，确认 GitLab 容器正在运行，并检查端口绑定。例如，<code>0.0.0.0:1080-&gt;8080/tcp</code> 表示该端口对所有 IPv4 网卡开放；如果仅绑定到 <code>127.0.0.1</code>，其他设备就无法通过局域网地址访问。使用新版 Compose 时，命令为 <code>docker compose ps</code>。</li>
+<li>在服务器上运行 <code>Test-NetConnection 127.0.0.1 -Port 1080</code>，确认本机端口可以连接。</li>
+<li>在局域网内另一台 Windows 设备上运行 <code>Test-NetConnection 172.21.108.56 -Port 1080</code>，检查远程端口是否可达。</li>
+<li>如果远程端口不通，在 Windows Defender 防火墙中为 TCP 1080 添加入站规则，并把规则限制在需要访问的网络范围内。</li>
+</ol>
+<p>不建议关闭所有防火墙。端口映射或规则配置错误时，关闭防火墙不能解决根本问题，还会让其他服务失去保护。排查完成后，再用实际服务器地址替换示例中的 <code>172.21.108.56</code>。</p>
 <p>4.使用
 执行命令克隆仓库（附带端口）：
 </p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>http://172.21.108.56:1080/root/actors
