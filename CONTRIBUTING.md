@@ -2,9 +2,17 @@
 
 开源的核心就是与他人沟通，也就是解决冲突的过程。该指南的初衷就是为初学者提供一个简单的方法去学习以及参与开源项目。
 
+## 如何贡献
 
-_如果你的电脑上未安装 git 或对命令行不熟悉，请参考以下的 [软件安装](#软件安装)。_ 
-[视频教程链接](https://www.bilibili.com/video/BV1udEuzrEa7/?spm_id_from=333.1391.0.0&vd_source=0a56e113c3144b313a6ea829d3996ce9)
+我们欢迎各种形式的贡献！请根据你的目标选择对应的方式：
+
+- 🐛 提交 Bug 报告：如果你发现了 Bug，请点击下方链接，直接填写 Bug 报告表单：[点击这里提交 Bug 报告](https://github.com/OpenHUTB/.github/issues/new/choose)
+- 💡 **功能建议**：请在 Issues 中描述你的想法和使用场景，与我们讨论后再着手开发。
+- 📖 **改进文档**：可以直接提交 Pull Request 修改文档中的错别字或表述不清之处。
+- 💻 **贡献代码**：请参考下方的“代码贡献流程”，从 Fork 仓库开始。
+
+
+如果你的电脑上未安装 git 或对命令行不熟悉，请参考以下的 [软件安装](#软件安装)。git跟github的使用可以参考以下的视频教程 [git github详细使用视频教程链接](https://www.bilibili.com/video/BV1udEuzrEa7/?spm_id_from=333.1391.0.0&vd_source=0a56e113c3144b313a6ea829d3996ce9)
 
 
 ## 在cmd/bash提交本地修改的步骤
@@ -227,7 +235,7 @@ git submodule update --remote
 
 | <a href="https://git-scm.com/download/win"><img alt="Git" src="https://cdn.icon-icons.com/icons2/2699/PNG/512/git_scm_logo_icon_170096.png" width="100"></a> | <a href="https://visualstudio.microsoft.com/zh-hans/vs/getting-started/"><img alt="Visual Studio 2017" src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Visual_Studio_2017_Logo.svg" width="100"></a> |  <a href="https://visualstudio.microsoft.com/zh-hans/vs/"><img alt="VS Code" src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Visual_Studio_Code_1.35_icon.png" width=100></a> |  <a href="https://github.com/OpenHUTB/.github/blob/master/docs/pycharm-tutorial.md"><img alt="IntelliJ IDEA" src="https://upload.wikimedia.org/wikipedia/commons/1/1d/PyCharm_Icon.svg" width=100></a> |
 | :---: | :---: | :---: | :---: |
-| [Git Bash](https://github.com/firstcontributions/first-contributions/blob/main/docs/cli-tool-tutorials/translations/Chinese/git-bash-windows-tutorial.zh-cn.md) | [Visual Studio 2022](https://visualstudio.microsoft.com/zh-hans/vs/getting-started/) |  [Visual Studio Code](https://visualstudio.microsoft.com/zh-hans/vs/) | [Pycharm](https://github.com/OpenHUTB/.github/blob/master/docs/pycharm-tutorial.md) |
+| [First Contributions流程](https://github.com/firstcontributions/first-contributions/blob/main/docs/cli-tool-tutorials/translations/Chinese/git-bash-windows-tutorial.zh-cn.md) | [Visual Studio 2022简单入门教程](https://visualstudio.microsoft.com/zh-hans/vs/getting-started/) |  [Visual Studio Code下载网址](https://visualstudio.microsoft.com/zh-hans/vs/) | [Pycharm学习教程](https://github.com/OpenHUTB/.github/blob/master/docs/pycharm-tutorial.md) |
 
 
 ## 问题
