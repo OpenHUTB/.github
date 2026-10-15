@@ -45,12 +45,14 @@
 
 ## 附：Windows远程登录
 
-在被控机上启用 Windows 远程桌面连接
+先确认被控机的 Windows 版本：打开“设置 → 系统 → 系统信息”，查看 Windows 版本。Windows 专业版、企业版和教育版可以接受内置远程桌面连接；家庭版可以连接其他电脑，但不能作为这种连接的被控端。家庭版被控机可使用前面的 RustDesk 方式。
+
+在支持的被控机上，打开“设置 → 系统 → 远程桌面”并启用连接。确认两台设备都已接入 Tailscale，且被控机保持开机、联网，没有进入睡眠状态。
 
  ![](./img/rustdesk/enable_remote.png)
 
 
-如果远程的机器为 Windows，只需要打开本地电脑的`远程桌面连接`，使用 tailscale 的 IP 地址（将图中的型号`*`换成自己的IP地址），输入Windows系统的用户名/密码即可登录。
+在本地电脑打开`远程桌面连接`，输入被控机的 Tailscale IP 地址，再使用被控机上有远程登录权限的 Windows 账户和密码登录。这里使用账户密码，不是平时解锁电脑时输入的 Windows Hello PIN。图中的 `*` 需要替换为实际 IP 地址。
  ![](./img/rustdesk/win_remote.png)
 
 
@@ -86,6 +88,7 @@
 ## 参考
 * [tailscale 源代码仓库](https://github.com/tailscale/tailscale) - [tailscale 开源介绍](https://tailscale.com/opensource)
 * [rustdesk 源代码仓库](https://github.com/rustdesk/rustdesk)
+* [微软：启用远程桌面的条件与设置](https://learn.microsoft.com/zh-cn/windows-server/remote/remote-desktop-services/remotepc/remote-desktop-allow-access)
 * [使用 Tailscale 实现内网穿透+RDP远程控制](https://www.cnblogs.com/lefour/p/18866579)
 
 
