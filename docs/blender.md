@@ -48,7 +48,7 @@ Blender 是一款免费、开源的三维创作软件，由荷兰的 Blender Fou
 国内网络下下载速度较慢时，可以使用高校或云厂商的镜像站，例如：
 
 - 清华大学 TUNA：<https://mirrors.tuna.tsinghua.edu.cn/blender/>
-- 中国科学技术大学：<https://mirrors.ustc.edu.cn/blender/>
+- 南京大学：<https://mirror.nju.edu.cn/blender/>
 
 各平台的获取方式：
 
