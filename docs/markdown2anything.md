@@ -1,6 +1,6 @@
 # Markdown 一键发到微信/知乎/小红书/Twitter
 
-将以下邮件模板填好 <a href="mailto:recipient@://example.com">发送到邮箱 open@hutb.edu.cn </a> ，邮件主题：`申请运营者权限`
+将以下邮件模板填好并[发送到邮箱 open@hutb.edu.cn](mailto:open@hutb.edu.cn)，邮件主题：`申请运营者权限`
 ```
 github 用户名：XXX
 邮箱：xxx@xx.com
@@ -63,7 +63,7 @@ github 用户名：XXX
 发表过程：
 
 * 定时发表：设置为离编辑完成最近的有群发通知的某一天发表，时间段选择 7:50-8:50、11:50-12:50、18:00-19:00、21:00-22:00 中的随机时刻。
-* 将预览链接等效果 <a href="mailto:recipient@://example.com">发送到邮箱 open@hutb.edu.cn </a> 进行**审核发表**，不直接发表，否则解除运营者权限。
+* 将预览链接等效果[发送到邮箱 open@hutb.edu.cn](mailto:open@hutb.edu.cn)进行**审核发表**，不直接发表，否则解除运营者权限。
 
 
 ### 自定义样式
