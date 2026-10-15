@@ -12,8 +12,7 @@
 - 💻 **贡献代码**：请参考下方的“代码贡献流程”，从 Fork 仓库开始。
 
 
-_如果你的电脑上未安装 git 或对命令行不熟悉，请参考以下的 [软件安装](#软件安装)。_ 
-[视频教程链接](https://www.bilibili.com/video/BV1udEuzrEa7/?spm_id_from=333.1391.0.0&vd_source=0a56e113c3144b313a6ea829d3996ce9)
+如果你的电脑上未安装 git 或对命令行不熟悉，请参考以下的 [软件安装](#软件安装)。git跟github的使用可以参考以下的视频教程 [git github详细使用视频教程链接](https://www.bilibili.com/video/BV1udEuzrEa7/?spm_id_from=333.1391.0.0&vd_source=0a56e113c3144b313a6ea829d3996ce9)
 
 
 ## 在cmd/bash提交本地修改的步骤
