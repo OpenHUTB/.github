@@ -89,7 +89,15 @@
 </li>
 <li class="toctree-l1 current"><a class="reference internal current" href="#">合并提交</a>
 <ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="#摘樱桃chery-pick">摘樱桃（chery pick）</a>
+<li class="toctree-l2"><a class="reference internal" href="#摘取指定提交cherry-pick">摘取指定提交（Cherry-pick）</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#操作步骤">操作步骤</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#完成后检查">完成后检查</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#参考">参考</a>
 </li>
 </ul>
 </li>
@@ -143,11 +151,23 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <div><h1 id="合并提交">合并提交</h1>
-<h2 id="摘樱桃chery-pick">摘樱桃（chery pick）</h2>
+<h2 id="摘取指定提交cherry-pick">摘取指定提交（Cherry-pick）</h2>
+<p>如果只想把另一个分支中的几次修改带到当前分支，可以使用 Cherry-pick。例如，将 <code>docs-fix</code> 分支中的一处文档修正带到 <code>master</code>，接收修改的分支是 <code>master</code>，提供提交的分支是 <code>docs-fix</code>。</p>
+<h3 id="操作步骤">操作步骤</h3>
 <ol>
-<li>在 TortoiseGit 中切换到合并的源分支，需要摘取的多个提交，右键选择<code>Cherry Pick selected commits...</code>。</li>
-<li>在弹出的页面中选择并调整需要提交的顺序，点击 <code>Contine</code>。</li>
-</ol></div>
+<li>先检查工作区，将尚未提交的修改提交或暂存到 Stash，避免与本次操作混在一起。</li>
+<li>在仓库目录右键选择 <code>TortoiseGit → Switch/Checkout</code>，切换到<strong>接收修改的目标分支</strong>。以上面的例子来说，应切换到 <code>master</code>。</li>
+<li>打开 <code>TortoiseGit → Show log</code>，在日志窗口中选择源分支 <code>docs-fix</code>，查看需要摘取的提交。这里只切换日志显示的分支，不再切换工作区分支。</li>
+<li>选中需要的提交，右键选择 <code>Cherry Pick this commit...</code>；选中多个提交时，选择对应的批量摘取选项。</li>
+<li>在弹出的窗口中检查提交列表和顺序。如果后面的修改依赖前面的修改，应先应用较早的提交，再点击 <code>Continue</code>。</li>
+</ol>
+<h3 id="完成后检查">完成后检查</h3>
+<p>操作完成后，查看当前分支的日志和文件差异，确认需要的修改已经进入目标分支。检查文档页面或运行相关程序，确认没有问题后再推送该分支。源分支中的原提交仍然保留。</p>
+<p>如果出现冲突，先按<a href="../../resolve_conflict/">解决冲突</a>中的步骤处理文件，再回到 Cherry-pick 窗口继续操作；不要直接另开普通提交窗口结束本次操作。</p>
+<h2 id="参考">参考</h2>
+<ul>
+<li><a href="https://tortoisegit.org/docs/tortoisegit/tgit-dug-cherrypick.html">TortoiseGit：摘取提交</a></li>
+</ul></div>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
