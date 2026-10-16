@@ -90,6 +90,7 @@ nav:
     - 合并提交: 'dev/merge_commit.md'
     - 给 Ubuntu 虚拟机硬盘扩容: 'dev/vm_disk.md'
     - 注意事项: 'note.md'
+    - wsl 安装与配置和卸载: 'wsl.md'
 - 工具与资源:
     - 模拟器演示：涉水效果: 'introduction.md'
     - 开源工具列表: 'tools.md'
