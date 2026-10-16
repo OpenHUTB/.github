@@ -194,9 +194,10 @@
 <p><img alt="" src="../img/rustdesk/rustdesk_control.png"/></p>
 <div class="admonition 问题">
 <p class="admonition-title">问题</p>
-<p>如果连接时报错：<code>连接错误 Failed to connect to 100.*.*.*:21118:请稍后再试</code>，确认被控端下面是否有“服务未运行”的提示，如果有请点击“启动服务”，然后再次连接即可。</p>
+<p>如果连接时报错：<code>连接错误 Failed to connect to 100.*.*.*:21118:请稍后再试</code>，确认被控端下面是否有“服务未运行”的提示，如果有请点击“启动服务”，然后再次连接即可。额外排查：确认被控端防火墙没有拦截 TCP 21118 端口。</p>
 </div>
 <h2 id="附windows远程登录">附：Windows远程登录</h2>
+<p>注意：（Windows 家庭版不支持作为被控端开启系统自带远程桌面（RDP），家庭版请使用 RustDesk。）</p>
 <p>在被控机上启用 Windows 远程桌面连接</p>
 <p><img alt="" src="../img/rustdesk/enable_remote.png"/></p>
 <p>如果远程的机器为 Windows，只需要打开本地电脑的<code>远程桌面连接</code>，使用 tailscale 的 IP 地址（将图中的型号<code>*</code>换成自己的IP地址），输入Windows系统的用户名/密码即可登录。
