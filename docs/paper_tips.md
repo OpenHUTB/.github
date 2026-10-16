@@ -122,7 +122,7 @@ Figure~\ref{fig:example}
 
 一般来说，避免在表格中使用垂直线。如果要对列进行分组，请在标题中使用`\cmidrule` 进行分组。您也可以使用 `\addlinespace` 用空格代替水平线。
 
-列标题应使用句子格式大写（请参阅 http://www.chicagomanualofstyle.org/15/ch13/ch13_sec019.html ）。
+列标题应使用句子格式大写（请参阅 https://www.chicagomanualofstyle.org/qanda/data/faq/topics/Capitalization.html ）。
 
 您可以在这里找到更多关于表格格式的建议： http://www.inf.ethz.ch/personal/markusp/teaching/guides/guide-tables.pdf 。
 这里有一个很棒的 GIF，演示了其中一些规则：
