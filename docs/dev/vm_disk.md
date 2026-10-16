@@ -1,6 +1,6 @@
 # 给 Ubuntu 虚拟机硬盘扩容
 
-为了解决在使用 Ubuntu 虚拟机时，预先设置的硬盘容量不够用的问题，本文将详细描述解决方案的操作步骤。
+为了解决在使用 Ubuntu 虚拟机时，预先设置的硬盘容量不够用的问题，本文将详细描述解决方案的操作步骤。[虚拟机安装及Ubuntu系统加装](https://openhutb.github.io/ros2/chapter/chap2/)
 
 ## 1. 虚拟机设置
 
@@ -55,4 +55,8 @@
 * [vmware：ubuntu虚拟机如何扩容？](https://blog.csdn.net/qq_34160841/article/details/113058756)
 
 
+
+
+
+补充提示：扩容前先备份重要数据，并确认虚拟机处于关机状态。
 
