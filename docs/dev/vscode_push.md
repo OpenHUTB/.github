@@ -129,8 +129,7 @@ git push origin 你的分支名
 
 1. 关联主仓库(如果已经关联则不用重复关联)
 ```bash
-git remote add upstream
-你需要关联的仓库地址eg：htpps://github.com/OpenHUTB/.github.git
+git remote add upstream https://github.com/OpenHUTB/.github.git
 ```
 查看是否成功关联的方法
 ```bash
