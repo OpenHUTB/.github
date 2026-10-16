@@ -55,7 +55,6 @@ OpenHUTB倡导开源协作精神，提供完备的学习资源。参与者可参
 
 - [Markdown 一键发到各个社交平台](./markdown2anything.md)
 
-- [宣传](./propagate.md)
 
 
 OpenHUTB 的其他非主要平台包括 [gitee](https://gitee.com/OpenHUTB)、[gitcode](https://gitcode.com/OpenHUTB)、[gitlink](https://gitlink.org.cn/OpenHUTB)、[红山开源](https://osredm.com/OpenHUTB)、[阿里云](https://codeup.aliyun.com/6a64b5ff637ebe3073ca8044/OpenHUTB)、[atomgit](https://atomgit.com/OpenHUTB)、[腾讯工蜂](https://git.code.tencent.com/OpenHUTB)，社交平台包括：
