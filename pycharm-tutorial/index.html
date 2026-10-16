@@ -121,6 +121,8 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#如何运行-pycharm">如何运行 Pycharm？</a>
 <ul>
+<li class="toctree-l3"><a class="reference internal" href="#包已安装运行时仍提示找不到">包已安装，运行时仍提示找不到</a>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#pycharm-调试器">pycharm 调试器</a>
 </li>
 </ul>
@@ -206,6 +208,7 @@
 <li><a href="#%E5%AE%89%E8%A3%85-pycharm">安装 PyCharm</a></li>
 <li><a href="#pycharm-%E7%9A%84%E9%87%8D%E8%A6%81%E7%89%B9%E6%80%A7%E5%92%8C%E5%B7%A5%E5%85%B7">重要工具 &amp; Pycharm 的特性</a></li>
 <li><a href="#%E5%A6%82%E4%BD%95%E8%BF%90%E8%A1%8C-pycharm">如何运行 Pycharm？</a></li>
+<li><a href="#%E5%8C%85%E5%B7%B2%E5%AE%89%E8%A3%85%E8%BF%90%E8%A1%8C%E6%97%B6%E4%BB%8D%E6%8F%90%E7%A4%BA%E6%89%BE%E4%B8%8D%E5%88%B0">包已安装，运行时仍提示找不到</a></li>
 <li><a href="#pycharm-%E7%BB%99%E5%88%9D%E5%AD%A6%E8%80%85%E7%9A%84%E6%8F%90%E7%A4%BA%E5%92%8C%E7%AA%8D%E9%97%A8">PyCharm 给初学者的提示和技巧</a></li>
 </ul>
 <h2 id="pycharm-初学者教程使用-pycharm-调试-python-代码"><strong>PyCharm 初学者教程|使用 PyCharm 调试 Python 代码</strong></h2>
@@ -329,6 +332,37 @@ print("Hello edureka!")
 <p><strong>输出:</strong></p>
 <p><img alt="Hello World - Pycharm tutorial - Edureka" src="../img/output_hello.png"/></p>
 <p>从上面的截图可以看出，我们在 <strong>Run 工具窗口中获得了正确的输出。</strong></p>
+<h3 id="包已安装运行时仍提示找不到">包已安装，运行时仍提示找不到</h3>
+<p>如果终端提示安装成功，点击运行却出现 <code>ModuleNotFoundError</code>，先检查安装包和运行程序用的是不是同一个 Python。以 <code>requests</code> 为例：</p>
+<ol>
+<li>
+<p>在 PyCharm 中新建一个 Python 文件，运行下面两行，记下输出的路径。这是本次运行实际使用的解释器。</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sys</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p>在终端执行下面的命令，将输出路径与上一步比较。两处路径不同，就说明使用了不同的 Python 环境。</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import sys; print(sys.executable)"</span>
+</code></pre></div>
+</li>
+<li>
+<p>打开设置，搜索 <code>Python Interpreter</code>，确认项目选择的解释器。再检查 <code>Run → Edit Configurations</code> 中当前程序的解释器，使它与准备使用的环境一致。</p>
+</li>
+<li>
+<p>在该解释器对应的包列表中搜索并安装 <code>requests</code>。如果使用终端，先确认第 2 步的路径与第 1 步一致，再执行：</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>requests
+</code></pre></div>
+</li>
+<li>
+<p>回到 PyCharm 运行下面的代码。能输出包的位置，说明当前运行环境可以找到它。</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="vm">__file__</span><span class="p">)</span>
+</code></pre></div>
+</li>
+</ol>
+<p>如果两处解释器路径一致，包也已安装，仍然导入异常，再检查当前文件或同目录文件是否命名为 <code>requests.py</code>，避免与包名重名。这里的 <code>requests</code> 是检查示例，处理其他包时请换成相应的安装名和导入名，两者不一定相同。</p>
+<p>相关说明：<a href="https://www.jetbrains.com/help/pycharm/package-installation-issues.html">PyCharm 包安装问题</a>。</p>
 <h3 id="pycharm-调试器"><strong>pycharm 调试器</strong></h3>
 <p>用 PyCharm 调试是一件容易的事情。要设置断点，您只需单击代码的左侧，就会出现一个点。</p>
 <p>如下图所示。您可以根据需要设置任意数量的断点，并分解和执行代码。</p>
