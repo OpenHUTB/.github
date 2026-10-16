@@ -225,11 +225,18 @@
 <p>接下来，在这篇 PyCharm 教程博客中，让我们看看所有可以用来编写 Python 代码的开发环境。</p>
 <h2 id="安装-pycharm"><strong>安装 PyCharm</strong></h2>
 <p>安装 PyCharm 非常简单明了。前往官网的 <a href="https://www.jetbrains.com/pycharm/download/">PyCharm 下载页面</a> 下载对应操作系统的安装包。</p>
+<p>从 <strong>2025.1</strong> 起，原来的 Community（社区版）和 Professional（专业版）合并为统一的 <strong>PyCharm</strong> 产品，新用户无需再选择两个版本。以下说明依据 JetBrains 官方文档于 2026 年 10 月核对；旧截图保留用于说明基本概念，界面和按钮位置可能与当前版本不同。</p>
+<ol>
+<li>按操作系统和处理器架构选择安装包：Windows 运行安装向导，macOS 打开 <code>.dmg</code> 并将 PyCharm 拖到 Applications，Linux 解压归档后运行 <code>bin/pycharm</code>。也可以使用 JetBrains Toolbox App 安装及更新。具体要求和步骤见<a href="https://www.jetbrains.com/help/pycharm/installation-guide.html">官方安装指南</a>。</li>
+<li>首次启动统一版会自动获得 <strong>30 天 Pro 免费试用</strong>。试用结束后，仍可免费使用核心功能，包括 Python 代码编辑、导航、重构、本地运行和调试，以及 Jupyter Notebook 支持；学习基础 Python 无需购买 Pro。见<a href="https://www.jetbrains.com/help/pycharm/unified-pycharm.html">统一版说明</a>。</li>
+<li>继续使用 Pro 功能需要有效授权。可以通过 <strong>Help → Manage Subscriptions</strong> 管理授权；符合条件的学生、教师也可查看官方免费授权计划。见<a href="https://www.jetbrains.com/help/pycharm/register.html">试用与授权说明</a>。</li>
+</ol>
 <p><img alt="Installing PyCharm - PyCharm Tutorial - Edureka" src="../img/install_pycharm.png"/></p>
-<p>在这里，社区版是免费的，但是对于专业版，需要购买授权。我将开发 PyCharm 社区版本，对于初学者和中级程序员来说，这已经足够了。但是如果你是一个专业的程序员，并且想完全利用 IDE，那么就用专业版吧。</p>
+<p>上图展示的是旧版 Community / Professional 下载页面，当前安装请使用上述统一版入口。</p>
 <p>在这篇 PyCharm 教程博客中，让我们来看看 PyCharm 的重要工具和特性。</p>
 <h2 id="pycharm-的重要特性和工具"><strong>Pycharm 的重要特性和工具</strong></h2>
 <p>PyCharm 为用户提供了许多特性和工具来简化编码过程。</p>
+<p>本节保留了原教程的功能介绍，其中包含 Pro 功能。免费核心功能足以完成本教程的本地 Python 练习；Web 框架、数据库和远程开发等高级支持请查看<a href="https://www.jetbrains.com/pycharm/editions/">官方功能说明</a>，不要将 Pro 试用期间可用的全部功能理解为永久免费。</p>
 <p>以下是一些在竞争和易用性方面脱颖而出的主要功能:</p>
 <ul>
 <li>代码编辑器</li>
@@ -269,7 +276,7 @@
 <p>现在，让我们稍微详细地看一下其中的每一项。让我们从数据库工具开始:</p>
 <h3 id="数据库工具"><strong>数据库工具</strong></h3>
 <p>除了支持各种 Python 库和框架之外，PyCharm 还允许开发人员使用许多关系数据库，包括 Oracle、SQL Server、MySQL 和 PostgreSQL。开发人员可以进一步使用 IDE 来运行查询、编辑 SQL 代码、浏览数据、更改表数据以及更改/分析模式。</p>
-<p>PyCharm 进一步支持 SQLAlchemy 库，将 SQL 代码注入到用各种编程语言编写的代码中。IDE 的专业版进一步简化了开发人员通过数据网格高效处理大量数据的工作。</p>
+<p>PyCharm 进一步支持 SQLAlchemy 库，将 SQL 代码注入到用各种编程语言编写的代码中。统一版中的 Pro 数据库功能可以帮助开发人员通过数据网格处理数据。</p>
 <h3 id="可视化调试器"><strong>可视化调试器</strong></h3>
 <p>IDE 提供的可视化调试器帮助程序员调试 Python、JavaScript 和 Django 代码。开发人员可以使用内联调试器直接在编辑器上查看实时调试数据。同样，他们可以同时调试多个 Python 进程，并绕过库单步调试代码。</p>
 <p>PyCharm 还为每个测试脚本或调试器执行创建了一个可重用和可定制的配置。用户甚至可以选择通过集成可视调试器和远程解释器来简化远程调试。</p>
@@ -289,20 +296,21 @@
 <p><img alt="Pycharm welcome screen - Pycharm tutorial - Edureka" src="../img/welcome_pycharm.png"/></p>
 <p>在这里，在左边，你可以查看我最近参与的所有项目。但是如果这是你第一次使用 PyCharm，那么左边的列不会包含任何内容。</p>
 <p>创建一个新项目就像点击<strong>创建新项目</strong>标签一样简单。</p>
+<p>在当前版本的欢迎界面点击 <strong>New Project</strong>，或在主菜单选择 <strong>File → New Project</strong>。为基础 Python 练习创建 Pure Python 项目，选择项目目录，并使用 <strong>Project venv</strong> 创建独立环境，在 <strong>Python version</strong> 中选择已安装的 Python。详见<a href="https://www.jetbrains.com/help/pycharm/creating-empty-project.html">创建 Python 项目</a>。</p>
 <p><img alt="Pycharm project creation - Pycharm tutorial - Edureka" src="../img/new_proj.png"/></p>
 <p>这张图片基本上帮助我们设置了 Python 解释器。但是，如果您的系统上没有安装 Python，这可能是空白的。</p>
 <p>要安装 Python，请使用官方文档进行安装，或者按照如下所示的说明进行操作:</p>
 <p><img alt="Install Python - PyCharm Tutorial - Edureka" src="../img/settings.png"/></p>
-<p>点击右边的小齿轮图标将显示以下页面:</p>
+<p>下图的小齿轮是旧版解释器入口。当前版本可在 <strong>Settings → Python → Interpreter → Add Interpreter → Add Local Interpreter</strong> 中配置本地解释器，详见<a href="https://www.jetbrains.com/help/pycharm/configuring-python-interpreter.html">配置 Python 解释器</a>。</p>
 <p><img alt="Install Python - PyCharm Tutorial - Edureka" src="../img/add_python_interpret.png"/></p>
-<p>在这里，如果没有单独安装 Python，可以使用系统解释器。一定要检查 Python 安装的版本，使其符合您的要求。</p>
-<p>我安装了多个版本的 Python，但对于这个例子，我一直使用 Python 3.7，正如你从上图中看到的。</p>
+<p>系统解释器也必须来自已安装的 Python。若未安装 Python，请先安装项目所需的受支持版本；Windows 和 macOS 的新建项目对话框也提供下载安装 Python 的选项。一定要检查所选解释器的路径和版本。</p>
+<p>上图的 Python 3.7 仅为历史示例；新项目请使用当前 PyCharm 支持且符合项目要求的 Python 版本。</p>
 <p>这一步之后基本上就是通过打开-<strong>文件- &gt;创建- &gt;暂存文件- &gt; Python 文件</strong>来创建一个暂存文件</p>
 <p>一旦您完成了这个过程，PyCharm 将显示一个空白屏幕和一个草稿文件供您编写代码。</p>
 <p>查看以下截图供您参考:</p>
 <p><img alt="First Program - PyCharm Tutorial - Edureka" src="../img/hello_world.png"/></p>
 <p>在这里，我打出了所有代码的黄金标准 hello world 程序！</p>
-<p>但是，如果您需要执行这个程序，您必须向该程序添加一个有效的配置。</p>
+<p>运行普通 Python 文件时，可以在编辑器中右键选择 <strong>Run &lt;文件名&gt;</strong>，PyCharm 会自动创建临时运行配置，输出显示在 <strong>Run</strong> 工具窗口中，详见<a href="https://www.jetbrains.com/help/pycharm/running-applications.html">运行脚本</a>。需要指定参数、解释器或固定配置时，再按下面的方法手动配置。</p>
 <p><strong>如何在 PyCharm 中给项目添加配置？</strong></p>
 <p>看看下面的图片。这是从暂存文件屏幕点击<strong>添加配置</strong>的结果。</p>
 <p>在这里，您应该向配置添加一个名称——在本例中，它是 <strong>ConfigName</strong> ,但它可以是您要求的任何名称。</p>
@@ -322,7 +330,7 @@ print("Hello edureka!")
 <p>现在，检查从 PyCharm 执行程序后的输出。</p>
 <p><strong>输出:</strong></p>
 <p><img alt="Hello World - Pycharm tutorial - Edureka" src="../img/output_hello.png"/></p>
-<p>从上面的截图可以看出，我们在 <strong>Python 控制台中获得了正确的输出。</strong></p>
+<p>从上面的截图可以看出，我们在 <strong>Run 工具窗口中获得了正确的输出。</strong></p>
 <h3 id="pycharm-调试器"><strong>pycharm 调试器</strong></h3>
 <p>用 PyCharm 调试是一件容易的事情。要设置断点，您只需单击代码的左侧，就会出现一个点。</p>
 <p>如下图所示。您可以根据需要设置任意数量的断点，并分解和执行代码。</p>
