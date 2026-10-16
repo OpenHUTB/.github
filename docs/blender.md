@@ -151,7 +151,7 @@ Blender 的操作高度依赖快捷键，初学时记住下面这些即可完成
 
 - Blender 官方手册（含简体中文）：<https://docs.blender.org/manual/zh-hans/>
 - Blender 官方教程页：<https://www.blender.org/support/tutorials/>
-- Blender Studio 官方基础培训（免费，持续更新）：<https://studio.blender.org/training/blender-fundamentals/>
+- Blender Studio 官方基础培训（免费，持续更新）：<https://studio.blender.org/training/>
 
 学习建议：不必系统看完整套课程。先用默认场景里的立方体把「旋转视角、移动物体、切到编辑模式改形状」这几件事做完一遍，再带着具体目标去查对应章节，效率更高。
 
