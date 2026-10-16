@@ -12,6 +12,7 @@
 *   [安装 PyCharm](#安装-pycharm)
 *   [重要工具 & Pycharm 的特性](#pycharm-的重要特性和工具)
 *   [如何运行 Pycharm？](#如何运行-pycharm)
+*   [包已安装，运行时仍提示找不到](#包已安装运行时仍提示找不到)
 *   [PyCharm 给初学者的提示和技巧](#pycharm-给初学者的提示和窍门)
 
 ## **PyCharm 初学者教程|使用 PyCharm 调试 Python 代码**
@@ -234,6 +235,42 @@ print("Hello edureka!")
 ![Hello World - Pycharm tutorial - Edureka](img/output_hello.png)
 
 从上面的截图可以看出，我们在 **Run 工具窗口中获得了正确的输出。**
+
+### 包已安装，运行时仍提示找不到
+
+如果终端提示安装成功，点击运行却出现 `ModuleNotFoundError`，先检查安装包和运行程序用的是不是同一个 Python。以 `requests` 为例：
+
+1. 在 PyCharm 中新建一个 Python 文件，运行下面两行，记下输出的路径。这是本次运行实际使用的解释器。
+
+    ```python
+    import sys
+    print(sys.executable)
+    ```
+
+2. 在终端执行下面的命令，将输出路径与上一步比较。两处路径不同，就说明使用了不同的 Python 环境。
+
+    ```shell
+    python -c "import sys; print(sys.executable)"
+    ```
+
+3. 打开设置，搜索 `Python Interpreter`，确认项目选择的解释器。再检查 `Run → Edit Configurations` 中当前程序的解释器，使它与准备使用的环境一致。
+
+4. 在该解释器对应的包列表中搜索并安装 `requests`。如果使用终端，先确认第 2 步的路径与第 1 步一致，再执行：
+
+    ```shell
+    python -m pip install requests
+    ```
+
+5. 回到 PyCharm 运行下面的代码。能输出包的位置，说明当前运行环境可以找到它。
+
+    ```python
+    import requests
+    print(requests.__file__)
+    ```
+
+如果两处解释器路径一致，包也已安装，仍然导入异常，再检查当前文件或同目录文件是否命名为 `requests.py`，避免与包名重名。这里的 `requests` 是检查示例，处理其他包时请换成相应的安装名和导入名，两者不一定相同。
+
+相关说明：[PyCharm 包安装问题](https://www.jetbrains.com/help/pycharm/package-installation-issues.html)。
 
 ### **pycharm 调试器**
 
