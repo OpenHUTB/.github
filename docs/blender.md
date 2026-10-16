@@ -49,6 +49,7 @@ Blender 是一款免费、开源的三维创作软件，由荷兰的 Blender Fou
 
 - 清华大学 TUNA：<https://mirrors.tuna.tsinghua.edu.cn/blender/>
 - 南京大学：<https://mirror.nju.edu.cn/blender/>
+- 阿里云开源镜像站：<https://mirrors.aliyun.com/blender/release/Blender4.3/>
 
 各平台的获取方式：
 
