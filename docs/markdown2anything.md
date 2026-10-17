@@ -1,7 +1,7 @@
 # Markdown 一键发到微信/知乎/小红书/Twitter
 
 将以下邮件模板填好并<a href="mailto:open@hutb.edu.cn">发送到邮箱 open@hutb.edu.cn</a>，邮件主题：`申请运营者权限`
-```
+```text
 github 用户名：XXX
 邮箱：xxx@xx.com
 微信号：xxx（需要提前关注“开源孪创”公众号才可以绑定运营者）
@@ -14,7 +14,7 @@ github 用户名：XXX
 选题、草稿等
 ```
 
-## VScode 操作流程
+## VS Code 操作流程
 
 * 安装 Markdown2Anything 插件
 
@@ -32,7 +32,7 @@ github 用户名：XXX
 * 从微信公众号的“设置与开发”->“开发接口管理”->“微信开发者平台”->“我的业务与服务”->“公众号”->开发密钥->启用“AppSecret”
 -->
 
-!!! 笔记
+!!! note "笔记"
 
     * 为了便于手机端阅读，正文字体大小设置为 17，小标题字体大小设置为 18。
     
