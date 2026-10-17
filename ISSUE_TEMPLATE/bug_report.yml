@@ -1,6 +1,7 @@
 name: Bug 报告
 description: 报告一个 Bug 或错误
 title: "[Bug]: "
+labels: ["bug"]
 body:
   - type: textarea
     id: description
