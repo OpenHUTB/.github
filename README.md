@@ -27,8 +27,8 @@ OpenHUTB 简单来说是面向人机共生与智能载具研究、教学和开�
 
 人车模拟器的技术架构如下图所示：
 
-<a href ="https://github.com/OpenHUTB/.github/blob/master/fig/repositories.md">
-<img src="https://github.com/OpenHUTB/.github/blob/master/profile/repositories.png?raw=true" width="40%" >
+<a href="https://github.com/OpenHUTB/.github/blob/master/fig/repositories.md">
+<img src="https://github.com/OpenHUTB/.github/blob/master/profile/repositories.png?raw=true" width="40%">
 </a>
 
 
