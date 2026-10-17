@@ -19,8 +19,10 @@
 ### 3. 配置 Git 用户名与邮箱（必须设置，否则提交报错）
 
 打开 PowerShell，执行下面两行，替换成你自己 GitHub 的用户名和注册邮箱
+```bash
 git config --global user.name "你的 GitHub 用户名"
 git config --global user.email "你的 GitHub 注册邮箱"
+```
 
 ### 4. 验证 Git 是否装好
 
@@ -64,13 +66,13 @@ git --version
 > ⚠️ 重要规范：**不要直接在 master 主分支修改，所有改动新建独立分支操作**
 创建分支的方法
 ```bash
-git checkout -b你的分支名
+git checkout -b 你的分支名
 ```
 检查自己所在分支的方法
 ```bash
 git branch
 ```
-输出的所有分支里前面带*的就是目前所在分支
+输出的所有分支里前面带 `*` 的就是目前所在分支
 
 更换分支的方法
 ```bash
@@ -103,12 +105,13 @@ git checkout -b 你的分支名
 
 ### 方式 B：终端命令
 
-# 添加改动文件
 ```bash
+# 添加改动文件
 git add 文件名
 ```
-# 提交，引号内写本次改动描述
+
 ```bash
+# 提交，引号内写本次改动描述
 git commit -m "新增 VSCode 推送教程"
 ```
 ## 七、推送到远程 GitHub 仓库
