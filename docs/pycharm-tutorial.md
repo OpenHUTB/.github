@@ -350,3 +350,15 @@ PyCharm 支持一种智能重构技术，在这种技术中，您只需要知道
 2.  **[用于数据科学的 Python](https://www.edureka.co/blog/learn-python-for-data-science/)**
 3.  [**你应该学习 Python 的 10 大理由**](https://www.edureka.co/blog/10-reasons-why-you-should-learn-python)
 4.  [**Python 请求教程**](https://www.edureka.co/blog/python-requests-tutorial/)
+
+
+## 解释器与终端环境核对
+
+当终端里能够导入包、编辑器中却仍提示缺失时，先核对两处实际使用的 Python：
+
+1. 在 PyCharm 的项目解释器页面记录解释器路径。
+2. 2. 在内置终端运行 `python -c \"import sys; print(sys.executable)\"`，比较输出是否为同一路径。
+   3. 3. 路径不一致时，优先切换项目解释器或重新打开终端，再安装所需依赖。
+      4. 4. 最后运行一个最小导入命令，确认编辑器和终端都使用同一环境。
+        
+         5. 如果项目使用虚拟环境，还应确认该环境位于当前项目或约定目录中，避免误用系统 Python。
