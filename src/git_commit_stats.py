@@ -1,3 +1,8 @@
+"""
+git_commit_stats.py
+这个小工具主要是用来跑 git log 统计提交数据的。
+结果会存到 csv 文件里。另外还可以传时间参数来限制统计范围，或者传个 json 文件把不想统计的人屏蔽掉。
+"""
 # python git_commit_stats.py --since "2026-02-27 18:00" --until "2026-03-08 00:00"运行指定时间段的提交统计，结果输出到 commit_stats.csv 文件中。可以通过 --ignore 参数指定一个 JSON 文件，里面包含需要屏蔽的用户（按邮箱或用户名）。如果不指定 --ignore 参数，则默认使用 ignore_users.json 文件作为屏蔽列表。
 import subprocess
 import argparse
@@ -18,8 +23,7 @@ def load_ignore_users(file_path):
     except Exception as e:
         print(f"读取屏蔽列表失败: {e}")
         return []
-import subprocess
-from collections import Counter
+
 
 def get_commits(since=None, until=None, ignore_list=[]):
     # 使用 %ae(邮箱)作为唯一键，%an(用户名)作为显示名
