@@ -61,18 +61,31 @@ git --version
 
 本教程演示：在 VS Code 内完成 Git 提交、推送到 GitHub 的完整流程，适用于 OpenHUTB 文档仓库贡献。
 
-> 
 > ⚠️ 重要规范：**不要直接在 master 主分支修改，所有改动新建独立分支操作**
+创建分支的方法
+```bash
+git checkout -b你的分支名
+```
+检查自己所在分支的方法
+```bash
+git branch
+```
+输出的所有分支里前面带*的就是目前所在分支
 
+更换分支的方法
+```bash
+git checkout 你要选择的分支
+```
+建立分支修改文档的好处是不会污染本地仓库
 ## 四、准备仓库
 
 1. 把仓库克隆到本地
-```
+```bash
 git clone 仓库地址
 ```
 2. VS Code 打开仓库文件夹
 3. 新建工作分支（终端执行）
-```
+```bash
 git checkout -b 你的分支名
 ```
 ## 五、在 VS Code 内修改文件
@@ -91,11 +104,11 @@ git checkout -b 你的分支名
 ### 方式 B：终端命令
 
 # 添加改动文件
-```
+```bash
 git add 文件名
 ```
 # 提交，引号内写本次改动描述
-```
+```bash
 git commit -m "新增 VSCode 推送教程"
 ```
 ## 七、推送到远程 GitHub 仓库
@@ -105,7 +118,7 @@ git commit -m "新增 VSCode 推送教程"
 提交完成后，源代码管理顶部会出现 **推送** 按钮，点击推送。
 
 ### 方式 B 终端命令
-```
+```bash
 git push origin 你的分支名
 ```
 ## 八、提交 PR（Pull Request）
