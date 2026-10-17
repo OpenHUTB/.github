@@ -48,7 +48,8 @@ Blender 是一款免费、开源的三维创作软件，由荷兰的 Blender Fou
 国内网络下下载速度较慢时，可以使用高校或云厂商的镜像站，例如：
 
 - 清华大学 TUNA：<https://mirrors.tuna.tsinghua.edu.cn/blender/>
-- 中国科学技术大学：<https://mirrors.ustc.edu.cn/blender/>
+- 南京大学：<https://mirror.nju.edu.cn/blender/>
+- 阿里云开源镜像站：<https://mirrors.aliyun.com/blender/release/Blender4.3/>
 
 各平台的获取方式：
 
@@ -143,7 +144,16 @@ Blender 的操作高度依赖快捷键，初学时记住下面这些即可完成
 2. **确认场景单位与目标引擎一致**，避免模型整体过大或过小；
 3. **确认模型朝向**：不同软件的正向轴约定不同（Blender 默认 Z 轴向上，部分引擎为 Y 轴向上），导出设置中通常有相应的轴向选项，导入后偏差较大时优先检查这一项。
 
-导出完成后，建议在引擎中实际导入一次验证效果，而不是只看 Blender 里的预览。
+### 只导出需要的模型
+
+默认场景里还有摄像机和灯光，制作过程中也可能留下参考物体。导出单个资产时，可以按下面的顺序操作：
+
+1. 先将工程保存为 `.blend` 文件，保留后续编辑所需的内容。
+2. 在物体模式下选中要交付的物体。带骨骼的模型需要同时选中网格和对应骨架，避免只导出模型外形。
+3. 打开「File → Export → FBX」，在导出选项的「Include → Limit to」中勾选「Selected Objects」，将范围限制为选中的物体。这个选项用于普通导出，不适用于批量导出。
+4. 导出后，在一个空场景中重新导入，检查物体数量、尺寸和朝向，确认没有混入摄像机、灯光或参考物体，再到目标引擎中核对效果。
+
+FBX 用于交付模型，`.blend` 用于继续编辑，两者建议一并保留。选项的具体说明可查看 [Blender 官方 FBX 手册](https://docs.blender.org/manual/en/4.4/addons/import_export/scene_fbx.html)。
 
 社区文档站为 <https://openhutb.github.io/>，模型接入模拟器的具体流程以该站对应项目的说明为准；遇到问题可以在相关仓库的 Issues 页面提出。
 
@@ -151,7 +161,7 @@ Blender 的操作高度依赖快捷键，初学时记住下面这些即可完成
 
 - Blender 官方手册（含简体中文）：<https://docs.blender.org/manual/zh-hans/>
 - Blender 官方教程页：<https://www.blender.org/support/tutorials/>
-- Blender Studio 官方基础培训（免费，持续更新）：<https://studio.blender.org/training/blender-fundamentals/>
+- Blender Studio 官方基础培训（免费，持续更新）：<https://studio.blender.org/training/>
 
 学习建议：不必系统看完整套课程。先用默认场景里的立方体把「旋转视角、移动物体、切到编辑模式改形状」这几件事做完一遍，再带着具体目标去查对应章节，效率更高。
 

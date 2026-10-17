@@ -48,7 +48,7 @@ flowchart LR
     style K fill:#fff3e0
 ```
 
-**1.** [注册](https://openhutb.github.io/.github/dev/sign_up/) 并登陆 Github 账号，在 [想要修改的开源孪创仓库](https://github.com/OpenHUTB/hutb) 页面右上角点击`Fork`，然后点击`Create a new fork`，**创建分叉**到个人仓库。
+**1.** [注册](https://openhutb.github.io/.github/dev/sign_up/) 并登录 GitHub 账号，在 [想要修改的开源孪创仓库](https://github.com/OpenHUTB/hutb) 页面右上角点击`Fork`，然后点击`Create a new fork`，**创建分叉**到个人仓库。
 
 <img src="https://firstcontributions.github.io/assets/Readme/fork.png" width="310">
 
