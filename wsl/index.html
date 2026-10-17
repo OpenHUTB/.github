@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../img/favicon.ico" rel="shortcut icon"/>
+<title>wsl 安装与配置和卸载 - 社区介绍</title>
+<link href="../css/theme.css" rel="stylesheet"/>
+<link href="../css/theme_extra.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
+<script>
+        // Current page data
+        var mkdocs_page_name = "wsl \u5b89\u88c5\u4e0e\u914d\u7f6e\u548c\u5378\u8f7d";
+        var mkdocs_page_input_path = "wsl.md";
+        var mkdocs_page_url = null;
+      </script>
+<!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</head>
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<a class="icon icon-home" href=".."> 社区介绍
+        </a><div role="search">
+<form action="../search.html" class="wy-form" id="rtd-search-form" method="get">
+<input aria-label="Search docs" name="q" placeholder="搜索文档" title="Type search term here" type="text"/>
+</form>
+</div>
+</div>
+<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="..">首页</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING/">贡献指南</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="" href="https://openhutb.github.io/git/?locale=zh_CN">git 教程</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="" href="https://docs.github.com/zh/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax">Markdown教程</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../paper_tips/">论文写作技巧</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../bib_reference_guide/">Latex文献引用编译办法</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../env_conf/">搭建自定义开发环境</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../rustdesk_tailscale/">远程办公</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ask_question/">提问技巧</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="" href="https://openhutb.github.io/doc/build_carla/#internet">科学上网</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">贡献相关</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../codespace/">基于浏览器的贡献指南</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/sign_up/">注册 Github 账号</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/vscode_push/">使用 VScode 推送代码</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pycharm-tutorial/">PyCharm 教程</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resolve_conflict/">使用 TortoiseGit 解决冲突</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/merge_commit/">合并提交</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/vm_disk/">给 Ubuntu 虚拟机硬盘扩容</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../note/">注意事项</a>
+</li>
+<li class="toctree-l1 current"><a class="reference internal current" href="#">wsl 安装与配置和卸载</a>
+<ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="#1-一键安装推荐">1. 一键安装（推荐）</a>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">工具与资源</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/">模拟器演示：涉水效果</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/">开源工具列表</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../blender/">三维建模软件 Blender 介绍</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown2anything/">Markdown 一键发布到社交平台</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">学习与论文</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../undergraduate/">本科毕业设计</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../paper/avf/">论文成果：AVF-BEL 视听融合</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../org/architecture/">社区组织形式</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="..">社区介绍</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a aria-label="Docs" class="icon icon-home" href=".."></a></li>
+<li class="breadcrumb-item">贡献相关</li>
+<li class="breadcrumb-item active">wsl 安装与配置和卸载</li>
+<li class="wy-breadcrumbs-aside">
+<a href="https://github.com/OpenHUTB/.github/edit/master/docs/wsl.md"> 编辑页面</a>
+</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div class="section" itemprop="articleBody">
+<div><h1 id="一安装-wsl">一、安装 WSL</h1>
+<h2 id="1-一键安装推荐">1. 一键安装（推荐）</h2>
+<p>前提：Windows 10 版本 2004+ 或 Windows 11。</p>
+<p>打开这些设置 
+    <img alt="图片" src="../img/wmx001.png"/></p>
+<p>打开cmd</p>
+<p>按'win+R'输入'cmd'</p>
+<p>执行安装命令</p>
+<div class="highlight"><pre><span></span><code><span class="n">wsl</span> <span class="p">-</span><span class="n">-install</span> <span class="n">-d</span> <span class="n">Ubuntu</span><span class="p">-</span><span class="n">20</span><span class="p">.</span><span class="n">04</span><span class="err">（</span><span class="n">20</span><span class="p">.</span><span class="n">04为版本号</span><span class="err">）（</span><span class="n">需要很长时间安装</span><span class="err">）</span>
+</code></pre></div>
+<p>设置 Linux 用户名和密码。</p>
+<p>注意：密码输入时不显示任何字符，盲打回车即可</p>
+<p>安装后更新软件源</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade
+</code></pre></div>
+<h1 id="二删除-wsl">二、删除 WSL</h1>
+<h2 id="1-彻底清除-wsl">1. 彻底清除 WSL</h2>
+<p>第一步：注销所有发行版</p>
+<div class="highlight"><pre><span></span><code><span class="n">wsl</span> <span class="p">-</span><span class="n">-unregister</span> <span class="p">&lt;</span><span class="n">发行版名</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>第二步：卸载 WSL 组件</p>
+<div class="highlight"><pre><span></span><code><span class="n">wsl</span> <span class="p">-</span><span class="n">-uninstall</span>
+</code></pre></div></div>
+</div>
+</div><footer>
+<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
+<a class="btn btn-neutral float-left" href="../note/" title="注意事项"><span class="icon icon-circle-arrow-left"></span> 前一页</a>
+<a class="btn btn-neutral float-right" href="../introduction/" title="模拟器演示：涉水效果">后一页 <span class="icon icon-circle-arrow-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<!-- Copyright etc -->
+<p>OpenHUTB 版权所有 © 2026</p>
+</div>
+</footer>
+</div>
+</div>
+</section>
+</div>
+<div aria-label="Versions" class="rst-versions" role="note">
+<span class="rst-current-version" data-toggle="rst-current-version">
+<span>
+<a href="https://github.com/OpenHUTB/.github" style="color: #fcfcfc">OpenHUTB</a>
+</span>
+<span><a href="../note/" style="color: #fcfcfc">« 前一页</a></span>
+<span><a href="../introduction/" style="color: #fcfcfc">后一页 »</a></span>
+</span>
+</div>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>var base_url = "..";</script>
+<script src="../js/theme_extra.js"></script>
+<script src="../js/theme.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script>
+<script src="../search/main.js"></script>
+<script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+</body>
+</html>
