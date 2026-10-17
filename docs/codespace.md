@@ -23,7 +23,8 @@
 
 ![](./img/codespace/write_permission.png)
 
-**3. 修改项目** 
+## 3．修改项目
+
 
 点击“Code -> Create codespace on master”创建在线编辑器
 ![](./img/codespace/create_codespace.png)
@@ -82,7 +83,7 @@
 
 ![](./img/codespace/PR.png)
 
-将会跳转到社区仓库的 Pull Request 页面，等待其他人评论。如果其他人提出问题，则继续第 [3](#edit) 步的 vscode 编辑。如果没问题，则会通过并合并到主分支，随后就可以在社区的代码库和页面中看到修改的内容。
+将会跳转到社区仓库的 Pull Request 页面，等待其他人评论。如果其他人提出问题，则继续第 [3](#3-修改项目) 步的 vscode 编辑。如果没问题，则会通过并合并到主分支，随后就可以在社区的代码库和页面中看到修改的内容。
 
 ![](./img/codespace/pages_display.png)
 
