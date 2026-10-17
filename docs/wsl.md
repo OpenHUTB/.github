@@ -7,9 +7,9 @@
  打开这些设置 
     ![图片](img/wmx001.png)
 
-以管理员身份打开 PowerShell
+打开cmd
 
-开始菜单搜索 PowerShell → 右键 → 以管理员身份运行。
+按'win+R'输入'cmd'
 
 执行安装命令
 
