@@ -125,9 +125,7 @@ Figure~\ref{fig:example}
 列标题应使用句子格式大写（请参阅 https://www.chicagomanualofstyle.org/qanda/data/faq/topics/Capitalization.html ）。
 
 您可以在这里找到更多关于表格格式的建议： http://www.inf.ethz.ch/personal/markusp/teaching/guides/guide-tables.pdf 。
-这里有一个很棒的 GIF，演示了其中一些规则：
-
-![Better table formatting](http://darkhorseanalytics.com/blog/wp-content/uploads/2014/03/ClearOffTheTableMd.gif)
+这里有一份表格示例，演示了其中一些规则：[paper-tips-and-tricks 表格示例](https://github.com/Wookai/paper-tips-and-tricks/tree/master/examples/booktabs)。
 
 ## 数字格式
 

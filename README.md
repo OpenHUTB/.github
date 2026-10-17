@@ -6,7 +6,7 @@ OpenHUTB 简单来说是面向人机共生与智能载具研究、教学和开�
 以下为新手快速上手栏目：
 
 [🚀 快速开始](https://github.com/OpenHUTB/hutb#使用示例) · [📖 在线文档](https://openhutb.github.io/) · [🧪 运行示例](https://github.com/OpenHUTB/doc/tree/master/src/examples) · [🤝 参与贡献](https://github.com/OpenHUTB/.github/blob/master/CONTRIBUTING.md) · [💬 提问与讨论](https://github.com/orgs/OpenHUTB/discussions)
-- [贡献小贴士](contribute‑tips.md)
+- [贡献小贴士](contribute-tips.md)
 
 你可以用 OpenHUTB 做什么？
 - **研究与教学**：学习感知、规划、控制和具身智能算法。
@@ -54,7 +54,7 @@ graph LR
     I --> K[控制原理 <a href='https://github.com/OpenHUTB/move'>move</a>]
     K --> A
     L[模拟引擎 <a href='https://github.com/OpenHUTB/engine'>engine</a>] --> C
-    L --> M[引擎文档 <a href='https://github.com/OpenHUTB/cpp'>engine_doc</a>]
+    L --> M[引擎文档 <a href='https://github.com/OpenHUTB/engine_doc'>engine_doc</a>]
     M --> S[C++ 文档 <a href='https://github.com/OpenHUTB/cpp'>cpp</a>]
     D --> M
     L --> N[无人机模拟器 <a href='https://github.com/OpenHUTB/air'>air</a>]
@@ -114,8 +114,6 @@ graph LR
     A --> G[工具脚本 <a href='https://github.com/OpenHUTB/utils'>utils</a>]
     G --> O[文档生成 <a href='https://github.com/OpenHUTB/mkdocs'>mkdocs</a>]
     G --> H[<a href='https://github.com/OpenHUTB/matlab'>matlab</a>]
-    H --> I[<a href='https://github.com/OpenHUTB/matlab_exe_unpack'>matlab_exe_unpack</a>]
-    H --> J[<a href='https://github.com/OpenHUTB/matlab_pfile_unpack'>matlab_pfile_unpack</a>]
     A --> K[<a href='https://github.com/OpenHUTB/ros'>ros</a>]
     K --> L[<a href='https://github.com/OpenHUTB/ros-bridge'>ros-bridge</a>]
 
