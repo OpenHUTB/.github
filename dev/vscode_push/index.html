@@ -273,16 +273,27 @@ git config --global user.email "你的 GitHub 注册邮箱"</p>
 <h2 id="三前置说明">三、前置说明</h2>
 <p>本教程演示：在 VS Code 内完成 Git 提交、推送到 GitHub 的完整流程，适用于 OpenHUTB 文档仓库贡献。</p>
 <blockquote>
-<p>⚠️ 重要规范：<strong>不要直接在 master 主分支修改，所有改动新建独立分支操作</strong></p>
+<p>⚠️ 重要规范：<strong>不要直接在 master 主分支修改，所有改动新建独立分支操作</strong>
+创建分支的方法
+</p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>-b你的分支名
+</code></pre></div>
+检查自己所在分支的方法
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>branch
+</code></pre></div>
+输出的所有分支里前面带*的就是目前所在分支
 </blockquote>
+<p>更换分支的方法
+</p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>你要选择的分支
+</code></pre></div>
+建立分支修改文档的好处是不会污染本地仓库
 <h2 id="四准备仓库">四、准备仓库</h2>
 <ol>
 <li>把仓库克隆到本地
-<div class="highlight"><pre><span></span><code>git clone 仓库地址
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>仓库地址
 </code></pre></div></li>
 <li>VS Code 打开仓库文件夹</li>
 <li>新建工作分支（终端执行）
-<div class="highlight"><pre><span></span><code>git checkout -b 你的分支名
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>你的分支名
 </code></pre></div></li>
 </ol>
 <h2 id="五在-vs-code-内修改文件">五、在 VS Code 内修改文件</h2>
@@ -297,16 +308,16 @@ git config --global user.email "你的 GitHub 注册邮箱"</p>
 </ol>
 <h3 id="方式-b终端命令">方式 B：终端命令</h3>
 <h1 id="添加改动文件">添加改动文件</h1>
-<div class="highlight"><pre><span></span><code>git add 文件名
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>文件名
 </code></pre></div>
 <h1 id="提交引号内写本次改动描述">提交，引号内写本次改动描述</h1>
-<div class="highlight"><pre><span></span><code>git commit -m "新增 VSCode 推送教程"
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"新增 VSCode 推送教程"</span>
 </code></pre></div>
 <h2 id="七推送到远程-github-仓库">七、推送到远程 GitHub 仓库</h2>
 <h3 id="方式-a-vscode-图形界面">方式 A VSCode 图形界面</h3>
 <p>提交完成后，源代码管理顶部会出现 <strong>推送</strong> 按钮，点击推送。</p>
 <h3 id="方式-b-终端命令">方式 B 终端命令</h3>
-<div class="highlight"><pre><span></span><code>git push origin 你的分支名
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>你的分支名
 </code></pre></div>
 <h2 id="八提交-prpull-request">八、提交 PR（Pull Request）</h2>
 <p>推送成功后，打开仓库 GitHub 网页</p>
