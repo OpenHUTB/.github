@@ -18,9 +18,6 @@ def load_ignore_users(file_path):
     except Exception as e:
         print(f"读取屏蔽列表失败: {e}")
         return []
-import subprocess
-from collections import Counter
-
 def get_commits(since=None, until=None, ignore_list=[]):
     # 使用 %ae(邮箱)作为唯一键，%an(用户名)作为显示名
     cmd = ["git", "log", "--pretty=%ae|%an"]
@@ -31,9 +28,7 @@ def get_commits(since=None, until=None, ignore_list=[]):
     result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, encoding='utf-8')
     
     if result.returncode != 0:
-        print("git log 执行失败")
-        print(result.stderr)
-        return [], {}
+        raise RuntimeError(f"git log 执行失败: {result.stderr.strip()}")
 
     raw_data = result.stdout.splitlines()
     email_to_name = {}
@@ -66,7 +61,10 @@ def main():
     args = parser.parse_args()
 
     ignore_list = load_ignore_users(args.ignore)
-    counts, name_map = get_commits(args.since, args.until, ignore_list)
+    try:
+        counts, name_map = get_commits(args.since, args.until, ignore_list)
+    except RuntimeError as exc:
+        parser.exit(1, f"{exc}\n")
 
     # 转换结果：[(用户名, 次数), ...]
     results = sorted(
