@@ -84,6 +84,7 @@ nav:
 - 贡献相关:
     - 基于浏览器的贡献指南: 'codespace.md'
     - 注册 Github 账号: 'dev/sign_up.md'
+    - 使用 VScode 推送代码: 'dev/vscode_push.md'
     - PyCharm 教程: 'pycharm-tutorial.md'
     - 使用 TortoiseGit 解决冲突: 'resolve_conflict.md'
     - 合并提交: 'dev/merge_commit.md'
@@ -95,7 +96,6 @@ nav:
     - 三维建模软件 Blender 介绍: 'blender.md'
     - Markdown 一键发布到社交平台: 'markdown2anything.md'
 - 学习与论文:
-    - LaTeX 参考文献编译: 'bib_reference_guide.md'
     - 本科毕业设计: 'undergraduate.md'
     - 论文成果：AVF-BEL 视听融合: 'paper/avf.md'
 - 社区组织形式: 'org/architecture.md'
