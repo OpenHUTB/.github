@@ -89,21 +89,24 @@ def save_fig(fig, file_name, fmt=None, dpi=300, tight=True):
         file_name += extension
 
     file_name = os.path.abspath(file_name)
-    with tempfile.NamedTemporaryFile() as tmp_file:
-        tmp_name = tmp_file.name + extension
+    fd, tmp_name = tempfile.mkstemp(suffix=extension)
+    try:
+        os.close(fd)
 
-    # save figure
-    if tight:
-        fig.savefig(tmp_name, dpi=dpi, bbox_inches='tight')
-    else:
-        fig.savefig(tmp_name, dpi=dpi)
+        # save figure
+        if tight:
+            fig.savefig(tmp_name, dpi=dpi, bbox_inches='tight')
+        else:
+            fig.savefig(tmp_name, dpi=dpi)
 
-    # trim it
-    if fmt == 'eps':
-        subprocess.call('epstool --bbox --copy %s %s' %
-                        (tmp_name, file_name), shell=True)
-    elif fmt == 'png':
-        subprocess.call('convert %s -trim %s' %
-                        (tmp_name, file_name), shell=True)
-    elif fmt == 'pdf':
-        subprocess.call('pdfcrop %s %s' % (tmp_name, file_name), shell=True)
+        # trim it
+        if fmt == 'eps':
+            subprocess.call('epstool --bbox --copy %s %s' %
+                            (tmp_name, file_name), shell=True)
+        elif fmt == 'png':
+            subprocess.call('convert %s -trim %s' %
+                            (tmp_name, file_name), shell=True)
+        elif fmt == 'pdf':
+            subprocess.call('pdfcrop %s %s' % (tmp_name, file_name), shell=True)
+    finally:
+        os.unlink(tmp_name)
