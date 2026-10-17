@@ -1,4 +1,4 @@
-# 注册 Github 账号
+# 注册 GitHub 账号
 
 1. 首先进入 [github 官网的注册页面](https://github.com/signup)（Sign up是注册），Sign in 是登录；
 
