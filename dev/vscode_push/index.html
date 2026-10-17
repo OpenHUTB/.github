@@ -212,7 +212,7 @@
 </li>
 <li><a href="#%E5%85%AB%E6%8F%90%E4%BA%A4-prpull-request">八、提交 PR（Pull Request）</a></li>
 <li><a href="#%E4%B9%9D%E5%B8%B8%E8%A7%81%E8%B8%A9%E5%9D%91">九、常见踩坑</a></li>
-<li><a href="#%E5%8D%81%E5%BD%93%E4%B8%BB%E4%BB%93%E5%BA%93%E6%9C%89%E6%9B%B4%E6%96%B0%E5%AF%BC%E8%87%B4%E6%9C%89%E5%86%B2%E7%AA%81%E6%97%B6%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95">十、当主仓库有更新导致有冲突时的解决办法</a></li>
+<li><a href="#%E5%8D%81%E4%B8%BB%E4%BB%93%E5%BA%93%E6%9B%B4%E6%96%B0%E5%90%8E%E5%90%8C%E6%AD%A5%E5%BD%93%E5%89%8D%E5%B7%A5%E4%BD%9C%E5%88%86%E6%94%AF">十、主仓库更新后同步当前工作分支</a></li>
 </ul>
 </li>
 </ul>
@@ -322,34 +322,25 @@ git config --global user.email "你的 GitHub 注册邮箱"</p>
 <li>mkdocs 网页找不到页面：检查 mkdocs.yml 的路径和 md 文件位置完全匹配</li>
 <li>代码冲突：多人同时修改同一文件会出现冲突，解决冲突后再提交</li>
 </ol>
-<h2 id="十当主仓库有更新导致有冲突时的解决办法">十、当主仓库有更新导致有冲突时的解决办法</h2>
-<ol>
-<li>
-<p>关联主仓库(如果已经关联则不用重复关联)
-</p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>upstream
-你需要关联的仓库地址eg：htpps://github.com/OpenHUTB/.github.git
+<h2 id="十主仓库更新后同步当前工作分支">十、主仓库更新后同步当前工作分支</h2>
+<p>在已经克隆的个人 Fork 中，先确认当前工作分支；以下以 <code>你的分支名</code> 为例。提交或暂存正在编辑的文件后，再进行同步。</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>switch<span class="w"> </span>你的分支名
+git<span class="w"> </span>status
 </code></pre></div>
-查看是否成功关联的方法
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>remote<span class="w"> </span>-v
+<p>首次同步时，添加主仓库地址。已经有 <code>upstream</code> 的话，直接查看地址即可，无需重复添加。</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>upstream<span class="w"> </span>https://github.com/OpenHUTB/.github.git
+git<span class="w"> </span>remote<span class="w"> </span>-v
+git<span class="w"> </span>fetch<span class="w"> </span>upstream<span class="w"> </span>master
+git<span class="w"> </span>merge<span class="w"> </span>upstream/master
 </code></pre></div>
-此时能看到origin和upstream即为成功
-</li>
-<li>
-<p>拉取主仓库最新代码再手动解决冲突
-</p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>fetch<span class="w"> </span>upstream<span class="w"> </span>master
+<p><code>fetch</code> 只下载更新，<code>merge</code> 才会把主仓库的 <code>master</code> 合入当前工作分支。若出现冲突，在 VS Code 中检查冲突标记，保留需要的内容并保存文件；然后只暂存已解决的文件，并完成合并提交：</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>路径/已解决的文件.md
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"合并主仓库更新并解决冲突 / merge upstream updates and resolve conflicts"</span>
 </code></pre></div>
-如果出现冲突，手动解决冲突
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>.
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"merge upstream and resolve conflicts"</span>
-</code></pre></div>
-当这个 commit 成功后，本地的合并过程就彻底完成了。此时你本地的 master 分支已经包含了主仓库的最新代码以及你解决冲突后的最终结果
-</li>
-<li>
-<p>把同步好的master推送到自己的fork仓库(origin)
-</p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>master
-</code></pre></div>
-</li>
-</ol></div>
+<p>没有冲突时，Git 会直接完成合并，无需再运行上述 <code>git add</code> 和 <code>git commit</code>。最后确认工作区状态，并推送当前工作分支，随后在原有 PR 中查看更新：</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>status
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>你的分支名
+</code></pre></div></div>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
