@@ -18,10 +18,14 @@ where conda
 
 conda env list | findstr /r "^mkdocs " >nul 2>&1
 if %errorlevel% neq 0 (
-    echo mkdocs虚拟环境不存在,正在创建
+    echo mkdocs virtual environment does not exist, creating...
+
     call conda create -n mkdocs python=3.11 -y
+    call conda activate mkdocs
+    pip install -r requirements.txt
 ) else (
-    echo mkdocs虚拟环境已存在,跳过创建
+    echo mkdocs virtual environment already exists, skip creation.
+    call conda activate mkdocs
 )
 
 
