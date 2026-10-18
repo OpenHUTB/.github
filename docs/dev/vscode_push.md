@@ -142,6 +142,11 @@ git push origin 你的分支名
 
 在已经克隆的个人 Fork 中，先确认当前工作分支；以下以 `你的分支名` 为例。提交或暂存正在编辑的文件后，再进行同步。
 
+1. 关联主仓库(如果已经关联则不用重复关联)
+```bash
+git remote add upstream https://github.com/OpenHUTB/.github.git
+```
+查看是否成功关联的方法
 ```bash
 git switch 你的分支名
 git status
