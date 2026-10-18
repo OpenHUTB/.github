@@ -1,4 +1,4 @@
-# 一、安装 WSL（Ubuntu20.04）
+# 安装 WSL（Ubuntu20.04）
 
 ## 1. 一键安装（推荐）
 
@@ -32,7 +32,7 @@ sudo apt update && sudo apt upgrade
 
 ## 1. 彻底清除 WSL
 
-第一步：注销所有发行版
+第一步：注销所有的发行版
 
 ```powershell
 wsl --unregister <发行版名>
