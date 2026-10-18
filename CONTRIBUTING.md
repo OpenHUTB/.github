@@ -194,13 +194,13 @@ git pull origin pull/ID/head
 
 在 Pull Request 页面的 File changed 中，对有相关问题或修改建议的代码行进行审核并填写评论内容，并点击 Start a review，所有都评论完成后，点击 Submit review 提交评论，对方就会收到审核意见的邮件。
 
-![](img/dev/review.png)
+![](https://raw.githubusercontent.com/OpenHUTB/.github/master/docs/img/dev/review.png)
 
 
 
 所有问题解决并且本地验证通过后，点击 Pull Request 页面中最下面的“Squash and merge”（注意不是默认的“Create a merge commit”）。至此，一次的提交最终完成。
 
-![](img/dev/squash_merge.png)
+![](https://raw.githubusercontent.com/OpenHUTB/.github/master/docs/img/dev/squash_merge.png)
 
 
 **注意事项：**
@@ -213,9 +213,9 @@ git pull origin pull/ID/head
 
 ## 其他
 
-1.如果提交 Pull Request 时出现冲突，则参考 [使用 TortoiseGit 解决冲突](resolve_conflict.md) 或 [在 GitHub 上解决合并冲突](https://docs.github.com/zh/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github) 。
+1. 如果提交 Pull Request 时出现冲突，则参考 [使用 TortoiseGit 解决冲突](https://github.com/OpenHUTB/.github/blob/master/docs/resolve_conflict.md) 或 [在 GitHub 上解决合并冲突](https://docs.github.com/zh/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github) 。
 
-2.同步子模块
+2. 同步子模块
 ```
 git submodule update --remote
 ```
