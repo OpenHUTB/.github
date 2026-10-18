@@ -102,15 +102,16 @@ git push -u origin docs-fix-contribution-steps
 将 `README.md` 换成实际修改的文件，例如修改贡献指南时使用 `git add CONTRIBUTING.md`；提交信息也要与实际改动对应。如果第 3 步用了其他分支名，推送时同步替换。
 
 <details>
-<summary> <strong>如果在 push（推送）过程中出 error（错误），点击这里</strong> </summary>
+<summary> <strong>如果在 push（推送）过程中出 error，点击此处折叠</strong> </summary>
 
 - ### Authentication Error
      <pre>remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
   remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.
   fatal: Authentication failed for 'https://github.com/<your-username>/first-contributions.git/'</pre>
-  去 [GitHub 的教程](https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) 学习如何生成新的 SSH 密匙以及配置。
-
+  
+  去 [GitHub 的教程](https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) 学习如何生成新的 SSH 密钥以及配置。
 </details>
+  
 
 **8.** 推送后，在个人仓库页面切换到刚才的分支，点击 `Contribute` 创建 [Pull Request](https://zhuanlan.zhihu.com/p/153381521)。确认目标仓库是原来的 OpenHUTB 仓库，目标分支是该仓库的默认分支，来源是个人仓库中本次修改的分支。比如 `OpenHUTB/.github` 的默认分支是 `master`，不要直接填成 `main`。
 
@@ -194,13 +195,13 @@ git pull origin pull/ID/head
 
 在 Pull Request 页面的 File changed 中，对有相关问题或修改建议的代码行进行审核并填写评论内容，并点击 Start a review，所有都评论完成后，点击 Submit review 提交评论，对方就会收到审核意见的邮件。
 
-![](img/dev/review.png)
+![](https://raw.githubusercontent.com/OpenHUTB/.github/master/docs/img/dev/review.png)
 
 
 
 所有问题解决并且本地验证通过后，点击 Pull Request 页面中最下面的“Squash and merge”（注意不是默认的“Create a merge commit”）。至此，一次的提交最终完成。
 
-![](img/dev/squash_merge.png)
+![](https://raw.githubusercontent.com/OpenHUTB/.github/master/docs/img/dev/squash_merge.png)
 
 
 **注意事项：**
@@ -213,9 +214,9 @@ git pull origin pull/ID/head
 
 ## 其他
 
-1.如果提交 Pull Request 时出现冲突，则参考 [使用 TortoiseGit 解决冲突](resolve_conflict.md) 或 [在 GitHub 上解决合并冲突](https://docs.github.com/zh/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github) 。
+1. 如果提交 Pull Request 时出现冲突，则参考 [使用 TortoiseGit 解决冲突](https://github.com/OpenHUTB/.github/blob/master/docs/resolve_conflict.md) 或 [在 GitHub 上解决合并冲突](https://docs.github.com/zh/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github) 。
 
-2.同步子模块
+2. 同步子模块
 ```
 git submodule update --remote
 ```

@@ -4,7 +4,7 @@
 
 前提：Windows 10 版本 2004+ 或 Windows 11。
 
- 打开这些设置 
+ 打开「控制面板 → 程序 → 启用或关闭 Windows 功能」，勾选「适用于 Linux 的 Windows 子系统」和「虚拟机平台」两项，点击「确定」，完成后按提示重启电脑。 
     ![图片](img/wmx001.png)
 
 打开cmd
@@ -31,8 +31,7 @@ sudo apt update && sudo apt upgrade
 # 二、删除 WSL
 
 ## 1. 彻底清除 WSL
-
-第一步：注销所有的发行版
+第一步：注销所有发行版。先用 `wsl --list --verbose`（可简写为 `wsl -l -v`）查看已安装的发行版名称，再逐个注销：
 
 ```powershell
 wsl --unregister <发行版名>
@@ -43,3 +42,4 @@ wsl --unregister <发行版名>
 ```powershell
 wsl --uninstall
 ```
+注意：wsl --uninstall 需要 Microsoft Store 版 WSL 2.0 及以上。如果提示没有该命令，可在「设置 → 应用 → 安装的应用」中先卸载对应的 Linux 发行版，再卸载「适用于 Linux 的 Windows 子系统」组件，然后重启电脑。
