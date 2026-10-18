@@ -337,9 +337,15 @@ git config --global user.email "你的 GitHub 注册邮箱"</p>
 </ol>
 <h2 id="十主仓库更新后同步当前工作分支">十、主仓库更新后同步当前工作分支</h2>
 <p>在已经克隆的个人 Fork 中，先确认当前工作分支；以下以 <code>你的分支名</code> 为例。提交或暂存正在编辑的文件后，再进行同步。</p>
+<ol>
+<li>关联主仓库(如果已经关联则不用重复关联)
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>upstream<span class="w"> </span>https://github.com/OpenHUTB/.github.git
+</code></pre></div>
+查看是否成功关联的方法
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>switch<span class="w"> </span>你的分支名
 git<span class="w"> </span>status
-</code></pre></div>
+</code></pre></div></li>
+</ol>
 <p>首次同步时，添加主仓库地址。已经有 <code>upstream</code> 的话，直接查看地址即可，无需重复添加。</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>upstream<span class="w"> </span>https://github.com/OpenHUTB/.github.git
 git<span class="w"> </span>remote<span class="w"> </span>-v
