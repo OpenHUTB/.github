@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://openhutb.github.io/.github/env_conf/" rel="canonical"/>
 <link href="../img/favicon.ico" rel="shortcut icon"/>
 <title>搭建自定义开发环境 - 社区介绍</title>
 <link href="../css/theme.css" rel="stylesheet"/>
@@ -14,7 +14,7 @@
         // Current page data
         var mkdocs_page_name = "\u642d\u5efa\u81ea\u5b9a\u4e49\u5f00\u53d1\u73af\u5883";
         var mkdocs_page_input_path = "env_conf.md";
-        var mkdocs_page_url = null;
+        var mkdocs_page_url = "/.github/env_conf/";
       </script>
 <!--[if lt IE 9]>
       <script src="../js/html5shiv.min.js"></script>
@@ -30,7 +30,7 @@
 <a class="icon icon-home" href=".."> 社区介绍
         </a><div role="search">
 <form action="../search.html" class="wy-form" id="rtd-search-form" method="get">
-<input aria-label="Search docs" name="q" placeholder="搜索文档" title="Type search term here" type="text"/>
+<input aria-label="Search docs" name="q" placeholder="Search docs" title="Type search term here" type="text"/>
 </form>
 </div>
 </div>
@@ -60,7 +60,7 @@
 </li>
 </ul>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal current" href="#">搭建自定义开发环境</a>
+<li class="toctree-l1 current"><a class="reference internal current" href="./">搭建自定义开发环境</a>
 <ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="#搭建自己的gitlab仓库">搭建自己的gitlab仓库</a>
 </li>
@@ -154,7 +154,7 @@
 <li><a aria-label="Docs" class="icon icon-home" href=".."></a></li>
 <li class="breadcrumb-item active">搭建自定义开发环境</li>
 <li class="wy-breadcrumbs-aside">
-<a href="https://github.com/OpenHUTB/.github/edit/master/docs/env_conf.md"> 编辑页面</a>
+<a class="icon icon-github" href="https://github.com/OpenHUTB/.github/edit/master/docs/env_conf.md"> Edit on GitHub</a>
 </li>
 </ul>
 <hr/>
@@ -164,16 +164,17 @@
 <div><h1 id="搭建自定义开发环境">搭建自定义开发环境</h1>
 <h2 id="搭建自己的gitlab仓库">搭建自己的gitlab仓库</h2>
 <p>参考<a href="https://blog.csdn.net/weixin_41878425/article/details/134995223">链接</a> 进行配置：
-1.在盘符(任意盘符)中新建docker文件夹，在docker文件夹中建立gitlab文件夹，在gitlab文件夹中建立config、data、logs三个文件夹 ，如下关系所示：
-</p><div class="highlight"><pre><span></span><code>docker
+1. 在盘符(任意盘符)中新建docker文件夹，在docker文件夹中建立gitlab文件夹，在gitlab文件夹中建立config、data、logs三个文件夹 ，如下关系所示：
+    </p><div class="highlight"><pre><span></span><code>docker
     |-gitlab
         |-config
         |-data
         |-logs
     |-docker-compose.yml
 </code></pre></div>
-<p>2.在第1步中新建的docker文件中新建文件：docker-compose.yml，内容如下：
-</p><div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">'3'</span><span class="w"> </span><span class="c1"># 版本号</span>
+<ol>
+<li>在第1步中新建的docker文件中新建文件：docker-compose.yml，内容如下：
+    <div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">'3'</span><span class="w"> </span><span class="c1"># 版本号</span>
 <span class="nt">services</span><span class="p">:</span><span class="w"> </span><span class="c1"># 开启服务</span>
 <span class="w">  </span><span class="nt">gitlab</span><span class="p">:</span><span class="w"> </span><span class="c1"># 服务名称</span>
 <span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="s">'twang2218/gitlab-ce-zh:latest'</span><span class="w"> </span><span class="c1"># 使用镜像</span>
@@ -195,13 +196,14 @@
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">C:\docker\gitlab\config:/etc/gitlab</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">C:\docker\gitlab\data:/var/opt/gitlab</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">C:\docker\gitlab\logs:/var/log/gitlab</span>
-</code></pre></div>
-3.执行docker-compose.yml文件完成服务器部署
-<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>up<span class="w"> </span>-d<span class="w"> </span>
+</code></pre></div></li>
+<li>执行docker-compose.yml文件完成服务器部署
+    <div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>up<span class="w"> </span>-d
 </code></pre></div>
 修改配置后，执行重启命令：
-<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>restart
-</code></pre></div>
+    <div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>restart
+</code></pre></div></li>
+</ol>
 <p>如果本机可以访问 <a href="http://127.0.0.1:1080">http://127.0.0.1:1080</a>，但局域网内其他设备无法访问 <a href="http://172.21.108.56:1080">http://172.21.108.56:1080</a>，可以依次检查：</p>
 <ol>
 <li>在 <code>docker-compose.yml</code> 所在目录运行 <code>docker-compose ps</code>，确认 GitLab 容器正在运行，并检查端口绑定。例如，<code>0.0.0.0:1080-&gt;8080/tcp</code> 表示该端口对所有 IPv4 网卡开放；如果仅绑定到 <code>127.0.0.1</code>，其他设备就无法通过局域网地址访问。使用新版 Compose 时，命令为 <code>docker compose ps</code>。</li>
@@ -210,10 +212,12 @@
 <li>如果远程端口不通，在 Windows Defender 防火墙中为 TCP 1080 添加入站规则，并把规则限制在需要访问的网络范围内。</li>
 </ol>
 <p>不建议关闭所有防火墙。端口映射或规则配置错误时，关闭防火墙不能解决根本问题，还会让其他服务失去保护。排查完成后，再用实际服务器地址替换示例中的 <code>172.21.108.56</code>。</p>
-<p>4.使用
-执行命令克隆仓库（附带端口）：
-</p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>http://172.21.108.56:1080/root/actors
-</code></pre></div>
+<ol>
+<li>使用
+   执行命令克隆仓库（附带端口）：
+    <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>http://172.21.108.56:1080/root/actors
+</code></pre></div></li>
+</ol>
 <h2 id="配置-python-开发环境windows">配置 Python 开发环境（Windows）</h2>
 <p>社区里人车模拟器的 Python 接口，以及各类算法实验，都在 Python 环境下运行。本节从零开始：装 Python → 配镜像源 → 建虚拟环境 → 在 VS Code 里选中它。全部以 Windows 为例。</p>
 <h3 id="1-安装-python">1. 安装 Python</h3>
@@ -331,14 +335,16 @@ python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </s
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
-<a class="btn btn-neutral float-left" href="../bib_reference_guide/" title="Latex文献引用编译办法"><span class="icon icon-circle-arrow-left"></span> 前一页</a>
-<a class="btn btn-neutral float-right" href="../rustdesk_tailscale/" title="远程办公">后一页 <span class="icon icon-circle-arrow-right"></span></a>
+<a class="btn btn-neutral float-left" href="../bib_reference_guide/" title="Latex文献引用编译办法"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="../rustdesk_tailscale/" title="远程办公">Next <span class="icon icon-circle-arrow-right"></span></a>
 </div>
 <hr/>
 <div role="contentinfo">
 <!-- Copyright etc -->
 <p>OpenHUTB 版权所有 © 2026</p>
 </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
 </div>
 </div>
@@ -347,10 +353,10 @@ python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </s
 <div aria-label="Versions" class="rst-versions" role="note">
 <span class="rst-current-version" data-toggle="rst-current-version">
 <span>
-<a href="https://github.com/OpenHUTB/.github" style="color: #fcfcfc">OpenHUTB</a>
+<a class="fa fa-github" href="https://github.com/OpenHUTB/.github" style="color: #fcfcfc"> GitHub</a>
 </span>
-<span><a href="../bib_reference_guide/" style="color: #fcfcfc">« 前一页</a></span>
-<span><a href="../rustdesk_tailscale/" style="color: #fcfcfc">后一页 »</a></span>
+<span><a href="../bib_reference_guide/" style="color: #fcfcfc">« Previous</a></span>
+<span><a href="../rustdesk_tailscale/" style="color: #fcfcfc">Next »</a></span>
 </span>
 </div>
 <script src="../js/jquery-3.6.0.min.js"></script>

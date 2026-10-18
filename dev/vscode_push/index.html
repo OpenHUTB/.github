@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://openhutb.github.io/.github/dev/vscode_push/" rel="canonical"/>
 <link href="../../img/favicon.ico" rel="shortcut icon"/>
 <title>使用 VScode 推送代码 - 社区介绍</title>
 <link href="../../css/theme.css" rel="stylesheet"/>
@@ -14,7 +14,7 @@
         // Current page data
         var mkdocs_page_name = "\u4f7f\u7528 VScode \u63a8\u9001\u4ee3\u7801";
         var mkdocs_page_input_path = "dev/vscode_push.md";
-        var mkdocs_page_url = null;
+        var mkdocs_page_url = "/.github/dev/vscode_push/";
       </script>
 <!--[if lt IE 9]>
       <script src="../../js/html5shiv.min.js"></script>
@@ -30,7 +30,7 @@
 <a class="icon icon-home" href="../.."> 社区介绍
         </a><div role="search">
 <form action="../../search.html" class="wy-form" id="rtd-search-form" method="get">
-<input aria-label="Search docs" name="q" placeholder="搜索文档" title="Type search term here" type="text"/>
+<input aria-label="Search docs" name="q" placeholder="Search docs" title="Type search term here" type="text"/>
 </form>
 </div>
 </div>
@@ -81,7 +81,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../sign_up/">注册 Github 账号</a>
 </li>
-<li class="toctree-l1 current"><a class="reference internal current" href="#">使用 VScode 推送代码</a>
+<li class="toctree-l1 current"><a class="reference internal current" href="./">使用 VScode 推送代码</a>
 <ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="#一环境准备安装-gitwindows">一、环境准备：安装 Git（Windows）</a>
 <ul>
@@ -118,6 +118,20 @@
 <li class="toctree-l3"><a class="reference internal" href="#方式-b终端命令">方式 B：终端命令</a>
 </li>
 </ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#七推送到远程-github-仓库">七、推送到远程 GitHub 仓库</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#方式-a-vscode-图形界面">方式 A VSCode 图形界面</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#方式-b-终端命令">方式 B 终端命令</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#八提交-prpull-request">八、提交 PR（Pull Request）</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#九常见踩坑">九、常见踩坑</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#十主仓库更新后同步当前工作分支">十、主仓库更新后同步当前工作分支</a>
 </li>
 </ul>
 </li>
@@ -171,7 +185,7 @@
 <li class="breadcrumb-item">贡献相关</li>
 <li class="breadcrumb-item active">使用 VScode 推送代码</li>
 <li class="wy-breadcrumbs-aside">
-<a href="https://github.com/OpenHUTB/.github/edit/master/docs/dev/vscode_push.md"> 编辑页面</a>
+<a class="icon icon-github" href="https://github.com/OpenHUTB/.github/edit/master/docs/dev/vscode_push.md"> Edit on GitHub</a>
 </li>
 </ul>
 <hr/>
@@ -203,10 +217,6 @@
 <li><a href="#%E6%96%B9%E5%BC%8F-b%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4">方式 B：终端命令</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li><a href="#%E6%B7%BB%E5%8A%A0%E6%94%B9%E5%8A%A8%E6%96%87%E4%BB%B6">添加改动文件</a></li>
-<li><a href="#%E6%8F%90%E4%BA%A4%E5%BC%95%E5%8F%B7%E5%86%85%E5%86%99%E6%9C%AC%E6%AC%A1%E6%94%B9%E5%8A%A8%E6%8F%8F%E8%BF%B0">提交，引号内写本次改动描述</a><ul>
 <li><a href="#%E4%B8%83%E6%8E%A8%E9%80%81%E5%88%B0%E8%BF%9C%E7%A8%8B-github-%E4%BB%93%E5%BA%93">七、推送到远程 GitHub 仓库</a><ul>
 <li><a href="#%E6%96%B9%E5%BC%8F-a-vscode-%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2">方式 A VSCode 图形界面</a></li>
 <li><a href="#%E6%96%B9%E5%BC%8F-b-%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4">方式 B 终端命令</a></li>
@@ -233,8 +243,9 @@
 </ol>
 <h3 id="3-配置-git-用户名与邮箱必须设置否则提交报错">3. 配置 Git 用户名与邮箱（必须设置，否则提交报错）</h3>
 <p>打开 PowerShell，执行下面两行，替换成你自己 GitHub 的用户名和注册邮箱
-git config --global user.name "你的 GitHub 用户名"
-git config --global user.email "你的 GitHub 注册邮箱"</p>
+</p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">"你的 GitHub 用户名"</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">"你的 GitHub 注册邮箱"</span>
+</code></pre></div>
 <h3 id="4-验证-git-是否装好">4. 验证 Git 是否装好</h3>
 <p>打开 PowerShell，输入：
 </p><div class="highlight"><pre><span></span><code>git --version
@@ -275,12 +286,12 @@ git config --global user.email "你的 GitHub 注册邮箱"</p>
 <blockquote>
 <p>⚠️ 重要规范：<strong>不要直接在 master 主分支修改，所有改动新建独立分支操作</strong>
 创建分支的方法
-</p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>-b你的分支名
+</p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>你的分支名
 </code></pre></div>
 检查自己所在分支的方法
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>branch
 </code></pre></div>
-输出的所有分支里前面带*的就是目前所在分支
+输出的所有分支里前面带 <code>*</code> 的就是目前所在分支
 </blockquote>
 <p>更换分支的方法
 </p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>你要选择的分支
@@ -307,11 +318,11 @@ git config --global user.email "你的 GitHub 注册邮箱"</p>
 <li>点击【提交】</li>
 </ol>
 <h3 id="方式-b终端命令">方式 B：终端命令</h3>
-<h1 id="添加改动文件">添加改动文件</h1>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>文件名
+<div class="highlight"><pre><span></span><code><span class="c1"># 添加改动文件</span>
+git<span class="w"> </span>add<span class="w"> </span>文件名
 </code></pre></div>
-<h1 id="提交引号内写本次改动描述">提交，引号内写本次改动描述</h1>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"新增 VSCode 推送教程"</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># 提交，引号内写本次改动描述</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"新增 VSCode 推送教程"</span>
 </code></pre></div>
 <h2 id="七推送到远程-github-仓库">七、推送到远程 GitHub 仓库</h2>
 <h3 id="方式-a-vscode-图形界面">方式 A VSCode 图形界面</h3>
@@ -363,14 +374,16 @@ git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
-<a class="btn btn-neutral float-left" href="../sign_up/" title="注册 Github 账号"><span class="icon icon-circle-arrow-left"></span> 前一页</a>
-<a class="btn btn-neutral float-right" href="../../pycharm-tutorial/" title="PyCharm 教程">后一页 <span class="icon icon-circle-arrow-right"></span></a>
+<a class="btn btn-neutral float-left" href="../sign_up/" title="注册 Github 账号"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="../../pycharm-tutorial/" title="PyCharm 教程">Next <span class="icon icon-circle-arrow-right"></span></a>
 </div>
 <hr/>
 <div role="contentinfo">
 <!-- Copyright etc -->
 <p>OpenHUTB 版权所有 © 2026</p>
 </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
 </div>
 </div>
@@ -379,10 +392,10 @@ git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </
 <div aria-label="Versions" class="rst-versions" role="note">
 <span class="rst-current-version" data-toggle="rst-current-version">
 <span>
-<a href="https://github.com/OpenHUTB/.github" style="color: #fcfcfc">OpenHUTB</a>
+<a class="fa fa-github" href="https://github.com/OpenHUTB/.github" style="color: #fcfcfc"> GitHub</a>
 </span>
-<span><a href="../sign_up/" style="color: #fcfcfc">« 前一页</a></span>
-<span><a href="../../pycharm-tutorial/" style="color: #fcfcfc">后一页 »</a></span>
+<span><a href="../sign_up/" style="color: #fcfcfc">« Previous</a></span>
+<span><a href="../../pycharm-tutorial/" style="color: #fcfcfc">Next »</a></span>
 </span>
 </div>
 <script src="../../js/jquery-3.6.0.min.js"></script>
