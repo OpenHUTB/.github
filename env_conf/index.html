@@ -64,6 +64,24 @@
 <ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="#搭建自己的gitlab仓库">搭建自己的gitlab仓库</a>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#配置-python-开发环境windows">配置 Python 开发环境（Windows）</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#1-安装-python">1. 安装 Python</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#2-看清电脑上有几个-python">2. 看清电脑上有几个 Python</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#3-为-pip-配置国内镜像源">3. 为 pip 配置国内镜像源</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#4-建立虚拟环境">4. 建立虚拟环境</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#5-在-vs-code-里选中这个环境">5. 在 VS Code 里选中这个环境</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#6-安装常用库并验证">6. 安装常用库并验证</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#7-常见问题速查表">7. 常见问题速查表</a>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -195,7 +213,121 @@
 <p>4.使用
 执行命令克隆仓库（附带端口）：
 </p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>http://172.21.108.56:1080/root/actors
-</code></pre></div></div>
+</code></pre></div>
+<h2 id="配置-python-开发环境windows">配置 Python 开发环境（Windows）</h2>
+<p>社区里人车模拟器的 Python 接口，以及各类算法实验，都在 Python 环境下运行。本节从零开始：装 Python → 配镜像源 → 建虚拟环境 → 在 VS Code 里选中它。全部以 Windows 为例。</p>
+<h3 id="1-安装-python">1. 安装 Python</h3>
+<ol>
+<li>打开 <a href="https://www.python.org/downloads/windows/">Python 官方下载页</a> ，选择 Python 3.13 的 <code>Windows installer (64-bit)</code> 下载。如果项目文档明确要求某个版本，以项目要求为准，不要随意换版本。</li>
+<li>运行安装程序，<strong>先勾选 <code>Add python.exe to PATH</code></strong>，再点 <code>Install Now</code>。这一步漏勾，后面所有命令都会提示「不是内部或外部命令」，这是新手最常见的第一个坑。</li>
+<li>安装结束后，<strong>重新打开一个</strong>终端窗口（已经打开的窗口不会刷新环境变量），执行：</li>
+</ol>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>--version
+python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>--version
+</code></pre></div>
+<p>两条命令都能输出版本号，说明装好了。</p>
+<h3 id="2-看清电脑上有几个-python">2. 看清电脑上有几个 Python</h3>
+<p>一台机器上经常不止一个 Python：系统装的、某些编辑器自带的、Anaconda 的……混用会导致「明明装了包却导入不了」。Windows 自带的 Python 启动器可以把它们列出来：</p>
+<div class="highlight"><pre><span></span><code>py<span class="w"> </span>--list
+</code></pre></div>
+<p>输出中带 <code>*</code> 的是默认版本。需要指定版本运行时用 <code>py -3.13 脚本名.py</code> 这样的写法。更多说明可参考 Python 官方文档：</p>
+<ul>
+<li><a href="https://docs.python.org/3.13/using/windows.html#python-launcher-for-windows">Python Launcher for Windows</a></li>
+</ul>
+<p><strong>装包时统一用 <code>python -m pip install 包名</code>，而不是直接 <code>pip install 包名</code></strong>。前者保证包被装进当前 <code>python</code> 对应的环境，后者可能装到另一个 Python 上。</p>
+<h3 id="3-为-pip-配置国内镜像源">3. 为 pip 配置国内镜像源</h3>
+<p>直接从官方源下载常常很慢甚至超时。配置清华镜像源（写进用户配置，一次生效、长期有效）：</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span><span class="w"> </span>global.index-url<span class="w"> </span>https://pypi.tuna.tsinghua.edu.cn/simple
+</code></pre></div>
+<p>确认是否生效：</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>config<span class="w"> </span>list
+</code></pre></div>
+<p>输出中出现 <code>global.index-url='https://pypi.tuna.tsinghua.edu.cn/simple'</code> 即为成功。</p>
+<h3 id="4-建立虚拟环境">4. 建立虚拟环境</h3>
+<p>虚拟环境是项目专属的一份独立 Python，各项目的依赖互不干扰。<strong>每个项目建一个，这是必须的习惯，不是可选优化</strong>——直接在系统 Python 上装包，早晚会遇到两个项目要求同一个库的不同版本。</p>
+<p>进入项目目录，创建名为 <code>.venv</code> 的环境：</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>你的项目目录
+python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+</code></pre></div>
+<p>激活它。不同终端用的命令不一样，请按自己当前打开的终端选择：</p>
+<div class="highlight"><pre><span></span><code><span class="c"># PowerShell</span>
+<span class="p">.</span><span class="n">venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">Activate</span><span class="p">.</span><span class="n">ps1</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code># cmd
+.venv\Scripts\activate.bat
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Git Bash</span>
+<span class="nb">source</span><span class="w"> </span>.venv/Scripts/activate
+</code></pre></div>
+<p>不同 Shell 激活虚拟环境的方式可参考 Python 官方文档：<a href="https://docs.python.org/3.13/library/venv.html#how-venvs-work">How virtual environments work</a></p>
+<p>激活成功后，命令行开头会出现 <code>(.venv)</code>。此后 <code>python</code>、<code>pip</code> 都指向这个环境。退出用：</p>
+<div class="highlight"><pre><span></span><code>deactivate
+</code></pre></div>
+<p>如果 PowerShell 提示「无法加载文件……因为在此系统上禁止运行脚本」，先执行下面这条命令（只对当前用户生效，不需要管理员权限）：</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Set-ExecutionPolicy</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">RemoteSigned</span>
+</code></pre></div>
+<p>按提示输入 <code>Y</code> 确认，再重新激活。</p>
+<h3 id="5-在-vs-code-里选中这个环境">5. 在 VS Code 里选中这个环境</h3>
+<ol>
+<li>在 VS Code 扩展商店安装 <strong>Python</strong> 扩展（搜索 <code>Python</code>，发布者为 Microsoft）。</li>
+<li>按 <code>Ctrl+Shift+P</code>，输入 <code>Python: Select Interpreter</code>，选择路径中带 <code>.venv</code> 的那一项。</li>
+<li>新建终端（菜单「终端 → 新建终端」）会自动激活虚拟环境，命令行前同样出现 <code>(.venv)</code>。<strong>这一步不做，VS Code 仍会用系统 Python 运行代码</strong>，于是出现「终端里 import 成功、点运行却报错」这类看似玄学的问题。</li>
+</ol>
+<h3 id="6-安装常用库并验证">6. 安装常用库并验证</h3>
+<p>以数据科学常用的一套为例，按需增删：</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>numpy<span class="w"> </span>pandas<span class="w"> </span>scikit-learn<span class="w"> </span>matplotlib<span class="w"> </span>jupyter
+</code></pre></div>
+<p>装完验证能否导入：</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import numpy, pandas, sklearn, matplotlib; print('ok')"</span>
+</code></pre></div>
+<p>输出 <code>ok</code> 即完成。</p>
+<h3 id="7-常见问题速查表">7. 常见问题速查表</h3>
+<table>
+<thead>
+<tr>
+<th>现象</th>
+<th>原因</th>
+<th>处理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>'python' 不是内部或外部命令</code></td>
+<td>安装时未勾选 Add to PATH</td>
+<td>重新运行安装包 → <code>Modify</code> → 补勾该项，或卸载重装</td>
+</tr>
+<tr>
+<td>装包时报 <code>PermissionError</code> / 拒绝访问</td>
+<td>正在往系统 Python 里装</td>
+<td>改用虚拟环境（第 4 步），或加 <code>--user</code> 参数</td>
+</tr>
+<tr>
+<td>pip 下载极慢或 <code>Read timed out</code></td>
+<td>连的是境外官方源</td>
+<td>配置镜像源（第 3 步）</td>
+</tr>
+<tr>
+<td>PowerShell 提示禁止运行脚本</td>
+<td>执行策略限制</td>
+<td><code>Set-ExecutionPolicy -Scope CurrentUser RemoteSigned</code></td>
+</tr>
+<tr>
+<td>终端能 import，VS Code 运行却报 <code>ModuleNotFoundError</code></td>
+<td>编辑器选中的解释器不是装包的那个</td>
+<td><code>Ctrl+Shift+P</code> → <code>Python: Select Interpreter</code> 改选 <code>.venv</code></td>
+</tr>
+<tr>
+<td><code>python -m venv</code> 报 ensurepip 失败</td>
+<td>Python 安装不完整</td>
+<td>重新运行安装包修复；Linux 上需先 <code>apt install python3-venv</code></td>
+</tr>
+<tr>
+<td>pip 提示版本过旧</td>
+<td>安装包自带的 pip 较老</td>
+<td><code>python -m pip install --upgrade pip</code></td>
+</tr>
+</tbody>
+</table></div>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
