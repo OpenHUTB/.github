@@ -66,10 +66,3 @@ df -h /
 * [vmware：ubuntu虚拟机如何扩容？](https://blog.csdn.net/qq_34160841/article/details/113058756)
 * [GParted 官方操作手册](https://gparted.org/display-doc.php?name=help-manual)
 * [lsblk 命令说明](https://man7.org/linux/man-pages/man8/lsblk.8.html)
-
-
-
-
-
-补充提示：扩容前先备份重要数据，并确认虚拟机处于关机状态。
-
