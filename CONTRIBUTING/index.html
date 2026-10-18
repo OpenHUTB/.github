@@ -234,14 +234,14 @@ git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span
 </code></pre></div>
 <p>将 <code>README.md</code> 换成实际修改的文件，例如修改贡献指南时使用 <code>git add CONTRIBUTING.md</code>；提交信息也要与实际改动对应。如果第 3 步用了其他分支名，推送时同步替换。</p>
 <details>
-<summary> <strong>如果在 push（推送）过程中出 error（错误），点击这里</strong> </summary>
+<summary> <strong>如果在 push（推送）过程中出 error，点击此处折叠</strong> </summary>
 
 - ### Authentication Error
      <pre>remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
   remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.
   fatal: Authentication failed for 'https://github.com/<your-username>/first-contributions.git/'</your-username></pre>
-  去 [GitHub 的教程](https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) 学习如何生成新的 SSH 密匙以及配置。
 
+  去 [GitHub 的教程](https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) 学习如何生成新的 SSH 密钥以及配置。
 </details>
 <p><strong>8.</strong> 推送后，在个人仓库页面切换到刚才的分支，点击 <code>Contribute</code> 创建 <a href="https://zhuanlan.zhihu.com/p/153381521">Pull Request</a>。确认目标仓库是原来的 OpenHUTB 仓库，目标分支是该仓库的默认分支，来源是个人仓库中本次修改的分支。比如 <code>OpenHUTB/.github</code> 的默认分支是 <code>master</code>，不要直接填成 <code>main</code>。</p>
 <p>填写能概括修改内容的标题和说明后提交，等待审核。如果个人仓库落后于原仓库，先通过 <code>Sync fork</code> 同步，并把最新内容合并到本次修改的分支；有冲突时先解决，再提交。</p>
