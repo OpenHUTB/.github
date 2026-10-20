@@ -3,8 +3,7 @@ hooks.py 的回归测试。
 
 运行方式：
     需要 Python 3，仅使用标准库，无需安装 MkDocs、pytest 或其他依赖。
-    请切换到包含本测试文件的分支，并在项目根目录运行
-    （当前 PR 分支为 test/build-hooks，根目录应包含 hooks.py 和 tests 文件夹）：
+    请在项目根目录运行（根目录应包含 hooks.py 和 tests 文件夹）：
     python -m unittest discover -s tests -v
 
 测试内容：
@@ -18,7 +17,7 @@ hooks.py 的回归测试。
 
 预期运行效果：
     逐项输出测试名称，通过时每项末尾显示 ok，最后显示：
-        Ran 7 tests in ...s
+        Ran 9 tests in ...s
 
         OK
     实际耗时因环境而异；若显示 FAILED 或 ERROR，应检查后面的错误信息。
@@ -53,6 +52,11 @@ class ConfigTests(unittest.TestCase):
         hooks.on_config(config)
         self.assertEqual(config.copyright, "OpenHUTB")
 
+    def test_missing_copyright_does_not_break_build(self):
+        config = SimpleNamespace(copyright=None)
+        hooks.on_config(config)
+        self.assertIsNone(config.copyright)
+
 
 class PreBuildTests(unittest.TestCase):
     def setUp(self):
@@ -70,7 +74,7 @@ class PreBuildTests(unittest.TestCase):
         os.utime(source, (1600000000, 1600000000))
         output = io.StringIO()
         with redirect_stdout(output):
-            hooks.on_pre_build()
+            hooks.on_pre_build({"docs_dir": str(self.root / "docs")})
         destination = self.root / "docs" / "CONTRIBUTING.md"
         self.assertEqual(destination.read_bytes(), source.read_bytes())
         self.assertEqual(destination.stat().st_mtime, source.stat().st_mtime)
@@ -80,19 +84,31 @@ class PreBuildTests(unittest.TestCase):
         source = self.root / "CONTRIBUTING.md"
         source.write_text("first", encoding="utf-8")
         with redirect_stdout(io.StringIO()):
-            hooks.on_pre_build()
+            hooks.on_pre_build({"docs_dir": str(self.root / "docs")})
             source.write_text("updated", encoding="utf-8")
-            hooks.on_pre_build()
+            hooks.on_pre_build({"docs_dir": str(self.root / "docs")})
         self.assertEqual((self.root / "docs" / "CONTRIBUTING.md").read_text(), "updated")
 
     def test_missing_source_warns_and_preserves_existing_destination(self):
         destination = self.root / "docs" / "CONTRIBUTING.md"
         destination.write_text("existing", encoding="utf-8")
         with self.assertLogs(hooks.__name__, level="WARNING") as logs:
-            hooks.on_pre_build()
+            hooks.on_pre_build({"docs_dir": str(self.root / "docs")})
         self.assertIn("CONTRIBUTING.md", logs.output[0])
         self.assertIn("not found", logs.output[0])
         self.assertEqual(destination.read_text(), "existing")
+
+    def test_uses_configured_docs_directory(self):
+        source = self.root / "CONTRIBUTING.md"
+        source.write_text("# 贡献指南\n", encoding="utf-8")
+        custom_docs = self.root / "custom-docs"
+        with redirect_stdout(io.StringIO()):
+            hooks.on_pre_build({"docs_dir": str(custom_docs)})
+        self.assertEqual(
+            (custom_docs / "CONTRIBUTING.md").read_bytes(),
+            source.read_bytes(),
+        )
+        self.assertFalse((self.root / "docs" / "CONTRIBUTING.md").exists())
 
 
 class PostBuildTests(unittest.TestCase):

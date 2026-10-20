@@ -1,4 +1,5 @@
 site_name: 社区介绍
+site_url: https://openhutb.github.io/.github/
 # 参考链接：https://blog.csdn.net/m0_63203517/article/details/129765689
 
 #repo_url: https://github.com/carla-simulator/carla
@@ -44,7 +45,7 @@ plugins:
   - search:
       lang: ja
       separator: '[\s\-\.]+'
-      min_search_length: 3
+      min_search_length: 2
   - bibtex:
       bib_file: refs.bib
       csl_file: nature.csl
@@ -65,6 +66,7 @@ copyright: OpenHUTB 版权所有 &copy; {year}
 
 nav:
 - 首页: 'index.md'
+- 模拟器简介: 'simulator.md'
 - 贡献指南: 'CONTRIBUTING.md'
 - git 教程: 'https://openhutb.github.io/git/?locale=zh_CN'
 - Markdown教程: 'https://docs.github.com/zh/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax'
@@ -90,13 +92,13 @@ nav:
     - 合并提交: 'dev/merge_commit.md'
     - 给 Ubuntu 虚拟机硬盘扩容: 'dev/vm_disk.md'
     - 注意事项: 'note.md'
+    - wsl 安装与配置和卸载: 'wsl.md'
 - 工具与资源:
     - 模拟器演示：涉水效果: 'introduction.md'
     - 开源工具列表: 'tools.md'
     - 三维建模软件 Blender 介绍: 'blender.md'
     - Markdown 一键发布到社交平台: 'markdown2anything.md'
 - 学习与论文:
-    - LaTeX 参考文献编译: 'bib_reference_guide.md'
     - 本科毕业设计: 'undergraduate.md'
     - 论文成果：AVF-BEL 视听融合: 'paper/avf.md'
 - 社区组织形式: 'org/architecture.md'
