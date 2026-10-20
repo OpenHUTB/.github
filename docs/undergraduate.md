@@ -31,3 +31,11 @@
 ## 答辩
 
 - [录屏软件（OBS Studio）](https://github.com/obsproject/obs-studio/releases)
+
+## 论文模板
+
+- [本科毕业设计 LaTeX 模板](https://github.com/OpenHUTB/undergraduate)
+- [课程论文 LaTeX 模板](https://github.com/OpenHUTB/course)
+- [社区 LaTeX 资源](https://github.com/OpenHUTB/latex)
+
+参考文献的引用和编译方法见[参考文献引用编译办法](bib_reference_guide.md)。
