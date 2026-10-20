@@ -201,7 +201,7 @@ style<span class="nb">{</span>plain<span class="nb">}</span>
 <h3 id="2-文献库文件refbib示例">2. 文献库文件（ref.bib）示例</h3>
 <div class="highlight"><pre><span></span><code><span class="nc">@article</span><span class="p">{</span><span class="nl">example1</span><span class="p">,</span>
 <span class="w">  </span><span class="na">title</span><span class="p">=</span><span class="s">{LaTeX文献引用技术研究}</span><span class="p">,</span>
-<span class="w">  </span><span class="na">author</span><span class="p">=</span><span class="s">{张三, 李四}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">author</span><span class="p">=</span><span class="s">{张三 and 李四}</span><span class="p">,</span>
 <span class="w">  </span><span class="na">journal</span><span class="p">=</span><span class="s">{计算机工程与应用}</span><span class="p">,</span>
 <span class="w">  </span><span class="na">year</span><span class="p">=</span><span class="s">{2024}</span>
 <span class="p">}</span>
@@ -227,7 +227,7 @@ style<span class="nb">{</span>gb7714-2015<span class="nb">}</span>
 <h3 id="2-提示未定义引用文献找不到">2. 提示未定义引用、文献找不到</h3>
 <ul>
 <li><code>{}</code> 调用的 bib 文件名和实际文件不匹配</li>
-<li>bib 文件存放路径错误（必须和 tex 主文件同目录）</li>
+<li>bib 文件存放路径错误（默认放在 tex 主文件同目录；放在子目录时需写成 {refs/ref} 这样的相对路径）</li>
 <li>bib 文件存在中文全角符号、空格、非法字符</li>
 </ul>
 <h3 id="3-文献只显示部分内容">3. 文献只显示部分内容</h3>
