@@ -12,14 +12,14 @@
 
 出现的页面即为社区仓库的拷贝。
 
-## 2. 启用自动化流水
+## 2. 启用自动化流水线
 
-点击个人项目的“Actions -> I understand my workflows, go ahead and enable them”启用自动化流水。
+点击个人项目的“Actions -> I understand my workflows, go ahead and enable them”启用自动化流水线。
 
 ![](./img/codespace/actions.png)
 
 
-点击“Settings -> Action -> General -> Workflow permissions -> read and write permissions” 启用项目的 Action 写入权限。
+点击“Settings -> Actions -> General -> Workflow permissions -> read and write permissions” 启用项目的 Action 写入权限。
 
 ![](./img/codespace/action_general.png)
 
