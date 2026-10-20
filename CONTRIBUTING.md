@@ -40,7 +40,7 @@ flowchart LR
     style K fill:#fff3e0
 ```
 
-**1.** [注册](https://openhutb.github.io/.github/dev/sign_up/) 并登陆 Github 账号，在 [想要修改的开源孪创仓库](https://github.com/OpenHUTB/hutb) 页面右上角点击`Fork`，然后点击`Create a new fork`，**创建分叉**到个人仓库。
+**1.** [注册](https://openhutb.github.io/.github/dev/sign_up/) 并登录 Github 账号，在 [想要修改的开源孪创仓库](https://github.com/OpenHUTB/hutb) 页面右上角点击`Fork`，然后点击`Create a new fork`，**创建分叉**到个人仓库。
 
 <img src="https://firstcontributions.github.io/assets/Readme/fork.png" width="310">
 
@@ -75,7 +75,10 @@ git switch -c <新分支的名称>
 **5-7**.修改并本地测试没问题后，**提交代码到个人仓库**（参考 git 命令说明）：
 ```shell
 git add README.md
-git commit -m "update"
+git commit -m "docs：更新贡献指南"
+
+注意：commit 信息尽量清晰描述改动内容，推荐格式：`docs: xxx`（文档修改）、`fix: xxx`（修复错误）、`feat: xxx`（新增功能）
+
 git push origin <新分支的名称>
 ```
 将 `<新分支的名称>` 替换为之前新建的分支名称。
@@ -91,7 +94,7 @@ git push origin <新分支的名称>
 
 </details>
 
-**8.** 在自己仓库的首页发现有提交领先于湖工商仓库的`main`分支，则点击`Contribute` 创建 [Pull Request](https://zhuanlan.zhihu.com/p/153381521) ，来湖工商仓库**做出贡献**，创建成功后等待管理员审核通过（如果发现个人仓库落后于湖工商仓库则点击`Sync frok`以同步其他人的最新修改）。
+**8.** 在自己仓库的首页发现有提交领先于湖工商仓库的`main`分支，则点击`Contribute` 创建 [Pull Request](https://zhuanlan.zhihu.com/p/153381521) ，来湖工商仓库**做出贡献**，创建成功后等待管理员审核通过（如果发现个人仓库落后于湖工商仓库则点击`Sync fork`以同步其他人的最新修改）。
 
 <img src="https://firstcontributions.github.io/assets/Readme/compare-and-pull.png" width="410">
 
@@ -151,17 +154,30 @@ git pull origin pull/ID/head
 
 这里提供 github 加速方案和科学上网的 [链接](https://openhutb.github.io/doc/build_carla/#internet) 。
 
-###### 向 github 上 push 的时候报 403 错误
 
-打开`.git/config`，比如：
-```
-url = https://github.com/OpenHUTB/bazaar.git
-```
-将你用户名复制粘贴到github前面再加个@，变成：
-```
-url = https://OpenHUTB@github.com/OpenHUTB/bazaar.git
-```
-然后就可以进行授权并继续push。
+###### 向 github 上 push 的时候报 403 / Authentication failed 错误
+> GitHub 从2021年8月13日起不再支持账号密码HTTPS认证，必须使用 **SSH密钥** 或者 **PAT个人访问令牌**。
+> 两种方案任选其一：
+>
+> ✅ 方案A（推荐长期使用：SSH密钥）
+> 参考官方文档生成并配置SSH公钥：[添加新的SSH密钥到GitHub账户](https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
+> 配置完成后，在终端切换仓库远程地址为SSH格式：
+> ```bash
+> git remote set-url origin git@github.com:你的用户名/hutb.git
+> ```
+>
+> ✅ 方案B（临时使用：HTTPS + PAT令牌）
+> 1. 在 GitHub 设置中生成 classic 类型 PAT，勾选 `repo` 权限，复制保存令牌；
+> 2. 已经克隆好的仓库，终端执行命令修改远程地址（替换`你的用户名`、`你的PAT`）：
+> ```bash
+> git remote set-url origin https://你的用户名:你的PAT@github.com/你的用户名/hutb.git
+> ```
+> 3. 还未克隆仓库，克隆时直接携带令牌：
+> ```bash
+> git clone https://你的用户名:你的PAT@github.com/你的用户名/hutb.git
+> ```
+>
+> ⚠️ 注意：PAT等同于你的密码，不要分享给他人，不要上传到仓库；公用电脑优先使用SSH方案。
 
 
 ###### 克隆个人仓库出错
