@@ -5,7 +5,7 @@
 入选标准（非硬性）：最近一年有在提交修改、星星数大于100。
 
 ## 工具
-* [git](https://openhutb.github.io/.github/) - git教程
+* [git](https://github.com/OpenHUTB/git) - git教程
 
 * [ScreenToGif](https://github.com/NickeManarin/ScreenToGif) - 截图为gif动图
 
@@ -22,7 +22,6 @@
 * [One-click-cleaning-of-C-drive](https://github.com/JIEKE66633/One-click-cleaning-of-C-drive) - 清理C盘残留和垃圾
 
 * [WindowsCleaner](https://github.com/darkmatter2048/WindowsCleaner) - C盘清理
-
 * [HandBrake](https://github.com/HandBrake/HandBrake) - 视频转码器，适用于 Linux、Mac 和 Windows
 
 
@@ -39,6 +38,7 @@
 * [md2wechat-skill](https://github.com/geekjourneyx/md2wechat-skill) - 一键排版发布到微信公众号
 
 * [pywechat](https://github.com/Hello-Mr-Crab/pywechat) - windows桌面微信自动化
+* [drawio](https://github.com/jgraph/drawio) - 免费开源的流程图、架构图绘制工具
 
 
 
@@ -121,6 +121,7 @@
 ## 常见
 
 * [Chromium](https://github.com/chromium/chromium) - Chromium 浏览器
+* [python](https://docs.python.org/zh-cn/3/tutorial/) -python 教程
 
 * [vscode](https://github.com/microsoft/vscode) - 代码编辑
 
