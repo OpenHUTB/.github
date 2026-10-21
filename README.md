@@ -6,6 +6,7 @@ OpenHUTB 简单来说是面向人机共生与智能载具研究、教学和开�
 以下为新手快速上手栏目：
 
 [🚀 快速开始](https://github.com/OpenHUTB/hutb#使用示例) · [📖 在线文档](https://openhutb.github.io/) · [🧪 运行示例](https://github.com/OpenHUTB/doc/tree/master/src/examples) · [🤝 参与贡献](https://github.com/OpenHUTB/.github/blob/master/CONTRIBUTING.md) · [💬 提问与讨论](https://github.com/orgs/OpenHUTB/discussions)
+- [贡献小贴士](contribute‑tips.md)
 - [贡献小贴士](contribute-tips.md)
 
 你可以用 OpenHUTB 做什么？
