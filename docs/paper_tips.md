@@ -32,7 +32,6 @@
 
 ## 每行一个句子
 
-编写 LaTeX 文档时，请在源文件中每行都放一个句子。例如：
 编写 LaTeX 文档时，请在源文件中每行只放一个句子。例如：
 ```
 This is my first sentence.
@@ -43,7 +42,7 @@ This is the second one.
 This is my first sentence. This is the second one.
 ```
 
-这样做的主要原因是为了更好的对源代码控制和协作：查看提交的更改时，每个句子都单独放在一行，就能更容易地识别哪些句子被更改了。这样，你的同志就能更容易地看到更改。
+这样做的主要原因是为了更好的对源代码控制和协作：查看提交的更改时，每个句子都单独放在一行，就能更容易地识别哪些句子被更改了。这样，你的同事就能更容易地看到更改。
 
 另一个好处是，当我们的 LaTeX 编译器仅给出行号时，您将能够更快速地识别错误。
 
@@ -122,12 +121,10 @@ Figure~\ref{fig:example}
 
 一般来说，避免在表格中使用垂直线。如果要对列进行分组，请在标题中使用`\cmidrule` 进行分组。您也可以使用 `\addlinespace` 用空格代替水平线。
 
-列标题应使用句子格式大写（请参阅 http://www.chicagomanualofstyle.org/15/ch13/ch13_sec019.html ）。
+列标题应使用句子格式大写（请参阅 https://www.chicagomanualofstyle.org/qanda/data/faq/topics/Capitalization.html ）。
 
 您可以在这里找到更多关于表格格式的建议： http://www.inf.ethz.ch/personal/markusp/teaching/guides/guide-tables.pdf 。
-这里有一个很棒的 GIF，演示了其中一些规则：
-
-![Better table formatting](http://darkhorseanalytics.com/blog/wp-content/uploads/2014/03/ClearOffTheTableMd.gif)
+这里有一份表格示例，演示了其中一些规则：[paper-tips-and-tricks 表格示例](https://github.com/Wookai/paper-tips-and-tricks/tree/master/examples/booktabs)。
 
 ## 数字格式
 
@@ -331,13 +328,29 @@ if __name__ == '__main__':
 
 ## 图形格式
 
-我们建议将所有图表保存为`EPS`格式。这样，您可以同时使用`latex`和`pdflatex`来生成文档，并欣赏精美的矢量图形和文本。
+图片格式应与论文的编译方式和图片内容相配合，不能统一要求所有图都保存为 EPS：
 
-自 2015 年 9 月起，在 Mac OS X 上以及使用最新版本的 Python、Matplotlib 和 TeX Live 时，打印直接用 Matplotlib 保存为 `PDF` 格式的图表时会有一些质量损失。打印在纸上时，这个问题会更加明显；您可以亲自尝试一下。这也是为什么最好将 Matplotlib 生成的图片保存为 `EPS` 格式的原因之一。如果您确实只想保留图表的 PDF 版本，请使用 `epspdf` 命令行工具——生成的 PDF 会比直接用 Matplotlib 生成的 PDF 更好。
+| 使用场景 | 常用格式 | 选择时注意 |
+| --- | --- | --- |
+| 使用 pdfLaTeX、XeLaTeX 或 LuaLaTeX 插入曲线图、流程图 | PDF | 保留矢量线条和文字，缩放后检查字体与符号是否完整 |
+| 使用传统 LaTeX → DVI → PostScript 流程 | EPS | 按该流程或投稿模板的说明使用；pdfLaTeX 使用 EPS 通常还需要转换 |
+| 照片、软件截图等位图 | PNG 或 JPEG | 按最终插入尺寸检查清晰度；提高导出分辨率不会补回原图丢失的细节 |
 
-为了完整起见，请注意 Matplotlib 的另一个后端 [PGF](http://matplotlib.org/users/pgf.html) ，其结果略胜一筹。然而，截至 2015 年 9 月，生成的 PDF 文件大小是使用默认后端和 `epspdf` 生成的 PDF 文件的两倍。
+Matplotlib 可直接导出 PDF 和 PNG。下面的例子从同一幅图保存两个文件，文件扩展名决定导出格式：
 
-Matplotlib 即使使用 [紧凑的布局功能](http://matplotlib.org/users/tight_layout_guide.html) ，有时也会在页边距中添加过多的空白。一个漂亮的命令行工具 `pdfcrop`，可以将 PDF 裁剪到最紧密的边界框。
+```python
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots(figsize=(4, 3))
+ax.plot([0, 1, 2], [0, 1, 4])
+ax.set_xlabel("x")
+ax.set_ylabel("y")
+fig.savefig("curve.pdf", bbox_inches="tight")
+fig.savefig("curve.png", dpi=300, bbox_inches="tight")
+plt.close(fig)
+```
+
+保存后，把图片插入实际论文模板，检查最终 PDF 中的文字、边距和线条。投稿方指定格式时，以投稿说明为准。具体选项见 [Matplotlib 保存图片说明](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.savefig.html)，LaTeX 图片格式可参考 [Overleaf 图片插入说明](https://www.overleaf.com/learn/latex/Inserting_Images)。
 
 ## 将图形的部分栅格化
 
@@ -365,8 +378,15 @@ Matplotlib 即使使用 [紧凑的布局功能](http://matplotlib.org/users/tigh
 
 # 有用的资源
 
-* 自动将标题大写: https://capitalizemytitle.com
-* 芝加哥格式手册: http://www.chicagomanualofstyle.org
-* 命令行检查模棱两可的词语、被动语态等: https://github.com/devd/Academic-Writing-Check
-* LaTeX 2e 使用基本指南: http://ctan.math.utah.edu/ctan/tex-archive/info/l2tabu/english/l2tabuen.pdf
+* [自动将标题大写](https://capitalizemytitle.com)
+* [芝加哥格式手册](http://www.chicagomanualofstyle.org)
+* [命令行检查模棱两可的词语、被动语态等](https://github.com/devd/Academic-Writing-Check)
+* [LaTeX 2e 使用基本指南](http://ctan.math.utah.edu/ctan/tex-archive/info/l2tabu/english/l2tabuen.pdf)
 * [撰写科学论文的技巧和窍门](https://github.com/Wookai/paper-tips-and-tricks/tree/master)
+
+
+补充提示：插图导出后请检查文字、线条和图例是否清晰，再放入论文正文。
+
+
+
+导出后可先打开 PDF 检查文字是否清晰、图例是否完整，再查看 PNG 在最终版心宽度下的显示效果。若图片来自脚本，建议同时保留脚本和导出的文件名，后续修改数据时更容易重新生成同一张图。
