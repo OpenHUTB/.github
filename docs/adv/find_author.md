@@ -1,10 +1,10 @@
-# 寻找技术文档所对应的作者和源码
+# 寻找社区技术文档所对应的作者和源码
 
 该页面是为了解决当对某个文档页面有疑问想找到对应作者和源代码的问题。
 
 ## 寻找页面的作者
 
-以[公众号文章](https://mp.weixin.qq.com/s/HS6_iq1081vJjsdgrta8wQ)点击末尾“阅读全文”跳转到的[文档页面](https://openhutb.github.io/ros2/water/rov_trajectory_tracking)为例。
+以[公众号文章](https://mp.weixin.qq.com/s/HS6_iq1081vJjsdgrta8wQ)为例，点击末尾“阅读全文”跳转到[文档页面](https://openhutb.github.io/ros2/water/rov_trajectory_tracking)。
 
 ![](../img/adv/full_article.png)
 
@@ -36,7 +36,7 @@
 ![](../img/adv/click_index.png)
 
 
-代码位于和文档相同的 src 目录下
+代码位于 src 目录下和文档相同的目录
 
 ![](../img/adv/src_directory.png)
 
@@ -44,7 +44,7 @@
 
 ![](../img/adv/src_location.png)
 
-最后一个目录可能有微小差别，具体请看上面提交历史（`History`）页面的详细信息
+最后一个目录可能有微小差别，具体请看上面提交历史（`History`）页面的详细信息。
 
 
 
