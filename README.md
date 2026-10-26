@@ -121,10 +121,3 @@ graph LR
 
     style A fill:#f3e5f5
 ```
-
-
-### 我的贡献计划
-1.新增了 main.py 模块入口，用于快速展示社区核心信息和链接。
-2.新建了 reports_guide.md，说明了报告文件夹的用途。
-3.为 src/git_commit_stats.py 增加了注释，并清理了重复导入的代码。
-后续会积极参与同学的代码审核工作。
