@@ -101,6 +101,12 @@
 <ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="#1-一键安装推荐">1. 一键安装（推荐）</a>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#2-删除-wsl">2. 删除 WSL</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#1-彻底清除-wsl">1. 彻底清除 WSL</a>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -148,7 +154,7 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<div><h1 id="安装-wslubuntu2004">安装 WSL（Ubuntu20.04）</h1>
+<div><h1 id="安装-wslubuntu-2004">安装 WSL（Ubuntu 20.04）</h1>
 <h2 id="1-一键安装推荐">1. 一键安装（推荐）</h2>
 <p>前提：Windows 10 版本 2004+ 或 Windows 11。</p>
 <p>打开「控制面板 → 程序 → 启用或关闭 Windows 功能」，勾选「适用于 Linux 的 Windows 子系统」和「虚拟机平台」两项，点击「确定」，完成后按提示重启电脑。 
@@ -164,8 +170,8 @@
 <p>安装后更新软件源</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade
 </code></pre></div>
-<h1 id="2删除-wsl">2.删除 WSL</h1>
-<h2 id="1-彻底清除-wsl">1. 彻底清除 WSL</h2>
+<h2 id="2-删除-wsl">2. 删除 WSL</h2>
+<h3 id="1-彻底清除-wsl">1. 彻底清除 WSL</h3>
 <p>第一步：注销所有发行版。先用 <code>wsl --list --verbose</code>（可简写为 <code>wsl -l -v</code>）查看已安装的发行版名称，再逐个注销：</p>
 <div class="highlight"><pre><span></span><code><span class="n">wsl</span> <span class="p">-</span><span class="n">-unregister</span> <span class="p">&lt;</span><span class="n">发行版名</span><span class="p">&gt;</span>
 </code></pre></div>
