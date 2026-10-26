@@ -9,4 +9,4 @@
 
 ## 代码审核
 
-- 审核按每一行代码对 Pull Request 进行评论时，注意在 `Files changed` 页面点右上角绿色的 `Submit review`（旧版叫 `Review changes`），选择 `Comment` 后，再点一次弹窗里的 `Submit review`，否则评论只留在本地，其他人看不到
+- 审核按每一行代码对 Pull Request 进行评论时，注意在 `Files changed` 页面点右上角绿色的 `Submit review`（旧版叫 `Review changes`），选择 `Comment` 后，再点一次弹窗里的 `Submit review`，否则评论只留在本地，其他人看不到。

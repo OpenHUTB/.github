@@ -17,7 +17,7 @@
 
 图中的左右窗口用于比较两个版本，下方窗口显示合并结果。操作前先查看窗口标题中的文件名和版本，确认哪边是当前版本、哪边是要合入的版本；要合入的内容也可能来自另一个本地分支，不能只按“远程”和“本地”判断。
 
-在合并处,鼠标右击:
+在合并处，鼠标右击：
 
 1. `Use text block from left`：保留左侧选中的内容。
 2. `Use text block from right`：保留右侧选中的内容。
@@ -36,7 +36,7 @@
 
 ## 参考
 
-- [TortoiseGit：解决冲突](https://tortoisegit.org/docs/tortoisegit/tgit-dug-conflicts.html)
+* [TortoiseGit：解决冲突](https://tortoisegit.org/docs/tortoisegit/tgit-dug-conflicts.html)
 
 * [使用小乌龟TortoiseGit快速解决代码冲突问题](https://blog.csdn.net/qq_34550459/article/details/108438031)
 * [TortoiseGit 入门指南06：解决冲突](https://blog.csdn.net/zhzht19861011/article/details/131715372)
