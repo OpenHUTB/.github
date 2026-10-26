@@ -59,7 +59,7 @@ PDFLaTeX 扫描引用记录 → BibTeX 生成规范文献列表 → 两次 PDF �
 ```bibtex
 @article{example1,
   title={LaTeX文献引用技术研究},
-  author={张三, 李四},
+  author={张三 and 李四},
   journal={计算机工程与应用},
   year={2024}
 }
@@ -90,7 +90,7 @@ PDFLaTeX 扫描引用记录 → BibTeX 生成规范文献列表 → 两次 PDF �
 ### 2. 提示未定义引用、文献找不到
 
 - `\bibliography{}` 调用的 bib 文件名和实际文件不匹配
-- bib 文件存放路径错误（必须和 tex 主文件同目录）
+- bib 文件存放路径错误（默认放在 tex 主文件同目录；放在子目录时需写成 \bibliography{refs/ref} 这样的相对路径）
 - bib 文件存在中文全角符号、空格、非法字符
 
 ### 3. 文献只显示部分内容

@@ -16,7 +16,7 @@
 
 ## 1. Blender 是什么 <span id="what"></span>
 
-Blender 是一款免费、开源的三维创作软件，由荷兰的 Blender Foundation 维护，官网为 <https://www.blender.org>。它覆盖三维制作的完整流程：建模、雕刻、UV 展开、骨骼绑定、动画、物理模拟、渲染、合成与视频剪辑。
+Blender 是一款免费、开源的三维创作软件，由荷兰的 Blender Foundation 维护，官网为  <https://www.blender.org>。它覆盖三维制作的完整流程：建模、雕刻、UV 展开、骨骼绑定、动画、物理模拟、渲染、合成与视频剪辑。
 
 与 Maya、3ds Max、Cinema 4D 等商业软件相比，Blender 的主要特点是：
 
