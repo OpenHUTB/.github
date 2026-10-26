@@ -32,7 +32,6 @@
 
 ## 每行一个句子
 
-编写 LaTeX 文档时，请在源文件中每行都放一个句子。例如：
 编写 LaTeX 文档时，请在源文件中每行只放一个句子。例如：
 ```
 This is my first sentence.
@@ -43,7 +42,7 @@ This is the second one.
 This is my first sentence. This is the second one.
 ```
 
-这样做的主要原因是为了更好的对源代码控制和协作：查看提交的更改时，每个句子都单独放在一行，就能更容易地识别哪些句子被更改了。这样，你的同志就能更容易地看到更改。
+这样做的主要原因是为了更好的对源代码控制和协作：查看提交的更改时，每个句子都单独放在一行，就能更容易地识别哪些句子被更改了。这样，你的同事就能更容易地看到更改。
 
 另一个好处是，当我们的 LaTeX 编译器仅给出行号时，您将能够更快速地识别错误。
 
@@ -125,9 +124,7 @@ Figure~\ref{fig:example}
 列标题应使用句子格式大写（请参阅 https://www.chicagomanualofstyle.org/qanda/data/faq/topics/Capitalization.html ）。
 
 您可以在这里找到更多关于表格格式的建议： http://www.inf.ethz.ch/personal/markusp/teaching/guides/guide-tables.pdf 。
-这里有一个很棒的 GIF，演示了其中一些规则：
-
-![Better table formatting](http://darkhorseanalytics.com/blog/wp-content/uploads/2014/03/ClearOffTheTableMd.gif)
+这里有一份表格示例，演示了其中一些规则：[paper-tips-and-tricks 表格示例](https://github.com/Wookai/paper-tips-and-tricks/tree/master/examples/booktabs)。
 
 ## 数字格式
 
@@ -386,6 +383,7 @@ plt.close(fig)
 * [命令行检查模棱两可的词语、被动语态等](https://github.com/devd/Academic-Writing-Check)
 * [LaTeX 2e 使用基本指南](http://ctan.math.utah.edu/ctan/tex-archive/info/l2tabu/english/l2tabuen.pdf)
 * [撰写科学论文的技巧和窍门](https://github.com/Wookai/paper-tips-and-tricks/tree/master)
+* [论文下载工具 sci-hub](https://tool.yovisun.com/scihub/)
 
 
 补充提示：插图导出后请检查文字、线条和图例是否清晰，再放入论文正文。
