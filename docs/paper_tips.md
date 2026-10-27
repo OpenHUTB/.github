@@ -383,6 +383,7 @@ plt.close(fig)
 * [命令行检查模棱两可的词语、被动语态等](https://github.com/devd/Academic-Writing-Check)
 * [LaTeX 2e 使用基本指南](http://ctan.math.utah.edu/ctan/tex-archive/info/l2tabu/english/l2tabuen.pdf)
 * [撰写科学论文的技巧和窍门](https://github.com/Wookai/paper-tips-and-tricks/tree/master)
+* [论文下载工具 sci-hub](https://tool.yovisun.com/scihub/)
 
 
 补充提示：插图导出后请检查文字、线条和图例是否清晰，再放入论文正文。
