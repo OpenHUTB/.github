@@ -23,3 +23,8 @@ git fetch origin pull/%BRANCH_NAME%/head:%BRANCH_NAME%
 
 :: 切换到基于此拉取请求的新分支：
 git switch %BRANCH_NAME%
+if %errorlevel% neq 0 (
+   echo ERROR: 切换分支失败，本地可能已存在同名分支 %BRANCH_NAME%
+   exit /b 1
+ )
+ echo 成功拉取并切换到PR:%BRANCH_NAME% 的分支
