@@ -5,7 +5,7 @@
 入选标准（非硬性）：最近一年有在提交修改、星星数大于100。
 
 ## 工具
-* [git](https://openhutb.github.io/.github/) - git教程
+* [git](https://github.com/OpenHUTB/git) - git教程
 
 * [ScreenToGif](https://github.com/NickeManarin/ScreenToGif) - 截图为gif动图
 
@@ -23,6 +23,7 @@
 
 * [WindowsCleaner](https://github.com/darkmatter2048/WindowsCleaner) - C盘清理
 * [HandBrake](https://github.com/HandBrake/HandBrake) - 视频转码器，适用于 Linux、Mac 和 Windows
+* [7-Zip](https://github.com/ip7z/7zip) - 免费开源的文件解压工具
 
 
 ## 办公
