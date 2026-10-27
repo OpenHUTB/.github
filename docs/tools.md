@@ -23,7 +23,7 @@
 
 * [WindowsCleaner](https://github.com/darkmatter2048/WindowsCleaner) - C盘清理
 * [HandBrake](https://github.com/HandBrake/HandBrake) - 视频转码器，适用于 Linux、Mac 和 Windows
-* * [7-Zip](https://github.com/ip7z/7zip) - 免费开源的文件解压工具
+* [7-Zip](https://github.com/ip7z/7zip) - 免费开源的文件解压工具
 
 
 ## 办公
