@@ -2,7 +2,7 @@
 
 ## 1. Fork 仓库
 
-**[注册](https://openhutb.github.io/.github/dev/sign_up/) 并登录 Github 账号**，在 [想要修改的开源孪创仓库](https://github.com/OpenHUTB/hutb) 页面右上角点击`Fork`
+**[注册](https://openhutb.github.io/.github/dev/sign_up/) 并登录 GitHub 账号**，在 [想要修改的开源孪创仓库](https://github.com/OpenHUTB/hutb) 页面右上角点击`Fork`
 
 ![](./img/codespace/fork.png)
 
@@ -12,14 +12,14 @@
 
 出现的页面即为社区仓库的拷贝。
 
-## 2. 启用自动化流水
+## 2. 启用自动化流水线
 
-点击个人项目的“Actions -> I understand my workflows, go ahead and enable them”启用自动化流水。
+点击个人项目的“Actions -> I understand my workflows, go ahead and enable them”启用自动化流水线。
 
 ![](./img/codespace/actions.png)
 
 
-点击“Settings -> Action -> General -> Workflow permissions -> read and write permissions” 启用项目的 Action 写入权限。
+点击“Settings -> Actions -> General -> Workflow permissions -> read and write permissions” 启用项目的 Action 写入权限。
 
 ![](./img/codespace/action_general.png)
 
@@ -111,3 +111,18 @@
 
 
 
+
+## 暂时离开与下次继续
+
+关闭浏览器标签页并不会立即停止 Codespace，它会继续运行，直到空闲超时。结束本次编辑时，先保存文件，并把需要上传的修改提交、同步到个人仓库，再到 [Codespaces 列表](https://github.com/codespaces)，找到对应环境，点击 `… → Stop codespace`。确认状态变为已停止后再离开。
+
+下次继续时，在同一列表中打开原来的 Codespace，即可恢复已保存的文件；之前运行的预览服务等进程需要重新启动。停止环境不会把尚未推送的提交上传到 GitHub，提交后仍应在仓库页面检查记录。
+
+停止后不再产生该环境的计算用量，但保存环境仍会占用存储额度。只打算暂时离开时选择停止，长期不用时可在确认所需内容已推送或备份后再决定是否删除。
+
+操作说明见 [GitHub：停止和启动 Codespace](https://docs.github.com/zh/codespaces/developing-in-a-codespace/stopping-and-starting-a-codespace)。
+
+
+## 离开前的检查
+
+结束编辑前，请确认文件已保存，并查看待提交文件列表；需要稍后继续时，记下当前分支和最后一次提交。这样重新打开环境后，可以从同一位置继续处理。
