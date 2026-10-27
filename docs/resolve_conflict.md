@@ -23,7 +23,7 @@
 2. `Use text block from right`：保留右侧选中的内容。
 3. `Use text block from right before left`：两侧内容都保留，右侧内容放在前面。
 4. `Use text block from left before right`：两侧内容都保留，左侧内容放在前面。
-5. ### 怎么选：一张判断表
+5. ### 怎么选：一张判断表 
 
 四种菜单项的区别只有一个：**最终文件里留下哪一侧的内容**。
 
