@@ -116,6 +116,7 @@
 * [arxiv-latex-cleaner](https://github.com/google-research/arxiv-latex-cleaner) - 轻松清理论文的 LaTeX 代码，以便提交至 arXiv
 
 * [PDFMathTranslate](https://github.com/PDFMathTranslate/PDFMathTranslate) - 基于 AI 完整保留排版的 PDF 文档全文双语翻译
+* * [Zotero](https://github.com/zotero/zotero) - 免费开源的文献管理工具，收集、整理和引用论文
 
 
 ## 常见
