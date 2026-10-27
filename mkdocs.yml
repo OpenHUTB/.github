@@ -72,8 +72,6 @@ nav:
 - Markdown教程: 'https://docs.github.com/zh/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax'
 - 论文写作技巧: 'paper_tips.md'
 
-- Latex文献引用编译办法: 'bib_reference_guide.md'
-
 - 搭建自定义开发环境: 'env_conf.md'
 
 - 远程办公: 'rustdesk_tailscale.md'
@@ -99,6 +97,7 @@ nav:
     - 三维建模软件 Blender 介绍: 'blender.md'
     - Markdown 一键发布到社交平台: 'markdown2anything.md'
 - 学习与论文:
+    - "Latex文献引用编译办法": 'bib_reference_guide.md'
     - 本科毕业设计: 'undergraduate.md'
     - 论文成果：AVF-BEL 视听融合: 'paper/avf.md'
 - 社区组织形式: 'org/architecture.md'
