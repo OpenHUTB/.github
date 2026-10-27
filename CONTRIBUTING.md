@@ -30,7 +30,7 @@ flowchart LR
     I -->|是| J[合并到主分支]
     I -->|否| K[根据反馈修改]
     K --> E
-
+    
     style A fill:#e1f5fe
     style B fill:#e1f5fe
 
@@ -48,7 +48,7 @@ flowchart LR
     style K fill:#fff3e0
 ```
 
-**1.** [注册](https://openhutb.github.io/.github/dev/sign_up/) 并登陆 Github 账号，在 [想要修改的开源孪创仓库](https://github.com/OpenHUTB/hutb) 页面右上角点击`Fork`，然后点击`Create a new fork`，**创建分叉**到个人仓库。
+**1.** [注册](https://openhutb.github.io/.github/dev/sign_up/) 并登录 GitHub 账号，在 [想要修改的开源孪创仓库](https://github.com/OpenHUTB/hutb) 页面右上角点击`Fork`，然后点击`Create a new fork`，**创建分叉**到个人仓库。
 
 <img src="https://firstcontributions.github.io/assets/Readme/fork.png" width="310">
 
@@ -102,15 +102,16 @@ git push -u origin docs-fix-contribution-steps
 将 `README.md` 换成实际修改的文件，例如修改贡献指南时使用 `git add CONTRIBUTING.md`；提交信息也要与实际改动对应。如果第 3 步用了其他分支名，推送时同步替换。
 
 <details>
-<summary> <strong>如果在 push（推送）过程中出 error（错误），点击这里</strong> </summary>
+<summary> <strong>如果在 push（推送）过程中出 error，点击此处折叠</strong> </summary>
 
 - ### Authentication Error
      <pre>remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
   remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.
   fatal: Authentication failed for 'https://github.com/<your-username>/first-contributions.git/'</pre>
-  去 [GitHub 的教程](https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) 学习如何生成新的 SSH 密匙以及配置。
-
+  
+  去 [GitHub 的教程](https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) 学习如何生成新的 SSH 密钥以及配置。
 </details>
+  
 
 **8.** 推送后，在个人仓库页面切换到刚才的分支，点击 `Contribute` 创建 [Pull Request](https://zhuanlan.zhihu.com/p/153381521)。确认目标仓库是原来的 OpenHUTB 仓库，目标分支是该仓库的默认分支，来源是个人仓库中本次修改的分支。比如 `OpenHUTB/.github` 的默认分支是 `master`，不要直接填成 `main`。
 
@@ -141,8 +142,8 @@ git push -u origin docs-fix-contribution-steps
 - 这一步相当于新建一个副本，在这个副本上面你可以做任何事，且不会损坏、污染主分支。
 - 在VScode左下角，也就是图一所示位置，会看到**master**或者**main**的字样，这意味着你现在在主分支，点击他，上方对话框会出现**创建新分支...**，点击他就可以创建新分支，成功后如图二所示，创建了一个名为**new**的分支，并且自动跳转到了这个分支，这时候就可以按需修改了。
 
-![图一](img/branch_setting.png)
-![图二](img/branch_new.png)
+![图一](https://raw.githubusercontent.com/OpenHUTB/.github/master/docs/img/branch_setting.png)
+![图二](https://raw.githubusercontent.com/OpenHUTB/.github/master/docs/img/branch_new.png)
 
 **4.暂存修改并提交**
 
@@ -150,13 +151,13 @@ git push -u origin docs-fix-contribution-steps
 - 如图三所示，点击左边第三个**源代码管理**图标，在存储库这一栏可以看到新建的分支和主分支，如果下方的更改一栏是空的，说明你现在所处的分支不对，点击对应分支即可切换。随后点击加号即可暂存成功。
 确保保存并暂存所有修改后，在**提交**按钮上方的对话框输入本次的说明，就可以提交了。
 
-![图三](img/repository.png)
+![图三](https://raw.githubusercontent.com/OpenHUTB/.github/master/docs/img/repository.png)
 
 **5.本地预览**
 
 - 如下图所示，点击第二行第二个放大镜图标就可以直接预览渲染后的网页效果。
 
-![图四](img/Preview.png)
+![图四](https://raw.githubusercontent.com/OpenHUTB/.github/master/docs/img/Preview.png)
 
 **6.发布Branch**
 
@@ -167,11 +168,11 @@ git push -u origin docs-fix-contribution-steps
 **7.Pull Requests**
 
 - 发布成功后，回到自己的仓库，会出现一个如图所示提醒，点击绿色按钮。
-![图五](img/push_sign.png)
+![图五](https://raw.githubusercontent.com/OpenHUTB/.github/master/docs/img/push_sign.png)
 
 - 这时会跳转到新页面，在合并仓库前找到下图所示位置，这表示把你的修改合并到原仓库，但为了确保万无一失，强烈建议更改目标仓库为自己的仓库，在自己仓库测试没有问题再向原仓库提出**PR**请求。
 
-![图六](img/change_repository.png)
+![图六](https://raw.githubusercontent.com/OpenHUTB/.github/master/docs/img/change_repository.png)
 
 - 成功之后，这次向自己仓库发起的**PR**会显示为**open**状态，点击**Merge pull request**，直到其状态变为紫色，这时候再去自己仓库，就会发现修改已经同步上去了。
 - 测试完毕没有问题就可以向原仓库发送**PR**请求了。
@@ -194,13 +195,13 @@ git pull origin pull/ID/head
 
 在 Pull Request 页面的 File changed 中，对有相关问题或修改建议的代码行进行审核并填写评论内容，并点击 Start a review，所有都评论完成后，点击 Submit review 提交评论，对方就会收到审核意见的邮件。
 
-![](img/dev/review.png)
+![](https://raw.githubusercontent.com/OpenHUTB/.github/master/docs/img/dev/review.png)
 
 
 
 所有问题解决并且本地验证通过后，点击 Pull Request 页面中最下面的“Squash and merge”（注意不是默认的“Create a merge commit”）。至此，一次的提交最终完成。
 
-![](img/dev/squash_merge.png)
+![](https://raw.githubusercontent.com/OpenHUTB/.github/master/docs/img/dev/squash_merge.png)
 
 
 **注意事项：**
@@ -213,9 +214,9 @@ git pull origin pull/ID/head
 
 ## 其他
 
-1.如果提交 Pull Request 时出现冲突，则参考 [使用 TortoiseGit 解决冲突](resolve_conflict.md) 或 [在 GitHub 上解决合并冲突](https://docs.github.com/zh/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github) 。
+1. 如果提交 Pull Request 时出现冲突，则参考 [使用 TortoiseGit 解决冲突](https://github.com/OpenHUTB/.github/blob/master/docs/resolve_conflict.md) 或 [在 GitHub 上解决合并冲突](https://docs.github.com/zh/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github) 。
 
-2.同步子模块
+2. 同步子模块
 ```
 git submodule update --remote
 ```

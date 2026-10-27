@@ -5,12 +5,6 @@
 
 ## 代理
 
-[几何](https://github.com/OpenHUTB/structure)
-几何和功能的关系。
-
-[功能](https://github.com/OpenHUTB/onion)
-结构和功能的关系。
-
 ### 感知
 
 #### [目标解码](https://github.com/OpenHUTB/object_decoding)
