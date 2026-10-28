@@ -205,15 +205,17 @@ style<span class="nb">{</span>plain<span class="nb">}</span>
 </code></pre></div>
 <h2 id="四常用参考文献格式样式">四、常用参考文献格式样式</h2>
 <ol>
-<li><code>plain</code>：数字顺序编码，通用学术格式，本科论文常用。</li>
-<li><code>ieeetr</code>：适配 IEEE 会议、英文期刊标准格式。</li>
-<li><code>gb7714-2015</code>：中文毕业论文国标格式（首选）。</li>
+<li><code>plain</code>：以数字标注引用，文献列表通常按作者等信息排序，不按正文中首次引用的先后排列。</li>
+<li><code>ieeetr</code>：按正文引用顺序排列的数字样式；投稿时仍需使用期刊或会议指定的模板。</li>
+<li><code>gbt7714-numeric</code>：<code>gbt7714</code> 提供的 GB/T 7714—2015 顺序编码样式；著者—出版年制对应 <code>gbt7714-author-year</code>。</li>
 <li><code>apalike</code>：作者-年份引用格式，适用于社科类论文。</li>
 </ol>
-<p>中文论文国标配置专属代码：</p>
-<div class="highlight"><pre><span></span><code><span class="k">\usepackage</span><span class="nb">{</span>gb7714-2015<span class="nb">}</span>
-style<span class="nb">{</span>gb7714-2015<span class="nb">}</span>
+<p>使用 BibTeX 的模板可按下例配置国标顺序编码样式：</p>
+<div class="highlight"><pre><span></span><code><span class="k">\usepackage</span><span class="nb">{</span>gbt7714<span class="nb">}</span>
+style<span class="nb">{</span>gbt7714-numeric<span class="nb">}</span>
 </code></pre></div>
+<p>宏包名是 <code>gbt7714</code>，不是 <code>gb7714-2015</code>；需先在 TeX 发行版中安装该宏包。它与 <code>natbib</code> 配合使用，不要再叠加本页最简示例中的 <code>cite</code> 宏包。已有模板若已加载引用宏包或设置文献样式，先检查模板说明，避免重复配置。</p>
+<p>本例适用于 BibTeX，文献库仍通过 <code>{ref}</code> 载入。采用 <code>biblatex</code> 和 Biber 的模板使用另一套配置，不能直接套用这里的宏包和编译顺序。参见 <a href="https://github.com/zepinglee/gbt7714-bibtex-style#usage">gbt7714 使用说明</a>。</p>
 <h2 id="五常见报错原因与解决方案">五、常见报错原因与解决方案</h2>
 <h3 id="1-引用始终显示-">1. 引用始终显示 <code>[?]</code></h3>
 <ul>
@@ -265,7 +267,7 @@ bib 文件内所有标点、括号、逗号必须是英文半角，中文符号�
 </li>
 <li>
 <p><strong>区分中英文编译环境</strong>
-英文论文用原生 <code>plain</code>/<code>ieeetr</code> 样式；中文毕业论文必须使用 <code>gb7714-2015</code> 宏包，符合国家标准排版。</p>
+先按学校、期刊或会议的模板选择样式。使用 BibTeX 且要求 GB/T 7714—2015 时，可按第四节配置 <code>gbt7714</code>；模板已有设置时不重复加载。</p>
 </li>
 </ol>
 <h2 id="七极简总结">七、极简总结</h2>
