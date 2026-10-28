@@ -141,6 +141,8 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#解释器与终端环境核对">解释器与终端环境核对</a>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#结论">结论</a>
 </li>
 </ul>
@@ -397,6 +399,15 @@ print("Hello edureka!")
 <p>按住 Alt 键并滚动选择某段代码将只选择该特定列中的所有内容。这可用于更快的压痕或快速改变压痕。但是，它也用于编辑同一列中的多个语句，从而减少手动编辑的时间和工作量。</p>
 <p>为了更清楚地了解选择，请查看下图:</p>
 <p><img alt="Column Selection - Pycharm Tutorial - Edureka" src="../img/column_selection.png"/></p>
+<h2 id="解释器与终端环境核对">解释器与终端环境核对</h2>
+<p>当终端里能够导入包、编辑器中却仍提示缺失时，先核对两处实际使用的 Python：</p>
+<ol>
+<li>在 PyCharm 的项目解释器页面记录解释器路径。</li>
+<li>在内置终端运行 <code>python -c "import sys; print(sys.executable)"</code>，比较输出是否为同一路径。</li>
+<li>路径不一致时，先切换项目解释器，或在终端激活对应的虚拟环境，再重新打开终端核对路径。</li>
+<li>路径一致后，运行最小导入命令，确认所需依赖已安装在该环境中。</li>
+</ol>
+<p>如果项目使用虚拟环境，还应确认该环境位于当前项目或约定目录中，避免误用系统 Python。</p>
 <h2 id="结论"><strong>结论</strong></h2>
 <p>本 Pycharm 教程中讨论的概念应该有助于您使用 PyCharm 快速高效地构建 Python 代码。</p>
 <p>当您试图使用 PyCharm IDE 创建一个 Python 程序时，这将非常方便，py charm IDE 为您提供了许多优势。这种优势将确保您可以在整体上更加专注于代码。这很可能是你掌握 Python 的第一步。</p>
