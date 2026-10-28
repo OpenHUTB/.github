@@ -93,6 +93,8 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#暂时离开与下次继续">暂时离开与下次继续</a>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#继续编辑时的检查">继续编辑时的检查</a>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#离开前的检查">离开前的检查</a>
 </li>
 </ul>
@@ -212,6 +214,14 @@
 <p>下次继续时，在同一列表中打开原来的 Codespace，即可恢复已保存的文件；之前运行的预览服务等进程需要重新启动。停止环境不会把尚未推送的提交上传到 GitHub，提交后仍应在仓库页面检查记录。</p>
 <p>停止后不再产生该环境的计算用量，但保存环境仍会占用存储额度。只打算暂时离开时选择停止，长期不用时可在确认所需内容已推送或备份后再决定是否删除。</p>
 <p>操作说明见 <a href="https://docs.github.com/zh/codespaces/developing-in-a-codespace/stopping-and-starting-a-codespace">GitHub：停止和启动 Codespace</a>。</p>
+<h2 id="继续编辑时的检查">继续编辑时的检查</h2>
+<p>重新进入 Codespace 后，在终端依次检查：</p>
+<ul>
+<li>运行 <code>git branch --show-current</code>，确认分支与原 Pull Request 的来源分支一致。</li>
+<li>运行 <code>git status --short</code>，查看已修改、已暂存和未跟踪的文件，确认列表里都是本次需要处理的内容。</li>
+<li>运行 <code>git diff</code> 查看尚未暂存的修改，再运行 <code>git diff --cached</code> 查看已暂存的修改。两处都核对后，再继续编辑、提交和推送。</li>
+</ul>
+<p>如果分支或文件列表与预期不符，先弄清已有修改的用途，保存好需要保留的内容，再继续操作。</p>
 <h2 id="离开前的检查">离开前的检查</h2>
 <p>结束编辑前，请确认文件已保存，并查看待提交文件列表；需要稍后继续时，记下当前分支和最后一次提交。这样重新打开环境后，可以从同一位置继续处理。</p></div>
 </div>
