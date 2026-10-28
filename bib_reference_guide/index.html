@@ -276,6 +276,14 @@ bib 文件内所有标点、括号、逗号必须是英文半角，中文符号�
 <li>所有文献数据只改 bib 文件，不动自动生成文件</li>
 <li>符号统一英文、key 唯一并与引用匹配、编译顺序不缺失</li>
 <li>异常先查看日志并修正原始问题，必要时清理辅助文件后重编译</li>
+</ol>
+<h2 id="八编译失败时的排查顺序">八、编译失败时的排查顺序</h2>
+<p>遇到参考文献显示为问号或文献列表为空时，可以按下面的顺序检查：</p>
+<ol>
+<li>先查看 <code>.blg</code> 和 <code>.log</code>，确认是否提示找不到文献库、缺少引用键或条目语法错误。</li>
+<li>核对 <code>{}</code> 中的文件名是否与实际 <code>.bib</code> 文件一致，并省略扩展名；检查 <code>\cite{}</code> 中的 key，注意大小写、连字符和下划线。</li>
+<li>修正文献条目的括号、逗号等语法问题后，按 <code>pdflatex → bibtex → pdflatex → pdflatex</code> 的顺序编译。使用 XeLaTeX 的项目应按模板要求替换 LaTeX 编译器，BibTeX 这一步仍需执行。</li>
+<li>原始问题已修正但仍显示旧编号或旧内容时，再清理 <code>.aux</code>、<code>.bbl</code>、<code>.blg</code> 等辅助文件，并完整编译一次。</li>
 </ol></div>
 </div>
 </div><footer>
