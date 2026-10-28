@@ -31,9 +31,10 @@ def on_pre_build(config, **kwargs):
         logging.getLogger(__name__).warning(
             "Source file not found: %s; contribution guide was not copied", src_file
         )
- # 构建完成后，输出文档构建统计信息
+
+
+# 构建完成后，输出文档构建统计信息
 def on_post_build(config, **kwargs):
-    import os
     docs_path = config["docs_dir"]
     md_count = 0
     # 遍历统计所有md文档数量
@@ -41,5 +42,5 @@ def on_post_build(config, **kwargs):
         for f in files:
             if f.endswith(".md"):
                 md_count += 1
-    print(f"✅ 文档网站构建完成！")
-    print(f"📄 检测到Markdown文档总数：{md_count}")
+    print("文档网站构建完成！")
+    print(f"检测到Markdown文档总数：{md_count}")
