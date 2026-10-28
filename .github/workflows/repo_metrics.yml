@@ -20,6 +20,14 @@ on:
         description: 'Optional interval end date (format: yyyy-mm-dd)'
         required: false # Skipped if workflow dispatch input is not provided
 
+# 报告需要提交回仓库，只申请 contents: write 这一项权限即可。
+permissions:
+  contents: write
+
+# 同一定时任务串行执行，避免两次运行同时改写 reports/ 导致推送冲突。
+concurrency:
+  group: repo-metrics
+  cancel-in-progress: false
 
 jobs:
   org-repo-metrics-report:
@@ -47,3 +55,28 @@ jobs:
           # appid: ${{ secrets.APPID }}
           # privatekey: ${{ secrets.PRIVATEKEY }}
           # installationid: ${{ secrets.INSTALLATIONID }}
+
+      # 上面的 action 只是把 CSV 写到 runner 的 reports/ 目录，job 结束 runner 销毁，
+      # 报告就丢了（仓库里 reports/ 缺少 2026-08 那一份就是这个原因）。
+      # 下面两步把产物留下：artifact 便于随时下载当月原始 CSV，
+      # 提交回仓库则形成可追溯的历史序列，供后续对比。
+      - name: Upload metrics report artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: org-repo-metrics-${{ github.run_number }}
+          path: reports/*.csv
+          if-no-files-found: warn
+          retention-days: 90
+
+      - name: Commit report to repository
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports
+          if git diff --cached --quiet; then
+            echo "reports/ 没有变化，跳过提交"
+            exit 0
+          fi
+          git commit -m "chore(reports): 更新组织仓库指标报告"
+          git push
