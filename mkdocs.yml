@@ -92,7 +92,6 @@ nav:
     - 注意事项: 'note.md'
     - wsl 安装与配置和卸载: 'wsl.md'
 - 工具与资源:
-    - 模拟器演示：涉水效果: 'introduction.md'
     - 开源工具列表: 'tools.md'
     - 三维建模软件 Blender 介绍: 'blender.md'
     - Markdown 一键发布到社交平台: 'markdown2anything.md'
