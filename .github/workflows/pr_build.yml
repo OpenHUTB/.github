@@ -2,6 +2,11 @@ name: PR Build
 on:
   pull_request:
 
+# 同一个 PR 连着推几次时，旧的那次构建已经没意义了，直接取消
+concurrency:
+  group: pr-build-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
 permissions:
   contents: read
 
