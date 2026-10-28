@@ -12,7 +12,7 @@
         |-docker-compose.yml
     ```
 
-2. 在第1步中新建的docker文件中新建文件：docker-compose.yml，内容如下：
+2. 在第1步中新建的docker文件夹中新建文件：docker-compose.yml，内容如下：
     ```yaml
     version: '3' # 版本号
     services: # 开启服务
