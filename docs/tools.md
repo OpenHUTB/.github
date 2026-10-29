@@ -107,7 +107,7 @@
 
 * [Ditto](https://github.com/sabrogden/Ditto) - 剪贴板管理器
 
-* [Clash Verge](https://github.com/clash-verge-rev/clash-verge-rev/releases/tag/v2.5.2) - VPN代理工具
+* [Clash Verge](https://github.com/clash-verge-rev/clash-verge-rev) - VPN代理工具
 
 
 ### 研究
