@@ -1,7 +1,7 @@
 # 基于浏览器的贡献指南
 
 ## 1. Fork 仓库
-
+本指南介绍如何通过GitHub Codespaces（基于浏览器的在线开发环境）为OpenHUTB项目做贡献
 **[注册](https://openhutb.github.io/.github/dev/sign_up/) 并登录 GitHub 账号**，在 [想要修改的开源孪创仓库](https://github.com/OpenHUTB/hutb) 页面右上角点击`Fork`
 
 ![](./img/codespace/fork.png)
@@ -15,7 +15,7 @@
 ## 2. 启用自动化流水线
 
 点击个人项目的“Actions -> I understand my workflows, go ahead and enable them”启用自动化流水线。
-
+首次进入你 fork 仓库的 Actions 页面时，会看到一个提示框，点击绿色的启用按钮即可
 ![](./img/codespace/actions.png)
 
 
