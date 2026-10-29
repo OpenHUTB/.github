@@ -83,6 +83,8 @@
 
 * [Stirling-PDF](https://github.com/Stirling-Tools/Stirling-PDF) - PDF 应用程序，可让您在任何设备和任何地方编辑 PDF 文件
 
+* [Zotero](https://github.com/zotero/zotero) - 文献管理、参考文献自动生成
+
 * [pdfsam](https://github.com/torakiki/pdfsam) - 分割、合并、混合、旋转 PDF 文件以及提取页面
 
 * [gimp](https://github.com/GNOME/gimp) - 图像处理

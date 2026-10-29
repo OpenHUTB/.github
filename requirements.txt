@@ -1,8 +1,7 @@
-python-markdown-math
-pymdown-extensions
-imageio
-mkdocs-bibtex
-# fix OSError: No pandoc was found: 
-pypandoc-binary
-mkdocs-video
-mkdocs-mermaid2-plugin
+mkdocs==1.6.1
+mkdocs-bibtex==4.4.0
+mkdocs-video==1.5.0
+mkdocs-mermaid2-plugin==1.2.2
+python-markdown-math==0.9
+pymdown-extensions==10.16.1
+pypandoc-binary==1.15
