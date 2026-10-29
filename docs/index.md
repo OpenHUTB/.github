@@ -58,12 +58,12 @@ OpenHUTB倡导开源协作精神，提供完备的学习资源。参与者可参
 
 OpenHUTB 的其他非主要平台包括 [gitee](https://gitee.com/OpenHUTB)、[gitcode](https://gitcode.com/OpenHUTB)、[gitlink](https://gitlink.org.cn/OpenHUTB)、[红山开源](https://osredm.com/OpenHUTB)、[阿里云](https://codeup.aliyun.com/6a64b5ff637ebe3073ca8044/OpenHUTB)、[atomgit](https://atomgit.com/OpenHUTB)、[腾讯工蜂](https://git.code.tencent.com/OpenHUTB)，社交平台包括：
 
-|  |  |  |  |
-|:---:|:---:|:---:|:---:|
-| ![](./img/social/webchat.png) | ![](./img/social/TwinBuild.jpg) | ![](./img/social/zhihu.jpg) |![](./img/social/bilibili.jpg) |
-| [微信公众号](https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzI2ODk5MzE5Ng==) | 微信 | [知乎](https://www.zhihu.com/people/OpenHUTB)  | [B 站](https://space.bilibili.com/479231494) |
-| ![](./img/social/xiaohongshu.jpg) | ![](./img/social/Twitter.png) | ![](./img/social/Youtube.png) | ![](./img/social/sponsor.png) |
-| [小红书](https://www.xiaohongshu.com/user/profile/62977010000000002102bc47) | [Youtube](https://www.youtube.com/@OpenHUTB)  | [赞助](https://ko-fi.com/openhutb) |
+|  |  |  |
+|:---:|:---:|:---:|
+| ![](./img/social/webchat.png) | ![](./img/social/zhihu.jpg) | ![](./img/social/bilibili.jpg) |
+| [微信公众号](https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzI2ODk5MzE5Ng==) | [知乎](https://www.zhihu.com/people/OpenHUTB) | [B 站](https://space.bilibili.com/479231494) |
+| ![](./img/social/xiaohongshu.jpg) | ![](./img/social/Youtube.png) | ![](./img/social/sponsor.png) |
+| [小红书](https://www.xiaohongshu.com/user/profile/62977010000000002102bc47) | [Youtube](https://www.youtube.com/@OpenHUTB) | [赞助](https://ko-fi.com/openhutb) |
 
 备注：开源孪创社区不搭建自己独立的平台的原因有很多，比如独立平台可能生成的“信息孤岛”造成分裂、维护成本高、“去中心化”理念与降低用户门槛、风险规避与可持续性，同时不会因为其中一些依附平台的限制而影响社区的发展，使社区专注于核心使命。
 
