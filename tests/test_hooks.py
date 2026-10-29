@@ -12,12 +12,14 @@ hooks.py 的回归测试。
     3. 贡献指南复制后保留内容和修改时间。
     4. 重复构建时刷新已复制的贡献指南。
     5. 源文件缺失时记录警告，并保留原有目标文件。
-    6. 递归统计指定文档目录中的 Markdown 文件，忽略其他文件和目录。
-    7. 空文档目录的统计结果为 0。
+    6. 贡献指南的编辑链接指向仓库根目录中的源文件。
+    7. 其他页面的编辑链接保持不变。
+    8. 递归统计指定文档目录中的 Markdown 文件，忽略其他文件和目录。
+    9. 空文档目录的统计结果为 0。
 
 预期运行效果：
     逐项输出测试名称，通过时每项末尾显示 ok，最后显示：
-        Ran 9 tests in ...s
+        Ran 11 tests in ...s
 
         OK
     实际耗时因环境而异；若显示 FAILED 或 ERROR，应检查后面的错误信息。
@@ -56,6 +58,36 @@ class ConfigTests(unittest.TestCase):
         config = SimpleNamespace(copyright=None)
         hooks.on_config(config)
         self.assertIsNone(config.copyright)
+
+
+class PageContextTests(unittest.TestCase):
+    def test_contributing_edit_url_points_to_root_source(self):
+        context = {}
+        page = SimpleNamespace(
+            file=SimpleNamespace(src_uri="CONTRIBUTING.md"),
+            edit_url="https://github.com/OpenHUTB/.github/edit/master/docs/CONTRIBUTING.md",
+        )
+
+        returned = hooks.on_page_context(context, page, {"docs_dir": "/repo/docs"})
+
+        self.assertIs(returned, context)
+        self.assertEqual(
+            page.edit_url,
+            "https://github.com/OpenHUTB/.github/edit/master/CONTRIBUTING.md",
+        )
+
+    def test_other_page_edit_url_is_preserved(self):
+        context = {}
+        edit_url = "https://github.com/OpenHUTB/.github/edit/master/docs/index.md"
+        page = SimpleNamespace(
+            file=SimpleNamespace(src_uri="index.md"),
+            edit_url=edit_url,
+        )
+
+        returned = hooks.on_page_context(context, page, {"docs_dir": "/repo/docs"})
+
+        self.assertIs(returned, context)
+        self.assertEqual(page.edit_url, edit_url)
 
 
 class PreBuildTests(unittest.TestCase):
