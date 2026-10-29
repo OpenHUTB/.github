@@ -85,6 +85,57 @@
 2. 接受后在 admin/machines 里即可看到该设备，用  服务器ip地址  访问
    
 ![](./img/rustdesk/Share%20successful.png)
+
+## 附：通过 SSH 登录服务器
+
+前面的 RustDesk 和 Windows 远程桌面适合需要图形界面的场景。如果被控端是 Linux（例如 Ubuntu），并且只需要命令行，直接用 SSH 登录会更轻量。这一节的网络通道仍然由 Tailscale 提供，但认证交给系统自带的 SSH 服务，可以绕开 Tailscale 自带 SSH 的账号限制。
+
+### 常见报错：tailnet policy does not permit you to SSH to this node
+
+服务器开启 Tailscale 自带的 SSH 功能后，客户端执行 `ssh` 时可能报错：
+
+```text
+tailnet policy does not permit you to SSH to this node
+```
+
+原因是 Tailscale SSH 有一条强制规则：用户只能 SSH 到属于自己账号的设备。当服务器是别人共享给你的设备时，它的所有者不是你的账号，所以无论怎样修改 [ACL 策略](https://login.tailscale.com/admin/acls) 都不会被授权。这种情况下要改的不是 ACL，而是认证方式。
+
+### 解决方法（在服务器上执行）
+
+1. 关闭 Tailscale 自带的 SSH 认证拦截：
+
+    ```bash
+    sudo tailscale set --ssh=false
+    ```
+
+2. 确认系统原生的 SSH 服务已安装并启用：
+
+    ```bash
+    sudo systemctl enable ssh
+    sudo systemctl restart ssh
+    ```
+
+!!! 提示
+    如果执行时报找不到 `ssh` 服务，说明服务器还没有安装 OpenSSH 服务端，先执行 `sudo apt install openssh-server`。
+
+### 连接方式
+
+在同样加入了 Tailscale 的客户端上执行：
+
+```bash
+ssh <服务器用户名>@100.x.x.x
+```
+
+其中 `100.x.x.x` 是服务器的 Tailscale IP，可以在 [Tailscale 后台](https://console.tailscale.com/admin/machines) 的设备列表里查看。输入服务器上该账号的系统密码即可登录。
+
+### 原理
+
+* **Tailscale 只负责网络层**：让你的电脑和服务器处在同一个虚拟局域网中，通过 Tailscale IP 互相访问。
+* **SSH 认证走系统原生体系**：直接使用服务器本地的账号和密码验证，不再经过 Tailscale SSH 的 ACL 策略。
+
+!!! 注意
+    关闭 Tailscale SSH 只影响“通过 Tailscale 使用 SSH”这一种方式，RustDesk、远程桌面等其他功能不受影响。如果服务器开启了防火墙，还需要确认放行 TCP 22 端口。
+
 ## 参考
 * [tailscale 源代码仓库](https://github.com/tailscale/tailscale) - [tailscale 开源介绍](https://tailscale.com/opensource)
 * [rustdesk 源代码仓库](https://github.com/rustdesk/rustdesk)
