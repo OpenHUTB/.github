@@ -93,8 +93,7 @@ graph LR
     C --> N[轨迹跟踪 <a href='https://github.com/OpenHUTB/Self_Driving_Car_Trajectory_Tracking'>Trajectory_Tracking</a>]
     B --> D[模拟端 <a href='https://github.com/OpenHUTB/driving/'>driving</a> ]
     O --> E[交通大模型 <a href='https://github.com/OpenHUTB/traffic_llm'>traffic_llm</a>]
-    O --> P[VSCode插件 <a href='https://github.com/OpenHUTB/vsc'>vsc</a>]
-    B --> O[<a href='https://github.com/OpenHUTB/mcp'>mcp</a>]
+    B --> O[模型上下文协议 <a href='https://github.com/OpenHUTB/mcp'>mcp</a>]
 
     style A fill:#F5DEB3
 ```
@@ -112,6 +111,7 @@ graph LR
     D --> N[<a href='https://github.com/OpenHUTB/emotion'>emotion</a>]
     G --> F[<a href='https://github.com/OpenHUTB/powerpoint2pdf'>powerpoint2pdf</a>]
     A --> G[工具脚本 <a href='https://github.com/OpenHUTB/utils'>utils</a>]
+    A --> V[<a href='https://github.com/OpenHUTB/vsc'>vsc</a> 代码补全插件]
     G --> O[文档生成 <a href='https://github.com/OpenHUTB/mkdocs'>mkdocs</a>]
     G --> H[<a href='https://github.com/OpenHUTB/matlab'>matlab</a>]
     A --> K[<a href='https://github.com/OpenHUTB/ros'>ros</a>]

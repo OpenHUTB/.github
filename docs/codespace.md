@@ -123,6 +123,16 @@
 操作说明见 [GitHub：停止和启动 Codespace](https://docs.github.com/zh/codespaces/developing-in-a-codespace/stopping-and-starting-a-codespace)。
 
 
+## 继续编辑时的检查
+
+重新进入 Codespace 后，在终端依次检查：
+
+- 运行 `git branch --show-current`，确认分支与原 Pull Request 的来源分支一致。
+- 运行 `git status --short`，查看已修改、已暂存和未跟踪的文件，确认列表里都是本次需要处理的内容。
+- 运行 `git diff` 查看尚未暂存的修改，再运行 `git diff --cached` 查看已暂存的修改。两处都核对后，再继续编辑、提交和推送。
+
+如果分支或文件列表与预期不符，先弄清已有修改的用途，保存好需要保留的内容，再继续操作。
+
 ## 离开前的检查
 
 结束编辑前，请确认文件已保存，并查看待提交文件列表；需要稍后继续时，记下当前分支和最后一次提交。这样重新打开环境后，可以从同一位置继续处理。
