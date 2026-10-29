@@ -177,3 +177,16 @@ git commit -m "合并主仓库更新并解决冲突 / merge upstream updates and
 git status
 git push origin 你的分支名
 ```
+
+
+## 推送失败时先确认分支关系
+
+当 `git push` 被拒绝时，不要直接重复推送，可以先按下面顺序检查：
+
+1. 运行 `git branch --show-current` 确认当前分支。
+2. 运行 `git status` 查看是否有未提交文件，并确认工作区状态。
+3. 运行 `git remote -v` 核对推送目标是否为自己的 fork。
+4. 如果远程已有新提交，先获取更新并处理差异，再重新推送。
+5. 推送成功后，在 GitHub 的分支页面核对最新提交和改动文件。
+
+这些检查可以区分分支选错、远程地址错误和远程分支已更新等不同情况。
