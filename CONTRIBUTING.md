@@ -94,6 +94,11 @@ git diff
 
 ```shell
 git add README.md
+git commit -m "docs：更新贡献指南"
+
+注意：commit 信息尽量清晰描述改动内容，推荐格式：`docs: xxx`（文档修改）、`fix: xxx`（修复错误）、`feat: xxx`（新增功能）
+
+git push origin <新分支的名称>
 git diff --cached
 git commit -m "docs: 说明 README 中的项目入口 / clarify project links in README"
 git push -u origin docs-fix-contribution-steps
@@ -245,17 +250,30 @@ git submodule update --remote
 
 这里提供 github 加速方案和科学上网的 [链接](https://openhutb.github.io/doc/build_carla/#internet) 。
 
-###### 向 github 上 push 的时候报 403 错误
 
-打开`.git/config`，比如：
-```
-url = https://github.com/OpenHUTB/bazaar.git
-```
-将你用户名复制粘贴到github前面再加个@，变成：
-```
-url = https://OpenHUTB@github.com/OpenHUTB/bazaar.git
-```
-然后就可以进行授权并继续push。
+###### 向 github 上 push 的时候报 403 / Authentication failed 错误
+> GitHub 从2021年8月13日起不再支持账号密码HTTPS认证，必须使用 **SSH密钥** 或者 **PAT个人访问令牌**。
+> 两种方案任选其一：
+>
+> ✅ 方案A（推荐长期使用：SSH密钥）
+> 参考官方文档生成并配置SSH公钥：[添加新的SSH密钥到GitHub账户](https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
+> 配置完成后，在终端切换仓库远程地址为SSH格式：
+> ```bash
+> git remote set-url origin git@github.com:你的用户名/hutb.git
+> ```
+>
+> ✅ 方案B（临时使用：HTTPS + PAT令牌）
+> 1. 在 GitHub 设置中生成 classic 类型 PAT，勾选 `repo` 权限，复制保存令牌；
+> 2. 已经克隆好的仓库，终端执行命令修改远程地址（替换`你的用户名`、`你的PAT`）：
+> ```bash
+> git remote set-url origin https://你的用户名:你的PAT@github.com/你的用户名/hutb.git
+> ```
+> 3. 还未克隆仓库，克隆时直接携带令牌：
+> ```bash
+> git clone https://你的用户名:你的PAT@github.com/你的用户名/hutb.git
+> ```
+>
+> ⚠️ 注意：PAT等同于你的密码，不要分享给他人，不要上传到仓库；公用电脑优先使用SSH方案。
 
 
 ###### 克隆个人仓库出错
