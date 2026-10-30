@@ -13,3 +13,4 @@
 3. 运行统计脚本，例如统计特定时间段的提交记录：
    ```bash
    python src/git_commit_stats.py --since "2026-02-27 18:00" --until "2026-03-08 00:00" --output reports/commit_stats.csv
+   ```
