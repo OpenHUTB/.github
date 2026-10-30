@@ -23,7 +23,7 @@
  ![](./img/rustdesk/sign_in_github.png)
  ![](./img/rustdesk/authorize_tailscale.png)
 
-提示登录成功后，点击`visit the console`访问控制台，就可以看到已加入虚拟局域网的设备列表
+> 提示登录成功后，点击`visit the console`访问控制台，就可以看到已加入虚拟局域网的设备列表
 ![](./img/rustdesk/login_successful.png)
 
 
@@ -56,7 +56,7 @@
  ![](./img/rustdesk/win_remote.png)
 
 
-**注意：**
+!!! 注意
     如果使用 windows 这一步登录成功，前面第二步的“RustDesk配置与连接”就不再需要。如果是 Ubuntu、Mac、Android、iOS等其他平台，请查第二步的“RustDesk配置与连接”。
 
 
