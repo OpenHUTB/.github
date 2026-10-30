@@ -56,7 +56,7 @@
  ![](./img/rustdesk/win_remote.png)
 
 
-**注意：**
+!!! 注意
     如果使用 windows 这一步登录成功，前面第二步的“RustDesk配置与连接”就不再需要。如果是 Ubuntu、Mac、Android、iOS等其他平台，请查第二步的“RustDesk配置与连接”。
 
 
