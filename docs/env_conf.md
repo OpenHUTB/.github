@@ -39,16 +39,16 @@
     ```
 3. 执行docker-compose.yml文件完成服务器部署
     ```shell
-    docker-compose up -d
+    docker compose up -d
     ```
 修改配置后，执行重启命令：
     ```shell
-    docker-compose restart
+    docker compose restart
     ```
 
 如果本机可以访问 [http://127.0.0.1:1080](http://127.0.0.1:1080)，但局域网内其他设备无法访问 [http://172.21.108.56:1080](http://172.21.108.56:1080)，可以依次检查：
 
-1. 在 `docker-compose.yml` 所在目录运行 `docker-compose ps`，确认 GitLab 容器正在运行，并检查端口绑定。例如，`0.0.0.0:1080->8080/tcp` 表示该端口对所有 IPv4 网卡开放；如果仅绑定到 `127.0.0.1`，其他设备就无法通过局域网地址访问。使用新版 Compose 时，命令为 `docker compose ps`。
+1. 在 `docker-compose.yml` 所在目录运行 `docker-compose ps`，确认 GitLab 容器正在运行，并检查端口绑定。例如，`0.0.0.0:1080->8080/tcp` 表示该端口对所有 IPv4 网卡开放；如果仅绑定到 `127.0.0.1`，其他设备就无法通过局域网地址访问。（注：如果你使用的是旧版 Docker，命令为 `docker-compose ps`）。
 2. 在服务器上运行 `Test-NetConnection 127.0.0.1 -Port 1080`，确认本机端口可以连接。
 3. 在局域网内另一台 Windows 设备上运行 `Test-NetConnection 172.21.108.56 -Port 1080`，检查远程端口是否可达。
 4. 如果远程端口不通，在 Windows Defender 防火墙中为 TCP 1080 添加入站规则，并把规则限制在需要访问的网络范围内。
