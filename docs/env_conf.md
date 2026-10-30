@@ -186,5 +186,5 @@ python -c "import numpy, pandas, sklearn, matplotlib; print('ok')"
 | pip 下载极慢或 `Read timed out` | 连的是境外官方源 | 配置镜像源（第 3 步） |
 | PowerShell 提示禁止运行脚本 | 执行策略限制 | `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` |
 | 终端能 import，VS Code 运行却报 `ModuleNotFoundError` | 编辑器选中的解释器不是装包的那个 | `Ctrl+Shift+P` → `Python: Select Interpreter` 改选 `.venv` |
-| `python -m venv` 报 ensurepip 失败 | Python 安装不完整 | 重新运行安装包修复；Linux 上需先 `apt install python3-venv` |
+| `python -m venv` 报 ensurepip 失败 | Python 安装不完整 | 重新运行安装包，选择 Repair 修复；若问题依旧，重新下载安装包覆盖安装 |
 | pip 提示版本过旧 | 安装包自带的 pip 较老 | `python -m pip install --upgrade pip` |
