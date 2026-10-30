@@ -1,0 +1,30 @@
+name: PR Build
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build docs and run hook tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run hook tests
+        run: python -m unittest discover -s tests -v
+
+      - name: Build
+        uses: OpenHUTB/actions-mkdocs@v2.0.0
+        with:
+          mkdocs_version: 'latest'
+          requirements: 'requirements.txt'
+          configfile: 'mkdocs.yml'
+
