@@ -23,7 +23,7 @@
  ![](./img/rustdesk/sign_in_github.png)
  ![](./img/rustdesk/authorize_tailscale.png)
 
-提示登录成功后，点击`visit the console`访问控制台，就可以看到已加入虚拟局域网的设备列表
+> 提示登录成功后，点击`visit the console`访问控制台，就可以看到已加入虚拟局域网的设备列表
 ![](./img/rustdesk/login_successful.png)
 
 
