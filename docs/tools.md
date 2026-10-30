@@ -118,6 +118,7 @@
 
 * [PDFMathTranslate](https://github.com/PDFMathTranslate/PDFMathTranslate) - 基于 AI 完整保留排版的 PDF 文档全文双语翻译
 
+* [JupyterLab](https://github.com/jupyterlab/jupyterlab) - 交互式代码笔记，数据分析
 
 ## 常见
 
