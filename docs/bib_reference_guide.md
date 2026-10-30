@@ -2,8 +2,8 @@
 
 本文参考文献编译操作，可以搭配OpenHUTB社区的LaTeX模板仓库使用：  
 
-* [课程论文latex模板](https://github.com/OpenHUTB/course)  
-* [本科毕设latex模板](https://github.com/OpenHUTB/undergraduate)  
+* [课程论文LaTeX模板](https://github.com/OpenHUTB/course)  
+* [本科毕设LaTeX模板](https://github.com/OpenHUTB/undergraduate)  
 * [硕士论文LaTeX模板](https://github.com/OpenHUTB/master)   
 
 
