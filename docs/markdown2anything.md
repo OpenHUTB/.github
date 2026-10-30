@@ -106,6 +106,7 @@ github 用户名：XXX
 
 ## [Twitter](https://x.com/OpenHUTB)
 
+风格选“Twitter 风格”，预览后截图或复制内容到 X 平台发布。
 
 
 
