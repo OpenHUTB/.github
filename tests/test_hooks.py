@@ -43,7 +43,7 @@ import hooks
 class ConfigTests(unittest.TestCase):
     def test_copyright_uses_current_year(self):
         for year in (2026, 2030):
-            with self.subTest(year=year), patch.object(hooks, "datetime") as clock:
+            with self.subTest(year=year), patch("hooks.datetime") as clock:
                 clock.now.return_value = datetime(year, 1, 1)
                 config = SimpleNamespace(copyright="OpenHUTB &copy; {year}")
                 hooks.on_config(config)
