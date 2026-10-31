@@ -2,6 +2,7 @@ from datetime import datetime
 import logging
 import shutil
 import os
+from pathlib import Path
 
 
 # 动态获取页脚版权页面的年份
@@ -12,7 +13,19 @@ def on_config(config, **kwargs):
         config.copyright = copyright_text.replace("{year}", year)
 
 
-# 在 MkDocs 构建开始前，将根目录下的 CONTRIBUTING.md 
+# CONTRIBUTING.md 是从仓库根目录复制的，编辑按钮也应指回根目录源文件。
+def on_page_context(context, page, config, **kwargs):
+    if page.file.src_uri != "CONTRIBUTING.md" or not page.edit_url:
+        return context
+
+    docs_name = Path(config["docs_dir"]).name
+    generated_suffix = f"/{docs_name}/CONTRIBUTING.md"
+    if page.edit_url.endswith(generated_suffix):
+        page.edit_url = page.edit_url[: -len(generated_suffix)] + "/CONTRIBUTING.md"
+    return context
+
+
+# 在 MkDocs 构建开始前，将根目录下的 CONTRIBUTING.md
 # 拷贝到 docs 目录下，确保文档站点能够引用到它。
 # （名称必须为 on_pre_build）
 def on_pre_build(config, **kwargs):
