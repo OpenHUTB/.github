@@ -42,14 +42,14 @@ OpenHUTB倡导开源协作精神，提供完备的学习资源。参与者可参
 
 - 如果参与过程中遇到任何问题，请参考 [提问技巧](./ask_question.md) 和 [注意事项](note.md) 或在对应项目的 [Issues页面](https://github.com/OpenHUTB/hutb/issues) 提出问题。
 
-- 如要加入组织、添加项目、获得更高权限等需要请把github用户名发送到邮箱 [open@hutb.edu.cn](mailto:open@hutb.edu.cn) 。
+- 如需加入组织、添加项目或获取更高权限，请把GitHub用户名发送到邮箱 [open@hutb.edu.cn](mailto:open@hutb.edu.cn) 。
 
 - 网络不稳定的时候可以参考 [github 加速方案和科学上网链接](https://openhutb.github.io/doc/build_carla/#internet) 
 
 
 ## 4. 社区  <span id="propaganda"></span>
 
-- [用户的社区参与度月度统计情况](https://github.com/OpenHUTB/.github/actions) - 该 action 页面的 User Activity Report 里，每月1号自动进行统计，注意，该量化统计情况仅作参考，不代表代码质量的优劣
+- [用户的社区参与度月度统计情况](https://github.com/OpenHUTB/.github/actions) - 在 Actions 的 User Activity Report 工作流中，每月 1 日 00:00（UTC）自动统计上月数据；结果以 Artifacts 形式附在该次运行记录中，需要时下载 data.csv，过期后需手动重跑。
 
 - [社区每个仓库的月度变化统计情况](https://github.com/OpenHUTB/.github/tree/master/reports)
 
