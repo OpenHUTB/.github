@@ -12,7 +12,7 @@
 
 其他要点：
 
-- 数据库：需包含数据库设计
+- 数据库：需要包含数据库设计
 - 测试：单元测试、集成测试、功能测试、性能测试、压力测试
 
 ## 算法类要求（做算法的）
@@ -25,9 +25,17 @@
 
 ## 图片规范
 
-- 每个插入图不能太大，控制在 1M 以内
+- 每个插入图不能太大，必须控制在 1M 以内
 - 除了 CARLA 保存的图片，其他的都要重新绘制，并同步上传原图
 
 ## 答辩
 
 - [录屏软件（OBS Studio）](https://github.com/obsproject/obs-studio/releases)
+
+## 论文模板
+
+- [本科毕业设计 LaTeX 模板](https://github.com/OpenHUTB/undergraduate)
+- [课程论文 LaTeX 模板](https://github.com/OpenHUTB/course)
+- [社区 LaTeX 资源](https://github.com/OpenHUTB/latex)
+
+参考文献的引用和编译方法见[参考文献引用编译办法](bib_reference_guide.md)。

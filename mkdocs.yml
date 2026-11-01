@@ -1,4 +1,5 @@
 site_name: 社区介绍
+site_url: https://openhutb.github.io/.github/
 # 参考链接：https://blog.csdn.net/m0_63203517/article/details/129765689
 
 #repo_url: https://github.com/carla-simulator/carla
@@ -41,11 +42,10 @@ extra_javascript:
 # - js/umlconvert.js
 
 plugins:
-#  - mkdocs-video
   - search:
       lang: ja
       separator: '[\s\-\.]+'
-      min_search_length: 3
+      min_search_length: 2
   - bibtex:
       bib_file: refs.bib
       csl_file: nature.csl
@@ -66,11 +66,12 @@ copyright: OpenHUTB 版权所有 &copy; {year}
 
 nav:
 - 首页: 'index.md'
+- 模拟器简介: 'simulator.md'
 - 贡献指南: 'CONTRIBUTING.md'
 - git 教程: 'https://openhutb.github.io/git/?locale=zh_CN'
 - Markdown教程: 'https://docs.github.com/zh/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax'
 - 论文写作技巧: 'paper_tips.md'
-- Latex文献引用编译办法: 'bib_reference_guide.md'
+
 - 搭建自定义开发环境: 'env_conf.md'
 
 - 远程办公: 'rustdesk_tailscale.md'
@@ -83,16 +84,19 @@ nav:
 - 贡献相关:
     - 基于浏览器的贡献指南: 'codespace.md'
     - 注册 Github 账号: 'dev/sign_up.md'
+    - 使用 VScode 推送代码: 'dev/vscode_push.md'
     - PyCharm 教程: 'pycharm-tutorial.md'
     - 使用 TortoiseGit 解决冲突: 'resolve_conflict.md'
     - 合并提交: 'dev/merge_commit.md'
+    - 给 Ubuntu 虚拟机硬盘扩容: 'dev/vm_disk.md'
     - 注意事项: 'note.md'
+    - wsl 安装与配置和卸载: 'wsl.md'
 - 工具与资源:
-    - 模拟器演示：涉水效果: 'introduction.md'
     - 开源工具列表: 'tools.md'
+    - 三维建模软件 Blender 介绍: 'blender.md'
     - Markdown 一键发布到社交平台: 'markdown2anything.md'
 - 学习与论文:
-    - LaTeX 参考文献编译: 'bib_reference_guide.md'
+    - "Latex文献引用编译办法": 'bib_reference_guide.md'
     - 本科毕业设计: 'undergraduate.md'
     - 论文成果：AVF-BEL 视听融合: 'paper/avf.md'
 - 社区组织形式: 'org/architecture.md'
@@ -106,6 +110,13 @@ markdown_extensions:
   - footnotes
   - admonition
   - mdx_math
+  # MkDocs 默认的 slugify 会先把标题做 NFKD 归一化、再丢弃所有非 ASCII 字符，
+  # 中文标题因此被清洗成空字符串，锚点退化成 _1、_2 这类无意义的占位符，
+  # 导致全站中文标题的页内跳转（各页面顶部的「目录」）全部失效。
+  # 改用 pymdown-extensions 自带的 Unicode 友好实现，保留中文锚点。
+  # 依赖 pymdown-extensions 已在 requirements.txt 中，无需新增。
+  - toc:
+      slugify: !!python/object/apply:pymdownx.slugs.slugify {kwds: {case: lower}}
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
