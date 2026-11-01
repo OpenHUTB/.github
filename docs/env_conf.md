@@ -23,11 +23,11 @@
         environment: # 环境配置
           TZ: 'Asia/Shanghai'
           GITLAB_OMNIBUS_CONFIG: |
-            external_url 'http://172.21.108.56'
+            external_url 'http://172.21.108.56:1080'
             gitlab_rails['gitlab_shell_ssh_port'] = 1022
             unicorn['port'] = 8888
             nginx['listen_port'] = 8080
-        ports: # 端口映射，格式为“本机IP：Docker镜像内部IP”
+        ports: # 端口映射，格式为“宿主机端口:容器内端口”
           - '1080:8080'    #http
           - '1043:1443'    #https
           - '1022:22'      #ssh
@@ -37,6 +37,22 @@
           - C:\docker\gitlab\data:/var/opt/gitlab
           - C:\docker\gitlab\logs:/var/log/gitlab
     ```
+
+先核对示例中的地址与端口：
+
+| 配置 | 示例值 | 作用 |
+| --- | --- | --- |
+| `external_url` | `http://172.21.108.56:1080` | 提供给用户的完整访问地址，包含宿主机对外端口 |
+| `nginx['listen_port']` | `8080` | GitLab 在容器内监听的 HTTP 端口 |
+| `ports` 中的 HTTP 映射 | `1080:8080` | 将宿主机的 1080 端口转发到容器内的 8080 端口 |
+| `gitlab_shell_ssh_port` 与 SSH 映射 | `1022`、`1022:22` | 对外公布的 SSH 端口与宿主机映射端口一致 |
+
+`172.21.108.56` 是示例地址，应替换为其他设备能够访问的服务器 IP 或域名。`external_url` 会影响 GitLab 页面提供的站点地址和 HTTP 克隆地址；如果把对外 HTTP 端口改为 `2080`，应同时把 `external_url` 改为 `http://服务器地址:2080`，把 HTTP 映射改为 `2080:8080`。容器内仍监听 8080 时，`nginx['listen_port']` 保持为 `8080`。
+
+部署后，打开 `http://服务器地址:1080`，再到项目页面复制 HTTP 克隆地址，确认两处地址都包含实际对外端口。使用 SSH 克隆时，核对页面给出的 SSH 地址与 `1022:22` 对应；端口可以连接但页面链接指向其他端口时，需检查 `external_url`，而不是只检查防火墙。
+
+端口配置可参考 [GitLab Docker 自定义端口说明](https://docs.gitlab.com/install/docker/configuration/#expose-gitlab-on-different-ports)。
+
 3. 执行docker-compose.yml文件完成服务器部署
     ```shell
     docker-compose up -d
