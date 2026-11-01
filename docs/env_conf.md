@@ -147,13 +147,28 @@ source .venv/Scripts/activate
 deactivate
 ```
 
-如果 PowerShell 提示「无法加载文件……因为在此系统上禁止运行脚本」，先执行下面这条命令（只对当前用户生效，不需要管理员权限）：
+#### 不激活也能使用虚拟环境
+
+激活只是让终端优先找到虚拟环境中的 Python。如果 PowerShell 提示禁止运行脚本，可以直接调用环境里的解释器，无需先修改执行策略。在项目目录执行：
 
 ```powershell
-Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+& ".\.venv\Scripts\python.exe" -m pip --version
+& ".\.venv\Scripts\python.exe" -m pip install numpy
+& ".\.venv\Scripts\python.exe" -c "import sys, numpy; print(sys.executable); print(sys.prefix != sys.base_prefix)"
 ```
 
-按提示输入 `Y` 确认，再重新激活。
+第一条输出的 pip 路径应位于项目的 `.venv` 中；最后一条先输出解释器路径，再输出 `True`，表示当前使用的是虚拟环境。运行项目脚本时也使用同一个解释器，例如 `& ".\.venv\Scripts\python.exe" .\main.py`，其中 `main.py` 换成实际文件名。路径加引号后也适用于项目目录含空格的情况。
+
+如果确实需要激活，可只为当前 PowerShell 窗口设置：
+
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
+.\.venv\Scripts\Activate.ps1
+```
+
+关闭此窗口后，该范围的设置结束。受单位统一策略管理的电脑按管理要求使用；直接调用解释器仍可用于选择项目环境。重新打开终端后，也应重新选择解释器或激活环境。虚拟环境目录不提交到 Git，项目依赖通过依赖清单安装。
+
+原理见 [Python：虚拟环境的工作方式](https://docs.python.org/3.13/library/venv.html#how-venvs-work)。
 
 ### 5. 在 VS Code 里选中这个环境
 
@@ -182,9 +197,9 @@ python -c "import numpy, pandas, sklearn, matplotlib; print('ok')"
 | 现象 | 原因 | 处理 |
 |------|------|------|
 | `'python' 不是内部或外部命令` | 安装时未勾选 Add to PATH | 重新运行安装包 → `Modify` → 补勾该项，或卸载重装 |
-| 装包时报 `PermissionError` / 拒绝访问 | 正在往系统 Python 里装 | 改用虚拟环境（第 4 步），或加 `--user` 参数 |
+| 装包时报 `PermissionError` / 拒绝访问 | 正在往系统 Python 里装 | 改用虚拟环境（第 4 步），通过该环境的 Python 安装 |
 | pip 下载极慢或 `Read timed out` | 连的是境外官方源 | 配置镜像源（第 3 步） |
-| PowerShell 提示禁止运行脚本 | 执行策略限制 | `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` |
+| PowerShell 提示禁止运行脚本 | 执行策略限制 | 直接调用 `.venv\Scripts\python.exe`，或使用第 4 步的当前窗口设置 |
 | 终端能 import，VS Code 运行却报 `ModuleNotFoundError` | 编辑器选中的解释器不是装包的那个 | `Ctrl+Shift+P` → `Python: Select Interpreter` 改选 `.venv` |
 | `python -m venv` 报 ensurepip 失败 | Python 安装不完整 | 重新运行安装包修复；Linux 上需先 `apt install python3-venv` |
 | pip 提示版本过旧 | 安装包自带的 pip 较老 | `python -m pip install --upgrade pip` |
