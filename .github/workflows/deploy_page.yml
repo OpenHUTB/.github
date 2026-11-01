@@ -1,27 +1,37 @@
 name: Deploy
 on:
-  pull_request:
   push:
     branches: [ master ]
+    paths-ignore:
+      - 'reports/**'
   workflow_dispatch:
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
 
 jobs:
   build:
     name: Deploy docs to GitHub Pages
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 
-        uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Build
-        uses: OpenHUTB/actions-mkdocs@main
+        uses: OpenHUTB/actions-mkdocs@v2.0.0
         with:
           mkdocs_version: 'latest'
           requirements: 'requirements.txt'
           configfile: 'mkdocs.yml'
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4.1.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./site

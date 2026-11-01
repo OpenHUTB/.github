@@ -16,14 +16,17 @@ echo conda is installed in:
 where conda
 
 
-conda info --envs | findstr /C:"mkdocs" >nul 2>nul
+conda info --envs | findstr /R/C:"\mkdocs" >nul>nul
 if %errorlevel% neq 0 (
-    echo mkdocs virtual environment does not exist. Creating it now...
+    echo mkdocs virtual environment does not exist. Creating
     conda create -n mkdocs python=3.11 -y
+    call conda activate mkdocs
+    pip install -r requirements.txt
+    pip install git+https://github.com/OpenHUTB/mkdocs.git
     echo mkdocs virtual environment has been created.
 )
-pip install -r requirements.txt
-pip install git+https://github.com/OpenHUTB/mkdocs.git
+call conda activate mkdocs
+
 
 
 for /f "tokens=*" %%i in ('where conda') do set CONDA_PATH=%%i

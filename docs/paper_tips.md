@@ -2,38 +2,37 @@
 
 ## 目录
 
-  * [撰写科学论文的技巧和窍门](#tips-and-tricks-for-writing-scientific-papers)
-    * [目录](#table-of-contents)
-    * [这是什么？](#what-is-this)
-  * [排版你的论文](#typesetting-your-paper)
-    * [每行一个句子](#one-sentence-per-line)
-    * [大写](#capitalization)
-    * [保持参考文献完整](#keep-references-whole)
-    * [表格](#tables)
-    * [数字格式](#number-formatting)
-  * [数学符号](#mathematical-notation)
-    * [符号](#notation)
-      * [定义自定义命令](#define-custom-commands)
-      * [对列等元素使用正确的符号](#use-the-correct-notation-for-columns-et-elements)
-    * [环境](#environments)
-  * [参考书目](#bibliography)
-    * [反向引用](#back-references)
-  * [创建图形](#creating-figures)
-    * [每个数据驱动图形一个脚本](#one-script-per-data-driven-figure)
-    * [Python 帮助脚本](#python-helper-script)
-    * [图形格式](#figures-format)
-    * [将图形的部分栅格化](#rasterize-parts-of-the-figure)
-  * [有用的资源](#useful-resources)
+  * [撰写科学论文的技巧和窍门](#撰写科学论文的技巧和窍门)
+    * [目录](#目录)
+  * [排版你的论文](#排版你的论文)
+    * [每行一个句子](#每行一个句子)
+    * [大写](#大写)
+    * [保持参考文献完整](#保持参考文献完整)
+    * [表格](#表格)
+    * [数字格式](#数字格式)
+  * [数学符号](#数学符号)
+    * [符号](#符号)
+      * [定义自定义命令](#定义自定义命令)
+      * [对列等元素使用正确的符号](#对列和元素使用正确的符号)
+    * [环境](#环境)
+  * [参考书目](#参考书目)
+    * [反向引用](#反向引用)
+  * [创建图形](#创建图形)
+    * [每个数据驱动图形一个脚本](#每个数据驱动的图形对应一个脚本)
+    * [Python 帮助脚本](#python-帮助脚本)
+    * [图形格式](#图形格式)
+    * [将图形的部分栅格化](#将图形的部分栅格化)
+  * [有用的资源](#有用的资源)
 
 # 排版你的论文
 
 排版是通过排列字体（例如字母和符号）来编写文本的过程。这主要关乎美观，但精美的字体设计能让文档更易于阅读，更赏心悦目，帮助读者更好地理解信息。
 
-我们列出了一些排版技巧和工具，以帮助您撰写文档。其中一些技巧仅适用于 LaTeX，但其他技巧则适用于任何语言。
+我们列出了一些排版技巧和工具，可以更好帮助您撰写文档。其中一些技巧仅适用于 LaTeX，但其他技巧则适用于任何语言。
 
 ## 每行一个句子
 
-编写 LaTeX 文档时，请在源文件中每行放一个句子。例如：
+编写 LaTeX 文档时，请在源文件中每行只放一个句子。例如：
 ```
 This is my first sentence.
 This is the second one.
@@ -43,9 +42,9 @@ This is the second one.
 This is my first sentence. This is the second one.
 ```
 
-这样做的主要原因是为了源代码控制和协作：查看提交的更改时，如果每个句子都单独放在一行，就能更容易地识别哪些句子被更改了。这样，你的同志就能更容易地看到更改。
+这样做的主要原因是为了更好的对源代码控制和协作：查看提交的更改时，每个句子都单独放在一行，就能更容易地识别哪些句子被更改了。这样，你的同事就能更容易地看到更改。
 
-另一个好处是，当我们的 LaTeX 编译器仅给出行号时，您将能够更好地识别错误。
+另一个好处是，当我们的 LaTeX 编译器仅给出行号时，您将能够更快速地识别错误。
 
 ## 大写
 
@@ -66,7 +65,7 @@ This is my first sentence. This is the second one.
 Figure~\ref{fig:example} displays that the project ...
 ```
 
-为了确保不会忘记使用波浪号，您可以通过创建自定义命令来简化自动化流程。以下是示例：
+为了保证不会忘记使用波浪号，您可以通过创建自定义命令来简化自动化流程。以下是示例：
 
 
 ```latex
@@ -122,12 +121,10 @@ Figure~\ref{fig:example}
 
 一般来说，避免在表格中使用垂直线。如果要对列进行分组，请在标题中使用`\cmidrule` 进行分组。您也可以使用 `\addlinespace` 用空格代替水平线。
 
-列标题应使用句子格式大写（请参阅 http://www.chicagomanualofstyle.org/15/ch13/ch13_sec019.html ）。
+列标题应使用句子格式大写（请参阅 https://www.chicagomanualofstyle.org/qanda/data/faq/topics/Capitalization.html ）。
 
 您可以在这里找到更多关于表格格式的建议： http://www.inf.ethz.ch/personal/markusp/teaching/guides/guide-tables.pdf 。
-这里有一个很棒的 GIF，演示了其中一些规则：
-
-![Better table formatting](http://darkhorseanalytics.com/blog/wp-content/uploads/2014/03/ClearOffTheTableMd.gif)
+这里有一份表格示例，演示了其中一些规则：[paper-tips-and-tricks 表格示例](https://github.com/Wookai/paper-tips-and-tricks/tree/master/examples/booktabs)。
 
 ## 数字格式
 
@@ -188,8 +185,8 @@ You can also round numbers, for example \num{1.23456}.
 我们提出以下数学书写规则：
 
  * 变量用小写斜体表示： *x* (`$x$`)
- * 向量的小写斜体粗体： **_x_** (`$\mathbold{x}$`)
- * 矩阵的大写斜体粗体： **_X_** (`$\mathbold{X}$`)
+ * 向量用小写斜体粗体表示： **_x_** (`$\mathbold{x}$`)
+ * 矩阵用大写斜体粗体表示： **_X_** (`$\mathbold{X}$`)
  * 大写斜体表示随机变量： *X* (`$X$`)
 
 该`\mathbold`命令来自[`fixmath`](https://www.ctan.org/pkg/fixmath)包，类似于`\boldmath`或`\bm`，不同之处在于所有符号都是斜体，甚至希腊字母也是如此（其他包不会将希腊字母斜体化）。
@@ -331,13 +328,29 @@ if __name__ == '__main__':
 
 ## 图形格式
 
-我们建议将所有图表保存为`EPS`格式。这样，您可以同时使用`latex`和`pdflatex`来生成文档，并欣赏精美的矢量图形和文本。
+图片格式应与论文的编译方式和图片内容相配合，不能统一要求所有图都保存为 EPS：
 
-自 2015 年 9 月起，在 Mac OS X 上以及使用最新版本的 Python、Matplotlib 和 TeX Live 时，打印直接用 Matplotlib 保存为 `PDF` 格式的图表时会有一些质量损失。打印在纸上时，这个问题会更加明显；您可以亲自尝试一下。这也是为什么最好将 Matplotlib 生成的图片保存为 `EPS` 格式的原因之一。如果您确实只想保留图表的 PDF 版本，请使用 `epspdf` 命令行工具——生成的 PDF 会比直接用 Matplotlib 生成的 PDF 更好。
+| 使用场景 | 常用格式 | 选择时注意 |
+| --- | --- | --- |
+| 使用 pdfLaTeX、XeLaTeX 或 LuaLaTeX 插入曲线图、流程图 | PDF | 保留矢量线条和文字，缩放后检查字体与符号是否完整 |
+| 使用传统 LaTeX → DVI → PostScript 流程 | EPS | 按该流程或投稿模板的说明使用；pdfLaTeX 使用 EPS 通常还需要转换 |
+| 照片、软件截图等位图 | PNG 或 JPEG | 按最终插入尺寸检查清晰度；提高导出分辨率不会补回原图丢失的细节 |
 
-为了完整起见，请注意 Matplotlib 的另一个后端 [PGF](http://matplotlib.org/users/pgf.html) ，其结果略胜一筹。然而，截至 2015 年 9 月，生成的 PDF 文件大小是使用默认后端和 `epspdf` 生成的 PDF 文件的两倍。
+Matplotlib 可直接导出 PDF 和 PNG。下面的例子从同一幅图保存两个文件，文件扩展名决定导出格式：
 
-Matplotlib 即使使用 [紧凑的布局功能](http://matplotlib.org/users/tight_layout_guide.html) ，有时也会在页边距中添加过多的空白。一个漂亮的命令行工具 `pdfcrop`，可以将 PDF 裁剪到最紧密的边界框。
+```python
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots(figsize=(4, 3))
+ax.plot([0, 1, 2], [0, 1, 4])
+ax.set_xlabel("x")
+ax.set_ylabel("y")
+fig.savefig("curve.pdf", bbox_inches="tight")
+fig.savefig("curve.png", dpi=300, bbox_inches="tight")
+plt.close(fig)
+```
+
+保存后，把图片插入实际论文模板，检查最终 PDF 中的文字、边距和线条。投稿方指定格式时，以投稿说明为准。具体选项见 [Matplotlib 保存图片说明](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.savefig.html)，LaTeX 图片格式可参考 [Overleaf 图片插入说明](https://www.overleaf.com/learn/latex/Inserting_Images)。
 
 ## 将图形的部分栅格化
 
@@ -357,7 +370,7 @@ Matplotlib 即使使用 [紧凑的布局功能](http://matplotlib.org/users/tigh
 * 所有文中的符号都是公式符号，而不是英文
 * latex 编译生成中间文件（ *.aux, *.log等）和输出pdf文件不用放到仓库
 * 一次性不要提交太多文件，不好审核，提交前检查下，比如大的二进制文件可以提供一个下载链接
-* 缓存、输出文件必须要放到仓库，比如：__pycache__不需要的缓存文件、训练的模型、中间记录文件、.pyc文件、checkpoint文件、*.pth文件最多放一个、*.npy文件等
+* 缓存、不必要的输出文件不要放到仓库，比如：__pycache__不需要的缓存文件、训练的模型、中间记录文件、.pyc文件、checkpoint文件、*.pth文件最多放一个、*.npy文件等
 
 ## 其他
 
@@ -365,8 +378,23 @@ Matplotlib 即使使用 [紧凑的布局功能](http://matplotlib.org/users/tigh
 
 # 有用的资源
 
-* 自动将标题大写: https://capitalizemytitle.com
-* 芝加哥格式手册: http://www.chicagomanualofstyle.org
-* 命令行检查模棱两可的词语、被动语态等: https://github.com/devd/Academic-Writing-Check
-* LaTeX 2e 使用基本指南: http://ctan.math.utah.edu/ctan/tex-archive/info/l2tabu/english/l2tabuen.pdf
+* [自动将标题大写](https://capitalizemytitle.com)
+* [芝加哥格式手册](http://www.chicagomanualofstyle.org)
+* [命令行检查模棱两可的词语、被动语态等](https://github.com/devd/Academic-Writing-Check)
+* [LaTeX 2e 使用基本指南](http://ctan.math.utah.edu/ctan/tex-archive/info/l2tabu/english/l2tabuen.pdf)
 * [撰写科学论文的技巧和窍门](https://github.com/Wookai/paper-tips-and-tricks/tree/master)
+* [论文下载工具 sci-hub](https://tool.yovisun.com/scihub/)
+
+
+补充提示：插图导出后请检查文字、线条和图例是否清晰，再放入论文正文。
+
+
+
+导出后可先打开 PDF 检查文字是否清晰、图例是否完整，再查看 PNG 在最终版心宽度下的显示效果。若图片来自脚本，建议同时保留脚本和导出的文件名，后续修改数据时更容易重新生成同一张图。
+
+
+## 插图放入正文后的检查
+
+- 按正文中的实际宽度查看图片，确认坐标刻度、图例和注释能直接读清，不只检查放大后的效果。
+- 导出整篇 PDF 后重新检查图像边缘，确认标题、单位和图例没有被裁切，图号与正文引用相符。
+- 涉及多条曲线时，检查线型、标记和颜色是否容易区分；打印成灰度后也应能对应到图例。
