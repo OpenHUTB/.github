@@ -143,23 +143,44 @@ git push origin 你的分支名
 
 ## 十、主仓库更新后同步当前工作分支
 
-在已经克隆的个人 Fork 中，先确认当前工作分支；以下以 `你的分支名` 为例。提交或暂存正在编辑的文件后，再进行同步。
+在已经克隆的个人 Fork 中，先确认当前工作分支；以下以 `你的分支名` 为例。先提交需要保留的修改，或用 `git stash` 暂存到一边，再进行同步；只运行 `git add` 还没有保存成一次提交。
 
-1. 关联主仓库(如果已经关联则不用重复关联)
-```bash
-git remote add upstream https://github.com/OpenHUTB/.github.git
-```
-查看是否成功关联的方法
+### 1. 确认工作分支
+
+切换到需要更新的工作分支，确认没有尚未处理的本地修改：
+
 ```bash
 git switch 你的分支名
 git status
 ```
 
-首次同步时，添加主仓库地址。已经有 `upstream` 的话，直接查看地址即可，无需重复添加。
+### 2. 配置并核对主仓库地址
+
+`origin` 应指向自己的 Fork，`upstream` 应指向原来的 OpenHUTB 仓库：
+
+```bash
+git remote -v
+```
+
+如果列表里还没有 `upstream`，只在首次配置时执行一次：
 
 ```bash
 git remote add upstream https://github.com/OpenHUTB/.github.git
-git remote -v
+```
+
+随后检查实际地址：
+
+```bash
+git remote get-url upstream
+```
+
+本例应输出 `https://github.com/OpenHUTB/.github.git`。如果提示 `remote upstream already exists`，说明名称已存在，先检查地址；地址确实指错仓库时，才用 `git remote set-url upstream https://github.com/OpenHUTB/.github.git` 修正。
+
+### 3. 获取并合并更新
+
+获取主仓库更新，再合入当前工作分支：
+
+```bash
 git fetch upstream master
 git merge upstream/master
 ```
@@ -168,7 +189,7 @@ git merge upstream/master
 
 ```bash
 git add 路径/已解决的文件.md
-git commit -m "合并主仓库更新并解决冲突 / merge upstream updates and resolve conflicts"
+git commit -m "合并主仓库更新并解决冲突"
 ```
 
 没有冲突时，Git 会直接完成合并，无需再运行上述 `git add` 和 `git commit`。最后确认工作区状态，并推送当前工作分支，随后在原有 PR 中查看更新：
@@ -177,3 +198,5 @@ git commit -m "合并主仓库更新并解决冲突 / merge upstream updates and
 git status
 git push origin 你的分支名
 ```
+
+远程地址的查看和修改可参考 [Git remote 文档](https://git-scm.com/docs/git-remote)。
