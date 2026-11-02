@@ -200,10 +200,18 @@
 <li>执行docker-compose.yml文件完成服务器部署
     <div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>up<span class="w"> </span>-d
 </code></pre></div>
-修改配置后，执行重启命令：
-    <div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>restart
-</code></pre></div></li>
+修改 <code>docker-compose.yml</code> 中的端口、环境变量或挂载目录后，需要重新应用配置。<code>restart</code> 只重启已有容器，不会按修改后的 Compose 文件重新创建它。</li>
 </ol>
+<p>先在 <code>docker-compose.yml</code> 所在目录检查配置；没有报错后，再更新 <code>gitlab</code> 服务：</p>
+<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>config<span class="w"> </span>--quiet
+docker-compose<span class="w"> </span>up<span class="w"> </span>-d<span class="w"> </span>gitlab
+</code></pre></div>
+<p><code>up -d</code> 会在配置变化时重新创建相关容器。启动后继续检查状态和最近的日志，等待 GitLab 完成初始化，再打开页面：</p>
+<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>ps
+docker-compose<span class="w"> </span>logs<span class="w"> </span>--tail<span class="o">=</span><span class="m">100</span><span class="w"> </span>gitlab
+</code></pre></div>
+<p>使用新版 Compose 时，把上述命令中的 <code>docker-compose</code> 换成 <code>docker compose</code>。如果 <code>config --quiet</code> 报错，先按报错位置修正 YAML，再运行 <code>up</code>。修改挂载路径不会自动搬迁旧目录中的数据，已有仓库需要先保留原目录并确认新路径内容。</p>
+<p>只想重启服务、没有修改 Compose 配置时，仍可以使用 <code>docker-compose restart gitlab</code>。命令行为见 <a href="https://docs.docker.com/reference/cli/docker/compose/restart/">Docker 的 restart 说明</a>和 <a href="https://docs.docker.com/reference/cli/docker/compose/up/">up 说明</a>。</p>
 <p>如果本机可以访问 <a href="http://127.0.0.1:1080">http://127.0.0.1:1080</a>，但局域网内其他设备无法访问 <a href="http://172.21.108.56:1080">http://172.21.108.56:1080</a>，可以依次检查：</p>
 <ol>
 <li>在 <code>docker-compose.yml</code> 所在目录运行 <code>docker-compose ps</code>，确认 GitLab 容器正在运行，并检查端口绑定。例如，<code>0.0.0.0:1080-&gt;8080/tcp</code> 表示该端口对所有 IPv4 网卡开放；如果仅绑定到 <code>127.0.0.1</code>，其他设备就无法通过局域网地址访问。使用新版 Compose 时，命令为 <code>docker compose ps</code>。</li>
