@@ -183,11 +183,11 @@
 <span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w"> </span><span class="c1"># 环境配置</span>
 <span class="w">      </span><span class="nt">TZ</span><span class="p">:</span><span class="w"> </span><span class="s">'Asia/Shanghai'</span>
 <span class="w">      </span><span class="nt">GITLAB_OMNIBUS_CONFIG</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
-<span class="w">        </span><span class="no">external_url 'http://172.21.108.56'</span>
+<span class="w">        </span><span class="no">external_url 'http://172.21.108.56:1080'</span>
 <span class="w">        </span><span class="no">gitlab_rails['gitlab_shell_ssh_port'] = 1022</span>
 <span class="w">        </span><span class="no">unicorn['port'] = 8888</span>
 <span class="w">        </span><span class="no">nginx['listen_port'] = 8080</span>
-<span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w"> </span><span class="c1"># 端口映射，格式为“本机IP：Docker镜像内部IP”</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w"> </span><span class="c1"># 端口映射，格式为“宿主机端口:容器内端口”</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'1080:8080'</span><span class="w">    </span><span class="c1">#http</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'1043:1443'</span><span class="w">    </span><span class="c1">#https</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'1022:22'</span><span class="w">      </span><span class="c1">#ssh</span>
@@ -197,6 +197,43 @@
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">C:\docker\gitlab\data:/var/opt/gitlab</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">C:\docker\gitlab\logs:/var/log/gitlab</span>
 </code></pre></div></li>
+</ol>
+<p>先核对示例中的地址与端口：</p>
+<table>
+<thead>
+<tr>
+<th>配置</th>
+<th>示例值</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>external_url</code></td>
+<td><code>http://172.21.108.56:1080</code></td>
+<td>提供给用户的完整访问地址，包含宿主机对外端口</td>
+</tr>
+<tr>
+<td><code>nginx['listen_port']</code></td>
+<td><code>8080</code></td>
+<td>GitLab 在容器内监听的 HTTP 端口</td>
+</tr>
+<tr>
+<td><code>ports</code> 中的 HTTP 映射</td>
+<td><code>1080:8080</code></td>
+<td>将宿主机的 1080 端口转发到容器内的 8080 端口</td>
+</tr>
+<tr>
+<td><code>gitlab_shell_ssh_port</code> 与 SSH 映射</td>
+<td><code>1022</code>、<code>1022:22</code></td>
+<td>对外公布的 SSH 端口与宿主机映射端口一致</td>
+</tr>
+</tbody>
+</table>
+<p><code>172.21.108.56</code> 是示例地址，应替换为其他设备能够访问的服务器 IP 或域名。<code>external_url</code> 会影响 GitLab 页面提供的站点地址和 HTTP 克隆地址；如果把对外 HTTP 端口改为 <code>2080</code>，应同时把 <code>external_url</code> 改为 <code>http://服务器地址:2080</code>，把 HTTP 映射改为 <code>2080:8080</code>。容器内仍监听 8080 时，<code>nginx['listen_port']</code> 保持为 <code>8080</code>。</p>
+<p>部署后，打开 <code>http://服务器地址:1080</code>，再到项目页面复制 HTTP 克隆地址，确认两处地址都包含实际对外端口。使用 SSH 克隆时，核对页面给出的 SSH 地址与 <code>1022:22</code> 对应；端口可以连接但页面链接指向其他端口时，需检查 <code>external_url</code>，而不是只检查防火墙。</p>
+<p>端口配置可参考 <a href="https://docs.gitlab.com/install/docker/configuration/#expose-gitlab-on-different-ports">GitLab Docker 自定义端口说明</a>。</p>
+<ol>
 <li>执行docker-compose.yml文件完成服务器部署
     <div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>up<span class="w"> </span>-d
 </code></pre></div>
