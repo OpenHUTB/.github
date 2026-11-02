@@ -312,10 +312,19 @@ python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </s
 <p>激活成功后，命令行开头会出现 <code>(.venv)</code>。此后 <code>python</code>、<code>pip</code> 都指向这个环境。退出用：</p>
 <div class="highlight"><pre><span></span><code>deactivate
 </code></pre></div>
-<p>如果 PowerShell 提示「无法加载文件……因为在此系统上禁止运行脚本」，先执行下面这条命令（只对当前用户生效，不需要管理员权限）：</p>
-<div class="highlight"><pre><span></span><code><span class="nb">Set-ExecutionPolicy</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">RemoteSigned</span>
+<h4 id="不激活也能使用虚拟环境">不激活也能使用虚拟环境</h4>
+<p>激活只是让终端优先找到虚拟环境中的 Python。如果 PowerShell 提示禁止运行脚本，可以直接调用环境里的解释器，无需先修改执行策略。在项目目录执行：</p>
+<div class="highlight"><pre><span></span><code><span class="p">&amp;</span> <span class="s2">".\.venv\Scripts\python.exe"</span> <span class="n">-m</span> <span class="n">pip</span> <span class="p">-</span><span class="n">-version</span>
+<span class="p">&amp;</span> <span class="s2">".\.venv\Scripts\python.exe"</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">numpy</span>
+<span class="p">&amp;</span> <span class="s2">".\.venv\Scripts\python.exe"</span> <span class="n">-c</span> <span class="s2">"import sys, numpy; print(sys.executable); print(sys.prefix != sys.base_prefix)"</span>
 </code></pre></div>
-<p>按提示输入 <code>Y</code> 确认，再重新激活。</p>
+<p>第一条输出的 pip 路径应位于项目的 <code>.venv</code> 中；最后一条先输出解释器路径，再输出 <code>True</code>，表示当前使用的是虚拟环境。运行项目脚本时也使用同一个解释器，例如 <code>&amp; ".\.venv\Scripts\python.exe" .\main.py</code>，其中 <code>main.py</code> 换成实际文件名。路径加引号后也适用于项目目录含空格的情况。</p>
+<p>如果确实需要激活，可只为当前 PowerShell 窗口设置：</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Set-ExecutionPolicy</span> <span class="n">-Scope</span> <span class="k">Process</span> <span class="n">-ExecutionPolicy</span> <span class="n">RemoteSigned</span>
+<span class="p">.\.</span><span class="n">venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">Activate</span><span class="p">.</span><span class="n">ps1</span>
+</code></pre></div>
+<p>关闭此窗口后，该范围的设置结束。受单位统一策略管理的电脑按管理要求使用；直接调用解释器仍可用于选择项目环境。重新打开终端后，也应重新选择解释器或激活环境。虚拟环境目录不提交到 Git，项目依赖通过依赖清单安装。</p>
+<p>原理见 <a href="https://docs.python.org/3.13/library/venv.html#how-venvs-work">Python：虚拟环境的工作方式</a>。</p>
 <h3 id="5-在-vs-code-里选中这个环境">5. 在 VS Code 里选中这个环境</h3>
 <ol>
 <li>在 VS Code 扩展商店安装 <strong>Python</strong> 扩展（搜索 <code>Python</code>，发布者为 Microsoft）。</li>
@@ -348,7 +357,7 @@ python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </s
 <tr>
 <td>装包时报 <code>PermissionError</code> / 拒绝访问</td>
 <td>正在往系统 Python 里装</td>
-<td>改用虚拟环境（第 4 步），或加 <code>--user</code> 参数</td>
+<td>改用虚拟环境（第 4 步），通过该环境的 Python 安装</td>
 </tr>
 <tr>
 <td>pip 下载极慢或 <code>Read timed out</code></td>
@@ -358,7 +367,7 @@ python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </s
 <tr>
 <td>PowerShell 提示禁止运行脚本</td>
 <td>执行策略限制</td>
-<td><code>Set-ExecutionPolicy -Scope CurrentUser RemoteSigned</code></td>
+<td>直接调用 <code>.venv\Scripts\python.exe</code>，或使用第 4 步的当前窗口设置</td>
 </tr>
 <tr>
 <td>终端能 import，VS Code 运行却报 <code>ModuleNotFoundError</code></td>
