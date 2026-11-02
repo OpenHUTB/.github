@@ -60,7 +60,7 @@
 <ul>
 <li class="toctree-l3"><a class="reference internal" href="#国内访问-github-可能较慢">国内访问 github 可能较慢</a>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#向-github-上-push-的时候报-403-错误">向 github 上 push 的时候报 403 错误</a>
+<li class="toctree-l3"><a class="reference internal" href="#向-github-推送时出现-403-或权限不足">向 GitHub 推送时出现 403 或权限不足</a>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#克隆个人仓库出错">克隆个人仓库出错</a>
 </li>
@@ -366,14 +366,26 @@ git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </
 <h2 id="问题">问题</h2>
 <h6 id="国内访问-github-可能较慢">国内访问 github 可能较慢</h6>
 <p>这里提供 github 加速方案和科学上网的 <a href="https://openhutb.github.io/doc/build_carla/#internet">链接</a> 。</p>
-<h6 id="向-github-上-push-的时候报-403-错误">向 github 上 push 的时候报 403 错误</h6>
-<p>打开<code>.git/config</code>，比如：
-</p><div class="highlight"><pre><span></span><code>url = https://github.com/OpenHUTB/bazaar.git
+<h6 id="向-github-推送时出现-403-或权限不足">向 GitHub 推送时出现 403 或权限不足</h6>
+<p>先区分“提交署名”和“登录权限”：<code>git config user.name</code>、<code>user.email</code> 只决定提交记录的署名，不会赋予仓库写入权限。在网址前添加用户名也不会改变仓库权限。</p>
+<ol>
+<li>在仓库目录运行 <code>git remote -v</code>，检查 <code>origin</code> 的推送地址。如果它仍指向 <code>OpenHUTB/.github</code>，而你没有直接写入权限，应改为自己的 Fork。以下命令中的 <code>YOUR_USERNAME</code> 需要替换为实际用户名：</li>
+</ol>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>remote<span class="w"> </span>set-url<span class="w"> </span>origin<span class="w"> </span>https://github.com/YOUR_USERNAME/.github.git
+git<span class="w"> </span>remote<span class="w"> </span>-v
 </code></pre></div>
-将你用户名复制粘贴到github前面再加个@，变成：
-<div class="highlight"><pre><span></span><code>url = https://OpenHUTB@github.com/OpenHUTB/bazaar.git
+<p>保留主仓库作为 <code>upstream</code> 即可；使用其他项目时，同时替换仓库名。不要把令牌写进远程地址。</p>
+<ol>
+<li>确认当前分支，推送到个人 Fork，再从网页向主仓库创建 PR：</li>
+</ol>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>branch<span class="w"> </span>--show-current
+git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>HEAD
 </code></pre></div>
-然后就可以进行授权并继续push。
+<ol>
+<li>如果 <code>origin</code> 已经是自己的 Fork，仍提示 <code>Permission ... denied to OTHER_USER</code>，核对错误中的登录账号。Windows 可在“凭据管理器 → Windows 凭据”中更新与 <code>github.com</code> 对应的旧凭据，再重新登录正确账号；不要清空无关凭据。</li>
+<li>HTTPS 推送不使用 GitHub 网站登录密码，应使用凭据管理器的浏览器登录或具有目标仓库权限的个人访问令牌。使用 SSH 时，可运行 <code>ssh -T git@github.com</code> 查看认证到哪个账号；看到成功认证信息即可，GitHub 不提供交互式 Shell。</li>
+</ol>
+<p>参考：<a href="https://docs.github.com/zh/get-started/git-basics/managing-remote-repositories">管理远程仓库</a>、<a href="https://docs.github.com/zh/repositories/creating-and-managing-repositories/troubleshooting-cloning-errors#https-cloning-errors">HTTPS 克隆错误</a>。</p>
 <h6 id="克隆个人仓库出错">克隆个人仓库出错</h6>
 <p>若出现SSL certificate problems请关闭加速器再克隆。</p>
 <h6 id="git-push-报错unexpected-disconnect-while-reading-sideband-packet">git push 报错unexpected disconnect while reading sideband packet</h6>
