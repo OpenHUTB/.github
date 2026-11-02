@@ -70,7 +70,12 @@ def main():
         ignore_list = load_ignore_users(args.ignore)
     except ValueError as exc:
         parser.error(str(exc))
-    counts, name_map = get_commits(args.since, args.until, ignore_list)
+
+    # 查询失败时终止，避免把失败当成零条提交或覆盖已有统计文件。
+    try:
+        counts, name_map = get_commits(args.since, args.until, ignore_list)
+    except (OSError, RuntimeError) as exc:
+        parser.exit(2, f"无法读取 Git 提交记录，请确认当前目录是有效仓库且 Git 可用：{exc}\n")
 
     # 转换结果：[(用户名, 次数), ...]
     results = sorted(
