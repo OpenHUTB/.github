@@ -70,5 +70,22 @@ class IgnoreUsersTests(unittest.TestCase):
                     self.assertEqual(output.read_text(encoding="utf-8"), "existing result\n")
 
 
+    def test_failed_git_query_does_not_overwrite_output(self):
+        with tempfile.TemporaryDirectory() as directory:
+            config = Path(directory) / "ignore.json"
+            output = Path(directory) / "stats.csv"
+            config.write_text("[]", encoding="utf-8")
+            output.write_text("existing result\n", encoding="utf-8")
+            arguments = [str(SCRIPT), "--ignore", str(config), "--output", str(output)]
+            with patch.object(sys, "argv", arguments), patch.object(
+                stats, "get_commits", side_effect=RuntimeError("git log failed")
+            ) as query:
+                with contextlib.redirect_stderr(io.StringIO()), self.assertRaises(SystemExit) as error:
+                    stats.main()
+            self.assertEqual(error.exception.code, 2)
+            query.assert_called_once()
+            self.assertEqual(output.read_text(encoding="utf-8"), "existing result\n")
+
+
 if __name__ == "__main__":
     unittest.main()
