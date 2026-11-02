@@ -155,6 +155,17 @@ Blender 的操作高度依赖快捷键，初学时记住下面这些即可完成
 
 FBX 用于交付模型，`.blend` 用于继续编辑，两者建议一并保留。选项的具体说明可查看 [Blender 官方 FBX 手册](https://docs.blender.org/manual/zh-hans/4.4/addons/import_export/scene_fbx.html)。
 
+### 交付前检查外部贴图
+
+`.blend` 文件可能只是引用电脑上的图片路径。模型在本机正常，换电脑后出现粉色材质或贴图缺失时，应先检查这些外部文件，而不是重新制作材质。
+
+1. 在「File → External Data → Report Missing Files」中检查缺失文件。若路径已变，用「Find Missing Files」选择实际的素材目录，再检查一次。
+2. 需要把贴图随工程保存时，选择「File → External Data → Pack Resources」，完成后保存 `.blend`。并非所有外部资源都能打包，视频、缓存等资源应另行整理。
+3. 如果采用独立素材目录交付，将贴图放在工程目录内，再使用「Make All Paths Relative」并保存，保持工程与素材的相对目录关系。
+4. 在另一目录或另一台电脑上打开交付文件，切到材质预览，确认贴图能够读取。导出 FBX 后也应在目标引擎检查材质；`.blend` 内打包成功不等于导出文件已包含全部贴图。
+
+参考：[Blender 外部资源与打包说明](https://docs.blender.org/manual/en/4.5/files/blend/packed_data.html)。
+
 社区文档站为 <https://openhutb.github.io/>，模型接入模拟器的具体流程以该站对应项目的说明为准；遇到问题可以在相关仓库的 Issues 页面提出。
 
 ## 7. 学习资源 <span id="learn"></span>
