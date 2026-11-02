@@ -23,11 +23,11 @@
         environment: # 环境配置
           TZ: 'Asia/Shanghai'
           GITLAB_OMNIBUS_CONFIG: |
-            external_url 'http://172.21.108.56'
+            external_url 'http://172.21.108.56:1080'
             gitlab_rails['gitlab_shell_ssh_port'] = 1022
             unicorn['port'] = 8888
             nginx['listen_port'] = 8080
-        ports: # 端口映射，格式为“本机IP：Docker镜像内部IP”
+        ports: # 端口映射，格式为“宿主机端口:容器内端口”
           - '1080:8080'    #http
           - '1043:1443'    #https
           - '1022:22'      #ssh
@@ -37,14 +37,45 @@
           - C:\docker\gitlab\data:/var/opt/gitlab
           - C:\docker\gitlab\logs:/var/log/gitlab
     ```
+
+先核对示例中的地址与端口：
+
+| 配置 | 示例值 | 作用 |
+| --- | --- | --- |
+| `external_url` | `http://172.21.108.56:1080` | 提供给用户的完整访问地址，包含宿主机对外端口 |
+| `nginx['listen_port']` | `8080` | GitLab 在容器内监听的 HTTP 端口 |
+| `ports` 中的 HTTP 映射 | `1080:8080` | 将宿主机的 1080 端口转发到容器内的 8080 端口 |
+| `gitlab_shell_ssh_port` 与 SSH 映射 | `1022`、`1022:22` | 对外公布的 SSH 端口与宿主机映射端口一致 |
+
+`172.21.108.56` 是示例地址，应替换为其他设备能够访问的服务器 IP 或域名。`external_url` 会影响 GitLab 页面提供的站点地址和 HTTP 克隆地址；如果把对外 HTTP 端口改为 `2080`，应同时把 `external_url` 改为 `http://服务器地址:2080`，把 HTTP 映射改为 `2080:8080`。容器内仍监听 8080 时，`nginx['listen_port']` 保持为 `8080`。
+
+部署后，打开 `http://服务器地址:1080`，再到项目页面复制 HTTP 克隆地址，确认两处地址都包含实际对外端口。使用 SSH 克隆时，核对页面给出的 SSH 地址与 `1022:22` 对应；端口可以连接但页面链接指向其他端口时，需检查 `external_url`，而不是只检查防火墙。
+
+端口配置可参考 [GitLab Docker 自定义端口说明](https://docs.gitlab.com/install/docker/configuration/#expose-gitlab-on-different-ports)。
+
 3. 执行docker-compose.yml文件完成服务器部署
     ```shell
     docker-compose up -d
     ```
-修改配置后，执行重启命令：
-    ```shell
-    docker-compose restart
-    ```
+修改 `docker-compose.yml` 中的端口、环境变量或挂载目录后，需要重新应用配置。`restart` 只重启已有容器，不会按修改后的 Compose 文件重新创建它。
+
+先在 `docker-compose.yml` 所在目录检查配置；没有报错后，再更新 `gitlab` 服务：
+
+```shell
+docker-compose config --quiet
+docker-compose up -d gitlab
+```
+
+`up -d` 会在配置变化时重新创建相关容器。启动后继续检查状态和最近的日志，等待 GitLab 完成初始化，再打开页面：
+
+```shell
+docker-compose ps
+docker-compose logs --tail=100 gitlab
+```
+
+使用新版 Compose 时，把上述命令中的 `docker-compose` 换成 `docker compose`。如果 `config --quiet` 报错，先按报错位置修正 YAML，再运行 `up`。修改挂载路径不会自动搬迁旧目录中的数据，已有仓库需要先保留原目录并确认新路径内容。
+
+只想重启服务、没有修改 Compose 配置时，仍可以使用 `docker-compose restart gitlab`。命令行为见 [Docker 的 restart 说明](https://docs.docker.com/reference/cli/docker/compose/restart/)和 [up 说明](https://docs.docker.com/reference/cli/docker/compose/up/)。
 
 如果本机可以访问 [http://127.0.0.1:1080](http://127.0.0.1:1080)，但局域网内其他设备无法访问 [http://172.21.108.56:1080](http://172.21.108.56:1080)，可以依次检查：
 
@@ -147,13 +178,28 @@ source .venv/Scripts/activate
 deactivate
 ```
 
-如果 PowerShell 提示「无法加载文件……因为在此系统上禁止运行脚本」，先执行下面这条命令（只对当前用户生效，不需要管理员权限）：
+#### 不激活也能使用虚拟环境
+
+激活只是让终端优先找到虚拟环境中的 Python。如果 PowerShell 提示禁止运行脚本，可以直接调用环境里的解释器，无需先修改执行策略。在项目目录执行：
 
 ```powershell
-Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+& ".\.venv\Scripts\python.exe" -m pip --version
+& ".\.venv\Scripts\python.exe" -m pip install numpy
+& ".\.venv\Scripts\python.exe" -c "import sys, numpy; print(sys.executable); print(sys.prefix != sys.base_prefix)"
 ```
 
-按提示输入 `Y` 确认，再重新激活。
+第一条输出的 pip 路径应位于项目的 `.venv` 中；最后一条先输出解释器路径，再输出 `True`，表示当前使用的是虚拟环境。运行项目脚本时也使用同一个解释器，例如 `& ".\.venv\Scripts\python.exe" .\main.py`，其中 `main.py` 换成实际文件名。路径加引号后也适用于项目目录含空格的情况。
+
+如果确实需要激活，可只为当前 PowerShell 窗口设置：
+
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
+.\.venv\Scripts\Activate.ps1
+```
+
+关闭此窗口后，该范围的设置结束。受单位统一策略管理的电脑按管理要求使用；直接调用解释器仍可用于选择项目环境。重新打开终端后，也应重新选择解释器或激活环境。虚拟环境目录不提交到 Git，项目依赖通过依赖清单安装。
+
+原理见 [Python：虚拟环境的工作方式](https://docs.python.org/3.13/library/venv.html#how-venvs-work)。
 
 ### 5. 在 VS Code 里选中这个环境
 
@@ -182,9 +228,9 @@ python -c "import numpy, pandas, sklearn, matplotlib; print('ok')"
 | 现象 | 原因 | 处理 |
 |------|------|------|
 | `'python' 不是内部或外部命令` | 安装时未勾选 Add to PATH | 重新运行安装包 → `Modify` → 补勾该项，或卸载重装 |
-| 装包时报 `PermissionError` / 拒绝访问 | 正在往系统 Python 里装 | 改用虚拟环境（第 4 步），或加 `--user` 参数 |
+| 装包时报 `PermissionError` / 拒绝访问 | 正在往系统 Python 里装 | 改用虚拟环境（第 4 步），通过该环境的 Python 安装 |
 | pip 下载极慢或 `Read timed out` | 连的是境外官方源 | 配置镜像源（第 3 步） |
-| PowerShell 提示禁止运行脚本 | 执行策略限制 | `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` |
+| PowerShell 提示禁止运行脚本 | 执行策略限制 | 直接调用 `.venv\Scripts\python.exe`，或使用第 4 步的当前窗口设置 |
 | 终端能 import，VS Code 运行却报 `ModuleNotFoundError` | 编辑器选中的解释器不是装包的那个 | `Ctrl+Shift+P` → `Python: Select Interpreter` 改选 `.venv` |
 | `python -m venv` 报 ensurepip 失败 | Python 安装不完整 | 重新运行安装包修复；Linux 上需先 `apt install python3-venv` |
 | pip 提示版本过旧 | 安装包自带的 pip 较老 | `python -m pip install --upgrade pip` |
