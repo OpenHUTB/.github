@@ -118,6 +118,11 @@
 * [PDFMathTranslate](https://github.com/PDFMathTranslate/PDFMathTranslate) - 基于 AI 完整保留排版的 PDF 文档全文双语翻译
 
 
+* [Pandoc](https://github.com/jgm/pandoc) - 万能的文档转换工具，Markdown 可以一键转成 Word、PDF、网页等格式
+
+* [Zotero](https://github.com/zotero/zotero) - 免费的文献管理软件，自动抓取论文信息，还能按格式生成参考文献
+
+
 ## 常见
 
 * [Chromium](https://github.com/chromium/chromium) - Chromium 浏览器
