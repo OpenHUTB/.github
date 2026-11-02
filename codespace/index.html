@@ -84,6 +84,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#2-启用自动化流水线">2. 启用自动化流水线</a>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#3-修改项目">3. 修改项目</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#在-codespace-中预览完整文档网站">在 Codespace 中预览完整文档网站</a>
+</li>
+</ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#4-提交修改">4. 提交修改</a>
 </li>
@@ -182,6 +186,23 @@
 <p>点击左边“资源管理器”中的文件，并在中间进行编辑。点击编辑区右上角的“Open Preview to the side”来打开修改的预览</p>
 <p><img alt="" src="../img/codespace/edit.png"/></p>
 <p>编辑完成后，按 <code>Ctrl+S</code> 保存文件，并通过预览检查内容和排版。保存只会更新当前 Codespace 中的文件，还需要按照下一步完成“提交”和“同步更改”，才能将修改上传到个人 GitHub 仓库。</p>
+<h3 id="在-codespace-中预览完整文档网站">在 Codespace 中预览完整文档网站</h3>
+<p>编辑器侧边的 Markdown 预览适合检查段落和列表。修改导航、公式或站点插件相关内容时，还应启动项目的 MkDocs 网站，检查实际页面。本节以 <code>OpenHUTB/.github</code> 文档仓库为例。</p>
+<p>打开终端，进入同时包含 <code>mkdocs.yml</code> 和 <code>requirements.txt</code> 的仓库根目录，然后执行：</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+<span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mkdocs<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+python<span class="w"> </span>-m<span class="w"> </span>mkdocs<span class="w"> </span>serve<span class="w"> </span>--dev-addr<span class="w"> </span><span class="m">0</span>.0.0.0:8000
+</code></pre></div>
+<p>这里的激活命令适用于 Codespaces 常见的 Linux 终端；已建好 <code>.venv</code> 时只需重新激活，不必重复创建。安装依赖后，等待终端出现服务启动信息，再打开底部的“端口（Ports）”标签页：</p>
+<ol>
+<li>找到 <code>8000</code> 端口；未自动出现时，点击“添加端口”并输入 <code>8000</code>。</li>
+<li>点击该端口的“在浏览器中打开”。保留端口的专用可见性即可，个人检查无需公开端口。</li>
+<li>从网站导航进入本次修改的页面，检查图片、站内链接、公式和目录。保存源文件后，等待构建完成，再刷新页面确认变化。</li>
+</ol>
+<p>此时应使用端口面板提供的转发地址；个人电脑的 <code>localhost:8000</code> 并不是 Codespace 的地址。若配置中的 <code>site_url</code> 带有子路径，终端给出的访问路径可能也带有该前缀，应保留完整路径。</p>
+<p>检查结束后，在运行服务的终端按 <code>Ctrl+C</code> 停止。这个预览地址只在服务运行期间可用；正式发布后的固定地址仍按第 5 步检查。站点输出目录 <code>site/</code> 和 <code>.venv/</code> 不加入本次提交。</p>
+<p>命令说明见 <a href="https://www.mkdocs.org/user-guide/configuration/#dev_addr">MkDocs：开发服务器地址</a>，端口操作见 <a href="https://docs.github.com/zh/codespaces/developing-in-a-codespace/forwarding-ports-in-your-codespace">GitHub：转发 Codespaces 端口</a>。</p>
 <h2 id="4-提交修改">4. 提交修改</h2>
 <p>点击左侧分叉图标的“源代码管理”，弹出提交页面。
 点击更改的内容，确认中间的工作树对比中（左侧为修改之前的内容，右侧为修改之后的内容）的修改为想要修改的内容。再填写提交信息，点击“提交”。</p>
