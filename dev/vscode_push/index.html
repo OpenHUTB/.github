@@ -132,6 +132,14 @@
 <li class="toctree-l2"><a class="reference internal" href="#九常见踩坑">九、常见踩坑</a>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#十主仓库更新后同步当前工作分支">十、主仓库更新后同步当前工作分支</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#1-确认工作分支">1. 确认工作分支</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#2-配置并核对主仓库地址">2. 配置并核对主仓库地址</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#3-获取并合并更新">3. 获取并合并更新</a>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -224,7 +232,12 @@
 </li>
 <li><a href="#%E5%85%AB%E6%8F%90%E4%BA%A4-prpull-request">八、提交 PR（Pull Request）</a></li>
 <li><a href="#%E4%B9%9D%E5%B8%B8%E8%A7%81%E8%B8%A9%E5%9D%91">九、常见踩坑</a></li>
-<li><a href="#%E5%8D%81%E4%B8%BB%E4%BB%93%E5%BA%93%E6%9B%B4%E6%96%B0%E5%90%8E%E5%90%8C%E6%AD%A5%E5%BD%93%E5%89%8D%E5%B7%A5%E4%BD%9C%E5%88%86%E6%94%AF">十、主仓库更新后同步当前工作分支</a></li>
+<li><a href="#%E5%8D%81%E4%B8%BB%E4%BB%93%E5%BA%93%E6%9B%B4%E6%96%B0%E5%90%8E%E5%90%8C%E6%AD%A5%E5%BD%93%E5%89%8D%E5%B7%A5%E4%BD%9C%E5%88%86%E6%94%AF">十、主仓库更新后同步当前工作分支</a><ul>
+<li><a href="#1-%E7%A1%AE%E8%AE%A4%E5%B7%A5%E4%BD%9C%E5%88%86%E6%94%AF">1. 确认工作分支</a></li>
+<li><a href="#2-%E9%85%8D%E7%BD%AE%E5%B9%B6%E6%A0%B8%E5%AF%B9%E4%B8%BB%E4%BB%93%E5%BA%93%E5%9C%B0%E5%9D%80">2. 配置并核对主仓库地址</a></li>
+<li><a href="#3-%E8%8E%B7%E5%8F%96%E5%B9%B6%E5%90%88%E5%B9%B6%E6%9B%B4%E6%96%B0">3. 获取并合并更新</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -347,30 +360,37 @@ git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </sp
 <li>代码冲突：多人同时修改同一文件会出现冲突，解决冲突后再提交</li>
 </ol>
 <h2 id="十主仓库更新后同步当前工作分支">十、主仓库更新后同步当前工作分支</h2>
-<p>在已经克隆的个人 Fork 中，先确认当前工作分支；以下以 <code>你的分支名</code> 为例。提交或暂存正在编辑的文件后，再进行同步。</p>
-<ol>
-<li>关联主仓库(如果已经关联则不用重复关联)
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>upstream<span class="w"> </span>https://github.com/OpenHUTB/.github.git
-</code></pre></div>
-查看是否成功关联的方法
+<p>在已经克隆的个人 Fork 中，先确认当前工作分支；以下以 <code>你的分支名</code> 为例。先提交需要保留的修改，或用 <code>git stash</code> 暂存到一边，再进行同步；只运行 <code>git add</code> 还没有保存成一次提交。</p>
+<h3 id="1-确认工作分支">1. 确认工作分支</h3>
+<p>切换到需要更新的工作分支，确认没有尚未处理的本地修改：</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>switch<span class="w"> </span>你的分支名
 git<span class="w"> </span>status
-</code></pre></div></li>
-</ol>
-<p>首次同步时，添加主仓库地址。已经有 <code>upstream</code> 的话，直接查看地址即可，无需重复添加。</p>
+</code></pre></div>
+<h3 id="2-配置并核对主仓库地址">2. 配置并核对主仓库地址</h3>
+<p><code>origin</code> 应指向自己的 Fork，<code>upstream</code> 应指向原来的 OpenHUTB 仓库：</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>remote<span class="w"> </span>-v
+</code></pre></div>
+<p>如果列表里还没有 <code>upstream</code>，只在首次配置时执行一次：</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>upstream<span class="w"> </span>https://github.com/OpenHUTB/.github.git
-git<span class="w"> </span>remote<span class="w"> </span>-v
-git<span class="w"> </span>fetch<span class="w"> </span>upstream<span class="w"> </span>master
+</code></pre></div>
+<p>随后检查实际地址：</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>remote<span class="w"> </span>get-url<span class="w"> </span>upstream
+</code></pre></div>
+<p>本例应输出 <code>https://github.com/OpenHUTB/.github.git</code>。如果提示 <code>remote upstream already exists</code>，说明名称已存在，先检查地址；地址确实指错仓库时，才用 <code>git remote set-url upstream https://github.com/OpenHUTB/.github.git</code> 修正。</p>
+<h3 id="3-获取并合并更新">3. 获取并合并更新</h3>
+<p>获取主仓库更新，再合入当前工作分支：</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>fetch<span class="w"> </span>upstream<span class="w"> </span>master
 git<span class="w"> </span>merge<span class="w"> </span>upstream/master
 </code></pre></div>
 <p><code>fetch</code> 只下载更新，<code>merge</code> 才会把主仓库的 <code>master</code> 合入当前工作分支。若出现冲突，在 VS Code 中检查冲突标记，保留需要的内容并保存文件；然后只暂存已解决的文件，并完成合并提交：</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>路径/已解决的文件.md
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"合并主仓库更新并解决冲突 / merge upstream updates and resolve conflicts"</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"合并主仓库更新并解决冲突"</span>
 </code></pre></div>
 <p>没有冲突时，Git 会直接完成合并，无需再运行上述 <code>git add</code> 和 <code>git commit</code>。最后确认工作区状态，并推送当前工作分支，随后在原有 PR 中查看更新：</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>status
 git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>你的分支名
-</code></pre></div></div>
+</code></pre></div>
+<p>远程地址的查看和修改可参考 <a href="https://git-scm.com/docs/git-remote">Git remote 文档</a>。</p></div>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
