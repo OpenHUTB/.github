@@ -54,8 +54,9 @@ def plot_lw():
 
 
 def figure_setup():
-    """Set all the sizes to the correct values and use
-    tex fonts for all texts.
+    """统一字体和线条尺寸，并使用 LaTeX 渲染文字。
+
+    普通文字使用 font.size，坐标轴、图例和刻度可分别设置字号。
     """
     params = {'text.usetex': True,
               'figure.dpi': 200,
@@ -66,7 +67,6 @@ def figure_setup():
               'axes.labelsize': label_size(),
               'axes.titlesize': font_size(),
               'axes.linewidth': axis_lw(),
-              'text.fontsize': font_size(),
               'legend.fontsize': font_size(),
               'xtick.labelsize': ticks_size(),
               'ytick.labelsize': ticks_size(),
