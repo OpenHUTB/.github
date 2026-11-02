@@ -97,6 +97,14 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#摘取中断后如何处理">摘取中断后如何处理</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#保留本次摘取并继续">保留本次摘取并继续</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#放弃或跳过">放弃或跳过</a>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#参考">参考</a>
 </li>
 </ul>
@@ -166,9 +174,53 @@
 <h3 id="完成后检查">完成后检查</h3>
 <p>操作完成后，查看当前分支的日志和文件差异，确认需要的修改已经进入目标分支。检查文档页面或运行相关程序，确认没有问题后再推送该分支。源分支中的原提交仍然保留。</p>
 <p>如果出现冲突，先按<a href="../../resolve_conflict/">解决冲突</a>中的步骤处理文件，再回到 Cherry-pick 窗口继续操作；不要直接另开普通提交窗口结束本次操作。</p>
+<h2 id="摘取中断后如何处理">摘取中断后如何处理</h2>
+<p>终端提示冲突后，先执行 <code>git status</code>，确认当前正在进行 Cherry-pick，并查看哪些文件尚未解决。下面的 <code>docs/example.md</code> 仅表示发生冲突的文件，应替换为状态列表中的实际路径。</p>
+<h3 id="保留本次摘取并继续">保留本次摘取并继续</h3>
+<ol>
+<li>打开冲突文件，逐处决定保留的内容，清除 <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>、<code>=======</code>、<code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code> 标记，检查修改后的完整段落或代码。</li>
+<li>只暂存已经解决的文件，再检查暂存差异：</li>
+</ol>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>--<span class="w"> </span>docs/example.md
+git<span class="w"> </span>diff<span class="w"> </span>--cached
+git<span class="w"> </span>diff<span class="w"> </span>--check
+git<span class="w"> </span>cherry-pick<span class="w"> </span>--continue
+</code></pre></div>
+<ol>
+<li>如果弹出提交信息编辑器，确认信息后保存并关闭；批量摘取时，后续提交也可能再次遇到冲突，按相同步骤处理。</li>
+<li>最后运行 <code>git status</code> 和 <code>git log -5 --oneline</code>，确认摘取流程已结束、提交顺序正确，再检查实际文件效果并推送。</li>
+</ol>
+<h3 id="放弃或跳过">放弃或跳过</h3>
+<table>
+<thead>
+<tr>
+<th>需要做什么</th>
+<th>命令</th>
+<th>执行前确认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>放弃本轮摘取，回到开始前的状态</td>
+<td><code>git cherry-pick --abort</code></td>
+<td>本轮已处理的冲突内容如需保留，应先另存；批量摘取时会撤销本轮已经应用的提交</td>
+</tr>
+<tr>
+<td>跳过当前提交，继续后续提交</td>
+<td><code>git cherry-pick --skip</code></td>
+<td>已核对该提交的修改已存在，或确实不需要；不能仅因为出现冲突就跳过</td>
+</tr>
+</tbody>
+</table>
+<p>如果提示当前提交为空，先比较目标分支已有内容与本次修改，再决定是否跳过。不要在原因不明时反复执行普通 <code>git commit</code>；用 <code>git status</code> 确认正在进行的操作，并通过对应的继续或撤销命令结束流程。</p>
 <h2 id="参考">参考</h2>
 <ul>
-<li><a href="https://tortoisegit.org/docs/tortoisegit/tgit-dug-cherrypick.html">TortoiseGit：摘取提交</a></li>
+<li>
+<p><a href="https://tortoisegit.org/docs/tortoisegit/tgit-dug-cherrypick.html">TortoiseGit：摘取提交</a></p>
+</li>
+<li>
+<p><a href="https://git-scm.com/docs/git-cherry-pick#_sequencer_subcommands">Git：cherry-pick 的继续、跳过与撤销</a></p>
+</li>
 </ul></div>
 </div>
 </div><footer>
