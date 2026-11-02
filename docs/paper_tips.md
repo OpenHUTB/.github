@@ -352,6 +352,47 @@ plt.close(fig)
 
 保存后，把图片插入实际论文模板，检查最终 PDF 中的文字、边距和线条。投稿方指定格式时，以投稿说明为准。具体选项见 [Matplotlib 保存图片说明](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.savefig.html)，LaTeX 图片格式可参考 [Overleaf 图片插入说明](https://www.overleaf.com/learn/latex/Inserting_Images)。
 
+## 保留绘图数据，方便复查同一张图
+
+只保留图片，后续修改坐标轴或图例时可能找不回当时的数据。建议将绘图脚本和实际使用的数据一起保存；如果示例含随机数，同时固定随机种子。下面的例子第一次运行时保存数据，此后直接读取同一份 CSV，再导出 PDF 和 PNG：
+
+```python
+from pathlib import Path
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+output = Path("figures")
+output.mkdir(exist_ok=True)
+data_file = output / "line_points.csv"
+
+if not data_file.exists():
+    rng = np.random.default_rng(42)
+    x = np.linspace(0, 1, 40)
+    y = 2 * x + rng.normal(0, 0.08, x.size)
+    np.savetxt(data_file, np.column_stack((x, y)), delimiter=",",
+               header="x,y", comments="")
+
+x, y = np.loadtxt(data_file, delimiter=",", skiprows=1, unpack=True)
+fig, ax = plt.subplots(figsize=(8 / 2.54, 6 / 2.54), layout="constrained")
+ax.plot(x, y, marker="o", markersize=3, linewidth=1, label="samples")
+ax.set(xlabel="x", ylabel="y")
+ax.legend()
+fig.savefig(output / "line.pdf")
+fig.savefig(output / "line.png", dpi=300)
+plt.close(fig)
+```
+
+![固定绘图数据后导出的折线图，包含 40 个采样点](img/plot_data_example.png)
+
+上图是示例数据对应的 PNG 输出，用于对照点的位置、坐标范围和图例是否一致。它展示的是随机示例数据，不代表实际实验结果。
+
+此处图幅为宽 8 cm、高 6 cm；Matplotlib 的 `figsize` 使用英寸，因此要除以 2.54。没有使用 `bbox_inches="tight"`，以保留指定的整体画布尺寸。将图片插入正文后，仍需按实际显示宽度检查字号与图例。
+
+复查时连续运行两次，确认 `line_points.csv` 内容未变，两种格式中的点和曲线一致。修改真实实验数据时应另存一份有明确含义的数据文件，并修改脚本的读取路径，避免把旧数据误当作新结果。固定种子用于重复生成示例数据，不能保证不同 NumPy 或 Matplotlib 版本导出的图片文件逐字节相同；需要长期复查时，同时记录这些依赖的版本。
+
+参考 [NumPy：随机数生成器](https://numpy.org/doc/stable/reference/random/generator.html)和 [Matplotlib：图幅尺寸](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html)。
+
 ## 将图形的部分栅格化
 
 如果绘图中包含大量数据点，生成的 EPS 文件可能会非常大。您可以将图形保存为 PNG 文件，但这会导致文本模糊。解决方案是将图形的部分内容栅格化，即告诉 `matplotlib` 数据点必须在 EPS 文件中渲染为位图，其余部分则渲染为矢量格式。
