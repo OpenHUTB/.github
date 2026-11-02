@@ -41,10 +41,25 @@
     ```shell
     docker-compose up -d
     ```
-修改配置后，执行重启命令：
-    ```shell
-    docker-compose restart
-    ```
+修改 `docker-compose.yml` 中的端口、环境变量或挂载目录后，需要重新应用配置。`restart` 只重启已有容器，不会按修改后的 Compose 文件重新创建它。
+
+先在 `docker-compose.yml` 所在目录检查配置；没有报错后，再更新 `gitlab` 服务：
+
+```shell
+docker-compose config --quiet
+docker-compose up -d gitlab
+```
+
+`up -d` 会在配置变化时重新创建相关容器。启动后继续检查状态和最近的日志，等待 GitLab 完成初始化，再打开页面：
+
+```shell
+docker-compose ps
+docker-compose logs --tail=100 gitlab
+```
+
+使用新版 Compose 时，把上述命令中的 `docker-compose` 换成 `docker compose`。如果 `config --quiet` 报错，先按报错位置修正 YAML，再运行 `up`。修改挂载路径不会自动搬迁旧目录中的数据，已有仓库需要先保留原目录并确认新路径内容。
+
+只想重启服务、没有修改 Compose 配置时，仍可以使用 `docker-compose restart gitlab`。命令行为见 [Docker 的 restart 说明](https://docs.docker.com/reference/cli/docker/compose/restart/)和 [up 说明](https://docs.docker.com/reference/cli/docker/compose/up/)。
 
 如果本机可以访问 [http://127.0.0.1:1080](http://127.0.0.1:1080)，但局域网内其他设备无法访问 [http://172.21.108.56:1080](http://172.21.108.56:1080)，可以依次检查：
 
