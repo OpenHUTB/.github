@@ -25,7 +25,7 @@
 * [HandBrake](https://github.com/HandBrake/HandBrake) - 视频转码器，适用于 Linux、Mac 和 Windows
 * [7-Zip](https://github.com/ip7z/7zip) - 免费开源的文件解压工具
 
-* [LocalSend](https://github.com/localsend/localsend) - 跨平台开源局域网文件传输工具，无需账号或互联网连接，可作为 AirDrop 的替代方案。
+* [LocalSend](https://localsend.org) - 跨平台开源局域网文件传输工具，无需账号或互联网连接，可作为 AirDrop 的替代方案（[源码](https://github.com/localsend/localsend)）。
 * [Shotcut](https://github.com/mltframework/shotcut) - 开源视频剪辑工具
 
 ## 办公
