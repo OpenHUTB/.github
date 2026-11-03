@@ -106,7 +106,7 @@ PyCharm 使程序员更容易用 Python 编写各种 web 应用程序，支持�
 
 除了支持常用的 web 技术，PyCharm 还为像 Django 这样健壮的 Python web 框架提供一流的支持。开发人员可以使用 IDE 来利用 Django 标签、过滤器、参数和模板变量的代码完成建议。此外，他们可以通过参考快速文档来收集关于标签和过滤器的附加信息。
 
-Python IDE 甚至帮助 web 开发人员调试 Django 模板、格式化代码、验证代码和管理。py 控制台。同时，PyCharm 还支持广泛使用的 Python web 框架，如 Pyramid 和 Web2Py。它提供了特定于Pyramid的代码完成和导航选项。同样，它允许 web 开发人员在使用 Web2Py 时利用代码完成和导航选项。
+Python IDE 甚至帮助 web 开发人员调试 Django 模板、格式化代码、验证代码和 manage.py 控制台。同时，PyCharm 还支持广泛使用的 Python web 框架，如 Pyramid 和 Web2Py。它提供了特定于Pyramid的代码完成和导航选项。同样，它允许 web 开发人员在使用 Web2Py 时利用代码完成和导航选项。
 
 ### **支持 Python 科学库**
 
@@ -336,6 +336,17 @@ PyCharm 支持一种智能重构技术，在这种技术中，您只需要知道
 为了更清楚地了解选择，请查看下图:
 
 ![Column Selection - Pycharm Tutorial - Edureka](img/column_selection.png)
+
+## 解释器与终端环境核对
+
+当终端里能够导入包、编辑器中却仍提示缺失时，先核对两处实际使用的 Python：
+
+1. 在 PyCharm 的项目解释器页面记录解释器路径。
+2. 在内置终端运行 `python -c "import sys; print(sys.executable)"`，比较输出是否为同一路径。
+3. 路径不一致时，先切换项目解释器，或在终端激活对应的虚拟环境，再重新打开终端核对路径。
+4. 路径一致后，运行最小导入命令，确认所需依赖已安装在该环境中。
+
+如果项目使用虚拟环境，还应确认该环境位于当前项目或约定目录中，避免误用系统 Python。
 
 ## **结论**
 

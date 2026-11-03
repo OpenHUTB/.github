@@ -31,9 +31,7 @@ def get_commits(since=None, until=None, ignore_list=[]):
     result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, encoding='utf-8')
     
     if result.returncode != 0:
-        print("git log 执行失败")
-        print(result.stderr)
-        return [], {}
+        raise RuntimeError(result.stderr.strip() or "git log 执行失败")
 
     raw_data = result.stdout.splitlines()
     email_to_name = {}
@@ -66,7 +64,11 @@ def main():
     args = parser.parse_args()
 
     ignore_list = load_ignore_users(args.ignore)
-    counts, name_map = get_commits(args.since, args.until, ignore_list)
+    # 查询失败时终止，避免把失败当成零条提交或覆盖已有统计文件。
+    try:
+        counts, name_map = get_commits(args.since, args.until, ignore_list)
+    except (OSError, RuntimeError) as exc:
+        parser.exit(2, f"无法读取 Git 提交记录，请确认当前目录是有效仓库且 Git 可用：{exc}\n")
 
     # 转换结果：[(用户名, 次数), ...]
     results = sorted(
