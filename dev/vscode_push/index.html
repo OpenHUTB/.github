@@ -141,6 +141,8 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#十一推送失败时先确认分支关系">十一、推送失败时先确认分支关系</a>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../pycharm-tutorial/">PyCharm 教程</a>
@@ -238,6 +240,7 @@
 <li><a href="#3-%E8%8E%B7%E5%8F%96%E5%B9%B6%E5%90%88%E5%B9%B6%E6%9B%B4%E6%96%B0">3. 获取并合并更新</a></li>
 </ul>
 </li>
+<li><a href="#%E5%8D%81%E4%B8%80%E6%8E%A8%E9%80%81%E5%A4%B1%E8%B4%A5%E6%97%B6%E5%85%88%E7%A1%AE%E8%AE%A4%E5%88%86%E6%94%AF%E5%85%B3%E7%B3%BB">十一、推送失败时先确认分支关系</a></li>
 </ul>
 </li>
 </ul>
@@ -390,7 +393,17 @@ git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </sp
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>status
 git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>你的分支名
 </code></pre></div>
-<p>远程地址的查看和修改可参考 <a href="https://git-scm.com/docs/git-remote">Git remote 文档</a>。</p></div>
+<h2 id="十一推送失败时先确认分支关系">十一、推送失败时先确认分支关系</h2>
+<p>当 <code>git push</code> 被拒绝时，不要直接重复推送，可以先按下面顺序检查：</p>
+<ol>
+<li>运行 <code>git branch --show-current</code> 确认当前分支。</li>
+<li>运行 <code>git status</code> 查看是否有未提交文件，并确认工作区状态。</li>
+<li>运行 <code>git remote -v</code> 核对推送目标是否为自己的 fork。</li>
+<li>如果远程已有新提交，先获取更新并处理差异，再重新推送。</li>
+<li>推送成功后，在 GitHub 的分支页面核对最新提交和改动文件。</li>
+</ol>
+<p>这些检查可以区分分支选错、远程地址错误和远程分支已更新等不同情况。
+远程地址的查看和修改可参考 <a href="https://git-scm.com/docs/git-remote">Git remote 文档</a>。</p></div>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
