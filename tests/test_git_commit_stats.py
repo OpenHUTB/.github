@@ -24,7 +24,7 @@ class CommitStatsTests(unittest.TestCase):
             ), patch("sys.stderr", new_callable=io.StringIO) as errors:
                 with self.assertRaises(SystemExit) as stopped:
                     git_commit_stats.main()
-            self.assertEqual(stopped.exception.code, 1)
+            self.assertEqual(stopped.exception.code, 2)
             self.assertIn("not a git repository", errors.getvalue())
             self.assertEqual(report.read_text(encoding="utf-8"), "existing report\n")
 
