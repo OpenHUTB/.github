@@ -25,6 +25,7 @@
 * [HandBrake](https://github.com/HandBrake/HandBrake) - 视频转码器，适用于 Linux、Mac 和 Windows
 * [7-Zip](https://github.com/ip7z/7zip) - 免费开源的文件解压工具
 * [Shotcut](https://github.com/mltframework/shotcut) - 开源视频剪辑工具
+* [Obsidian](https://obsidian.md/zh/) - 一款基于本地 Markdown 文件的知识管理/笔记应用，它可以把markdown文件连接在一起，让你可以快速回顾你所写的笔记
 
 ## 办公
 
