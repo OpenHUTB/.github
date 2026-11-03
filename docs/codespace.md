@@ -2,7 +2,7 @@
 
 ## 1. Fork 仓库
 
-**[注册](https://openhutb.github.io/.github/dev/sign_up/) 并登录 Github 账号**，在 [想要修改的开源孪创仓库](https://github.com/OpenHUTB/hutb) 页面右上角点击`Fork`
+**[注册](https://openhutb.github.io/.github/dev/sign_up/) 并登录 GitHub 账号**，在 [想要修改的开源孪创仓库](https://github.com/OpenHUTB/hutb) 页面右上角点击`Fork`
 
 ![](./img/codespace/fork.png)
 
@@ -12,14 +12,14 @@
 
 出现的页面即为社区仓库的拷贝。
 
-## 2. 启用自动化流水
+## 2. 启用自动化流水线
 
-点击个人项目的“Actions -> I understand my workflows, go ahead and enable them”启用自动化流水。
+点击个人项目的“Actions -> I understand my workflows, go ahead and enable them”启用自动化流水线。
 
 ![](./img/codespace/actions.png)
 
 
-点击“Settings -> Action -> General -> Workflow permissions -> read and write permissions” 启用项目的 Action 写入权限。
+点击“Settings -> Actions -> General -> Workflow permissions -> read and write permissions” 启用项目的 Action 写入权限。
 
 ![](./img/codespace/action_general.png)
 
@@ -45,6 +45,31 @@
 ![](./img/codespace/edit.png)
 
 编辑完成后，按 `Ctrl+S` 保存文件，并通过预览检查内容和排版。保存只会更新当前 Codespace 中的文件，还需要按照下一步完成“提交”和“同步更改”，才能将修改上传到个人 GitHub 仓库。
+
+### 在 Codespace 中预览完整文档网站
+
+编辑器侧边的 Markdown 预览适合检查段落和列表。修改导航、公式或站点插件相关内容时，还应启动项目的 MkDocs 网站，检查实际页面。本节以 `OpenHUTB/.github` 文档仓库为例。
+
+打开终端，进入同时包含 `mkdocs.yml` 和 `requirements.txt` 的仓库根目录，然后执行：
+
+```shell
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install mkdocs -r requirements.txt
+python -m mkdocs serve --dev-addr 0.0.0.0:8000
+```
+
+这里的激活命令适用于 Codespaces 常见的 Linux 终端；已建好 `.venv` 时只需重新激活，不必重复创建。安装依赖后，等待终端出现服务启动信息，再打开底部的“端口（Ports）”标签页：
+
+1. 找到 `8000` 端口；未自动出现时，点击“添加端口”并输入 `8000`。
+2. 点击该端口的“在浏览器中打开”。保留端口的专用可见性即可，个人检查无需公开端口。
+3. 从网站导航进入本次修改的页面，检查图片、站内链接、公式和目录。保存源文件后，等待构建完成，再刷新页面确认变化。
+
+此时应使用端口面板提供的转发地址；个人电脑的 `localhost:8000` 并不是 Codespace 的地址。若配置中的 `site_url` 带有子路径，终端给出的访问路径可能也带有该前缀，应保留完整路径。
+
+检查结束后，在运行服务的终端按 `Ctrl+C` 停止。这个预览地址只在服务运行期间可用；正式发布后的固定地址仍按第 5 步检查。站点输出目录 `site/` 和 `.venv/` 不加入本次提交。
+
+命令说明见 [MkDocs：开发服务器地址](https://www.mkdocs.org/user-guide/configuration/#dev_addr)，端口操作见 [GitHub：转发 Codespaces 端口](https://docs.github.com/zh/codespaces/developing-in-a-codespace/forwarding-ports-in-your-codespace)。
 
 ## 4. 提交修改
 
@@ -121,3 +146,18 @@
 停止后不再产生该环境的计算用量，但保存环境仍会占用存储额度。只打算暂时离开时选择停止，长期不用时可在确认所需内容已推送或备份后再决定是否删除。
 
 操作说明见 [GitHub：停止和启动 Codespace](https://docs.github.com/zh/codespaces/developing-in-a-codespace/stopping-and-starting-a-codespace)。
+
+
+## 继续编辑时的检查
+
+重新进入 Codespace 后，在终端依次检查：
+
+- 运行 `git branch --show-current`，确认分支与原 Pull Request 的来源分支一致。
+- 运行 `git status --short`，查看已修改、已暂存和未跟踪的文件，确认列表里都是本次需要处理的内容。
+- 运行 `git diff` 查看尚未暂存的修改，再运行 `git diff --cached` 查看已暂存的修改。两处都核对后，再继续编辑、提交和推送。
+
+如果分支或文件列表与预期不符，先弄清已有修改的用途，保存好需要保留的内容，再继续操作。
+
+## 离开前的检查
+
+结束编辑前，请确认文件已保存，并查看待提交文件列表；需要稍后继续时，记下当前分支和最后一次提交。这样重新打开环境后，可以从同一位置继续处理。
