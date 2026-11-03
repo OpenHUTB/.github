@@ -32,7 +32,6 @@
 
 ## 每行一个句子
 
-编写 LaTeX 文档时，请在源文件中每行都放一个句子。例如：
 编写 LaTeX 文档时，请在源文件中每行只放一个句子。例如：
 ```
 This is my first sentence.
@@ -43,9 +42,9 @@ This is the second one.
 This is my first sentence. This is the second one.
 ```
 
-这样做的主要原因是为了更好的对源代码控制和协作：查看提交的更改时，如果每个句子都单独放在一行，就能更容易地识别哪些句子被更改了。这样，你的同志就能更容易地看到更改。
+这样做的主要原因是为了更好的对源代码控制和协作：查看提交的更改时，每个句子都单独放在一行，就能更容易地识别哪些句子被更改了。这样，你的同事就能更容易地看到更改。
 
-另一个好处是，当我们的 LaTeX 编译器仅给出行号时，您将能够更好地识别错误。
+另一个好处是，当我们的 LaTeX 编译器仅给出行号时，您将能够更快速地识别错误。
 
 ## 大写
 
@@ -122,12 +121,10 @@ Figure~\ref{fig:example}
 
 一般来说，避免在表格中使用垂直线。如果要对列进行分组，请在标题中使用`\cmidrule` 进行分组。您也可以使用 `\addlinespace` 用空格代替水平线。
 
-列标题应使用句子格式大写（请参阅 http://www.chicagomanualofstyle.org/15/ch13/ch13_sec019.html ）。
+列标题应使用句子格式大写（请参阅 https://www.chicagomanualofstyle.org/qanda/data/faq/topics/Capitalization.html ）。
 
 您可以在这里找到更多关于表格格式的建议： http://www.inf.ethz.ch/personal/markusp/teaching/guides/guide-tables.pdf 。
-这里有一个很棒的 GIF，演示了其中一些规则：
-
-![Better table formatting](http://darkhorseanalytics.com/blog/wp-content/uploads/2014/03/ClearOffTheTableMd.gif)
+这里有一份表格示例，演示了其中一些规则：[paper-tips-and-tricks 表格示例](https://github.com/Wookai/paper-tips-and-tricks/tree/master/examples/booktabs)。
 
 ## 数字格式
 
@@ -331,13 +328,70 @@ if __name__ == '__main__':
 
 ## 图形格式
 
-我们建议将所有图表保存为`EPS`格式。这样，您可以同时使用`latex`和`pdflatex`来生成文档，并欣赏精美的矢量图形和文本。
+图片格式应与论文的编译方式和图片内容相配合，不能统一要求所有图都保存为 EPS：
 
-自 2015 年 9 月起，在 Mac OS X 上以及使用最新版本的 Python、Matplotlib 和 TeX Live 时，打印直接用 Matplotlib 保存为 `PDF` 格式的图表时会有一些质量损失。打印在纸上时，这个问题会更加明显；您可以亲自尝试一下。这也是为什么最好将 Matplotlib 生成的图片保存为 `EPS` 格式的原因之一。如果您确实只想保留图表的 PDF 版本，请使用 `epspdf` 命令行工具——生成的 PDF 会比直接用 Matplotlib 生成的 PDF 更好。
+| 使用场景 | 常用格式 | 选择时注意 |
+| --- | --- | --- |
+| 使用 pdfLaTeX、XeLaTeX 或 LuaLaTeX 插入曲线图、流程图 | PDF | 保留矢量线条和文字，缩放后检查字体与符号是否完整 |
+| 使用传统 LaTeX → DVI → PostScript 流程 | EPS | 按该流程或投稿模板的说明使用；pdfLaTeX 使用 EPS 通常还需要转换 |
+| 照片、软件截图等位图 | PNG 或 JPEG | 按最终插入尺寸检查清晰度；提高导出分辨率不会补回原图丢失的细节 |
 
-为了完整起见，请注意 Matplotlib 的另一个后端 [PGF](http://matplotlib.org/users/pgf.html) ，其结果略胜一筹。然而，截至 2015 年 9 月，生成的 PDF 文件大小是使用默认后端和 `epspdf` 生成的 PDF 文件的两倍。
+Matplotlib 可直接导出 PDF 和 PNG。下面的例子从同一幅图保存两个文件，文件扩展名决定导出格式：
 
-Matplotlib 即使使用 [紧凑的布局功能](http://matplotlib.org/users/tight_layout_guide.html) ，有时也会在页边距中添加过多的空白。一个漂亮的命令行工具 `pdfcrop`，可以将 PDF 裁剪到最紧密的边界框。
+```python
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots(figsize=(4, 3))
+ax.plot([0, 1, 2], [0, 1, 4])
+ax.set_xlabel("x")
+ax.set_ylabel("y")
+fig.savefig("curve.pdf", bbox_inches="tight")
+fig.savefig("curve.png", dpi=300, bbox_inches="tight")
+plt.close(fig)
+```
+
+保存后，把图片插入实际论文模板，检查最终 PDF 中的文字、边距和线条。投稿方指定格式时，以投稿说明为准。具体选项见 [Matplotlib 保存图片说明](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.savefig.html)，LaTeX 图片格式可参考 [Overleaf 图片插入说明](https://www.overleaf.com/learn/latex/Inserting_Images)。
+
+## 保留绘图数据，方便复查同一张图
+
+只保留图片，后续修改坐标轴或图例时可能找不回当时的数据。建议将绘图脚本和实际使用的数据一起保存；如果示例含随机数，同时固定随机种子。下面的例子第一次运行时保存数据，此后直接读取同一份 CSV，再导出 PDF 和 PNG：
+
+```python
+from pathlib import Path
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+output = Path("figures")
+output.mkdir(exist_ok=True)
+data_file = output / "line_points.csv"
+
+if not data_file.exists():
+    rng = np.random.default_rng(42)
+    x = np.linspace(0, 1, 40)
+    y = 2 * x + rng.normal(0, 0.08, x.size)
+    np.savetxt(data_file, np.column_stack((x, y)), delimiter=",",
+               header="x,y", comments="")
+
+x, y = np.loadtxt(data_file, delimiter=",", skiprows=1, unpack=True)
+fig, ax = plt.subplots(figsize=(8 / 2.54, 6 / 2.54), layout="constrained")
+ax.plot(x, y, marker="o", markersize=3, linewidth=1, label="samples")
+ax.set(xlabel="x", ylabel="y")
+ax.legend()
+fig.savefig(output / "line.pdf")
+fig.savefig(output / "line.png", dpi=300)
+plt.close(fig)
+```
+
+![固定绘图数据后导出的折线图，包含 40 个采样点](img/plot_data_example.png)
+
+上图是示例数据对应的 PNG 输出，用于对照点的位置、坐标范围和图例是否一致。它展示的是随机示例数据，不代表实际实验结果。
+
+此处图幅为宽 8 cm、高 6 cm；Matplotlib 的 `figsize` 使用英寸，因此要除以 2.54。没有使用 `bbox_inches="tight"`，以保留指定的整体画布尺寸。将图片插入正文后，仍需按实际显示宽度检查字号与图例。
+
+复查时连续运行两次，确认 `line_points.csv` 内容未变，两种格式中的点和曲线一致。修改真实实验数据时应另存一份有明确含义的数据文件，并修改脚本的读取路径，避免把旧数据误当作新结果。固定种子用于重复生成示例数据，不能保证不同 NumPy 或 Matplotlib 版本导出的图片文件逐字节相同；需要长期复查时，同时记录这些依赖的版本。
+
+参考 [NumPy：随机数生成器](https://numpy.org/doc/stable/reference/random/generator.html)和 [Matplotlib：图幅尺寸](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html)。
 
 ## 将图形的部分栅格化
 
@@ -357,7 +411,7 @@ Matplotlib 即使使用 [紧凑的布局功能](http://matplotlib.org/users/tigh
 * 所有文中的符号都是公式符号，而不是英文
 * latex 编译生成中间文件（ *.aux, *.log等）和输出pdf文件不用放到仓库
 * 一次性不要提交太多文件，不好审核，提交前检查下，比如大的二进制文件可以提供一个下载链接
-* 缓存、输出文件必须要放到仓库，比如：__pycache__不需要的缓存文件、训练的模型、中间记录文件、.pyc文件、checkpoint文件、*.pth文件最多放一个、*.npy文件等
+* 缓存、不必要的输出文件不要放到仓库，比如：__pycache__不需要的缓存文件、训练的模型、中间记录文件、.pyc文件、checkpoint文件、*.pth文件最多放一个、*.npy文件等
 
 ## 其他
 
@@ -365,8 +419,23 @@ Matplotlib 即使使用 [紧凑的布局功能](http://matplotlib.org/users/tigh
 
 # 有用的资源
 
-* 自动将标题大写: https://capitalizemytitle.com
-* 芝加哥格式手册: http://www.chicagomanualofstyle.org
-* 命令行检查模棱两可的词语、被动语态等: https://github.com/devd/Academic-Writing-Check
-* LaTeX 2e 使用基本指南: http://ctan.math.utah.edu/ctan/tex-archive/info/l2tabu/english/l2tabuen.pdf
+* [自动将标题大写](https://capitalizemytitle.com)
+* [芝加哥格式手册](http://www.chicagomanualofstyle.org)
+* [命令行检查模棱两可的词语、被动语态等](https://github.com/devd/Academic-Writing-Check)
+* [LaTeX 2e 使用基本指南](http://ctan.math.utah.edu/ctan/tex-archive/info/l2tabu/english/l2tabuen.pdf)
 * [撰写科学论文的技巧和窍门](https://github.com/Wookai/paper-tips-and-tricks/tree/master)
+* [论文下载工具 sci-hub](https://tool.yovisun.com/scihub/)
+
+
+补充提示：插图导出后请检查文字、线条和图例是否清晰，再放入论文正文。
+
+
+
+导出后可先打开 PDF 检查文字是否清晰、图例是否完整，再查看 PNG 在最终版心宽度下的显示效果。若图片来自脚本，建议同时保留脚本和导出的文件名，后续修改数据时更容易重新生成同一张图。
+
+
+## 插图放入正文后的检查
+
+- 按正文中的实际宽度查看图片，确认坐标刻度、图例和注释能直接读清，不只检查放大后的效果。
+- 导出整篇 PDF 后重新检查图像边缘，确认标题、单位和图例没有被裁切，图号与正文引用相符。
+- 涉及多条曲线时，检查线型、标记和颜色是否容易区分；打印成灰度后也应能对应到图例。
