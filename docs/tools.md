@@ -49,6 +49,8 @@
 
 * [auto-py-to-exe](https://github.com/brentvollebregt/auto-py-to-exe) - python 转可执行 exe 的图形界面
 
+* [Hoppscotch](https://github.com/hoppscotch/hoppscotch) - 开源 API 开发与调试工具，支持 Web、桌面端和自托管，可发送 HTTP、WebSocket、GraphQL 与 SSE 请求。
+
 
 
 ## 三维建模
