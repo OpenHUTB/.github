@@ -37,6 +37,10 @@ OpenHUTB倡导开源协作精神，提供完备的学习资源。参与者可参
 
 - [给 Ubuntu 虚拟机硬盘扩容](./dev/vm_disk.md)
 
+- [在 VS Code 中提交和推送修改](./dev/vscode_push.md)
+
+- [使用 TortoiseGit 解决合并冲突](./resolve_conflict.md)
+
 
 ## 3. 问题 <span id="questions"></span>
 

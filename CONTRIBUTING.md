@@ -274,6 +274,30 @@ git submodule update --remote
 > ```
 >
 > ⚠️ 注意：PAT等同于你的密码，不要分享给他人，不要上传到仓库；公用电脑优先使用SSH方案。
+###### 向 GitHub 推送时出现 403 或权限不足
+
+先区分“提交署名”和“登录权限”：`git config user.name`、`user.email` 只决定提交记录的署名，不会赋予仓库写入权限。在网址前添加用户名也不会改变仓库权限。
+
+1. 在仓库目录运行 `git remote -v`，检查 `origin` 的推送地址。如果它仍指向 `OpenHUTB/.github`，而你没有直接写入权限，应改为自己的 Fork。以下命令中的 `YOUR_USERNAME` 需要替换为实际用户名：
+
+   ```shell
+   git remote set-url origin https://github.com/YOUR_USERNAME/.github.git
+   git remote -v
+   ```
+
+   保留主仓库作为 `upstream` 即可；使用其他项目时，同时替换仓库名。不要把令牌写进远程地址。
+
+2. 确认当前分支，推送到个人 Fork，再从网页向主仓库创建 PR：
+
+   ```shell
+   git branch --show-current
+   git push -u origin HEAD
+   ```
+
+3. 如果 `origin` 已经是自己的 Fork，仍提示 `Permission ... denied to OTHER_USER`，核对错误中的登录账号。Windows 可在“凭据管理器 → Windows 凭据”中更新与 `github.com` 对应的旧凭据，再重新登录正确账号；不要清空无关凭据。
+4. HTTPS 推送不使用 GitHub 网站登录密码，应使用凭据管理器的浏览器登录或具有目标仓库权限的个人访问令牌。使用 SSH 时，可运行 `ssh -T git@github.com` 查看认证到哪个账号；看到成功认证信息即可，GitHub 不提供交互式 Shell。
+
+参考：[管理远程仓库](https://docs.github.com/zh/get-started/git-basics/managing-remote-repositories)、[HTTPS 克隆错误](https://docs.github.com/zh/repositories/creating-and-managing-repositories/troubleshooting-cloning-errors#https-cloning-errors)。
 
 
 ###### 克隆个人仓库出错

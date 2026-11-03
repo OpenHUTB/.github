@@ -25,7 +25,6 @@
 * [HandBrake](https://github.com/HandBrake/HandBrake) - 视频转码器，适用于 Linux、Mac 和 Windows
 * [7-Zip](https://github.com/ip7z/7zip) - 免费开源的文件解压工具
 
-
 ## 办公
 
 * [rustdesk](https://github.com/rustdesk/rustdesk) - 远程桌面应用程序，专为自托管设计，作为 TeamViewer 的替代方案。
@@ -107,7 +106,7 @@
 
 * [Ditto](https://github.com/sabrogden/Ditto) - 剪贴板管理器
 
-* [Clash Verge](https://github.com/clash-verge-rev/clash-verge-rev/releases/tag/v2.5.2) - VPN代理工具
+* [Clash Verge](https://github.com/clash-verge-rev/clash-verge-rev) - VPN代理工具
 
 
 ### 研究
@@ -122,7 +121,7 @@
 ## 常见
 
 * [Chromium](https://github.com/chromium/chromium) - Chromium 浏览器
-* [python](https://docs.python.org/zh-cn/3/tutorial/) -python 教程
+* [python](https://docs.python.org/zh-cn/3/tutorial/) - python 教程
 
 * [vscode](https://github.com/microsoft/vscode) - 代码编辑
 
