@@ -13,6 +13,12 @@ repo_url: https://github.com/OpenHUTB/.github
 # 页面右上角添加直接编辑页面的按钮
 edit_uri: edit/master/docs/
 
+# 严格模式：把构建期的警告（页内锚点不存在、相对链接指向不存在的文件等）
+# 升级为错误，让 pr_build.yml 的 PR 构建、deploy_page.yml 的部署直接失败，
+# 而不是带着坏链接把站点发到线上。下面关于 extra.css、js/umlconvert.js 的
+# 注释就记录过这类"静默产生全站 404"的事故，开启后同类问题会在 CI 阶段被拦住。
+strict: true
+
 theme:
   name: readthedocs
   sticky_navigation: True
@@ -42,13 +48,21 @@ extra_javascript:
 # - js/umlconvert.js
 
 plugins:
+  # 站点内容全部为中文，搜索分词应使用中文（lunr.zh），
+  # 之前误配为 ja，日文分词器无法正确处理中文词边界，检索命中率很低。
   - search:
-      lang: ja
+      lang: zh
       separator: '[\s\-\.]+'
       min_search_length: 2
   - bibtex:
       bib_file: refs.bib
       csl_file: nature.csl
+      # 关闭「行内引用」扫描：开启时插件会把正文里所有 @xxx 都当成引用键，
+      # 例如 index.md 中的 twitter.com/@OpenHUTB 链接、bib_reference_guide.md
+      # 代码块里的示例条目，都会报 "Citing unknown reference key" 警告。
+      # 目前仓库里没有任何页面使用 @key 形式的行内引用（只有 refs.bib 的条目定义），
+      # 关闭后 [@key] 形式的引用仍然正常工作。
+      enable_inline_citations: false
   - mkdocs-video:
       is_video: True
       video_autoplay: True
