@@ -1,3 +1,8 @@
+"""
+git_commit_stats.py
+本脚本用于统计 Git 仓库的提交数据，并输出为 CSV 文件。
+支持通过参数指定时间段，并可通过 JSON 文件过滤特定用户。
+"""
 # python git_commit_stats.py --since "2026-02-27 18:00" --until "2026-03-08 00:00"运行指定时间段的提交统计，结果输出到 commit_stats.csv 文件中。可以通过 --ignore 参数指定一个 JSON 文件，里面包含需要屏蔽的用户（按邮箱或用户名）。如果不指定 --ignore 参数，则默认使用 ignore_users.json 文件作为屏蔽列表。
 import subprocess
 import argparse
