@@ -41,7 +41,7 @@
 * [pywechat](https://github.com/Hello-Mr-Crab/pywechat) - windows桌面微信自动化
 * [drawio](https://github.com/jgraph/drawio) - 免费开源的流程图、架构图绘制工具
 
-* [Excalidraw](https://github.com/excalidraw/excalidraw) - 支持多人实时协作的手绘风格白板，适合绘制流程图、架构图和头脑风暴草图。
+* [Excalidraw](https://excalidraw.com) - 支持多人实时协作的手绘风格白板，适合绘制流程图、架构图和头脑风暴草图（[源码](https://github.com/excalidraw/excalidraw)）。
 
 
 
