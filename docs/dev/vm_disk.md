@@ -14,15 +14,26 @@
 
 ## 2. 虚拟机扩容
 
+调整分区前，先备份重要文件。下面的 `/dev/sda2` 和 `/dev/sda5` 是截图中的设备名，不同虚拟机的名称和分区布局可能不同，不能直接照着选择。
+
+在 Ubuntu 终端运行：
+
+```shell
+lsblk -o NAME,SIZE,FSTYPE,MOUNTPOINTS
+df -h /
+```
+
+先找挂载点为 `/` 的分区，再结合容量和文件系统类型，在 GParted 中确认同一块磁盘、同一个分区。如果实际布局与截图不同，或使用了 LVM、加密卷，应先查对应的扩容方法，不要直接套用后面的分区顺序。
+
 启动虚拟机中 ubuntu 系统，使用命令`df -h`查看目前文件系统挂载情况：
 
 ![](../img/dev/disk_free.png)
 
 命令输出结果可知，根目录总共有 69G，目前已经使用了 59G，还剩下 6.4G。
 
-输入命令`gparted`并在弹出的窗口输入用户密码。GParted 将找到目前未分配的内存容量为 80GB。
+输入命令`gparted`并在弹出的窗口输入用户密码。示例中新增的未分配磁盘空间约为 80GB。
 
-然后用鼠标点击已经存在的分区（注：想要扩展的分区，这里是/dev/sda2，不是 /dev/sd5）后，右键选择“Resize/Move”，如下图所示：
+下面以截图中的分区布局演示调整过程，先选中 `/dev/sda2`，右键选择“Resize/Move”，如下图所示。操作自己的虚拟机时，以前面核对的设备信息为准：
 
 ![](../img/dev/gparted.png)
 
@@ -53,6 +64,5 @@
 
 * [【ubuntu】在虚拟机中如何给ubuntu硬盘扩容](https://zhuanlan.zhihu.com/p/552291400)
 * [vmware：ubuntu虚拟机如何扩容？](https://blog.csdn.net/qq_34160841/article/details/113058756)
-
-
-
+* [GParted 官方操作手册](https://gparted.org/display-doc.php?name=help-manual)
+* [lsblk 命令说明](https://man7.org/linux/man-pages/man8/lsblk.8.html)

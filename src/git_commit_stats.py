@@ -1,3 +1,8 @@
+"""
+git_commit_stats.py
+本脚本用于统计 Git 仓库的提交数据，并输出为 CSV 文件。
+支持通过参数指定时间段，并可通过 JSON 文件过滤特定用户。
+"""
 # python git_commit_stats.py --since "2026-02-27 18:00" --until "2026-03-08 00:00"运行指定时间段的提交统计，结果输出到 commit_stats.csv 文件中。可以通过 --ignore 参数指定一个 JSON 文件，里面包含需要屏蔽的用户（按邮箱或用户名）。如果不指定 --ignore 参数，则默认使用 ignore_users.json 文件作为屏蔽列表。
 import subprocess
 import argparse
@@ -18,6 +23,7 @@ def load_ignore_users(file_path):
     except Exception as e:
         print(f"读取屏蔽列表失败: {e}")
         return []
+
 def get_commits(since=None, until=None, ignore_list=[]):
     # 使用 %ae(邮箱)作为唯一键，%an(用户名)作为显示名
     cmd = ["git", "log", "--pretty=%ae|%an"]
@@ -28,7 +34,7 @@ def get_commits(since=None, until=None, ignore_list=[]):
     result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, encoding='utf-8')
     
     if result.returncode != 0:
-        raise RuntimeError(f"git log 执行失败: {result.stderr.strip()}")
+        raise RuntimeError(result.stderr.strip() or "git log 执行失败")
 
     raw_data = result.stdout.splitlines()
     email_to_name = {}
@@ -61,10 +67,11 @@ def main():
     args = parser.parse_args()
 
     ignore_list = load_ignore_users(args.ignore)
+    # 查询失败时终止，避免把失败当成零条提交或覆盖已有统计文件。
     try:
         counts, name_map = get_commits(args.since, args.until, ignore_list)
-    except RuntimeError as exc:
-        parser.exit(1, f"{exc}\n")
+    except (OSError, RuntimeError) as exc:
+        parser.exit(2, f"无法读取 Git 提交记录，请确认当前目录是有效仓库且 Git 可用：{exc}\n")
 
     # 转换结果：[(用户名, 次数), ...]
     results = sorted(
