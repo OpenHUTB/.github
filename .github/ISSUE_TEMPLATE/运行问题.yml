@@ -1,0 +1,57 @@
+name: 问题反馈
+description: 安装、运行或文档问题反馈模板
+title: "[问题反馈] "
+body:
+  - type: markdown
+    attributes:
+      value: >
+        提交前请删除日志中的访问令牌、密码、账号、邮箱、内部地址及其他敏感信息。只粘贴定位问题所需的最少内容。
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: 问题类型
+      description: 请选择最贴近的一项。
+      options:
+        - 安装或运行问题
+        - 文档问题
+        - 其他
+    validations:
+      required: true
+  - type: input
+    id: repository-and-version
+    attributes:
+      label: 相关仓库、分支或版本
+      description: 文档问题请填页面链接；运行问题请写仓库及分支、提交号或软件版本。
+      placeholder: 例如 OpenHUTB/.github、master
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: 操作系统与运行环境
+      description: 运行问题请写操作系统及版本、运行方式和相关软件版本；文档问题可填写浏览器或设备。
+      placeholder: 例如 Windows 11 23H2、Ubuntu 24.04
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: 复现步骤或页面位置
+      description: 按顺序写出操作步骤；文档问题请指出页面中的标题、段落或链接。
+      placeholder: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+  - type: textarea
+    id: expected-and-actual
+    attributes:
+      label: 实际现象与预期结果
+      description: 写明实际看到什么，以及你原本期待什么。文档问题请说明当前内容和建议结果。
+    validations:
+      required: true
+  - type: textarea
+    id: logs-or-extra
+    attributes:
+      label: 日志或补充信息
+      description: 可粘贴必要日志、错误提示或补充说明；提交前再次确认已删除令牌、密码、账号及其他敏感信息。
+      render: text
