@@ -23,6 +23,21 @@
 2. `Use text block from right`：保留右侧选中的内容。
 3. `Use text block from right before left`：两侧内容都保留，右侧内容放在前面。
 4. `Use text block from left before right`：两侧内容都保留，左侧内容放在前面。
+5. ### 怎么选：一张判断表 
+
+四种菜单项的区别只有一个：**最终文件里留下哪一侧的内容**。
+
+| 你的判断 | 选择 | 结果 |
+|---|---|---|
+| 只有左侧（当前分支）的改动是新的 | `Use text block from left` | 丢掉右侧内容 |
+| 只有右侧（要合入的分支）的改动是新的 | `Use text block from right` | 丢掉左侧内容 |
+| 两侧都在新增内容，顺序有讲究 | `Use text block from left before right` / `... right before left` | 两段都保留，顺序按选择 |
+| 拿不准 | 先 `Next difference` 逐处看完再决定 | 避免整块替换造成误删 |
+
+两种最容易判断错的情形：
+
+- 同一个函数两边各改了一部分：两侧内容都要保留，选完之后再手工删掉重复的那几行。
+- 整个文件被重写：以内容更完整的一侧为准，另一侧先另存一份备查，再执行替换。
 
 ## 保存后还需要做什么
 
