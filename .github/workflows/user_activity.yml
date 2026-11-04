@@ -28,7 +28,11 @@ jobs:
         with:
           script: return new Date(new Date().getFullYear(), new Date().getMonth(), 1) 
           result-encoding: string
-
+          # 打印统计区间，方便后续调试、查看统计范围
+      - name: Print time range
+        run: |
+          echo "统计起始时间 since: ${{ steps.since-date.outputs.result }}"
+          echo "统计截止时间 until: ${{ steps.until-date.outputs.result }}"
       - uses: sorekz/user-activity-report@v1
         with:
           token: ${{ secrets.METRICS_REPORT }}
