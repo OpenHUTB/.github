@@ -2,8 +2,8 @@ name: 'User Activity Report'
 on:
   workflow_dispatch:
   schedule:
-    # 在每个月第一天的 00:00 UTC 运行
-    #
+    ## cron 时区为 UTC，UTC+0 = 北京时间 -8小时
+    # 0 0 1 * * 代表：UTC每月1号0点，等价于【北京时间每月1号早上8点】
     #        ┌────────────── minute
     #        │ ┌──────────── hour
     #        │ │ ┌────────── day (month)
