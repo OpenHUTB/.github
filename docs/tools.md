@@ -117,6 +117,14 @@
 
 * [PDFMathTranslate](https://github.com/PDFMathTranslate/PDFMathTranslate) - 基于 AI 完整保留排版的 PDF 文档全文双语翻译
 
+### GIS
+
+* [QGIS](https://qgis.org/) - 开源桌面 GIS，支持矢量、栅格数据的查看、编辑和分析。
+
+* [GRASS GIS](https://grass.osgeo.org/) - 栅格和矢量空间分析工具，适合地形、水文与遥感数据处理。
+
+* [GeoServer](https://geoserver.org/) - 发布和管理空间数据的开源服务器，支持 WMS、WFS 等服务。
+
 
 ## 常见
 
