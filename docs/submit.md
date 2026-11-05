@@ -10,7 +10,6 @@
 [https://visualstudio.microsoft.com/zh-hans/downloads/](https://visualstudio.microsoft.com/zh-hans/downloads/)
 
 ## 3. 克隆仓库
-（
 > **注意**：该命令中的 `{用户名}` 请替换为自己的用户名。
 
 ```bash
