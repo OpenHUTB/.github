@@ -4,7 +4,7 @@
 
 已有运营者权限跳过该步骤。将以下邮件模板填好并<a href="mailto:open@hutb.edu.cn">发送到邮箱 open@hutb.edu.cn</a>，邮件主题：`申请运营者权限`
 ```text
-github 用户名：XXX
+GitHub 用户名：XXX
 邮箱：xxx@xx.com
 微信号：xxx（需要提前关注“开源孪创”公众号才可以绑定运营者）
 申请原因：在“开源孪创”微信公众号发表《公众号文章名称》
@@ -21,7 +21,7 @@ github 用户名：XXX
 !!! 注意
     如果觉得安装 VS Code 太麻烦，可以使用[在线排版工具](https://openhutb.github.io/md2/)。
 
-* 安装 [VScode](https://code.visualstudio.com/download)，并在右侧的`扩展`中安装 Markdown2Anything 插件
+* 安装 [VS Code](https://code.visualstudio.com/download)，并在右侧的`扩展`中安装 Markdown2Anything 插件
 
 * 打开任意 .md 文件，右键 → Markdown2Anything: 预览
 
@@ -59,7 +59,7 @@ github 用户名：XXX
 * 文章需要包括一定图像和动图，不能全部是文字；
 * 必要的公式、核心代码、原理的说明；
 * 选填内容：在文章最后填写编辑和审核（如有）
-* 必填发表选项：作者（OpenHUTB 或 [github 用户名](./adv/find_author.md) 或真实姓名）、封面（最具代表性和吸引力）、摘要、原创声明（默认）、原文链接（一般为参考的文档在线地址）
+* 必填发表选项：作者（OpenHUTB 或 [GitHub 用户名](./adv/find_author.md) 或真实姓名）、封面（最具代表性和吸引力）、摘要、原创声明（默认）、原文链接（一般为参考的文档在线地址）
 * 选填发表选项：合集
 * 文字、图片等内容不能有任何 AI 的风格和痕迹
 
@@ -116,7 +116,7 @@ github 用户名：XXX
 
 完成后，将以下邮件模板填好并<a href="mailto:open@hutb.edu.cn">发送到邮箱 open@hutb.edu.cn</a>，邮件主题：`申请发表公众号文章`
 ```text
-github 用户名：XXX
+GitHub 用户名：XXX
 邮箱：xxx@xx.com
 申请原因：在“开源孪创”微信公众号发表《公众号文章名称》
 预览链接或长图：https://mp.weixin.qq.com/s/RLZHx11olWrYezoFQ4E9lw （需替换）
