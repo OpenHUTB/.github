@@ -76,10 +76,10 @@ git clone https://github.com/用户名/.github.git
 
 ## 7. 预览成果
 
-1. 下载 MkDocs（在命令行中运行以下命令下载）：
+1. 安装 MkDocs 和本仓库所需插件（在命令行中运行）：
    ```bash
    pip install mkdocs
-   pip install mkdocs-material
+   pip install -r requirements.txt
    ```
    *（如果出现报错，可以将错误信息发给 AI 解决）*
 
