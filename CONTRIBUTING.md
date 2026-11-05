@@ -48,14 +48,14 @@ flowchart LR
     style K fill:#fff3e0
 ```
 
-**1.** [注册](https://openhutb.github.io/.github/dev/sign_up/) 并登录 GitHub 账号，在 [想要修改的开源孪创仓库](https://github.com/OpenHUTB/hutb) 页面右上角点击`Fork`，然后点击`Create a new fork`，**创建分叉**到个人仓库。
+**1.** [注册](https://openhutb.github.io/.github/dev/sign_up/) 并登录 GitHub 账号，在 [想要修改的开源孪创仓库](https://github.com/OpenHUTB/.github) 页面右上角点击`Fork`，然后点击`Create a new fork`，**创建分叉**到个人仓库。下面以本仓库 `.github` 为例；如果修改的是其他仓库，把示例中的 `.github` 换成对应仓库名。
 
 <img src="https://firstcontributions.github.io/assets/Readme/fork.png" width="310">
 
 **2.克隆个人仓库**（若出现SSL certificate problems请关闭加速器再克隆）：
 ```shell
-# 注意：该命令中的 {用户名} 替换为自己的用户名，hutb 替换为想要修改的仓库名，否则没有权限直接修改组织仓库
-git clone https://github.com/{用户名}/hutb.git
+# 注意：该命令中的 {用户名} 替换为自己的用户名，.github 替换为想要修改的仓库名，否则没有权限直接修改组织仓库
+git clone https://github.com/{用户名}/.github.git
 ```
 
 <img src="https://firstcontributions.github.io/assets/Readme/clone.png" width="250"><img src="https://firstcontributions.github.io/assets/Readme/copy-to-clipboard.png" width="230">
@@ -63,13 +63,13 @@ git clone https://github.com/{用户名}/hutb.git
 
 **3.新建特性分支**
 
-进入刚才克隆的仓库目录。第 2 步以 `hutb` 为例，这里也进入 `hutb`：
+进入刚才克隆的仓库目录。第 2 步以 `.github` 为例，这里也进入 `.github`：
 
 ```bash
-cd hutb
+cd .github
 ```
 
-如果第 2 步克隆的是 `.github`，则使用 `cd .github`。目录名要与实际克隆的仓库一致。
+如果克隆的是其他仓库，把 `.github` 换成实际目录名。目录名要与实际克隆的仓库一致。
 
 接下来使用 `git switch` 命令新建一个分支。下面以修正文档为例：
 ```bash
