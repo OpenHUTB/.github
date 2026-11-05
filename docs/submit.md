@@ -14,7 +14,13 @@
 > **注意**：该命令中的 `{用户名}` 请替换为自己的用户名。
 
 ```bash
-git clone https://github.com/用户名/.github.git
+git clone https://github.com/{用户名}/.github.git
+```
+
+克隆完成后进入仓库目录：
+
+```bash
+cd .github
 ```
 
 ## 4. 介绍 .github 文件结构
