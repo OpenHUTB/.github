@@ -2,7 +2,7 @@
 
 ## 搭建自己的gitlab仓库
 参考[链接](https://blog.csdn.net/weixin_41878425/article/details/134995223) 进行配置：
-1. 在盘符(任意盘符)中新建docker文件夹，在docker文件夹中建立gitlab文件夹，在gitlab文件夹中建立config、data、logs三个文件夹 ，如下关系所示：
+1. 在盘符（推荐使用非系统盘）中新建docker文件夹，在docker文件夹中建立gitlab文件夹，在gitlab文件夹中建立config、data、logs三个文件夹 ，如下关系所示：
     ```text
     docker
         |-gitlab
@@ -123,7 +123,7 @@ py --list
 
 - [Python Launcher for Windows](https://docs.python.org/3.13/using/windows.html#python-launcher-for-windows)
 
-**装包时统一用 `python -m pip install 包名`，而不是直接 `pip install 包名`**。前者保证包被装进当前 `python` 对应的环境，后者可能装到另一个 Python 上。
+**装包时统一用 `python -m pip install 包名`，而不是直接 `pip install 包名`**。`装包时候用 `python -m pip install 包名`，而不是直接 `pip install 包名`，规避多Python版本下装错环境的问题`。前者保证包被装进当前 `python` 对应的环境，后者可能装到另一个 Python 上。
 
 ### 3. 为 pip 配置国内镜像源
 
