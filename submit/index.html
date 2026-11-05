@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://openhutb.github.io/.github/submit/" rel="canonical"/>
+<link href="../img/favicon.ico" rel="shortcut icon"/>
+<title>文档修改与提交指南 - 社区介绍</title>
+<link href="../css/theme.css" rel="stylesheet"/>
+<link href="../css/theme_extra.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
+<script>
+        // Current page data
+        var mkdocs_page_name = "\u6587\u6863\u4fee\u6539\u4e0e\u63d0\u4ea4\u6307\u5357";
+        var mkdocs_page_input_path = "submit.md";
+        var mkdocs_page_url = "/.github/submit/";
+      </script>
+<!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</head>
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<a class="icon icon-home" href=".."> 社区介绍
+        </a><div role="search">
+<form action="../search.html" class="wy-form" id="rtd-search-form" method="get">
+<input aria-label="Search docs" name="q" placeholder="Search docs" title="Type search term here" type="text"/>
+</form>
+</div>
+</div>
+<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="..">首页</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../simulator/">模拟器简介</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING/">贡献指南</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="" href="https://openhutb.github.io/git/?locale=zh_CN">git 教程</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="" href="https://docs.github.com/zh/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax">Markdown教程</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../paper_tips/">论文写作技巧</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../env_conf/">搭建自定义开发环境</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../rustdesk_tailscale/">远程办公</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ask_question/">提问技巧</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="" href="https://openhutb.github.io/doc/build_carla/#internet">科学上网</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">贡献相关</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../codespace/">基于浏览器的贡献指南</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/sign_up/">注册 Github 账号</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/vscode_push/">使用 VScode 推送代码</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pycharm-tutorial/">PyCharm 教程</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resolve_conflict/">使用 TortoiseGit 解决冲突</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/merge_commit/">合并提交</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/vm_disk/">给 Ubuntu 虚拟机硬盘扩容</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../note/">注意事项</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../wsl/">wsl 安装与配置和卸载</a>
+</li>
+<li class="toctree-l1 current"><a class="reference internal current" href="./">文档修改与提交指南</a>
+<ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="#1-下载-git">1. 下载 Git</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#2-下载-visual-studio-code">2. 下载 Visual Studio Code</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#3-克隆仓库">3. 克隆仓库</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#4-介绍-github-文件结构">4. 介绍 .github 文件结构</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#5-快速修改方向红色部分是原句绿色部分是改句">5. 快速修改方向（红色部分是原句，绿色部分是改句）</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#6-如何修改">6. 如何修改</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#7-预览成果">7. 预览成果</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#8-提交">8. 提交</a>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">工具与资源</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tools/">开源工具列表</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../blender/">三维建模软件 Blender 介绍</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown2anything/">Markdown 一键发布到社交平台</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">学习与论文</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../bib_reference_guide/">Latex文献引用编译办法</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../undergraduate/">本科毕业设计</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../paper/avf/">论文成果：AVF-BEL 视听融合</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../org/architecture/">社区组织形式</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="..">社区介绍</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a aria-label="Docs" class="icon icon-home" href=".."></a></li>
+<li class="breadcrumb-item">贡献相关</li>
+<li class="breadcrumb-item active">文档修改与提交指南</li>
+<li class="wy-breadcrumbs-aside">
+<a class="icon icon-github" href="https://github.com/OpenHUTB/.github/edit/master/docs/submit.md"> Edit on GitHub</a>
+</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div class="section" itemprop="articleBody">
+<div><h1 id="文档修改指南">文档修改指南</h1>
+<p>（创建拉取请求之后一定要在下方的评论区@有权限的人审核）</p>
+<h2 id="1-下载-git">1. 下载 Git</h2>
+<p>下载后会得到一个 <code>.exe</code> 文件，双击运行安装：
+<a href="https://git-scm.com/install/windows">https://git-scm.com/install/windows</a></p>
+<h2 id="2-下载-visual-studio-code">2. 下载 Visual Studio Code</h2>
+<p>下载后会得到一个 <code>.exe</code> 文件，双击运行安装：
+<a href="https://visualstudio.microsoft.com/zh-hans/downloads/">https://visualstudio.microsoft.com/zh-hans/downloads/</a></p>
+<h2 id="3-克隆仓库">3. 克隆仓库</h2>
+<p>（</p>
+<blockquote>
+<p><strong>注意</strong>：该命令中的 <code>{用户名}</code> 请替换为自己的用户名。</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/用户名/.github.git
+</code></pre></div>
+<h2 id="4-介绍-github-文件结构">4. 介绍 .github 文件结构</h2>
+<ul>
+<li><strong><code>docs</code></strong>：主要修改的地方。</li>
+<li><strong><code>docs/img</code></strong>：存放图片的地方。图片必须重命名，不可以像 <code>"屏幕截图 2026-11-04 011000.png"</code> 之类的默认名称。</li>
+<li><strong><code>docs/src</code></strong>：存放代码的地方。</li>
+<li><strong><code>docs/paper</code></strong>：放论文的地方。</li>
+<li><strong><code>docs</code> 下的 <code>.md</code> 文件</strong>：修改的具体地址（<code>.md</code> 文件也是 Markdown 源文件）。</li>
+</ul>
+<h2 id="5-快速修改方向红色部分是原句绿色部分是改句">5. 快速修改方向（红色部分是原句，绿色部分是改句）</h2>
+<ol>
+<li>将一些不重要的句子换成另一些不重要的句子。
+<img alt="wmx002" src="../img/wmx002.png"/>
+<img alt="wmx003" src="../img/wmx003.png"/></li>
+<li>跑一些代码（文档之类的）之后补充细节，以及该文档与你跑过程一切不一样的地方。
+<img alt="wmx004" src="../img/wmx004.png"/>
+<img alt="wmx005" src="../img/wmx005.png"/></li>
+<li>原创一些文档但故意留一些错误（句子，代码错误，符号，固定路径）交给其他人补全。
+<img alt="wmx006" src="../img/wmx006.png"/></li>
+<li>
+<p>修改一些表达不到位的句子。</p>
+</li>
+<li>
+<p>加一些跳转链接.
+<img alt="wmx007" src="../img/wmx007.png"/></p>
+</li>
+</ol>
+<h2 id="6-如何修改">6. 如何修改</h2>
+<ol>
+<li>在文档网站找到你要修改的地方。(你现在在看的就是文档网站)</li>
+<li>在克隆仓库的 <code>..\.github\mkdocs.yml</code> 找到你在文档网站需要修改的地方所对应的 <code>.md</code> 文件。</li>
+<li>打开对应的 <code>.md</code> 文件，在 Visual Studio Code 中修改。</li>
+<li>保存修改（<code>Ctrl+S</code>）。</li>
+<li>如果是添加文档，要在 <code>mkdocs.yml</code> 里对应的地方加入链接，或在其他 <code>.md</code> 文件加入跳转链接。</li>
+</ol>
+<p><strong>在 <code>mkdocs.yml</code> 里对应的地方加入链接的格式：</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">标题</span><span class="p">:</span><span class="w"> </span><span class="s">'.md文件路径(在docs之后的路径，docs不用写)'</span>
+</code></pre></div>
+<p>例如：</p>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">模拟器演示：涉水效果</span><span class="p">:</span><span class="w"> </span><span class="s">'introduction.md'</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">使用 VScode 推送代码</span><span class="p">:</span><span class="w"> </span><span class="s">'dev/vscode_push.md'</span>
+</code></pre></div>
+<p><strong>在其他 <code>.md</code> 文件加入跳转链接格式：</strong></p>
+<div class="highlight"><pre><span></span><code>[<span class="nt">标题</span>](<span class="na">.md文件路径</span>)
+</code></pre></div>
+<p>（如果两个 <code>.md</code> 文件在同一个目录下，括号里可直接填添加文档的 <code>.md</code> 文件）
+例如：</p>
+<div class="highlight"><pre><span></span><code>[<span class="nt">HoloOcean Windows 搭建教程</span>](<span class="na">HoloOcean-Windows-Setup.md</span>)
+</code></pre></div>
+<h2 id="7-预览成果">7. 预览成果</h2>
+<ol>
+<li>
+<p>下载 MkDocs（在命令行中运行以下命令下载）：
+   </p><div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>mkdocs
+pip<span class="w"> </span>install<span class="w"> </span>mkdocs-material
+</code></pre></div>
+<em>（如果出现报错，可以将错误信息发给 AI 解决）</em>
+</li>
+<li>
+<p>在终端 <code>cd</code> 到你的 <code>.github</code> 文件夹路径下（例如：<code>cd 你的路径/.github</code>），然后运行预览指令：
+   </p><div class="highlight"><pre><span></span><code>mkdocs<span class="w"> </span>serve
+</code></pre></div>
+</li>
+<li>
+<p>找到终端里输出的类似于 <code>http://127.0.0.1:8000/</code> 的网址，复制到浏览器中打开，预览你的修改成果。（检查界面是否出错、图片是否正常显示、跳转链接是否失效）。</p>
+</li>
+</ol>
+<h2 id="8-提交">8. 提交</h2>
+<p><a href="../CONTRIBUTING/">提交流程</a></p></div>
+</div>
+</div><footer>
+<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
+<a class="btn btn-neutral float-left" href="../wsl/" title="wsl 安装与配置和卸载"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="../tools/" title="开源工具列表">Next <span class="icon icon-circle-arrow-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<!-- Copyright etc -->
+<p>OpenHUTB 版权所有 © 2026</p>
+</div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+</div>
+</div>
+</section>
+</div>
+<div aria-label="Versions" class="rst-versions" role="note">
+<span class="rst-current-version" data-toggle="rst-current-version">
+<span>
+<a class="fa fa-github" href="https://github.com/OpenHUTB/.github" style="color: #fcfcfc"> GitHub</a>
+</span>
+<span><a href="../wsl/" style="color: #fcfcfc">« Previous</a></span>
+<span><a href="../tools/" style="color: #fcfcfc">Next »</a></span>
+</span>
+</div>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>var base_url = "..";</script>
+<script src="../js/theme_extra.js"></script>
+<script src="../js/theme.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script>
+<script src="../search/main.js"></script>
+<script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+</body>
+</html>
