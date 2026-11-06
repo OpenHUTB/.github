@@ -36,7 +36,7 @@
 
 它的应用范围如此之广，我无法在一张图片中全部体现出来！
 
-使用 Django 和 bottle 进行 web 开发。使用 Numpy 进行数学计算，使用 Tkinter 设计自己的 GUI，使用 Pygame 制作自己的游戏等等。
+使用 Django 和 Bottle 进行 web 开发。使用 Numpy 进行数学计算，使用Tkinter设计自己的 GUI，使用 Pygame 制作自己的游戏等等。
 
 推荐 [Python教程(只需要学习到13章)](https://liaoxuefeng.com/books/python/introduction/index.html) 、[强化学习教程](https://mofanpy.com/tutorials/machine-learning/reinforcement-learning/) 。
 
@@ -60,6 +60,10 @@
 上图展示的是旧版 Community / Professional 下载页面，当前安装请使用上述统一版入口。
 
 在这篇 PyCharm 教程博客中，让我们来看看 PyCharm 的重要工具和特性。
+
+注意：我们需要先安装 Python 解释器
+
+PyCharm 本身**不自带 Python**，必须先单独安装：前往 [Python 官网](https://www.python.org/downloads/) 下载当前受支持版本（如 3.12 / 3.13）。**Windows 用户安装时务必勾选 "Add Python to PATH"**，否则 PyCharm 新建项目时解释器列表会是空的，无法识别本机 Python。安装完成后再回到 PyCharm 新建项目、选择解释器。
 
 ## **Pycharm 的重要特性和工具**
 
@@ -100,7 +104,7 @@ PyCharm 使开发人员更容易快速有效地实现局部和全局更改。开
 
 PyCharm 使程序员更容易用 Python 编写各种 web 应用程序，支持广泛使用的 web 技术，如 HTML、CSS、JavaScript、TypeScript 和 CoffeeScript。web 开发人员可以使用 IDE 提供的实时编辑预览选项，在编辑器和浏览器中同时查看单个网页。
 
-同时，IDE 提供的实时编辑功能使程序员能够在 web 浏览器上即时看到对代码所做的更改。PyCharm 还允许开发人员使用 JavaScript 调试器以及 CoffeeScript 和 TypeScript 编辑器。它甚至通过支持 AngularJS 和 NodeJS 简化了同构 web 应用程序开发。
+同时，IDE 提供的实时编辑功能使程序员能够在 web 浏览器上即时看到对代码所做的更改。PyCharm 还允许开发人员使用 JavaScript 调试器以及TypeScript 编辑器。它甚至通过支持 NodeJS 简化了同构 web 应用程序开发。
 
 ### **支持流行的 Python Web 框架**
 
@@ -110,7 +114,7 @@ Python IDE 甚至帮助 web 开发人员调试 Django 模板、格式化代码�
 
 ### **支持 Python 科学库**
 
-PyCharm 进一步帮助程序员在大数据和数据科学项目中更高效地使用 Python。它支持一些广泛使用的 Python 科学库——NumPy、Anaconda 和 Matplotlib。通过利用 IDE 提供的交互式图形、深入的代码洞察和数组查看器，开发人员可以高效地使用这些科学库。
+PyCharm 进一步帮助程序员在大数据和数据科学项目中更高效地使用 Python。它支持一些广泛使用的 Python 科学库——NumPy 和 Matplotlib，可配合 Anaconda 发行版使用。通过利用 IDE 提供的交互式图形、深入的代码洞察和数组查看器，开发人员可以高效地使用这些科学库。
 
 他们甚至可以运行 PyCharm 提供的 REPL Python 控制台，以利用强大的功能，如动态语法检查和代码检查。同时，程序员还可以将 IDE 与 IPython Notebook 无缝集成，从而创建创新的解决方案，而无需投入额外的时间和精力。
 
@@ -144,7 +148,7 @@ PyCharm 附带用于 Windows、Linux 和 macOS 的本地终端。内置的终端
 
 ### **软件测试**
 
-像其他 ide 一样，PyCharm 也附带了一些特性和工具来简化 Python 应用程序测试。它允许开发人员通过流行的 Python 测试框架( unittest / pytest / nose / doctest)来执行单元测试。测试人员甚至可以选择运行单个或者多个测试文件和测试类。他们可以进一步将 IDE 与 Coverage.py 集成，以便在测试应用程序时测量代码覆盖率。
+像其他 ide 一样，PyCharm 也附带了一些特性和工具来简化 Python 应用程序测试。它允许开发人员通过流行的 Python 测试框架( unittest / pytest / doctest)来执行单元测试。测试人员甚至可以选择运行单个或者多个测试文件和测试类。他们可以进一步将 IDE 与 Coverage.py 集成，以便在测试应用程序时测量代码覆盖率。
 
 在测试多线程应用程序时，测试人员可以使用 IDE 提供的线程并发可视化选项来全面高效地控制应用程序。同时，PyCharm 通过实现行为驱动开发(BDD)使用户能够交付高质量的软件。
 
@@ -172,7 +176,7 @@ PyCharm 允许开发人员连接各种机器并远程构建软件应用程序。
 
 ![Pycharm project creation - Pycharm tutorial - Edureka](img/new_proj.png)
 
-这张图片基本上帮助我们设置了 Python 解释器。但是，如果您的系统上没有安装 Python，这可能是空白的。
+这张图片基本上帮助我们设置了 Python 解释器。但是，如果本机还没安装 Python，解释器列表会是空的，请先按上一节安装 Python 并加入 PATH。
 
 要安装 Python，请使用官方文档进行安装，或者按照如下所示的说明进行操作:
 
@@ -184,7 +188,7 @@ PyCharm 允许开发人员连接各种机器并远程构建软件应用程序。
 
 系统解释器也必须来自已安装的 Python。若未安装 Python，请先安装项目所需的受支持版本；Windows 和 macOS 的新建项目对话框也提供下载安装 Python 的选项。一定要检查所选解释器的路径和版本。
 
-上图的 Python 3.7 仅为历史示例；新项目请使用当前 PyCharm 支持且符合项目要求的 Python 版本。
+上图的 Python 3.7 仅为历史示例；新项目请使用当前 PyCharm 支持且符合项目要求的 Python 版本,最新版本为3.12或3.13。
 
 这一步之后基本上就是通过打开-**文件- >创建- >暂存文件- > Python 文件**来创建一个暂存文件
 
@@ -331,7 +335,9 @@ PyCharm 支持一种智能重构技术，在这种技术中，您只需要知道
 
 ### **列选择:**
 
-按住 Alt 键并滚动选择某段代码将只选择该特定列中的所有内容。这可用于更快的压痕或快速改变压痕。但是，它也用于编辑同一列中的多个语句，从而减少手动编辑的时间和工作量。
+  **Windows / Linux**：按住 **Alt + Shift** 后拖动鼠标，框选矩形区域；
+ **macOS**：按住 **Option + Shift** 后拖动鼠标。
+ 也可以通过菜单 **Edit（编辑）→ Column Selection Mode（列选择模式）**，或快捷键 **Shift + Alt + Insert** 切换列选择模式，开启后直接拖动鼠标即可框选整列。这可用于更快的压痕或快速改变压痕。但是，它也用于编辑同一列中的多个语句，从而减少手动编辑的时间和工作量。
 
 为了更清楚地了解选择，请查看下图:
 
