@@ -62,7 +62,7 @@ cd .github
 例如：
 
 ```yaml
-- 模拟器演示：涉水效果: 'introduction.md'
+- 模拟器简介: 'simulator.md'
 - 使用 VScode 推送代码: 'dev/vscode_push.md'
 ```
 
