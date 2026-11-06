@@ -77,7 +77,7 @@ cd .github
 例如：
 
 ```markdown
-[HoloOcean Windows 搭建教程](HoloOcean-Windows-Setup.md)
+[基于浏览器的贡献指南](codespace.md)
 ```
 
 ## 7. 预览成果
