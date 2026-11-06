@@ -1,4 +1,4 @@
-<img width="1727" height="721" alt="image" src="https://github.com/user-attachments/assets/0b063868-913a-4518-b279-0d28fb7886ab" /># 三维建模软件 Blender 介绍
+# 三维建模软件 Blender 介绍
 
 本文为入门篇，介绍Blender的定义、下载安装与基础界面操作，阅读无需编程或建模基础。
 进阶内容（建模流程、骨骼绑定、材质动画、导出规范等）将随社区任务持续补充。
