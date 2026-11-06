@@ -77,3 +77,21 @@ wsl --uninstall
 注意：wsl --uninstall 需要 Microsoft Store 版 WSL 2.0 及以上。如果提示没有该命令，可在「设置 → 应用 → 安装的应用」中先卸载对应的 Linux 发行版，再卸载「适用于 Linux 的 Windows 子系统」组件，然后重启电脑。
 
 备份、恢复和注销命令可参考[微软 WSL 基本命令](https://learn.microsoft.com/zh-cn/windows/wsl/basic-commands)。
+
+## 安装后核对发行版状态
+
+在 Windows PowerShell 或命令提示符中查看已安装的发行版及其 WSL 版本：
+
+```powershell
+wsl --list --verbose
+wsl --status
+wsl --version
+```
+
+在列表中确认目标发行版名称，并查看 `VERSION` 列。若项目需要 WSL 2，而发行版显示为 1，可先备份重要文件，再按需转换：
+
+```powershell
+wsl --set-version Ubuntu-20.04 2
+```
+
+`wsl --update` 更新 WSL 组件；进入 Ubuntu 后运行 `sudo apt update && sudo apt upgrade` 更新 Linux 软件包。这两项更新针对不同部分。更多命令见[微软 WSL 基本命令](https://learn.microsoft.com/zh-cn/windows/wsl/basic-commands)。
