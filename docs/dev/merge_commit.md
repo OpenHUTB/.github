@@ -18,6 +18,36 @@
 
 如果出现冲突，先按[解决冲突](../resolve_conflict.md)中的步骤处理文件，再回到 Cherry-pick 窗口继续操作；不要直接另开普通提交窗口结束本次操作。
 
+## 摘取中断后如何处理
+
+终端提示冲突后，先执行 `git status`，确认当前正在进行 Cherry-pick，并查看哪些文件尚未解决。下面的 `docs/example.md` 仅表示发生冲突的文件，应替换为状态列表中的实际路径。
+
+### 保留本次摘取并继续
+
+1. 打开冲突文件，逐处决定保留的内容，清除 `<<<<<<<`、`=======`、`>>>>>>>` 标记，检查修改后的完整段落或代码。
+2. 只暂存已经解决的文件，再检查暂存差异：
+
+   ```shell
+   git add -- docs/example.md
+   git diff --cached
+   git diff --check
+   git cherry-pick --continue
+   ```
+
+3. 如果弹出提交信息编辑器，确认信息后保存并关闭；批量摘取时，后续提交也可能再次遇到冲突，按相同步骤处理。
+4. 最后运行 `git status` 和 `git log -5 --oneline`，确认摘取流程已结束、提交顺序正确，再检查实际文件效果并推送。
+
+### 放弃或跳过
+
+| 需要做什么 | 命令 | 执行前确认 |
+| --- | --- | --- |
+| 放弃本轮摘取，回到开始前的状态 | `git cherry-pick --abort` | 本轮已处理的冲突内容如需保留，应先另存；批量摘取时会撤销本轮已经应用的提交 |
+| 跳过当前提交，继续后续提交 | `git cherry-pick --skip` | 已核对该提交的修改已存在，或确实不需要；不能仅因为出现冲突就跳过 |
+
+如果提示当前提交为空，先比较目标分支已有内容与本次修改，再决定是否跳过。不要在原因不明时反复执行普通 `git commit`；用 `git status` 确认正在进行的操作，并通过对应的继续或撤销命令结束流程。
+
 ## 参考
 
 - [TortoiseGit：摘取提交](https://tortoisegit.org/docs/tortoisegit/tgit-dug-cherrypick.html)
+
+- [Git：cherry-pick 的继续、跳过与撤销](https://git-scm.com/docs/git-cherry-pick#_sequencer_subcommands)
