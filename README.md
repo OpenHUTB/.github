@@ -119,5 +119,3 @@ graph LR
 
     style A fill:#f3e5f5
 ```
-
-
