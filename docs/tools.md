@@ -125,6 +125,7 @@
 
 * [GeoServer](https://geoserver.org/) - 发布和管理空间数据的开源服务器，支持 WMS、WFS 等服务。
 
+* [JupyterLab](https://github.com/jupyterlab/jupyterlab) - 交互式代码笔记，数据分析
 
 ## 常见
 
