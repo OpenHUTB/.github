@@ -127,6 +127,11 @@
 
 * [JupyterLab](https://github.com/jupyterlab/jupyterlab) - 交互式代码笔记，数据分析
 
+* [Pandoc](https://github.com/jgm/pandoc) - 万能的文档转换工具，Markdown 可以一键转成 Word、PDF、网页等格式
+
+* [Zotero](https://github.com/zotero/zotero) - 免费的文献管理软件，自动抓取论文信息，还能按格式生成参考文献
+
+
 ## 常见
 
 * [Chromium](https://github.com/chromium/chromium) - Chromium 浏览器
