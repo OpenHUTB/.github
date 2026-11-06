@@ -49,7 +49,7 @@ Blender 是一款免费、开源的三维创作软件，由荷兰的 Blender Fou
 
 - 清华大学 TUNA：<https://mirrors.tuna.tsinghua.edu.cn/blender/>
 - 南京大学：<https://mirror.nju.edu.cn/blender/>
-- 阿里云开源镜像站：<https://mirrors.aliyun.com/blender/release/Blender4.3/>
+- 阿里云开源镜像站：<https://mirrors.aliyun.com/blender/release/Blender4.5/>
 
 各平台的获取方式：
 
@@ -153,7 +153,7 @@ Blender 的操作高度依赖快捷键，初学时记住下面这些即可完成
 3. 打开「File → Export → FBX」，在导出选项的「Include → Limit to」中勾选「Selected Objects」，将范围限制为选中的物体。这个选项用于普通导出，不适用于批量导出。
 4. 导出后，在一个空场景中重新导入，检查物体数量、尺寸和朝向，确认没有混入摄像机、灯光或参考物体，再到目标引擎中核对效果。
 
-FBX 用于交付模型，`.blend` 用于继续编辑，两者建议一并保留。选项的具体说明可查看 [Blender 官方 FBX 手册](https://docs.blender.org/manual/en/4.4/addons/import_export/scene_fbx.html)。
+FBX 用于交付模型，`.blend` 用于继续编辑，两者建议一并保留。选项的具体说明可查看 [Blender 官方 FBX 手册](https://docs.blender.org/manual/zh-hans/4.4/addons/import_export/scene_fbx.html)。
 
 社区文档站为 <https://openhutb.github.io/>，模型接入模拟器的具体流程以该站对应项目的说明为准；遇到问题可以在相关仓库的 Issues 页面提出。
 
