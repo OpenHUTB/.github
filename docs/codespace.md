@@ -46,6 +46,31 @@
 
 编辑完成后，按 `Ctrl+S` 保存文件，并通过预览检查内容和排版。保存只会更新当前 Codespace 中的文件，还需要按照下一步完成“提交”和“同步更改”，才能将修改上传到个人 GitHub 仓库。
 
+### 在 Codespace 中预览完整文档网站
+
+编辑器侧边的 Markdown 预览适合检查段落和列表。修改导航、公式或站点插件相关内容时，还应启动项目的 MkDocs 网站，检查实际页面。本节以 `OpenHUTB/.github` 文档仓库为例。
+
+打开终端，进入同时包含 `mkdocs.yml` 和 `requirements.txt` 的仓库根目录，然后执行：
+
+```shell
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install mkdocs -r requirements.txt
+python -m mkdocs serve --dev-addr 0.0.0.0:8000
+```
+
+这里的激活命令适用于 Codespaces 常见的 Linux 终端；已建好 `.venv` 时只需重新激活，不必重复创建。安装依赖后，等待终端出现服务启动信息，再打开底部的“端口（Ports）”标签页：
+
+1. 找到 `8000` 端口；未自动出现时，点击“添加端口”并输入 `8000`。
+2. 点击该端口的“在浏览器中打开”。保留端口的专用可见性即可，个人检查无需公开端口。
+3. 从网站导航进入本次修改的页面，检查图片、站内链接、公式和目录。保存源文件后，等待构建完成，再刷新页面确认变化。
+
+此时应使用端口面板提供的转发地址；个人电脑的 `localhost:8000` 并不是 Codespace 的地址。若配置中的 `site_url` 带有子路径，终端给出的访问路径可能也带有该前缀，应保留完整路径。
+
+检查结束后，在运行服务的终端按 `Ctrl+C` 停止。这个预览地址只在服务运行期间可用；正式发布后的固定地址仍按第 5 步检查。站点输出目录 `site/` 和 `.venv/` 不加入本次提交。
+
+命令说明见 [MkDocs：开发服务器地址](https://www.mkdocs.org/user-guide/configuration/#dev_addr)，端口操作见 [GitHub：转发 Codespaces 端口](https://docs.github.com/zh/codespaces/developing-in-a-codespace/forwarding-ports-in-your-codespace)。
+
 ## 4. 提交修改
 
 点击左侧分叉图标的“源代码管理”，弹出提交页面。
