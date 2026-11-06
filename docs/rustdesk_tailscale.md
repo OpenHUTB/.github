@@ -67,7 +67,7 @@
 ![](./img/rustdesk/invite_external_user.png)
 
 
-服务器所在的是**个人 tailnet**，不能直接"加成员"，正规做法是**节点共享**。
+> 如果不想让对方加入你的整个 tailnet，只共享这一台设备，用 Tailscale 的“节点共享（Share machine）”功能。
 
 **使用tailscale共享具体步骤**
 
