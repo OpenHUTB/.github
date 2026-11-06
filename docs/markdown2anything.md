@@ -1,11 +1,13 @@
 # Markdown 一键发到微信/知乎/小红书/Twitter
 
-将以下邮件模板填好并<a href="mailto:open@hutb.edu.cn">发送到邮箱 open@hutb.edu.cn</a>，邮件主题：`申请运营者权限`
+## 运营者权限申请
+
+已有运营者权限跳过该步骤。将以下邮件模板填好并<a href="mailto:open@hutb.edu.cn">发送到邮箱 open@hutb.edu.cn</a>，邮件主题：`申请运营者权限`
 ```text
 github 用户名：XXX
 邮箱：xxx@xx.com
 微信号：xxx（需要提前关注“开源孪创”公众号才可以绑定运营者）
-申请原因：在 OpenHUTB 微信公众号发表“xxxx”
+申请原因：在“开源孪创”微信公众号发表《公众号文章名称》
 
 （选填）
 姓名：
@@ -16,7 +18,10 @@ github 用户名：XXX
 
 ## VS Code 操作流程
 
-* 安装 Markdown2Anything 插件
+!!! 注意
+    如果觉得安装 VS Code 太麻烦，可以使用[在线排版工具](https://openhutb.github.io/md2/)。
+
+* 安装 [VScode](https://code.visualstudio.com/download)，并在右侧的`扩展`中安装 Markdown2Anything 插件
 
 * 打开任意 .md 文件，右键 → Markdown2Anything: 预览
 
@@ -62,7 +67,7 @@ github 用户名：XXX
 
 发表过程：
 
-* 定时发表：设置为离编辑完成最近的有群发通知的某一天发表，时间段选择 7:50-8:50、11:50-12:50、18:00-19:00、21:00-22:00 中的随机时刻。
+* 设置定时发表：设置为离编辑完成最近的有群发通知的某一天发表，时间段选择 7:50-8:50、11:50-12:50、18:00-19:00、21:00-22:00 中的随机时刻。
 * 将预览链接等效果<a href="mailto:open@hutb.edu.cn">发送到邮箱 open@hutb.edu.cn</a>进行**审核发表**，不直接发表，否则解除运营者权限。
 
 
@@ -107,6 +112,22 @@ github 用户名：XXX
 ## [Twitter](https://x.com/OpenHUTB)
 
 风格选“Twitter 风格”，预览后截图或复制内容到 X 平台发布。
+
+## 发表审核
+
+完成后，将以下邮件模板填好并<a href="mailto:open@hutb.edu.cn">发送到邮箱 open@hutb.edu.cn</a>，邮件主题：`申请发表公众号文章`
+```text
+github 用户名：XXX
+邮箱：xxx@xx.com
+申请原因：在“开源孪创”微信公众号发表《公众号文章名称》
+预览链接或长图：https://mp.weixin.qq.com/s/RLZHx11olWrYezoFQ4E9lw （需替换）
+
+（选填）
+姓名：
+单位：
+联系方式：
+选题、草稿等
+```
 
 
 
