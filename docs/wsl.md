@@ -36,6 +36,9 @@ sudo apt update && sudo apt upgrade
 
 以下命令在 Windows PowerShell 中执行。先用 `wsl --list --verbose` 查看准确名称，下面以 `Ubuntu-20.04` 为例：
 
+!!! note
+    `D:\WSL-Backup` 仅为示例路径，请替换成你想要存放备份的目录。
+
 ```powershell
 wsl --list --verbose
 wsl --terminate Ubuntu-20.04
