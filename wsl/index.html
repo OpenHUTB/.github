@@ -174,6 +174,10 @@
 <h3 id="1-备份需要保留的发行版">1. 备份需要保留的发行版</h3>
 <p><code>wsl --unregister</code> 会永久删除指定发行版中的文件、软件和设置。只是暂时不用时，可以先用 <code>wsl --terminate 发行版名</code> 停止它；需要清除环境时，先备份再注销。</p>
 <p>以下命令在 Windows PowerShell 中执行。先用 <code>wsl --list --verbose</code> 查看准确名称，下面以 <code>Ubuntu-20.04</code> 为例：</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>D:\WSL-Backup</code> 仅为示例路径，请替换成你想要存放备份的目录。</p>
+</div>
 <div class="highlight"><pre><span></span><code><span class="n">wsl</span> <span class="p">-</span><span class="n">-list</span> <span class="p">-</span><span class="n">-verbose</span>
 <span class="n">wsl</span> <span class="p">-</span><span class="n">-terminate</span> <span class="n">Ubuntu</span><span class="p">-</span><span class="n">20</span><span class="p">.</span><span class="n">04</span>
 <span class="nb">New-Item</span> <span class="n">-ItemType</span> <span class="n">Directory</span> <span class="n">-Force</span> <span class="s1">'D:\WSL-Backup'</span>
