@@ -9,6 +9,8 @@
 
 * [ScreenToGif](https://github.com/NickeManarin/ScreenToGif) - 截图为gif动图
 
+* [ShareX](https://github.com/ShareX/ShareX) - Windows 截图、录屏和文件分享工具。
+
 * [shotcut](https://github.com/mltframework/shotcut) - 视频编辑
 
 * [vlc](https://github.com/videolan/vlc) - 视频播放
