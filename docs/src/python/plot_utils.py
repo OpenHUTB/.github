@@ -6,15 +6,15 @@ import tempfile
 
 
 def get_fig_size(fig_width_cm, fig_height_cm=None):
-    """Convert dimensions in centimeters to inches.
+    """Convert dimensions in centimeters to a ``(width, height)`` tuple in inches.
+
     If no height is given, it is computed using the golden ratio.
     """
-    if not fig_height_cm:
+    if fig_height_cm is None:
         golden_ratio = (1 + math.sqrt(5))/2
         fig_height_cm = fig_width_cm / golden_ratio
 
-    size_cm = (fig_width_cm, fig_height_cm)
-    return map(lambda x: x/2.54, size_cm)
+    return (fig_width_cm / 2.54, fig_height_cm / 2.54)
 
 
 """
