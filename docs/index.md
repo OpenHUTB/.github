@@ -31,7 +31,7 @@ OpenHUTB 倡导开源协作精神，提供完备的学习资源。参与者可�
 
 - [搭建自定义开发环境](env_conf.md)
 
-- [合并提交](dev/merge_commit.md)
+-  [合并提交](dev/merge_commit.md)
 
 - [免费开源远程办公解决方案：rustdesk+tailscale](rustdesk_tailscale.md)
 
@@ -40,6 +40,8 @@ OpenHUTB 倡导开源协作精神，提供完备的学习资源。参与者可�
 - [在 VS Code 中提交和推送修改](./dev/vscode_push.md)
 
 - [使用 TortoiseGit 解决合并冲突](./resolve_conflict.md)
+
+- [PyCharm 使用教程](./pycharm-tutorial.md)
 
 
 ## 3. 问题 <span id="questions"></span>
