@@ -10,11 +10,16 @@
 [https://visualstudio.microsoft.com/zh-hans/downloads/](https://visualstudio.microsoft.com/zh-hans/downloads/)
 
 ## 3. 克隆仓库
-（
 > **注意**：该命令中的 `{用户名}` 请替换为自己的用户名。
 
 ```bash
-git clone https://github.com/用户名/.github.git
+git clone https://github.com/{用户名}/.github.git
+```
+
+克隆完成后进入仓库目录：
+
+```bash
+cd .github
 ```
 
 ## 4. 介绍 .github 文件结构
@@ -67,7 +72,7 @@ git clone https://github.com/用户名/.github.git
 [标题](.md文件路径)
 ```
 
-（如果两个 `.md` 文件在同一个目录下，括号里可直接填添加文档的 `.md` 文件）
+（如果两个 `.md` 文件在同一个目录下，括号里直接写该文件名即可）
 例如：
 
 ```markdown
