@@ -3,7 +3,7 @@
 本目录存放 OpenHUTB 项目自动化统计生成的数据报告，主要为 CSV 格式。
 
 ## 自动生成的报告
-这些报告由 GitHub Actions 工作流（`.github/workflows/repo_metrics.yml`，nicklegan/github‑org‑repo‑metrics‑action）每月自动生成，文件命名包含时间戳（如 `OpenHUTB-2026-10-01T03-13-222-30-days.csv`），用于追溯项目活跃度或提交记录。
+这些报告由 GitHub Actions 工作流（`.github/workflows/repo_metrics.yml`，nicklegan/nicklegan/github-org-repo-metrics-action）每月自动生成，文件命名包含时间戳（如 `OpenHUTB-2026-10-01T03-13-2ZZ-30-days.csv`），用于追溯项目活跃度或提交记录。
 
 如果需要查看历史报告，直接在本目录中查找对应的 CSV 文件即可。报告缺失时，需等待下月自动生成，或在 Actions 页面手动触发工作流。
 
