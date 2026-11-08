@@ -41,7 +41,7 @@ cd .github
 3. 原创一些文档但故意留一些错误（句子，代码错误，符号，固定路径）交给其他人补全。
 ![wmx006](./img/wmx006.png)
 4. 修改一些表达不到位的句子。
-
+![wmx008](./img/wmx008.png)
 5. 加一些跳转链接.
 ![wmx007](./img/wmx007.png)
 
@@ -83,8 +83,7 @@ cd .github
 
 1. 下载 MkDocs（在命令行中运行以下命令下载）：
    ```bash
-   pip install mkdocs
-   pip install mkdocs-material
+   pip install mkdocs mkdocs-material mkdocs-mermaid2-plugin
    ```
    *（如果出现报错，可以将错误信息发给 AI 解决）*
 
