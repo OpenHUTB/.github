@@ -10,11 +10,16 @@
 [https://visualstudio.microsoft.com/zh-hans/downloads/](https://visualstudio.microsoft.com/zh-hans/downloads/)
 
 ## 3. 克隆仓库
-（
 > **注意**：该命令中的 `{用户名}` 请替换为自己的用户名。
 
 ```bash
-git clone https://github.com/用户名/.github.git
+git clone https://github.com/{用户名}/.github.git
+```
+
+克隆完成后进入仓库目录：
+
+```bash
+cd .github
 ```
 
 ## 4. 介绍 .github 文件结构
@@ -36,7 +41,7 @@ git clone https://github.com/用户名/.github.git
 3. 原创一些文档但故意留一些错误（句子，代码错误，符号，固定路径）交给其他人补全。
 ![wmx006](./img/wmx006.png)
 4. 修改一些表达不到位的句子。
-
+![wmx008](./img/wmx008.png)
 5. 加一些跳转链接.
 ![wmx007](./img/wmx007.png)
 
@@ -67,7 +72,7 @@ git clone https://github.com/用户名/.github.git
 [标题](.md文件路径)
 ```
 
-（如果两个 `.md` 文件在同一个目录下，括号里可直接填添加文档的 `.md` 文件）
+（如果两个 `.md` 文件在同一个目录下，括号里直接写该文件名即可）
 例如：
 
 ```markdown
@@ -78,8 +83,7 @@ git clone https://github.com/用户名/.github.git
 
 1. 下载 MkDocs（在命令行中运行以下命令下载）：
    ```bash
-   pip install mkdocs
-   pip install mkdocs-material
+   pip install mkdocs mkdocs-material mkdocs-mermaid2-plugin
    ```
    *（如果出现报错，可以将错误信息发给 AI 解决）*
 
