@@ -49,7 +49,11 @@
 
 * [auto-py-to-exe](https://github.com/brentvollebregt/auto-py-to-exe) - python 转可执行 exe 的图形界面
 
+* [DBeaver](https://github.com/dbeaver/dbeaver) - 通用数据库可视化管理工具
 
+* [Hoppscotch](https://github.com/hoppscotch/hoppscotch) - 开源API接口调试工具
+
+* [Tabby](https://github.com/Eugeny/tabby) - 跨平台终端模拟器
 
 ## 三维建模
 
@@ -76,8 +80,6 @@
 * [readest](https://github.com/readest/readest) - 电子书阅读器
 
 * [openreel-video](https://github.com/Augani/openreel-video) - 浏览器视频编辑器
-
-* [ssr](https://github.com/MaartenBaert/ssr) - Linux 上的屏幕录制
 
 * [PDF4QT](https://github.com/JakubMelka/PDF4QT) - PDF编辑器
 
