@@ -67,7 +67,7 @@
 ![](./img/rustdesk/invite_external_user.png)
 
 
-> 如果不想让对方加入你的整个 tailnet，只共享这一台设备，用 Tailscale 的“节点共享（Share machine）”功能。
+如果只想共享这一台设备、不想让对方加入你的整个 tailnet，用 Tailscale 的「节点共享（Share machine）」功能。
 
 **使用tailscale共享具体步骤**
 
