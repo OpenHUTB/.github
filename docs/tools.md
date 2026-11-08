@@ -48,6 +48,8 @@
 
 * [auto-py-to-exe](https://github.com/brentvollebregt/auto-py-to-exe) - python 转可执行 exe 的图形界面
 
+* [Hoppscotch](https://hoppscotch.io) - 开源 API 开发与调试工具，支持 Web、桌面端和自托管，可发送 HTTP、WebSocket、GraphQL 与 SSE 请求（[源码](https://github.com/hoppscotch/hoppscotch)）。
+
 * [DBeaver](https://github.com/dbeaver/dbeaver) - 开源通用数据库管理工具，支持 MySQL、PostgreSQL、SQLite 等。
 
 * [mkdocs](https://github.com/mkdocs/mkdocs) - 用 Markdown 生成文档网站，社区文档站即由它构建
