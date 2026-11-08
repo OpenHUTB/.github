@@ -19,7 +19,7 @@
 > 启动软件后会点击`sign in to your network`
 ![](./img/rustdesk/sign_in_network.png)
 
-> 以 github 授权使用为例
+> 以 GitHub 授权使用为例
  ![](./img/rustdesk/sign_in_github.png)
  ![](./img/rustdesk/authorize_tailscale.png)
 
