@@ -24,7 +24,6 @@
 * [WindowsCleaner](https://github.com/darkmatter2048/WindowsCleaner) - C盘清理
 * [HandBrake](https://github.com/HandBrake/HandBrake) - 视频转码器，适用于 Linux、Mac 和 Windows
 * [7-Zip](https://github.com/ip7z/7zip) - 免费开源的文件解压工具
-* [Shotcut](https://github.com/mltframework/shotcut) - 开源视频剪辑工具
 
 ## 办公
 
@@ -49,6 +48,7 @@
 
 * [auto-py-to-exe](https://github.com/brentvollebregt/auto-py-to-exe) - python 转可执行 exe 的图形界面
 
+* [mkdocs](https://github.com/mkdocs/mkdocs) - 用 Markdown 生成文档网站，社区文档站即由它构建
 
 
 ## 三维建模
@@ -118,6 +118,15 @@
 
 * [PDFMathTranslate](https://github.com/PDFMathTranslate/PDFMathTranslate) - 基于 AI 完整保留排版的 PDF 文档全文双语翻译
 
+### GIS
+
+* [QGIS](https://qgis.org/) - 开源桌面 GIS，支持矢量、栅格数据的查看、编辑和分析。
+
+* [GRASS GIS](https://grass.osgeo.org/) - 栅格和矢量空间分析工具，适合地形、水文与遥感数据处理。
+
+* [GeoServer](https://geoserver.org/) - 发布和管理空间数据的开源服务器，支持 WMS、WFS 等服务。
+
+* [JupyterLab](https://github.com/jupyterlab/jupyterlab) - 交互式代码笔记，数据分析
 
 ## 常见
 
