@@ -12,7 +12,7 @@
 
  ![](./img/rustdesk/connect_device.png)
 
-* 将设备添加到同一网络中（添加后就可以在[tailscale后台](https://console.tailscale.com/admin/machines)进行管理)。
+* 将设备添加到同一网络中（添加后就可以在[tailscale后台](https://console.tailscale.com/admin/machines)进行管理。
 可以将key设置成永久，防止过段时间需要重新登录）
  ![](./img/rustdesk/disable_key_expiry.png)
 
