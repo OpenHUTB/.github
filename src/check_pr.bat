@@ -4,7 +4,7 @@ chcp 65001
 :: 使用方法：
 :: check_pr.bat <PullRequest_ID>
 
-REM 判断参数个数是否为1
+:: 判断参数个数是否为1
 if "%~2"=="" (
     if not "%~1"=="" (
         set "BRANCH_NAME=%~1"
