@@ -94,6 +94,12 @@
 <li class="toctree-l2"><a class="reference internal" href="#1-虚拟机设置">1. 虚拟机设置</a>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#2-虚拟机扩容">2. 虚拟机扩容</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#根分区正在使用时">根分区正在使用时</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#调整截图中的分区">调整截图中的分区</a>
+</li>
+</ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#参考">参考</a>
 </li>
@@ -166,7 +172,19 @@ df<span class="w"> </span>-h<span class="w"> </span>/
 <p>启动虚拟机中 ubuntu 系统，使用命令<code>df -h</code>查看目前文件系统挂载情况：</p>
 <p><img alt="" src="../../img/dev/disk_free.png"/></p>
 <p>命令输出结果可知，根目录总共有 69G，目前已经使用了 59G，还剩下 6.4G。</p>
-<p>输入命令<code>gparted</code>并在弹出的窗口输入用户密码。示例中新增的未分配磁盘空间约为 80GB。</p>
+<h3 id="根分区正在使用时">根分区正在使用时</h3>
+<p>如果 GParted 显示分区带锁，或「Resize/Move」不可用，先查看该分区是否已挂载。正在运行的 Ubuntu 根分区不能像普通数据分区一样直接卸载；能否在线调整还取决于文件系统和操作类型，不能用强制卸载绕过限制。</p>
+<p>需要离线调整时，可以按以下顺序操作：</p>
+<ol>
+<li>确认重要文件已备份，正常关闭虚拟机。</li>
+<li>在虚拟机的光驱设置中挂载 Ubuntu 安装镜像或 GParted Live 镜像，并从镜像启动。使用 Ubuntu 镜像时选择试用环境，不要进入安装或格式化流程。</li>
+<li>在试用环境中打开 GParted，按前面记录的磁盘容量、分区和文件系统确认目标。确认待调整分区未挂载；若交换分区正被使用，需要先停止使用该交换分区。</li>
+<li>再按后面的截图说明调整分区，并在应用前核对待执行的操作，不应包含格式化或删除原分区。</li>
+<li>操作结束后关机，断开启动镜像，再从原虚拟硬盘启动 Ubuntu，用 <code>lsblk -o NAME,SIZE,FSTYPE,MOUNTPOINTS</code> 和 <code>df -h /</code> 核对根分区容量。</li>
+</ol>
+<p>使用 LVM 或加密卷时，请继续按对应方案处理，不要套用截图中的普通分区操作。相关限制见 <a href="https://gparted.org/display-doc.php?name=help-manual#gparted-unmount-partition">GParted 手册：卸载分区</a>。</p>
+<h3 id="调整截图中的分区">调整截图中的分区</h3>
+<p>打开 GParted。示例中新增的未分配磁盘空间约为 80GB。</p>
 <p>下面以截图中的分区布局演示调整过程，先选中 <code>/dev/sda2</code>，右键选择“Resize/Move”，如下图所示。操作自己的虚拟机时，以前面核对的设备信息为准：</p>
 <p><img alt="" src="../../img/dev/gparted.png"/></p>
 <p>接着用鼠标拖动移动箭头来增加硬盘容量大小，在移动完成后，点击“调整大小（Resize/Move）”，如下图所示：</p>
