@@ -27,9 +27,11 @@ git config --global user.email "你的 GitHub 注册邮箱"
 ### 4. 验证 Git 是否装好
 
 打开 PowerShell，输入：
-```
+
+```bash
 git --version
 ```
+
 输出版本号即代表安装成功。
 ## 二、VS Code 安装（Windows）
 
@@ -38,7 +40,7 @@ git --version
 访问官网：[https://code.visualstudio.com/](https://code.visualstudio.com/)
 点击页面蓝色的 **Download for Windows**，下载 Windows 安装程序。
 
-> 
+
 > 提示：优先官网下载，不要从第三方软件站下载，避免捆绑软件。
 
 ### 2. 安装步骤
