@@ -80,6 +80,8 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#7-常见问题速查表">7. 常见问题速查表</a>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#8-保存依赖并在新环境中重建">8. 保存依赖并在新环境中重建</a>
+</li>
 </ul>
 </li>
 </ul>
@@ -387,7 +389,22 @@ python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </s
 <td><code>python -m pip install --upgrade pip</code></td>
 </tr>
 </tbody>
-</table></div>
+</table>
+<h3 id="8-保存依赖并在新环境中重建">8. 保存依赖并在新环境中重建</h3>
+<p>虚拟环境目录与创建它的 Python 和本机路径有关，不适合直接复制到另一台电脑。需要交接项目时，应保留源码、依赖清单和 Python 版本，并在目标电脑重新创建环境。</p>
+<p>在已经确认可用的项目环境中执行：</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>--version
+python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>check
+python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>freeze<span class="w"> </span>&gt;<span class="w"> </span>requirements-local.txt
+</code></pre></div>
+<p>先查看 <code>pip check</code> 是否报告依赖冲突，再打开 <code>requirements-local.txt</code>，检查其中是否含本机路径或只在当前电脑使用的包。<code>pip freeze</code> 记录的是当前已安装版本，不会自动判断哪些是项目必需依赖；它也不能代替对 Python 版本和系统条件的说明。项目已有维护好的 <code>requirements.txt</code> 时优先使用它，不要用上述输出直接覆盖。</p>
+<p>在另一台 Windows 电脑上，先按项目要求安装对应版本的 Python，再进入项目目录执行：</p>
+<div class="highlight"><pre><span></span><code><span class="n">python</span> <span class="n">-m</span> <span class="n">venv</span> <span class="p">.</span><span class="n">venv</span>
+<span class="p">.\.</span><span class="n">venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">python</span><span class="p">.</span><span class="n">exe</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">-r</span> <span class="n">requirements-local</span><span class="p">.</span><span class="n">txt</span>
+<span class="p">.\.</span><span class="n">venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">python</span><span class="p">.</span><span class="n">exe</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">check</span>
+</code></pre></div>
+<p>最后用这个环境运行项目的最小示例，确认能够导入依赖并得到预期结果。提交文件前，将 <code>.venv/</code> 加入项目的 <code>.gitignore</code>，保留依赖清单，不上传整个虚拟环境。</p>
+<p>参考：<a href="https://docs.python.org/3/library/venv.html">Python 虚拟环境说明</a>、<a href="https://pip.pypa.io/en/stable/cli/pip_freeze/">pip freeze</a>、<a href="https://pip.pypa.io/en/stable/cli/pip_check/">pip check</a>。</p></div>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
