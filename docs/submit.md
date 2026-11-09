@@ -6,7 +6,8 @@
 [https://git-scm.com/install/windows](https://git-scm.com/install/windows)
 
 ## 2. 下载 Visual Studio Code
-下载后会得到一个 `.exe` 文件，双击运行安装：
+下载后会得到一个 `.exe` 文件，双击运行安装：    
+(打开网站首页第一个是Visual Studio 2026,第二个才是所需的Visual Studio Code)
 [https://visualstudio.microsoft.com/zh-hans/downloads/](https://visualstudio.microsoft.com/zh-hans/downloads/)
 
 ## 3. 克隆仓库
@@ -83,8 +84,7 @@ cd .github
 
 1. 下载 MkDocs（在命令行中运行以下命令下载）：
    ```bash
-   pip install mkdocs
-   pip install mkdocs-material
+   pip install mkdocs mkdocs-material mkdocs-mermaid2-plugin
    ```
    *（如果出现报错，可以将错误信息发给 AI 解决）*
 
