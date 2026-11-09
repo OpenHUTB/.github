@@ -9,7 +9,7 @@ title: 主页
 - [3.问题](#questions)
 - [4.社区](#propaganda)
 
-OpenHUTB倡导开源协作精神，提供完备的学习资源。参与者可参与文档优化与程序修缮，在实践中锻炼实操技能，提升动手能力，认识更多志同道合的伙伴，在开源协作的过程中锻炼自己，提升能力。
+OpenHUTB 倡导开源协作精神，提供完备的学习资源。参与者可以参与文档优化与程序修缮，在实践中锻炼实操技能、提升动手能力，认识更多志同道合的伙伴，在开源协作的过程中提升自己。
 
 
 ## 1. 简介 <span id="list"></span>
@@ -18,7 +18,7 @@ OpenHUTB倡导开源协作精神，提供完备的学习资源。参与者可参
 
 - 第一次参与开源项目请参考 **[贡献指南](https://openhutb.github.io/.github/CONTRIBUTING/)** 、非代码开发人员请参考[基于浏览器的贡献指南](./codespace.md)
 
-- [git 教程](https://openhutb.github.io/git/?locale=zh_CN)、[Markdown 教程](https://docs.github.com/zh/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)、[Python教程（到第13章）](https://liaoxuefeng.com/books/python/introduction/index.html)、[C++教程](https://www.runoob.com/cplusplus/cpp-tutorial.html)
+- [git 教程](https://openhutb.github.io/git/?locale=zh_CN)、[Markdown 教程](https://docs.github.com/zh/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)、[Python 教程（到第 13 章）](https://liaoxuefeng.com/books/python/introduction/index.html)、[C++ 教程](https://www.runoob.com/cplusplus/cpp-tutorial.html)
 
 - 记住，自始至终，你可以利用 [Markdown](https://docs.github.com/zh/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) 撰写文档，减少沟通的认知障碍。
 
@@ -44,11 +44,11 @@ OpenHUTB倡导开源协作精神，提供完备的学习资源。参与者可参
 
 ## 3. 问题 <span id="questions"></span>
 
-- 如果参与过程中遇到任何问题，请参考 [提问技巧](./ask_question.md) 和 [注意事项](note.md) 或在对应项目的 [Issues页面](https://github.com/OpenHUTB/hutb/issues) 提出问题。
+- 如果参与过程中遇到任何问题，请参考 [提问技巧](./ask_question.md) 和 [注意事项](note.md) 或在对应项目的 [Issues 页面](https://github.com/OpenHUTB/hutb/issues) 提出问题。
 
-- 如需加入组织、添加项目或获取更高权限，请把GitHub用户名发送到邮箱 [open@hutb.edu.cn](mailto:open@hutb.edu.cn) 。
+- 如需加入组织、添加项目或获取更高权限，请把 GitHub 用户名发送到邮箱 [open@hutb.edu.cn](mailto:open@hutb.edu.cn) 。
 
-- 网络不稳定的时候可以参考 [github 加速方案和科学上网链接](https://openhutb.github.io/doc/build_carla/#internet) 
+- 网络不稳定的时候可以参考 [GitHub 加速方案和科学上网链接](https://openhutb.github.io/doc/build_carla/#internet)
 
 
 ## 4. 社区  <span id="propaganda"></span>
@@ -73,5 +73,5 @@ OpenHUTB 的其他非主要平台包括 [gitee](https://gitee.com/OpenHUTB)、[g
 
 ___
 
-如果对文档中的任何问题可以在 [本文档的源码仓库](https://github.com/OpenHUTB/.github) 中的 [问题](https://github.com/OpenHUTB/.github/issues) 页面讨论或者提交 [拉取请求](https://github.com/OpenHUTB/.github/blob/master/CONTRIBUTING.md) 直接修改文档。
+如果对文档中的任何代码或图片有问题可以在 [本文档的源码仓库](https://github.com/OpenHUTB/.github) 中的 [问题](https://github.com/OpenHUTB/.github/issues) 页面讨论，或者提交 [拉取请求](https://github.com/OpenHUTB/.github/blob/master/CONTRIBUTING.md) 直接修改文档。
 

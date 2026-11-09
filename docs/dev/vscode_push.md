@@ -27,9 +27,11 @@ git config --global user.email "你的 GitHub 注册邮箱"
 ### 4. 验证 Git 是否装好
 
 打开 PowerShell，输入：
-```
+
+```bash
 git --version
 ```
+
 输出版本号即代表安装成功。
 ## 二、VS Code 安装（Windows）
 
@@ -38,7 +40,7 @@ git --version
 访问官网：[https://code.visualstudio.com/](https://code.visualstudio.com/)
 点击页面蓝色的 **Download for Windows**，下载 Windows 安装程序。
 
-> 
+
 > 提示：优先官网下载，不要从第三方软件站下载，避免捆绑软件。
 
 ### 2. 安装步骤
@@ -199,4 +201,16 @@ git status
 git push origin 你的分支名
 ```
 
+
+## 十一、推送失败时先确认分支关系
+
+当 `git push` 被拒绝时，不要直接重复推送，可以先按下面顺序检查：
+
+1. 运行 `git branch --show-current` 确认当前分支。
+2. 运行 `git status` 查看是否有未提交文件，并确认工作区状态。
+3. 运行 `git remote -v` 核对推送目标是否为自己的 fork。
+4. 如果远程已有新提交，先获取更新并处理差异，再重新推送。
+5. 推送成功后，在 GitHub 的分支页面核对最新提交和改动文件。
+
+这些检查可以区分分支选错、远程地址错误和远程分支已更新等不同情况。
 远程地址的查看和修改可参考 [Git remote 文档](https://git-scm.com/docs/git-remote)。
