@@ -99,7 +99,7 @@ git commit -m "docs: 说明 README 中的项目入口 / clarify project links in
 git push -u origin docs-fix-contribution-steps
 ```
 
-将 `README.md` 换成实际修改的文件，例如修改贡献指南时使用 `git add CONTRIBUTING.md`；提交信息也要与实际改动对应。如果第 3 步用了其他分支名，推送时同步替换。
+将 README.md 替换为你实际修改的文件，例如修改这份贡献指南时使用 git add CONTRIBUTING.md；提交描述要如实说明本次改动内容。如果你在第3步使用了别的分支名称，推送命令里的分支名同步替换。
 
 <details>
 <summary> <strong>如果在 push（推送）过程中出 error，点击此处折叠</strong> </summary>
