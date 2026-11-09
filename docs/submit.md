@@ -6,7 +6,8 @@
 [https://git-scm.com/install/windows](https://git-scm.com/install/windows)
 
 ## 2. 下载 Visual Studio Code
-下载后会得到一个 `.exe` 文件，双击运行安装：
+下载后会得到一个 `.exe` 文件，双击运行安装：    
+(打开网站首页第一个是Visual Studio 2026,第二个才是所需的Visual Studio Code)
 [https://visualstudio.microsoft.com/zh-hans/downloads/](https://visualstudio.microsoft.com/zh-hans/downloads/)
 
 ## 3. 克隆仓库
