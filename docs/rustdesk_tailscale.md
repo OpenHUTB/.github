@@ -81,7 +81,7 @@
 
 **接收方操作**
 
-1. 使用github账号登录并打开[链接](https://login.tailscale.com/admin/invitations)（或注册邮箱里的邀请邮件），**接受**这台共享设备
+1. 使用GitHub账号登录并打开[链接](https://login.tailscale.com/admin/invitations)（或注册邮箱里的邀请邮件），**接受**这台共享设备
 2. 接受后在 admin/machines 里即可看到该设备，用  服务器ip地址  访问
    
 ![](./img/rustdesk/Share%20successful.png)
