@@ -205,7 +205,7 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
 
 1. 在 VS Code 扩展商店安装 **Python** 扩展（搜索 `Python`，发布者为 Microsoft）。
 2. 按 `Ctrl+Shift+P`，输入 `Python: Select Interpreter`，选择路径中带 `.venv` 的那一项。
-3. 新建终端（菜单「终端 → 新建终端」）会自动激活虚拟环境，命令行前同样出现 `(.venv)`。**这一步不做，VS Code 仍会用系统 Python 运行代码**，于是出现「终端里 import 成功、点运行却报错」这类看似玄学的问题。
+3. 新建终端（菜单「终端 → 新建终端」）会自动激活虚拟环境，命令行前同样出现 `(.venv)`。**如果跳过该步骤，VS Code 可能仍使用系统 Python 执行代码，造成“终端导入成功，但点击运行报错”的现象。
 
 ### 6. 安装常用库并验证
 
@@ -234,3 +234,29 @@ python -c "import numpy, pandas, sklearn, matplotlib; print('ok')"
 | 终端能 import，VS Code 运行却报 `ModuleNotFoundError` | 编辑器选中的解释器不是装包的那个 | `Ctrl+Shift+P` → `Python: Select Interpreter` 改选 `.venv` |
 | `python -m venv` 报 ensurepip 失败 | Python 安装不完整 | 重新运行安装包修复；Linux 上需先 `apt install python3-venv` |
 | pip 提示版本过旧 | 安装包自带的 pip 较老 | `python -m pip install --upgrade pip` |
+
+### 8. 保存依赖并在新环境中重建
+
+虚拟环境目录与创建它的 Python 和本机路径有关，不适合直接复制到另一台电脑。需要交接项目时，应保留源码、依赖清单和 Python 版本，并在目标电脑重新创建环境。
+
+在已经确认可用的项目环境中执行：
+
+```shell
+python --version
+python -m pip check
+python -m pip freeze > requirements-local.txt
+```
+
+先查看 `pip check` 是否报告依赖冲突，再打开 `requirements-local.txt`，检查其中是否含本机路径或只在当前电脑使用的包。`pip freeze` 记录的是当前已安装版本，不会自动判断哪些是项目必需依赖；它也不能代替对 Python 版本和系统条件的说明。项目已有维护好的 `requirements.txt` 时优先使用它，不要用上述输出直接覆盖。
+
+在另一台 Windows 电脑上，先按项目要求安装对应版本的 Python，再进入项目目录执行：
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements-local.txt
+.\.venv\Scripts\python.exe -m pip check
+```
+
+最后用这个环境运行项目的最小示例，确认能够导入依赖并得到预期结果。提交文件前，将 `.venv/` 加入项目的 `.gitignore`，保留依赖清单，不上传整个虚拟环境。
+
+参考：[Python 虚拟环境说明](https://docs.python.org/3/library/venv.html)、[pip freeze](https://pip.pypa.io/en/stable/cli/pip_freeze/)、[pip check](https://pip.pypa.io/en/stable/cli/pip_check/)。
