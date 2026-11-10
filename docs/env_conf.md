@@ -66,7 +66,7 @@ docker-compose config --quiet
 docker-compose up -d gitlab
 ```
 
-`up -d` 会在配置变化时重新创建相关容器。启动后继续检查状态和最近的日志，等待 GitLab 完成初始化，再打开页面：
+`up -d` 会在配置变化时重新创建相关容器。启动后继续检查状态和最近的日志，等待 GitLab 完成初始化，再打开页面
 
 ```shell
 docker-compose ps
