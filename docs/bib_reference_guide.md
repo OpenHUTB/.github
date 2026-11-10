@@ -1,5 +1,5 @@
 ## 配套社区LaTeX资源
-
+# 参考文献引用与编译方法
 本文参考文献编译操作，可以搭配OpenHUTB社区的LaTeX模板仓库使用：  
 
 * [课程论文latex模板](https://github.com/OpenHUTB/course)  
