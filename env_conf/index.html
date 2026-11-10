@@ -333,7 +333,7 @@ python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </s
 <ol>
 <li>在 VS Code 扩展商店安装 <strong>Python</strong> 扩展（搜索 <code>Python</code>，发布者为 Microsoft）。</li>
 <li>按 <code>Ctrl+Shift+P</code>，输入 <code>Python: Select Interpreter</code>，选择路径中带 <code>.venv</code> 的那一项。</li>
-<li>新建终端（菜单「终端 → 新建终端」）会自动激活虚拟环境，命令行前同样出现 <code>(.venv)</code>。<strong>这一步不做，VS Code 仍会用系统 Python 运行代码</strong>，于是出现「终端里 import 成功、点运行却报错」这类看似玄学的问题。</li>
+<li>新建终端（菜单「终端 → 新建终端」）会自动激活虚拟环境，命令行前同样出现 <code>(.venv)</code>。**如果跳过该步骤，VS Code 可能仍使用系统 Python 执行代码，造成“终端导入成功，但点击运行报错”的现象。</li>
 </ol>
 <h3 id="6-安装常用库并验证">6. 安装常用库并验证</h3>
 <p>以数据科学常用的一套为例，按需增删：</p>
