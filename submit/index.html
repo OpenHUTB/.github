@@ -170,10 +170,18 @@
 (打开网站首页第一个是Visual Studio 2026,第二个才是所需的Visual Studio Code)
 <a href="https://visualstudio.microsoft.com/zh-hans/downloads/">https://visualstudio.microsoft.com/zh-hans/downloads/</a></p>
 <h2 id="3-克隆仓库">3. 克隆仓库</h2>
-<blockquote>
-<p><strong>注意</strong>：该命令中的 <code>{用户名}</code> 请替换为自己的用户名。</p>
+<p>在克隆代码前，需要先将社区的官方仓库“复制”一份到你自己的 GitHub 账号下，这个过程称为 Fork。</p>
+<ol>
+<li>登录你的 GitHub 账号。</li>
+<li>打开社区原仓库地址：<a href="https://github.com/OpenHUTB/.github">https://github.com/OpenHUTB/.github</a></li>
+<li>点击页面右上角的 <strong>Fork</strong> 按钮。</li>
+<li>在跳转的页面中点击 <strong>Create fork</strong>。等待几秒钟，你的账号下就会生成一个同名的仓库。<blockquote>
+<p><strong>注意</strong>：该命令中的 <code>{用户名}</code> 请替换为自己的GitHub用户名。</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/<span class="o">{</span>用户名<span class="o">}</span>/.github.git
+</li>
+</ol>
+<p>克隆你 Fork 后的个人仓库：</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/<span class="o">{</span>你的GitHub用户名<span class="o">}</span>/.github.git
 </code></pre></div>
 <p>克隆完成后进入仓库目录：</p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>.github
