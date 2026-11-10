@@ -244,6 +244,7 @@ git submodule update --remote
 ###### 国内访问 github 可能较慢
 
 这里提供 github 加速方案和科学上网的 [链接](https://openhutb.github.io/doc/build_carla/#internet) 。
+⚠️ 提示：请遵守国内网络相关法规。
 
 ###### 向 GitHub 推送时出现 403 或权限不足
 
