@@ -105,6 +105,8 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#安装后核对发行版状态">安装后核对发行版状态</a>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../submit/">文档修改指南</a>
@@ -197,7 +199,17 @@
 <p></p><div class="highlight"><pre><span></span><code><span class="n">wsl</span> <span class="p">-</span><span class="n">-uninstall</span>
 </code></pre></div>
 注意：wsl --uninstall 需要 Microsoft Store 版 WSL 2.0 及以上。如果提示没有该命令，可在「设置 → 应用 → 安装的应用」中先卸载对应的 Linux 发行版，再卸载「适用于 Linux 的 Windows 子系统」组件，然后重启电脑。
-<p>备份、恢复和注销命令可参考<a href="https://learn.microsoft.com/zh-cn/windows/wsl/basic-commands">微软 WSL 基本命令</a>。</p></div>
+<p>备份、恢复和注销命令可参考<a href="https://learn.microsoft.com/zh-cn/windows/wsl/basic-commands">微软 WSL 基本命令</a>。</p>
+<h2 id="安装后核对发行版状态">安装后核对发行版状态</h2>
+<p>在 Windows PowerShell 或命令提示符中查看已安装的发行版及其 WSL 版本：</p>
+<div class="highlight"><pre><span></span><code><span class="n">wsl</span> <span class="p">-</span><span class="n">-list</span> <span class="p">-</span><span class="n">-verbose</span>
+<span class="n">wsl</span> <span class="p">-</span><span class="n">-status</span>
+<span class="n">wsl</span> <span class="p">-</span><span class="n">-version</span>
+</code></pre></div>
+<p>在列表中确认目标发行版名称，并查看 <code>VERSION</code> 列。若项目需要 WSL 2，而发行版显示为 1，可先备份重要文件，再按需转换：</p>
+<div class="highlight"><pre><span></span><code><span class="n">wsl</span> <span class="p">-</span><span class="n">-set-version</span> <span class="n">Ubuntu</span><span class="p">-</span><span class="n">20</span><span class="p">.</span><span class="n">04</span> <span class="n">2</span>
+</code></pre></div>
+<p><code>wsl --update</code> 更新 WSL 组件；进入 Ubuntu 后运行 <code>sudo apt update &amp;&amp; sudo apt upgrade</code> 更新 Linux 软件包。这两项更新针对不同部分。更多命令见<a href="https://learn.microsoft.com/zh-cn/windows/wsl/basic-commands">微软 WSL 基本命令</a>。</p></div>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
