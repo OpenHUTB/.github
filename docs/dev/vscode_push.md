@@ -74,7 +74,7 @@ git --version
 
 打开 VS Code，左侧扩展栏（方块图标），搜索并安装：
 
-1. Chinese (Simplified) Language Pack —— 中文语言包（可选，适合不习惯英文界面）
+1. Chinese (Simplified) Language Pack —— 中文语言包（可选，适合不习惯英文界面）2. GitHub Pull Requests —— 在 VS Code 里直接查看、创建和更新 PR
 
 ## 三、前置说明
 
