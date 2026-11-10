@@ -156,7 +156,7 @@
 
 [Stack Exchange](https://stackexchange.com/sites) 已经成长到超过一百个网站，以下是最常用的几个站：
 
-* [Stack Overflow](https://stackoverflow.co/) 是问写程序有关的问题。
+* [Stack Overflow](https://stackoverflow.com/) 是问写程序有关的问题。
 * [Server Fault](https://serverfault.com/tour) 是问服务器和网管相关的问题。
 ### 网站和 IRC 论坛
 
