@@ -21,7 +21,7 @@ GitHub 用户名：XXX
 !!! 注意
     如果觉得安装 VS Code 太麻烦，可以使用[在线排版工具](https://openhutb.github.io/md2/)。
 
-* 安装 [VScode](https://code.visualstudio.com/download)，并在右侧的`扩展`中安装 Markdown2Anything 插件
+* 安装 [VS Code](https://code.visualstudio.com/download)，并在右侧的`扩展`中安装 Markdown2Anything 插件
 
 * 打开任意 .md 文件，右键 → Markdown2Anything: 预览
 
