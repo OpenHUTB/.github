@@ -114,7 +114,7 @@ GitHub 用户名：XXX
 
 ## 发表审核
 
-完成后，将以下邮件模板填好并<a href="mailto:open@hutb.edu.cn">发送到邮箱 open@hutb.edu.cn</a>，邮件主题：`申请发表公众号文章`
+完成后，将以下邮件模板填好并通过<a href="mailto:open@hutb.edu.cn">发送到邮箱 open@hutb.edu.cn</a>，邮件主题：`申请发表公众号文章`
 ```text
 github 用户名：XXX
 邮箱：xxx@xx.com
