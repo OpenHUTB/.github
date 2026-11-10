@@ -14,7 +14,7 @@
 
 ## 2. 启用自动化流水线
 
-点击个人项目的“Actions -> I understand my workflows, go ahead and enable them”启用自动化流水线。
+进入仓库的 `Actions` 标签页，在首次访问 Fork 仓库的 Actions 页面时，会弹出提示框，点击绿色按钮 **I understand my workflows, go ahead and enable them**，即可启用工作流。
 
 ![](./img/codespace/actions.png)
 
