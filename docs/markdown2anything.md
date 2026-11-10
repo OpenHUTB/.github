@@ -4,7 +4,7 @@
 
 已有运营者权限跳过该步骤。将以下邮件模板填好并<a href="mailto:open@hutb.edu.cn">发送到邮箱 open@hutb.edu.cn</a>，邮件主题：`申请运营者权限`
 ```text
-github 用户名：XXX
+GitHub 用户名：XXX
 邮箱：xxx@xx.com
 微信号：xxx（需要提前关注“开源孪创”公众号才可以绑定运营者）
 申请原因：在“开源孪创”微信公众号发表《公众号文章名称》
