@@ -244,7 +244,7 @@ git submodule update --remote
 ###### 国内访问 github 可能较慢
 
 这里提供 github 加速方案和科学上网的 [链接](https://openhutb.github.io/doc/build_carla/#internet) 。
-
+⚠️ 提示：请遵守国内网络相关法规。
 ###### 向 GitHub 推送时出现 403 或权限不足
 
 先区分“提交署名”和“登录权限”：`git config user.name`、`user.email` 只决定提交记录的署名，不会赋予仓库写入权限。在网址前添加用户名也不会改变仓库权限。
