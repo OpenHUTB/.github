@@ -16,7 +16,9 @@ OpenHUTB 倡导开源协作精神，提供完备的学习资源。参与者可�
 
 - [OpenHUTB 模拟器简介](./simulator.md)
 
-- 第一次参与开源项目请参考 **[贡献指南](https://openhutb.github.io/.github/CONTRIBUTING/)** 、非代码开发人员请参考[基于浏览器的贡献指南](./codespace.md)
+- 第一次参与开源项目请参考 **[贡献指南](https://openhutb.github.io/.github/CONTRIBUTING/)** 、非代码开发人员请参考[基于浏览器的贡献指南](./codespace.md)提交前先看 [贡献小贴士](https://github.com/OpenHUTB/.github/blob/master/contribute-tips.md)：拆成小改动、一个 PR 只改一个主题、别夹带无关文件。
+
+
 
 - [git 教程](https://openhutb.github.io/git/?locale=zh_CN)、[Markdown 教程](https://docs.github.com/zh/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)、[Python 教程（到第 13 章）](https://liaoxuefeng.com/books/python/introduction/index.html)、[C++ 教程](https://www.runoob.com/cplusplus/cpp-tutorial.html)
 
