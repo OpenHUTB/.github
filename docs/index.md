@@ -31,7 +31,7 @@ OpenHUTB 倡导开源协作精神，提供完备的学习资源。参与者可�
 
 - [搭建自定义开发环境](env_conf.md)
 
--  [合并提交](dev/merge_commit.md)
+- [合并提交](dev/merge_commit.md)
 
 - [免费开源远程办公解决方案：rustdesk+tailscale](rustdesk_tailscale.md)
 
