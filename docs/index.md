@@ -16,7 +16,7 @@ OpenHUTB 倡导开源协作精神，提供完备的学习资源。参与者可�
 
 - [OpenHUTB 模拟器简介](./simulator.md)
 
-- 第一次参与开源项目请参考 **[贡献指南](https://openhutb.github.io/.github/CONTRIBUTING/)** 、非代码开发人员请参考[基于浏览器的贡献指南](./codespace.md)提交前先看 [贡献小贴士](https://github.com/OpenHUTB/.github/blob/master/contribute-tips.md)：拆成小改动、一个 PR 只改一个主题、别夹带无关文件。
+- 第一次参与开源项目请参考 **[贡献指南](https://openhutb.github.io/.github/CONTRIBUTING/)** 、非代码开发人员请参考[基于浏览器的贡献指南](./codespace.md)，提交前先看 [贡献小贴士](https://github.com/OpenHUTB/.github/blob/master/contribute-tips.md)：拆成小改动、一个 PR 只改一个主题、别夹带无关文件。
 
 
 
@@ -29,7 +29,7 @@ OpenHUTB 倡导开源协作精神，提供完备的学习资源。参与者可�
 - 撰写论文请参考[互联网上的论文写作技巧](./paper_tips.md)
 
 
-## 2. 开发配置 <span id='dev'></span>
+## 2. 开发配置** <span id='dev'></span>
 
 - [搭建自定义开发环境](env_conf.md)
 
@@ -46,7 +46,7 @@ OpenHUTB 倡导开源协作精神，提供完备的学习资源。参与者可�
 
 ## 3. 问题 <span id="questions"></span>
 
-- 如果参与过程中遇到任何问题，请参考 [提问技巧](./ask_question.md) 和 [注意事项](note.md) 或在对应项目的 [Issues 页面](https://github.com/OpenHUTB/hutb/issues) 提出问题。
+- 如果参与过程中遇到任何问题，请参考 [提问技巧](./ask_question.md) 和 [注意事项](note.md) 或在对应的 [Issues 页面](https://github.com/OpenHUTB/hutb/issues) 提出问题。
 
 - 如需加入组织、添加项目或获取更高权限，请把 GitHub 用户名发送到邮箱 [open@hutb.edu.cn](mailto:open@hutb.edu.cn) 。
 
@@ -75,5 +75,5 @@ OpenHUTB 的其他非主要平台包括 [gitee](https://gitee.com/OpenHUTB)、[g
 
 ___
 
-如果对文档中的任何代码或图片有问题可以在 [本文档的源码仓库](https://github.com/OpenHUTB/.github) 中的 [问题](https://github.com/OpenHUTB/.github/issues) 页面讨论，或者提交 [拉取请求](https://github.com/OpenHUTB/.github/blob/master/CONTRIBUTING.md) 直接修改文档。
+如果对文档中的任何代码或图片有问题可以前往 [本文档的源码仓库](https://github.com/OpenHUTB/.github) 中的 [问题](https://github.com/OpenHUTB/.github/issues) 页面讨论，或者提交 [拉取请求](https://github.com/OpenHUTB/.github/blob/master/CONTRIBUTING.md) 直接修改文档。
 
