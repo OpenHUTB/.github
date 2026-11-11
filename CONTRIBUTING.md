@@ -12,7 +12,7 @@
 - 💻 **贡献代码**：请参考下方的“代码贡献流程”，从 Fork 仓库开始。
 
 
-如果你的电脑上未安装 git 或对命令行不熟悉，请参考以下的 [软件安装](#软件安装)。git跟github的使用可以参考以下的视频教程 [git github详细使用视频教程链接](https://www.bilibili.com/video/BV1udEuzrEa7/?spm_id_from=333.1391.0.0&vd_source=0a56e113c3144b313a6ea829d3996ce9)
+如果你的电脑上未安装 git 或对命令行不熟悉，请参考以下的 [软件安装](#软件安装)。git 与 GitHub 的使用可以参考以下视频教程 [git github详细使用视频教程链接](https://www.bilibili.com/video/BV1udEuzrEa7/?spm_id_from=333.1391.0.0&vd_source=0a56e113c3144b313a6ea829d3996ce9)
 
 
 ## 在cmd/bash提交本地修改的步骤
@@ -125,13 +125,13 @@ git push -u origin docs-fix-contribution-steps
 不久之后，团队成员便会把你所有的改动合并到该项目的主分支。更改合并后，你会收到一封电子邮件通知。
 
 
-## 在VScode提交本地修改的步骤
+## 在 VS Code 提交本地修改的步骤
 
 **1.工具准备**
 
 - 首先按上述步骤创建GitHub账号，这里不再赘述；
-- 点击VScode左下角小猫图标登录GitHub账号；
-- 在VScode扩展商店安装“GitHub Pull Requests”扩展，它把**git add、git commit、git push**和**git branch**这些命令都变成了点击操作，对新手很友好，强烈建议把Chinese Language Pack for Visual Studio Code这个汉化扩展也装上，安装成功之后重启。
+- 点击 VS Code 左下角的小猫图标登录 GitHub 账号；
+- 在 VS Code 扩展商店安装“GitHub Pull Requests”扩展，它把**git add、git commit、git push**和**git branch**这些命令都变成了点击操作，对新手很友好，强烈建议把Chinese Language Pack for Visual Studio Code这个汉化扩展也装上，安装成功之后重启。
 
 **2.克隆个人仓库**
 
@@ -140,7 +140,7 @@ git push -u origin docs-fix-contribution-steps
 **3.新建并更改分支**
 
 - 这一步相当于新建一个副本，在这个副本上面你可以做任何事，且不会损坏、污染主分支。
-- 在VScode左下角，也就是图一所示位置，会看到**master**或者**main**的字样，这意味着你现在在主分支，点击他，上方对话框会出现**创建新分支...**，点击他就可以创建新分支，成功后如图二所示，创建了一个名为**new**的分支，并且自动跳转到了这个分支，这时候就可以按需修改了。
+- 在 VS Code 左下角，也就是图一所示位置，会看到**master**或者**main**的字样，这意味着你现在在主分支，点击它，上方对话框会出现**创建新分支...**，点击它就可以创建新分支，成功后如图二所示，创建了一个名为**new**的分支，并且自动跳转到了这个分支，这时候就可以按需修改了。
 
 ![图一](https://raw.githubusercontent.com/OpenHUTB/.github/master/docs/img/branch_setting.png)
 ![图二](https://raw.githubusercontent.com/OpenHUTB/.github/master/docs/img/branch_new.png)
