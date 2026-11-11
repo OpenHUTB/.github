@@ -111,6 +111,8 @@ GitHub 用户名：XXX
 
 ## [Twitter](https://x.com/OpenHUTB)
 
+风格选“Twitter风格”，预览后截图，发布到 X 平台。
+
 
 ## 发表审核
 
