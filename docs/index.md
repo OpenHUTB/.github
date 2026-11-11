@@ -29,7 +29,7 @@ OpenHUTB 倡导开源协作精神，提供完备的学习资源。参与者可�
 - 撰写论文请参考[互联网上的论文写作技巧](./paper_tips.md)
 
 
-## 2. 开发配置 <span id='dev'></span>
+## 2. 开发配置** <span id='dev'></span>
 
 - [搭建自定义开发环境](env_conf.md)
 
