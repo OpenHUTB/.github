@@ -43,6 +43,8 @@ OpenHUTB 倡导开源协作精神，提供完备的学习资源。参与者可�
 
 - [使用 TortoiseGit 解决合并冲突](./resolve_conflict.md)
 
+- [PyCharm 使用教程](./pycharm-tutorial.md)
+
 
 ## 3. 问题 <span id="questions"></span>
 
