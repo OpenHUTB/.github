@@ -205,7 +205,7 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
 
 1. 在 VS Code 扩展商店安装 **Python** 扩展（搜索 `Python`，发布者为 Microsoft）。
 2. 按 `Ctrl+Shift+P`，输入 `Python: Select Interpreter`，选择路径中带 `.venv` 的那一项。
-3. 新建终端（菜单「终端 → 新建终端」）会自动激活虚拟环境，命令行前同样出现 `(.venv)`。**这一步不做，VS Code 仍会用系统 Python 运行代码**，于是出现「终端里 import 成功、点运行却报错」这类看似玄学的问题。
+3. 新建终端（菜单「终端 → 新建终端」）会自动激活虚拟环境，命令行前同样出现 `(.venv)`。**如果跳过该步骤，VS Code 可能仍使用系统 Python 执行代码，造成“终端导入成功，但点击运行报错”的现象。
 
 ### 6. 安装常用库并验证
 
