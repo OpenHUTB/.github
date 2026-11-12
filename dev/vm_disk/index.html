@@ -169,7 +169,7 @@
 df<span class="w"> </span>-h<span class="w"> </span>/
 </code></pre></div>
 <p>先找挂载点为 <code>/</code> 的分区，再结合容量和文件系统类型，在 GParted 中确认同一块磁盘、同一个分区。如果实际布局与截图不同，或使用了 LVM、加密卷，应先查对应的扩容方法，不要直接套用后面的分区顺序。</p>
-<p>启动虚拟机中 ubuntu 系统，使用命令<code>df -h</code>查看目前文件系统挂载情况：</p>
+<p>启动虚拟机中 Ubuntu 系统，使用命令<code>df -h</code>查看目前文件系统挂载情况：</p>
 <p><img alt="" src="../../img/dev/disk_free.png"/></p>
 <p>命令输出结果可知，根目录总共有 69G，目前已经使用了 59G，还剩下 6.4G。</p>
 <h3 id="根分区正在使用时">根分区正在使用时</h3>
