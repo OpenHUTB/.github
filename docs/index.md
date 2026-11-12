@@ -43,6 +43,8 @@ OpenHUTB 倡导开源协作精神，提供完备的学习资源。参与者可�
 
 - [使用 TortoiseGit 解决合并冲突](./resolve_conflict.md)
 
+- [PyCharm 使用教程](./pycharm-tutorial.md)
+
 
 ## 3. 问题 <span id="questions"></span>
 
@@ -82,7 +84,8 @@ OpenHUTB 的其他非主要平台包括：
 
 备注：开源孪创社区不搭建自己独立的平台的原因有很多，比如独立平台可能生成的“信息孤岛”造成分裂、维护成本高、“去中心化”理念与降低用户门槛、风险规避与可持续性，同时不会因为其中一些依附平台的限制而影响社区的发展，使社区专注于核心使命。
 
-___
-
-如果对文档中的任何代码或图片有问题可以前往 [本文档的源码仓库](https://github.com/OpenHUTB/.github) 中的 [问题](https://github.com/OpenHUTB/.github/issues) 页面讨论，或者提交 [拉取请求](https://github.com/OpenHUTB/.github/blob/master/CONTRIBUTING.md) 直接修改文档。
+- 参与过程中如果遇到问题，建议按以下步骤解决：
+  1. 先阅读 [提问技巧](./ask_question.md)，学习如何高效描述问题。
+  2. 了解 [注意事项](./note.md)，避免常见误区。
+  3. 如果问题仍未解决，请前往对应项目的 [Issues 页面](https://github.com/OpenHUTB/hub/issues) 提交新问题。
 
