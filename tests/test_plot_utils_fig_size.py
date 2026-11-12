@@ -18,6 +18,7 @@ def load_plot_utils():
     """Load plot_utils without requiring Matplotlib for this size-only test."""
     matplotlib = ModuleType("matplotlib")
     pyplot = ModuleType("matplotlib.pyplot")
+    pyplot.rcParams = {}
     matplotlib.pyplot = pyplot
     with patch.dict(
         sys.modules,
@@ -50,6 +51,23 @@ class GetFigSizeTests(TestCase):
         expected_height = 10 / ((1 + math.sqrt(5)) / 2)
 
         self.assertEqual(size, (10 / 2.54, expected_height / 2.54))
+
+
+class FigureSetupTests(TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.plot_utils = load_plot_utils()
+
+    def test_can_disable_latex_without_clearing_font_families(self):
+        self.plot_utils.plt.rcParams.clear()
+
+        self.plot_utils.figure_setup(use_latex=False)
+
+        params = self.plot_utils.plt.rcParams
+        self.assertFalse(params["text.usetex"])
+        self.assertNotIn("font.serif", params)
+        self.assertNotIn("font.sans-serif", params)
+        self.assertNotIn("font.monospace", params)
 
 
 if __name__ == "__main__":
