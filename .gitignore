@@ -1,6 +1,9 @@
 # Python
 __pycache__/
 *.py[cod]
+*.egg-info/
+dist/
+build/
 
 # mkdocs 构建产物（本地 serve/build 生成）
 site/
