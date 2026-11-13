@@ -6,7 +6,7 @@
     * [目录](#目录)
   * [排版你的论文](#排版你的论文)
     * [每行一个句子](#每行一个句子)
-    * [大写](#大写)
+    * [大写类型](#大写类型)
     * [保持参考文献完整](#保持参考文献完整)
     * [表格](#表格)
     * [数字格式](#数字格式)
@@ -46,7 +46,7 @@ This is my first sentence. This is the second one.
 
 另一个好处是，当我们的 LaTeX 编译器仅给出行号时，您将能够更快速地识别错误。
 
-## 大写
+## 大写类型
 
 下面我们将提到两种大写类型：
 
@@ -282,7 +282,7 @@ You can also round numbers, for example \num{1.23456}.
 
 如果可能，所有图形的标签、坐标轴等都应使用相同的字体。尤其要注意，不要让一个图形的标签/刻度较大，而另一个图形的标签/刻度较小。一个解决方案是在生成图形的脚本中定义图形的大小，而不是在文档中重新缩放（例如，不要在 LaTeX 文档中更改图形的宽度设置`\textwidth`）。
 
-为了获得一致的图形，我们建议使用类似于我们的辅助脚本[`plot_utils.py`](https://github.com/Wookai/paper-tips-and-tricks/blob/master/src/python/plot_utils.py)。使用此脚本，您只需调用`figure_setup()`函数定义所有尺寸，然后创建所需尺寸的图形并保存即可。
+为了获得一致的图形，本仓库提供了辅助脚本 [`plot_utils.py`](src/python/plot_utils.py)、函数曲线示例 [`figure_example.py`](src/python/figure_example.py) 和栅格化示例 [`figure_rasterized_example.py`](src/python/figure_rasterized_example.py)。运行示例前需要安装 Matplotlib；`figure_setup()` 默认使用 LaTeX 渲染文字，因此还需要本地 LaTeX 环境。只有保存 EPS、PNG 或 PDF 时才需要对应的 `epstool`、ImageMagick 或 `pdfcrop` 命令。
 
 ```python
 import argparse
@@ -409,7 +409,7 @@ plt.close(fig)
 * 图中的字体要注意，需要按照模板要求
 * 如果文章只出现一次，又不是非常通用的缩写，可以不用缩写。并且只在第一次出现的时候声明缩写
 * 所有文中的符号都是公式符号，而不是英文
-* latex 编译生成中间文件（ *.aux, *.log等）和输出pdf文件不用放到仓库
+* LaTeX 编译生成中间文件（*.aux, *.log等）和输出PDF文件不用放到仓库
 * 一次性不要提交太多文件，不好审核，提交前检查下，比如大的二进制文件可以提供一个下载链接
 * 缓存、不必要的输出文件不要放到仓库，比如：__pycache__不需要的缓存文件、训练的模型、中间记录文件、.pyc文件、checkpoint文件、*.pth文件最多放一个、*.npy文件等
 

@@ -4,7 +4,7 @@
 
 已有运营者权限跳过该步骤。将以下邮件模板填好并<a href="mailto:open@hutb.edu.cn">发送到邮箱 open@hutb.edu.cn</a>，邮件主题：`申请运营者权限`
 ```text
-github 用户名：XXX
+GitHub 用户名：XXX
 邮箱：xxx@xx.com
 微信号：xxx（需要提前关注“开源孪创”公众号才可以绑定运营者）
 申请原因：在“开源孪创”微信公众号发表《公众号文章名称》
@@ -21,7 +21,7 @@ github 用户名：XXX
 !!! 注意
     如果觉得安装 VS Code 太麻烦，可以使用[在线排版工具](https://openhutb.github.io/md2/)。
 
-* 安装 [VScode](https://code.visualstudio.com/download)，并在右侧的`扩展`中安装 Markdown2Anything 插件
+* 安装 [VS Code](https://code.visualstudio.com/download)，并在右侧的`扩展`中安装 Markdown2Anything 插件
 
 * 打开任意 .md 文件，右键 → Markdown2Anything: 预览
 
@@ -51,7 +51,7 @@ github 用户名：XXX
 * 图片前后是否有多余的空行
 * 图注是否正常显示或重复显示
 * 如果公式格式混乱，改用截图
-* 出现超过 5M 的 gif 动图一般会上传失败的现象，请使用 ScreenToGif “编辑-> 减少帧数”、“图像 -> 调整大小” 来压缩
+* 出现超过 5MB 的 gif 动图一般会上传失败的现象，请使用 ScreenToGif “编辑-> 减少帧数”、“图像 -> 调整大小” 来压缩
 * Python 代码的 class、def、return 等关键字后面是否出现：缺少空格、代码未正确对齐的情况
 
 需要检查的内容：
@@ -110,6 +110,8 @@ github 用户名：XXX
 
 
 ## [Twitter](https://x.com/OpenHUTB)
+
+风格选“Twitter风格”，预览后截图，发布到 X 平台。
 
 
 ## 发表审核

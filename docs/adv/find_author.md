@@ -30,12 +30,12 @@
 
 ## 寻找页面的源代码
 
-以同一篇文章为例，从上面的“编辑页面”记下文档所在目录 docs/water/rov_trajectory_tracking.md，点击仓库名进入仓库首页
+以同一篇文章为例，从上面的“编辑页面”记下文档的路径 docs/water/rov_trajectory_tracking.md，点击仓库名进入仓库首页
 
 ![](../img/adv/click_index.png)
 
 
-代码位于 src 目录下和文档相同的目录
+代码位于 src 目录下与文档路径对应的子目录
 
 ![](../img/adv/src_directory.png)
 

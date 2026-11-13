@@ -102,7 +102,7 @@ git push -u origin docs-fix-contribution-steps
 将 `README.md` 换成实际修改的文件，例如修改贡献指南时使用 `git add CONTRIBUTING.md`；提交信息也要与实际改动对应。如果第 3 步用了其他分支名，推送时同步替换。
 
 <details>
-<summary> <strong>如果在 push（推送）过程中出 error，点击此处折叠</strong> </summary>
+<summary> <strong>如果在 push（推送）过程中出现报错，点击此处折叠</strong> </summary>
 
 - ### Authentication Error
      <pre>remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
@@ -122,20 +122,20 @@ git push -u origin docs-fix-contribution-steps
 <img src="https://firstcontributions.github.io/assets/Readme/submit-pull-request.png" width="410">
 
 
-不久之后，团队成员便会把你所有的变化合并到这个项目的主分支。更改合并后，你会收到一封电子邮件通知。
+不久之后，团队成员便会把你所有的改动合并到该项目的主分支。更改合并后，你会收到一封电子邮件通知。
 
 
 ## 在 VS Code 中提交本地修改的步骤
 
 **1.工具准备**
 
-- 首先按上述步骤创建GitHub账号，这里不多赘述；
+- 首先按上述步骤创建GitHub账号，这里不再赘述；
 - 点击 VS Code 左下角小猫图标登录GitHub账号；
 - 在 VS Code 扩展商店安装“GitHub Pull Requests”扩展，它把**git add、git commit、git push**和**git branch**这些命令都变成了点击操作，对新手很友好，强烈建议把Chinese Language Pack for Visual Studio Code这个汉化扩展也装上，安装成功之后重启。
 
 **2.克隆个人仓库**
 
-- 该步骤与第一个方法里的一致，不过多赘述。
+- 该步骤与第一个方法一致，不再赘述。
 
 **3.新建并更改分支**
 

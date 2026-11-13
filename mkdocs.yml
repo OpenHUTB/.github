@@ -91,6 +91,7 @@ nav:
     - 给 Ubuntu 虚拟机硬盘扩容: 'dev/vm_disk.md'
     - 注意事项: 'note.md'
     - wsl 安装与配置和卸载: 'wsl.md'
+    - 文档修改指南: 'submit.md'
 - 工具与资源:
     - 开源工具列表: 'tools.md'
     - 三维建模软件 Blender 介绍: 'blender.md'
