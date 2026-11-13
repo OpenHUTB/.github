@@ -75,7 +75,11 @@
 
 1. 打开 [链接](https://login.tailscale.com/admin/machines)并在需要远程登录的机器上下载对应操作系统版本的[tailscale](https://tailscale.com/download/windows)进行安装。
 2. 找到所需要的机器 **机器名（服务器ip地址）**，点右侧 **⋯（三个点）→ Share machine（共享设备）**
-3. 在tailscale的设置页面选择Reusable link并点击Copy share link
+3. 在 Tailscale 设置页面选择“Reusable link”，再点击“Copy share link”。
+   - 可重复邀请链接最多可接受 1,000 次；未使用的邀请 30 天后过期。
+   - 链接持有人可连接到共享设备，请像密码一样保管，只发送给预期接收者。
+   - 需要撤销邀请或停止共享时，在管理控制台的“Machines”页面找到对应设备，打开“Share”对话框，从“⋯”菜单选择“Revoke invite”。撤销后，对方将无法继续访问该设备；恢复访问需重新创建邀请并由对方接受。
+   - 详见 [Tailscale 官方共享说明](https://tailscale.com/docs/features/sharing)。
   
    ![](./img/rustdesk/copylink.png)
 
