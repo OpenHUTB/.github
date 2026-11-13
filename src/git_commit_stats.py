@@ -31,7 +31,7 @@ from collections import Counter
 
 def get_commits(since=None, until=None, ignore_list=[]):
     # 使用 %ae(邮箱)作为唯一键，%an(用户名)作为显示名
-    cmd = ["git", "log", "--pretty=%ae|%an"]
+    cmd = ["git", "-C", os.path.dirname(os.path.realpath(__file__)), "log", "--pretty=%ae|%an"]
     
     if since: cmd.append(f"--since={since}")
     if until: cmd.append(f"--until={until}")
@@ -80,7 +80,7 @@ def main():
     try:
         counts, name_map = get_commits(args.since, args.until, ignore_list)
     except (OSError, RuntimeError) as exc:
-        parser.exit(2, f"无法读取 Git 提交记录，请确认当前目录是有效仓库且 Git 可用：{exc}\n")
+        parser.exit(2, f"无法读取脚本所属仓库的 Git 提交记录，请确认脚本位于有效 Git 工作树且 Git 可用：{exc}\n")
 
     # 转换结果：[(用户名, 次数), ...]
     results = sorted(
