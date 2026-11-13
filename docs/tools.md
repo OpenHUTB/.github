@@ -46,6 +46,8 @@
 
 * [TortoiseGit](https://github.com/TortoiseGit/TortoiseGit) - Windows 资源管理器扩展用于操作 Git
 
+* [Podman](https://podman.io/) - 开源容器引擎，可用于管理容器和 Pod。
+
 * [auto-py-to-exe](https://github.com/brentvollebregt/auto-py-to-exe) - python 转可执行 exe 的图形界面
 
 * [Hoppscotch](https://hoppscotch.io) - 开源 API 开发与调试工具，支持 Web、桌面端和自托管，可发送 HTTP、WebSocket、GraphQL 与 SSE 请求（[源码](https://github.com/hoppscotch/hoppscotch)）。
