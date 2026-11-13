@@ -83,6 +83,8 @@
 
 * [ssr](https://github.com/MaartenBaert/ssr) - Linux 上的屏幕录制
 
+* [KeePassXC](https://keepassxc.org/) - 开源本地密码管理器，支持跨平台使用。
+
 * [PDF4QT](https://github.com/JakubMelka/PDF4QT) - PDF编辑器
 
 * [Stirling-PDF](https://github.com/Stirling-Tools/Stirling-PDF) - PDF 应用程序，可让您在任何设备和任何地方编辑 PDF 文件
