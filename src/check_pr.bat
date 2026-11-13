@@ -8,7 +8,7 @@ chcp 65001
 if "%~2"=="" (
     if not "%~1"=="" (
         set "BRANCH_NAME=%~1"
-        echo 参数正确，BRANCH_NAME=%BRANCH_NAME%
+        echo 参数正确，BRANCH_NAME=!BRANCH_NAME!
     ) else (
         echo 错误：没有提供参数
         exit /b 1
@@ -19,7 +19,7 @@ if "%~2"=="" (
 )
 
 :: 根据其 ID 号获取对该拉取请求的引用，在该过程中创建一个新分支
-git fetch origin pull/%BRANCH_NAME%/head:%BRANCH_NAME%
+git fetch origin "pull/%BRANCH_NAME%/head:%BRANCH_NAME%"
 
 :: 切换到基于此拉取请求的新分支：
-git switch %BRANCH_NAME%
+git switch "%BRANCH_NAME%"
