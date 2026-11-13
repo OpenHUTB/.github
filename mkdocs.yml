@@ -96,6 +96,7 @@ nav:
     - 开源工具列表: 'tools.md'
     - 三维建模软件 Blender 介绍: 'blender.md'
     - Markdown 一键发布到社交平台: 'markdown2anything.md'
+    - 用 AI 助手接管电脑处理文件与生成内容: 'ai_agent_guide.md'
 - 学习与论文:
     - "Latex文献引用编译办法": 'bib_reference_guide.md'
     - 本科毕业设计: 'undergraduate.md'
