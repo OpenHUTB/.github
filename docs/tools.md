@@ -40,6 +40,8 @@
 * [pywechat](https://github.com/Hello-Mr-Crab/pywechat) - windows桌面微信自动化
 * [drawio](https://github.com/jgraph/drawio) - 免费开源的流程图、架构图绘制工具
 
+* [Joplin](https://joplinapp.org/) - 开源笔记与待办应用，支持 Markdown 和端到端加密同步。
+
 
 
 ## 开发
