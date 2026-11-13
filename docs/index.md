@@ -87,5 +87,5 @@ OpenHUTB 的其他非主要平台包括：
 - 参与过程中如果遇到问题，建议按以下步骤解决：
   1. 先阅读 [提问技巧](./ask_question.md)，学习如何高效描述问题。
   2. 了解 [注意事项](./note.md)，避免常见误区。
-  3. 如果问题仍未解决，请前往对应项目的 [Issues 页面](https://github.com/OpenHUTB/hub/issues) 提交新问题。
+  3. 如果问题仍未解决，请前往对应项目的 [Issues 页面](https://github.com/OpenHUTB/hutb/issues) 提交新问题。
 
