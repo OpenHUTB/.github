@@ -114,7 +114,7 @@
 * [Clash Verge](https://github.com/clash-verge-rev/clash-verge-rev) - VPN代理工具
 
 
-### 研究
+## 研究
 
 * [LaTeX-OCR](https://github.com/lukas-blecher/LaTeX-OCR) - 将方程图像转换为 LaTeX 代码
 
@@ -122,7 +122,7 @@
 
 * [PDFMathTranslate](https://github.com/PDFMathTranslate/PDFMathTranslate) - 基于 AI 完整保留排版的 PDF 文档全文双语翻译
 
-### GIS
+## GIS
 
 * [QGIS](https://qgis.org/) - 开源桌面 GIS，支持矢量、栅格数据的查看、编辑和分析。
 
