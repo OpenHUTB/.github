@@ -17,6 +17,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # hooks.py 需要完整的提交历史，浅克隆会让所有页面都指向同一个合并提交。
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
