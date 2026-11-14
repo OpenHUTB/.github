@@ -8,9 +8,15 @@ Minecraft guide had been hidden. This test keeps the navigation and the
 Nav targets are normalised before they are compared: ``./index.md``, ``index.md``,
 extension-less and directory entries (``adv`` / ``adv/``) and targets carrying a
 ``?query`` or ``#fragment`` all resolve to the same docs page.
+
+``docs/CONTRIBUTING.md`` is generated from the repository root guide by hooks.py
+before the build, so it is treated as a logical site page and excluded from the
+"on disk" page list -- whether or not a previous local build left it behind.
 """
 
 import re
+import shutil
+import tempfile
 import unittest
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
@@ -97,15 +103,23 @@ def nav_page_paths(mkdocs_text):
     return paths
 
 
-def docs_pages():
-    """Relative POSIX paths of every Markdown page under docs/."""
+def docs_pages(docs_dir=None, generated=None):
+    """Relative POSIX paths of every Markdown page under docs/.
+
+    Files that hooks.py generates into docs/ are excluded: they are build
+    artifacts, not source pages, so a leftover copy from a previous local build
+    must not make the coverage check fail.
+    """
+    root = Path(docs_dir) if docs_dir is not None else DOCS_DIR
+    generated_names = set(generated if generated is not None else GENERATED_DOC_FILES)
     return sorted(
-        page.relative_to(DOCS_DIR).as_posix()
-        for page in DOCS_DIR.rglob("*.md")
+        page.relative_to(root).as_posix()
+        for page in root.rglob("*.md")
+        if page.relative_to(root).as_posix() not in generated_names
     )
 
 
-def resolve_target(target):
+def resolve_target(target, docs_dir=None, generated=None):
     """Return the existing file a normalised nav target points at, or None.
 
     Accepts ``page.md``, extension-less ``page`` and directory entries ``dir``
@@ -113,31 +127,44 @@ def resolve_target(target):
     """
     if not target:
         return None
+    root = Path(docs_dir) if docs_dir is not None else DOCS_DIR
+    generated_map = generated if generated is not None else GENERATED_DOC_FILES
     cleaned = target[2:] if target.startswith("./") else target
-    if cleaned in GENERATED_DOC_FILES:
-        return GENERATED_DOC_FILES[cleaned]
-    candidates = [DOCS_DIR / cleaned]
+    if cleaned in generated_map:
+        return Path(generated_map[cleaned])
+    candidates = [root / cleaned]
     if cleaned.endswith("/"):
-        candidates.append(DOCS_DIR / cleaned / "index.md")
+        candidates.append(root / cleaned / "index.md")
     else:
-        candidates.extend([DOCS_DIR / (cleaned + ".md"), DOCS_DIR / cleaned / "index.md"])
+        candidates.extend([root / (cleaned + ".md"), root / cleaned / "index.md"])
     for candidate in candidates:
         if candidate.is_file():
             return candidate
     return None
 
 
-def listed_docs_pages(mkdocs_text):
-    """Nav entries expressed as paths relative to docs/ (generated pages dropped)."""
+def listed_docs_pages(mkdocs_text, docs_dir=None, generated=None):
+    """Nav entries expressed as paths relative to docs/ (generated pages included)."""
+    root = (Path(docs_dir) if docs_dir is not None else DOCS_DIR).resolve()
+    generated_map = generated if generated is not None else GENERATED_DOC_FILES
+    generated_by_target = {
+        Path(target).resolve(): name for name, target in generated_map.items()
+    }
+
     listed = set()
     for target in nav_page_paths(mkdocs_text):
-        resolved = resolve_target(target)
+        resolved = resolve_target(target, docs_dir=root, generated=generated_map)
         if resolved is None:
             continue
+        resolved = resolved.resolve()
+        logical = generated_by_target.get(resolved)
+        if logical is not None:
+            # 生成页（如 CONTRIBUTING.md）按逻辑站点路径记账，不落进 docs/ 也能对得上。
+            listed.add(logical)
+            continue
         try:
-            listed.add(resolved.relative_to(DOCS_DIR).as_posix())
+            listed.add(resolved.relative_to(root).as_posix())
         except ValueError:
-            # Resolved outside docs/ (e.g. the generated docs/CONTRIBUTING.md).
             continue
     return listed
 
@@ -213,6 +240,47 @@ class ResolveTargetTests(unittest.TestCase):
             listed_docs_pages(text),
             {"index.md", "paper/avf.md", "tools.md"},
         )
+
+
+class GeneratedPageTests(unittest.TestCase):
+    """hooks.py 生成的页面不该因为本地构建留下副本就被报成「未收录」。"""
+
+    def _layout(self, root, keep_generated_copy):
+        docs = root / "docs"
+        docs.mkdir()
+        (docs / "index.md").write_text("# 首页\n", encoding="utf-8")
+        (root / "CONTRIBUTING.md").write_text("# 贡献指南（源文件）\n", encoding="utf-8")
+        if keep_generated_copy:
+            (docs / "CONTRIBUTING.md").write_text("# 贡献指南（构建副本）\n",
+                                                  encoding="utf-8")
+        generated = {"CONTRIBUTING.md": root / "CONTRIBUTING.md"}
+        nav = "nav:\n- 首页: 'index.md'\n- 贡献指南: 'CONTRIBUTING.md'\nplugins: []\n"
+        return docs, generated, nav
+
+    def test_generated_copy_on_disk_is_not_reported_as_unlisted(self):
+        root = Path(tempfile.mkdtemp(prefix="docs-nav-"))
+        try:
+            docs, generated, nav = self._layout(root, keep_generated_copy=True)
+            pages = docs_pages(docs_dir=docs, generated=generated)
+            listed = listed_docs_pages(nav, docs_dir=docs, generated=generated)
+
+            self.assertEqual(pages, ["index.md"])
+            self.assertIn("CONTRIBUTING.md", listed)
+            self.assertEqual([p for p in pages if p not in listed], [])
+        finally:
+            shutil.rmtree(root, ignore_errors=True)
+
+    def test_generated_page_survives_a_build_that_did_not_run_yet(self):
+        root = Path(tempfile.mkdtemp(prefix="docs-nav-"))
+        try:
+            docs, generated, nav = self._layout(root, keep_generated_copy=False)
+            pages = docs_pages(docs_dir=docs, generated=generated)
+            listed = listed_docs_pages(nav, docs_dir=docs, generated=generated)
+
+            self.assertEqual(pages, ["index.md"])
+            self.assertIn("CONTRIBUTING.md", listed)
+        finally:
+            shutil.rmtree(root, ignore_errors=True)
 
 
 class RepositoryNavTests(unittest.TestCase):
