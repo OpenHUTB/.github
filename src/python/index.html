@@ -199,7 +199,8 @@ python<span class="w"> </span>figure_rasterized_example.py<span class="w"> </spa
 </tr>
 </tbody>
 </table>
-<p>Windows 自带的 <code>convert</code> 是磁盘格式转换工具，不是 ImageMagick。请确认 <code>convert</code> 实际指向 ImageMagick，避免图片未生成而命令看起来已经执行。</p></div>
+<p>Windows 自带的 <code>convert</code> 是磁盘格式转换工具，不是 ImageMagick。请确认 <code>convert</code> 实际指向 ImageMagick，避免图片未生成而命令看起来已经执行。</p>
+<p>如果裁剪命令缺失或执行失败，<code>save_fig()</code> 会保存未裁剪的图片并输出警告，不会留下旧文件冒充本次结果。</p></div>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
