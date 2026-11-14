@@ -8,7 +8,7 @@ def main(args):
     x = np.linspace(-6, 6, 200)
     y = 1/(1 + np.exp(-x))
 
-    pu.figure_setup()
+    pu.figure_setup(use_latex=not args.no_latex)
 
     fig_size = pu.get_fig_size(10, 5)
     fig = plt.figure(figsize=fig_size)
@@ -33,6 +33,8 @@ def main(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
+    parser.add_argument('--no-latex', action='store_true',
+                        help='use Matplotlib mathtext instead of a LaTeX installation')
     parser.add_argument('-s', '--save')
 
     args = parser.parse_args()

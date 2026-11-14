@@ -7,7 +7,7 @@ import plot_utils as pu
 def main(args):
     data = np.random.randn(args.n_points, 2)
 
-    pu.figure_setup()
+    pu.figure_setup(use_latex=not args.no_latex)
 
     fig_size = pu.get_fig_size(10, 10)
     fig = plt.figure(figsize=fig_size)
@@ -31,6 +31,8 @@ if __name__ == '__main__':
 
     parser.add_argument('-n', '--n_points', type=int,
                         default=10000)
+    parser.add_argument('--no-latex', action='store_true',
+                        help='use Matplotlib mathtext instead of a LaTeX installation')
     parser.add_argument('-s', '--save')
 
     args = parser.parse_args()
