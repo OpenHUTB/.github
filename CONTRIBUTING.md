@@ -159,6 +159,10 @@ git push -u origin docs-fix-contribution-steps
 
 ![图四](https://raw.githubusercontent.com/OpenHUTB/.github/master/docs/img/Preview.png)
 
+- 需要看**完整的站点效果**（导航、插件、公式、页面跳转）时，在仓库根目录运行 `python serve.py`：
+  Windows / macOS / Linux 通用，首次会自动创建 `.venv` 并安装依赖，构建通过后打开浏览器预览。
+  只想检查环境可加 `--check`，只想看会执行哪些命令可加 `--dry-run`。
+
 **6.发布Branch**
 
 - 在提交之后，这些修改已经在本地存档完毕了，只需上传，这时点击**发布Branch**按钮，最上方对话框会出现2个选择，**origin**对应你自己的云端仓库，**upstream**对应你fork的原仓库。

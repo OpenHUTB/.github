@@ -1,6 +1,7 @@
 # Python
 __pycache__/
 *.py[cod]
+.venv/
 
 # mkdocs 构建产物（本地 serve/build 生成）
 site/
