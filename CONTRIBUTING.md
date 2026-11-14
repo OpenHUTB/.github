@@ -174,12 +174,12 @@ git push -u origin docs-fix-contribution-steps
 - 发布成功后，回到自己的仓库，会出现一个如图所示提醒，点击绿色按钮。
 ![图五](https://raw.githubusercontent.com/OpenHUTB/.github/master/docs/img/push_sign.png)
 
-- 这时会跳转到新页面，在合并仓库前找到下图所示位置，这表示把你的修改合并到原仓库，但为了确保万无一失，强烈建议更改目标仓库为自己的仓库，在自己仓库测试没有问题再向原仓库提出**PR**请求。
+- 请确认目标仓库（base）为被贡献的 OpenHUTB 原仓库，目标分支为该仓库默认分支（本指南仓库为 master）；来源仓库（head）为个人 Fork，来源分支为本次功能分支。填写中文标题和说明后，直接向原仓库创建 Pull Request 并等待维护者评审；后续修改继续推送到同一来源分支即可更新该 PR。无需先向自己的 Fork 创建并合并临时 PR。
 
-![图六](https://raw.githubusercontent.com/OpenHUTB/.github/master/docs/img/change_repository.png)
 
-- 成功之后，这次向自己仓库发起的**PR**会显示为**open**状态，点击**Merge pull request**，直到其状态变为紫色，这时候再去自己仓库，就会发现修改已经同步上去了。
-- 测试完毕没有问题就可以向原仓库发送**PR**请求了。
+
+- 等待 OpenHUTB 维护者审核并合并 PR。需要补充修改时，继续向同一来源分支推送提交，PR 会自动更新。
+- 如维护者要求补充验证，请在该 PR 中说明测试环境、步骤和结果。
 
 
 
