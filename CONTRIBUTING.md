@@ -69,7 +69,7 @@ git clone https://github.com/{用户名}/hutb.git
 cd hutb
 ```
 
-如果第 2 步克隆的是 `.github`，则使用 `cd .github`。目录名要与实际克隆的仓库一致。
+如果你克隆下来的仓库文件夹名字是 .github，就执行 cd .github；进入的目录名称，和你本地文件夹名称保持一致即可。
 
 接下来使用 `git switch` 命令新建一个分支。下面以修正文档为例：
 ```bash
