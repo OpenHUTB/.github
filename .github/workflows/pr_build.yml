@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           # hooks.py 需要完整的提交历史，浅克隆会让所有页面都指向同一个合并提交。
           fetch-depth: 0

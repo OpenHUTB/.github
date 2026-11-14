@@ -27,7 +27,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Get organization repository metrics
         uses: nicklegan/github-org-repo-metrics-action@v2.1.0
