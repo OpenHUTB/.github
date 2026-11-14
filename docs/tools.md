@@ -73,6 +73,8 @@
 
 * [Mailspring](https://github.com/Foundry376/Mailspring) - 邮箱客户端
 
+* [moemail](https://github.com/beilunyang/moemail) - 临时邮箱生成
+
 * [scrcpy](https://github.com/Genymobile/scrcpy) - 显示并控制安卓设备
 
 * [HivisionIDPhotos](https://github.com/Zeyi-Lin/HivisionIDPhotos) - AI证件照制作算法
