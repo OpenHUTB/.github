@@ -52,6 +52,8 @@
 
 * [DBeaver](https://github.com/dbeaver/dbeaver) - 开源通用数据库管理工具，支持 MySQL、PostgreSQL、SQLite 等。
 
+* [Wireshark](https://www.wireshark.org) - 开源网络协议分析工具，可用于检查 ROS 2、AirSim 和分布式仿真组件之间的网络通信（[源码](https://github.com/wireshark/wireshark)）。
+
 * [mkdocs](https://github.com/mkdocs/mkdocs) - 用 Markdown 生成文档网站，社区文档站即由它构建
 
 
