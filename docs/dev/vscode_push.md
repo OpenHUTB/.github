@@ -4,7 +4,7 @@
 
 ## 一、环境准备：安装 Git（Windows）
 
-> VS Code 本身不带 Git，必须先装 Git，才能提交推送代码。
+> VS Code 只提供 Git 的图形界面，本身不自带 `git` 程序。不装 Git，「源代码管理」面板无法工作，也无法提交和推送。
 
 ### 1. 下载 Git
 
@@ -13,8 +13,9 @@
 
 ### 2. 安装要点
 
-1. 双击打开安装包，一路下一步，**到调整 PATH 这一步，选择 Git from the command line and also from 3rd-party software**（最重要！把 Git 加入系统环境变量）
+1. 双击打开安装包，同意许可协议，一路下一步，**到调整 PATH 这一步，选择 Git from the command line and also from 3rd-party software**（最重要！把 Git 加入系统环境变量）
 2. 其余选项保持默认，直接下一步完成安装。
+3. 安装结束后**关闭并重新打开** VS Code 与终端窗口，PATH 才会生效。
 
 ### 3. 配置 Git 用户名与邮箱（必须设置，否则提交报错）
 
