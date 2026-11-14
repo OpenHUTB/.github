@@ -33,6 +33,8 @@
 
 * [LibreOffice](https://download.documentfoundation.org/libreoffice/portable/) - Office 办公软件
 
+* [Typst](https://typst.app) - 开源文档排版系统，使用简洁的标记语言编写技术文档、课程报告和学术论文，并支持实时预览（[源码](https://github.com/typst/typst)）。
+
 * [virtualbox](https://github.com/VirtualBox/virtualbox) - 虚拟机
 
 * [md2wechat-skill](https://github.com/geekjourneyx/md2wechat-skill) - 一键排版发布到微信公众号
