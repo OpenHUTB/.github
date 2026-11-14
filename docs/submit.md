@@ -109,4 +109,4 @@ cd .github
 
 ## 8. 提交
 
-[提交流程](CONTRIBUTING.md)
+按仓库根目录的[贡献指南](https://github.com/OpenHUTB/.github/blob/master/CONTRIBUTING.md)提交修改。指南分别说明了命令行和 VS Code 的提交步骤。
