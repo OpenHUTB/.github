@@ -122,6 +122,8 @@
 
 * [PDFMathTranslate](https://github.com/PDFMathTranslate/PDFMathTranslate) - 基于 AI 完整保留排版的 PDF 文档全文双语翻译
 
+* [CVAT](https://www.cvat.ai) - 面向计算机视觉的开源图像与视频标注平台，支持团队协作和 AI 辅助标注（[源码](https://github.com/cvat-ai/cvat)）。
+
 ### GIS
 
 * [QGIS](https://qgis.org/) - 开源桌面 GIS，支持矢量、栅格数据的查看、编辑和分析。
