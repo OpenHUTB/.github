@@ -135,12 +135,14 @@ git commit -m "新增 VSCode 推送教程"
 
 ### 方式 A VSCode 图形界面
 
-提交完成后，源代码管理顶部会出现 **推送** 按钮，点击推送。
+首次推送新分支时，在「源代码管理」中点击 **Publish Branch（发布分支）**。如果出现远程仓库选择框，选择 `origin`。分支发布后，可以使用 **Push（推送）** 更新远程分支。
 
 ### 方式 B 终端命令
 ```bash
 git push origin 你的分支名
 ```
+用 `git branch --show-current` 查看实际分支名并替换示例中的名称。`-u` 会把本地分支关联到 `origin` 的同名分支，之后可以直接运行 `git push`。用 `git branch -vv` 可以核对分支的跟踪关系。
+
 ## 八、提交 PR（Pull Request）
 
 推送成功后，打开仓库 GitHub 网页
