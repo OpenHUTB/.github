@@ -36,3 +36,5 @@ python figure_rasterized_example.py --no-latex
 | PDF | `pdfcrop` |
 
 Windows 自带的 `convert` 是磁盘格式转换工具，不是 ImageMagick。请确认 `convert` 实际指向 ImageMagick，避免图片未生成而命令看起来已经执行。
+
+如果裁剪命令缺失或执行失败，`save_fig()` 会保存未裁剪的图片并输出警告，不会留下旧文件冒充本次结果。
