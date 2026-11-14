@@ -6,15 +6,15 @@ import tempfile
 
 
 def get_fig_size(fig_width_cm, fig_height_cm=None):
-    """Convert dimensions in centimeters to inches.
+    """Convert dimensions in centimeters to a ``(width, height)`` tuple in inches.
+
     If no height is given, it is computed using the golden ratio.
     """
-    if not fig_height_cm:
+    if fig_height_cm is None:
         golden_ratio = (1 + math.sqrt(5))/2
         fig_height_cm = fig_width_cm / golden_ratio
 
-    size_cm = (fig_width_cm, fig_height_cm)
-    return map(lambda x: x/2.54, size_cm)
+    return (fig_width_cm / 2.54, fig_height_cm / 2.54)
 
 
 """
@@ -53,17 +53,14 @@ def plot_lw():
     return 1.5
 
 
-def figure_setup():
-    """统一字体和线条尺寸，并使用 LaTeX 渲染文字。
+def figure_setup(use_latex=True):
+    """统一字体和线条尺寸，并配置是否使用 LaTeX 渲染文字。
 
     普通文字使用 font.size，坐标轴、图例和刻度可分别设置字号。
     """
-    params = {'text.usetex': True,
+    params = {'text.usetex': use_latex,
               'figure.dpi': 200,
               'font.size': font_size(),
-              'font.serif': [],
-              'font.sans-serif': [],
-              'font.monospace': [],
               'axes.labelsize': label_size(),
               'axes.titlesize': font_size(),
               'axes.linewidth': axis_lw(),
