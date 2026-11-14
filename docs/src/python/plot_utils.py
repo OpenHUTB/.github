@@ -1,6 +1,8 @@
+import logging
 import math
 import matplotlib.pyplot as plt
 import os
+import shutil
 import subprocess
 import tempfile
 
@@ -95,6 +97,10 @@ def save_fig(fig, file_name, fmt=None, dpi=300, tight=True):
     else:
         fig.savefig(tmp_name, dpi=dpi)
 
+    # A failed trimmer must not leave a stale file looking like a new result.
+    if os.path.isfile(file_name):
+        os.remove(file_name)
+
     # trim it
     if fmt == 'eps':
         subprocess.call('epstool --bbox --copy %s %s' %
@@ -104,3 +110,11 @@ def save_fig(fig, file_name, fmt=None, dpi=300, tight=True):
                         (tmp_name, file_name), shell=True)
     elif fmt == 'pdf':
         subprocess.call('pdfcrop %s %s' % (tmp_name, file_name), shell=True)
+
+    if not os.path.isfile(file_name):
+        shutil.copy2(tmp_name, file_name)
+        logging.getLogger(__name__).warning(
+            "Could not trim %s figure; saved an untrimmed copy to %s",
+            fmt,
+            file_name,
+        )
