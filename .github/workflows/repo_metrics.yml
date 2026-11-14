@@ -20,6 +20,14 @@ on:
         description: 'Optional interval end date (format: yyyy-mm-dd)'
         required: false # Skipped if workflow dispatch input is not provided
 
+# 报告需要提交回仓库，只申请 contents: write 这一项权限即可。
+permissions:
+  contents: write
+
+# 同一定时任务串行执行，避免两次运行同时改写 reports/ 导致推送冲突。
+concurrency:
+  group: repo-metrics
+  cancel-in-progress: false
 
 jobs:
   org-repo-metrics-report:
@@ -28,6 +36,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # 不把 GITHUB_TOKEN 写进本地 git 配置：同一 job 里还运行了第三方
+          # metrics action，避免它从 .git/config 读到有写权限的凭据。
+          persist-credentials: false
 
       - name: Get organization repository metrics
         uses: nicklegan/github-org-repo-metrics-action@v2.1.0
@@ -47,3 +59,44 @@ jobs:
           # appid: ${{ secrets.APPID }}
           # privatekey: ${{ secrets.PRIVATEKEY }}
           # installationid: ${{ secrets.INSTALLATIONID }}
+
+      # 上面的 action 只是把 CSV 写到 runner 的 reports/ 目录，job 结束 runner 销毁，
+      # 报告就丢了（仓库里 reports/ 缺少 2026-08 那一份就是这个原因）。
+      # 下面两步把产物留下：artifact 便于随时下载当月原始 CSV，
+      # 提交回仓库则形成可追溯的历史序列，供后续对比。
+      - name: Upload metrics report artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: org-repo-metrics-${{ github.run_number }}
+          path: reports/*.csv
+          if-no-files-found: warn
+          retention-days: 90
+
+      - name: Commit report to repository
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports
+          if git diff --cached --quiet; then
+            echo "reports/ 没有变化，跳过提交"
+            exit 0
+          fi
+          git commit -m "chore(reports): 更新组织仓库指标报告"
+
+          # 只在这一步显式带上写权限凭据（master 当前未开启分支保护）
+          git remote set-url origin \
+            "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+
+          # 与人工推送交错时可能 non-fast-forward：rebase 后重试 3 次
+          for i in 1 2 3; do
+            if git push; then
+              exit 0
+            fi
+            echo "第 ${i} 次 push 失败，rebase 后重试"
+            git pull --rebase origin "${GITHUB_REF_NAME}" || exit 1
+            sleep 5
+          done
+          exit 1
