@@ -103,7 +103,6 @@ def save_fig(fig, file_name, fmt=None, dpi=300, tight=True):
         subprocess.call('epstool --bbox --copy %s %s' %
                         (tmp_name, file_name), shell=True)
     elif fmt == 'png':
-        subprocess.call('convert %s -trim %s' %
-                        (tmp_name, file_name), shell=True)
+        subprocess.check_call(['convert', tmp_name, '-trim', file_name])
     elif fmt == 'pdf':
         subprocess.call('pdfcrop %s %s' % (tmp_name, file_name), shell=True)
