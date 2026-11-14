@@ -282,7 +282,7 @@ You can also round numbers, for example \num{1.23456}.
 
 如果可能，所有图形的标签、坐标轴等都应使用相同的字体。尤其要注意，不要让一个图形的标签/刻度较大，而另一个图形的标签/刻度较小。一个解决方案是在生成图形的脚本中定义图形的大小，而不是在文档中重新缩放（例如，不要在 LaTeX 文档中更改图形的宽度设置`\textwidth`）。
 
-为了获得一致的图形，我们建议使用类似于我们的辅助脚本[`plot_utils.py`](https://github.com/Wookai/paper-tips-and-tricks/blob/master/src/python/plot_utils.py)。使用此脚本，您只需调用`figure_setup()`函数定义所有尺寸，然后创建所需尺寸的图形并保存即可。
+为了获得一致的图形，本仓库提供了辅助脚本 [`plot_utils.py`](src/python/plot_utils.py)、函数曲线示例 [`figure_example.py`](src/python/figure_example.py) 和栅格化示例 [`figure_rasterized_example.py`](src/python/figure_rasterized_example.py)。运行示例前需要安装 Matplotlib；`figure_setup()` 默认使用 LaTeX 渲染文字，因此还需要本地 LaTeX 环境。只有保存 EPS、PNG 或 PDF 时才需要对应的 `epstool`、ImageMagick 或 `pdfcrop` 命令。
 
 ```python
 import argparse
