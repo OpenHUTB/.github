@@ -102,6 +102,10 @@
 <li class="toctree-l1 current"><a class="reference internal current" href="./">查找文档作者与源码</a>
 <ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="#寻找页面的作者">寻找页面的作者</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#用脚本一次看完可选">用脚本一次看完（可选）</a>
+</li>
+</ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#寻找页面的源代码">寻找页面的源代码</a>
 </li>
@@ -170,6 +174,25 @@
 <p>点击页面右上角的<code>History</code></p>
 <p><img alt="" src="../../img/adv/click_history.png"/></p>
 <p>将显示编辑过该页面的所有用户名（可能有多个）</p>
+<h3 id="用脚本一次看完可选">用脚本一次看完（可选）</h3>
+<p>上面的 History 步骤也可以交给仓库里的脚本，它会把「最近几次提交、作者、GitHub 链接」一次打印出来：</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>src/find_author.py<span class="w"> </span>docs/adv/find_author.md<span class="w">          </span><span class="c1"># 仓库相对路径</span>
+python<span class="w"> </span>src/find_author.py<span class="w"> </span>/adv/find_author/<span class="w">                </span><span class="c1"># 站点路径也可以</span>
+python<span class="w"> </span>src/find_author.py<span class="w"> </span>docs/adv/find_author.md<span class="w"> </span>--limit<span class="w"> </span><span class="m">10</span><span class="w"> </span>--json<span class="w">   </span><span class="c1"># 机器可读</span>
+</code></pre></div>
+<p>本仓库的实际输出：</p>
+<div class="highlight"><pre><span></span><code>文件: docs/adv/find_author.md
+
+最近 3 次提交:
+  9cb799a  2026-11-10  xy18574557330  docs: 修正寻找作者页面把文件路径写成“目录”的表述
+  3cdb3f6  2026-10-28  DZ-djhy        删除「寻找作者和源码」页里失效的截图引用复制 (#373)
+  bae8165  2026-10-25  donghaiwang    修复文字描述
+
+作者（按提交数）: xy18574557330 (1), DZ-djhy (1), donghaiwang (1)
+
+在浏览器中查看: https://github.com/OpenHUTB/.github/commits/master/docs/adv/find_author.md
+逐行看是谁改的: https://github.com/OpenHUTB/.github/blame/master/docs/adv/find_author.md
+</code></pre></div>
 <h2 id="寻找页面的源代码">寻找页面的源代码</h2>
 <p>以同一篇文章为例，从上面的“编辑页面”记下文档的路径 docs/water/rov_trajectory_tracking.md，点击仓库名进入仓库首页</p>
 <p><img alt="" src="../../img/adv/click_index.png"/></p>
