@@ -91,6 +91,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://openhutb.github.io/.github/video_editing/</loc>
+         <lastmod>2026-11-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://openhutb.github.io/.github/wsl/</loc>
          <lastmod>2026-11-14</lastmod>
          <changefreq>daily</changefreq>

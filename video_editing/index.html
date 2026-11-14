@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://openhutb.github.io/.github/video_editing/" rel="canonical"/>
+<link href="../img/favicon.ico" rel="shortcut icon"/>
+<title>视频制作流程 - 社区介绍</title>
+<link href="../css/theme.css" rel="stylesheet"/>
+<link href="../css/theme_extra.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
+<script>
+        // Current page data
+        var mkdocs_page_name = "\u89c6\u9891\u5236\u4f5c\u6d41\u7a0b";
+        var mkdocs_page_input_path = "video_editing.md";
+        var mkdocs_page_url = "/.github/video_editing/";
+      </script>
+<!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</head>
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<a class="icon icon-home" href=".."> 社区介绍
+        </a><div role="search">
+<form action="../search.html" class="wy-form" id="rtd-search-form" method="get">
+<input aria-label="Search docs" name="q" placeholder="Search docs" title="Type search term here" type="text"/>
+</form>
+</div>
+</div>
+<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="..">首页</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../simulator/">模拟器简介</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING/">贡献指南</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="" href="https://openhutb.github.io/git/?locale=zh_CN">git 教程</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="" href="https://docs.github.com/zh/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax">Markdown教程</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../paper_tips/">论文写作技巧</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../env_conf/">搭建自定义开发环境</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../rustdesk_tailscale/">远程办公</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ask_question/">提问技巧</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="" href="https://openhutb.github.io/doc/build_carla/#internet">科学上网</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">贡献相关</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../codespace/">基于浏览器的贡献指南</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/sign_up/">注册 Github 账号</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/vscode_push/">使用 VScode 推送代码</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pycharm-tutorial/">PyCharm 教程</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resolve_conflict/">使用 TortoiseGit 解决冲突</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/merge_commit/">合并提交</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/vm_disk/">给 Ubuntu 虚拟机硬盘扩容</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../note/">注意事项</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../wsl/">wsl 安装与配置和卸载</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../submit/">文档修改指南</a>
+</li>
+<li class="toctree-l1 current"><a class="reference internal current" href="./">视频制作流程</a>
+<ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="#1-先定成品标准">1. 先定成品标准</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#2-阶段一策划与脚本">2. 阶段一：策划与脚本</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#3-阶段二录制素材">3. 阶段二：录制素材</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#31-选对画面采集方式">3.1 选对画面采集方式</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#32-输出与音频参数">3.2 输出与音频参数</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#33-录音要点">3.3 录音要点</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#34-目录与命名">3.4 目录与命名</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#4-阶段三整理与粗剪">4. 阶段三：整理与粗剪</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#5-阶段四配音与字幕">5. 阶段四：配音与字幕</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#51-选一种上字幕的方式">5.1 选一种上字幕的方式</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#52-字幕规范">5.2 字幕规范</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#53-按波形对齐">5.3 按波形对齐</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#54-用自己的声音生成-ai-音色可选">5.4 用自己的声音生成 AI 音色（可选）</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#6-阶段五画面节奏对齐">6. 阶段五：画面节奏对齐</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#61-在-ppt-里固定节奏">6.1 在 PPT 里固定节奏</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#62-两种对齐做法">6.2 两种对齐做法</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#63-四条对齐技巧">6.3 四条对齐技巧</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#7-阶段六审核与导出">7. 阶段六：审核与导出</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#71-三遍审核">7.1 三遍审核</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#72-导出参数">7.2 导出参数</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#73-先导样片">7.3 先导样片</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#8-阶段七归档与发布">8. 阶段七：归档与发布</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#9-检查清单">9. 检查清单</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#10-常见问题">10. 常见问题</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#11-工具与参考">11. 工具与参考</a>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">工具与资源</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tools/">开源工具列表</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../blender/">三维建模软件 Blender 介绍</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown2anything/">Markdown 一键发布到社交平台</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">学习与论文</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../bib_reference_guide/">Latex文献引用编译办法</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../undergraduate/">本科毕业设计</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../paper/avf/">论文成果：AVF-BEL 视听融合</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../org/architecture/">社区组织形式</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="..">社区介绍</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a aria-label="Docs" class="icon icon-home" href=".."></a></li>
+<li class="breadcrumb-item">贡献相关</li>
+<li class="breadcrumb-item active">视频制作流程</li>
+<li class="wy-breadcrumbs-aside">
+<a class="icon icon-github" href="https://github.com/OpenHUTB/.github/edit/master/docs/video_editing.md"> Edit on GitHub</a>
+</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div class="section" itemprop="articleBody">
+<div><h1 id="视频制作流程">视频制作流程</h1>
+<p>社区的项目演示、功能讲解、教学片段，都可以按这套流程制作。流程本身与软件无关：换成别的剪辑工具，阶段顺序和每一步的检查点不变。文中以 <strong>OBS Studio + 剪映专业版</strong> 为例，给出可以直接照抄的参数；用其他工具时，按阶段找对应功能即可。</p>
+<p><a href="../img/video/pipeline.png"><img alt="通用视频制作流程" src="../img/video/pipeline.png"/></a></p>
+<blockquote>
+<p>文中示意图都可以点击查看大图。</p>
+</blockquote>
+<h2 id="1-先定成品标准">1. 先定成品标准</h2>
+<p>动手前先把标准写下来，后面每一步都对着它检查。</p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>建议值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>画布</td>
+<td>1920×1080（16:9）</td>
+<td>竖屏短视频改用 1080×1920</td>
+</tr>
+<tr>
+<td>帧率</td>
+<td>30 fps</td>
+<td>有快速拖动、游戏画面时用 60 fps</td>
+</tr>
+<tr>
+<td>音频</td>
+<td>48 kHz，人声单独一轨</td>
+<td>全程一致，不要中途改采样率</td>
+</tr>
+<tr>
+<td>响度</td>
+<td>整体 -16~-14 LUFS</td>
+<td>人声清楚，音乐不盖过讲解</td>
+</tr>
+<tr>
+<td>字幕</td>
+<td>单行 ≤15 字，每条 ≥1 秒</td>
+<td>最多两行，放在画面下方安全区</td>
+</tr>
+<tr>
+<td>时长</td>
+<td>3~8 分钟</td>
+<td>超过 10 分钟建议拆成系列</td>
+</tr>
+<tr>
+<td>交付物</td>
+<td>mp4 + 工程文件 + 字幕 + 封面</td>
+<td>工程能重新打开，才算可复现</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-阶段一策划与脚本">2. 阶段一：策划与脚本</h2>
+<p>产出：<code>00_script/</code> 下的口播稿和分镜表。</p>
+<ol>
+<li><strong>一句话定主题。</strong> 写清"看完这个视频，观众能学会什么"，写不出来就说明选题太大。</li>
+<li><strong>写口播稿。</strong> 用口语，不用书面语；一句话只说一件事，单句控制在 25 字以内；术语第一次出现时顺带解释。</li>
+<li><strong>估时长。</strong> 中文口播约 200~250 字/分钟，按字数先估，再实际读一遍计时。</li>
+<li><strong>做分镜表。</strong> 四列就够：镜头号、画面内容、对应口播、预计时长。</li>
+<li><strong>超时就删稿。</strong> 不要靠后期变速硬压，变速会让讲解听起来不自然。</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">写稿小技巧</p>
+<p>稿子里的每个操作步骤，都要能在画面上看见。只靠嘴说、画面没变化的内容，观众很难记住。</p>
+</div>
+<h2 id="3-阶段二录制素材">3. 阶段二：录制素材</h2>
+<p>产出：<code>01_raw/</code> 下的录屏和音频。</p>
+<h3 id="31-选对画面采集方式">3.1 选对画面采集方式</h3>
+<p><a href="../img/video/obs_capture.png"><img alt="三种画面采集方式" src="../img/video/obs_capture.png"/></a></p>
+<p>在 OBS 的「来源」面板点 <code>+</code> 添加：</p>
+<table>
+<thead>
+<tr>
+<th>录制对象</th>
+<th>采集方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PPT、网页、软件操作</td>
+<td>显示器采集（最稳）</td>
+</tr>
+<tr>
+<td>只录某一个软件窗口</td>
+<td>窗口采集（PPT 放映会黑屏，不要用）</td>
+</tr>
+<tr>
+<td>三维场景、游戏</td>
+<td>游戏采集</td>
+</tr>
+</tbody>
+</table>
+<h3 id="32-输出与音频参数">3.2 输出与音频参数</h3>
+<p>「设置 → 输出 → 录像」：格式选 <code>mkv</code>（崩溃不丢文件，录完用「文件 → 重新封装录像」转 mp4），编码器用硬件编码（NVENC / QSV / AMF），码率控制 <code>CQP 20~23</code>，分辨率与屏幕一致，帧率 30 fps。</p>
+<p><a href="../img/video/obs_tracks.png"><img alt="双音轨录制与分轨" src="../img/video/obs_tracks.png"/></a></p>
+<p>「设置 → 音频」把采样率统一为 <code>48 kHz</code>；在混音器点齿轮打开「高级音频属性」，把桌面音频勾到轨道 1、麦克风勾到轨道 2。分开录，后期才能单独降噪、单独调音量、单独换配乐。</p>
+<h3 id="33-录音要点">3.3 录音要点</h3>
+<ol>
+<li>关空调、风扇，手机开飞行模式，关掉微信和邮件通知。</li>
+<li>用外接麦克风，离嘴 15~20 cm，略微偏一点防喷麦。</li>
+<li>按段落录，说错了停两秒重说这一句，后期好切。</li>
+<li>每段开头空一秒再开口，留出剪辑余量。</li>
+</ol>
+<h3 id="34-目录与命名">3.4 目录与命名</h3>
+<p><a href="../img/video/project_layout.png"><img alt="素材与工程目录" src="../img/video/project_layout.png"/></a></p>
+<p>一个视频一个文件夹，编号前缀就是制作顺序：</p>
+<table>
+<thead>
+<tr>
+<th>目录</th>
+<th>放什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>00_script/</code></td>
+<td>口播稿、分镜表</td>
+</tr>
+<tr>
+<td><code>01_raw/</code></td>
+<td>原始录屏、原始录音（只读，不覆盖）</td>
+</tr>
+<tr>
+<td><code>02_audio/</code></td>
+<td>配音、背景音乐、音效</td>
+</tr>
+<tr>
+<td><code>03_project/</code></td>
+<td>剪辑工程文件</td>
+</tr>
+<tr>
+<td><code>04_export/</code></td>
+<td>各版本成片、样片</td>
+</tr>
+<tr>
+<td><code>05_publish/</code></td>
+<td>最终成片、封面、字幕文件</td>
+</tr>
+</tbody>
+</table>
+<p>文件统一命名为 <code>日期_主题_版本</code>，例如 <code>20261111_openhutb_v01.mp4</code>；定稿加 <code>_final</code> 后不再覆盖。</p>
+<div class="admonition warning">
+<p class="admonition-title">原始素材只读</p>
+<p>剪辑只改工程文件，不要直接覆盖或删除 <code>01_raw/</code> 里的素材。返工时原始素材还在，工程就能重做。</p>
+</div>
+<h2 id="4-阶段三整理与粗剪">4. 阶段三：整理与粗剪</h2>
+<p>产出：一条没有废话、顺序正确的骨架片。</p>
+<ol>
+<li><strong>新建项目。</strong> 画布比例、分辨率、帧率与成品标准一致（16:9、1080P、30 fps）。</li>
+<li><strong>上时间线并分层。</strong> 主画面放 V1，字幕放 V2，贴图和花字放 V3；人声放 A1，音乐和音效放 A2。</li>
+<li><strong>粗剪只做三件事：删、调、补。</strong> 删口误和停顿，调整段落顺序，补录缺失的镜头。这一步不加转场、不加特效。</li>
+<li><strong>统一音量。</strong> 选中音频，把整体音量压到 -6 dB 左右，再逐段微调。</li>
+<li><strong>粗剪完成先完整看一遍。</strong> 只看逻辑是否通顺，不管画面好不好看。</li>
+</ol>
+<p><a href="../img/video/timeline_layers.png"><img alt="时间线分层" src="../img/video/timeline_layers.png"/></a></p>
+<blockquote>
+<p>电脑卡顿：在全局设置里打开「代理模式」，剪辑时用低清代理，导出仍然使用原片。</p>
+</blockquote>
+<h2 id="5-阶段四配音与字幕">5. 阶段四：配音与字幕</h2>
+<h3 id="51-选一种上字幕的方式">5.1 选一种上字幕的方式</h3>
+<p><a href="../img/video/subtitle_methods.png"><img alt="三种上字幕方式的区别" src="../img/video/subtitle_methods.png"/></a></p>
+<table>
+<thead>
+<tr>
+<th>你的情况</th>
+<th>推荐方式</th>
+<th>代价</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>已经录好音，没有稿子</td>
+<td>语音识别自动打轴</td>
+<td>要逐条改错别字，术语和专有名词最容易错</td>
+</tr>
+<tr>
+<td>有稿子，按稿念</td>
+<td>文稿匹配</td>
+<td>稿子和录音必须一致，临场改词会对不上</td>
+</tr>
+<tr>
+<td>不想自己出声</td>
+<td>文本朗读（AI 音色）</td>
+<td>部分音色需要会员</td>
+</tr>
+</tbody>
+</table>
+<h3 id="52-字幕规范">5.2 字幕规范</h3>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>每行字数</td>
+<td>中文 ≤15 字，英文 ≤35 字符</td>
+</tr>
+<tr>
+<td>停顿时长</td>
+<td>每条至少停留 1 秒，语速快时也不能少于 0.8 秒</td>
+</tr>
+<tr>
+<td>断句</td>
+<td>按语义断，不要把词拆开；句末不加标点</td>
+</tr>
+<tr>
+<td>位置</td>
+<td>画面下方安全区内，左右各留 10% 边距</td>
+</tr>
+<tr>
+<td>数字</td>
+<td>口播怎么念，字幕就怎么写（如"百分之三十"）</td>
+</tr>
+<tr>
+<td>样式</td>
+<td>全片统一字号、颜色、描边，调好一条后应用到全部</td>
+</tr>
+</tbody>
+</table>
+<h3 id="53-按波形对齐">5.3 按波形对齐</h3>
+<p><a href="../img/video/subtitle_align.png"><img alt="按波形对齐字幕" src="../img/video/subtitle_align.png"/></a></p>
+<ol>
+<li>时间线放大到最大，让波形清楚可见。</li>
+<li>字幕条的首尾拖到波形的起止点，不要跨进静默段。</li>
+<li>打开磁吸（吸铁石），切点会自动吸附。</li>
+<li>用 <code>←</code> <code>→</code> 逐帧微调，重点检查句首和句尾。</li>
+</ol>
+<h3 id="54-用自己的声音生成-ai-音色可选">5.4 用自己的声音生成 AI 音色（可选）</h3>
+<ol>
+<li><strong>进入入口。</strong> 电脑端：选中文本 → 文本朗读 → 点「音色克隆」添加按钮；手机端：文本朗读 →「我的」→「音色克隆」，或 音频 → 克隆音色 → 开始克隆。</li>
+<li><strong>录制音色。</strong> 按例句朗读，官方建议录 1~3 句、约 10 秒，处理约 5~10 秒，30 秒内完成。</li>
+<li><strong>保存音色。</strong> 起一个能认出来的名字，例如"讲解_男声"。</li>
+<li><strong>调用。</strong> 选中文本 → 文本朗读 → 选择已保存的音色 → 开始朗读。</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">使用提醒</p>
+<p>录音质量直接决定成品效果，有回声、底噪、口水音就重录。长句会有轻微机械感，拆到 15 字以内更自然。剪映中音色克隆等会员功能需要 SVIP，VIP 仅覆盖手机端。</p>
+</div>
+<h2 id="6-阶段五画面节奏对齐">6. 阶段五：画面节奏对齐</h2>
+<p>字幕和画面各做各的，一定会错位。原则是<strong>先定节奏，再补内容</strong>，不要一边做动画一边改稿。</p>
+<p><a href="../img/video/ppt_timing.png"><img alt="PPT 动画与字幕的节奏关系" src="../img/video/ppt_timing.png"/></a></p>
+<h3 id="61-在-ppt-里固定节奏">6.1 在 PPT 里固定节奏</h3>
+<table>
+<thead>
+<tr>
+<th>设置项</th>
+<th>建议值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>动画效果</td>
+<td>淡出、擦除等短动画，全片统一</td>
+</tr>
+<tr>
+<td>持续时间</td>
+<td>0.4 秒</td>
+</tr>
+<tr>
+<td>开始方式</td>
+<td>「上一动画之后」，自动连播</td>
+</tr>
+<tr>
+<td>延迟</td>
+<td>0.5~1 秒，留出换气口</td>
+</tr>
+<tr>
+<td>切换</td>
+<td>平滑或淡出，0.4 秒，勾选「设置自动换片时间」</td>
+</tr>
+</tbody>
+</table>
+<h3 id="62-两种对齐做法">6.2 两种对齐做法</h3>
+<p><strong>做法一：边放边讲，直接录屏（推荐）</strong></p>
+<ol>
+<li>全屏放映 PPT，用 OBS 录屏，同时录音。</li>
+<li>导入剪辑软件，识别字幕。</li>
+<li>字幕跟着讲解走，动画切换点自然就是画面变化点。</li>
+<li>讲得太慢就变速到 1.2~1.5 倍，太快就放慢到 0.8 倍。</li>
+</ol>
+<p><strong>做法二：PPT 先导出视频，再配字幕</strong></p>
+<ol>
+<li>「文件 → 导出 → 创建视频」，选 1080p。</li>
+<li>勾选「使用录制的计时和旁白」或设定每张幻灯片的秒数。</li>
+<li>把 mp4 拖进时间线，按固定时间点铺配音和字幕。</li>
+</ol>
+<h3 id="63-四条对齐技巧">6.3 四条对齐技巧</h3>
+<ol>
+<li><strong>看关键帧。</strong> 把预览拖到动画结束的那一帧，字幕起点也拖到同一位置。</li>
+<li><strong>用磁吸。</strong> 字幕自动吸附到音频切点，避免差几帧。</li>
+<li><strong>逐帧微调。</strong> 时间线拉到最大，用方向键一帧一帧挪。</li>
+<li><strong>整体校验。</strong> 关掉声音看一遍（字幕是否跟得上画面），再闭眼听一遍（声音是否连贯）。</li>
+</ol>
+<blockquote>
+<p>路径动画、三维旋转这类复杂效果，导出视频容易掉帧变样。正式录制前先导一小段试看。</p>
+</blockquote>
+<h2 id="7-阶段六审核与导出">7. 阶段六：审核与导出</h2>
+<p><a href="../img/video/export.png"><img alt="导出参数怎么选" src="../img/video/export.png"/></a></p>
+<h3 id="71-三遍审核">7.1 三遍审核</h3>
+<ol>
+<li><strong>静音看画面：</strong> 字幕有没有错别字、动画有没有穿帮、重点信息有没有被挡住。</li>
+<li><strong>闭眼看声音：</strong> 有没有爆音、电流声、忽大忽小，口误有没有剪干净。</li>
+<li><strong>小屏看一遍：</strong> 用手机看，检查字幕在真实尺寸下是否还看得清。</li>
+</ol>
+<h3 id="72-导出参数">7.2 导出参数</h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>怎么填</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>分辨率</td>
+<td>1080P 够用；4K 需要会员，且源素材本身要够清晰</td>
+</tr>
+<tr>
+<td>帧率</td>
+<td>30 fps 用于讲解；60 fps 用于快速动作</td>
+</tr>
+<tr>
+<td>码率</td>
+<td>默认「推荐」；要上传平台、怕糊就选更高</td>
+</tr>
+<tr>
+<td>格式</td>
+<td>mp4（H.264），兼容性最好</td>
+</tr>
+</tbody>
+</table>
+<h3 id="73-先导样片">7.3 先导样片</h3>
+<p>正式导出前先导 15 秒：一段有字幕、有动画、有讲解的片段。确认字幕位置、音量、画质都正常，再导整条，避免几十分钟白等。</p>
+<h2 id="8-阶段七归档与发布">8. 阶段七：归档与发布</h2>
+<ol>
+<li><strong>工程可复现。</strong> 工程文件、原始素材、字体、音乐放在同一目录，换一台电脑能直接打开。</li>
+<li>
+<p><strong>写一份说明。</strong> 在工程目录放 <code>README.txt</code>：</p>
+<div class="highlight"><pre><span></span><code>视频名称：
+制作日期：
+使用软件及版本：
+导出参数：1920x1080 / 30fps / H.264
+素材来源与许可证：
+已知问题：
+修改记录：
+</code></pre></div>
+</li>
+<li>
+<p><strong>字幕单独留一份。</strong> 导出 <code>srt</code>，方便后续翻译、校对和平台上传。</p>
+</li>
+<li><strong>发布信息一次写完。</strong> 标题、封面、简介、标签，和成片一起放进 <code>05_publish/</code>。</li>
+</ol>
+<h2 id="9-检查清单">9. 检查清单</h2>
+<p>导出前逐项过一遍，任意一项不通过就回到对应阶段返工。</p>
+<table>
+<thead>
+<tr>
+<th>检查项</th>
+<th>通过标准</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>画布与参数</td>
+<td>分辨率、比例、帧率与成品标准一致</td>
+</tr>
+<tr>
+<td>剪辑</td>
+<td>口误、停顿、重复已剪掉，段落顺序通顺</td>
+</tr>
+<tr>
+<td>字幕文字</td>
+<td>无错别字，单行不超过 15 字</td>
+</tr>
+<tr>
+<td>字幕时间</td>
+<td>与语音逐句对齐，没有跨进静默段</td>
+</tr>
+<tr>
+<td>音量</td>
+<td>全片音量一致，无爆音、无电流声</td>
+</tr>
+<tr>
+<td>混音</td>
+<td>音乐不盖过讲解，结尾有淡出</td>
+</tr>
+<tr>
+<td>节奏</td>
+<td>动画与字幕同步，切换不提前、不滞后</td>
+</tr>
+<tr>
+<td>遮挡</td>
+<td>关键信息没有被字幕或贴图挡住</td>
+</tr>
+<tr>
+<td>开头</td>
+<td>前 5 秒能说清视频主题</td>
+</tr>
+<tr>
+<td>结尾</td>
+<td>有总结或下一步指引</td>
+</tr>
+<tr>
+<td>小屏</td>
+<td>手机上看字幕仍然清楚</td>
+</tr>
+<tr>
+<td>归档</td>
+<td>工程、素材、字幕、封面齐全</td>
+</tr>
+<tr>
+<td>命名</td>
+<td>符合 <code>日期_主题_版本</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="10-常见问题">10. 常见问题</h2>
+<table>
+<thead>
+<tr>
+<th>现象</th>
+<th>常见原因</th>
+<th>处理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>录屏画面黑屏</td>
+<td>用了窗口采集录 PPT 放映</td>
+<td>换成显示器采集</td>
+</tr>
+<tr>
+<td>音画不同步</td>
+<td>录制时掉帧，或后期变速没有勾选音频</td>
+<td>重新录制；变速时勾选「音频变速」</td>
+</tr>
+<tr>
+<td>字幕比声音慢半拍</td>
+<td>识别后没有校对</td>
+<td>按波形逐条对齐句首</td>
+</tr>
+<tr>
+<td>导出后有水印</td>
+<td>使用了会员模板或素材</td>
+<td>换免费素材，或开通对应会员</td>
+</tr>
+<tr>
+<td>文件太大传不上去</td>
+<td>码率过高、时长过长</td>
+<td>降低码率或拆成上下集</td>
+</tr>
+<tr>
+<td>字幕在手机上太小</td>
+<td>字号按电脑屏幕调的</td>
+<td>字号不小于画面高度的 5%</td>
+</tr>
+</tbody>
+</table>
+<h2 id="11-工具与参考">11. 工具与参考</h2>
+<ul>
+<li><a href="https://obsproject.com/">OBS Studio</a>：免费开源的录屏与直播软件，支持多轨道录音。</li>
+<li><a href="https://www.capcut.cn/">剪映专业版</a>：上手快，语音识别、文稿匹配、音色克隆等功能齐全，部分功能需要会员。</li>
+<li><a href="https://github.com/mltframework/shotcut">Shotcut</a>、<a href="https://www.blackmagicdesign.com/products/davinciresolve">DaVinci Resolve</a>：免费的专业剪辑方案。</li>
+<li><a href="https://github.com/HandBrake/HandBrake">HandBrake</a>：成片转码、压缩。</li>
+<li><a href="https://docs.feishu.cn/v/wiki/M6ZewtASXiFpcMkR7i5cQmSxnEf/a6">剪映 AI 音色克隆（官方帮助文档）</a>：入口路径、录制时长与处理时间。</li>
+</ul>
+<p>换一个主题、换一个软件，流程不用改：把脚本和素材换掉，参数照着成品标准填，按检查清单过一遍，就能稳定产出可复现的视频。</p></div>
+</div>
+</div><footer>
+<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
+<a class="btn btn-neutral float-left" href="../submit/" title="文档修改指南"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="../tools/" title="开源工具列表">Next <span class="icon icon-circle-arrow-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<!-- Copyright etc -->
+<p>OpenHUTB 版权所有 © 2026</p>
+</div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+</div>
+</div>
+</section>
+</div>
+<div aria-label="Versions" class="rst-versions" role="note">
+<span class="rst-current-version" data-toggle="rst-current-version">
+<span>
+<a class="fa fa-github" href="https://github.com/OpenHUTB/.github" style="color: #fcfcfc"> GitHub</a>
+</span>
+<span><a href="../submit/" style="color: #fcfcfc">« Previous</a></span>
+<span><a href="../tools/" style="color: #fcfcfc">Next »</a></span>
+</span>
+</div>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>var base_url = "..";</script>
+<script src="../js/theme_extra.js"></script>
+<script src="../js/theme.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script>
+<script src="../search/main.js"></script>
+<script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+</body>
+</html>
