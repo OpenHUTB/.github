@@ -12,7 +12,7 @@ title: 主页
 OpenHUTB 倡导开源协作精神，提供完备的学习资源。参与者可以参与文档优化与程序修缮，在实践中锻炼实操技能、提升动手能力，认识更多志同道合的伙伴，在开源协作的过程中提升自己。
 
 
-## 1. 简介** <span id="list"></span>
+## 1. 简介 <span id="list"></span>
 
 - [OpenHUTB 模拟器简介](./simulator.md)
 
@@ -29,7 +29,7 @@ OpenHUTB 倡导开源协作精神，提供完备的学习资源。参与者可�
 - 撰写论文请参考[互联网上的论文写作技巧](./paper_tips.md)
 
 
-## 2. 开发配置** <span id='dev'></span>
+## 2. 开发配置 <span id="dev"></span>
 
 - [搭建自定义开发环境](env_conf.md)
 
