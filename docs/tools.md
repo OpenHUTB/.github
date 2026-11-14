@@ -54,6 +54,8 @@
 
 * [mkdocs](https://github.com/mkdocs/mkdocs) - 用 Markdown 生成文档网站，社区文档站即由它构建
 
+* [PlotJuggler](https://www.plotjuggler.io) - 开源时序数据可视化工具，可实时查看 ROS 1/ROS 2 话题，并通过曲线、FFT 和多运行对比分析机器人传感器与控制数据（[源码](https://github.com/PlotJuggler/PlotJuggler)）。
+
 
 ## 三维建模
 
