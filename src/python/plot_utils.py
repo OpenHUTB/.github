@@ -53,17 +53,14 @@ def plot_lw():
     return 1.5
 
 
-def figure_setup():
-    """统一字体和线条尺寸，并使用 LaTeX 渲染文字。
+def figure_setup(use_latex=True):
+    """统一字体和线条尺寸，并配置是否使用 LaTeX 渲染文字。
 
     普通文字使用 font.size，坐标轴、图例和刻度可分别设置字号。
     """
-    params = {'text.usetex': True,
+    params = {'text.usetex': use_latex,
               'figure.dpi': 200,
               'font.size': font_size(),
-              'font.serif': [],
-              'font.sans-serif': [],
-              'font.monospace': [],
               'axes.labelsize': label_size(),
               'axes.titlesize': font_size(),
               'axes.linewidth': axis_lw(),

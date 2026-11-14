@@ -1,0 +1,3 @@
+# Python dependencies for the plotting examples.
+matplotlib
+numpy

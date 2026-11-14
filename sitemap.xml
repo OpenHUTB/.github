@@ -135,4 +135,9 @@
          <lastmod>2026-11-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
+    <url>
+         <loc>https://openhutb.github.io/.github/src/python/</loc>
+         <lastmod>2026-11-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
 </urlset>
