@@ -14,7 +14,12 @@
 
 - 如果提示存在冲突，必须先解决：先点击个人仓库页面上的 `Sync fork` 按钮同步，再执行 `git pull` 合并最新修改，然后重新提交；
 
-
 ## 代码审核
 
-- 在 `Files changed` 页面按行对 Pull Request 进行评论时，记得点击右上角绿色的 `Submit review`（旧版叫 `Review changes`），选择 `Comment` 后再点击弹窗中的 `Submit review`，否则评论只保存在本地，其他人看不到。
+在 **Files changed** 页面按行评论时，点击右上角的 **Submit review**（旧版叫 **Review changes**），选择 **Comment** 后，再在弹窗中提交。否则评论不会公开显示。
+
+## 收到审核意见后
+
+- 需要修改时，在创建 Pull Request 时使用的同一分支上继续提交并推送，新提交会自动出现在原 Pull Request 中，不必重新创建。
+- 修改后重新查看 **Files changed** 中的最终差异，并确认相关检查已重新运行。
+- 对审核意见逐条回复；确认问题已经处理后，再将对应讨论标记为已解决。仍有分歧时，说明原因并继续沟通。
