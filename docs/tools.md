@@ -27,6 +27,7 @@
 
 * [7-Zip](https://github.com/ip7z/7zip) - 免费开源的文件解压工具
 
+
 ## 办公
 
 * [rustdesk](https://github.com/rustdesk/rustdesk) - 远程桌面应用程序，专为自托管设计，作为 TeamViewer 的替代方案。
@@ -44,7 +45,6 @@
 * [drawio](https://github.com/jgraph/drawio) - 免费开源的流程图、架构图绘制工具
 
 
-
 ## 开发
 
 * [TortoiseGit](https://github.com/TortoiseGit/TortoiseGit) - Windows 资源管理器扩展用于操作 Git
@@ -59,6 +59,7 @@
 
 * [Tabby](https://github.com/Eugeny/tabby) - 跨平台终端模拟器
 
+
 ## 三维建模
 
 * [Blender](./blender.md) - 免费开源的三维创作软件，社区「艺术创作」分工线使用的工具，内含[下载安装与入门操作说明](./blender.md)
@@ -66,7 +67,6 @@
 * [FreeCAD](https://github.com/FreeCAD/FreeCAD) - 3D参数化建模器
 
   
-
 ## 其他
 
 * [openvpn](https://github.com/OpenVPN/openvpn) - VPN 代理
@@ -82,10 +82,10 @@
 * [HivisionIDPhotos](https://github.com/Zeyi-Lin/HivisionIDPhotos) - AI证件照制作算法
 
 * [readest](https://github.com/readest/readest) - 电子书阅读器
-  
-* [ssr](https://github.com/MaartenBaert/ssr) - Linux 上的屏幕录制
 
 * [openreel-video](https://github.com/Augani/openreel-video) - 浏览器视频编辑器
+
+* [ssr](https://github.com/MaartenBaert/ssr) - Linux 上的屏幕录制
 
 * [PDF4QT](https://github.com/JakubMelka/PDF4QT) - PDF编辑器
 
@@ -126,6 +126,7 @@
 
 * [PDFMathTranslate](https://github.com/PDFMathTranslate/PDFMathTranslate) - 基于 AI 完整保留排版的 PDF 文档全文双语翻译
 
+
 ### GIS
 
 * [QGIS](https://qgis.org/) - 开源桌面 GIS，支持矢量、栅格数据的查看、编辑和分析。
@@ -135,6 +136,7 @@
 * [GeoServer](https://geoserver.org/) - 发布和管理空间数据的开源服务器，支持 WMS、WFS 等服务。
 
 * [JupyterLab](https://github.com/jupyterlab/jupyterlab) - 交互式代码笔记，数据分析
+
 
 ## 常见
 
@@ -149,6 +151,7 @@
 * [texstudio](https://github.com/texstudio-org/texstudio) - LaTeX 编辑器
 
 * [Anki](https://github.com/ankitects/anki) - 开源间隔重复记忆卡片软件，用来刷题、背诵知识点
+
 ## 参考
 
 * [tools](https://github.com/stars/donghaiwang/lists/tools)
