@@ -16,10 +16,11 @@ hooks.py 的回归测试。
     7. 其他页面的编辑链接保持不变。
     8. 递归统计指定文档目录中的 Markdown 文件，忽略其他文件和目录。
     9. 空文档目录的统计结果为 0。
+    10. 页面提交信息在同轮构建中复用缓存，在下一轮构建时刷新。
 
 预期运行效果：
     逐项输出测试名称，通过时每项末尾显示 ok，最后显示：
-        Ran 11 tests in ...s
+        Ran ... tests in ...s
 
         OK
     实际耗时因环境而异；若显示 FAILED 或 ERROR，应检查后面的错误信息。
@@ -183,20 +184,69 @@ class PageProvenanceTests(unittest.TestCase):
         (self.root / "CONTRIBUTING.md").write_text("# 贡献指南\n", encoding="utf-8")
         self._git("init", "-q")
         self._git("add", "docs/adv/find_author.md", "CONTRIBUTING.md")
-        self._git("commit", "-q", "-m", "docs: 第一版", name="张三")
+        self._git("commit", "-q", "-m", "docs: 第一版", name="张三",
+                  date="2020-01-01T12:00:00+0000")
         hooks._last_commit_cache.clear()
 
     def tearDown(self):
         shutil.rmtree(self.root, ignore_errors=True)
 
-    def _git(self, *args, name="张三", email="tester@example.com"):
+    def _git(self, *args, name="张三", email="tester@example.com", date=None):
+        env = os.environ.copy()
+        if date:
+            env.update(GIT_AUTHOR_DATE=date, GIT_COMMITTER_DATE=date)
         subprocess.run(
             ["git", "-c", "user.name=" + name, "-c", "user.email=" + email, *args],
-            cwd=str(self.root), check=True, capture_output=True, text=True,
+            cwd=str(self.root), check=True, capture_output=True, text=True, env=env,
         )
 
     def _page(self, src_uri):
         return SimpleNamespace(file=SimpleNamespace(src_uri=src_uri))
+
+    def _start_build(self):
+        with patch.object(hooks, "__file__", str(self.root / "hooks.py")), \
+                redirect_stdout(io.StringIO()):
+            hooks.on_pre_build({"docs_dir": str(self.root / "docs")})
+
+    def test_last_commit_cache_is_reused_within_build(self):
+        self._start_build()
+        with patch.object(hooks.subprocess, "run", wraps=subprocess.run) as git_run:
+            first = hooks.last_commit("docs/adv/find_author.md", self.root)
+            second = hooks.last_commit("docs/adv/find_author.md", self.root)
+        self.assertEqual(first, second)
+        self.assertEqual(first[2], "张三")
+        git_run.assert_called_once()
+
+    def test_new_build_refreshes_cached_page_commit(self):
+        self._start_build()
+        first = hooks.last_commit("docs/adv/find_author.md", self.root)
+        self.assertEqual(first[1:], ("2020-01-01", "张三"))
+
+        (self.root / "docs" / "adv" / "find_author.md").write_text(
+            "# 第二版\n", encoding="utf-8",
+        )
+        self._git("commit", "-q", "-am", "docs: 第二版", name="李四",
+                  date="2020-01-02T12:00:00+0000")
+
+        self._start_build()
+        second = hooks.last_commit("docs/adv/find_author.md", self.root)
+        self.assertEqual(second[1:], ("2020-01-02", "李四"))
+        self.assertNotEqual(first[0], second[0])
+        line = hooks.provenance_line(self._page("adv/find_author.md"), self.root)
+        self.assertIn("2020-01-02 · 李四", line)
+        self.assertIn(second[0], line)
+
+    def test_new_build_rechecks_cached_uncommitted_page(self):
+        (self.root / "docs" / "new.md").write_text("# 新页\n", encoding="utf-8")
+        self._start_build()
+        self.assertEqual(hooks.provenance_line(self._page("new.md"), self.root), "")
+
+        self._git("add", "docs/new.md")
+        self._git("commit", "-q", "-m", "docs: 新页", name="李四",
+                  date="2020-01-02T12:00:00+0000")
+        self._start_build()
+        line = hooks.provenance_line(self._page("new.md"), self.root)
+        self.assertIn("2020-01-02 · 李四", line)
 
     def test_last_commit_reads_hash_date_and_author(self):
         info = hooks.last_commit("docs/adv/find_author.md", self.root)

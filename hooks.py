@@ -7,7 +7,7 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent
 
-# 每个文件只查一次 git，27 个页面也只多 27 次子进程调用。
+# 每轮构建中每个文件只查一次 git，27 个页面也只多 27 次子进程调用。
 _last_commit_cache = {}
 
 
@@ -107,6 +107,9 @@ def on_page_context(context, page, config, **kwargs):
 # 拷贝到 docs 目录下，确保文档站点能够引用到它。
 # （名称必须为 on_pre_build）
 def on_pre_build(config, **kwargs):
+    # mkdocs serve 会复用 hook 模块，下一轮构建应重新读取提交历史。
+    _last_commit_cache.clear()
+
     # 源文件：项目根目录下的文件
     src_file = os.path.join(os.path.dirname(__file__), 'CONTRIBUTING.md')
     # 目标文件：MkDocs 配置中的 docs_dir
