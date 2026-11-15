@@ -1,8 +1,86 @@
 from datetime import datetime
 import logging
 import shutil
+import subprocess
 import os
 from pathlib import Path
+
+REPO_ROOT = Path(__file__).resolve().parent
+
+# 每个文件只查一次 git，27 个页面也只多 27 次子进程调用。
+_last_commit_cache = {}
+
+
+def is_shallow_clone(repo_root=None):
+    """浅克隆（如 CI 默认的 fetch-depth=1）里每个文件的「最近提交」都是合并提交，会误导读者。"""
+    root = Path(repo_root) if repo_root else REPO_ROOT
+    return (root / ".git" / "shallow").is_file()
+
+
+def last_commit(source_path, repo_root=None):
+    """返回文件最近一次提交的 (短哈希, 日期, 作者)，取不到时返回 None。"""
+    root = Path(repo_root) if repo_root else REPO_ROOT
+    key = (str(root), source_path)
+    if key in _last_commit_cache:
+        return _last_commit_cache[key]
+
+    info = None
+    try:
+        result = subprocess.run(
+            ["git", "log", "-1", "--date=short", "--pretty=format:%h|%ad|%an",
+             "--", source_path],
+            cwd=str(root),
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+            encoding="utf-8",
+        )
+    except OSError:
+        result = None
+
+    if result is not None and result.returncode == 0 and result.stdout.strip():
+        parts = result.stdout.strip().split("|")
+        if len(parts) == 3:
+            info = tuple(part.strip() for part in parts)
+
+    _last_commit_cache[key] = info
+    return info
+
+
+def provenance_line(page, repo_root=None, repo_url=None):
+    """生成「本页最近一次修改」那一行；取不到信息时返回空字符串。"""
+    src_uri = page.file.src_uri
+    # docs/CONTRIBUTING.md 是构建前从仓库根目录复制来的，历史要查根目录那个文件。
+    source_path = "CONTRIBUTING.md" if src_uri == "CONTRIBUTING.md" else "docs/" + src_uri
+
+    root = Path(repo_root) if repo_root else REPO_ROOT
+    if is_shallow_clone(root):
+        return ""
+
+    info = last_commit(source_path, root)
+    if not info:
+        return ""
+
+    commit_hash, date, author = info
+    line = "> 本页最近一次修改：%s · %s" % (date, author)
+    if repo_url:
+        line += " · 提交 [`%s`](%s/commit/%s)" % (commit_hash, repo_url.rstrip("/"), commit_hash)
+    else:
+        line += " · 提交 `%s`" % commit_hash
+    return line
+
+
+# 在每页正文末尾附上「最近一次修改」的作者与提交，方便读者找到该页的维护者。
+def on_page_markdown(markdown, page, config, **kwargs):
+    try:
+        line = provenance_line(page, repo_url=config.get("repo_url"))
+    except Exception:  # noqa: BLE001 - 附加信息失败不该让整站构建失败
+        logging.getLogger(__name__).warning("跳过页面修改信息：%s", page.file.src_uri)
+        return markdown
+
+    if not line:
+        return markdown
+    return markdown.rstrip() + "\n\n---\n\n" + line + "\n"
 
 
 # 动态获取页脚版权页面的年份

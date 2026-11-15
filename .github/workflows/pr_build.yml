@@ -2,6 +2,11 @@ name: PR Build
 on:
   pull_request:
 
+# 同一个 PR 连着推几次时，旧的那次构建已经没意义了，直接取消
+concurrency:
+  group: pr-build-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
 permissions:
   contents: read
 
@@ -12,6 +17,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # hooks.py 需要完整的提交历史，浅克隆会让所有页面都指向同一个合并提交。
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
