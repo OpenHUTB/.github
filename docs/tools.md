@@ -22,11 +22,8 @@
 * [One-click-cleaning-of-C-drive](https://github.com/JIEKE66633/One-click-cleaning-of-C-drive) - 清理C盘残留和垃圾
 
 * [WindowsCleaner](https://github.com/darkmatter2048/WindowsCleaner) - C盘清理
-
 * [HandBrake](https://github.com/HandBrake/HandBrake) - 视频转码器，适用于 Linux、Mac 和 Windows
-
 * [7-Zip](https://github.com/ip7z/7zip) - 免费开源的文件解压工具
-
 
 ## 办公
 
@@ -41,8 +38,8 @@
 * [md2wechat-skill](https://github.com/geekjourneyx/md2wechat-skill) - 一键排版发布到微信公众号
 
 * [pywechat](https://github.com/Hello-Mr-Crab/pywechat) - windows桌面微信自动化
-
 * [drawio](https://github.com/jgraph/drawio) - 免费开源的流程图、架构图绘制工具
+
 
 
 ## 开发
@@ -51,14 +48,13 @@
 
 * [auto-py-to-exe](https://github.com/brentvollebregt/auto-py-to-exe) - python 转可执行 exe 的图形界面
 
-* [DBeaver](https://github.com/dbeaver/dbeaver) - 开源通用数据库管理工具，支持 MySQL、PostgreSQL、SQLite 等
+* [Hoppscotch](https://hoppscotch.io) - 开源 API 开发与调试工具，支持 Web、桌面端和自托管，可发送 HTTP、WebSocket、GraphQL 与 SSE 请求（[源码](https://github.com/hoppscotch/hoppscotch)）。
+
+* [DBeaver](https://github.com/dbeaver/dbeaver) - 开源通用数据库管理工具，支持 MySQL、PostgreSQL、SQLite 等。
 
 * [mkdocs](https://github.com/mkdocs/mkdocs) - 用 Markdown 生成文档网站，社区文档站即由它构建
 
-* [Hoppscotch](https://github.com/hoppscotch/hoppscotch) - 开源 API 开发与调试工具，支持 Web、桌面端和自托管，可发送 HTTP、WebSocket、GraphQL 与 SSE 请求（[源码](https://github.com/hoppscotch/hoppscotch)）。
-
-* [Tabby](https://github.com/Eugeny/tabby) - 跨平台终端模拟器
-
+*[Tabby](https://github.com/Eugeny/tabby) - 跨平台终端模拟器
 
 ## 三维建模
 
@@ -66,7 +62,8 @@
 
 * [FreeCAD](https://github.com/FreeCAD/FreeCAD) - 3D参数化建模器
 
-  
+
+
 ## 其他
 
 * [openvpn](https://github.com/OpenVPN/openvpn) - VPN 代理
@@ -126,7 +123,6 @@
 
 * [PDFMathTranslate](https://github.com/PDFMathTranslate/PDFMathTranslate) - 基于 AI 完整保留排版的 PDF 文档全文双语翻译
 
-
 ### GIS
 
 * [QGIS](https://qgis.org/) - 开源桌面 GIS，支持矢量、栅格数据的查看、编辑和分析。
@@ -137,11 +133,9 @@
 
 * [JupyterLab](https://github.com/jupyterlab/jupyterlab) - 交互式代码笔记，数据分析
 
-
 ## 常见
 
 * [Chromium](https://github.com/chromium/chromium) - Chromium 浏览器
-
 * [python](https://docs.python.org/zh-cn/3/tutorial/) - python 教程
 
 * [vscode](https://github.com/microsoft/vscode) - 代码编辑
@@ -151,7 +145,6 @@
 * [texstudio](https://github.com/texstudio-org/texstudio) - LaTeX 编辑器
 
 * [Anki](https://github.com/ankitects/anki) - 开源间隔重复记忆卡片软件，用来刷题、背诵知识点
-
 ## 参考
 
 * [tools](https://github.com/stars/donghaiwang/lists/tools)
