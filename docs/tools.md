@@ -51,11 +51,11 @@
 
 * [auto-py-to-exe](https://github.com/brentvollebregt/auto-py-to-exe) - python 转可执行 exe 的图形界面
 
-* [DBeaver](https://github.com/dbeaver/dbeaver) - 通用数据库可视化管理工具
+* [DBeaver](https://github.com/dbeaver/dbeaver) - 通用数据库可视化管理工具，支持 MySQL、PostgreSQL、SQLite 等
 
 * [mkdocs](https://github.com/mkdocs/mkdocs) - 用 Markdown 生成文档网站，社区文档站即由它构建
 
-* [Hoppscotch](https://github.com/hoppscotch/hoppscotch) - 开源API接口调试工具
+* [Hoppscotch](https://github.com/hoppscotch/hoppscotch) - 开源API接口调试工具，开源 API 开发与调试工具，支持 Web、桌面端和自托管，可发送 HTTP、WebSocket、GraphQL 与 SSE 请求（[源码](https://github.com/hoppscotch/hoppscotch)）
 
 * [Tabby](https://github.com/Eugeny/tabby) - 跨平台终端模拟器
 
