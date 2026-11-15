@@ -65,7 +65,6 @@
 
 * [FreeCAD](https://github.com/FreeCAD/FreeCAD) - 3D参数化建模器
 
-* [ssr](https://github.com/MaartenBaert/ssr) - Linux 上的屏幕录制
 
 ## 其他
 
@@ -85,6 +84,8 @@
 
 * [openreel-video](https://github.com/Augani/openreel-video) - 浏览器视频编辑器
 
+* [ssr](https://github.com/MaartenBaert/ssr) - Linux 上的屏幕录制
+  
 * [PDF4QT](https://github.com/JakubMelka/PDF4QT) - PDF编辑器
 
 * [Stirling-PDF](https://github.com/Stirling-Tools/Stirling-PDF) - PDF 应用程序，可让您在任何设备和任何地方编辑 PDF 文件
