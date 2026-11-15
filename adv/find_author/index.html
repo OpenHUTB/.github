@@ -167,13 +167,13 @@
 <p><img alt="" src="../../img/adv/full_article.png"/></p>
 <p>然后，点击页面右上角的“编辑页面”，</p>
 <p><img alt="" src="../../img/adv/edit_page.png"/></p>
-<p>将跳转到 github 仓库的代码编辑页面，点击它所在的文件夹：</p>
+<p>将跳转到 GitHub 仓库的代码编辑页面。先确认页面显示的仓库名称，再点击文件路径中的文件夹：</p>
 <p><img alt="" src="../../img/adv/edit_tool.png"/></p>
-<p>点击上一步绿色框中的文件名（即页面所对应的 .md 文件）</p>
+<p>点击上一步绿色框中的文件名（即页面所对应的 .md 文件）。</p>
 <p><img alt="" src="../../img/adv/file_edited.png"/></p>
-<p>点击页面右上角的<code>History</code></p>
+<p>点击页面右上角的 <code>History</code>：</p>
 <p><img alt="" src="../../img/adv/click_history.png"/></p>
-<p>将显示编辑过该页面的所有用户名（可能有多个）</p>
+<p>历史记录会显示编辑过该页面的用户名和对应提交；同一页面可能由多人维护。</p>
 <h3 id="用脚本一次看完可选">用脚本一次看完（可选）</h3>
 <p>上面的 History 步骤也可以交给仓库里的脚本，它会把「最近几次提交、作者、GitHub 链接」一次打印出来：</p>
 <div class="highlight"><pre><span></span><code>python<span class="w"> </span>src/find_author.py<span class="w"> </span>docs/adv/find_author.md<span class="w">          </span><span class="c1"># 仓库相对路径</span>
@@ -194,16 +194,16 @@ python<span class="w"> </span>src/find_author.py<span class="w"> </span>docs/adv
 逐行看是谁改的: https://github.com/OpenHUTB/.github/blame/master/docs/adv/find_author.md
 </code></pre></div>
 <h2 id="寻找页面的源代码">寻找页面的源代码</h2>
-<p>以同一篇文章为例，从上面的“编辑页面”记下文档的路径 docs/water/rov_trajectory_tracking.md，点击仓库名进入仓库首页</p>
+<p>以同一篇文章为例，从“编辑页面”记下文档所在仓库和文件路径，例如 <code>docs/water/rov_trajectory_tracking.md</code>。文档路径不能直接说明程序代码所在目录，不同项目的组织方式可能不同。</p>
+<p>返回对应仓库首页后，可以先查看 <code>src</code> 目录，再结合文档中的模块名称、仓库链接和页面历史记录定位相关代码。</p>
 <p><img alt="" src="../../img/adv/click_index.png"/></p>
-<p>代码位于 src 目录下与文档路径对应的子目录</p>
+<p>该示例对应模块位于 <code>src/water/rov_mujoco</code>：</p>
 <p><img alt="" src="../../img/adv/src_directory.png"/></p>
-<p>该模块位于 src/water/rov_mujoco</p>
 <p><img alt="" src="../../img/adv/src_location.png"/></p>
-<p>最后一个目录可能有微小差别，具体请看上面提交历史（<code>History</code>）页面的详细信息。</p>
+<p>如果没有找到同名目录，可查看页面链接指向的项目和提交历史，确认文档与程序代码之间的关系。</p>
 <hr/>
 <blockquote>
-<p>本页最近一次修改：2026-11-14 · Li-art104 · 提交 <a href="https://github.com/OpenHUTB/.github/commit/5d42062"><code>5d42062</code></a></p>
+<p>本页最近一次修改：2026-11-15 · 盘国兵 · 提交 <a href="https://github.com/OpenHUTB/.github/commit/8b250ed"><code>8b250ed</code></a></p>
 </blockquote></div>
 </div>
 </div><footer>
