@@ -65,7 +65,7 @@
 
 * [FreeCAD](https://github.com/FreeCAD/FreeCAD) - 3D参数化建模器
 
-
+* [ssr](https://github.com/MaartenBaert/ssr) - Linux 上的屏幕录制
 
 ## 其他
 
