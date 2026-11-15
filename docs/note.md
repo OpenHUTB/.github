@@ -10,11 +10,11 @@
 
 ## Pull Request
 
-- 提交 Pull Request 时，标题需要总结这次修改的内容或者为什么修改；
+- 提交 Pull Request 时，标题应概括本次修改的内容或原因；
 
-- 提交 Pull Request 时，提示有冲突必须解决，请先点击个人仓库页面上的 `Sync fork` 按钮同步，然后执行 `git pull` 合并最新的修改后，再进行提交；
+- 如果提示存在冲突，必须先解决：先点击个人仓库页面上的 `Sync fork` 按钮同步，再执行 `git pull` 合并最新修改，然后重新提交；
 
 
 ## 代码审核
 
-- 审核按每一行代码对 Pull Request 进行评论时，注意在 `Files changed` 页面点右上角绿色的 `Submit review`（旧版叫 `Review changes`），选择 `Comment` 后，再点一次弹窗里的 `Submit review`，否则评论只留在本地，其他人看不到。
+- 在 `Files changed` 页面按行对 Pull Request 进行评论时，记得点击右上角绿色的 `Submit review`（旧版叫 `Review changes`），选择 `Comment` 后再点击弹窗中的 `Submit review`，否则评论只保存在本地，其他人看不到。

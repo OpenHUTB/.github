@@ -16,14 +16,14 @@
 可以将key设置成永久，防止过段时间需要重新登录）
  ![](./img/rustdesk/disable_key_expiry.png)
 
-> 启动软件后会点击`sign in to your network`
+启动软件后会点击`sign in to your network`
 ![](./img/rustdesk/sign_in_network.png)
 
-> 以 github 授权使用为例
+ 以 GitHub 授权使用为例
  ![](./img/rustdesk/sign_in_github.png)
  ![](./img/rustdesk/authorize_tailscale.png)
 
-> 提示登录成功后，点击`visit the console`访问控制台，就可以看到已加入虚拟局域网的设备列表
+提示登录成功后，点击`visit the console`访问控制台，就可以看到已加入虚拟局域网的设备列表
 ![](./img/rustdesk/login_successful.png)
 
 
@@ -45,7 +45,7 @@
 
 ## 附：Windows远程登录
 
-先确认被控机的 Windows 版本：打开“设置 → 系统 → 系统信息”，查看 Windows 版本。Windows 专业版、企业版和教育版可以接受内置远程桌面连接；家庭版可以连接其他电脑，但不能作为这种连接的被控端。家庭版被控机可使用前面的 RustDesk 方式。
+先确认被控电脑的 Windows 版本：打开 `设置 → 系统 → 系统信息`，查看系统版本。Windows 专业版、企业版、教育版原生支持作为内置远程桌面（RDP）的被控端；家庭版可以主动连接其他电脑，但无法作为内置远程桌面的被控端。如果被控电脑是家庭版，可以使用前文介绍的 RustDesk 方案。
 
 在支持的被控机上，打开“设置 → 系统 → 远程桌面”并启用连接。确认两台设备都已接入 Tailscale，且被控机保持开机、联网，没有进入睡眠状态。
 
@@ -67,7 +67,7 @@
 ![](./img/rustdesk/invite_external_user.png)
 
 
-服务器所在的是**个人 tailnet**，不能直接"加成员"，正规做法是**节点共享**。
+如果只想共享这一台设备、不想让对方加入你的整个 tailnet，用 Tailscale 的「节点共享」功能。
 
 **使用tailscale共享具体步骤**
 
@@ -81,7 +81,7 @@
 
 **接收方操作**
 
-1. 使用github账号登录并打开[链接](https://login.tailscale.com/admin/invitations)（或注册邮箱里的邀请邮件），**接受**这台共享设备
+1. 使用GitHub账号登录并打开[链接](https://login.tailscale.com/admin/invitations)（或注册邮箱里的邀请邮件），**接受**这台共享设备
 2. 接受后在 admin/machines 里即可看到该设备，用  服务器ip地址  访问
    
 ![](./img/rustdesk/Share%20successful.png)
