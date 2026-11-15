@@ -19,10 +19,15 @@ def load_ignore_users(file_path):
         return []
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
-            return json.load(f)
-    except Exception as e:
-        print(f"读取屏蔽列表失败: {e}")
-        return []
+            users = json.load(f)
+    except (OSError, UnicodeError, json.JSONDecodeError) as exc:
+        raise ValueError(f"读取屏蔽列表失败（{file_path}）: {exc}") from exc
+
+    if not isinstance(users, list) or not all(isinstance(user, str) for user in users):
+        raise ValueError(f"屏蔽列表必须是字符串数组（{file_path}），例如 [\"用户名\", \"邮箱\"]")
+    return users
+import subprocess
+from collections import Counter
 
 def get_commits(since=None, until=None, ignore_list=[]):
     # 使用 %ae(邮箱)作为唯一键，%an(用户名)作为显示名
@@ -66,7 +71,11 @@ def main():
     parser.add_argument("--output", default="commit_stats.csv", help="输出CSV文件")
     args = parser.parse_args()
 
-    ignore_list = load_ignore_users(args.ignore)
+    try:
+        ignore_list = load_ignore_users(args.ignore)
+    except ValueError as exc:
+        parser.error(str(exc))
+
     # 查询失败时终止，避免把失败当成零条提交或覆盖已有统计文件。
     try:
         counts, name_map = get_commits(args.since, args.until, ignore_list)
