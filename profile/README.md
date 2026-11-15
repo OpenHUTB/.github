@@ -1,12 +1,12 @@
 
 
-🙋‍♀️ 该社区提供一款加速[具身人](https://openhutb.github.io/doc/pedestrian/)、[无人车](https://openhutb.github.io/doc/vehicle/)、[无人机](https://openhutb.github.io/air_doc/)开发和测试的开源[影视级物理模拟器](https://github.com/OpenHUTB/hutb)（[下载方法](https://openhutb.github.io/doc/introduction/)）。
+🙋‍♀️ 本社区提供一款开源[影视级物理模拟器](https://github.com/OpenHUTB/hutb)，用于加速[具身人](https://openhutb.github.io/doc/pedestrian/)、[无人车](https://openhutb.github.io/doc/vehicle/)、[无人机](https://openhutb.github.io/air_doc/)的开发与测试（[下载方法](https://openhutb.github.io/doc/introduction/)）。
 
 <p width="100%" display="flex" align="center">
 <a href="https://openhutb.github.io/doc/tuto_G_pedestrian_navigation/#conclusion"><img src="https://github.com/OpenHUTB/doc/blob/master/docs/img/pedestrian/cycle.gif?raw=true" width="30%" margin-right="10%"/></a>  <a href="https://openhutb.github.io/doc/tuto_G_chrono/"><img src="https://github.com/OpenHUTB/chrono_doc/blob/master/docs/img/chrono/vechile_turnover.gif?raw=true" width="33%"/></a> <a href="https://openhutb.github.io/air_doc/"><img src="https://github.com/OpenHUTB/air_doc/blob/master/docs/images/dev/HUTB_simulation.gif?raw=true" width="33%"/></a>
 </p>
 
-🍿 实用资源 - 从[社区文档](https://openhutb.github.io/doc/)中可以找到您所需要的所有详细信息，项目之间的关系如下图所示
+🍿 实用资源 —— [社区文档](https://openhutb.github.io/doc/)中提供了所需的全部详细信息，项目之间的关系如下图所示：
 
 ```mermaid
 graph LR
@@ -38,7 +38,7 @@ graph LR
     style R fill:#F5DEB3
 ```
 
-🌈 贡献指南 - 欢迎在各个项目的 [Issues 页面](https://github.com/OpenHUTB/hutb/issues) 进行交流（[解决访问速度慢](https://openhutb.github.io/doc/build_carla/#internet)），参与社区请参考 [贡献指南](https://openhutb.github.io/.github/CONTRIBUTING/) 
+🌈 贡献指南 —— 欢迎通过各项目的 [Issues 页面](https://github.com/OpenHUTB/hutb/issues) 交流（若访问较慢，可参考[加速方法](https://openhutb.github.io/doc/build_carla/#internet)）；参与社区请先阅读[贡献指南](https://openhutb.github.io/.github/CONTRIBUTING/)。
 
 
 
