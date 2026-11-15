@@ -30,6 +30,8 @@
 
 `Mark as resolved` 只是告诉 Git 这个文件已处理，不会替你选择正确内容，也不等于已经提交或推送。
 
+如果保存后仍无法继续合并，先在仓库目录运行 `git status`：它会列出尚未解决的文件，也会提示当前是普通合并、Cherry-pick 还是 Rebase。逐个处理列出的文件后再继续对应操作；不要只凭编辑器窗口已关闭就判断冲突全部解决。
+
 ## 参考
 
 * [TortoiseGit：解决冲突](https://tortoisegit.org/docs/tortoisegit/tgit-dug-conflicts.html)
