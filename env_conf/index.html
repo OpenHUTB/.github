@@ -204,12 +204,13 @@
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'1043:1443'</span><span class="w">    </span><span class="c1">#https</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'1022:22'</span><span class="w">      </span><span class="c1">#ssh</span>
 <span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w"> </span><span class="c1"># 挂载卷</span>
-<span class="w">    </span><span class="c1"># 前面是Windows的地址所以斜杠向右；后面是Linux的地址所以向左</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">C:\docker\gitlab\config:/etc/gitlab</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">C:\docker\gitlab\data:/var/opt/gitlab</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">C:\docker\gitlab\logs:/var/log/gitlab</span>
+<span class="w">    </span><span class="c1"># 冒号前是相对于 docker-compose.yml 所在目录的宿主机路径，冒号后是容器内路径</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./gitlab/config:/etc/gitlab</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./gitlab/data:/var/opt/gitlab</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./gitlab/logs:/var/log/gitlab</span>
 </code></pre></div></li>
 </ol>
+<p><code>./gitlab/config</code> 等相对路径以 <code>docker-compose.yml</code> 所在目录为基准。例如，该文件在 <code>D:\docker</code> 时，配置目录解析为 <code>D:\docker\gitlab\config</code>，数据和日志目录也位于同一 <code>gitlab</code> 目录。启动前用 <code>docker compose config</code> 检查 <code>volumes</code> 的 <code>source</code> 是否指向实际创建的目录，规则见 <a href="https://docs.docker.com/reference/compose-file/services/#volumes">Docker Compose 挂载说明</a>。</p>
 <p>先核对示例中的地址与端口：</p>
 <table>
 <thead>
@@ -415,7 +416,7 @@ python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </sp
 <p>参考：<a href="https://docs.python.org/3/library/venv.html">Python 虚拟环境说明</a>、<a href="https://pip.pypa.io/en/stable/cli/pip_freeze/">pip freeze</a>、<a href="https://pip.pypa.io/en/stable/cli/pip_check/">pip check</a>。</p>
 <hr/>
 <blockquote>
-<p>本页最近一次修改：2026-11-14 · huang-dandan · 提交 <a href="https://github.com/OpenHUTB/.github/commit/522a1a1"><code>522a1a1</code></a></p>
+<p>本页最近一次修改：2026-11-15 · cflorlfc · 提交 <a href="https://github.com/OpenHUTB/.github/commit/9a3456d"><code>9a3456d</code></a></p>
 </blockquote></div>
 </div>
 </div><footer>
