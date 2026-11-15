@@ -102,7 +102,7 @@ git push -u origin docs-fix-contribution-steps
 将 `README.md` 换成实际修改的文件，例如修改贡献指南时使用 `git add CONTRIBUTING.md`；提交信息也要与实际改动对应。如果第 3 步用了其他分支名，推送时同步替换。
 
 <details>
-<summary> <strong>如果在 push（推送）过程中出 error，点击此处折叠</strong> </summary>
+<summary> <strong>如果在 push（推送）过程中出现报错，点击此处折叠</strong> </summary>
 
 - ### Authentication Error
      <pre>remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
@@ -122,25 +122,25 @@ git push -u origin docs-fix-contribution-steps
 <img src="https://firstcontributions.github.io/assets/Readme/submit-pull-request.png" width="410">
 
 
-不久之后，团队成员便会把你所有的变化合并到这个项目的主分支。更改合并后，你会收到一封电子邮件通知。
+不久之后，团队成员便会把你所有的改动合并到该项目的主分支。更改合并后，你会收到一封电子邮件通知。
 
 
-## 在VScode提交本地修改的步骤
+## 在 VS Code 中提交本地修改的步骤
 
 **1.工具准备**
 
-- 首先按上述步骤创建GitHub账号，这里不多赘述；
-- 点击VScode左下角小猫图标登录GitHub账号；
-- 在VScode扩展商店安装“GitHub Pull Requests”扩展，它把**git add、git commit、git push**和**git branch**这些命令都变成了点击操作，对新手很友好，强烈建议把Chinese Language Pack for Visual Studio Code这个汉化扩展也装上，安装成功之后重启。
+- 首先按上述步骤创建GitHub账号，这里不再赘述；
+- 点击 VS Code 左下角小猫图标登录GitHub账号；
+- 在 VS Code 扩展商店安装“GitHub Pull Requests”扩展，它把**git add、git commit、git push**和**git branch**这些命令都变成了点击操作，对新手很友好，强烈建议把Chinese Language Pack for Visual Studio Code这个汉化扩展也装上，安装成功之后重启。
 
 **2.克隆个人仓库**
 
-- 该步骤与第一个方法里的一致，不过多赘述。
+- 该步骤与第一个方法一致，不再赘述。
 
 **3.新建并更改分支**
 
 - 这一步相当于新建一个副本，在这个副本上面你可以做任何事，且不会损坏、污染主分支。
-- 在VScode左下角，也就是图一所示位置，会看到**master**或者**main**的字样，这意味着你现在在主分支，点击他，上方对话框会出现**创建新分支...**，点击他就可以创建新分支，成功后如图二所示，创建了一个名为**new**的分支，并且自动跳转到了这个分支，这时候就可以按需修改了。
+- 在 VS Code 左下角，也就是图一所示位置，会看到**master**或者**main**的字样，这意味着你现在在主分支，点击它，上方对话框会出现**创建新分支...**，点击它就可以创建新分支，成功后如图二所示，创建了一个名为**new**的分支，并且自动跳转到了这个分支，这时候就可以按需修改了。
 
 ![图一](https://raw.githubusercontent.com/OpenHUTB/.github/master/docs/img/branch_setting.png)
 ![图二](https://raw.githubusercontent.com/OpenHUTB/.github/master/docs/img/branch_new.png)
@@ -149,7 +149,7 @@ git push -u origin docs-fix-contribution-steps
 
 - 暂存，也就是 **git add** 操作，用来选择这次要提交的修改；**git commit** 会把已经暂存的修改保存为一次提交。只保存文件还不等于完成提交。
 - 如图三所示，点击左边第三个**源代码管理**图标，在存储库这一栏可以看到新建的分支和主分支，如果下方的更改一栏是空的，说明你现在所处的分支不对，点击对应分支即可切换。随后点击加号即可暂存成功。
-确保保存并暂存所有修改后，在**提交**按钮上方的对话框输入本次的说明，就可以提交了。
+- 确保保存并暂存所有修改后，在**提交**按钮上方的对话框输入本次的说明，就可以提交了。
 
 ![图三](https://raw.githubusercontent.com/OpenHUTB/.github/master/docs/img/repository.png)
 
@@ -158,6 +158,10 @@ git push -u origin docs-fix-contribution-steps
 - 如下图所示，点击第二行第二个放大镜图标就可以直接预览渲染后的网页效果。
 
 ![图四](https://raw.githubusercontent.com/OpenHUTB/.github/master/docs/img/Preview.png)
+
+- 需要看**完整的站点效果**（导航、插件、公式、页面跳转）时，在仓库根目录运行 `python serve.py`：
+  Windows / macOS / Linux 通用，首次会自动创建 `.venv` 并安装依赖，构建通过后打开浏览器预览。
+  只想检查环境可加 `--check`，只想看会执行哪些命令可加 `--dry-run`。
 
 **6.发布Branch**
 

@@ -11,7 +11,7 @@
 通用和精细目标类别的神经解码。
 
 #### [行为检测](https://github.com/OpenHUTB/customs) 
-人脸识别、戴口罩的人脸识别、高抗伪识别等。
+人脸识别、戴口罩场景下的人脸识别、高抗伪识别等。
 
 #### [原理](https://github.com/OpenHUTB/neuro)
 《神经科学原理（第六版）》翻译。
@@ -21,7 +21,7 @@
 
 
 #### [目标跟踪](https://github.com/OpenHUTB/mot)
-实现多目标跟踪算法研究和系统部署。
+实现多目标跟踪算法的研究与系统部署。
 
 ### 规划
 
@@ -37,7 +37,7 @@
 行人的孪生。
 
 #### [运动的生物力学](https://github.com/OpenHUTB/move) 
-肌肉驱动的移动
+肌肉驱动的移动。
 
 
 
@@ -49,7 +49,7 @@
 ### [C++文档](https://github.com/OpenHUTB/carla_cpp)
 
 ### [驾驶仿真](https://github.com/OpenHUTB/carla)
-用于研究自动驾驶的开源仿真器，可自由使用的开放数字资产（城市布局、建筑、车辆）。
+用于自动驾驶研究的开源仿真器，提供可自由使用的开放数字资产（城市布局、建筑、车辆）。
 
 ### [仿真引擎](https://github.com/OpenHUTB/engine)
 包含 CARLA 补丁的虚幻引擎。
@@ -73,18 +73,18 @@ RoadRunner Scenario 的中文翻译文档。
 包括交通场景数字孪生、区域信控、车流诱导、停车管理等模块。
 
 ### [交通大模型](https://github.com/OpenHUTB/gpt)
-实现人类语音进行交通场景的编辑和控制。
+通过人类语音实现对交通场景的编辑和控制。
 
 
 
 [本科毕设](https://github.com/OpenHUTB/hutb_latex) 
-本科毕业设计的`latex`模板。
+本科毕业设计的`LaTeX`模板。
 
 [研究生毕设](https://github.com/OpenHUTB/master)
-研究生毕业设计的`latex`模板。
+研究生毕业设计的`LaTeX`模板。
 
 [通用模板](https://github.com/OpenHUTB/latex)
-书籍、笔记、论文的`latex`模板。
+书籍、笔记、论文的`LaTeX`模板。
 
 [工具库](https://github.com/OpenHUTB/utils)
 整理的通用工具代码。
