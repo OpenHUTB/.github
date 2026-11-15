@@ -64,8 +64,8 @@
 * [Blender](./blender.md) - 免费开源的三维创作软件，社区「艺术创作」分工线使用的工具，内含[下载安装与入门操作说明](./blender.md)
 
 * [FreeCAD](https://github.com/FreeCAD/FreeCAD) - 3D参数化建模器
+
   
-* [ssr](https://github.com/MaartenBaert/ssr) - Linux 上的屏幕录制
 
 ## 其他
 
@@ -82,6 +82,8 @@
 * [HivisionIDPhotos](https://github.com/Zeyi-Lin/HivisionIDPhotos) - AI证件照制作算法
 
 * [readest](https://github.com/readest/readest) - 电子书阅读器
+  
+* [ssr](https://github.com/MaartenBaert/ssr) - Linux 上的屏幕录制
 
 * [openreel-video](https://github.com/Augani/openreel-video) - 浏览器视频编辑器
 
