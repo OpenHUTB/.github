@@ -9,6 +9,7 @@ tests/_tmp/
 # mkdocs 构建产物（本地 serve/build 生成）
 site/
 docs/CONTRIBUTING.md
+docs/community/code-of-conduct.md
 
 # 脚本与工作流产物
 commit_stats.csv
