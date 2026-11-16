@@ -1,7 +1,6 @@
 """Regression tests for the figure-saving helper."""
 
 import importlib.util
-import subprocess
 import sys
 from pathlib import Path
 from tempfile import TemporaryDirectory
@@ -33,22 +32,28 @@ class SaveFigTests(TestCase):
     def setUpClass(cls):
         cls.plot_utils = load_plot_utils()
 
-    def test_png_path_with_spaces_is_preserved_and_failures_are_raised(self):
+    def test_png_path_with_spaces_is_preserved_when_trimmer_fails(self):
         figure = Mock()
+        figure_data = b"saved figure"
+
+        def write_temporary_figure(path, **kwargs):
+            Path(path).write_bytes(figure_data)
+
+        figure.savefig.side_effect = write_temporary_figure
+
         with TemporaryDirectory() as temporary:
             output = Path(temporary) / "target with space.png"
-            failure = subprocess.CalledProcessError(1, "convert")
             with patch.object(
                 self.plot_utils.subprocess,
-                "check_call",
-                side_effect=failure,
-            ) as check_call:
-                with self.assertRaises(subprocess.CalledProcessError):
-                    self.plot_utils.save_fig(figure, str(output))
+                "call",
+                return_value=1,
+            ) as call:
+                self.plot_utils.save_fig(figure, str(output))
 
-            check_call.assert_called_once_with([
+            call.assert_called_once_with([
                 "convert", ANY, "-trim", str(output.resolve())
             ])
+            self.assertEqual(output.read_bytes(), figure_data)
 
 
 if __name__ == "__main__":
