@@ -127,7 +127,21 @@ xvfb-run -a -s "-screen 0 1024x768x24" \
 
 编辑器退出后必须解析 `index.json`：`failed` 或 `notRun` 不为 0、或者 `succeeded` 为 0，都判定失败。报告通过 artifact 上传，失败时直接看里面哪条用例没通过。
 
-实测耗时：Linux 一次完整运行约 50 分钟。
+默认 `TEST_FILTER` 实测跑出 21 条用例（`EditConditionParser` 8 条、`PathViews` 7 条、`CString` 1 条、`DateTime` 2 条、`Algos` / `AsciiSet` / `Timespan` 各 1 条），全部 `Success`。
+
+实测耗时（run `42990667575`，全量构建）：
+
+| 步骤 | 耗时 |
+|---|---|
+| 依赖同步 + 生成工程 + 编译 | 33 分钟 |
+| 自动化测试 | 19 秒 |
+| 解析报告 + 上传 artifact | 4 秒 |
+| 打包 Installed Build | 67 分钟 |
+| 合计 | 100 分钟 |
+
+依赖与编译产物被 `clean-after-action` 清理后，下一次是全量；增量运行时总耗时降到 35–50 分钟，但 `install` 仍占大头。
+
+2026-11-15 在同一台 runner 主机上按本文步骤再复现一次，各步骤返回码都是 0：编译 30.6 分钟（UBT `Total execution time: 1838.42 seconds`）、自动化测试 20 秒（21 条用例全部 `Success`）、打包 61 分钟（`BUILD SUCCESSFUL`），合计 96 分钟。
 
 ## 4. Windows 工作流
 
@@ -139,7 +153,7 @@ Windows 侧尽量复用仓库自带的脚本：
 4. `call RunUAT.bat` 打包。
 5. 结束后清理，最后删除 `.git` 目录，避免依赖缓存把磁盘占满。
 
-实测耗时：Windows 一次完整运行约 2 小时，比 Linux 慢很多，所以更要靠 `concurrency` 控制排队。
+实测耗时：Windows 两次成功运行分别是 128 分钟和 357 分钟（约 2–6 小时），比 Linux 慢很多，所以更要靠 `concurrency` 控制排队。
 
 ## 5. C++ 文档工作流
 
@@ -160,8 +174,8 @@ Windows 侧尽量复用仓库自带的脚本：
 
 ## 6. 怎么验证配置可用
 
-1. 打开 `Actions`，选对应工作流，点 `Run workflow`；Linux 可以填 `test_filter`。
-2. 跟日志看三个关键节点：checkout 成功、`===== Setup.sh 之后 =====` 能看到 `UnrealBuildTool.exe`、自动化测试输出通过/失败统计。
+1. 打开 `Actions`，选对应工作流，点 `Run workflow`；Linux 可以填 `test_filter`。手动触发要求对该仓库有写权限，fork 提交的 PR 只能由主仓库维护者触发（用 API 触发时权限不足会返回 `403 Must have admin rights to Repository.`）。
+2. 跟日志看关键节点：checkout 成功；`Setup.sh` 结束输出 `Setup successful.`（干净工作区里 `Engine/Binaries/DotNET/UnrealBuildTool.exe` 此时还打印「仍不存在」，它由下一步编译时生成，不影响流程）；`Build.sh` 打印 `Running command : Engine/Binaries/DotNET/UnrealBuildTool.exe UE4Editor Linux Development`，结束时给出 `Total execution time`；自动化测试在日志末尾给出通过/失败统计。
 3. 跑完确认 artifact 里有 `automation-report`，Linux 还要确认 `Make Installed Build Linux` 成功。
 4. 失败时先看第一个报红的步骤，不要从后往前猜。
 
