@@ -2,7 +2,7 @@
 
 > 假如你已经受够了PDF转word需要vip的日子了，接下来的内容或许会给你一些帮助
 
-![.github/docs/img/filee(1).png](img/filee(1).png)
+![.github/docs/img](img/filee_1.png)
 
 > 一个免费开源的本地文件格式转换器。
 > 官网：https://filee.sh/zh-cn/
@@ -15,7 +15,7 @@ Filee 是一款跑在自己电脑上的格式转换工具，转换全程离线�
 
 它的交互方式和传统软件不一样：不用先打开软件界面再导入文件，而是在资源管理器里选中文件，按住一个键拖出去，光标旁边会弹出一个圆环（如下图），上面列着这批文件能转成的目标格式，把文件丢到格式上松手就开始转，完成后新文件直接出现在原文件旁边。
 
-![.github/docs/img/filee(2).png](img/filee(2).png)
+![.github/docs/img](img/filee_2.png)
 
 目前版本 v2.4.1，支持：
 
