@@ -96,6 +96,7 @@ nav:
     - 开源工具列表: 'tools.md'
     - 三维建模软件 Blender 介绍: 'blender.md'
     - Markdown 一键发布到社交平台: 'markdown2anything.md'
+    - Java版MC回到旧版本指南: 'minecraft java edition downgrade guide.md'
 - 学习与论文:
     - "Latex文献引用编译办法": 'bib_reference_guide.md'
     - 本科毕业设计: 'undergraduate.md'
