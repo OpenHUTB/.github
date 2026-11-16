@@ -106,7 +106,16 @@ def save_fig(fig, file_name, fmt=None, dpi=300, tight=True):
         subprocess.call('epstool --bbox --copy %s %s' %
                         (tmp_name, file_name), shell=True)
     elif fmt == 'png':
-        subprocess.check_call(['convert', tmp_name, '-trim', file_name])
+        try:
+            result = subprocess.call(['convert', tmp_name, '-trim', file_name])
+        except OSError as exc:
+            logging.getLogger(__name__).warning(
+                "Could not run PNG trimmer: %s", exc
+            )
+            result = 1
+        # Do not let a partial conversion look like a successful result.
+        if result != 0 and os.path.isfile(file_name):
+            os.remove(file_name)
     elif fmt == 'pdf':
         subprocess.call('pdfcrop %s %s' % (tmp_name, file_name), shell=True)
 
