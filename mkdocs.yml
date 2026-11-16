@@ -91,7 +91,7 @@ nav:
     - 合并提交: 'dev/merge_commit.md'
     - 给 Ubuntu 虚拟机硬盘扩容: 'dev/vm_disk.md'
     - 注意事项: 'note.md'
-    - wsl 安装与配置和卸载: 'wsl.md'
+    - WSL 安装与配置和卸载: 'wsl.md'
     - 文档修改指南: 'submit.md'
     - 视频制作流程: 'video_editing.md'
     - 查找文档作者与源码: 'adv/find_author.md'
