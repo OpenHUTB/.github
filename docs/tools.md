@@ -129,6 +129,8 @@
 
 * [arxiv-latex-cleaner](https://github.com/google-research/arxiv-latex-cleaner) - 轻松清理论文的 LaTeX 代码，以便提交至 arXiv
 
+* [OpenCV](https://opencv.org) - 开源计算机视觉库，提供图像处理、特征提取、目标检测、视频分析与相机标定等常用算法（[源码](https://github.com/opencv/opencv)）。
+
 * [PDFMathTranslate](https://github.com/PDFMathTranslate/PDFMathTranslate) - 基于 AI 完整保留排版的 PDF 文档全文双语翻译
 
 * [Zotero](https://github.com/zotero/zotero) - 免费开源的文献管理工具，收集、整理和引用论文
