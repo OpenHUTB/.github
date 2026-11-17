@@ -49,6 +49,7 @@
 
 * [drawio](https://github.com/jgraph/drawio) - 免费开源的流程图、架构图绘制工具
 * [Excalidraw](https://excalidraw.com) - 支持多人实时协作的手绘风格白板，适合绘制流程图、架构图和头脑风暴草图（[源码](https://github.com/excalidraw/excalidraw)）。
+* [Joplin](https://github.com/laurent22/joplin) - 开源笔记应用，支持 Markdown、多端同步和端到端加密，适合整理学习笔记与项目文档
 
 ## 开发
 
