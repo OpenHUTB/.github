@@ -2,8 +2,8 @@ name: 'User Activity Report'
 on:
   workflow_dispatch:
   schedule:
-    # 在每个月第一天的 00:00 UTC 运行
-    #
+    ## cron 时区为 UTC，UTC+0 = 北京时间 -8小时
+    # 0 0 1 * * 代表：UTC每月1号0点，等价于【北京时间每月1号早上8点】
     #        ┌────────────── minute
     #        │ ┌──────────── hour
     #        │ │ ┌────────── day (month)
@@ -28,7 +28,11 @@ jobs:
         with:
           script: return new Date(new Date().getFullYear(), new Date().getMonth(), 1) 
           result-encoding: string
-
+          # 打印统计区间，方便后续调试、查看统计范围
+      - name: Print time range
+        run: |
+          echo "统计起始时间 since: ${{ steps.since-date.outputs.result }}"
+          echo "统计截止时间 until: ${{ steps.until-date.outputs.result }}"
       - uses: sorekz/user-activity-report@v1
         with:
           token: ${{ secrets.METRICS_REPORT }}
