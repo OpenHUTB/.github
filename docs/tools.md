@@ -28,6 +28,9 @@
 * [7-Zip](https://github.com/ip7z/7zip) - 免费开源的文件解压工具
 * [LocalSend](https://localsend.org) - 跨平台开源局域网文件传输工具，无需账号或互联网连接，可作为 AirDrop 的替代方案（[源码](https://github.com/localsend/localsend)）。
 
+* [YunX 安卓版](https://github.com/CYQawa/YunX) —— 开源的 Android 网盘 / 视频解析下载应用
+* [YunX-Desktop 桌面版](https://github.com/tidain/YunX-Desktop) —— YunX 的官方 Windows 桌面端
+
 ## 办公
 
 * [rustdesk](https://github.com/rustdesk/rustdesk) - 远程桌面应用程序，专为自托管设计，作为 TeamViewer 的替代方案。
