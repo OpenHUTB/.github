@@ -28,6 +28,9 @@
 * [7-Zip](https://github.com/ip7z/7zip) - 免费开源的文件解压工具
 * [LocalSend](https://localsend.org) - 跨平台开源局域网文件传输工具，无需账号或互联网连接，可作为 AirDrop 的替代方案（[源码](https://github.com/localsend/localsend)）。
 
+* [YunX 安卓版](https://github.com/CYQawa/YunX) —— 开源的 Android 网盘 / 视频解析下载应用
+* [YunX-Desktop 桌面版](https://github.com/tidain/YunX-Desktop) —— YunX 的官方 Windows 桌面端
+
 ## 办公
 
 * [rustdesk](https://github.com/rustdesk/rustdesk) - 远程桌面应用程序，专为自托管设计，作为 TeamViewer 的替代方案。
@@ -35,6 +38,8 @@
 * [tailscale](https://github.com/tailscale/tailscale) - 使用 WireGuard 和双重身份验证最简单、最安全的方式
 
 * [LibreOffice](https://download.documentfoundation.org/libreoffice/portable/) - Office 办公软件
+
+* [Typst](https://typst.app) - 开源文档排版系统，使用简洁的标记语言编写技术文档、课程报告和学术论文，并支持实时预览（[源码](https://github.com/typst/typst)）。
 
 * [virtualbox](https://github.com/VirtualBox/virtualbox) - 虚拟机
 
@@ -55,6 +60,10 @@
 
 * [DBeaver](https://github.com/dbeaver/dbeaver) - 开源通用数据库管理工具，支持 MySQL、PostgreSQL、SQLite 等。
 
+* [PlotJuggler](https://www.plotjuggler.io) - 开源时序数据可视化工具，可实时查看 ROS 1/ROS 2 话题，并通过曲线、FFT 和多运行对比分析机器人传感器与控制数据（[源码](https://github.com/PlotJuggler/PlotJuggler)）。
+
+* [Wireshark](https://www.wireshark.org) - 开源网络协议分析工具，可用于检查 ROS 2、AirSim 和分布式仿真组件之间的网络通信（[源码](https://github.com/wireshark/wireshark)）。
+
 * [mkdocs](https://github.com/mkdocs/mkdocs) - 用 Markdown 生成文档网站，社区文档站即由它构建
 
 * [Tabby](https://github.com/Eugeny/tabby) - 跨平台终端模拟器
@@ -64,6 +73,8 @@
 * [Blender](./blender.md) - 免费开源的三维创作软件，社区「艺术创作」分工线使用的工具，内含[下载安装与入门操作说明](./blender.md)
 
 * [FreeCAD](https://github.com/FreeCAD/FreeCAD) - 3D参数化建模器
+
+* [Open3D](https://www.open3d.org) - 开源三维数据处理库，支持点云、网格与 RGB-D 数据可视化，以及配准、重建和三维机器学习（[源码](https://github.com/isl-org/Open3D)）。
 
 * [CloudCompare](https://www.cloudcompare.org) - 开源三维点云与网格处理软件，支持点云配准、分割、测量、距离计算和多源数据对比（[源码](https://github.com/CloudCompare/CloudCompare)）。
 
@@ -125,6 +136,8 @@
 * [LaTeX-OCR](https://github.com/lukas-blecher/LaTeX-OCR) - 将方程图像转换为 LaTeX 代码
 
 * [arxiv-latex-cleaner](https://github.com/google-research/arxiv-latex-cleaner) - 轻松清理论文的 LaTeX 代码，以便提交至 arXiv
+
+* [OpenCV](https://opencv.org) - 开源计算机视觉库，提供图像处理、特征提取、目标检测、视频分析与相机标定等常用算法（[源码](https://github.com/opencv/opencv)）。
 
 * [PDFMathTranslate](https://github.com/PDFMathTranslate/PDFMathTranslate) - 基于 AI 完整保留排版的 PDF 文档全文双语翻译
 
