@@ -128,6 +128,8 @@
 
 * [PDFMathTranslate](https://github.com/PDFMathTranslate/PDFMathTranslate) - 基于 AI 完整保留排版的 PDF 文档全文双语翻译
 
+* [Zotero](https://github.com/zotero/zotero) - 免费开源的文献管理工具，收集、整理和引用论文
+
 ### GIS
 
 * [QGIS](https://qgis.org/) - 开源桌面 GIS，支持矢量、栅格数据的查看、编辑和分析。
