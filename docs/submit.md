@@ -7,22 +7,14 @@
 
 ## 2. 下载 Visual Studio Code
 下载后会得到一个 `.exe` 文件，双击运行安装：    
-(打开网站首页第一个是Visual Studio 2026,第二个才是所需的Visual Studio Code)
+(打开下载页面，区分Visual Studio 2026和Visual Studio Code，选择Visual Studio Code下载)
 [https://visualstudio.microsoft.com/zh-hans/downloads/](https://visualstudio.microsoft.com/zh-hans/downloads/)
 
 ## 3. 克隆仓库
-在克隆代码前，需要先将社区的官方仓库“复制”一份到你自己的 GitHub 账号下，这个过程称为 Fork。
-
-1. 登录你的 GitHub 账号。
-2. 打开社区原仓库地址：[https://github.com/OpenHUTB/.github](https://github.com/OpenHUTB/.github)
-3. 点击页面右上角的 **Fork** 按钮。
-4. 在跳转的页面中点击 **Create fork**。等待几秒钟，你的账号下就会生成一个同名的仓库。
-> **注意**：该命令中的 `{用户名}` 请替换为自己的GitHub用户名。
-
-克隆你 Fork 后的个人仓库：
+> **注意**：该命令中的 `{用户名}` 请替换为自己的用户名。
 
 ```bash
-git clone https://github.com/{你的GitHub用户名}/.github.git
+git clone https://github.com/{用户名}/.github.git
 ```
 
 克隆完成后进入仓库目录：
@@ -34,7 +26,7 @@ cd .github
 ## 4. 介绍 .github 文件结构
 
 - **`docs`**：主要修改的地方。
-- **`docs/img`**：存放图片的地方。图片必须重命名，不可以像 `"屏幕截图 2026-11-04 011000.png"` 之类的默认名称。
+- **`docs/img`**：存放图片的地方。图片需使用语义化英文名称，禁止使用系统自动生成的截图默认文件名。
 - **`docs/src`**：存放代码的地方。
 - **`docs/paper`**：放论文的地方。
 - **`docs` 下的 `.md` 文件**：修改的具体地址（`.md` 文件也是 Markdown 源文件）。
