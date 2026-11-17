@@ -74,6 +74,8 @@
 
 * [FreeCAD](https://github.com/FreeCAD/FreeCAD) - 3D参数化建模器
 
+* [Open3D](https://www.open3d.org) - 开源三维数据处理库，支持点云、网格与 RGB-D 数据可视化，以及配准、重建和三维机器学习（[源码](https://github.com/isl-org/Open3D)）。
+
 * [CloudCompare](https://www.cloudcompare.org) - 开源三维点云与网格处理软件，支持点云配准、分割、测量、距离计算和多源数据对比（[源码](https://github.com/CloudCompare/CloudCompare)）。
 
 ## 其他
