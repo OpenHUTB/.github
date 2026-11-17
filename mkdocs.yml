@@ -43,7 +43,7 @@ extra_javascript:
 
 plugins:
   - search:
-      lang: ja
+      lang: zh
       separator: '[\s\-\.]+'
       min_search_length: 2
   - bibtex:
@@ -68,7 +68,7 @@ nav:
 - 首页: 'index.md'
 - 模拟器简介: 'simulator.md'
 - 贡献指南: 'CONTRIBUTING.md'
-- git 教程: 'https://openhutb.github.io/git/?locale=zh_CN'
+- Git 教程: 'https://openhutb.github.io/git/?locale=zh_CN'
 - Markdown教程: 'https://docs.github.com/zh/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax'
 - 论文写作技巧: 'paper_tips.md'
 
@@ -82,6 +82,7 @@ nav:
 
 # 以下为补充收录的文档页面
 - 贡献相关:
+    - 社区行为准则: 'community/code-of-conduct.md'
     - 基于浏览器的贡献指南: 'codespace.md'
     - 注册 Github 账号: 'dev/sign_up.md'
     - 使用 VScode 推送代码: 'dev/vscode_push.md'
@@ -92,10 +93,15 @@ nav:
     - 注意事项: 'note.md'
     - wsl 安装与配置和卸载: 'wsl.md'
     - 文档修改指南: 'submit.md'
+    - 视频制作流程: 'video_editing.md'
+    - 查找文档作者与源码: 'adv/find_author.md'
 - 工具与资源:
     - 开源工具列表: 'tools.md'
     - 三维建模软件 Blender 介绍: 'blender.md'
     - Markdown 一键发布到社交平台: 'markdown2anything.md'
+    - Java 版 Minecraft 回退旧版本指南: 'Minecraft Java Edition Downgrade Guide.md'
+    - Python 论文绘图脚本: 'src/python/README.md'
+    - Filee 文件格式转换工具: 'filee_official_guide.md'
 - 学习与论文:
     - "Latex文献引用编译办法": 'bib_reference_guide.md'
     - 本科毕业设计: 'undergraduate.md'

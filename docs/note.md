@@ -10,11 +10,16 @@
 
 ## Pull Request
 
-- 提交 Pull Request 时，标题需要总结这次修改的内容或者为什么修改；
+- 提交 Pull Request 时，标题应概括本次修改的内容或原因；
 
-- 提交 Pull Request 时，提示有冲突必须解决，请先点击个人仓库页面上的 `Sync fork` 按钮同步，然后执行 `git pull` 合并最新的修改后，再进行提交；
-
+- 如果 PR 提示存在冲突，先确认 PR 的目标分支和自己的工作分支，将上游目标分支的更新合并到工作分支，解决冲突后再推送。用 `Sync fork` 同步个人仓库的默认分支后，还需要更新 PR 使用的工作分支；两者不是同一分支时，PR 的冲突不会自动消除。
 
 ## 代码审核
 
-- 审核按每一行代码对 Pull Request 进行评论时，注意在 `Files changed` 页面点右上角绿色的 `Submit review`（旧版叫 `Review changes`），选择 `Comment` 后，再点一次弹窗里的 `Submit review`，否则评论只留在本地，其他人看不到。
+在 Files changed 页面按行评论时，如果只想单条发布，可直接点击下方弹窗中的“Add single comment”；如果想把多条评论汇总提交，需先选择“Start a review”，全部写完后点击右上角的“Finish your review”（旧版叫 Review changes），选择 Comment 后，再在弹窗中点击“Submit review”提交。否则，作为草稿状态的审查评论不会公开显示。
+
+## 收到审核意见后
+
+- 需要修改时，在创建 Pull Request 时使用的同一分支上继续提交并推送，新提交会自动出现在原 Pull Request 中，不必重新创建。
+- 修改后重新查看 **Files changed** 中的最终差异，并确认相关检查已重新运行。
+- 对审核意见逐条回复；确认问题已经处理后，再将对应讨论标记为已解决。仍有分歧时，说明原因并继续沟通。

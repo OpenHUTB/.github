@@ -253,7 +253,8 @@ You can also round numbers, for example \num{1.23456}.
 
 # 创建图形
 
-图表是任何论文的重要组成部分，因为它们可以向读者传达你的研究结果。你应该思考每幅图上的信息究竟能传达给读者什么，并确保信息量刚好足以支撑你的信息，不要过多。例如，如果你想展示二维点的模式（有两个分离良好的簇），就没有必要在坐标轴上标注刻度和数值（比例尺其实并不重要）？图表不应该过于复杂。用几幅图来传达一两条信息（方法A优于方法B，但收敛速度较慢）比用一张又大又乱的图表要好。
+图表是任何论文的重要组成部分，可以向读者直观传达研究结果。你应该思考每幅图究竟能向读者传递什么信息，并确保信息量刚好足以支撑你的结论，避免冗余。例如，若只想展示二维点的分布模式（如两个分离良好的簇），就无需在坐标轴上标注刻度和数值（此时比例尺并不重要）。图表不应过于复杂，用几幅图分别传达一两条核心信息（例如“方法A优于方法B”和“收敛速度较慢”），通常比将所有信息塞进一张杂乱的大图效果更好。
+
 
 ## 每个数据驱动的图形对应一个脚本
 
@@ -282,7 +283,7 @@ You can also round numbers, for example \num{1.23456}.
 
 如果可能，所有图形的标签、坐标轴等都应使用相同的字体。尤其要注意，不要让一个图形的标签/刻度较大，而另一个图形的标签/刻度较小。一个解决方案是在生成图形的脚本中定义图形的大小，而不是在文档中重新缩放（例如，不要在 LaTeX 文档中更改图形的宽度设置`\textwidth`）。
 
-为了获得一致的图形，我们建议使用类似于我们的辅助脚本[`plot_utils.py`](https://github.com/Wookai/paper-tips-and-tricks/blob/master/src/python/plot_utils.py)。使用此脚本，您只需调用`figure_setup()`函数定义所有尺寸，然后创建所需尺寸的图形并保存即可。
+为了获得一致的图形，本仓库提供了辅助脚本 [`plot_utils.py`](src/python/plot_utils.py)、函数曲线示例 [`figure_example.py`](src/python/figure_example.py) 和栅格化示例 [`figure_rasterized_example.py`](src/python/figure_rasterized_example.py)。运行示例前需要安装 Matplotlib；`figure_setup()` 默认使用 LaTeX 渲染文字，因此还需要本地 LaTeX 环境。只有保存 EPS、PNG 或 PDF 时才需要对应的 `epstool`、ImageMagick 或 `pdfcrop` 命令。
 
 ```python
 import argparse

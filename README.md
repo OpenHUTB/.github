@@ -5,13 +5,19 @@ OpenHUTB 是面向人机共生与智能载具研究、教学与开发的开源�
 
 以下为新手快速上手入口：
 
-[🚀 快速开始](https://github.com/OpenHUTB/hutb#使用示例) · [📖 在线文档](https://openhutb.github.io/) · [🧪 运行示例](https://github.com/OpenHUTB/doc/tree/master/src/examples) · [🤝 参与贡献](https://github.com/OpenHUTB/.github/blob/master/CONTRIBUTING.md) · [💬 提问与讨论](https://github.com/orgs/OpenHUTB/discussions)
+[🚀 快速开始](https://github.com/OpenHUTB/hutb#使用示例) · [📖 在线文档](https://openhutb.github.io/) · [🧪 运行示例](https://github.com/OpenHUTB/doc/tree/master/src/examples) · [🤝 参与贡献](https://github.com/OpenHUTB/.github/blob/master/CONTRIBUTING.md) · [📜 行为准则](CODE_OF_CONDUCT.md) · [💬 提问与讨论](https://github.com/orgs/OpenHUTB/discussions)
 - [💡 贡献小贴士](contribute-tips.md)
 
 你可以用 OpenHUTB 做什么？
 - **研究与教学**：学习感知、规划、控制和具身智能算法。
 - **仿真与验证**：在可重复的场景中开发、训练和验证算法。
 - **场景与内容开发**：使用开放的城镇、建筑、车辆、行人和道具资产创建仿真环境。
+
+## 文档维护方向
+
+- 持续核对安装教程中的系统版本、依赖和操作入口，减少照着旧截图操作却找不到选项的情况。
+- 完善模拟器和研究项目之间的链接说明，让读者能从概览页继续找到安装资料、API 和示例。
+- 补充实验记录中的数据来源、运行条件和评价指标，方便他人理解结果并复查过程。
 
 核心入口
 
