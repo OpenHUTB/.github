@@ -25,7 +25,7 @@
 git clone https://github.com/你的GitHub用户名/.github.git
 ```
 
-克隆完成后进入仓库目录：
+克隆完成后进入仓库主目录：
 
 ```bash
 cd .github
@@ -94,7 +94,6 @@ cd .github
    ```bash
    pip install mkdocs mkdocs-material mkdocs-mermaid2-plugin
    ```
-   *（如果出现报错，可以将错误信息发给 AI 解决）*
 
 2. 在终端 `cd` 到你的 `.github` 文件夹路径下（例如：`cd 你的路径/.github`），然后运行预览指令：
    ```bash
