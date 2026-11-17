@@ -92,7 +92,7 @@ cd .github
 
 1. 下载 MkDocs（在命令行中运行以下命令下载）：
    ```bash
-   pip install mkdocs mkdocs-material mkdocs-mermaid2-plugin
+   pip install -r requirements.txt
    ```
    *（如果出现报错，可以将错误信息发给 AI 解决）*
 
