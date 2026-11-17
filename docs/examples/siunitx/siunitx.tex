@@ -6,17 +6,18 @@
 \begin{document}
 
 This thing costs \SI{123456}{\$}.
-There are \num{987654} people in this room, \SI{38}{\percent} of which are male.
+There are \num{987654} people in this room, \SI{38}{\percent} of whom are male.
 
-\vspace{1cm}
+\bigskip
 
-\sisetup{
+{%
+  \sisetup{
     round-mode = places,
     round-precision = 3
-}%
-You can also round numbers, for example \num{1.23456}.
+  }%
+  You can also round numbers, for example \num{1.23456}.%}
 
-\vspace{1cm}
+\bigskip
 
 \texttt{siunitx} can also be used to better align numbers in tables using the \texttt{S}
 column type.
