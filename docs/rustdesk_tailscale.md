@@ -16,14 +16,14 @@
 可以将key设置成永久，防止过段时间需要重新登录）
  ![](./img/rustdesk/disable_key_expiry.png)
 
-> 启动软件后会点击`sign in to your network`
+启动软件后会点击`sign in to your network`
 ![](./img/rustdesk/sign_in_network.png)
 
-> 以 github 授权使用为例
+ 以 GitHub 授权使用为例
  ![](./img/rustdesk/sign_in_github.png)
  ![](./img/rustdesk/authorize_tailscale.png)
 
-> 提示登录成功后，点击`visit the console`访问控制台，就可以看到已加入虚拟局域网的设备列表
+提示登录成功后，点击`visit the console`访问控制台，就可以看到已加入虚拟局域网的设备列表
 ![](./img/rustdesk/login_successful.png)
 
 
@@ -45,14 +45,14 @@
 
 ## 附：Windows远程登录
 
-注意：（Windows 家庭版不支持作为被控端开启系统自带远程桌面（RDP），家庭版请使用 RustDesk。）
+先确认被控电脑的 Windows 版本：打开 `设置 → 系统 → 系统信息`，查看系统版本。Windows 专业版、企业版、教育版原生支持作为内置远程桌面（RDP）的被控端；家庭版可以主动连接其他电脑，但无法作为内置远程桌面的被控端。如果被控电脑是家庭版，可以使用前文介绍的 RustDesk 方案。
 
-在被控机上启用 Windows 远程桌面连接
+在支持的被控机上，打开“设置 → 系统 → 远程桌面”并启用连接。确认两台设备都已接入 Tailscale，且被控机保持开机、联网，没有进入睡眠状态。
 
  ![](./img/rustdesk/enable_remote.png)
 
 
-如果远程的机器为 Windows，只需要打开本地电脑的`远程桌面连接`，使用 tailscale 的 IP 地址（将图中的型号`*`换成自己的IP地址），输入Windows系统的用户名/密码即可登录。
+在本地电脑打开`远程桌面连接`，输入被控机的 Tailscale IP 地址，再使用被控机上有远程登录权限的 Windows 账户和密码登录。这里使用账户密码，不是平时解锁电脑时输入的 Windows Hello PIN。图中的 `*` 需要替换为实际 IP 地址。
  ![](./img/rustdesk/win_remote.png)
 
 
@@ -67,7 +67,7 @@
 ![](./img/rustdesk/invite_external_user.png)
 
 
-服务器所在的是**个人 tailnet**，不能直接"加成员"，正规做法是**节点共享**。
+如果只想共享这一台设备、不想让对方加入你的整个 tailnet，用 Tailscale 的「节点共享」功能。
 
 **使用tailscale共享具体步骤**
 
@@ -81,13 +81,65 @@
 
 **接收方操作**
 
-1. 使用github账号登录并打开[链接](https://login.tailscale.com/admin/invitations)（或注册邮箱里的邀请邮件），**接受**这台共享设备
+1. 使用GitHub账号登录并打开[链接](https://login.tailscale.com/admin/invitations)（或注册邮箱里的邀请邮件），**接受**这台共享设备
 2. 接受后在 admin/machines 里即可看到该设备，用  服务器ip地址  访问
    
 ![](./img/rustdesk/Share%20successful.png)
+
+## 附：通过 SSH 登录服务器
+
+前面的 RustDesk 和 Windows 远程桌面适合需要图形界面的场景。如果被控端是 Linux（例如 Ubuntu），并且只需要命令行，直接用 SSH 登录会更轻量。这一节的网络通道仍然由 Tailscale 提供，但认证交给系统自带的 SSH 服务，可以绕开 Tailscale 自带 SSH 的账号限制。
+
+### 常见报错：tailnet policy does not permit you to SSH to this node
+
+服务器开启 Tailscale 自带的 SSH 功能后，客户端执行 `ssh` 时可能报错：
+
+```text
+tailnet policy does not permit you to SSH to this node
+```
+
+原因是 Tailscale SSH 有一条强制规则：用户只能 SSH 到属于自己账号的设备。当服务器是别人共享给你的设备时，它的所有者不是你的账号，所以无论怎样修改 [ACL 策略](https://login.tailscale.com/admin/acls) 都不会被授权。这种情况下要改的不是 ACL，而是认证方式。
+
+### 解决方法（在服务器上执行）
+
+1. 关闭 Tailscale 自带的 SSH 认证拦截：
+
+    ```bash
+    sudo tailscale set --ssh=false
+    ```
+
+2. 确认系统原生的 SSH 服务已安装并启用：
+
+    ```bash
+    sudo systemctl enable ssh
+    sudo systemctl restart ssh
+    ```
+
+!!! 提示
+    如果执行时报找不到 `ssh` 服务，说明服务器还没有安装 OpenSSH 服务端，先执行 `sudo apt install openssh-server`。
+
+### 连接方式
+
+在同样加入了 Tailscale 的客户端上执行：
+
+```bash
+ssh <服务器用户名>@100.x.x.x
+```
+
+其中 `100.x.x.x` 是服务器的 Tailscale IP，可以在 [Tailscale 后台](https://console.tailscale.com/admin/machines) 的设备列表里查看。输入服务器上该账号的系统密码即可登录。
+
+### 原理
+
+* **Tailscale 只负责网络层**：让你的电脑和服务器处在同一个虚拟局域网中，通过 Tailscale IP 互相访问。
+* **SSH 认证走系统原生体系**：直接使用服务器本地的账号和密码验证，不再经过 Tailscale SSH 的 ACL 策略。
+
+!!! 注意
+    关闭 Tailscale SSH 只影响“通过 Tailscale 使用 SSH”这一种方式，RustDesk、远程桌面等其他功能不受影响。如果服务器开启了防火墙，还需要确认放行 TCP 22 端口。
+
 ## 参考
 * [tailscale 源代码仓库](https://github.com/tailscale/tailscale) - [tailscale 开源介绍](https://tailscale.com/opensource)
 * [rustdesk 源代码仓库](https://github.com/rustdesk/rustdesk)
+* [微软：启用远程桌面的条件与设置](https://learn.microsoft.com/zh-cn/windows-server/remote/remote-desktop-services/remotepc/remote-desktop-allow-access)
 * [使用 Tailscale 实现内网穿透+RDP远程控制](https://www.cnblogs.com/lefour/p/18866579)
 
 
