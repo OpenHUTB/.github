@@ -1,6 +1,6 @@
-# Filee 文件转换工具
+# Filee 文件格式转换工具
 
-> 假如你已经受够了PDF转word需要vip的日子了，接下来的内容或许会给你一些帮助
+> 假如你已经受够了PDF转word需要vip的日子了，那么接下来的内容或许会给你一些帮助
 
 ![.github/docs/img](img/filee_1.png)
 
