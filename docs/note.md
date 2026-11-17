@@ -16,7 +16,7 @@
 
 ## 代码审核
 
-在 **Files changed** 页面按行评论时，点击右上角的 **Submit review**（旧版叫 **Review changes**），选择 **Comment** 后，再在弹窗中提交。否则评论不会公开显示。
+在 Files changed 页面按行评论时，如果只想单条发布，可直接点击下方弹窗中的“Add single comment”；如果想把多条评论汇总提交，需先选择“Start a review”，全部写完后点击右上角的“Finish your review”（旧版叫 Review changes），选择 Comment 后，再在弹窗中点击“Submit review”提交。否则，作为草稿状态的审查评论不会公开显示。
 
 ## 收到审核意见后
 
