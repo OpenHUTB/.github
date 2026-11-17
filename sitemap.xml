@@ -41,6 +41,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://openhutb.github.io/.github/filee_official_guide/</loc>
+         <lastmod>2026-11-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://openhutb.github.io/.github/markdown2anything/</loc>
          <lastmod>2026-11-17</lastmod>
          <changefreq>daily</changefreq>
