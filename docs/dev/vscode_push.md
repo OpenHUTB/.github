@@ -13,7 +13,7 @@
 
 ### 2. 安装要点
 
-1. 双击打开安装包，一路下一步，**到调整 PATH 这一步，选择 Git from the command line and also from 3rd-party software**（最重要！把 Git 加入系统环境变量）
+1.> 双击打开安装包，按向导逐步点击下一步。进入调整 `\`PATH\`` 的页面时，请选择 `\`Git from the command line and also from 3rd-party software\``（关键选项：将 Git 添加至系统环境变量）。
 2. 其余选项保持默认，直接下一步完成安装。
 
 ### 3. 配置 Git 用户名与邮箱（必须设置，否则提交报错）
