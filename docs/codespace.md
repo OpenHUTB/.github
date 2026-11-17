@@ -14,8 +14,8 @@
 
 ## 2. 启用自动化流水线
 
-点击个人项目的“Actions -> I understand my workflows, go ahead and enable them”启用自动化流水线。
-首次进入你 fork 仓库的 Actions 页面时，会看到一个提示框，点击绿色的启用按钮即可
+进入仓库的 `Actions` 标签页，在首次访问 Fork 仓库的 Actions 页面时，会弹出提示框，点击绿色按钮 **I understand my workflows, go ahead and enable them**，即可启用工作流。
+
 ![](./img/codespace/actions.png)
 
 
@@ -40,7 +40,7 @@
 
 
 
-点击左边“资源管理器”中的文件，并在中间进行编辑。点击编辑区右上角的“Open Preview to the side”来打开修改的预览
+> 在左侧「资源管理器」点击目标文件，在中间编辑区域修改内容。点击编辑区右上角的 `\`Open Preview to the side\``，打开侧边预览查看修改效果。
 
 ![](./img/codespace/edit.png)
 
