@@ -4,7 +4,8 @@
 
 ## 1. 虚拟机设置
 
-如果 Ubuntu 虚拟机处于运行状态，需关机。然后打开“Edit virtual machine settings”，选择“Hard Disk (SCSI)”一栏，然后选择“Expand”选项。接着设置最大磁盘大小（Maximum disk size），这里设置的是扩展到 150GB，如下图所示：
+如果 Ubuntu 虚拟机正在运行，请先关闭虚拟机。打开 `\`Edit virtual machine settings\``，选中 `\`Hard Disk (SCSI)\`` 条目，再点击 `\`Expand\`` 选项。接着设置最大磁盘大小（Maximum disk size），这里设置的是扩展到 150GB，如下图所示： 
+> 提示：扩容磁盘操作前，建议备份虚拟机或创建快照，防止数据丢失。
 
 ![](../img/dev/expand_disk.png)
 
