@@ -10,11 +10,14 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 MARKDOWN_LINK = re.compile(r"!?\[[^\]]*\]\(\s*(<[^>]+>|[^\s)]+)")
 FENCE = re.compile(r"^\s*(`{3,}|~{3,})")
 
-# MkDocs copies the root contribution guide into docs before building.
+# MkDocs copies root community files into docs before building.
 GENERATED_DOC_FILES = {
     (REPO_ROOT / "docs" / "CONTRIBUTING.md").resolve(): (
         REPO_ROOT / "CONTRIBUTING.md"
-    ).resolve()
+    ).resolve(),
+    (REPO_ROOT / "docs" / "community" / "code-of-conduct.md").resolve(): (
+        REPO_ROOT / "CODE_OF_CONDUCT.md"
+    ).resolve(),
 }
 
 

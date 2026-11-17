@@ -1,20 +1,22 @@
+import logging
 import math
 import matplotlib.pyplot as plt
 import os
+import shutil
 import subprocess
 import tempfile
 
 
 def get_fig_size(fig_width_cm, fig_height_cm=None):
-    """Convert dimensions in centimeters to inches.
+    """Convert dimensions in centimeters to a ``(width, height)`` tuple in inches.
+
     If no height is given, it is computed using the golden ratio.
     """
-    if not fig_height_cm:
+    if fig_height_cm is None:
         golden_ratio = (1 + math.sqrt(5))/2
         fig_height_cm = fig_width_cm / golden_ratio
 
-    size_cm = (fig_width_cm, fig_height_cm)
-    return map(lambda x: x/2.54, size_cm)
+    return (fig_width_cm / 2.54, fig_height_cm / 2.54)
 
 
 """
@@ -53,17 +55,14 @@ def plot_lw():
     return 1.5
 
 
-def figure_setup():
-    """统一字体和线条尺寸，并使用 LaTeX 渲染文字。
+def figure_setup(use_latex=True):
+    """统一字体和线条尺寸，并配置是否使用 LaTeX 渲染文字。
 
     普通文字使用 font.size，坐标轴、图例和刻度可分别设置字号。
     """
-    params = {'text.usetex': True,
+    params = {'text.usetex': use_latex,
               'figure.dpi': 200,
               'font.size': font_size(),
-              'font.serif': [],
-              'font.sans-serif': [],
-              'font.monospace': [],
               'axes.labelsize': label_size(),
               'axes.titlesize': font_size(),
               'axes.linewidth': axis_lw(),
@@ -98,12 +97,32 @@ def save_fig(fig, file_name, fmt=None, dpi=300, tight=True):
     else:
         fig.savefig(tmp_name, dpi=dpi)
 
+    # A failed trimmer must not leave a stale file looking like a new result.
+    if os.path.isfile(file_name):
+        os.remove(file_name)
+
     # trim it
     if fmt == 'eps':
         subprocess.call('epstool --bbox --copy %s %s' %
                         (tmp_name, file_name), shell=True)
     elif fmt == 'png':
-        subprocess.call('convert %s -trim %s' %
-                        (tmp_name, file_name), shell=True)
+        try:
+            result = subprocess.call(['convert', tmp_name, '-trim', file_name])
+        except OSError as exc:
+            logging.getLogger(__name__).warning(
+                "Could not run PNG trimmer: %s", exc
+            )
+            result = 1
+        # Do not let a partial conversion look like a successful result.
+        if result != 0 and os.path.isfile(file_name):
+            os.remove(file_name)
     elif fmt == 'pdf':
         subprocess.call('pdfcrop %s %s' % (tmp_name, file_name), shell=True)
+
+    if not os.path.isfile(file_name):
+        shutil.copy2(tmp_name, file_name)
+        logging.getLogger(__name__).warning(
+            "Could not trim %s figure; saved an untrimmed copy to %s",
+            fmt,
+            file_name,
+        )

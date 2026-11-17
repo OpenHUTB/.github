@@ -22,8 +22,14 @@
 * [One-click-cleaning-of-C-drive](https://github.com/JIEKE66633/One-click-cleaning-of-C-drive) - 清理C盘残留和垃圾
 
 * [WindowsCleaner](https://github.com/darkmatter2048/WindowsCleaner) - C盘清理
+
 * [HandBrake](https://github.com/HandBrake/HandBrake) - 视频转码器，适用于 Linux、Mac 和 Windows
+
 * [7-Zip](https://github.com/ip7z/7zip) - 免费开源的文件解压工具
+* [LocalSend](https://localsend.org) - 跨平台开源局域网文件传输工具，无需账号或互联网连接，可作为 AirDrop 的替代方案（[源码](https://github.com/localsend/localsend)）。
+
+* [YunX 安卓版](https://github.com/CYQawa/YunX) —— 开源的 Android 网盘 / 视频解析下载应用
+* [YunX-Desktop 桌面版](https://github.com/tidain/YunX-Desktop) —— YunX 的官方 Windows 桌面端
 
 ## 办公
 
@@ -33,14 +39,17 @@
 
 * [LibreOffice](https://download.documentfoundation.org/libreoffice/portable/) - Office 办公软件
 
+* [Typst](https://typst.app) - 开源文档排版系统，使用简洁的标记语言编写技术文档、课程报告和学术论文，并支持实时预览（[源码](https://github.com/typst/typst)）。
+
 * [virtualbox](https://github.com/VirtualBox/virtualbox) - 虚拟机
 
 * [md2wechat-skill](https://github.com/geekjourneyx/md2wechat-skill) - 一键排版发布到微信公众号
 
 * [pywechat](https://github.com/Hello-Mr-Crab/pywechat) - windows桌面微信自动化
+
 * [drawio](https://github.com/jgraph/drawio) - 免费开源的流程图、架构图绘制工具
-
-
+* [Excalidraw](https://excalidraw.com) - 支持多人实时协作的手绘风格白板，适合绘制流程图、架构图和头脑风暴草图（[源码](https://github.com/excalidraw/excalidraw)）。
+* [Joplin](https://github.com/laurent22/joplin) - 开源笔记应用，支持 Markdown、多端同步和端到端加密，适合整理学习笔记与项目文档
 
 ## 开发
 
@@ -52,8 +61,14 @@
 
 * [DBeaver](https://github.com/dbeaver/dbeaver) - 开源通用数据库管理工具，支持 MySQL、PostgreSQL、SQLite 等。
 
+* [PlotJuggler](https://www.plotjuggler.io) - 开源时序数据可视化工具，可实时查看 ROS 1/ROS 2 话题，并通过曲线、FFT 和多运行对比分析机器人传感器与控制数据（[源码](https://github.com/PlotJuggler/PlotJuggler)）。
+
+* [Wireshark](https://www.wireshark.org) - 开源网络协议分析工具，可用于检查 ROS 2、AirSim 和分布式仿真组件之间的网络通信（[源码](https://github.com/wireshark/wireshark)）。
+
 * [mkdocs](https://github.com/mkdocs/mkdocs) - 用 Markdown 生成文档网站，社区文档站即由它构建
 
+* [Tabby](https://github.com/Eugeny/tabby) - 跨平台终端模拟器
+* [lazygit](https://github.com/jesseduffield/lazygit) - 终端里的 Git 图形界面，用键盘就能暂存、提交、切换分支和解决冲突，不必死记命令
 
 ## 三维建模
 
@@ -61,7 +76,9 @@
 
 * [FreeCAD](https://github.com/FreeCAD/FreeCAD) - 3D参数化建模器
 
+* [Open3D](https://www.open3d.org) - 开源三维数据处理库，支持点云、网格与 RGB-D 数据可视化，以及配准、重建和三维机器学习（[源码](https://github.com/isl-org/Open3D)）。
 
+* [CloudCompare](https://www.cloudcompare.org) - 开源三维点云与网格处理软件，支持点云配准、分割、测量、距离计算和多源数据对比（[源码](https://github.com/CloudCompare/CloudCompare)）。
 
 ## 其他
 
@@ -72,6 +89,8 @@
 * [DocumentServer](https://github.com/ONLYOFFICE/DocumentServer) - 在线协作办公
 
 * [Mailspring](https://github.com/Foundry376/Mailspring) - 邮箱客户端
+
+* [moemail](https://github.com/beilunyang/moemail) - 临时邮箱生成
 
 * [scrcpy](https://github.com/Genymobile/scrcpy) - 显示并控制安卓设备
 
@@ -120,7 +139,11 @@
 
 * [arxiv-latex-cleaner](https://github.com/google-research/arxiv-latex-cleaner) - 轻松清理论文的 LaTeX 代码，以便提交至 arXiv
 
+* [OpenCV](https://opencv.org) - 开源计算机视觉库，提供图像处理、特征提取、目标检测、视频分析与相机标定等常用算法（[源码](https://github.com/opencv/opencv)）。
+
 * [PDFMathTranslate](https://github.com/PDFMathTranslate/PDFMathTranslate) - 基于 AI 完整保留排版的 PDF 文档全文双语翻译
+
+* [Zotero](https://github.com/zotero/zotero) - 免费开源的文献管理工具，收集、整理和引用论文
 
 ### GIS
 
@@ -129,8 +152,14 @@
 * [GRASS GIS](https://grass.osgeo.org/) - 栅格和矢量空间分析工具，适合地形、水文与遥感数据处理。
 
 * [GeoServer](https://geoserver.org/) - 发布和管理空间数据的开源服务器，支持 WMS、WFS 等服务。
+* [Cesium for Unreal](https://github.com/CesiumGS/cesium-unreal) - 把 3D Tiles 地理数据接入 Unreal Engine 的官方插件，可用真实地形与影像搭建校园、城市级数字孪生场景
 
 * [JupyterLab](https://github.com/jupyterlab/jupyterlab) - 交互式代码笔记，数据分析
+
+* [Pandoc](https://github.com/jgm/pandoc) - 万能的文档转换工具，Markdown 可以一键转成 Word、PDF、网页等格式
+
+* [Zotero](https://github.com/zotero/zotero) - 免费的文献管理软件，自动抓取论文信息，还能按格式生成参考文献
+
 
 ## 常见
 

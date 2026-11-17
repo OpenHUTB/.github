@@ -16,10 +16,12 @@ hooks.py 的回归测试。
     7. 其他页面的编辑链接保持不变。
     8. 递归统计指定文档目录中的 Markdown 文件，忽略其他文件和目录。
     9. 空文档目录的统计结果为 0。
+    10. 根目录行为准则构建时生成社区文档页。
+    11. 行为准则生成页的编辑链接指向根目录源文件。
 
 预期运行效果：
     逐项输出测试名称，通过时每项末尾显示 ok，最后显示：
-        Ran 11 tests in ...s
+        Ran 21 tests in ...s
 
         OK
     实际耗时因环境而异；若显示 FAILED 或 ERROR，应检查后面的错误信息。
@@ -29,6 +31,9 @@ hooks.py 的回归测试。
 
 import io
 import os
+import shutil
+import subprocess
+import tempfile
 from contextlib import redirect_stdout
 from datetime import datetime
 from pathlib import Path
@@ -38,6 +43,9 @@ import unittest
 from unittest.mock import patch
 
 import hooks
+
+# 临时 git 仓库建在 tests/_tmp（已被 .gitignore 忽略），避免依赖系统临时目录的权限。
+TESTS_DIR = Path(__file__).resolve().parent
 
 
 class ConfigTests(unittest.TestCase):
@@ -89,6 +97,24 @@ class PageContextTests(unittest.TestCase):
         self.assertIs(returned, context)
         self.assertEqual(page.edit_url, edit_url)
 
+    def test_code_of_conduct_edit_url_points_to_root_source(self):
+        context = {}
+        page = SimpleNamespace(
+            file=SimpleNamespace(src_uri="community/code-of-conduct.md"),
+            edit_url=(
+                "https://github.com/OpenHUTB/.github/edit/master/"
+                "docs/community/code-of-conduct.md"
+            ),
+        )
+
+        returned = hooks.on_page_context(context, page, {"docs_dir": "/repo/docs"})
+
+        self.assertIs(returned, context)
+        self.assertEqual(
+            page.edit_url,
+            "https://github.com/OpenHUTB/.github/edit/master/CODE_OF_CONDUCT.md",
+        )
+
 
 class PreBuildTests(unittest.TestCase):
     def setUp(self):
@@ -111,6 +137,14 @@ class PreBuildTests(unittest.TestCase):
         self.assertEqual(destination.read_bytes(), source.read_bytes())
         self.assertEqual(destination.stat().st_mtime, source.stat().st_mtime)
         self.assertIn("Successfully copied CONTRIBUTING.md", output.getvalue())
+
+    def test_copies_code_of_conduct_to_community_page(self):
+        source = self.root / "CODE_OF_CONDUCT.md"
+        source.write_text("# 行为准则\n", encoding="utf-8")
+        with redirect_stdout(io.StringIO()):
+            hooks.on_pre_build({"docs_dir": str(self.root / "docs")})
+        destination = self.root / "docs" / "community" / "code-of-conduct.md"
+        self.assertEqual(destination.read_bytes(), source.read_bytes())
 
     def test_repeated_build_refreshes_existing_copy(self):
         source = self.root / "CONTRIBUTING.md"
@@ -142,7 +176,6 @@ class PreBuildTests(unittest.TestCase):
         )
         self.assertFalse((self.root / "docs" / "CONTRIBUTING.md").exists())
 
-
 class PostBuildTests(unittest.TestCase):
     def test_counts_markdown_recursively_in_configured_docs_directory(self):
         with TemporaryDirectory() as temporary:
@@ -163,6 +196,88 @@ class PostBuildTests(unittest.TestCase):
         with TemporaryDirectory() as temporary, redirect_stdout(io.StringIO()) as output:
             hooks.on_post_build({"docs_dir": temporary})
         self.assertIn("Markdown文档总数：0", output.getvalue())
+
+
+class PageProvenanceTests(unittest.TestCase):
+    """on_page_markdown：在每页末尾附上「最近一次修改」的作者与提交。"""
+
+    def setUp(self):
+        base = TESTS_DIR / "_tmp"
+        base.mkdir(exist_ok=True)
+        self.root = Path(tempfile.mkdtemp(dir=str(base), prefix="provenance-"))
+        (self.root / "docs" / "adv").mkdir(parents=True)
+        (self.root / "docs" / "adv" / "find_author.md").write_text("# 页\n", encoding="utf-8")
+        (self.root / "CONTRIBUTING.md").write_text("# 贡献指南\n", encoding="utf-8")
+        self._git("init", "-q")
+        self._git("add", "docs/adv/find_author.md", "CONTRIBUTING.md")
+        self._git("commit", "-q", "-m", "docs: 第一版", name="张三")
+        hooks._last_commit_cache.clear()
+
+    def tearDown(self):
+        shutil.rmtree(self.root, ignore_errors=True)
+
+    def _git(self, *args, name="张三", email="tester@example.com"):
+        subprocess.run(
+            ["git", "-c", "user.name=" + name, "-c", "user.email=" + email, *args],
+            cwd=str(self.root), check=True, capture_output=True, text=True,
+        )
+
+    def _page(self, src_uri):
+        return SimpleNamespace(file=SimpleNamespace(src_uri=src_uri))
+
+    def test_last_commit_reads_hash_date_and_author(self):
+        info = hooks.last_commit("docs/adv/find_author.md", self.root)
+        self.assertEqual(len(info), 3)
+        commit_hash, date, author = info
+        self.assertEqual(len(commit_hash), 7)
+        self.assertRegex(date, r"^\d{4}-\d{2}-\d{2}$")
+        self.assertEqual(author, "张三")
+
+    def test_provenance_line_links_to_commit(self):
+        line = hooks.provenance_line(self._page("adv/find_author.md"), self.root,
+                                     "https://github.com/OpenHUTB/.github")
+        self.assertIn("本页最近一次修改", line)
+        self.assertIn("张三", line)
+        self.assertIn("https://github.com/OpenHUTB/.github/commit/", line)
+        self.assertTrue(line.startswith("> "), line)
+
+    def test_provenance_line_without_repo_url_has_no_link(self):
+        line = hooks.provenance_line(self._page("adv/find_author.md"), self.root)
+        self.assertIn("提交 `", line)
+        self.assertNotIn("](", line)
+
+    def test_generated_contributing_uses_root_file_history(self):
+        # docs/CONTRIBUTING.md 是构建时从根目录复制的，历史应取根目录那份。
+        (self.root / "CONTRIBUTING.md").write_text("# 贡献指南第二版\n", encoding="utf-8")
+        self._git("commit", "-q", "-am", "docs: 根目录更新", name="李四")
+        hooks._last_commit_cache.clear()
+        line = hooks.provenance_line(self._page("CONTRIBUTING.md"), self.root)
+        self.assertIn("李四", line)
+
+    def test_uncommitted_page_has_no_line(self):
+        (self.root / "docs" / "new.md").write_text("# 新页\n", encoding="utf-8")
+        hooks._last_commit_cache.clear()
+        self.assertEqual(hooks.provenance_line(self._page("new.md"), self.root), "")
+
+    def test_shallow_clone_is_skipped(self):
+        (self.root / ".git" / "shallow").write_text("0" * 40 + "\n", encoding="utf-8")
+        self.assertEqual(hooks.provenance_line(self._page("adv/find_author.md"), self.root), "")
+
+    def test_page_markdown_keeps_content_and_appends_line(self):
+        page = self._page("adv/find_author.md")
+        with patch.object(hooks, "REPO_ROOT", self.root):
+            result = hooks.on_page_markdown("# 标题\n\n正文。\n", page,
+                                            {"repo_url": "https://github.com/OpenHUTB/.github"})
+        self.assertTrue(result.startswith("# 标题\n\n正文。\n\n---\n\n> "), result)
+        self.assertIn("张三", result)
+
+    def test_page_markdown_survives_git_failure(self):
+        page = self._page("adv/find_author.md")
+        hooks._last_commit_cache.clear()
+        with patch.object(hooks.subprocess, "run", side_effect=OSError("git missing")):
+            result = hooks.on_page_markdown("# 标题\n", page,
+                                            {"repo_url": "https://github.com/OpenHUTB/.github"})
+        self.assertEqual(result, "# 标题\n")
 
 
 if __name__ == "__main__":
