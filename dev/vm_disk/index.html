@@ -171,7 +171,10 @@
 <div><h1 id="给-ubuntu-虚拟机硬盘扩容">给 Ubuntu 虚拟机硬盘扩容</h1>
 <p>为了解决在使用 Ubuntu 虚拟机时，预先设置的硬盘容量不够用的问题，本文将详细描述解决方案的操作步骤。<a href="https://openhutb.github.io/ros2/chapter/chap2/">虚拟机安装及Ubuntu系统加装</a></p>
 <h2 id="1-虚拟机设置">1. 虚拟机设置</h2>
-<p>如果 Ubuntu 虚拟机处于运行状态，需关机。然后打开“Edit virtual machine settings”，选择“Hard Disk (SCSI)”一栏，然后选择“Expand”选项。接着设置最大磁盘大小（Maximum disk size），这里设置的是扩展到 150GB，如下图所示：</p>
+<p>如果 Ubuntu 虚拟机正在运行，请先关闭虚拟机。打开 <code>\</code>Edit virtual machine settings`<code>，选中</code>`Hard Disk (SCSI)`<code>条目，再点击</code>`Expand`` 选项。接着设置最大磁盘大小（Maximum disk size），这里设置的是扩展到 150GB，如下图所示： </p>
+<blockquote>
+<p>提示：扩容磁盘操作前，建议备份虚拟机或创建快照，防止数据丢失。</p>
+</blockquote>
 <p><img alt="" src="../../img/dev/expand_disk.png"/></p>
 <p>到这一步，扩展虚拟机硬盘容量还没有完成，虚拟机中的系统不会自动扩展新分配的硬盘空闲区。</p>
 <h2 id="2-虚拟机扩容">2. 虚拟机扩容</h2>
@@ -218,7 +221,7 @@ df<span class="w"> </span>-h<span class="w"> </span>/
 </ul>
 <hr/>
 <blockquote>
-<p>本页最近一次修改：2026-11-17 · IPAR22 · 提交 <a href="https://github.com/OpenHUTB/.github/commit/0286bb9"><code>0286bb9</code></a></p>
+<p>本页最近一次修改：2026-11-17 · zzt998-zzt · 提交 <a href="https://github.com/OpenHUTB/.github/commit/5b98a2a"><code>5b98a2a</code></a></p>
 </blockquote></div>
 </div>
 </div><footer>
