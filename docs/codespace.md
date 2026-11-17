@@ -150,15 +150,13 @@ python -m mkdocs serve --dev-addr 0.0.0.0:8000
 操作说明见 [GitHub：停止和启动 Codespace](https://docs.github.com/zh/codespaces/developing-in-a-codespace/stopping-and-starting-a-codespace)。
 
 
-## 继续编辑时的检查
+## 重进 Codespace 后的检查步骤
+重新进入 Codespace 后，在终端依次执行检查：
+- 执行 `git branch --show-current`，确认当前分支和 PR 来源分支一致。
+- 执行 `git status --short`，核对变更文件列表，确认均为本次待处理内容。
+- 执行 `git diff` 查看未暂存修改；再执行 `git diff --cached` 查看已暂存修改。两处核对无误后，再进行编辑、提交与推送。
 
-重新进入 Codespace 后，在终端依次检查：
-
-- 运行 `git branch --show-current`，确认分支与原 Pull Request 的来源分支一致。
-- 运行 `git status --short`，查看已修改、已暂存和未跟踪的文件，确认列表里都是本次需要处理的内容。
-- 运行 `git diff` 查看尚未暂存的修改，再运行 `git diff --cached` 查看已暂存的修改。两处都核对后，再继续编辑、提交和推送。
-
-如果分支或文件列表与预期不符，先弄清已有修改的用途，保存好需要保留的内容，再继续操作。
+若分支、变更文件和预期不一致，先梳理现有修改，妥善留存需要保留的内容，再继续操作。
 
 ## 离开前的检查
 
