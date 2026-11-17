@@ -11,7 +11,7 @@
 [https://visualstudio.microsoft.com/zh-hans/downloads/](https://visualstudio.microsoft.com/zh-hans/downloads/)
 
 ## 3. 克隆仓库
-在克隆代码前，需要先将社区的官方仓库“复制”一份到你自己的 GitHub 账号下，这个过程称为 Fork。
+在克隆代码前，需要先将社区的官方仓库“复制”一份到你自己的 GitHub 账号下，这个过程称为 Fork的过程。
 
 1. 登录你的 GitHub 账号。
 2. 打开社区原仓库地址：[https://github.com/OpenHUTB/.github](https://github.com/OpenHUTB/.github)
