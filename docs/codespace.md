@@ -87,6 +87,8 @@ python -m mkdocs serve --dev-addr 0.0.0.0:8000
 
 ## 5. 检查修改内容的正确性
 
+注意：第 4 步推送的是特性分支，不会触发文档部署。`deploy_page.yml` 只在 `master` 更新或手动运行时执行，`pr_build.yml` 只在创建 PR 后触发。因此刚推送特性分支时，Actions 里可能没有本次提交的记录，个人 Pages 也可能还是上一次 `master` 的页面。请先按第 6 步创建 PR，再在 PR 页面的 Checks（或仓库 Actions）中查看该 PR 的构建结果；需要单独预览时，再在 Actions 中手动运行 Deploy，并核对运行记录的分支和提交号。
+
 回到仓库页面，发现有内容领先于开源孪创社区分支（commits ahead of OpenHUTB/.github:master）
 
 ![](./img/codespace/commits_ahead.png)
