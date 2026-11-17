@@ -11,12 +11,12 @@
 [https://visualstudio.microsoft.com/zh-hans/downloads/](https://visualstudio.microsoft.com/zh-hans/downloads/)
 
 ## 3. 克隆仓库
-在克隆代码前，需要先将社区的官方仓库“复制”一份到你自己的 GitHub 账号下，这个过程称为 Fork。
+在克隆代码前，需要先将社区的官方仓库“复制”一份到你自己的 GitHub 账号下，这个过程称为 Fork的过程。
 
 1. 登录你的 GitHub 账号。
 2. 打开社区原仓库地址：[https://github.com/OpenHUTB/.github](https://github.com/OpenHUTB/.github)
 3. 点击页面右上角的 **Fork** 按钮。
-4. 在跳转的页面中点击 **Create fork**。等待几秒钟，你的账号下就会生成一个同名的仓库。
+4. 在跳转的页面中点击 **Create fork**。等待几秒钟，你的账号下就会生成一个你的账户名的仓库。
 > **注意**：该命令中的 `用户名` 请替换为自己的GitHub用户名。
 
 克隆你 Fork 后的个人仓库：
@@ -25,7 +25,7 @@
 git clone https://github.com/你的GitHub用户名/.github.git
 ```
 
-克隆完成后进入仓库目录：
+克隆完成后进入仓库主目录：
 
 ```bash
 cd .github
@@ -56,7 +56,7 @@ cd .github
 
 ## 6. 如何修改
 
-1. 在文档网站找到你要修改的地方。(你现在在看的就是文档网站)
+1. 在文档网站找到你要修改的地方。
 2. 在克隆仓库的根目录中打开 `mkdocs.yml`，根据文档网站上的页面名称查找对应的 `.md` 文件。
 3. 打开对应的 `.md` 文件，在 Visual Studio Code 中修改。
 4. 保存修改（`Ctrl+S`）。
@@ -94,7 +94,6 @@ cd .github
    ```bash
    pip install mkdocs mkdocs-material mkdocs-mermaid2-plugin
    ```
-   *（如果出现报错，可以将错误信息发给 AI 解决）*
 
 2. 在终端 `cd` 到你的 `.github` 文件夹路径下（例如：`cd 你的路径/.github`），然后运行预览指令：
    ```bash
@@ -105,8 +104,8 @@ cd .github
 
 ### 填写网页链接
 
-整理报告中的页面地址时，先在 PR 的 Files changed（文件变更）中确认源文件路径，再对照仓库根目录的 mkdocs.yml 导航查找对应页面。本地预览用于检查页面效果；填写报告时，打开已部署页面并确认内容，再复制他人能访问的网页地址，不要填写本地预览地址，也不要只按文件名拼网址。尚未部署的修改，或 README、脚本和配置文件等没有对应文档页的内容，填写具体的 GitHub 文件链接。
+整理报告中的页面地址时，先在 PR 的 Files changed（文件变更）中确认源文件路径，再对照仓库根目录的 mkdocs.yml 导航查找对应页面。本地预览用于检查页面效果；填写报告时，打开已部署页面并确认内容，再复制他人能访问的网页地址，不要填写本地预览地址，也不要只按文件名拼写网址。尚未部署的修改，或 README、脚本和配置文件等没有对应文档页的内容，填写具体的 GitHub 文件链接。
 
 ## 8. 提交
 
-[提交流程](CONTRIBUTING.md)
+按仓库根目录的[贡献指南](https://github.com/OpenHUTB/.github/blob/master/CONTRIBUTING.md)提交修改。指南分别说明了命令行和 VS Code 的提交步骤。
