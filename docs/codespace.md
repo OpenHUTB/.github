@@ -40,7 +40,7 @@
 
 
 
-点击左边“资源管理器”中的文件，并在中间进行编辑。点击编辑区右上角的“Open Preview to the side”来打开修改的预览
+> 在左侧「资源管理器」点击目标文件，在中间编辑区域修改内容。点击编辑区右上角的 `\`Open Preview to the side\``，打开侧边预览查看修改效果。
 
 ![](./img/codespace/edit.png)
 
