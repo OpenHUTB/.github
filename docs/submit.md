@@ -16,7 +16,7 @@
 1. 登录你的 GitHub 账号。
 2. 打开社区原仓库地址：[https://github.com/OpenHUTB/.github](https://github.com/OpenHUTB/.github)
 3. 点击页面右上角的 **Fork** 按钮。
-4. 在跳转的页面中点击 **Create fork**。等待几秒钟，你的账号下就会生成一个同名的仓库。
+4. 在跳转的页面中点击 **Create fork**。等待几秒钟，你的账号下就会生成一个你的账户名的仓库。
 > **注意**：该命令中的 `{用户名}` 请替换为自己的GitHub用户名。
 
 克隆你 Fork 后的个人仓库：
