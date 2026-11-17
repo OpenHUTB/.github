@@ -365,10 +365,11 @@ git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </sp
 </code></pre></div>
 <h2 id="七推送到远程-github-仓库">七、推送到远程 GitHub 仓库</h2>
 <h3 id="方式-a-vscode-图形界面">方式 A VSCode 图形界面</h3>
-<p>提交完成后，源代码管理顶部会出现 <strong>推送</strong> 按钮，点击推送。</p>
+<p>首次推送新分支时，在「源代码管理」中点击 <strong>Publish Branch（发布分支）</strong>。如果出现远程仓库选择框，选择 <code>origin</code>。分支发布后，可以使用 <strong>Push（推送）</strong> 更新远程分支。</p>
 <h3 id="方式-b-终端命令">方式 B 终端命令</h3>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>你的分支名
+<p></p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>你的分支名
 </code></pre></div>
+用 <code>git branch --show-current</code> 查看实际分支名并替换示例中的名称。<code>-u</code> 会把本地分支关联到 <code>origin</code> 的同名分支，之后可以直接运行 <code>git push</code>。用 <code>git branch -vv</code> 可以核对分支的跟踪关系。
 <h2 id="八提交-prpull-request">八、提交 PR（Pull Request）</h2>
 <p>推送成功后，打开仓库 GitHub 网页</p>
 <ol>
@@ -429,7 +430,7 @@ git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </
 远程地址的查看和修改可参考 <a href="https://git-scm.com/docs/git-remote">Git remote 文档</a>。</p>
 <hr/>
 <blockquote>
-<p>本页最近一次修改：2026-11-09 · 3wudibaolongzhanshi · 提交 <a href="https://github.com/OpenHUTB/.github/commit/22320bd"><code>22320bd</code></a></p>
+<p>本页最近一次修改：2026-11-17 · zh-yutong · 提交 <a href="https://github.com/OpenHUTB/.github/commit/4af9f67"><code>4af9f67</code></a></p>
 </blockquote></div>
 </div>
 </div><footer>
