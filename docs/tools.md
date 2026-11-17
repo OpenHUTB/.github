@@ -67,6 +67,7 @@
 * [mkdocs](https://github.com/mkdocs/mkdocs) - 用 Markdown 生成文档网站，社区文档站即由它构建
 
 * [Tabby](https://github.com/Eugeny/tabby) - 跨平台终端模拟器
+* [lazygit](https://github.com/jesseduffield/lazygit) - 终端里的 Git 图形界面，用键盘就能暂存、提交、切换分支和解决冲突，不必死记命令
 
 ## 三维建模
 
