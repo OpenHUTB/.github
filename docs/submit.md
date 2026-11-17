@@ -11,12 +11,12 @@
 [https://visualstudio.microsoft.com/zh-hans/downloads/](https://visualstudio.microsoft.com/zh-hans/downloads/)
 
 ## 3. 克隆仓库
-在克隆代码前，需要先将社区的官方仓库“复制”一份到你自己的 GitHub 账号下，这个过程称为 Fork。
+在克隆代码前，需要先将社区的官方仓库“复制”一份到你自己的 GitHub 账号下，这个过程称为 Fork的过程。
 
 1. 登录你的 GitHub 账号。
 2. 打开社区原仓库地址：[https://github.com/OpenHUTB/.github](https://github.com/OpenHUTB/.github)
 3. 点击页面右上角的 **Fork** 按钮。
-4. 在跳转的页面中点击 **Create fork**。等待几秒钟，你的账号下就会生成一个同名的仓库。
+4. 在跳转的页面中点击 **Create fork**。等待几秒钟，你的账号下就会生成一个你的账户名的仓库。
 > **注意**：该命令中的 `用户名` 请替换为自己的GitHub用户名。
 
 克隆你 Fork 后的个人仓库：
@@ -56,7 +56,7 @@ cd .github
 
 ## 6. 如何修改
 
-1. 在文档网站找到你要修改的地方。(你现在在看的就是文档网站)
+1. 在文档网站找到你要修改的地方。
 2. 在克隆仓库的根目录中打开 `mkdocs.yml`，根据文档网站上的页面名称查找对应的 `.md` 文件。
 3. 打开对应的 `.md` 文件，在 Visual Studio Code 中修改。
 4. 保存修改（`Ctrl+S`）。

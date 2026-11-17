@@ -101,6 +101,7 @@ nav:
     - Markdown 一键发布到社交平台: 'markdown2anything.md'
     - Java 版 Minecraft 回退旧版本指南: 'Minecraft Java Edition Downgrade Guide.md'
     - Python 论文绘图脚本: 'src/python/README.md'
+    - Filee 文件格式转换工具: 'filee_official_guide.md'
 - 学习与论文:
     - "Latex文献引用编译办法": 'bib_reference_guide.md'
     - 本科毕业设计: 'undergraduate.md'
