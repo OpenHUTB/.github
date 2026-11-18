@@ -162,7 +162,7 @@ def history_url(page_path, repo_root, branch=None):
     if not slug:
         return {}
     relative = Path(page_path).resolve().relative_to(Path(repo_root).resolve()).as_posix()
-    branch = branch or current_branch(repo_root)
+    branch = quote(branch or current_branch(repo_root))
     encoded = quote(relative)
     base = "https://github.com/%s" % slug
     return {

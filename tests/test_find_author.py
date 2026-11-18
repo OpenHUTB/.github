@@ -15,6 +15,7 @@ import subprocess
 import unittest
 import uuid
 from pathlib import Path
+from urllib.parse import urlsplit
 
 SCRIPTS_DIR = Path(__file__).resolve().parent
 REPO_ROOT = SCRIPTS_DIR.parent
@@ -110,6 +111,37 @@ class UrlTests(TempDirTestCase):
                          "https://github.com/OpenHUTB/.github/commits/master/docs/a%20b.md")
         self.assertEqual(urls["blame"],
                          "https://github.com/OpenHUTB/.github/blame/master/docs/a%20b.md")
+
+    def test_history_url_encodes_branch_characters(self):
+        branches = (
+            ("fix#123", "fix%23123"),
+            ("fix%23issue", "fix%2523issue"),
+            ("docs/引用#1", "docs/%E5%BC%95%E7%94%A8%231"),
+            ("docs/topic", "docs/topic"),
+        )
+        for branch, encoded_branch in branches:
+            with self.subTest(branch=branch):
+                run_git(self.root, "check-ref-format", "--branch", branch)
+                urls = find_author.history_url(
+                    self.root / "docs" / "a b.md", self.root, branch)
+                for name, route in (("history", "commits"), ("blame", "blame")):
+                    self.assertEqual(
+                        urls[name],
+                        "https://github.com/OpenHUTB/.github/%s/%s/docs/a%%20b.md"
+                        % (route, encoded_branch),
+                    )
+                    self.assertEqual(urlsplit(urls[name]).fragment, "")
+                    self.assertEqual(urlsplit(urls[name]).query, "")
+
+    def test_history_url_encodes_detected_branch(self):
+        run_git(self.root, "add", "docs/a b.md")
+        run_git(self.root, "commit", "-q", "-m", "docs: initial page")
+        run_git(self.root, "checkout", "-q", "-b", "fix#123")
+        urls = find_author.history_url(self.root / "docs" / "a b.md", self.root)
+        self.assertEqual(urls["history"],
+                         "https://github.com/OpenHUTB/.github/commits/fix%23123/docs/a%20b.md")
+        self.assertEqual(urls["blame"],
+                         "https://github.com/OpenHUTB/.github/blame/fix%23123/docs/a%20b.md")
 
 
 class CliIntegrationTests(TempDirTestCase):
