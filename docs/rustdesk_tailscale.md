@@ -52,7 +52,7 @@
  ![](./img/rustdesk/enable_remote.png)
 
 
-在本地电脑打开`远程桌面连接`，输入被控机的 Tailscale IP 地址，再使用被控机上有远程登录权限的 Windows 账户和密码登录。这里使用账户密码，不是平时解锁电脑时输入的 Windows Hello PIN。图中的 `*` 需要替换为实际 IP 地址。
+在本地电脑打开`远程桌面连接`，输入被控机的 Tailscale IP 地址，再使用被控机上有远程登录权限的 Windows 账户和密码登录。这里使用账户密码，不是平时解锁电脑时输入的 Windows Hello PIN。图中的 `*` 需要替换为实际 IP 地址。确保被控机已开启 Tailscale 的 “Allow incoming connections”（允许传入连接），或在 Windows 防火墙中放行了远程桌面流量，否则可能连接超时。
  ![](./img/rustdesk/win_remote.png)
 
 

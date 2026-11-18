@@ -32,11 +32,13 @@
           - '1043:1443'    #https
           - '1022:22'      #ssh
         volumes: # 挂载卷
-        # 前面是Windows的地址所以斜杠向右；后面是Linux的地址所以向左
-          - C:\docker\gitlab\config:/etc/gitlab
-          - C:\docker\gitlab\data:/var/opt/gitlab
-          - C:\docker\gitlab\logs:/var/log/gitlab
+        # 冒号前是相对于 docker-compose.yml 所在目录的宿主机路径，冒号后是容器内路径
+          - ./gitlab/config:/etc/gitlab
+          - ./gitlab/data:/var/opt/gitlab
+          - ./gitlab/logs:/var/log/gitlab
     ```
+
+`./gitlab/config` 等相对路径以 `docker-compose.yml` 所在目录为基准。例如，该文件在 `D:\docker` 时，配置目录解析为 `D:\docker\gitlab\config`，数据和日志目录也位于同一 `gitlab` 目录。启动前用 `docker compose config` 检查 `volumes` 的 `source` 是否指向实际创建的目录，规则见 [Docker Compose 挂载说明](https://docs.docker.com/reference/compose-file/services/#volumes)。
 
 先核对示例中的地址与端口：
 

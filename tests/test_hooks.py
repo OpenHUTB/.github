@@ -16,7 +16,9 @@ hooks.py 的回归测试。
     7. 其他页面的编辑链接保持不变。
     8. 递归统计指定文档目录中的 Markdown 文件，忽略其他文件和目录。
     9. 空文档目录的统计结果为 0。
-    10. 页面提交信息在同轮构建中复用缓存，在下一轮构建时刷新。
+    10. 根目录行为准则构建时生成社区文档页。
+    11. 行为准则生成页的编辑链接指向根目录源文件。
+    12. 页面提交信息在同轮构建中复用缓存，在下一轮构建时刷新。
 
 预期运行效果：
     逐项输出测试名称，通过时每项末尾显示 ok，最后显示：
@@ -96,6 +98,24 @@ class PageContextTests(unittest.TestCase):
         self.assertIs(returned, context)
         self.assertEqual(page.edit_url, edit_url)
 
+    def test_code_of_conduct_edit_url_points_to_root_source(self):
+        context = {}
+        page = SimpleNamespace(
+            file=SimpleNamespace(src_uri="community/code-of-conduct.md"),
+            edit_url=(
+                "https://github.com/OpenHUTB/.github/edit/master/"
+                "docs/community/code-of-conduct.md"
+            ),
+        )
+
+        returned = hooks.on_page_context(context, page, {"docs_dir": "/repo/docs"})
+
+        self.assertIs(returned, context)
+        self.assertEqual(
+            page.edit_url,
+            "https://github.com/OpenHUTB/.github/edit/master/CODE_OF_CONDUCT.md",
+        )
+
 
 class PreBuildTests(unittest.TestCase):
     def setUp(self):
@@ -118,6 +138,14 @@ class PreBuildTests(unittest.TestCase):
         self.assertEqual(destination.read_bytes(), source.read_bytes())
         self.assertEqual(destination.stat().st_mtime, source.stat().st_mtime)
         self.assertIn("Successfully copied CONTRIBUTING.md", output.getvalue())
+
+    def test_copies_code_of_conduct_to_community_page(self):
+        source = self.root / "CODE_OF_CONDUCT.md"
+        source.write_text("# 行为准则\n", encoding="utf-8")
+        with redirect_stdout(io.StringIO()):
+            hooks.on_pre_build({"docs_dir": str(self.root / "docs")})
+        destination = self.root / "docs" / "community" / "code-of-conduct.md"
+        self.assertEqual(destination.read_bytes(), source.read_bytes())
 
     def test_repeated_build_refreshes_existing_copy(self):
         source = self.root / "CONTRIBUTING.md"
@@ -148,7 +176,6 @@ class PreBuildTests(unittest.TestCase):
             source.read_bytes(),
         )
         self.assertFalse((self.root / "docs" / "CONTRIBUTING.md").exists())
-
 
 class PostBuildTests(unittest.TestCase):
     def test_counts_markdown_recursively_in_configured_docs_directory(self):
@@ -182,8 +209,9 @@ class PageProvenanceTests(unittest.TestCase):
         (self.root / "docs" / "adv").mkdir(parents=True)
         (self.root / "docs" / "adv" / "find_author.md").write_text("# 页\n", encoding="utf-8")
         (self.root / "CONTRIBUTING.md").write_text("# 贡献指南\n", encoding="utf-8")
+        (self.root / "CODE_OF_CONDUCT.md").write_text("# 行为准则\n", encoding="utf-8")
         self._git("init", "-q")
-        self._git("add", "docs/adv/find_author.md", "CONTRIBUTING.md")
+        self._git("add", "docs/adv/find_author.md", "CONTRIBUTING.md", "CODE_OF_CONDUCT.md")
         self._git("commit", "-q", "-m", "docs: 第一版", name="张三",
                   date="2020-01-01T12:00:00+0000")
         hooks._last_commit_cache.clear()

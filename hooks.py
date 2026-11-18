@@ -7,6 +7,12 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent
 
+# 仓库根目录中的社区文件 -> 构建时生成的文档站页面。
+GENERATED_DOC_FILES = {
+    "CONTRIBUTING.md": "CONTRIBUTING.md",
+    "community/code-of-conduct.md": "CODE_OF_CONDUCT.md",
+}
+
 # 每轮构建中每个文件只查一次 git，27 个页面也只多 27 次子进程调用。
 _last_commit_cache = {}
 
@@ -50,8 +56,8 @@ def last_commit(source_path, repo_root=None):
 def provenance_line(page, repo_root=None, repo_url=None):
     """生成「本页最近一次修改」那一行；取不到信息时返回空字符串。"""
     src_uri = page.file.src_uri
-    # docs/CONTRIBUTING.md 是构建前从仓库根目录复制来的，历史要查根目录那个文件。
-    source_path = "CONTRIBUTING.md" if src_uri == "CONTRIBUTING.md" else "docs/" + src_uri
+    # 生成页的历史要查仓库根目录中的源文件，而不是 docs/ 下的构建副本。
+    source_path = GENERATED_DOC_FILES.get(src_uri, "docs/" + src_uri)
 
     root = Path(repo_root) if repo_root else REPO_ROOT
     if is_shallow_clone(root):
@@ -91,40 +97,45 @@ def on_config(config, **kwargs):
         config.copyright = copyright_text.replace("{year}", year)
 
 
-# CONTRIBUTING.md 是从仓库根目录复制的，编辑按钮也应指回根目录源文件。
+# 生成页是从仓库根目录复制的，编辑按钮也应指回根目录源文件。
 def on_page_context(context, page, config, **kwargs):
-    if page.file.src_uri != "CONTRIBUTING.md" or not page.edit_url:
+    source_name = GENERATED_DOC_FILES.get(page.file.src_uri)
+    if not source_name or not page.edit_url:
         return context
 
     docs_name = Path(config["docs_dir"]).name
-    generated_suffix = f"/{docs_name}/CONTRIBUTING.md"
+    generated_suffix = f"/{docs_name}/{page.file.src_uri}"
     if page.edit_url.endswith(generated_suffix):
-        page.edit_url = page.edit_url[: -len(generated_suffix)] + "/CONTRIBUTING.md"
+        page.edit_url = page.edit_url[: -len(generated_suffix)] + "/" + source_name
     return context
 
 
-# 在 MkDocs 构建开始前，将根目录下的 CONTRIBUTING.md
-# 拷贝到 docs 目录下，确保文档站点能够引用到它。
+# 在 MkDocs 构建开始前，将根目录下的社区文件复制到文档站页面。
 # （名称必须为 on_pre_build）
 def on_pre_build(config, **kwargs):
     # mkdocs serve 会复用 hook 模块，下一轮构建应重新读取提交历史。
     _last_commit_cache.clear()
 
-    # 源文件：项目根目录下的文件
-    src_file = os.path.join(os.path.dirname(__file__), 'CONTRIBUTING.md')
-    # 目标文件：MkDocs 配置中的 docs_dir
     docs_dir = config["docs_dir"]
-    os.makedirs(docs_dir, exist_ok=True)
-    dest_file = os.path.join(docs_dir, 'CONTRIBUTING.md')
-    
-    # 执行拷贝
-    if os.path.exists(src_file):
-        shutil.copy2(src_file, dest_file)
-        print("Successfully copied CONTRIBUTING.md to docs/CONTRIBUTING.md")
-    else:
-        logging.getLogger(__name__).warning(
-            "Source file not found: %s; contribution guide was not copied", src_file
-        )
+    repo_root = Path(__file__).resolve().parent
+
+    for destination, source_name in GENERATED_DOC_FILES.items():
+        src_file = repo_root / source_name
+        dest_file = Path(docs_dir) / destination
+        dest_file.parent.mkdir(parents=True, exist_ok=True)
+
+        if src_file.exists():
+            shutil.copy2(src_file, dest_file)
+            print(
+                "Successfully copied %s to %s"
+                % (source_name, dest_file.relative_to(repo_root))
+            )
+        else:
+            logging.getLogger(__name__).warning(
+                "Source file not found: %s; %s was not copied",
+                src_file,
+                destination,
+            )
 
 
 # 构建完成后，输出文档构建统计信息

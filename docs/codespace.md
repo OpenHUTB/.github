@@ -40,7 +40,7 @@
 
 
 
-点击左边“资源管理器”中的文件，并在中间进行编辑。点击编辑区右上角的“Open Preview to the side”来打开修改的预览
+> 在左侧「资源管理器」点击目标文件，在中间编辑区域修改内容。点击编辑区右上角的 `\`Open Preview to the side\``，打开侧边预览查看修改效果。
 
 ![](./img/codespace/edit.png)
 
@@ -139,24 +139,24 @@ python -m mkdocs serve --dev-addr 0.0.0.0:8000
 
 ## 暂时离开与下次继续
 
-关闭浏览器标签页并不会立即停止 Codespace，它会继续运行，直到空闲超时。结束本次编辑时，先保存文件，并把需要上传的修改提交、同步到个人仓库，再到 [Codespaces 列表](https://github.com/codespaces)，找到对应环境，点击 `… → Stop codespace`。确认状态变为已停止后再离开。
+关闭浏览器标签页并不会立即停止 Codespace，它会持续运行直到空闲超时。结束编辑时，请先保存文件，将改动提交并推送到个人仓库，再进入 [Codespaces 列表](https://github.com/codespaces)，找到对应环境，点击 `… → Stop codespace`，确认状态变为已停止再离开。
 
-下次继续时，在同一列表中打开原来的 Codespace，即可恢复已保存的文件；之前运行的预览服务等进程需要重新启动。停止环境不会把尚未推送的提交上传到 GitHub，提交后仍应在仓库页面检查记录。
+> ⚠️ 停止不会自动推送代码。
 
-停止后不再产生该环境的计算用量，但保存环境仍会占用存储额度。只打算暂时离开时选择停止，长期不用时可在确认所需内容已推送或备份后再决定是否删除。
+下次继续时，在列表打开原有 Codespace，已保存文件可以恢复；之前运行的预览服务等进程需要重新启动。
+
+停止后不再消耗算力，但依旧占用存储额度；长期不用，确认代码已备份推送后，可以删除环境释放空间。
 
 操作说明见 [GitHub：停止和启动 Codespace](https://docs.github.com/zh/codespaces/developing-in-a-codespace/stopping-and-starting-a-codespace)。
 
 
-## 继续编辑时的检查
+## 重进 Codespace 后的检查步骤
+重新进入 Codespace 后，在终端依次执行检查：
+- 执行 `git branch --show-current`，确认当前分支和 PR 来源分支一致。
+- 执行 `git status --short`，核对变更文件列表，确认均为本次待处理内容。
+- 执行 `git diff` 查看未暂存修改；再执行 `git diff --cached` 查看已暂存修改。两处核对无误后，再进行编辑、提交与推送。
 
-重新进入 Codespace 后，在终端依次检查：
-
-- 运行 `git branch --show-current`，确认分支与原 Pull Request 的来源分支一致。
-- 运行 `git status --short`，查看已修改、已暂存和未跟踪的文件，确认列表里都是本次需要处理的内容。
-- 运行 `git diff` 查看尚未暂存的修改，再运行 `git diff --cached` 查看已暂存的修改。两处都核对后，再继续编辑、提交和推送。
-
-如果分支或文件列表与预期不符，先弄清已有修改的用途，保存好需要保留的内容，再继续操作。
+若分支、变更文件和预期不一致，先梳理现有修改，妥善留存需要保留的内容，再继续操作。
 
 ## 离开前的检查
 

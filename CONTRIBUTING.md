@@ -2,6 +2,8 @@
 
 开源的核心就是与他人沟通，也就是解决冲突的过程。该指南的初衷就是为初学者提供一个简单的方法去学习以及参与开源项目。
 
+参与社区前请阅读 [OpenHUTB 行为准则](https://github.com/OpenHUTB/.github/blob/master/CODE_OF_CONDUCT.md)。遇到骚扰、歧视或其他不可接受行为时，请通过行为准则中的渠道联系维护者。
+
 ## 如何贡献
 
 我们欢迎各种形式的贡献！请根据你的目标选择对应的方式：
@@ -248,7 +250,7 @@ git submodule update --remote
 ###### 国内访问 github 可能较慢
 
 这里提供 github 加速方案和科学上网的 [链接](https://openhutb.github.io/doc/build_carla/#internet) 。
-
+⚠️ 提示：请遵守国内网络相关法规。
 ###### 向 GitHub 推送时出现 403 或权限不足
 
 先区分“提交署名”和“登录权限”：`git config user.name`、`user.email` 只决定提交记录的署名，不会赋予仓库写入权限。在网址前添加用户名也不会改变仓库权限。

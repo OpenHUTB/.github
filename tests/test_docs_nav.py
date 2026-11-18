@@ -26,11 +26,12 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 MKDOCS_FILE = REPO_ROOT / "mkdocs.yml"
 DOCS_DIR = REPO_ROOT / "docs"
 
-# hooks.py copies the repository-root guide into docs/ before the build starts,
-# so the nav entry for CONTRIBUTING.md is valid even though docs/CONTRIBUTING.md
-# is not committed. Same mapping as tests/test_docs_links.py.
+# hooks.py copies repository-root community files into docs/ before the build
+# starts, so their nav entries are valid even though the generated pages are not
+# committed. Same mapping as tests/test_docs_links.py.
 GENERATED_DOC_FILES = {
     "CONTRIBUTING.md": REPO_ROOT / "CONTRIBUTING.md",
+    "community/code-of-conduct.md": REPO_ROOT / "CODE_OF_CONDUCT.md",
 }
 
 # Pages that are deliberately kept out of the navigation, with the reason.
