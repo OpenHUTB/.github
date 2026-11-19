@@ -195,6 +195,7 @@ PDFLaTeX 扫描引用记录 → BibTeX 生成规范文献列表 → 两次 PDF �
 </li>
 </ol>
 <h2 id="三最简可直接运行模板">三、最简可直接运行模板</h2>
+<p>本例使用标准 <code>article</code> 文档类、pdfLaTeX 和 BibTeX，正文与示例文献字段均使用 ASCII 字符。使用中文内容时，请按实际模板的中文支持和编译器设置执行。</p>
 <h3 id="1-主文件tex核心代码">1. 主文件（.tex）核心代码</h3>
 <div class="highlight"><pre><span></span><code><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
 <span class="k">\usepackage</span><span class="nb">{</span>cite<span class="nb">}</span>
@@ -202,7 +203,7 @@ PDFLaTeX 扫描引用记录 → BibTeX 生成规范文献列表 → 两次 PDF �
 
 <span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
 
-正文引用测试<span class="k">\cite</span><span class="nb">{</span>example1<span class="nb">}</span>。
+This is a citation example~<span class="k">\cite</span><span class="nb">{</span>example1<span class="nb">}</span>.
 
 style<span class="nb">{</span>plain<span class="nb">}</span>
 <span class="nb">{</span>ref<span class="nb">}</span>
@@ -211,12 +212,19 @@ style<span class="nb">{</span>plain<span class="nb">}</span>
 </code></pre></div>
 <h3 id="2-文献库文件refbib示例">2. 文献库文件（ref.bib）示例</h3>
 <div class="highlight"><pre><span></span><code><span class="nc">@article</span><span class="p">{</span><span class="nl">example1</span><span class="p">,</span>
-<span class="w">  </span><span class="na">title</span><span class="p">=</span><span class="s">{LaTeX文献引用技术研究}</span><span class="p">,</span>
-<span class="w">  </span><span class="na">author</span><span class="p">=</span><span class="s">{张三 and 李四}</span><span class="p">,</span>
-<span class="w">  </span><span class="na">journal</span><span class="p">=</span><span class="s">{计算机工程与应用}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">title</span><span class="p">=</span><span class="s">{An Example Article}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">author</span><span class="p">=</span><span class="s">{Doe, Jane and Smith, John}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">journal</span><span class="p">=</span><span class="s">{Example Journal}</span><span class="p">,</span>
 <span class="w">  </span><span class="na">year</span><span class="p">=</span><span class="s">{2024}</span>
 <span class="p">}</span>
 </code></pre></div>
+<p>将两段代码分别保存为同一目录下的 <code>main.tex</code> 和 <code>ref.bib</code>。示例条目仅用于测试。在该目录打开终端，依次运行以下命令。</p>
+<div class="highlight"><pre><span></span><code>pdflatex<span class="w"> </span>main.tex
+bibtex<span class="w"> </span>main
+pdflatex<span class="w"> </span>main.tex
+pdflatex<span class="w"> </span>main.tex
+</code></pre></div>
+<p>打开生成的 <code>main.pdf</code>，确认正文显示 <code>[1]</code>，文末列出 <code>An example article</code>。</p>
 <h2 id="四常用参考文献格式样式">四、常用参考文献格式样式</h2>
 <ol>
 <li><code>plain</code>：以数字标注引用，文献列表通常按作者等信息排序，不按正文中首次引用的先后排列。</li>
@@ -301,7 +309,7 @@ bib 文件内所有标点、括号、逗号必须是英文半角，中文符号�
 </ol>
 <hr/>
 <blockquote>
-<p>本页最近一次修改：2026-11-09 · xxl-kaojin · 提交 <a href="https://github.com/OpenHUTB/.github/commit/55713f8"><code>55713f8</code></a></p>
+<p>本页最近一次修改：2026-11-19 · zh-yutong · 提交 <a href="https://github.com/OpenHUTB/.github/commit/160cec8"><code>160cec8</code></a></p>
 </blockquote></div>
 </div>
 </div><footer>
