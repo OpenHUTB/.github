@@ -37,6 +37,8 @@ PDFLaTeX 扫描引用记录 → BibTeX 生成规范文献列表 → 两次 PDF �
 
 ## 三、最简可直接运行模板
 
+本例使用标准 `article` 文档类、pdfLaTeX 和 BibTeX，正文与示例文献字段均使用 ASCII 字符。使用中文内容时，请按实际模板的中文支持和编译器设置执行。
+
 ### 1. 主文件（.tex）核心代码
 
 ```latex
@@ -46,7 +48,7 @@ PDFLaTeX 扫描引用记录 → BibTeX 生成规范文献列表 → 两次 PDF �
 
 \begin{document}
 
-正文引用测试\cite{example1}。
+This is a citation example~\cite{example1}.
 
 \bibliographystyle{plain}
 \bibliography{ref}
@@ -58,12 +60,23 @@ PDFLaTeX 扫描引用记录 → BibTeX 生成规范文献列表 → 两次 PDF �
 
 ```bibtex
 @article{example1,
-  title={LaTeX文献引用技术研究},
-  author={张三 and 李四},
-  journal={计算机工程与应用},
+  title={An Example Article},
+  author={Doe, Jane and Smith, John},
+  journal={Example Journal},
   year={2024}
 }
 ```
+
+将两段代码分别保存为同一目录下的 `main.tex` 和 `ref.bib`。示例条目仅用于测试。在该目录打开终端，依次运行以下命令。
+
+```shell
+pdflatex main.tex
+bibtex main
+pdflatex main.tex
+pdflatex main.tex
+```
+
+打开生成的 `main.pdf`，确认正文显示 `[1]`，文末列出 `An example article`。
 
 ## 四、常用参考文献格式样式
 
