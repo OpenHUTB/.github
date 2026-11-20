@@ -13,7 +13,7 @@ GENERATED_DOC_FILES = {
     "community/code-of-conduct.md": "CODE_OF_CONDUCT.md",
 }
 
-# 每个文件只查一次 git，27 个页面也只多 27 次子进程调用。
+# 每轮构建中每个文件只查一次 git，27 个页面也只多 27 次子进程调用。
 _last_commit_cache = {}
 
 
@@ -113,6 +113,9 @@ def on_page_context(context, page, config, **kwargs):
 # 在 MkDocs 构建开始前，将根目录下的社区文件复制到文档站页面。
 # （名称必须为 on_pre_build）
 def on_pre_build(config, **kwargs):
+    # mkdocs serve 会复用 hook 模块，下一轮构建应重新读取提交历史。
+    _last_commit_cache.clear()
+
     docs_dir = config["docs_dir"]
     repo_root = Path(__file__).resolve().parent
 
