@@ -10,20 +10,25 @@ on:
     #        │ │ │ ┌──────── month
     #        │ │ │ │ ┌────── day (week)
     - cron: '0 0 1 * *'
-  
+
+# 这个 job 只用 PAT（secrets.METRICS_REPORT）读 API，不需要 GITHUB_TOKEN 的任何写权限，
+# 显式声明最小权限，避免默认 token 权限被组织策略放大。
+permissions:
+  contents: read
+
 jobs:
   'create-report':
     runs-on: ubuntu-latest
     steps:
       # 获得统计的开始时间（上个月的第一天）
-      - uses: actions/github-script@v6
+      - uses: actions/github-script@v7
         id: since-date
         with:
           script: return new Date(new Date().getFullYear(), new Date().getMonth() - 1, 1) 
           result-encoding: string
       
       # 获得统计的结束时间（本月的第一天）
-      - uses: actions/github-script@v6
+      - uses: actions/github-script@v7
         id: until-date
         with:
           script: return new Date(new Date().getFullYear(), new Date().getMonth(), 1) 
@@ -40,7 +45,10 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: reports
+          # 与 repo_metrics.yml 保持一致：带上 run 号便于在 Actions 页面对应到具体月份。
+          name: user-activity-${{ github.run_number }}
           path: |
             data.json
             data.csv
+          if-no-files-found: warn
+          retention-days: 90
