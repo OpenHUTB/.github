@@ -9,7 +9,7 @@
 | 工作流（文件在 `.github/workflows/` 下） | 触发 | 运行机器 | 做什么 |
 |---|---|---|---|
 | hutb Linux CI/CD<br>`build_self_hosted_linux.yml` | 手动 | 自托管 Linux | 同步依赖 → 编译 → 自动化测试 → 打 Installed Build |
-| hutb Windows CI/CD<br>`build_self_hosted.yml` | 手动 | 自托管 Windows | `Build.bat` → `RunUAT.bat` |
+| hutb Windows CI/CD<br>`build_self_hosted.yml` | 手动 | 自托管 Windows | `Build.bat` → 自动化测试 → `RunUAT.bat` |
 | Engine C++ documentation<br>`doxygen.yml` | push | GitHub 托管 Ubuntu | Doxygen 生成并发布到 gh-pages |
 
 编译和测试工作流只保留 `workflow_dispatch`（手动触发）。引擎单次构建动辄几小时，如果在每次 push 或开 PR 时自动运行，既会把自托管机器排满，也会给 PR 关注者发大量邮件。需要验证时在 Actions 页面手动运行。
@@ -172,8 +172,22 @@ Windows 侧尽量复用仓库自带的脚本：
 1. **Checkout 设 `continue-on-error: true`。** post-checkout hook 会同步约 11.6 GB 依赖，同步完成后可能返回非 0，日志里表现为 `git.exe failed with exit code 1`。
 2. **加一步 `Verify checkout`。** 检查 `.git` 存在、`git rev-parse --verify HEAD` 能通过，确认工作区可用再继续。
 3. `call Build.bat --git-code <token>` 编译。
-4. `call RunUAT.bat` 打包。
-5. 结束后清理，最后删除 `.git` 目录，避免依赖缓存把磁盘占满。
+4. **跑自动化测试。** `build` 之后用 `UE4Editor-Cmd.exe` 执行与 Linux 相同的一批用例：
+
+   ```powershell
+   & .\Engine\Binaries\Win64\UE4Editor-Cmd.exe "$env:RUNNER_TEMP\automation-project\AutomationTest.uproject" `
+     -ExecCmds="Automation RunTests $env:TEST_FILTER" `
+     -unattended -nopause -nullrhi -nosound -log `
+     -TESTEXIT="Automation Test Queue Empty" `
+     -ReportExportPath="$env:GITHUB_WORKSPACE\Saved\Automation\Reports"
+   ```
+
+   `.uproject` 与 Linux 相同，只启用 `EditorTests`、`RuntimeTests` 两个插件；写文件时用不带 BOM 的 UTF-8，避免 JSON 解析失败。
+5. **解析报告。** `index.json` 里 `failed`、`notRun` 不为 0，或者 `succeeded` 为 0，都判定失败；报告和 `automation.log` 以 `automation-report-windows` 为名上传。
+6. `call RunUAT.bat` 打包。
+7. 结束后清理，最后删除 `.git` 目录，避免依赖缓存把磁盘占满。
+
+Windows 同样支持 `test_filter` 手动输入，默认值与 Linux 一致，不填也会跑到 `System.Engine.Hutb` 的用例。
 
 实测耗时：Windows 两次成功运行分别是 128 分钟和 357 分钟（约 2–6 小时），比 Linux 慢很多，所以更要靠 `concurrency` 控制排队。该工作流同样只保留 `workflow_dispatch`，需要时手动运行。
 
@@ -196,7 +210,7 @@ Windows 侧尽量复用仓库自带的脚本：
 
 ## 6. 怎么验证配置可用
 
-1. 改动先在功能分支上用 `workflow_dispatch` 手动跑通，再开 PR；开 PR 不会自动触发测试工作流，需要时对分支手动运行。打开 `Actions`，选对应工作流，点 `Run workflow`；Linux 可以填 `test_filter`。手动触发要求对该仓库有写权限，fork 提交的 PR 只能由主仓库维护者触发（用 API 触发时权限不足会返回 `403 Must have admin rights to Repository.`）。
+1. 改动先在功能分支上用 `workflow_dispatch` 手动跑通，再开 PR；开 PR 不会自动触发测试工作流，需要时对分支手动运行。打开 `Actions`，选对应工作流，点 `Run workflow`；Linux 和 Windows 都可以填 `test_filter`。手动触发要求对该仓库有写权限，fork 提交的 PR 只能由主仓库维护者触发（用 API 触发时权限不足会返回 `403 Must have admin rights to Repository.`）。
 2. 跟日志看关键节点：checkout 成功；`Setup.sh` 结束输出 `Setup successful.`（干净工作区里 `Engine/Binaries/DotNET/UnrealBuildTool.exe` 此时还打印「仍不存在」，它由下一步编译时生成，不影响流程）；`Build.sh` 打印 `Running command : Engine/Binaries/DotNET/UnrealBuildTool.exe UE4Editor Linux Development`，结束时给出 `Total execution time`；自动化测试在日志末尾给出通过/失败统计。
 3. 跑完确认 artifact 里有 `automation-report`，Linux 还要确认 `Make Installed Build Linux` 成功。
 4. 失败时先看第一个报红的步骤，不要从后往前猜。
@@ -216,7 +230,19 @@ Windows 侧尽量复用仓库自带的脚本：
 | 四五个运行同时排队 | 自托管机器单次构建数小时 | `concurrency` + `cancel-in-progress: true` |
 | 用例被 ensure 日志判失败 | ensure 失败会拆成多行 `Error` 日志，框架逐行计数 | 用 `AddExpectedError` 登记公共行、表达式和消息，见 3.4 |
 
-## 8. 复现清单
+## 8. 补测试、改触发方式的步骤
+
+这一轮补用例和改触发方式时实际执行的顺序，照着做可以复现同样的结果。
+
+1. **写用例。** 放在 `Engine/Source/Runtime/Engine/Private/Tests/` 下，用 `IMPLEMENT_SIMPLE_AUTOMATION_TEST`，flags 选 `EditorContext | EngineFilter`，测试路径以 `System.Engine.Hutb.` 开头，这样默认过滤条件能选中。
+2. **先在本机编过。** 在引擎根目录执行 `./Engine/Build/BatchFiles/Linux/Build.sh UE4Editor Linux Development`，确认新文件参与编译。
+3. **在功能分支上手动触发，不开 PR。** 测试文件和工作流改动提交到功能分支后，Actions → hutb Linux CI/CD → Run workflow，分支选该分支，`test_filter` 留空用默认值。
+4. **核对报告。** 等 `build`、`Run automation tests`、`Check automation report` 三步变绿，下载 `automation-report` artifact，确认 `index.json` 里 `failed`、`notRun` 为 0，`succeeded` 等于用例总数。
+5. **Windows 同样验证一遍。** 对 Windows 分支手动运行 hutb Windows CI/CD，检查 `automation-report-windows` artifact 里的同一份报告。
+6. **通过后再开 PR。** PR 描述写清验证运行链接和用例数；测试工作流已改为手动触发，开 PR 不会自动排队。
+7. **合并后再处理叠在后面的分支。** 依赖本次改动的分支要变基到新的 `hutb` 再打开，避免 diff 里重复出现同一个改动。
+
+## 9. 复现清单
 
 | 检查项 | 完成标准 |
 |---|---|
@@ -225,7 +251,8 @@ Windows 侧尽量复用仓库自带的脚本：
 | 私有依赖 | 工作流能 clone `ue4-gitdeps` 并完成 `git lfs pull` |
 | SDK 缓存 | `~/ue-cache/` 有压缩包，运行日志能看到复制到 `.git/ue4-sdks` |
 | 编译 | 日志出现 `Build.sh UE4Editor Linux Development` 成功 |
-| 测试 | `Saved/Automation/Reports/index.json` 中 `failed`、`notRun` 为 0，默认过滤条件跑出 24 条用例 |
+| 测试（Linux） | `Saved/Automation/Reports/index.json` 中 `failed`、`notRun` 为 0，默认过滤条件跑出 24 条用例 |
+| 测试（Windows） | `automation-report-windows` 中 `failed`、`notRun` 为 0，用例与 Linux 一致 |
 | 触发 | 测试工作流只在 Actions 页面手动运行，不随 push/PR 自动触发 |
 | 打包 | `Make Installed Build Linux` 目标成功 |
 | 文档 | push 后 gh-pages 更新，fork 中 Deploy 为 skipped |
