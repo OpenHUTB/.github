@@ -18,7 +18,7 @@ GitHub 用户名：XXX
 
 ## 内容制作
 
-包括但不仅限于与开源孪创所用技术和工具的开源新闻、开源项目介绍、[已有文档](https://openhutb.github.io/doc/)整理、已有项目整理（[ros2](https://openhutb.github.io/ros2/)、[sim](https://github.com/OpenHUTB/sim)、[nn](https://openhutb.github.io/nn/)）等。
+包括但不仅限于与开源孪创所用技术和工具的开源新闻、开源项目介绍、[已有文档](https://openhutb.github.io/doc/)整理、已有项目整理（[ROS示例](https://openhutb.github.io/ros2/)、[毕业论文](https://github.com/OpenHUTB/sim)、[地面载具示例](https://openhutb.github.io/doc/used_by/) 、[空域载具示例](https://openhutb.github.io/air_doc/third/used_by/)、[具身人示例](https://openhutb.github.io/doc/pedestrian/humanoid/)、[神经网络示例](https://openhutb.github.io/nn/)）等。
 
 其他内容包括：[视频编辑](./video.md)。
 
